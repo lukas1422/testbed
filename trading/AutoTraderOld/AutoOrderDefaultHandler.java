@@ -14,8 +14,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static Trader.Allstatic.globalIdOrderMap;
-import static AutoTraderOld.XuTraderHelper.outputDetailedXU;
-import static AutoTraderOld.XuTraderHelper.outputSymbolMsg;
+//import static AutoTraderOld.XuTraderHelper.outputDetailedXU;
+//import static AutoTraderOld.XuTraderHelper.outputSymbolMsg;
 import static client.OrderStatus.Filled;
 import static utility.Utility.*;
 
@@ -50,7 +50,8 @@ public class AutoOrderDefaultHandler implements ApiController.IOrderHandler {
                     "ID:", defaultID, globalIdOrderMap.get(defaultID),
                     "TIF:", globalIdOrderMap.get(defaultID).getOrder().tif());
             String symbol = globalIdOrderMap.get(defaultID).getSymbol();
-            outputSymbolMsg(symbol, msg);
+
+//            outputSymbolMsg(symbol, msg);
             idStatusMap.put(defaultID, orderState.status());
         }
 
@@ -124,10 +125,10 @@ public class AutoOrderDefaultHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice,
                             int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputDetailedXU(ibContractToSymbol(AutoTraderXU.activeFutCt)
-                , str("||OrderStatus||", defaultID,
-                        globalIdOrderMap.get(defaultID), status, filled,
-                        remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld));
+//        outputDetailedXU(ibContractToSymbol(AutoTraderXU.activeFutCt)
+//                , str("||OrderStatus||", defaultID,
+//                        globalIdOrderMap.get(defaultID), status, filled,
+//                        remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld));
     }
 
     @Override

@@ -569,9 +569,9 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static double roundToMinVariation(String ticker, Direction dir, double price) {
         if (ticker.equalsIgnoreCase("SGXA50")) {
-            return XuTraderHelper.roundToPricePassiveGen(price, dir, 2.5);
+            return TradingUtility.roundToPricePassiveGen(price, dir, 2.5);
         } else if (ticker.equalsIgnoreCase("GXBT")) {
-            return XuTraderHelper.roundToPricePassiveGen(price, dir, 5);
+            return TradingUtility.roundToPricePassiveGen(price, dir, 5);
         }
         return price;
     }

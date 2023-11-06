@@ -24,33 +24,33 @@ import static utility.Utility.pr;
 import static utility.Utility.str;
 
 public class ControllerCalls {
-    public static void req1ContractHistory(ApiController ap, Contract ct, Types.BarSize b, HistoricalHandler h) {
-        pr(" requesting stock hist ", ct.symbol());
-        CompletableFuture.runAsync(() -> {
-            int reqId = getNextId();
-            Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
-            String formatTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss"));
-            String durationStr = 2 + " " + Types.DurationUnit.DAY.toString().charAt(0);
-            ap.client().reqHistoricalData(reqId, ct, formatTime, durationStr,
-                    b.toString(), Types.WhatToShow.TRADES.toString(),
-                    0, 2, keepUptoDate, Collections.<TagValue>emptyList());
-        });
+//    public static void req1ContractHistory(ApiController ap, Contract ct, Types.BarSize b, HistoricalHandler h) {
+//        pr(" requesting stock hist ", ct.symbol());
+//        CompletableFuture.runAsync(() -> {
+//            int reqId = getNextId();
+//            Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
+//            String formatTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss"));
+//            String durationStr = 2 + " " + Types.DurationUnit.DAY.toString().charAt(0);
+//            ap.client().reqHistoricalData(reqId, ct, formatTime, durationStr,
+//                    b.toString(), Types.WhatToShow.TRADES.toString(),
+//                    0, 2, keepUptoDate, Collections.<TagValue>emptyList());
+//        });
+//
+//    }
 
-    }
-
-    public static void req1StockHistToday(ApiController ap, String stock, String exch, String curr, HistoricalHandler h) {
-        pr(" requesting stock hist ", stock, exch, curr);
-        CompletableFuture.runAsync(() -> {
-            int reqId = getNextId();
-            Contract ct = Utility.generateStockContract(stock, exch, curr);
-            Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
-            String formatTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss"));
-            String durationStr = 1 + " " + Types.DurationUnit.DAY.toString().charAt(0);
-            ap.client().reqHistoricalData(reqId, ct, formatTime, durationStr,
-                    Types.BarSize._1_min.toString(), Types.WhatToShow.TRADES.toString(),
-                    0, 2, keepUptoDate, Collections.<TagValue>emptyList());
-        });
-    }
+//    public static void req1StockHistToday(ApiController ap, String stock, String exch, String curr, HistoricalHandler h) {
+//        pr(" requesting stock hist ", stock, exch, curr);
+//        CompletableFuture.runAsync(() -> {
+//            int reqId = getNextId();
+//            Contract ct = Utility.generateStockContract(stock, exch, curr);
+//            Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
+//            String formatTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss"));
+//            String durationStr = 1 + " " + Types.DurationUnit.DAY.toString().charAt(0);
+//            ap.client().reqHistoricalData(reqId, ct, formatTime, durationStr,
+//                    Types.BarSize._1_min.toString(), Types.WhatToShow.TRADES.toString(),
+//                    0, 2, keepUptoDate, Collections.<TagValue>emptyList());
+//        });
+//    }
 
 //    public static void reqHoldingsTodayHist(ApiController ap) {
 //        pr(" request holdings today ");
@@ -144,7 +144,7 @@ public class ControllerCalls {
         return ApiController.getCurrID().incrementAndGet();
     }
 
-    public static int addGetNextId(int i) {
-        return ApiController.getCurrID().addAndGet(i);
-    }
+//    public static int addGetNextId(int i) {
+//        return ApiController.getCurrID().addAndGet(i);
+//    }
 }

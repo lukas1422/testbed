@@ -360,18 +360,18 @@ public class Utility {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T extends NavigableMap<LocalTime, Double>> void getIndustryVolYtd(Map<String, T> mp) {
-        CompletableFuture.supplyAsync(()
-                        -> mp.entrySet().stream()
-                        .collect(groupingBy(e -> ChinaStock.industryNameMap.get(e.getKey()),
-                                mapping(Map.Entry::getValue, Collectors.reducing(Utility.mapBinOp(TradingConstants.TRADING_HOURS)))))
-//                                , Collectors.collectingAndThen(toList(),
-//                                e -> e.stream().flatMap(e1 -> e1.entrySet().stream().filter(GraphIndustry.TRADING_HOURS))
-//                                        .collect(groupingBy(Map.Entry::getKey, ConcurrentSkipListMap::new, summingDouble(Map.Entry::getValue)))))))
-        )
-                .thenAccept(m -> m.keySet().forEach(s ->
-                    mp.put(s, (T) (m.get(s).orElse(new ConcurrentSkipListMap<>())))));
-    }
+//    public static <T extends NavigableMap<LocalTime, Double>> void getIndustryVolYtd(Map<String, T> mp) {
+//        CompletableFuture.supplyAsync(()
+//                        -> mp.entrySet().stream()
+//                        .collect(groupingBy(e -> ChinaStock.industryNameMap.get(e.getKey()),
+//                                mapping(Map.Entry::getValue, Collectors.reducing(Utility.mapBinOp(TradingConstants.TRADING_HOURS)))))
+////                                , Collectors.collectingAndThen(toList(),
+////                                e -> e.stream().flatMap(e1 -> e1.entrySet().stream().filter(GraphIndustry.TRADING_HOURS))
+////                                        .collect(groupingBy(Map.Entry::getKey, ConcurrentSkipListMap::new, summingDouble(Map.Entry::getValue)))))))
+//        )
+//                .thenAccept(m -> m.keySet().forEach(s ->
+//                    mp.put(s, (T) (m.get(s).orElse(new ConcurrentSkipListMap<>())))));
+//    }
 
     public static double minGen(double... l) {
         return reduceDouble(Math::min, l);
@@ -1104,13 +1104,13 @@ public class Utility {
         return ct;
     }
 
-    private static double getDeltaImpactCny(Contract ct, Order o) {
-        String curr = ct.currency();
-        double totalQ = o.totalQuantity().value().doubleValue();
-        double lmtPrice = o.lmtPrice();
-        double xxxCny = ChinaPosition.fxMap.getOrDefault(FXCurrency.get(curr), 1.0);
-        return xxxCny * lmtPrice * totalQ;
-    }
+//    private static double getDeltaImpactCny(Contract ct, Order o) {
+//        String curr = ct.currency();
+//        double totalQ = o.totalQuantity().value().doubleValue();
+//        double lmtPrice = o.lmtPrice();
+//        double xxxCny = ChinaPosition.fxMap.getOrDefault(FXCurrency.get(curr), 1.0);
+//        return xxxCny * lmtPrice * totalQ;
+//    }
 
     public static class DefaultLogger implements ApiConnection.ILogger {
         @Override

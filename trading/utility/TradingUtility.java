@@ -507,7 +507,7 @@ public class TradingUtility {
 
     public static void outputToAll(String s) {
         outputDetailedXUSymbol("", s);
-        outputDetailedHKSymbol("", s);
+//        outputDetailedHKSymbol("", s);
         outputDetailedUSSymbol("", s);
 
     }
