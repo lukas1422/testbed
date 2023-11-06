@@ -5,10 +5,13 @@ import TradeType.MarginTrade;
 import TradeType.NormalTrade;
 import TradeType.Trade;
 import TradeType.TradeBlock;
+import Trader.AllData;
 import api.*;
 import auxiliary.SimpleBar;
 import client.Contract;
+import client.Decimal;
 import client.ExecutionFilter;
+import enums.FXCurrency;
 import enums.FutType;
 import graph.GraphBarTemporal;
 import graph.GraphChinaPnl;
@@ -39,9 +42,9 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static api.ChinaData.priceMapBar;
+import static Trader.AllData.priceMapBar;
 import static api.ChinaData.wtdSharpe;
-import static api.ChinaMain.GLOBAL_REQ_ID;
+import static Trader.AllData.GLOBAL_REQ_ID;
 import static api.ChinaMain.controller;
 import static api.ChinaPosition.tradesMap;
 import static api.ChinaStock.currencyMap;
@@ -86,7 +89,7 @@ public class HistChinaStocks extends JPanel {
     public static volatile Map<String, Integer> wtdChgInPosition = new HashMap<>();
     public static volatile Map<String, Integer> wtdBotPosition = new HashMap<>();
     public static volatile Map<String, Integer> wtdSoldPosition = new HashMap<>();
-    public static volatile Map<String, Integer> currentPositionMap = new HashMap<>();
+    public static volatile Map<String, Decimal> currentPositionMap = new HashMap<>();
     private static volatile Map<String, Long> sharesOut = new HashMap<>();
     private static Map<String, NavigableMap<LocalDate, Integer>> netSharesTradedByDay = new HashMap<>();
     private static Map<String, NavigableMap<LocalDateTime, Integer>> netSharesTradedWtd = new HashMap<>();
@@ -117,7 +120,7 @@ public class HistChinaStocks extends JPanel {
     private static volatile NavigableMap<LocalDate, Double> netPnlByWeekdayPM = new ConcurrentSkipListMap<>();
 
     public static Map<String, Double> mtdSharpe = new HashMap<>();
-    private static Map<Currency, Double> fxMap = new HashMap<>();
+    private static Map<FXCurrency, Double> fxMap = new HashMap<>();
 
     private static Map<String, LocalDate> histHighDateMap = new HashMap<>();
 
@@ -193,7 +196,7 @@ public class HistChinaStocks extends JPanel {
                 new FileInputStream(TradingConstants.GLOBALPATH + "fx.txt")))) {
             while ((line = reader1.readLine()) != null) {
                 List<String> al1 = Arrays.asList(line.split("\t"));
-                fxMap.put(Currency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
+                fxMap.put(FXCurrency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
             }
         } catch (IOException x) {
             x.printStackTrace();
@@ -1660,7 +1663,7 @@ public class HistChinaStocks extends JPanel {
             if (chinaWtd.containsKey(name) && chinaWtd.get(name).size() > 0) {
                 price = (name.equalsIgnoreCase("SGXA50PR")) ? futExpiryLevel : chinaWtd.get(name).lastEntry().getValue().getClose();
             } else {
-                price = ChinaStock.priceMap.getOrDefault(name, 0.0);
+                price = AllData.priceMap.getOrDefault(name, 0.0);
             }
 
             double mtm = r(computeWtdMtmFor1Stock(name));

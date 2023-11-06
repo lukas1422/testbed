@@ -37,11 +37,11 @@ public class XUOvernightTradeExecHandler implements ApiController.ITradeReportHa
                 FutType f = ibContractToFutType(contract);
                 if (overnightTradesMap.get(f).containsKey(ldt)) {
                     overnightTradesMap.get(f).get(ldt)
-                            .addTrade(new FutureTrade(execution.price(), (int) Math.round(sign * execution.shares())));
+                            .addTrade(new FutureTrade(execution.price(), Math.round(sign * execution.shares().longValue())));
                 } else {
                     overnightTradesMap.get(f).put(ldt,
                             new TradeBlock(new FutureTrade(execution.price(),
-                                    (int) Math.round(sign * execution.shares()))));
+                                    Math.round(sign * execution.shares().longValue()))));
                 }
             }
         }

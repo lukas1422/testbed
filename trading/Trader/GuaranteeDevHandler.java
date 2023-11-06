@@ -1,4 +1,4 @@
-package DevTrader;
+package Trader;
 
 import api.OrderAugmented;
 import api.TradingConstants;
@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static DevTrader.BreachTrader.*;
+import static Trader.BreachTrader.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static client.OrderStatus.Filled;
 import static client.OrderStatus.PendingCancel;
@@ -63,11 +63,11 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
 
         devOrderMap.get(currentID).setAugmentedOrderStatus(orderState.status());
 
-        double lastQ = devOrderMap.get(currentID).getOrder().totalQuantity();
+        double lastQ = devOrderMap.get(currentID).getOrder().totalQuantity().longValue();
         String symbol = devOrderMap.get(currentID).getSymbol();
         AutoOrderType aot = devOrderMap.get(currentID).getOrderType();
         int lastOrderID = devOrderMap.get(currentID).getOrder().orderId();
-        double livePos = getLivePos(symbol);
+        double livePos = getLivePos(symbol).longValue();
 //        double defaultSize = getDefaultSize(symbol);
 //        Contract ct = devOrderMap.get(currentID).getContract();
 //        double defaultSize = getDefaultSize(ct,)
@@ -123,16 +123,16 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
 
                 o.orderType(OrderType.LMT);
 
-                o.totalQuantity(lastQ);
+                o.totalQuantity(Decimal.get(lastQ));
                 if (aot == AutoOrderType.BREACH_CUTTER) {
-                    o.totalQuantity(Math.abs(livePos));
+                    o.totalQuantity(Decimal.get(Math.abs(livePos)));
                 } else if (aot == AutoOrderType.BREACH_ADDER) {
                     if (livePos != 0.0) {
                         if (defaultSize - Math.abs(livePos) >= 100.0) {
                             double roundPos = Math.floor((defaultSize - Math.abs(livePos)) / 100d) * 100d;
-                            o.totalQuantity(roundPos);
+                            o.totalQuantity(Decimal.get(roundPos));
                         } else {
-                            o.totalQuantity(0.0);
+                            o.totalQuantity(Decimal.get(0.0));
                         }
                     }
                 }
@@ -178,21 +178,21 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
 
                 o.orderType(OrderType.LMT);
 
-                o.totalQuantity(lastQ);
+                o.totalQuantity(Decimal.get(lastQ));
 
                 if (aot == AutoOrderType.BREACH_CUTTER) {
                     if (lastQ != Math.abs(livePos)) {
-                        o.totalQuantity(Math.abs(livePos));
+                        o.totalQuantity(Decimal.get(Math.abs(livePos)));
                     }
                 } else if (aot == AutoOrderType.BREACH_ADDER) {
                     if (livePos != 0.0) {
                         if (defaultSize - Math.abs(livePos) >= 100.0) {
                             double roundPos = Math.floor((defaultSize - Math.abs(livePos)) / 100d) * 100d;
-                            o.totalQuantity(roundPos);
+                            o.totalQuantity(Decimal.get(roundPos));
                         } else {
                             outputToSpecial(str(symbol, "live pos - defaultSize < 100 ", livePos, defaultSize
                                     , currentID, prevOrder));
-                            o.totalQuantity(0.0);
+                            o.totalQuantity(Decimal.get(0.0));
                         }
                     }
                 }
@@ -239,7 +239,7 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
 
 
     @Override
-    public void orderStatus(OrderStatus status, double filled, double remaining,
+    public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 

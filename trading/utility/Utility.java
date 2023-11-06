@@ -1,6 +1,7 @@
 package utility;
 
 import TradeType.TradeBlock;
+import Trader.AllData;
 import api.*;
 import auxiliary.SimpleBar;
 import client.Contract;
@@ -13,7 +14,6 @@ import enums.FutType;
 
 import java.awt.*;
 import java.io.*;
-import java.sql.Blob;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -27,7 +27,7 @@ import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static api.ChinaData.priceMapBar;
+import static Trader.AllData.priceMapBar;
 import static api.ChinaStock.*;
 import static api.TradingConstants.*;
 import static java.lang.Math.log;
@@ -473,7 +473,7 @@ public class Utility {
                         }
                     } else {
                         System.out.println(" for " + e + " filling done");
-                        SimpleBar sb = new SimpleBar(priceMap.getOrDefault(e, 0.0));
+                        SimpleBar sb = new SimpleBar(AllData.priceMap.getOrDefault(e, 0.0));
                         ChinaData.tradeTimePure.forEach(ti -> mp1.get(e).put(ti, sb));
                         //System.out.println( "last key "+e+ " "+ mp1.get(e).lastEntry());
                         //System.out.println( "noon last key "+e+ " " + mp1.get(e).ceilingEntry(LocalTime.of(11,30)).toString());
@@ -920,7 +920,7 @@ public class Utility {
 
     private static double getCustomOpen(String symb) {
         if (!symb.startsWith("SGX")) {
-            return openMap.getOrDefault(symb, 0.0);
+            return AllData.openMap.getOrDefault(symb, 0.0);
         } else if (priceMapBar.containsKey(symb) && priceMapBar.get(symb).size() > 0) {
             return priceMapBar.get(symb).firstEntry().getValue().getOpen();
         }

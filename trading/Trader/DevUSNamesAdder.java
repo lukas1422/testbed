@@ -1,8 +1,9 @@
-package DevTrader;
+package Trader;
 
 import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.Contract;
+import client.Decimal;
 import client.Types;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
@@ -32,7 +33,7 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
 
     private static ApiController staticController;
 
-    private volatile static Map<Contract, Double> contractPosition =
+    private volatile static Map<Contract, Decimal> contractPosition =
             new TreeMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
     private volatile static Set<String> breachNameSet = new TreeSet<>();
@@ -102,7 +103,7 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
     }
 
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
         if (contract.secType() == Types.SecType.STK && contract.currency().equalsIgnoreCase("USD")) {
             contractPosition.put(contract, position);
         }
@@ -202,7 +203,7 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
 
         contractPosition.forEach((ct, v) -> {
             String k = ibContractToSymbol(ct);
-            if (!symbolLotsize.containsKey(k) && v != 0.0) {
+            if (!symbolLotsize.containsKey(k) && !v.isZero()) {
                 chinaAllOutputString.add(new LinkedList<>(Arrays.asList(k, k, "美", "美", "USD", "STK")));
             }
         });

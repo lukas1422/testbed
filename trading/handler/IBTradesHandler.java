@@ -1,7 +1,7 @@
 package handler;
 
 import TradeType.*;
-import api.ChinaMain;
+//import api.ChinaMain;
 import client.CommissionReport;
 import client.Contract;
 import client.Execution;
@@ -40,17 +40,17 @@ public class IBTradesHandler implements ApiController.ITradeReportHandler {
                 if (chinaTradeMap.containsKey(ticker)) {
                     if (chinaTradeMap.get(ticker).containsKey(ldtRoundTo5)) {
                         pr(str(" Existing Trade: ", ldtRoundTo5,
-                                sign * (int) Math.round(execution.shares())));
+                                sign * Math.round(execution.shares().longValue())));
                         chinaTradeMap.get(ticker).get(ldtRoundTo5).addTrade((Trade)
                                 c.getDeclaredConstructor(Double.TYPE, Integer.TYPE)
-                                        .newInstance(execution.price(), sign * (int) Math.round(execution.shares())));
+                                        .newInstance(execution.price(), sign *  Math.round(execution.shares().longValue())));
                     } else {
                         pr(str(" new tradeBlock ", ldtRoundTo5,
-                                sign * (int) Math.round(execution.shares())));
+                                sign * (int) Math.round(execution.shares().longValue())));
                         chinaTradeMap.get(ticker).put(ldtRoundTo5,
                                 new TradeBlock((Trade) c.getDeclaredConstructor(Double.TYPE, Integer.TYPE)
                                         .newInstance(execution.price(),
-                                                sign * (int) Math.round(execution.shares()))));
+                                                sign * (int) Math.round(execution.shares().longValue()))));
                     }
                 } else {
                     pr(" sgx trade handler does not contain ticker for " + ticker);

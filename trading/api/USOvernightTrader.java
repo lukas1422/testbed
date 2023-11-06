@@ -153,7 +153,7 @@ class USOrderHandler implements ApiController.IOrderHandler {
 class USPositionHandler implements ApiController.IPositionHandler {
 
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
 
     }
 

@@ -1,5 +1,6 @@
 package AutoTraderOld;
 
+import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
@@ -77,7 +78,8 @@ public class InventoryOrderHandler implements ApiController.IOrderHandler {
     }
 
     @Override
-    public void orderStatus(OrderStatus status, double filled, double remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+    public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining,
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
         System.out.println(" in orderStatus Inventory Order handler  ");;
     }
 

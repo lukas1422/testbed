@@ -1,14 +1,14 @@
 package AutoTraderOld;
 
 import TradeType.FutureTrade;
-import api.ChinaData;
-import api.SinaStock;
+import Trader.AllData;
+//import api.SinaStock;
 import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.Order;
 import controller.ApiController;
 import enums.AutoOrderType;
-import enums.Currency;
+import enums.FXCurrency;
 import enums.Direction;
 import utility.TradingUtility;
 
@@ -32,10 +32,9 @@ import java.util.stream.Collectors;
 
 import static AutoTraderOld.AutoTraderMain.*;
 import static AutoTraderOld.AutoTraderXU.activeFutCt;
-import static api.ChinaData.priceMapBar;
+import static Trader.AllData.priceMapBar;
 import static api.ChinaStock.currencyMap;
 import static api.TradingConstants.FTSE_INDEX;
-import static enums.Currency.CNY;
 import static java.lang.System.out;
 import static utility.Utility.*;
 
@@ -171,7 +170,7 @@ public class XuTraderHelper {
             outputDetailedHK(symbol, msg);
         } else if (symbol.startsWith("SGXA50")) {
             outputDetailedXU(symbol, msg);
-        } else if (currencyMap.getOrDefault(symbol, CNY) == Currency.USD) {
+        } else if (currencyMap.getOrDefault(symbol, FXCurrency.CNY) == FXCurrency.USD) {
             outputDetailedUSSymbol(symbol, msg);
         }
     }
@@ -402,16 +401,16 @@ public class XuTraderHelper {
         return false;
     }
 
-    static double getIndexPrice() {
-        return (ChinaData.priceMapBar.containsKey(FTSE_INDEX) &&
-                ChinaData.priceMapBar.get(FTSE_INDEX).size() > 0) ?
-                ChinaData.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
-    }
+//    static double getIndexPrice() {
+//        return (ChinaData.priceMapBar.containsKey(FTSE_INDEX) &&
+//                ChinaData.priceMapBar.get(FTSE_INDEX).size() > 0) ?
+//                ChinaData.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
+//    }
 
     public static double getPD(double freshPrice) {
-        double indexPrice = (ChinaData.priceMapBar.containsKey(FTSE_INDEX) &&
-                ChinaData.priceMapBar.get(FTSE_INDEX).size() > 0) ?
-                ChinaData.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
+        double indexPrice = (AllData.priceMapBar.containsKey(FTSE_INDEX) &&
+                AllData.priceMapBar.get(FTSE_INDEX).size() > 0) ?
+                AllData.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
         return (indexPrice != 0.0 && freshPrice != 0.0) ? (freshPrice / indexPrice - 1) : 0.0;
     }
 
@@ -465,7 +464,7 @@ public class XuTraderHelper {
     }
 
     public static boolean orderMakingMoney(Order o, double currPrice) {
-        return o.lmtPrice() > currPrice && (o.totalQuantity() > 0);
+        return o.lmtPrice() > currPrice && (o.totalQuantity().longValue() > 0);
     }
 
     static <S> NavigableMap<LocalDateTime, S> convertToLDT(NavigableMap<LocalTime, S> mp, LocalDate d
@@ -750,8 +749,8 @@ public class XuTraderHelper {
         }
 
         @Override
-        public void message(int id, int errorCode, String errorMsg) {
-            System.out.println(str(" error ID ", id, " error code ", errorCode, " errormsg ", errorMsg));
+        public void message(int id, int errorCode, String errorMsg, String blah) {
+            System.out.println(str(" error ID ", id, " error code ", errorCode, " errormsg ", errorMsg, "blah", blah));
         }
 
         @Override

@@ -1,6 +1,7 @@
-package DevTrader;
+package Trader;
 
 import api.TradingConstants;
+import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
@@ -10,8 +11,8 @@ import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static DevTrader.BreachTrader.devOrderMap;
-import static DevTrader.BreachTrader.f2;
+import static Trader.BreachTrader.devOrderMap;
+import static Trader.BreachTrader.f2;
 import static client.OrderStatus.Filled;
 import static utility.TradingUtility.outputToError;
 import static utility.Utility.*;
@@ -58,7 +59,7 @@ public class PatientDevHandler implements ApiController.IOrderHandler {
     }
 
     @Override
-    public void orderStatus(OrderStatus status, double filled, double remaining, double avgFillPrice, int permId,
+    public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
     }

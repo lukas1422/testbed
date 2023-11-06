@@ -2,6 +2,7 @@ package handler;
 
 import api.ChinaPosition;
 import client.Contract;
+import client.Decimal;
 import controller.ApiController;
 
 import static utility.Utility.ibContractToSymbol;
@@ -9,9 +10,9 @@ import static utility.Utility.ibContractToSymbol;
 public class IBPositionHandler implements ApiController.IPositionHandler {
 
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symbol = ibContractToSymbol(contract);
-        ChinaPosition.currentPositionMap.put(symbol, (int) position);
+        ChinaPosition.currentPositionMap.put(symbol, position);
 
 
 

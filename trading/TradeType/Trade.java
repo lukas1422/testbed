@@ -1,6 +1,6 @@
 package TradeType;
 
-import api.ChinaStock;
+import Trader.AllData;
 import utility.Utility;
 
 import static java.lang.Math.abs;
@@ -50,11 +50,11 @@ public abstract class Trade {
     public abstract double getCostBasisWithFeesCustomBrokerage(String name, double rate);
 
     double getMtmPnl(String name) {
-        if (ChinaStock.priceMap.containsKey(name)) {
+        if (AllData.priceMap.containsKey(name)) {
             double brokerage = Math.max(5, Math.round(price * abs(size) * 2 / 100) / 100d);
             double guohu = (name.startsWith("sz")) ? 0.0 : Math.round(price * abs(size) * 0.2 / 100d) / 100d;
             double stamp = (size < 0 ? 1 : 0) * Math.round((price * abs(size)) * 0.1) / 100d;
-            return (-1d * size * price) - brokerage - guohu - stamp + (size * ChinaStock.priceMap.getOrDefault(name, 0.0));
+            return (-1d * size * price) - brokerage - guohu - stamp + (size * AllData.priceMap.getOrDefault(name, 0.0));
         } else {
             return 0.0;
         }

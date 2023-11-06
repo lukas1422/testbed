@@ -144,6 +144,18 @@ public class TradingUtility {
         return o;
     }
 
+    public static Order placeOfferLimitTIF(double p, double quantity, Types.TimeInForce tif) {
+        if (quantity <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
+
+        Order o = new Order();
+        o.action(Types.Action.SELL);
+        o.lmtPrice(p);
+        o.orderType(OrderType.LMT);
+        o.totalQuantity(Decimal.get(quantity));
+        o.tif(tif);
+        o.outsideRth(true);
+        return o;
+    }
     static Order placeShortSellLimitTIF(double p, Decimal quantity, Types.TimeInForce tif) {
         if (quantity.longValue() <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
         //System.out.println(" place short sell " + p);
@@ -164,6 +176,18 @@ public class TradingUtility {
         o.lmtPrice(p);
         o.orderType(OrderType.LMT);
         o.totalQuantity(quantity);
+        o.outsideRth(true);
+        o.tif(tif);
+        return o;
+    }
+
+    public static Order placeBidLimitTIF(double p, double quantity, Types.TimeInForce tif) {
+        if (quantity<= 0) throw new IllegalStateException(" cannot have 0 quantity ");
+        Order o = new Order();
+        o.action(Types.Action.BUY);
+        o.lmtPrice(p);
+        o.orderType(OrderType.LMT);
+        o.totalQuantity(Decimal.get(quantity));
         o.outsideRth(true);
         o.tif(tif);
         return o;

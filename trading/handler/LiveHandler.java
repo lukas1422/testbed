@@ -1,7 +1,7 @@
 package handler;
 
-import api.ChinaData;
-import api.ChinaStock;
+import Trader.AllData;
+//import api.ChinaStock;
 import auxiliary.SimpleBar;
 import client.Contract;
 import client.TickType;
@@ -24,7 +24,7 @@ public interface LiveHandler extends GeneralHandler {
         public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
             String symbol = ibContractToSymbol(ct);
             if (tt == TickType.LAST) {
-                ChinaStock.priceMap.put(symbol, price);
+                AllData.priceMap.put(symbol, price);
             } else if (tt == TickType.CLOSE) {
                 ChinaStock.closeMap.put(symbol, price);
             } else if (tt == TickType.OPEN) {
@@ -48,16 +48,16 @@ public interface LiveHandler extends GeneralHandler {
             String symbol = ibContractToSymbol(ct);
             LocalTime lt = t.toLocalTime().truncatedTo(ChronoUnit.MINUTES);
             if (tt == TickType.LAST) {
-                ChinaStock.priceMap.put(symbol, price);
-                if (ChinaData.priceMapBar.get(symbol).containsKey(lt)) {
-                    ChinaData.priceMapBar.get(symbol).get(lt).add(price);
+                AllData.priceMap.put(symbol, price);
+                if (AllData.priceMapBar.get(symbol).containsKey(lt)) {
+                    AllData.priceMapBar.get(symbol).get(lt).add(price);
                 } else {
-                    ChinaData.priceMapBar.get(symbol).put(lt, new SimpleBar(price));
+                    AllData.priceMapBar.get(symbol).put(lt, new SimpleBar(price));
                 }
             } else if (tt == TickType.CLOSE) {
                 ChinaStock.closeMap.put(symbol, price);
-                if (ChinaStock.priceMap.getOrDefault(symbol, 0.0) == 0.0) {
-                    ChinaStock.priceMap.put(symbol, price);
+                if (AllData.priceMap.getOrDefault(symbol, 0.0) == 0.0) {
+                    AllData.priceMap.put(symbol, price);
                 }
             } else if (tt == TickType.OPEN) {
                 ChinaStock.openMap.put(symbol, price);

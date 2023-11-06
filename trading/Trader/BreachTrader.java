@@ -1,4 +1,4 @@
-package DevTrader;
+package Trader;
 
 import AutoTraderOld.XuTraderHelper;
 import api.OrderAugmented;
@@ -7,6 +7,7 @@ import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
 import enums.Direction;
+import enums.FXCurrency;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.TradingUtility;
@@ -62,7 +63,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     private static final double PTF_NAV = 900000;
     private static final double MAX_DELTA_PER_TRADE = 500000;
 
-    public static Map<Currency, Double> fx = new HashMap<>();
+    public static Map<FXCurrency, Double> fx = new HashMap<>();
     private static Map<String, Double> multi = new HashMap<>();
 
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>>
@@ -71,10 +72,10 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>>
             liveData = new ConcurrentSkipListMap<>();
 
-    private volatile static Map<Contract, Double> contractPosMap =
+    private volatile static Map<Contract, Decimal> contractPosMap =
             new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
-    private volatile static Map<String, Double> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
 
     private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
@@ -104,7 +105,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 new FileInputStream(TradingConstants.GLOBALPATH + "fx.txt")))) {
             while ((line = reader1.readLine()) != null) {
                 List<String> al1 = Arrays.asList(line.split("\t"));
-                fx.put(Currency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
+                fx.put(FXCurrency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
             }
         } catch (IOException x) {
             x.printStackTrace();
@@ -138,15 +139,15 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     }
 
     private static void registerContract(Contract ct) {
-        contractPosMap.put(ct, 0.0);
-        symbolPosMap.put(ibContractToSymbol(ct), 0.0);
+        contractPosMap.put(ct, Decimal.ZERO);
+        symbolPosMap.put(ibContractToSymbol(ct), Decimal.ZERO);
         String symbol = ibContractToSymbol(ct);
         if (!liveData.containsKey(symbol)) {
             liveData.put(symbol, new ConcurrentSkipListMap<>());
         }
     }
 
-    private static void registerContractPosition(Contract ct, double pos) {
+    private static void registerContractPosition(Contract ct, Decimal pos) {
         contractPosMap.put(ct, pos);
         symbolPosMap.put(ibContractToSymbol(ct), pos);
         String symbol = ibContractToSymbol(ct);
@@ -181,7 +182,8 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
         try {
             l.await();
-            ap.setConnected();
+            connectionStatus = true;
+            //ap.setConnected();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -212,20 +214,20 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
         }
     }
 
-    static double getLivePos(String symb) {
+    static Decimal getLivePos(String symb) {
         if (symbolPosMap.containsKey(symb)) {
             return symbolPosMap.get(symb);
         }
         outputToSpecial(str(LocalTime.now(), " get live pos from breach dev not found ", symb));
-        return 0.0;
+        return Decimal.ZERO;
     }
 
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symbol = ibContractToSymbol(contract);
         if (!contract.symbol().equals("USD") &&
                 !symbol.equalsIgnoreCase("SGXA50PR") &&
-                (position != 0 || symbolPosMap.getOrDefault(symbol, 0.0) != 0.0)) {
+                (!position.isZero() || !symbolPosMap.getOrDefault(symbol, Decimal.ZERO).isZero())) {
             pr("non-0 position ", symbol, position);
             registerContractPosition(contract, position);
         }
@@ -346,11 +348,11 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static void halfYinearTrader(Contract ct, double price, LocalDateTime t, double halfYOpen) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         double posToAdd = 100;
 
-        if (!added && pos != 0.0 && price > halfYOpen) {
+        if (!added && !pos.isZero() && price > halfYOpen) {
 
 
         }
@@ -366,12 +368,12 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
      */
     private static void customGOOGAdder(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         double desiredPos = Math.max(100, (int) (Math.ceil(PTF_NAV / 4.0 / price / 100.0)) * 100);
-        double posToAdd = desiredPos - pos;
+        Decimal posToAdd = Decimal.get(desiredPos).add(pos.negate());
 
-        if (!added && posToAdd >= 100 && totalDelta < PTF_NAV) {
+        if (!added && posToAdd.longValue() >= 100 && totalDelta < PTF_NAV) {
             addedMap.put(symbol, new AtomicBoolean(true));
             int id = devTradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
@@ -391,15 +393,15 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static void halfYearAdder(Contract ct, double price, LocalDateTime t, double halfYearOpen) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
 
-        double defaultS = getDefaultSize(ct, price);
+        Decimal defaultS = Decimal.get(getDefaultSize(ct, price));
         double prevClose = getLastPriceFromYtd(ct);
 
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (!added && !liquidated && pos == 0.0 && prevClose != 0.0) {
+        if (!added && !liquidated && pos.isZero() && prevClose != 0.0) {
             if (price > halfYearOpen && totalDelta < PTF_NAV && ((price / halfYearOpen - 1) < MAX_ENTRY_DEV)) {
                 addedMap.put(symbol, new AtomicBoolean(true));
                 int id = devTradeID.incrementAndGet();
@@ -413,8 +415,8 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
                     outputToSymbolFile(symbol, str("********", t.format(f1)), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
-                            devOrderMap.get(id), "yOpen:" + halfYearOpen, "prevClose", prevClose, "p/b/a", price,
-                            getBid(symbol), getAsk(symbol), "devFromMaxOpen", r10000(price / halfYearOpen - 1))
+                                    devOrderMap.get(id), "yOpen:" + halfYearOpen, "prevClose", prevClose, "p/b/a", price,
+                                    getBid(symbol), getAsk(symbol), "devFromMaxOpen", r10000(price / halfYearOpen - 1))
                             , devOutput);
                 }
             }
@@ -432,11 +434,11 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static void customBRKCutter(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (symbol.equalsIgnoreCase("BRK B") && !liquidated && pos != 0.0) {
+        if (symbol.equalsIgnoreCase("BRK B") && !liquidated && !pos.isZero()) {
             checkIfAdderPending(symbol);
             liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = devTradeID.incrementAndGet();
@@ -460,13 +462,13 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
      */
     private static void indexETFAdder(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 
         if (!added && totalDelta < PTF_NAV) {
             double deltaToAdd = PTF_NAV - totalDelta;
-            double sharesToBuy = Math.floor(deltaToAdd / 2 / price / 100.0) * 100.0;
-            if (sharesToBuy >= 200 && totalDelta != 0.0) {
+            Decimal sharesToBuy = Decimal.get(Math.floor(deltaToAdd / 2 / price / 100.0) * 100.0);
+            if (sharesToBuy.longValue() >= 200 && totalDelta != 0.0) {
                 addedMap.put(symbol, new AtomicBoolean(true));
                 int id = devTradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
@@ -485,7 +487,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static void adjustDeltaWithETF(Contract ct, double price, LocalDateTime t, double yStart) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 
@@ -499,7 +501,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     int id = devTradeID.incrementAndGet();
                     double offerPrice = r(Math.max(price, askMap.getOrDefault(symbol, price)));
                     offerPrice = roundToMinVariation(symbol, Direction.Short, offerPrice);
-                    Order o = placeOfferLimitTIF(offerPrice, Math.min(pos, sharesToSell), DAY);
+                    Order o = placeOfferLimitTIF(offerPrice, Decimal.get(Math.min(pos.longValue(), sharesToSell)), DAY);
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_CUTTER));
                     placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
                     outputToSymbolFile(symbol, str("********", t), devOutput);
@@ -508,8 +510,8 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 }
             } else if (totalDelta < PTF_NAV && price > yStart) {
                 double deltaToAdd = PTF_NAV - totalDelta;
-                double sharesToBuy = Math.floor(deltaToAdd / 2.0 / price / 100.0) * 100.0;
-                if (sharesToBuy >= 200.0) {
+                Decimal sharesToBuy = Decimal.get(Math.floor(deltaToAdd / 2.0 / price / 100.0) * 100.0);
+                if (sharesToBuy.longValue() >= 200.0) {
                     addedMap.put(symbol, new AtomicBoolean(true));
                     int id = devTradeID.incrementAndGet();
                     double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
@@ -529,18 +531,18 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static void halfYearCutter(Contract ct, double price, LocalDateTime t, double halfYearMax) {
         String symbol = ibContractToSymbol(ct);
-        double pos = symbolPosMap.get(symbol);
+        Decimal pos = symbolPosMap.get(symbol);
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (!liquidated && pos != 0.0) {
-            if (pos < 0.0) {
+        if (!liquidated && !pos.isZero()) {
+            if (pos.longValue() < 0.0) {
                 checkIfAdderPending(symbol);
                 liquidatedMap.put(symbol, new AtomicBoolean(true));
                 int id = devTradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
                 bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
-                Order o = placeBidLimitTIF(bidPrice, Math.abs(pos), DAY);
+                Order o = placeBidLimitTIF(bidPrice, pos, DAY);
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, BREACH_CUTTER));
                 placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
                 outputToSymbolFile(symbol, str("********", t), devOutput);
@@ -548,7 +550,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                         "added?" + added, devOrderMap.get(id), "pos", pos, "half Year Max:" + halfYearMax,
                         "price", price), devOutput);
 
-            } else if (pos > 0.0 && ((price / halfYearMax - 1) < MAX_DRAWDOWN)) {
+            } else if (pos.longValue() > 0.0 && ((price / halfYearMax - 1) < MAX_DRAWDOWN)) {
                 checkIfAdderPending(symbol);
                 liquidatedMap.put(symbol, new AtomicBoolean(true));
                 int id = devTradeID.incrementAndGet();
@@ -582,14 +584,15 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 .forEach(e -> {
                     outputToSymbolFile(symbol, str("Cancel submitted before cutting"
                             , e.getValue()), devOutput);
-                    apDev.cancelOrder(e.getValue().getOrder().orderId());
+                    apDev.cancelOrder(e.getValue().getOrder().orderId(),"",
+                            new BasicOrderCancelHandler(e.getValue().getOrder().orderId()));
                 });
     }
 
     private static boolean checkDeltaImpact(Contract ct, Order o) {
-        double totalQ = o.totalQuantity();
+        double totalQ = o.totalQuantity().longValue();
         double lmtPrice = o.lmtPrice();
-        double xxxUSD = fx.getOrDefault(Currency.get(ct.currency()), 1.0);
+        double xxxUSD = fx.getOrDefault(FXCurrency.get(ct.currency()), 1.0);
         String symbol = ibContractToSymbol(ct);
 
         double impact = getDelta(ct, lmtPrice, totalQ, xxxUSD);
@@ -718,7 +721,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                                 "qstart", qStart, Math.round(10000d * (price / qStart - 1)) / 100d + "%",
                                 "mStart", mStart, Math.round(10000d * (price / mStart - 1)) / 100d + "%",
                                 "dStart", dStart, Math.round(10000d * (price / dStart - 1)) / 100d + "%",
-                                "pos", symbolPosMap.getOrDefault(HEDGER_INDEX, 0.0));
+                                "pos", symbolPosMap.getOrDefault(HEDGER_INDEX, Decimal.ZERO));
                     } else {
                         if (usStockOpen(ct, t) && ct.secType() == Types.SecType.STK) {
                             if (symbol.equalsIgnoreCase("QQQ") || symbol.equalsIgnoreCase("SPY")) {
@@ -752,7 +755,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     private static double getLastPriceFromYtd(Contract ct) {
         String symbol = ibContractToSymbol(ct);
-        if (ytdDayData.containsKey(symbol) && ytdDayData.get(symbol).size() > 0) {
+        if (ytdDayData.containsKey(symbol) && !ytdDayData.get(symbol).isEmpty()) {
             return ytdDayData.get(symbol).lastEntry().getValue().getClose();
         }
         return 0.0;
@@ -775,23 +778,23 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
         es.scheduleAtFixedRate(() -> {
             totalDelta = contractPosMap.entrySet().stream()
-                    .filter(e -> e.getValue() != 0.0)
+                    .filter(e -> e.getValue().longValue() != 0.0)
                     .mapToDouble(e -> getDelta(e.getKey()
-                            , getLastPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0))).sum();
+                            , getLastPriceFromYtd(e.getKey()), e.getValue().longValue(),
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
             totalAbsDelta = contractPosMap.entrySet().stream()
-                    .filter(e -> e.getValue() != 0.0)
-                    .mapToDouble(e -> Math.abs(getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0)))).sum();
+                    .filter(e -> e.getValue().longValue() != 0.0)
+                    .mapToDouble(e -> Math.abs(getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue().longValue(),
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0)))).sum();
             longDelta = contractPosMap.entrySet().stream()
-                    .filter(e -> e.getValue() > 0.0)
-                    .mapToDouble(e -> getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0))).sum();
+                    .filter(e -> e.getValue().longValue() > 0.0)
+                    .mapToDouble(e -> getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue().longValue(),
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
 
             shortDelta = contractPosMap.entrySet().stream()
-                    .filter(e -> e.getValue() < 0.0)
-                    .mapToDouble(e -> getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0))).sum();
+                    .filter(e -> e.getValue().longValue() < 0.0)
+                    .mapToDouble(e -> getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue().longValue(),
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
 
             pr(LocalDateTime.now().format(f),
                     "||net delta:" + Math.round(totalDelta / 1000d) + "k",

@@ -1,5 +1,6 @@
 package api;
 
+import Trader.AllData;
 import client.Contract;
 import client.Order;
 import client.TagValue;
@@ -57,7 +58,7 @@ public class ControllerCalls {
         pr(" request holdings today ");
         CompletableFuture.runAsync(() -> {
             AtomicInteger i = new AtomicInteger(0);
-            for (String s : ChinaData.priceMapBar.keySet()) {
+            for (String s : AllData.priceMapBar.keySet()) {
                 if (ChinaPosition.openPositionMap.getOrDefault(s, 0) != 0 ||
                         ChinaPosition.tradesMap.containsKey(s) && ChinaPosition.tradesMap.get(s).size() > 0) {
                     pr(" req holding today ", s, " open ", ChinaPosition.openPositionMap.getOrDefault(s, 0),
@@ -133,7 +134,7 @@ public class ControllerCalls {
 
     public static void placeOrModifyOrderCheck(ApiController ap, Contract ct, final Order o,
                                                final ApiController.IOrderHandler handler) {
-        if (o.totalQuantity() == 0.0 || o.lmtPrice() == 0.0) {
+        if (o.totalQuantity().isZero() || o.lmtPrice() == 0.0) {
             outputToAll(str(" quantity/price problem ", ct.symbol(), o.action(),
                     o.lmtPrice(), o.totalQuantity()));
             return;

@@ -2,6 +2,7 @@ package api;
 
 import auxiliary.SimpleBar;
 import client.Contract;
+import client.Decimal;
 import client.TickType;
 import client.Types;
 import controller.AccountSummaryTag;
@@ -41,7 +42,7 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
 
     private static ApiController staticController;
 
-    private volatile static Map<Contract, Double> holdingsMap =
+    private volatile static Map<Contract, Decimal> holdingsMap =
             new TreeMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
     private volatile static Map<Contract, Double> contractPrice =
@@ -537,7 +538,8 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
 
         try {
             l.await();
-            ap.setConnected();
+            connectionStatus = true;
+            //ap.setConnected();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -866,14 +868,14 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
 
     //positions
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
         //String symbol = ibContractToSymbol(contract);
         //holdingsMap.put(symbol, (int) position);
         if (!contract.symbol().equals("USD")) {
             holdingsMap.put(contract, position);
         }
 
-        if (position != 0.0) {
+        if (!position.isZero()) {
             symbolSize.put(ibContractToSymbol(contract), 0);
         }
     }

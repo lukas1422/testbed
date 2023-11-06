@@ -1,6 +1,7 @@
 package handler;
 
 import AutoTraderOld.AutoTraderXU;
+import Trader.AllData;
 import api.*;
 import auxiliary.SimpleBar;
 import client.Contract;
@@ -10,8 +11,8 @@ import enums.FutType;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-import static api.ChinaData.priceMapBar;
-import static api.ChinaData.priceMapBarDetail;
+import static Trader.AllData.priceMapBar;
+import static Trader.AllData.priceMapBarDetail;
 import static api.TradingConstants.FUT_COLLECTION_TIME;
 import static api.TradingConstants.STOCK_COLLECTION_TIME;
 import static java.time.temporal.ChronoUnit.MINUTES;
@@ -48,7 +49,7 @@ public class SGXFutureReceiver implements LiveHandler {
 //                pr("fut close in receiver: ", symbol, " close ", price);
                 break;
             case LAST:
-                ChinaStock.priceMap.put(symbol, price);
+                AllData.priceMap.put(symbol, price);
                 AutoTraderXU.futPriceMap.put(f, price);
                 priceMapBarDetail.get(symbol).put(ldt, price);
 

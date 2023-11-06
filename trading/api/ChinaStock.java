@@ -1,5 +1,6 @@
 package api;
 
+import Trader.AllData;
 import auxiliary.Bench;
 import auxiliary.SimpleBar;
 import auxiliary.Strategy;
@@ -85,9 +86,6 @@ public final class ChinaStock extends JPanel {
     private static volatile int indexRow;
 
     public static volatile Map<String, Double> returnMap = new ConcurrentHashMap<>();
-    public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
-    public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
-    public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> maxMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> minMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Long> sizeMap = new ConcurrentHashMap<>();
@@ -122,11 +120,11 @@ public final class ChinaStock extends JPanel {
     private static volatile Map<String, Boolean> interestedName = new HashMap<>();
     static volatile Set<JDialog> dialogTracker = new HashSet<>();
 
-    public static final Predicate<String> NORMAL_STOCK = name -> priceMapBar.containsKey(name) &&
-            !priceMapBar.get(name).isEmpty() && priceMapBar.get(name).size() > 0;
-    private static final BiPredicate<String, LocalTime> FIRST_KEY_BEFORE = (name, lt) -> priceMapBar.get(name).firstKey().isBefore(lt);
-    private static final BiPredicate<String, LocalTime> LAST_KEY_AFTER = (name, lt) -> priceMapBar.get(name).lastKey().isAfter(lt);
-    private static final BiPredicate<String, LocalTime> CONTAINS_TIME = (name, lt) -> priceMapBar.get(name).containsKey(lt);
+    public static final Predicate<String> NORMAL_STOCK = name -> AllData.priceMapBar.containsKey(name) &&
+            !AllData.priceMapBar.get(name).isEmpty() && AllData.priceMapBar.get(name).size() > 0;
+    private static final BiPredicate<String, LocalTime> FIRST_KEY_BEFORE = (name, lt) -> AllData.priceMapBar.get(name).firstKey().isBefore(lt);
+    private static final BiPredicate<String, LocalTime> LAST_KEY_AFTER = (name, lt) -> AllData.priceMapBar.get(name).lastKey().isAfter(lt);
+    private static final BiPredicate<String, LocalTime> CONTAINS_TIME = (name, lt) -> AllData.priceMapBar.get(name).containsKey(lt);
 
     public static final BiFunction1<? super Entry<LocalTime, ?>, LocalTime> ENTRY_BETWEEN = (e, lt1, lt2) -> (e.getKey().isAfter(lt1) && e.getKey().isBefore(lt2));
     public static final BiFunction2<LocalTime> ENTRY_BETWEEN2 = (lt1, lt2) -> (e -> e.getKey().isAfter(lt1) && e.getKey().isBefore(lt2));
@@ -224,30 +222,30 @@ public final class ChinaStock extends JPanel {
 
     static ScheduledExecutorService ftes = Executors.newScheduledThreadPool(10);
 
-    private static final ToDoubleFunction<String> DEFAULTOPEN = (String name) -> Optional.ofNullable(priceMapBar.get(name).ceilingEntry(Utility.AMOPENT))
-            .map(Entry::getValue).map(SimpleBar::getOpen).orElse(openMap.getOrDefault(name, 0.0));
+    private static final ToDoubleFunction<String> DEFAULTOPEN = (String name) -> Optional.ofNullable(AllData.priceMapBar.get(name).ceilingEntry(Utility.AMOPENT))
+            .map(Entry::getValue).map(SimpleBar::getOpen).orElse(AllData.openMap.getOrDefault(name, 0.0));
 
-    static final ToDoubleBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMAX = (name, p) -> priceMapBar
+    static final ToDoubleBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMAX = (name, p) -> AllData.priceMapBar
             .get(name).entrySet().stream().filter(p).max(Utility.BAR_HIGH).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
 
-    static final ToDoubleBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMIN = (name, p) -> priceMapBar.
+    static final ToDoubleBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMIN = (name, p) -> AllData.priceMapBar.
             get(name).entrySet().stream().filter(p).min(Utility.BAR_LOW).map(Entry::getValue).map(SimpleBar::getLow).orElse(0.0);
 
     private static final ToDoubleBiFunction<String, LocalTime> GETCLOSE = (name, lt) ->
-            Optional.ofNullable(priceMapBar.get(name)).map(e -> e.get(lt)).map(SimpleBar::getClose).orElse(0.0);
+            Optional.ofNullable(AllData.priceMapBar.get(name)).map(e -> e.get(lt)).map(SimpleBar::getClose).orElse(0.0);
 
-    static BiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>, LocalTime> GETMAXTIME = (name, p) -> priceMapBar.
+    static BiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>, LocalTime> GETMAXTIME = (name, p) -> AllData.priceMapBar.
             get(name).entrySet().stream().filter(p).max(Utility.BAR_HIGH).map(Entry::getKey).orElse(Utility.TIMEMAX);
 
-    static BiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>, LocalTime> GETMINTIME = (name, p) -> priceMapBar.
+    static BiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>, LocalTime> GETMINTIME = (name, p) -> AllData.priceMapBar.
             get(name).entrySet().stream().filter(p).min(Utility.BAR_LOW).map(Entry::getKey).orElse(Utility.TIMEMAX);
 
     static ToIntBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMAXTIMETOINT = (name, p) ->
-            convertTimeToInt(priceMapBar.get(name).entrySet().stream()
+            convertTimeToInt(AllData.priceMapBar.get(name).entrySet().stream()
                     .filter(p).max(Utility.BAR_HIGH).map(Entry::getKey).orElse(Utility.TIMEMAX));
 
     static ToIntBiFunction<String, Predicate<? super Entry<LocalTime, SimpleBar>>> GETMINTIMETOINT = (name, p) ->
-            convertTimeToInt(priceMapBar.get(name).entrySet().stream()
+            convertTimeToInt(AllData.priceMapBar.get(name).entrySet().stream()
                     .filter(p).min(Utility.BAR_LOW).map(Entry::getKey).orElse(Utility.TIMEMAX));
 
     public ChinaStock() {
@@ -408,14 +406,14 @@ public final class ChinaStock extends JPanel {
                                 selectedNameStock = symbolNames.get(modelRow);
                                 selectedBench = benchSimpleMap.getOrDefault(selectedNameStock, "");
 
-                                if (priceMapBar.containsKey(selectedNameStock)) {
-                                    if (priceMapBar.get(selectedNameStock).size() > 0) {
+                                if (AllData.priceMapBar.containsKey(selectedNameStock)) {
+                                    if (AllData.priceMapBar.get(selectedNameStock).size() > 0) {
                                         //pr("pmb ", selectedNameStock, priceMapBar.get(selectedNameStock));
                                     }
                                 }
 
-                                if (priceMapBarDetail.containsKey(selectedNameStock)) {
-                                    if (priceMapBarDetail.get(selectedNameStock).size() > 0) {
+                                if (AllData.priceMapBarDetail.containsKey(selectedNameStock)) {
+                                    if (AllData.priceMapBarDetail.get(selectedNameStock).size() > 0) {
 //                                        pr(" pmb detailed ", selectedNameStock,
 //                                                trimTo3DP(priceMapBarDetail.get(selectedNameStock)));
                                     }
@@ -562,11 +560,11 @@ public final class ChinaStock extends JPanel {
         JTextField tf11 = new JTextField("0.02"); // Range
         JTextField tf12 = new JTextField("100"); //Size (in millions RMB)
         JTextField tf13 = new JTextField("0"); //return (in percent)
-        JTextField tf14 = new JTextField("940"); //minT ceiling NOT USED 
+        JTextField tf14 = new JTextField("940"); //minT ceiling NOT USED
         JTextField tf15 = new JTextField("940"); //maxT floor
         JTextField tf16 = new JTextField("40"); //openP NOT USED NOW
         JTextField tf17 = new JTextField("100"); //amCloseP NOT USED NOW
-        JTextField tf18 = new JTextField("0"); //first10Button   
+        JTextField tf18 = new JTextField("0"); //first10Button
         JTextField tf19 = new JTextField("1000"); //minButton, regularity condition
         JTextField tf20 = new JTextField("1000"); //maxButton, regularity condition
         JTextField tf21 = new JTextField("70");
@@ -645,18 +643,18 @@ public final class ChinaStock extends JPanel {
         graphButton.addActionListener(al -> {
             CompletableFuture.runAsync(() -> {
                 try {
-                    graph1.setNavigableMap(priceMapBar.get(symbolNames.get(modelRow)));
+                    graph1.setNavigableMap(AllData.priceMapBar.get(symbolNames.get(modelRow)));
                     graph2.fillInGraph(tf3.getText());
                     graph3.fillInGraph(tf4.getText());
                     graph4.fillInGraph(tf5.getText());
                     graph5.fillInGraph(tf6.getText());
                     graph6.fillInGraph(tf7.getText());
-                    if (selectedNameStock != "" && priceMapBarDetail.containsKey(selectedNameStock)) {
-                        outputPMBDetailedToTxt(priceMapBarDetail.get(selectedNameStock));
+                    if (selectedNameStock != "" && AllData.priceMapBarDetail.containsKey(selectedNameStock)) {
+                        outputPMBDetailedToTxt(AllData.priceMapBarDetail.get(selectedNameStock));
                     }
 
-                    if (selectedNameStock != "" && priceMapBar.containsKey(selectedNameStock)) {
-                        outputPMBToTxt(priceMapBar.get(selectedNameStock));
+                    if (selectedNameStock != "" && AllData.priceMapBar.containsKey(selectedNameStock)) {
+                        outputPMBToTxt(AllData.priceMapBar.get(selectedNameStock));
                     }
 
                 } catch (Exception e) {
@@ -1072,13 +1070,13 @@ public final class ChinaStock extends JPanel {
 //            }
 //        });
 
-//      benchToggle.addActionListener(->{    
-//        if(benchToggle.isSelected()) {    
-//            filters.add(RowFilter.regexFilter(benchSimpleMap.get(selectedNameStock),BENCHCOL));        
-//            benchFilterOn = true;        
+//      benchToggle.addActionListener(->{
+//        if(benchToggle.isSelected()) {
+//            filters.add(RowFilter.regexFilter(benchSimpleMap.get(selectedNameStock),BENCHCOL));
+//            benchFilterOn = true;
 //        }
 //    });
-//  
+//
         jpMiddleBottom.add(barWidthUp);
         jpMiddleBottom.add(barWidthDown);
 //        jpMiddleBottom.add(interestToggle);
@@ -1383,8 +1381,8 @@ public final class ChinaStock extends JPanel {
     }
 
     public static double getCurrentMARatio(String name) {
-        return Utility.noZeroArrayGen(name, ma20Map, priceMap)
-                ? round(100d * (20d / (ma20Map.get(name) / priceMap.get(name) * 19 + 1))) / 100d : 0.0;
+        return Utility.noZeroArrayGen(name, ma20Map, AllData.priceMap)
+                ? round(100d * (20d / (ma20Map.get(name) / AllData.priceMap.get(name) * 19 + 1))) / 100d : 0.0;
     }
 
     public static void compute() {
@@ -1403,27 +1401,27 @@ public final class ChinaStock extends JPanel {
      * @param last
      */
     static void process(String name, LocalTime lastEntryTime, double last) {
-        if (priceMapBar.containsKey(name)) {
-            if (priceMapBar.get(name).containsKey(lastEntryTime)) {
-                priceMapBar.get(name).get(lastEntryTime).add(last);
+        if (AllData.priceMapBar.containsKey(name)) {
+            if (AllData.priceMapBar.get(name).containsKey(lastEntryTime)) {
+                AllData.priceMapBar.get(name).get(lastEntryTime).add(last);
             } else {
-                priceMapBar.get(name).put(lastEntryTime, new SimpleBar(last));
+                AllData.priceMapBar.get(name).put(lastEntryTime, new SimpleBar(last));
             }
         }
 
         if (lastEntryTime.isAfter(Utility.AMOPENT) && lastEntryTime.isBefore(Utility.PMCLOSET)) {
             if (NORMAL_STOCK.test(name) && FIRST_KEY_BEFORE.test(name, Utility.AM935T)
-                    && Utility.noZeroArrayGen(name, maxMap, minMap, openMap) && Utility.NORMAL_MAP.test(sizeRatioMap, name)) {
+                    && Utility.noZeroArrayGen(name, maxMap, minMap, AllData.openMap) && Utility.NORMAL_MAP.test(sizeRatioMap, name)) {
 
                 double amhoY = amHOY.getOrDefault(name, 0.0);
                 //double percentileY = ChinaDataYesterday.percentileY.getOrDefault(name, 0.0);
                 double vrLast = sizeRatioMap.get(name).lastEntry().getValue();
-                double open = openMap.get(name);
+                double open = AllData.openMap.get(name);
                 double sizeLast = sizeTotalMap.get(name).lastEntry().getValue();
-                double previousHigh = ofNullable(priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
-                double previousLow = ofNullable(priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getLow).orElse(0.0);
-                double p1MinAgo = ofNullable(priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
-                double p5MinAgo = ofNullable(priceMapBar.get(name).floorEntry(lastEntryTime.minusMinutes(5))).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
+                double previousHigh = ofNullable(AllData.priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
+                double previousLow = ofNullable(AllData.priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getLow).orElse(0.0);
+                double p1MinAgo = ofNullable(AllData.priceMapBar.get(name).lowerEntry(lastEntryTime)).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
+                double p5MinAgo = ofNullable(AllData.priceMapBar.get(name).floorEntry(lastEntryTime.minusMinutes(5))).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
 
                 double minY = minMapY.getOrDefault(name, 0.0);
 
@@ -1433,7 +1431,7 @@ public final class ChinaStock extends JPanel {
 
                 double rangeP = log(maxMap.get(name) / minMap.get(name));
 
-                int pricePercentile = (int) min(100, round(100d * (priceMap.get(name) - minMap.get(name)) / (maxMap.get(name) - minMap.get(name))));
+                int pricePercentile = (int) min(100, round(100d * (AllData.priceMap.get(name) - minMap.get(name)) / (maxMap.get(name) - minMap.get(name))));
                 int percentileBar = getPercentileBar(name);
 
                 int vrPercentile = getVRPercentile(name);
@@ -1456,13 +1454,13 @@ public final class ChinaStock extends JPanel {
                 percentileVRP3mChgMap.put(name, vrPercentileChg3 * pricePercentileChg3);
                 percentileVRP5mChgMap.put(name, vrPercentileChg5 * pricePercentileChg5);
 
-                double trueRange = (Utility.noZeroArrayGen(name, maxMapY, minMapY)) ? (priceMap.get(name) - minMapY.get(name)) / (maxMapY.get(name) - minMapY.get(name)) : 1.0;
+                double trueRange = (Utility.noZeroArrayGen(name, maxMapY, minMapY)) ? (AllData.priceMap.get(name) - minMapY.get(name)) / (maxMapY.get(name) - minMapY.get(name)) : 1.0;
 
                 int percentileY = (int) min(100, round(100d * ofNullable(ChinaDataYesterday.percentileY.get(name)).orElse(0.0)));
-                double retOPC = log(openMap.get(name) / closeMapY.getOrDefault(name, openMap.get(name)));
-                double amFirst10 = priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / openMap.get(name) - 1;
-                double amFirst5 = priceMapBar.get(name).floorEntry(Utility.AM935T).getValue().getClose() / openMap.get(name) - 1;
-                double amFirst1 = Optional.ofNullable(priceMapBar.get(name).floorEntry(Utility.AMOPENT)).map(Entry::getValue).map(SimpleBar::getBarReturn).orElse(0.0);
+                double retOPC = log(AllData.openMap.get(name) / closeMapY.getOrDefault(name, AllData.openMap.get(name)));
+                double amFirst10 = AllData.priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / AllData.openMap.get(name) - 1;
+                double amFirst5 = AllData.priceMapBar.get(name).floorEntry(Utility.AM935T).getValue().getClose() / AllData.openMap.get(name) - 1;
+                double amFirst1 = Optional.ofNullable(AllData.priceMapBar.get(name).floorEntry(Utility.AMOPENT)).map(Entry::getValue).map(SimpleBar::getBarReturn).orElse(0.0);
 
                 int ammint1 = GETMINTIMETOINT.applyAsInt(name, Utility.AM_PRED);
                 int ammaxt1 = GETMAXTIMETOINT.applyAsInt(name, Utility.AM_PRED);
@@ -1521,7 +1519,7 @@ public final class ChinaStock extends JPanel {
                             interestedName.put(name, true);
                         }
                     }
-                    //AM pricebreak 
+                    //AM pricebreak
 
                     if (lastEntryTime.isAfter(Utility.AM950T) && lastBarHighest(name) && trueRange < 0.5 && amFirst10 > 100 & ytdWeak(name) && sizeLast > sizeThresh) {
                         stratAMMap.put(name, "AM max ");
@@ -1540,20 +1538,20 @@ public final class ChinaStock extends JPanel {
 
                         createDialogJD(name, detailedMessage, lastEntryTime);
                     }
-                    //pm    
-                } else if (lastEntryTime.isAfter(Utility.PMOPENT) && priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT)) {
+                    //pm
+                } else if (lastEntryTime.isAfter(Utility.PMOPENT) && AllData.priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT)) {
 
-                    double amReturn = log(priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / open);
+                    double amReturn = log(AllData.priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / open);
                     double amho = log(GETMAX.applyAsDouble(name, Utility.AM_PRED) / open);
                     double amRange = getAMRange(name);
-                    double pmMax = priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).max(Utility.BAR_HIGH).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
+                    double pmMax = AllData.priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).max(Utility.BAR_HIGH).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
 
                     LocalTime pmMaxT = GETMAXTIME.apply(name, Utility.PM_PRED);
                     int pmMaxT1 = GETMAXTIMETOINT.applyAsInt(name, Utility.PM_PRED);
-                    int pmMaxFirst30T1 = convertTimeToInt(priceMapBar.get(name).entrySet().parallelStream()
+                    int pmMaxFirst30T1 = convertTimeToInt(AllData.priceMapBar.get(name).entrySet().parallelStream()
                             .filter(Utility.PM_PRED).max(Utility.BAR_HIGH).map(Entry::getKey).orElse(Utility.TIMEMAX));
 
-                    double pmReturn = log(last / priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen());
+                    double pmReturn = log(last / AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen());
 
                     double dayMax = GETMAX.applyAsDouble(name, Utility.IS_OPEN_PRED);
 
@@ -1575,7 +1573,7 @@ public final class ChinaStock extends JPanel {
                         }
 
                         if (Utility.noZeroArrayGen(name, maxMapY, minMapY)) {
-                            if (log(last / openMap.get(name)) / log(maxMapY.get(name) / minMapY.get(name)) < -2d) {
+                            if (log(last / AllData.openMap.get(name)) / log(maxMapY.get(name) / minMapY.get(name)) < -2d) {
                                 stratPMMap.put(name, "BIG DROP");
                                 stratTimeMap.put(name, LocalTime.now());
                                 strategyTotalMap.get(name).put(lastEntryTime, new Strategy(lastEntryTime, last, StratType.BIGDROP));
@@ -1584,8 +1582,8 @@ public final class ChinaStock extends JPanel {
                         }
                     }
 
-                    if (priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT) && sizeRatioMap.get(name).lastKey().isAfter(Utility.PMOPENT)) {
-                        double pmOpenPrice = priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen();
+                    if (AllData.priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT) && sizeRatioMap.get(name).lastKey().isAfter(Utility.PMOPENT)) {
+                        double pmOpenPrice = AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen();
                         double pmOpenVR = sizeRatioMap.get(name).ceilingEntry(Utility.PMOPENT).getValue();
                         int pricePercentilePM = getPricePercentilePM(name);
                         int vrPercentilePM = ChinaSizeRatio.getVRPercentilePM(name);
@@ -1728,8 +1726,8 @@ public final class ChinaStock extends JPanel {
                 }
 
                 //catch price burst
-                SimpleBar lastBar = priceMapBar.get(name).lastEntry().getValue();
-                SimpleBar secLastBar = priceMapBar.get(name).lowerEntry(lastEntryTime).getValue();
+                SimpleBar lastBar = AllData.priceMapBar.get(name).lastEntry().getValue();
+                SimpleBar secLastBar = AllData.priceMapBar.get(name).lowerEntry(lastEntryTime).getValue();
 
                 double lastMinReturn = lastBar.getBarReturn();
                 int lastOP = lastBar.getOpenPerc();
@@ -1772,18 +1770,18 @@ public final class ChinaStock extends JPanel {
 
     private static double getPriceToAvg(String name) {
         if (NORMAL_STOCK.test(name)) {
-            LocalTime lastKey = priceMapBar.get(name).lastKey();
-            double avg = priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().mapToDouble(e -> e.getValue().getClose()).average().orElse(0.0);
-            return priceMapBar.get(name).lastEntry().getValue().getClose() / avg;
+            LocalTime lastKey = AllData.priceMapBar.get(name).lastKey();
+            double avg = AllData.priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().mapToDouble(e -> e.getValue().getClose()).average().orElse(0.0);
+            return AllData.priceMapBar.get(name).lastEntry().getValue().getClose() / avg;
         }
         return 0.0;
     }
 
     private static int getPricePercentileChgGen(String name, long offset) {
         if (NORMAL_STOCK.test(name)) {
-            LocalTime lastKey = priceMapBar.get(name).lastKey();
-            double lastValue = priceMapBar.get(name).lastEntry().getValue().getClose();
-            double lastValue1m = ofNullable(priceMapBar.get(name).floorEntry(lastKey.minusMinutes(offset))).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
+            LocalTime lastKey = AllData.priceMapBar.get(name).lastKey();
+            double lastValue = AllData.priceMapBar.get(name).lastEntry().getValue().getClose();
+            double lastValue1m = ofNullable(AllData.priceMapBar.get(name).floorEntry(lastKey.minusMinutes(offset))).map(Entry::getValue).map(SimpleBar::getClose).orElse(0.0);
             double max = maxMap.get(name);
             double min = minMap.get(name);
             return (lastValue > lastValue1m) ? (int) round(100d * (lastValue - lastValue1m) / (max - min)) : 0;
@@ -1793,43 +1791,43 @@ public final class ChinaStock extends JPanel {
 
     private static int getPricePercentilePM(String name) {
         if (NORMAL_STOCK.test(name) && LAST_KEY_AFTER.test(name, Utility.PMOPENT)) {
-            double lastValue = priceMapBar.get(name).lastEntry().getValue().getClose();
-            double pmOpen = priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen();
-            double pmMax = priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).max(Utility.BAR_HIGH).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
-            double pmMin = priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).min(Utility.BAR_LOW).map(Entry::getValue).map(SimpleBar::getLow).orElse(0.0);
+            double lastValue = AllData.priceMapBar.get(name).lastEntry().getValue().getClose();
+            double pmOpen = AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen();
+            double pmMax = AllData.priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).max(Utility.BAR_HIGH).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0);
+            double pmMin = AllData.priceMapBar.get(name).entrySet().parallelStream().filter(Utility.PM_PRED).min(Utility.BAR_LOW).map(Entry::getValue).map(SimpleBar::getLow).orElse(0.0);
             return (int) round(100d * (lastValue - pmOpen) / (pmMax - pmMin));
         }
         return 0;
     }
 
     static double getPrice(String name) {
-        return round(100d * ofNullable(priceMap.get(name)).orElse(0.0)) / 100d;
+        return round(100d * ofNullable(AllData.priceMap.get(name)).orElse(0.0)) / 100d;
     }
 
     static int getPercentile(String name) {
-        return Utility.noZeroArrayGen(name, priceMap, maxMap, minMap) ?
-                (int) min(100, round(100d * (priceMap.get(name) - minMap.get(name)) / (maxMap.get(name) - minMap.get(name)))) : 0;
+        return Utility.noZeroArrayGen(name, AllData.priceMap, maxMap, minMap) ?
+                (int) min(100, round(100d * (AllData.priceMap.get(name) - minMap.get(name)) / (maxMap.get(name) - minMap.get(name)))) : 0;
     }
 
     private static int getPercentileBar(String name) {
         if (NORMAL_STOCK.test(name)) {
             double max = GETMAX.applyAsDouble(name, Utility.IS_OPEN_PRED);
             double min = GETMIN.applyAsDouble(name, Utility.IS_OPEN_PRED);
-            double last = priceMapBar.get(name).lastEntry().getValue().getClose();
+            double last = AllData.priceMapBar.get(name).lastEntry().getValue().getClose();
             return (int) round(100d * (last - min) / (max - min));
         }
         return 0;
     }
 
     private static double getAMFirst10(String name) {
-        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(openMap, name) && priceMapBar.get(name).containsKey(Utility.AMOPENT))
-                ? round(1000d * log(priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / openMap.get(name))) / 10d : 0.0;
+        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(AllData.openMap, name) && AllData.priceMapBar.get(name).containsKey(Utility.AMOPENT))
+                ? round(1000d * log(AllData.priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / AllData.openMap.get(name))) / 10d : 0.0;
     }
 
     private static double getPMFirst10(String name) {
-        return (NORMAL_STOCK.test(name) && priceMapBar.get(name).containsKey(Utility.PM1310T))
-                ? round(1000d * log(priceMapBar.get(name).ceilingEntry(Utility.PM1310T).getValue().getClose()
-                / (priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen()))) / 10d : 0.0;
+        return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).containsKey(Utility.PM1310T))
+                ? round(1000d * log(AllData.priceMapBar.get(name).ceilingEntry(Utility.PM1310T).getValue().getClose()
+                / (AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen()))) / 10d : 0.0;
     }
 
     private static double getAMMin(String name) {
@@ -1867,12 +1865,12 @@ public final class ChinaStock extends JPanel {
     }
 
     private static double getFirst1Ret(String name) {
-        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(openMap, name) && CONTAINS_TIME.test(name, Utility.AMOPENT))
-                ? round(1000d * (GETCLOSE.applyAsDouble(name, Utility.AMOPENT) / openMap.get(name) - 1)) / 10d : 0.0;
+        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(AllData.openMap, name) && CONTAINS_TIME.test(name, Utility.AMOPENT))
+                ? round(1000d * (GETCLOSE.applyAsDouble(name, Utility.AMOPENT) / AllData.openMap.get(name) - 1)) / 10d : 0.0;
     }
 
     private static double getFirst10Ret(String name) {
-        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(openMap, name) && CONTAINS_TIME.test(name, Utility.AMOPENT))
+        return (NORMAL_STOCK.test(name) && Utility.NO_ZERO.test(AllData.openMap, name) && CONTAINS_TIME.test(name, Utility.AMOPENT))
                 ? round(1000d * (GETCLOSE.applyAsDouble(name, Utility.AM940T) / DEFAULTOPEN.applyAsDouble(name) - 1)) / 10d : 0.0;
     }
 
@@ -1886,7 +1884,7 @@ public final class ChinaStock extends JPanel {
     }
 
     static double getPMFirst10MaxMinTimeDiff(String name) {
-        if (NORMAL_STOCK.test(name) && priceMapBar.get(name).containsKey(Utility.PMOPENT)) {
+        if (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).containsKey(Utility.PMOPENT)) {
             LocalTime pmfirst10MaxT = GETMAXTIME.apply(name, Utility.ENTRY_BTWN_GEN.getPred(Utility.PMOPENT, true, Utility.PM1310T, true));
             LocalTime pmfirst10MinT = GETMINTIME.apply(name, Utility.ENTRY_BTWN_GEN.getPred(Utility.PMOPENT, true, Utility.PM1310T, true));
             return ChronoUnit.MINUTES.between(pmfirst10MinT, pmfirst10MaxT);
@@ -1908,16 +1906,16 @@ public final class ChinaStock extends JPanel {
         if (NORMAL_STOCK.test(name) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET)) {
             double ammax940 = GETMAX.applyAsDouble(name, Utility.ENTRY_BTWN_GEN.getPred(Utility.AMOPENT, true, Utility.AM940T, true));
 
-            return priceMapBar.get(name).entrySet().stream().filter(e -> e.getKey().isAfter(Utility.AM940T) && e.getValue().getHigh() > ammax940).findFirst()
+            return AllData.priceMapBar.get(name).entrySet().stream().filter(e -> e.getKey().isAfter(Utility.AM940T) && e.getValue().getHigh() > ammax940).findFirst()
                     .map(Entry::getKey).orElse(Utility.TIMEMAX);
         }
         return Utility.TIMEMAX;
     }
 
     private static LocalTime getPMFirstBreakTime(String name) {
-        if (NORMAL_STOCK.test(name) && priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET)) {
+        if (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET)) {
             double ammax = GETMAX.applyAsDouble(name, Utility.AM_PRED);
-            return priceMapBar.get(name).entrySet().parallelStream().filter(e -> e.getKey().isAfter(Utility.PMOPENT) && e.getValue().getHigh() > ammax).findFirst()
+            return AllData.priceMapBar.get(name).entrySet().parallelStream().filter(e -> e.getKey().isAfter(Utility.PMOPENT) && e.getValue().getHigh() > ammax).findFirst()
                     .map(Entry::getKey).orElse(Utility.TIMEMAX);
         }
         return Utility.PMCLOSET;
@@ -1925,18 +1923,18 @@ public final class ChinaStock extends JPanel {
 
     static void getPeakAttributes(String name) {
 
-        NavigableMap<LocalTime, Double> tm = priceMapBar.get(name).entrySet().parallelStream()
-                .filter(e -> (e.getKey().equals(priceMapBar.get(name).firstKey()))
-                        || (e.getValue().getHigh() > ofNullable(priceMapBar.get(name).lowerEntry(e.getKey())).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0)
-                        && e.getValue().getHigh() >= ofNullable(priceMapBar.get(name).higherEntry(e.getKey())).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0)))
+        NavigableMap<LocalTime, Double> tm = AllData.priceMapBar.get(name).entrySet().parallelStream()
+                .filter(e -> (e.getKey().equals(AllData.priceMapBar.get(name).firstKey()))
+                        || (e.getValue().getHigh() > ofNullable(AllData.priceMapBar.get(name).lowerEntry(e.getKey())).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0)
+                        && e.getValue().getHigh() >= ofNullable(AllData.priceMapBar.get(name).higherEntry(e.getKey())).map(Entry::getValue).map(SimpleBar::getHigh).orElse(0.0)))
                 .collect(Collectors.toMap(Entry::getKey, e -> e.getValue().getHigh(), (a, b) -> a, ConcurrentSkipListMap::new));
 
         if (tm.size() > 2) {
-            LocalTime lastKey = priceMapBar.get(name).lastKey();
+            LocalTime lastKey = AllData.priceMapBar.get(name).lastKey();
             Iterator<Entry<LocalTime, Double>> it = tm.entrySet().iterator();
             double val;
             double maxV = tm.firstEntry().getValue();
-            double maxVPM = ofNullable(priceMapBar.get(name).ceilingEntry(Utility.PMOPENT)).map(Entry::getValue)
+            double maxVPM = ofNullable(AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT)).map(Entry::getValue)
                     .map(SimpleBar::getHigh).orElse(0.0);
             LocalTime t;
             LocalTime tPrevious = ofNullable(tm.firstKey()).orElse(Utility.AMOPENT);
@@ -1996,13 +1994,13 @@ public final class ChinaStock extends JPanel {
     }
 
     private static double getAMReturn(String name) {
-        return (NORMAL_STOCK.test(name) && priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && Utility.NO_ZERO.test(openMap, name))
-                ? log(priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / openMap.get(name)) : 0.0;
+        return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && Utility.NO_ZERO.test(AllData.openMap, name))
+                ? log(AllData.priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / AllData.openMap.get(name)) : 0.0;
     }
 
     private static double getPMReturn(String name) {
-        return (NORMAL_STOCK.test(name) && priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT))
-                ? log(priceMapBar.get(name).lastEntry().getValue().getClose() / priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen()) : 0.0;
+        return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).lastKey().isAfter(Utility.PMOPENT))
+                ? log(AllData.priceMapBar.get(name).lastEntry().getValue().getClose() / AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen()) : 0.0;
     }
 
     private static double getAMRange(String name) {
@@ -2015,29 +2013,29 @@ public final class ChinaStock extends JPanel {
     }
 
     static double getOPC(String name) {
-        return Utility.noZeroArrayGen(name, closeMap, openMap) ? round(1000d * (openMap.get(name) / closeMap.get(name) - 1)) / 10d : 0.0;
+        return Utility.noZeroArrayGen(name, AllData.closeMap, AllData.openMap) ? round(1000d * (AllData.openMap.get(name) / AllData.closeMap.get(name) - 1)) / 10d : 0.0;
     }
 
     private static LocalTime getMA20FirstBreakTime(String name) {
         final double ma = ma20Map.getOrDefault(name, 0.0);
         return (NORMAL_STOCK.test(name) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET) && LAST_KEY_AFTER.test(name, Utility.AMOPENT) && Utility.NO_ZERO.test(ma20Map, name))
-                ? priceMapBar.get(name).entrySet().parallelStream().filter(e1 -> e1.getValue().getHigh() > ma)
+                ? AllData.priceMapBar.get(name).entrySet().parallelStream().filter(e1 -> e1.getValue().getHigh() > ma)
                 .findFirst().map(Entry::getKey).orElse(Utility.TIMEMAX) : Utility.PMCLOSET;
     }
 
     private static LocalTime getMA20FirstFallTime(String name) {
         final double ma = ma20Map.getOrDefault(name, 0d);
         return (NORMAL_STOCK.test(name) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET) && LAST_KEY_AFTER.test(name, Utility.AMOPENT) && Utility.NO_ZERO.test(ma20Map, name))
-                ? priceMapBar.get(name).entrySet().parallelStream().filter(entry1 -> entry1.getValue().getLow() <= ma).findFirst().map(Entry::getKey).orElse(Utility.TIMEMAX) : Utility.PMCLOSET;
+                ? AllData.priceMapBar.get(name).entrySet().parallelStream().filter(entry1 -> entry1.getValue().getLow() <= ma).findFirst().map(Entry::getKey).orElse(Utility.TIMEMAX) : Utility.PMCLOSET;
     }
 
     static double getPriceRangeSD(String name) {
         if (NORMAL_STOCK.test(name)) {
-            double lastRange = priceMapBar.get(name).lastEntry().getValue().getHLRange();
-            LocalTime lastKey = priceMapBar.get(name).lastKey();
-            final double avg = priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().map(Entry::getValue).mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
-            final long count = priceMapBar.get(name).headMap(lastKey, false).size();
-            double sd = Math.sqrt(priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().map(Entry::getValue)
+            double lastRange = AllData.priceMapBar.get(name).lastEntry().getValue().getHLRange();
+            LocalTime lastKey = AllData.priceMapBar.get(name).lastKey();
+            final double avg = AllData.priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().map(Entry::getValue).mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
+            final long count = AllData.priceMapBar.get(name).headMap(lastKey, false).size();
+            double sd = Math.sqrt(AllData.priceMapBar.get(name).headMap(lastKey, false).entrySet().stream().map(Entry::getValue)
                     .mapToDouble(SimpleBar::getHLRange).map(d -> Math.pow(d - avg, 2)).sum() / count);
             return (lastRange - avg) / sd;
         }
@@ -2050,7 +2048,7 @@ public final class ChinaStock extends JPanel {
         LocalTime maxTime = Utility.AMOPENT;
 
         if (NORMAL_STOCK.test(name)) {
-            NavigableMap<LocalTime, SimpleBar> thisMap = priceMapBar.get(name);
+            NavigableMap<LocalTime, SimpleBar> thisMap = AllData.priceMapBar.get(name);
             SimpleBar sb;
             int count = 1;
             Iterator it = thisMap.keySet().iterator();
@@ -2074,7 +2072,7 @@ public final class ChinaStock extends JPanel {
         if (Utility.noZeroArrayGen(name, maxMap, minMap, minMapY)) {
             double max2d = max(maxMap.get(name), maxMapY.get(name));
             double min2d = min(minMap.get(name), minMapY.get(name));
-            return (int) max(0, min(100, round(100d * ((priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
+            return (int) max(0, min(100, round(100d * ((AllData.priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
         }
         return 0;
     }
@@ -2088,7 +2086,7 @@ public final class ChinaStock extends JPanel {
                 double max3d = maxGen(maxMap.get(name), maxMapY.get(name), maxY2);
                 double min3d = minGen(minMap.get(name), minMapY.get(name), minY2);
 
-                return (int) max(0, min(100, round(100d * ((priceMap.getOrDefault(name, 0.0) - min3d) / (max3d - min3d)))));
+                return (int) max(0, min(100, round(100d * ((AllData.priceMap.getOrDefault(name, 0.0) - min3d) / (max3d - min3d)))));
             }
         }
         return 0;
@@ -2098,7 +2096,7 @@ public final class ChinaStock extends JPanel {
         if (Utility.noZeroArrayGen(name, maxMap, minMap, minMapY)) {
             double max2d = max(maxMap.get(name), maxMapY.get(name));
             double min2d = min(minMap.get(name), minMapY.get(name));
-            return (int) max(0, min(100, round(100d * ((priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
+            return (int) max(0, min(100, round(100d * ((AllData.priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
         }
         return 0;
     }
@@ -2107,7 +2105,7 @@ public final class ChinaStock extends JPanel {
 
         @Override
         public int getRowCount() {
-            return priceMapBarDetail.size();
+            return AllData.priceMapBarDetail.size();
             //return symbolNamesFull.size();
         }
 
@@ -2390,26 +2388,26 @@ public final class ChinaStock extends JPanel {
                 //f10
                 case 4:
                     return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT))
-                            ? round(1000d * (priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / DEFAULTOPEN.applyAsDouble(name) - 1)) / 10d : 0.0;
+                            ? round(1000d * (AllData.priceMapBar.get(name).floorEntry(Utility.AM940T).getValue().getClose() / DEFAULTOPEN.applyAsDouble(name) - 1)) / 10d : 0.0;
                 //OPC
                 case 5:
-                    return Utility.noZeroArrayGen(name, closeMap, openMap) ? round(1000d * (openMap.get(name) / closeMap.get(name) - 1)) / 10d : 0.0;
+                    return Utility.noZeroArrayGen(name, AllData.closeMap, AllData.openMap) ? round(1000d * (AllData.openMap.get(name) / AllData.closeMap.get(name) - 1)) / 10d : 0.0;
 
                 //rtn
                 case 6:
-                    return Utility.noZeroArrayGen(name, priceMap, openMap, closeMap) && NORMAL_STOCK.test(name) ? round(1000d * (priceMap.get(name) /
-                            closeMap.getOrDefault(name, openMap.getOrDefault(name, 0.0)) - 1)) / 10d : 0.0;
+                    return Utility.noZeroArrayGen(name, AllData.priceMap, AllData.openMap, AllData.closeMap) && NORMAL_STOCK.test(name) ? round(1000d * (AllData.priceMap.get(name) /
+                            AllData.closeMap.getOrDefault(name, AllData.openMap.getOrDefault(name, 0.0)) - 1)) / 10d : 0.0;
 
                 //AM
                 case 7:
                     return (NORMAL_STOCK.test(name) && LAST_KEY_AFTER.test(name, Utility.AMOPENT) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET))
-                            ? (double) round(1000d * (priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / DEFAULTOPEN.applyAsDouble(name) - 1)) / 10d : 0.0;
+                            ? (double) round(1000d * (AllData.priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / DEFAULTOPEN.applyAsDouble(name) - 1)) / 10d : 0.0;
 
                 //PM
                 case 8:
                     return (NORMAL_STOCK.test(name) && LAST_KEY_AFTER.test(name, Utility.PMOPENT))
-                            ? (double) round(1000d * (priceMapBar.get(name).lastEntry().getValue().getClose()
-                            / priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen() - 1)) / 10d : 0.0;
+                            ? (double) round(1000d * (AllData.priceMapBar.get(name).lastEntry().getValue().getClose()
+                            / AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen() - 1)) / 10d : 0.0;
 
                 // 卡差
                 case 9:
@@ -2428,7 +2426,7 @@ public final class ChinaStock extends JPanel {
                     if (Utility.noZeroArrayGen(name, maxMap, minMap, minMapY)) {
                         double max2d = max(maxMap.get(name), maxMapY.get(name));
                         double min2d = min(minMap.get(name), minMapY.get(name));
-                        return (int) max(0, min(100, round(100d * ((priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
+                        return (int) max(0, min(100, round(100d * ((AllData.priceMap.getOrDefault(name, 0.0) - min2d) / (max2d - min2d)))));
                     }
                     return 0;
                 //sharpe
@@ -2461,15 +2459,15 @@ public final class ChinaStock extends JPanel {
 
                 //amCH
                 case 18:
-                    return (NORMAL_STOCK.test(name) && priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && getAMMax(name) != 0.0)
-                            ? round(1000d * log(priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / getAMMax(name))) / 10d : 0.0;
+                    return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && getAMMax(name) != 0.0)
+                            ? round(1000d * log(AllData.priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / getAMMax(name))) / 10d : 0.0;
 
                 //冲落差
                 case 19:
                     return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT)
-                            && priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && getAMMax(name) != 0.0)
+                            && AllData.priceMapBar.get(name).firstKey().isBefore(Utility.AMCLOSET) && getAMMax(name) != 0.0)
                             ? Math.round(1000d * (getAMMax(name) / DEFAULTOPEN.applyAsDouble(name)
-                            - priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / getAMMax(name))) / 10d : 0.0;
+                            - AllData.priceMapBar.get(name).floorEntry(Utility.AMCLOSET).getValue().getClose() / getAMMax(name))) / 10d : 0.0;
 
                 //amMnT
                 case 20:
@@ -2505,8 +2503,8 @@ public final class ChinaStock extends JPanel {
                 // pmF10
                 case 27:
                     return (NORMAL_STOCK.test(name) && LAST_KEY_AFTER.test(name, Utility.PMOPENT) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET))
-                            ? round(1000d * (priceMapBar.get(name).floorEntry(Utility.PM1310T).getValue().getClose()
-                            / priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen() - 1)) / 10d : 0.0;
+                            ? round(1000d * (AllData.priceMapBar.get(name).floorEntry(Utility.PM1310T).getValue().getClose()
+                            / AllData.priceMapBar.get(name).ceilingEntry(Utility.PMOPENT).getValue().getOpen() - 1)) / 10d : 0.0;
 
                 //pmF10MinT
                 case 28:
@@ -2536,7 +2534,7 @@ public final class ChinaStock extends JPanel {
                 case 32:
                     if (NORMAL_STOCK.test(name) && LAST_KEY_AFTER.test(name, Utility.PMOPENT)) {
                         double pmmax = GETMAX.applyAsDouble(name, Utility.PM_PRED);
-                        double closeP = priceMapBar.get(name).lastEntry().getValue().getClose();
+                        double closeP = AllData.priceMapBar.get(name).lastEntry().getValue().getClose();
                         return round(1000d * log(closeP / pmmax)) / 10d;
                     }
                     return 0.0;
@@ -2645,11 +2643,11 @@ public final class ChinaStock extends JPanel {
 
                 // dayMinT
                 case 53:
-                    return (NORMAL_STOCK.test(name) && priceMapBar.get(name).lastKey().isAfter(Utility.AM929T)) ? GETMINTIMETOINT.applyAsInt(name, Utility.IS_OPEN_PRED) : 930;
+                    return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).lastKey().isAfter(Utility.AM929T)) ? GETMINTIMETOINT.applyAsInt(name, Utility.IS_OPEN_PRED) : 930;
 
                 //dayMaxT
                 case 54:
-                    return (NORMAL_STOCK.test(name) && priceMapBar.get(name).lastKey().isAfter(Utility.AM929T)) ? GETMAXTIMETOINT.applyAsInt(name, Utility.IS_OPEN_PRED) : 930;
+                    return (NORMAL_STOCK.test(name) && AllData.priceMapBar.get(name).lastKey().isAfter(Utility.AM929T)) ? GETMAXTIMETOINT.applyAsInt(name, Utility.IS_OPEN_PRED) : 930;
 
                 //amMin
                 case 55:
@@ -2668,11 +2666,11 @@ public final class ChinaStock extends JPanel {
 
                 //1m CP%
                 case 57:
-                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT)) ? priceMapBar.get(name).get(Utility.AMOPENT).getClosePerc() : 0;
+                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT)) ? AllData.priceMapBar.get(name).get(Utility.AMOPENT).getClosePerc() : 0;
 
                 // 1m OP%
                 case 58:
-                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT)) ? priceMapBar.get(name).get(Utility.AMOPENT).getOpenPerc() : 0;
+                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT)) ? AllData.priceMapBar.get(name).get(Utility.AMOPENT).getOpenPerc() : 0;
 
                 //vrP%
                 case 59:
@@ -2703,14 +2701,14 @@ public final class ChinaStock extends JPanel {
                     if (NORMAL_STOCK.test(name) && FIRST_KEY_BEFORE.test(name, Utility.AMCLOSET) && Utility.NO_ZERO.test(minMap, name)) {
                         double max = GETMAX.applyAsDouble(name, Utility.AM_PRED);
                         double min = GETMIN.applyAsDouble(name, Utility.AM_PRED);
-                        return (int) round((openMap.get(name) - min) / (max - min) * 100d);
+                        return (int) round((AllData.openMap.get(name) - min) / (max - min) * 100d);
                     }
                     return 0;
 
                 //openOpenJump
                 case 64:
-                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT) && Utility.NO_ZERO.test(openMap, name))
-                            ? (int) round(1000d * (priceMapBar.get(name).get(Utility.AMOPENT).getOpen() / openMap.get(name) - 1)) / 10d : 0.0;
+                    return (NORMAL_STOCK.test(name) && CONTAINS_TIME.test(name, Utility.AMOPENT) && Utility.NO_ZERO.test(AllData.openMap, name))
+                            ? (int) round(1000d * (AllData.priceMapBar.get(name).get(Utility.AMOPENT).getOpen() / AllData.openMap.get(name) - 1)) / 10d : 0.0;
 
                 //寄
                 case 65:
@@ -2941,7 +2939,7 @@ public final class ChinaStock extends JPanel {
 
                 //prRound
                 case 97:
-                    return round(1000d * priceMap.getOrDefault(name, 0.0)) / 1000d;
+                    return round(1000d * AllData.priceMap.getOrDefault(name, 0.0)) / 1000d;
 
                 //f10MxMnD
                 case 98:
@@ -3025,14 +3023,14 @@ public final class ChinaStock extends JPanel {
 
                 //close
                 case 116:
-                    return closeMap.getOrDefault(name, 0.0);
+                    return AllData.closeMap.getOrDefault(name, 0.0);
 
                 //open
                 case 117:
-                    return openMap.getOrDefault(name, 0.0);
+                    return AllData.openMap.getOrDefault(name, 0.0);
                 //current p
                 case 118:
-                    return priceMap.getOrDefault(name, 0.0);
+                    return AllData.priceMap.getOrDefault(name, 0.0);
 
                 case 119:
                     return SinaStock.weightMapA50.getOrDefault(name, 0.0);

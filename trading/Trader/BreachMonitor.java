@@ -1,9 +1,10 @@
-package DevTrader;
+package Trader;
 
 import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
+import enums.FXCurrency;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.TradingUtility;
@@ -48,7 +49,7 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
 
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
 
-    private static Map<Currency, Double> fx = new HashMap<>();
+    private static Map<FXCurrency, Double> fx = new HashMap<>();
 
     private static Semaphore semaphore = new Semaphore(40);
 
@@ -64,7 +65,7 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
                 new FileInputStream(TradingConstants.GLOBALPATH + "fx.txt")))) {
             while ((line = reader1.readLine()) != null) {
                 List<String> al1 = Arrays.asList(line.split("\t"));
-                fx.put(Currency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
+                fx.put(FXCurrency.get(al1.get(0)), Double.parseDouble(al1.get(1)));
             }
         } catch (IOException x) {
             x.printStackTrace();
@@ -151,10 +152,10 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
 
     //positions
     @Override
-    public void position(String account, Contract contract, double position, double avgCost) {
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
         if (!contract.symbol().equals("USD") && !ibContractToSymbol(contract).equalsIgnoreCase("SGXA50PR")) {
-            contractPosMap.put(contract, position);
-            symbolPosMap.put(ibContractToSymbol(contract), position);
+            contractPosMap.put(contract, position.value().doubleValue());
+            symbolPosMap.put(ibContractToSymbol(contract), position.value().doubleValue());
         }
     }
 
@@ -277,7 +278,7 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
                             mDev == 0.0 ? "mFlat" : (mDev < 0.0 ? "mDown" : "mUp"));
                 }
 
-                double delta = pos * last * fx.getOrDefault(Currency.get(c.currency()), 1.0);
+                double delta = pos * last * fx.getOrDefault(FXCurrency.get(c.currency()), 1.0);
 
                 String out = str(symbol, info, "POS:" + (pos),
                         "#x:", numCrosses, mCount,
@@ -465,23 +466,23 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
             double totalDelta = contractPosMap.entrySet().stream()
                     .filter(e -> e.getValue() != 0.0)
                     .mapToDouble(e -> getDelta(e.getKey(), getPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0)))
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0)))
                     .sum();
 
             double totalAbsDelta = contractPosMap.entrySet().stream()
                     .filter(e -> e.getValue() != 0.0)
                     .mapToDouble(e -> Math.abs(getDelta(e.getKey(), getPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0)))).sum();
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0)))).sum();
 
             double longDelta = contractPosMap.entrySet().stream()
                     .filter(e -> e.getValue() > 0.0)
                     .mapToDouble(e -> getDelta(e.getKey(), getPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0))).sum();
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
 
             double shortDelta = contractPosMap.entrySet().stream()
                     .filter(e -> e.getValue() < 0.0)
                     .mapToDouble(e -> getDelta(e.getKey(), getPriceFromYtd(e.getKey()), e.getValue(),
-                            fx.getOrDefault(Currency.get(e.getKey().currency()), 1.0))).sum();
+                            fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
 
             pr(LocalDateTime.now().format(f2),
                     "||Net delta:", Math.round(totalDelta / 1000d) + "k"
