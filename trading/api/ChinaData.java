@@ -5,9 +5,9 @@ import auxiliary.Strategy;
 import auxiliary.VolBar;
 import client.Contract;
 import client.Types;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import saving.*;
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
+//import saving.*;
 import utility.TradingUtility;
 import utility.Utility;
 
@@ -305,12 +305,12 @@ public final class ChinaData extends JPanel {
             }
         }, es));
 
-        saveHibernate.addActionListener(al -> withHibernateManual());
-        saveDetailed.addActionListener(al -> withHibernateDetailedManual());
-
-        saveOHLCButton.addActionListener(al -> saveChinaOHLC());
-        loadHibGenPriceButton.addActionListener(al -> Hibtask.loadHibGenPrice());
-        loadHibDetailButton.addActionListener(al -> Hibtask.loadHibDetailPrice());
+//        saveHibernate.addActionListener(al -> withHibernateManual());
+//        saveDetailed.addActionListener(al -> withHibernateDetailedManual());
+//
+//        saveOHLCButton.addActionListener(al -> saveChinaOHLC());
+//        loadHibGenPriceButton.addActionListener(al -> Hibtask.loadHibGenPrice());
+//        loadHibDetailButton.addActionListener(al -> Hibtask.loadHibDetailPrice());
 
         unloadHibPMBButton.addActionListener(al -> {
             priceMapBar.replaceAll((k, v) -> new ConcurrentSkipListMap<>());
@@ -337,9 +337,9 @@ public final class ChinaData extends JPanel {
         //saveHibYtdButton.addActionListener(al -> hibSaveGenYtd());
         //saveHibY2Button.addActionListener(al -> hibSaveGenY2());
 
-        saveMainBoardDay.addActionListener(al -> saveMainBoardDay());
-
-        saveMainBoard5m.addActionListener(al -> saveMainBoard5M());
+//        saveMainBoardDay.addActionListener(al -> saveMainBoardDay());
+//
+//        saveMainBoard5m.addActionListener(al -> saveMainBoard5M());
 
         btnLoadBarYtd.addActionListener(al -> CompletableFuture.runAsync(() -> {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(priceBarYtdSource))) {
@@ -510,65 +510,65 @@ public final class ChinaData extends JPanel {
         return mpTo;
     }
 
-    static void withHibernateManual() {
-        CompletableFuture.runAsync(() -> {
-            int maxSize = priceMapBar.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
-            if (maxSize > 0) {
-                pr(" saving pmb @", LocalTime.now());
-                saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
-            } else {
-                int ans = JOptionPane.showConfirmDialog(null, "PMB is empty, save?", "", JOptionPane.YES_NO_OPTION);
-                if (ans == JOptionPane.YES_OPTION) {
-                    pr(" saving pmb @", LocalTime.now());
-                    saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
-                } else if (ans == JOptionPane.NO_OPTION) {
-                    pr(" cannot save price map bar minute ", "max size ", maxSize);
-                }
-            }
-        });
-    }
-
-    private static void withHibernateDetailedManual() {
-        CompletableFuture.runAsync(() -> {
-            int maxSize = priceMapBarDetail.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
-            if (maxSize > 0) {
-                pr(" saving price detailed @", LocalTime.now());
-                saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
-            } else {
-                int ans = JOptionPane.showConfirmDialog(null, "PMBD is empty, save?", "", JOptionPane.YES_NO_OPTION);
-                if (ans == JOptionPane.YES_OPTION) {
-                    pr(" saving price detailed @", LocalTime.now());
-                    saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
-                } else if (ans == JOptionPane.NO_OPTION) {
-                    pr(" cannot save price bar detailed ", "max size", maxSize);
-                }
-            }
-        });
-    }
-
-    static void withHibernateAuto() {
-        CompletableFuture.runAsync(() -> {
-            int maxSize = priceMapBar.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
-            if (maxSize > 0) {
-                pr(" saving pmb @", LocalTime.now());
-                saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
-            } else {
-                pr(" cannot save price map bar minute ", "max size ", maxSize, "manual override");
-            }
-        });
-    }
-
-    static void withHibernateDetailedAuto() {
-        CompletableFuture.runAsync(() -> {
-            int maxSize = priceMapBarDetail.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
-            if (maxSize > 0) {
-                pr(" saving price detailed @", LocalTime.now());
-                saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
-            } else {
-                pr(" cannot save price bar detailed ", "max size", maxSize, "manual override");
-            }
-        });
-    }
+//    static void withHibernateManual() {
+//        CompletableFuture.runAsync(() -> {
+//            int maxSize = priceMapBar.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
+//            if (maxSize > 0) {
+//                pr(" saving pmb @", LocalTime.now());
+//                saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
+//            } else {
+//                int ans = JOptionPane.showConfirmDialog(null, "PMB is empty, save?", "", JOptionPane.YES_NO_OPTION);
+//                if (ans == JOptionPane.YES_OPTION) {
+//                    pr(" saving pmb @", LocalTime.now());
+//                    saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
+//                } else if (ans == JOptionPane.NO_OPTION) {
+//                    pr(" cannot save price map bar minute ", "max size ", maxSize);
+//                }
+//            }
+//        });
+//    }
+//
+//    private static void withHibernateDetailedManual() {
+//        CompletableFuture.runAsync(() -> {
+//            int maxSize = priceMapBarDetail.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
+//            if (maxSize > 0) {
+//                pr(" saving price detailed @", LocalTime.now());
+//                saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
+//            } else {
+//                int ans = JOptionPane.showConfirmDialog(null, "PMBD is empty, save?", "", JOptionPane.YES_NO_OPTION);
+//                if (ans == JOptionPane.YES_OPTION) {
+//                    pr(" saving price detailed @", LocalTime.now());
+//                    saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
+//                } else if (ans == JOptionPane.NO_OPTION) {
+//                    pr(" cannot save price bar detailed ", "max size", maxSize);
+//                }
+//            }
+//        });
+//    }
+//
+//    static void withHibernateAuto() {
+//        CompletableFuture.runAsync(() -> {
+//            int maxSize = priceMapBar.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
+//            if (maxSize > 0) {
+//                pr(" saving pmb @", LocalTime.now());
+//                saveHibGen(priceMapBar, sizeTotalMap, ChinaSave.getInstance());
+//            } else {
+//                pr(" cannot save price map bar minute ", "max size ", maxSize, "manual override");
+//            }
+//        });
+//    }
+//
+//    static void withHibernateDetailedAuto() {
+//        CompletableFuture.runAsync(() -> {
+//            int maxSize = priceMapBarDetail.entrySet().stream().mapToInt(e -> e.getValue().size()).max().orElse(0);
+//            if (maxSize > 0) {
+//                pr(" saving price detailed @", LocalTime.now());
+//                saveHibGen(priceMapBarDetail, new ConcurrentSkipListMap<>(), ChinaSaveDetailed.getInstance());
+//            } else {
+//                pr(" cannot save price bar detailed ", "max size", maxSize, "manual override");
+//            }
+//        });
+//    }
 
 
     //static void hibSave
@@ -611,171 +611,171 @@ public final class ChinaData extends JPanel {
 
     //private static void saveHib
 
-    private static void saveHibGen(Map<String, ? extends NavigableMap<? extends Temporal, ?>> mp,
-                                   Map<String, ? extends NavigableMap<? extends Temporal, ?>> mp2,
-                                   ChinaSaveInterface2Blob saveclass) {
-        if (mp.size() == 0) {
-            pr(" first map empty, not saving ");
-            return;
-        }
-
-        //LocalTime start = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
-        SessionFactory sessionF = HibernateUtil.getSessionFactory();
-        CompletableFuture.runAsync(() -> {
-            try (Session session = sessionF.openSession()) {
-                try {
-                    session.getTransaction().begin();
-                    session.createQuery("DELETE from " + saveclass.getClass().getName()).executeUpdate();
-                    AtomicLong i = new AtomicLong(0L);
-                    mp.keySet().forEach(name -> {
-                        //if (mp2.size() == 0 || mp2.containsKey(name)) {
-                        ChinaSaveInterface2Blob cs = saveclass.createInstance(name);
-                        cs.setFirstBlob(blobify(mp.get(name), session));
-                        if (mp2.size() > 0 && mp2.containsKey(name)) {
-                            cs.setSecondBlob(blobify(mp2.get(name), session));
-                        }
-                        session.save(cs);
-
-                        if (i.get() % 100 == 0) {
-                            session.flush();
-                        }
-                        i.incrementAndGet();
-                        //}
-                    });
-                    session.getTransaction().commit();
-                    session.close();
-                } catch (org.hibernate.exception.LockAcquisitionException x) {
-                    //x.printStackTrace();
-                    //session.getTransaction().rollback();
-                    session.close();
-                }
-            }
-        }).thenAccept(
-                v -> {
-                    ChinaMain.updateSystemNotif(Utility.str("S", saveclass.getSimpleName(),
-                            LocalTime.now().truncatedTo(ChronoUnit.MINUTES)));
-                    pr(saveclass.getSimpleName(), "sav don", LocalTime.now());
-                }
-        );
-    }
-
-    public static void loadHibernateYesterday() {
-        CompletableFuture.runAsync(() -> Hibtask.loadHibGen(ChinaSaveYest.getInstance())).thenRun(() -> {
-            //CompletableFuture.runAsync(() -> GraphIndustry.getIndustryPriceYtd(priceMapBarYtd));
-            //CompletableFuture.runAsync(() -> Utility.getIndustryVolYtd(sizeTotalMapYtd));
-        }).thenAccept(
-                v -> ChinaMain.updateSystemNotif(Utility.str(" Loading HIB-Y done ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS)))
-        );
-
-        CompletableFuture.runAsync(() -> Hibtask.loadHibGen(ChinaSaveY2.getInstance())).thenRun(() -> {
-            //CompletableFuture.runAsync(() -> GraphIndustry.getIndustryPriceYtd(priceMapBarY2));
-            CompletableFuture.runAsync(() -> Utility.getIndustryVolYtd(sizeTotalMapY2));
-        }).thenAccept(v -> ChinaMain.updateSystemNotif(Utility.str(" Loading HIB-Y2 done ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS))));
-    }
-
-    static void saveMainBoardDay() {
-        pr(" save main board day ", indexData.get("sh000001").size());
-        if (indexData.get("sh000001").size() > 0) {
-            SessionFactory sessionF = HibernateUtil.getSessionFactory();
-            try (Session session = sessionF.openSession()) {
-                session.getTransaction().begin();
-
-                AtomicLong i = new AtomicLong(0L);
-                try {
-                    indexData.get("sh000001").entrySet().stream().forEachOrdered((e) -> {
-                        //pr(" index data  ", e);
-                        LocalDate k = e.getKey();
-                        SimpleBar v = e.getValue();
-                        MainBoardSaveDay mb = new MainBoardSaveDay(k, v.getOpen(),
-                                v.getHigh(), v.getLow(), v.getClose());
-                        session.saveOrUpdate(mb);
-                        i.incrementAndGet();
-                        if (i.get() % 100 == 0) {
-                            session.flush();
-                        }
-                    });
-                    session.getTransaction().commit();
-                } catch (org.hibernate.exception.LockAcquisitionException x) {
-                    x.printStackTrace();
-                    session.getTransaction().rollback();
-                    session.close();
-                }
-            }
-        } else {
-            pr(" save main board failed ", indexData.get("sh000001").size());
-        }
-    }
-
-    static void saveMainBoard5M() {
-        pr(" save main board day 5m", detailed5mData.get("sh000001").size());
-        if (detailed5mData.get("sh000001").size() > 0) {
-            SessionFactory sessionF = HibernateUtil.getSessionFactory();
-            try (Session session = sessionF.openSession()) {
-                session.getTransaction().begin();
-
-                AtomicLong i = new AtomicLong(0L);
-                try {
-                    detailed5mData.get("sh000001").entrySet().stream().forEachOrdered(e -> {
-                        LocalDateTime k = e.getKey();
-                        SimpleBar v = e.getValue();
-                        MainBoardSave5m mb = new MainBoardSave5m(k, v.getOpen(),
-                                v.getHigh(), v.getLow(), v.getClose());
-                        session.saveOrUpdate(mb);
-                        i.incrementAndGet();
-                        if (i.get() % 100 == 0) {
-                            session.flush();
-                        }
-                    });
-                    session.getTransaction().commit();
-                } catch (org.hibernate.exception.LockAcquisitionException x) {
-                    x.printStackTrace();
-                    session.getTransaction().rollback();
-                    session.close();
-                }
-            }
-        } else {
-            pr(" save main board5m failed ", detailed5mData.get("sh000001").size());
-        }
-    }
-
-
-    static void saveChinaOHLC() {
-        CompletableFuture.runAsync(() -> {
-            SessionFactory sessionF = HibernateUtil.getSessionFactory();
-            try (Session session = sessionF.openSession()) {
-                session.getTransaction().begin();
-                try {
-                    symbolNames.forEach(name -> {
-                        if (Utility.noZeroArrayGen(name, openMap, maxMap, minMap, priceMap, closeMap, sizeMap)) {
-                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, openMap.get(name),
-                                    maxMap.get(name), minMap.get(name),
-                                    priceMap.get(name), closeMap.get(name), sizeMap.get(name).intValue());
-
-                            session.saveOrUpdate(c);
-                        } else if (Utility.NO_ZERO.test(closeMap, name)) {
-                            //System.out.println("only close available " + name);
-                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, closeMap.get(name));
-                            session.saveOrUpdate(c);
-                        } else {
-                            //System.out.println(" chinasaveohcl all 0 " + name);
-                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, 0.0);
-                            session.saveOrUpdate(c);
-                        }
-                    });
-                    session.getTransaction().commit();
-                } catch (org.hibernate.exception.LockAcquisitionException x) {
-                    x.printStackTrace();
-                    session.getTransaction().rollback();
-                    session.close();
-                }
-            }
-        }).thenAccept(
-                v -> {
-                    ChinaMain.updateSystemNotif(Utility.str(" 存 OHLC ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS)));
-                    pr("OHLC sav done", LocalTime.now());
-                }
-        );
-    }
+//    private static void saveHibGen(Map<String, ? extends NavigableMap<? extends Temporal, ?>> mp,
+//                                   Map<String, ? extends NavigableMap<? extends Temporal, ?>> mp2,
+//                                   ChinaSaveInterface2Blob saveclass) {
+//        if (mp.size() == 0) {
+//            pr(" first map empty, not saving ");
+//            return;
+//        }
+//
+//        //LocalTime start = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
+//        SessionFactory sessionF = HibernateUtil.getSessionFactory();
+//        CompletableFuture.runAsync(() -> {
+//            try (Session session = sessionF.openSession()) {
+//                try {
+//                    session.getTransaction().begin();
+//                    session.createQuery("DELETE from " + saveclass.getClass().getName()).executeUpdate();
+//                    AtomicLong i = new AtomicLong(0L);
+//                    mp.keySet().forEach(name -> {
+//                        //if (mp2.size() == 0 || mp2.containsKey(name)) {
+//                        ChinaSaveInterface2Blob cs = saveclass.createInstance(name);
+//                        cs.setFirstBlob(blobify(mp.get(name), session));
+//                        if (mp2.size() > 0 && mp2.containsKey(name)) {
+//                            cs.setSecondBlob(blobify(mp2.get(name), session));
+//                        }
+//                        session.save(cs);
+//
+//                        if (i.get() % 100 == 0) {
+//                            session.flush();
+//                        }
+//                        i.incrementAndGet();
+//                        //}
+//                    });
+//                    session.getTransaction().commit();
+//                    session.close();
+//                } catch (org.hibernate.exception.LockAcquisitionException x) {
+//                    //x.printStackTrace();
+//                    //session.getTransaction().rollback();
+//                    session.close();
+//                }
+//            }
+//        }).thenAccept(
+//                v -> {
+//                    ChinaMain.updateSystemNotif(Utility.str("S", saveclass.getSimpleName(),
+//                            LocalTime.now().truncatedTo(ChronoUnit.MINUTES)));
+//                    pr(saveclass.getSimpleName(), "sav don", LocalTime.now());
+//                }
+//        );
+//    }
+//
+//    public static void loadHibernateYesterday() {
+//        CompletableFuture.runAsync(() -> Hibtask.loadHibGen(ChinaSaveYest.getInstance())).thenRun(() -> {
+//            //CompletableFuture.runAsync(() -> GraphIndustry.getIndustryPriceYtd(priceMapBarYtd));
+//            //CompletableFuture.runAsync(() -> Utility.getIndustryVolYtd(sizeTotalMapYtd));
+//        }).thenAccept(
+//                v -> ChinaMain.updateSystemNotif(Utility.str(" Loading HIB-Y done ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS)))
+//        );
+//
+//        CompletableFuture.runAsync(() -> Hibtask.loadHibGen(ChinaSaveY2.getInstance())).thenRun(() -> {
+//            //CompletableFuture.runAsync(() -> GraphIndustry.getIndustryPriceYtd(priceMapBarY2));
+//            CompletableFuture.runAsync(() -> Utility.getIndustryVolYtd(sizeTotalMapY2));
+//        }).thenAccept(v -> ChinaMain.updateSystemNotif(Utility.str(" Loading HIB-Y2 done ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS))));
+//    }
+//
+//    static void saveMainBoardDay() {
+//        pr(" save main board day ", indexData.get("sh000001").size());
+//        if (indexData.get("sh000001").size() > 0) {
+//            SessionFactory sessionF = HibernateUtil.getSessionFactory();
+//            try (Session session = sessionF.openSession()) {
+//                session.getTransaction().begin();
+//
+//                AtomicLong i = new AtomicLong(0L);
+//                try {
+//                    indexData.get("sh000001").entrySet().stream().forEachOrdered((e) -> {
+//                        //pr(" index data  ", e);
+//                        LocalDate k = e.getKey();
+//                        SimpleBar v = e.getValue();
+//                        MainBoardSaveDay mb = new MainBoardSaveDay(k, v.getOpen(),
+//                                v.getHigh(), v.getLow(), v.getClose());
+//                        session.saveOrUpdate(mb);
+//                        i.incrementAndGet();
+//                        if (i.get() % 100 == 0) {
+//                            session.flush();
+//                        }
+//                    });
+//                    session.getTransaction().commit();
+//                } catch (org.hibernate.exception.LockAcquisitionException x) {
+//                    x.printStackTrace();
+//                    session.getTransaction().rollback();
+//                    session.close();
+//                }
+//            }
+//        } else {
+//            pr(" save main board failed ", indexData.get("sh000001").size());
+//        }
+//    }
+//
+//    static void saveMainBoard5M() {
+//        pr(" save main board day 5m", detailed5mData.get("sh000001").size());
+//        if (detailed5mData.get("sh000001").size() > 0) {
+//            SessionFactory sessionF = HibernateUtil.getSessionFactory();
+//            try (Session session = sessionF.openSession()) {
+//                session.getTransaction().begin();
+//
+//                AtomicLong i = new AtomicLong(0L);
+//                try {
+//                    detailed5mData.get("sh000001").entrySet().stream().forEachOrdered(e -> {
+//                        LocalDateTime k = e.getKey();
+//                        SimpleBar v = e.getValue();
+//                        MainBoardSave5m mb = new MainBoardSave5m(k, v.getOpen(),
+//                                v.getHigh(), v.getLow(), v.getClose());
+//                        session.saveOrUpdate(mb);
+//                        i.incrementAndGet();
+//                        if (i.get() % 100 == 0) {
+//                            session.flush();
+//                        }
+//                    });
+//                    session.getTransaction().commit();
+//                } catch (org.hibernate.exception.LockAcquisitionException x) {
+//                    x.printStackTrace();
+//                    session.getTransaction().rollback();
+//                    session.close();
+//                }
+//            }
+//        } else {
+//            pr(" save main board5m failed ", detailed5mData.get("sh000001").size());
+//        }
+//    }
+//
+//
+//    static void saveChinaOHLC() {
+//        CompletableFuture.runAsync(() -> {
+//            SessionFactory sessionF = HibernateUtil.getSessionFactory();
+//            try (Session session = sessionF.openSession()) {
+//                session.getTransaction().begin();
+//                try {
+//                    symbolNames.forEach(name -> {
+//                        if (Utility.noZeroArrayGen(name, openMap, maxMap, minMap, priceMap, closeMap, sizeMap)) {
+//                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, openMap.get(name),
+//                                    maxMap.get(name), minMap.get(name),
+//                                    priceMap.get(name), closeMap.get(name), sizeMap.get(name).intValue());
+//
+//                            session.saveOrUpdate(c);
+//                        } else if (Utility.NO_ZERO.test(closeMap, name)) {
+//                            //System.out.println("only close available " + name);
+//                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, closeMap.get(name));
+//                            session.saveOrUpdate(c);
+//                        } else {
+//                            //System.out.println(" chinasaveohcl all 0 " + name);
+//                            ChinaSaveOHLCYV c = new ChinaSaveOHLCYV(name, 0.0);
+//                            session.saveOrUpdate(c);
+//                        }
+//                    });
+//                    session.getTransaction().commit();
+//                } catch (org.hibernate.exception.LockAcquisitionException x) {
+//                    x.printStackTrace();
+//                    session.getTransaction().rollback();
+//                    session.close();
+//                }
+//            }
+//        }).thenAccept(
+//                v -> {
+//                    ChinaMain.updateSystemNotif(Utility.str(" 存 OHLC ", LocalTime.now().truncatedTo(ChronoUnit.SECONDS)));
+//                    pr("OHLC sav done", LocalTime.now());
+//                }
+//        );
+//    }
 
     private static void writeShcomp2() {
 

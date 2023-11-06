@@ -123,7 +123,7 @@ public class TradingUtility {
         return s.startsWith("hk");
     }
 
-    public static Order placeBidLimit(double p, double quantity) {
+    public static Order placeBidLimit(double p, Decimal quantity) {
         return placeBidLimitTIF(p, quantity, Types.TimeInForce.DAY);
     }
 
@@ -145,7 +145,7 @@ public class TradingUtility {
     }
 
     static Order placeShortSellLimitTIF(double p, Decimal quantity, Types.TimeInForce tif) {
-        if (quantity <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
+        if (quantity.longValue() <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
         //System.out.println(" place short sell " + p);
         Order o = new Order();
         o.action(Types.Action.SSHORT);
@@ -181,7 +181,7 @@ public class TradingUtility {
         return o;
     }
 
-    public static Order buyAtOffer(double p, double quantity) {
+    public static Order buyAtOffer(double p, Decimal quantity) {
         Order o = new Order();
         o.action(Types.Action.BUY);
         o.lmtPrice(p);
@@ -191,7 +191,7 @@ public class TradingUtility {
         return o;
     }
 
-    public static Order sellAtBid(double p, double quantity) {
+    public static Order sellAtBid(double p, Decimal quantity) {
         Order o = new Order();
         o.action(Types.Action.SELL);
         o.lmtPrice(p);

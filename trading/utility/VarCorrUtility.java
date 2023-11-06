@@ -26,13 +26,13 @@ public class VarCorrUtility {
 
     }
 
-    static double getCovar(double[] l1, double[] l2, boolean unbiased) {
-        if (l1.length == l2.length) {
-            return new Covariance().covariance(l1, l2, unbiased);
-        } else {
-            throw new IllegalStateException(" list size not equal ");
-        }
-    }
+//    static double getCovar(double[] l1, double[] l2, boolean unbiased) {
+//        if (l1.length == l2.length) {
+//            return new Covariance().covariance(l1, l2, unbiased);
+//        } else {
+//            throw new IllegalStateException(" list size not equal ");
+//        }
+//    }
 
     static double getSD() {
         return 0.0;
@@ -104,7 +104,7 @@ public class VarCorrUtility {
 //                new Variance().evaluate(l2), new Covariance().covariance(l1, l2),
 //                new PearsonsCorrelation().correlation(l1, l2));
 
-        pr("APACHE ,correl", r(new PearsonsCorrelation().correlation(l1, l2)));
+//        pr("APACHE ,correl", r(new PearsonsCorrelation().correlation(l1, l2)));
 
         //pr("var1, var2, covar ", var1, var2, covar);
         return covar / (Math.sqrt(var1) * Math.sqrt(var2));
