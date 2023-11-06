@@ -1,6 +1,6 @@
 package handler;
 
-import api.ChinaPosition;
+import Trader.Allstatic;
 import client.Contract;
 import client.Decimal;
 import controller.ApiController;
@@ -12,7 +12,7 @@ public class IBPositionHandler implements ApiController.IPositionHandler {
     @Override
     public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symbol = ibContractToSymbol(contract);
-        ChinaPosition.currentPositionMap.put(symbol, position);
+        Allstatic.currentPositionMap.put(symbol, position);
 
 
 
@@ -23,7 +23,7 @@ public class IBPositionHandler implements ApiController.IPositionHandler {
 
     @Override
     public void positionEnd() {
-        ChinaPosition.currentPositionMap.keySet().forEach(k->{
+        Allstatic.currentPositionMap.keySet().forEach(k->{
 
         });
 

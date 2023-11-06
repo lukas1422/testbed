@@ -38,13 +38,13 @@ public class USOvernightTrader extends JPanel {
             }
         };
 
-        connect4001.addActionListener(al->{
+        connect4001.addActionListener(al -> {
             System.out.println(" connecting 4001 ");
             connectToTWS(4001);
         });
 
 
-        connect7046.addActionListener(al->{
+        connect7046.addActionListener(al -> {
             System.out.println(" connecting 7046");
             connectToTWS(7046);
         });
@@ -81,7 +81,7 @@ public class USOvernightTrader extends JPanel {
 
     public static void main(String[] args) {
         JFrame jf = new JFrame();
-        jf.setSize(new Dimension(1000,1000));
+        jf.setSize(new Dimension(1000, 1000));
         USOvernightTrader uso = new USOvernightTrader();
         jf.add(uso);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -121,8 +121,8 @@ class USConnectionHandler implements ApiController.IConnectionHandler {
     }
 
     @Override
-    public void message(int id, int errorCode, String errorMsg) {
-        System.out.println(" error ID " + id + " error code " + errorCode + " errormsg " + errorMsg);
+    public void message(int id, int errorCode, String errorMsg, String b) {
+        System.out.println(" error ID " + id + " error code " + errorCode + " errormsg " + errorMsg + b);
     }
 
     @Override
@@ -139,7 +139,9 @@ class USOrderHandler implements ApiController.IOrderHandler {
     }
 
     @Override
-    public void orderStatus(OrderStatus status, double filled, double remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+    public void orderStatus(OrderStatus status, Decimal filled,
+                            Decimal remaining, double avgFillPrice, int permId, int parentId,
+                            double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
     }
 
@@ -195,7 +197,8 @@ class USLiveOrderHandler implements ApiController.ILiveOrderHandler {
     }
 
     @Override
-    public void orderStatus(int orderId, OrderStatus status, double filled, double remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
     }
 

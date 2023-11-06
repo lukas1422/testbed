@@ -92,7 +92,7 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
             x.printStackTrace();
         }
 
-        registerContract(getActiveA50Contract());
+        registerContract(Allstatic.getActiveA50Contract());
         //registerContract(getActiveBTCContract());
         registerContract(getActiveMNQContract());
         registerContract(getActiveMESContract());

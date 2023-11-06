@@ -1,9 +1,11 @@
 package utility;
 
+import Trader.Allstatic;
 import api.ControllerCalls;
 import api.TradingConstants;
 import client.*;
 import controller.ApiController;
+import enums.Direction;
 import handler.HistDataConsumer;
 import handler.HistoricalHandler;
 import handler.LiveHandler;
@@ -18,9 +20,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static utility.Utility.*;
 
@@ -29,7 +29,6 @@ public class TradingUtility {
     public static final String A50_LAST_EXPIRY = getXINA50PrevExpiry().format(TradingConstants.expPattern);
     public static final String A50_FRONT_EXPIRY = getXINA50FrontExpiry().format(TradingConstants.expPattern);
     public static final String A50_BACK_EXPIRY = getXINA50BackExpiry().format(TradingConstants.expPattern);
-    public static volatile Map<Integer, Request> globalRequestMap = new ConcurrentHashMap<>();
     public static final boolean keepUptoDate = false;
     public static final boolean regulatorySnapshot = false;
 
@@ -37,40 +36,6 @@ public class TradingUtility {
         throw new OperationNotSupportedException(" cannot instantiate utility class ");
     }
 
-
-    public static Contract getActiveA50Contract() {
-        Contract ct = new Contract();
-        ct.symbol("XINA50");
-        ct.exchange("SGX");
-        ct.secType(Types.SecType.FUT);
-        pr("A50 front expiry ", getXINA50FrontExpiry());
-        ct.lastTradeDateOrContractMonth(getXINA50FrontExpiry().format(futExpPattern));
-        ct.currency("USD");
-        return ct;
-
-//        long daysUntilFrontExp = ChronoUnit.DAYS.between(LocalDate.now(), getXINA50FrontExpiry());
-//        pr(" **********  days until expiry **********", daysUntilFrontExp, getXINA50FrontExpiry());
-//        if (daysUntilFrontExp <= 1) {
-//            pr(" using back fut ");
-//            return getBackFutContract();
-//        } else {
-//            pr(" using front fut ");
-//            return getFrontFutContract();
-//        }
-    }
-
-    public static Contract getActiveBTCContract() {
-        Contract ct = new Contract();
-        ct.symbol("GXBT");
-        ct.exchange("CFECRYPTO");
-        ct.secType(Types.SecType.FUT);
-        pr("BTC expiry ", getActiveBTCExpiry());
-        pr("BTC expiry pattern ", getActiveBTCExpiry().format(futExpPattern2));
-        ct.lastTradeDateOrContractMonth(getActiveBTCExpiry().format(futExpPattern2));
-//        ct.lastTradeDateOrContractMonth("20190");
-        ct.currency("USD");
-        return ct;
-    }
 
     public static Contract getActiveMNQContract() {
         Contract ct = new Contract();
@@ -443,7 +408,7 @@ public class TradingUtility {
 
     public static void req1ContractLive(ApiController ap, Contract ct, LiveHandler h, boolean snapshot) {
         int reqId = ControllerCalls.getNextId();
-        globalRequestMap.put(reqId, new Request(ct, h));
+        Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
         ap.client().reqMktData(reqId, ct, "", snapshot, regulatorySnapshot,
                 Collections.<TagValue>emptyList());
     }
@@ -461,7 +426,7 @@ public class TradingUtility {
         Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
         boolean rthOnly = false;
 
-        globalRequestMap.put(reqId, new Request(c, dc));
+        Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
 
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
                 barSize.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
@@ -475,7 +440,7 @@ public class TradingUtility {
         Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
         Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
-        globalRequestMap.put(reqId, new Request(c, dc));
+        Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
                 bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
     }
@@ -491,8 +456,8 @@ public class TradingUtility {
         Types.BarSize barSize = Types.BarSize._1_min;
         Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
 
-        globalRequestMap.put(reqID, new Request(frontFut, hh));
-        globalRequestMap.put(reqID + 1, new Request(backFut, hh));
+        Allstatic.globalRequestMap.put(reqID, new Request(frontFut, hh));
+        Allstatic.globalRequestMap.put(reqID + 1, new Request(backFut, hh));
 
 
         CompletableFuture.runAsync(() -> {
@@ -504,7 +469,7 @@ public class TradingUtility {
 
             if (ChronoUnit.DAYS.between(LocalDate.parse(previousFut.lastTradeDateOrContractMonth(),
                     DateTimeFormatter.ofPattern("yyyyMMdd")), LocalDate.now()) < 7) {
-                globalRequestMap.put(reqID + 2, new Request(previousFut, hh));
+                Allstatic.globalRequestMap.put(reqID + 2, new Request(previousFut, hh));
                 ap.client().reqHistoricalData(reqID + 2, previousFut, "", durationStr,
                         barSize.toString(), whatToShow.toString(), 0, 2, keepUptoDate,
                         Collections.<TagValue>emptyList());
@@ -518,9 +483,32 @@ public class TradingUtility {
         Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
         Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
-        globalRequestMap.put(reqId, new Request(c, dc));
+        Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
                 bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate,
                 Collections.<TagValue>emptyList()));
+    }
+
+    public static LocalDate getTradeDate(LocalDateTime ldt) {
+        if (checkTimeRangeBool(ldt.toLocalTime(), 0, 0, 5, 0)) {
+            return ldt.toLocalDate().minusDays(1);
+        }
+        return ldt.toLocalDate();
+    }
+
+    public static double roundToPricePassiveGen(double x, Direction dir, double minPriceVar) {
+        return (Math.round(x * 10) - Math.round(x * 10) % (minPriceVar * 10)
+                + (dir == Direction.Long ? 0 : (minPriceVar * 10))) / 10d;
+    }
+
+    public static double roundToXUPricePassive(double x, Direction dir) {
+        return (Math.round(x * 10) - Math.round(x * 10) % 25 + (dir == Direction.Long ? 0 : 25)) / 10d;
+    }
+
+    public static void outputToAll(String s) {
+        outputDetailedXUSymbol("", s);
+        outputDetailedHKSymbol("", s);
+        outputDetailedUSSymbol("", s);
+
     }
 }

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static AutoTraderOld.AutoTraderMain.globalIdOrderMap;
+import static Trader.Allstatic.globalIdOrderMap;
 import static AutoTraderOld.XuTraderHelper.outputDetailedXU;
 import static AutoTraderOld.XuTraderHelper.outputSymbolMsg;
 import static client.OrderStatus.Filled;

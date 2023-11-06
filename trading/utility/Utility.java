@@ -1,7 +1,7 @@
 package utility;
 
 import TradeType.TradeBlock;
-import Trader.AllData;
+import Trader.Allstatic;
 import api.*;
 import auxiliary.SimpleBar;
 import client.Contract;
@@ -27,9 +27,7 @@ import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static Trader.AllData.priceMapBar;
-import static api.ChinaStock.*;
-import static api.TradingConstants.*;
+import static Trader.Allstatic.priceMapBar;
 import static java.lang.Math.log;
 import static java.lang.Math.round;
 import static java.util.stream.Collectors.groupingBy;
@@ -424,68 +422,68 @@ public class Utility {
         }
     }
 
-    public static void getFilesFromTDXGen(LocalDate ld, Map<String, ? extends NavigableMap<LocalTime, SimpleBar>> mp1
-            , Map<String, ? extends NavigableMap<LocalTime, Double>> mp2) {
-
-        System.out.println(" localdate is " + ld);
-        String dateString = ld.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-        System.out.println(" date is " + dateString);
-
-        for (String e : symbolNames) {
-            boolean found = false;
-            String name = (e.substring(0, 2).toUpperCase() + "#" + e.substring(2) + ".txt");
-            String line;
-            double totalSize = 0.0;
-
-            if (!e.equals("sh204001") && (e.substring(0, 2).toUpperCase().equals("SH") || e.substring(0, 2).toUpperCase().equals("SZ"))) {
-                try (BufferedReader reader1 = new BufferedReader(new InputStreamReader(new FileInputStream(tdxPath + name)))) {
-                    while ((line = reader1.readLine()) != null) {
-                        List<String> al1 = Arrays.asList(line.split("\t"));
-
-                        if (al1.get(0).equals(dateString)) {
-                            //System.out.println(e+ " al1 " + al1);
-                            found = true;
-                            String time = al1.get(1);
-                            LocalTime lt = LocalTime.of(Integer.parseInt(time.substring(0, 2)), Integer.parseInt(time.substring(2)));
-                            mp1.get(e).put(lt.minusMinutes(1L), new SimpleBar(Double.parseDouble(al1.get(2)), Double.parseDouble(al1.get(3)),
-                                    Double.parseDouble(al1.get(4)), Double.parseDouble(al1.get(5))));
-
-                            if (lt.equals(LocalTime.of(9, 31))) {
-                                totalSize = 0.0;
-                            }
-                            totalSize += (Double.parseDouble(al1.get(7)) / 1000000);
-                            mp2.get(e).put(lt.minusMinutes(1L), totalSize);
-                        }
-                    }
-                    if (found) {
-                        mp1.get(e).put(LocalTime.of(11, 29), mp1.get(e).get(LocalTime.of(11, 28)));
-                        mp1.get(e).put(LocalTime.of(11, 30), mp1.get(e).get(LocalTime.of(11, 28)));
-
-                        if (mp1.get(e).containsKey(LocalTime.of(14, 59))) {
-                            mp1.get(e).put(LocalTime.of(15, 0), mp1.get(e).get(LocalTime.of(14, 59)));
-                        }
-
-                        mp2.get(e).put(LocalTime.of(11, 29), mp2.get(e).get(LocalTime.of(11, 28)));
-                        mp2.get(e).put(LocalTime.of(11, 30), mp2.get(e).get(LocalTime.of(11, 28)));
-
-                        if (mp2.get(e).containsKey(LocalTime.of(14, 59))) {
-                            mp2.get(e).put(LocalTime.of(15, 0), mp2.get(e).get(LocalTime.of(14, 59)));
-                        }
-                    } else {
-                        System.out.println(" for " + e + " filling done");
-                        SimpleBar sb = new SimpleBar(AllData.priceMap.getOrDefault(e, 0.0));
-                        ChinaData.tradeTimePure.forEach(ti -> mp1.get(e).put(ti, sb));
-                        //System.out.println( "last key "+e+ " "+ mp1.get(e).lastEntry());
-                        //System.out.println( "noon last key "+e+ " " + mp1.get(e).ceilingEntry(LocalTime.of(11,30)).toString());
-                    }
-
-                } catch (IOException | NumberFormatException ex) {
-                    System.out.println(" does not contain" + e);
-                    ex.printStackTrace();
-                }
-            }
-        }
-    }
+//    public static void getFilesFromTDXGen(LocalDate ld, Map<String, ? extends NavigableMap<LocalTime, SimpleBar>> mp1
+//            , Map<String, ? extends NavigableMap<LocalTime, Double>> mp2) {
+//
+//        System.out.println(" localdate is " + ld);
+//        String dateString = ld.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+//        System.out.println(" date is " + dateString);
+//
+//        for (String e : symbolNames) {
+//            boolean found = false;
+//            String name = (e.substring(0, 2).toUpperCase() + "#" + e.substring(2) + ".txt");
+//            String line;
+//            double totalSize = 0.0;
+//
+//            if (!e.equals("sh204001") && (e.substring(0, 2).toUpperCase().equals("SH") || e.substring(0, 2).toUpperCase().equals("SZ"))) {
+//                try (BufferedReader reader1 = new BufferedReader(new InputStreamReader(new FileInputStream(tdxPath + name)))) {
+//                    while ((line = reader1.readLine()) != null) {
+//                        List<String> al1 = Arrays.asList(line.split("\t"));
+//
+//                        if (al1.get(0).equals(dateString)) {
+//                            //System.out.println(e+ " al1 " + al1);
+//                            found = true;
+//                            String time = al1.get(1);
+//                            LocalTime lt = LocalTime.of(Integer.parseInt(time.substring(0, 2)), Integer.parseInt(time.substring(2)));
+//                            mp1.get(e).put(lt.minusMinutes(1L), new SimpleBar(Double.parseDouble(al1.get(2)), Double.parseDouble(al1.get(3)),
+//                                    Double.parseDouble(al1.get(4)), Double.parseDouble(al1.get(5))));
+//
+//                            if (lt.equals(LocalTime.of(9, 31))) {
+//                                totalSize = 0.0;
+//                            }
+//                            totalSize += (Double.parseDouble(al1.get(7)) / 1000000);
+//                            mp2.get(e).put(lt.minusMinutes(1L), totalSize);
+//                        }
+//                    }
+//                    if (found) {
+//                        mp1.get(e).put(LocalTime.of(11, 29), mp1.get(e).get(LocalTime.of(11, 28)));
+//                        mp1.get(e).put(LocalTime.of(11, 30), mp1.get(e).get(LocalTime.of(11, 28)));
+//
+//                        if (mp1.get(e).containsKey(LocalTime.of(14, 59))) {
+//                            mp1.get(e).put(LocalTime.of(15, 0), mp1.get(e).get(LocalTime.of(14, 59)));
+//                        }
+//
+//                        mp2.get(e).put(LocalTime.of(11, 29), mp2.get(e).get(LocalTime.of(11, 28)));
+//                        mp2.get(e).put(LocalTime.of(11, 30), mp2.get(e).get(LocalTime.of(11, 28)));
+//
+//                        if (mp2.get(e).containsKey(LocalTime.of(14, 59))) {
+//                            mp2.get(e).put(LocalTime.of(15, 0), mp2.get(e).get(LocalTime.of(14, 59)));
+//                        }
+//                    } else {
+//                        System.out.println(" for " + e + " filling done");
+//                        SimpleBar sb = new SimpleBar(AllData.priceMap.getOrDefault(e, 0.0));
+//                        ChinaData.tradeTimePure.forEach(ti -> mp1.get(e).put(ti, sb));
+//                        //System.out.println( "last key "+e+ " "+ mp1.get(e).lastEntry());
+//                        //System.out.println( "noon last key "+e+ " " + mp1.get(e).ceilingEntry(LocalTime.of(11,30)).toString());
+//                    }
+//
+//                } catch (IOException | NumberFormatException ex) {
+//                    System.out.println(" does not contain" + e);
+//                    ex.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 
     public static String addSHSZHK(String s) {
         if (s.length() == 6) {
@@ -527,7 +525,7 @@ public class Utility {
 
         Stream.of(mps).flatMap(e -> e.entrySet().stream()).forEach(e -> {
             if (e.getKey().getClass() == LocalTime.class) {
-                res.put(LocalDateTime.of(ChinaMain.currentTradingDate, (LocalTime) e.getKey()), e.getValue());
+                res.put(LocalDateTime.of(Allstatic.currentTradingDate, (LocalTime) e.getKey()), e.getValue());
             } else if (e.getKey().getClass() == LocalDateTime.class) {
                 res.put((LocalDateTime) e.getKey(), e.getValue());
             }
@@ -920,7 +918,7 @@ public class Utility {
 
     private static double getCustomOpen(String symb) {
         if (!symb.startsWith("SGX")) {
-            return AllData.openMap.getOrDefault(symb, 0.0);
+            return Allstatic.openMap.getOrDefault(symb, 0.0);
         } else if (priceMapBar.containsKey(symb) && priceMapBar.get(symb).size() > 0) {
             return priceMapBar.get(symb).firstEntry().getValue().getOpen();
         }

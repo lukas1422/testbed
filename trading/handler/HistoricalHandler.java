@@ -1,6 +1,6 @@
 package handler;
 
-import Trader.AllData;
+import Trader.Allstatic;
 import auxiliary.SimpleBar;
 import client.Contract;
 
@@ -58,9 +58,9 @@ public interface HistoricalHandler extends GeneralHandler {
 
                 pr("today hist ", name, ld, lt, close);
 
-                if (AllData.priceMapBar.containsKey(name)) {
+                if (Allstatic.priceMapBar.containsKey(name)) {
                     //if (ld.equals(LocalDate.now())) {
-                    AllData.priceMapBar.get(name).put(lt, new SimpleBar(open, high, low, close));
+                    Allstatic.priceMapBar.get(name).put(lt, new SimpleBar(open, high, low, close));
                     //}
                 }
             }

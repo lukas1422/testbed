@@ -1,6 +1,5 @@
 package Trader;
 
-import AutoTraderOld.XuTraderHelper;
 import api.OrderAugmented;
 import api.TradingConstants;
 import auxiliary.SimpleBar;

@@ -1,6 +1,6 @@
 //package AutoTraderOld;
 //
-//import api.OrderAugmented;
+//import Trader.Allstatic;
 //import api.QuarterHour;
 //import api.TradingConstants;
 //import client.Contract;
@@ -22,7 +22,6 @@
 //import java.time.temporal.ChronoUnit;
 //import java.util.*;
 //import java.util.concurrent.ConcurrentHashMap;
-//import java.util.concurrent.ConcurrentSkipListMap;
 //import java.util.concurrent.atomic.AtomicBoolean;
 //import java.util.concurrent.atomic.AtomicInteger;
 //import java.util.function.DoubleUnaryOperator;
@@ -57,8 +56,6 @@
 //    //global
 //    static AtomicBoolean globalTradingOn = new AtomicBoolean(false);
 //    static volatile AtomicInteger autoTradeID = new AtomicInteger(100);
-//    public static volatile NavigableMap<Integer, OrderAugmented> globalIdOrderMap =
-//            new ConcurrentSkipListMap<>();
 //    public static volatile Map<Integer, Order> liveIDOrderMap = new ConcurrentHashMap<>();
 //    public static volatile Map<String, TreeSet<Order>> liveSymbolOrderSet = new ConcurrentHashMap<>();
 ////    static final double SGXA50_AUTO_VOL_THRESH = 0.4;
@@ -76,7 +73,7 @@
 //    static volatile Map<String, Double> ibPositionMap = new ConcurrentHashMap<>();
 //
 //    static long getOrderSizeForTradeType(String symbol, AutoOrderType type) {
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().isPrimaryOrder())
@@ -92,7 +89,7 @@
 ////    }
 //
 //    static double getFilledForType(String symbol, AutoOrderType type) {
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().getAugmentedOrderStatus() == Filled)
@@ -402,7 +399,7 @@
 //    }
 //
 //    static LocalDateTime getLastOrderTime(String symbol, AutoOrderType type) {
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().isPrimaryOrder())
@@ -413,7 +410,7 @@
 //
 //
 //    static long lastTwoOrderMilliDiff(String symbol, AutoOrderType type) {
-//        long numOrders = globalIdOrderMap.entrySet().stream()
+//        long numOrders = Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().isPrimaryOrder())
@@ -421,13 +418,13 @@
 //        if (numOrders < 2) {
 //            return Long.MAX_VALUE;
 //        } else {
-//            LocalDateTime last = globalIdOrderMap.entrySet().stream()
+//            LocalDateTime last = Allstatic.globalIdOrderMap.entrySet().stream()
 //                    .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                    .filter(e -> e.getValue().getOrderType() == type)
 //                    .filter(e -> e.getValue().isPrimaryOrder())
 //                    .max(Comparator.comparing(e -> e.getValue().getOrderTime()))
 //                    .map(e -> e.getValue().getOrderTime()).orElseThrow(() -> new IllegalArgumentException("no"));
-//            LocalDateTime secLast = globalIdOrderMap.entrySet().stream()
+//            LocalDateTime secLast = Allstatic.globalIdOrderMap.entrySet().stream()
 //                    .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                    .filter(e -> e.getValue().getOrderType() == type)
 //                    .filter(e -> e.getValue().isPrimaryOrder())
@@ -461,14 +458,14 @@
 //    }
 //
 //    static long tSincePrevOrderMilli(String name, AutoOrderType type, LocalDateTime nowMilli) {
-//        long numOrders = globalIdOrderMap.entrySet().stream()
+//        long numOrders = Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(name))
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().isPrimaryOrder()).count();
 //        if (numOrders == 0) {
 //            return Long.MAX_VALUE;
 //        } else {
-//            LocalDateTime last = globalIdOrderMap.entrySet().stream()
+//            LocalDateTime last = Allstatic.globalIdOrderMap.entrySet().stream()
 //                    .filter(e -> e.getValue().getSymbol().equals(name))
 //                    .filter(e -> e.getValue().getOrderType() == type)
 //                    .filter(e -> e.getValue().isPrimaryOrder())
@@ -594,7 +591,7 @@
 //    }
 //
 //    static double getTotalFilledSignedQForType(AutoOrderType type) {
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .filter(e -> e.getValue().getAugmentedOrderStatus() == Filled)
 //                .mapToDouble(e1 -> e1.getValue().getOrder().totalQuantity().value().doubleValue())
@@ -602,13 +599,13 @@
 //    }
 //
 //    static OrderStatus getLastPrimaryOrderStatus(String symbol, AutoOrderType type) {
-//        long size = globalIdOrderMap.entrySet().stream()
+//        long size = Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().isPrimaryOrder())
 //                .filter(e -> e.getValue().getOrderType() == type).count();
 //
 //
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().isPrimaryOrder())
 //                .filter(e -> e.getValue().getOrderType() == type)
@@ -619,11 +616,11 @@
 //    }
 //
 //    static OrderStatus getLastOrderStatusForType(String symbol, AutoOrderType type) {
-//        long size = globalIdOrderMap.entrySet().stream()
+//        long size = Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getSymbol().equals(symbol))
 //                .filter(e -> e.getValue().getOrderType() == type).count();
 //
-//        return globalIdOrderMap.entrySet().stream()
+//        return Allstatic.globalIdOrderMap.entrySet().stream()
 //                .filter(e -> e.getValue().getOrderType() == type)
 //                .max(Comparator.comparing(e -> e.getValue().getOrderTime()))
 //                .map(e -> e.getValue().getAugmentedOrderStatus())
@@ -631,7 +628,7 @@
 //    }
 //
 //    static void outputDetailedHKSymbol(String symbol, String msg) {
-//        if (globalIdOrderMap.entrySet().stream().noneMatch(e -> e.getValue().getSymbol().equals(symbol))) {
+//        if (Allstatic.globalIdOrderMap.entrySet().stream().noneMatch(e -> e.getValue().getSymbol().equals(symbol))) {
 //            outputDetailedGen(LocalDateTime.now().toString()
 //                    , new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
 //        }

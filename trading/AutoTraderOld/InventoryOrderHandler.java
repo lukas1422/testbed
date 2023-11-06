@@ -1,5 +1,6 @@
 package AutoTraderOld;
 
+import Trader.Allstatic;
 import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
@@ -14,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
-import static AutoTraderOld.AutoTraderMain.globalIdOrderMap;
+import static Trader.Allstatic.globalIdOrderMap;
 import static utility.Utility.str;
 
 public class InventoryOrderHandler implements ApiController.IOrderHandler {
@@ -71,8 +72,8 @@ public class InventoryOrderHandler implements ApiController.IOrderHandler {
         } else if (orderState.status() == OrderStatus.Cancelled || orderState.status() == OrderStatus.ApiCancelled) {
 //            globalIdOrderMap.get(defaultID).setFinalActionTime(LocalDateTime.now());
             String msg = str(" order cancelled ", defaultID,
-                    AutoTraderMain.globalIdOrderMap.get(defaultID).getOrder().orderId(),
-                    AutoTraderMain.globalIdOrderMap.get(defaultID).getOrder());
+                    Allstatic.globalIdOrderMap.get(defaultID).getOrder().orderId(),
+                    Allstatic.globalIdOrderMap.get(defaultID).getOrder());
             XuTraderHelper.outputDetailedXU(globalIdOrderMap.get(defaultID).getSymbol(), msg);
         }
     }
@@ -91,6 +92,6 @@ public class InventoryOrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public String toString() {
-        return str(" inventory handler for ", defaultID, AutoTraderMain.globalIdOrderMap.get(defaultID));
+        return str(" inventory handler for ", defaultID, Allstatic.globalIdOrderMap.get(defaultID));
     }
 }

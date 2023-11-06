@@ -3,6 +3,7 @@
 //import AutoTraderOld.AutoTraderXU;
 //import TradeType.*;
 //import Trader.AllData;
+//import Trader.Allstatic;
 //import auxiliary.SimpleBar;
 //import client.*;
 //import controller.ApiController;
@@ -73,11 +74,7 @@
 //    static volatile Set<String> uniqueTradeSet = new HashSet<>();
 //    static String line;
 //    private static AtomicBoolean includeExpired = new AtomicBoolean(true);
-//    public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
-//    public volatile static Map<String, Decimal> currentPositionMap
-//            = new TreeMap<>(String::compareTo);
 //    static Map<String, Double> costMap = new HashMap<>();
-//    public volatile static Map<String, ConcurrentSkipListMap<LocalTime, TradeBlock>> tradesMap = new ConcurrentHashMap<>();
 //    private static Map<String, ConcurrentSkipListMap<LocalTime, Double>> tradePnlMap = new ConcurrentHashMap<>();
 //    public static volatile HashMap<String, Double> wtdMaxMap = new HashMap<>();
 //    public static volatile HashMap<String, Double> wtdMinMap = new HashMap<>();
@@ -148,7 +145,7 @@
 //        }
 //
 //        symbolNames.forEach((String name) -> {
-//            tradesMap.put(name, new ConcurrentSkipListMap<>());
+//            Allstatic.tradesMap.put(name, new ConcurrentSkipListMap<>());
 //            tradePnlMap.put(name, new ConcurrentSkipListMap<>());
 //            wtdMaxMap.put(name, 0.0);
 //            wtdMinMap.put(name, Double.MAX_VALUE);
@@ -430,7 +427,7 @@
 //    }
 //
 //    private static void outputReport() {
-//        currentPositionMap.entrySet().stream().sorted(Comparator.comparing(Entry::getKey))
+//        Allstatic.currentPositionMap.entrySet().stream().sorted(Comparator.comparing(Entry::getKey))
 //                .forEach((en) -> {
 //                    String symbol = en.getKey();
 //                    int size = en.getValue();
@@ -538,15 +535,15 @@
 //
 //    @SuppressWarnings("unused")
 //    static void tradePnlCompute() {
-//        tradesMap.keySet().forEach(k -> {
-//            if (tradesMap.get(k).size() > 0) {
+//        Allstatic.tradesMap.keySet().forEach(k -> {
+//            if (Allstatic.tradesMap.get(k).size() > 0) {
 //                int pos = 0;
 //                double cb = 0.0;
 //                double mv;
 //                for (LocalTime t : AllData.priceMapBar.get(k).navigableKeySet()) {
-//                    if (tradesMap.get(k).containsKey(t)) {
-//                        pos += tradesMap.get(k).get(t).getSizeAll();
-//                        cb += tradesMap.get(k).get(t).getCostBasisAll(k);
+//                    if (Allstatic.tradesMap.get(k).containsKey(t)) {
+//                        pos += Allstatic.tradesMap.get(k).get(t).getSizeAll();
+//                        cb += Allstatic.tradesMap.get(k).get(t).getCostBasisAll(k);
 //                    }
 //                    mv = pos * AllData.priceMapBar.get(k).get(t).getClose();
 //                    tradePnlMap.get(k).put(t, cb - mv);
@@ -604,7 +601,7 @@
 //        }
 //        CompletableFuture.runAsync(() -> {
 //            CompletableFuture.supplyAsync(() ->
-//                    boughtDelta = tradesMap.entrySet().stream().filter(p).mapToDouble(e ->
+//                    boughtDelta = Allstatic.tradesMap.entrySet().stream().filter(p).mapToDouble(e ->
 //                            fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                    * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
 //                                    * e.getValue().values().stream().filter(e1 -> e1.getSizeAll() > 0)
@@ -612,7 +609,7 @@
 //            ).thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setBoughtDelta(a)));
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    soldDelta = tradesMap.entrySet().stream().filter(p).mapToDouble(e ->
+//                    soldDelta = Allstatic.tradesMap.entrySet().stream().filter(p).mapToDouble(e ->
 //                            fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                    * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
 //                                    * e.getValue().values().stream().filter(e1 -> e1.getSizeAll() < 0)
@@ -620,18 +617,18 @@
 //                    .thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setSoldDelta(a)));
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    openDelta = openPositionMap.entrySet().stream().filter(p)
+//                    openDelta = Allstatic.openPositionMap.entrySet().stream().filter(p)
 //                            .mapToDouble(e ->
 //                                    fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                            * e.getValue() * openMap.getOrDefault(e.getKey(), 0.0)).sum()
 //            ).thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setOpenDelta(a)));
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    netDelta = openPositionMap.entrySet().stream().filter(p)
+//                    netDelta = Allstatic.openPositionMap.entrySet().stream().filter(p)
 //                            .mapToDouble(e ->
 //                                    fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                            * e.getValue() * AllData.priceMap.getOrDefault(e.getKey(), 0.0)).sum()
-//                            + tradesMap.entrySet().stream().filter(p).mapToDouble(
+//                            + Allstatic.tradesMap.entrySet().stream().filter(p).mapToDouble(
 //                            e -> fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                    * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
 //                                    * e.getValue().entrySet().stream().mapToInt(e1 -> e1.getValue().getSizeAll()).sum()).sum()
@@ -639,16 +636,16 @@
 //
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    netDeltaMap = Stream.of(openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0).filter(p)
+//                    netDeltaMap = Stream.of(Allstatic.openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0).filter(p)
 //                                    .map(Entry::getKey).collect(Collectors.toSet()),
-//                            tradesMap.entrySet().stream().filter(e -> e.getValue().size() > 0).filter(p)
+//                            Allstatic.tradesMap.entrySet().stream().filter(e -> e.getValue().size() > 0).filter(p)
 //                                    .map(Entry::getKey).collect(Collectors.toSet()))
 //                            .flatMap(Collection::stream).distinct().map(e -> getDelta(e, 1))
 //                            .reduce(Utility.mapBinOp()).orElse(new ConcurrentSkipListMap<>())
 //            ).thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setNetDeltaMap(a)));
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    mtmDeltaMap = openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0)
+//                    mtmDeltaMap = Allstatic.openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0)
 //                            .filter(p).map(Entry::getKey).collect(Collectors.toSet())
 //                            .stream().distinct().map(e -> getDelta(e, 0))
 //                            .reduce(Utility.mapBinOp()).orElse(new ConcurrentSkipListMap<>()))
@@ -658,7 +655,7 @@
 //
 //            CompletableFuture.allOf(
 //                    CompletableFuture.supplyAsync(() ->
-//                            boughtPNLMap = tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
+//                            boughtPNLMap = Allstatic.tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
 //                                    .map(e -> tradePnlCompute(e.getKey(), AllData.priceMapBar.get(e.getKey()),
 //                                            e.getValue(), e1 -> e1 > 0))
 //                                    .reduce(Utility.mapBinOp()).orElse(new ConcurrentSkipListMap<>()))
@@ -666,7 +663,7 @@
 //                                    gPnl.setBuyPnl(Optional.ofNullable(a.lastEntry()).map(Entry::getValue).orElse(0.0)))),
 //
 //                    CompletableFuture.supplyAsync(() ->
-//                            soldPNLMap = tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
+//                            soldPNLMap = Allstatic.tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
 //                                    .map(e -> tradePnlCompute(e.getKey(),
 //                                            AllData.priceMapBar.get(e.getKey()),
 //                                            e.getValue(), e1 -> e1 < 0))
@@ -678,14 +675,14 @@
 //
 //            CompletableFuture.allOf(
 //                    CompletableFuture.supplyAsync(() ->
-//                            netYtdPnl = openPositionMap.entrySet().stream().filter(p).mapToDouble(e ->
+//                            netYtdPnl = Allstatic.openPositionMap.entrySet().stream().filter(p).mapToDouble(e ->
 //                                    fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                            * e.getValue() * (getPrevClose(e.getKey())
 //                                            - costMap.getOrDefault(e.getKey(), 0.0))).sum()
 //                    ).thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setNetPnlYtd(a))),
 //
 //                    CompletableFuture.supplyAsync(() ->
-//                            mtmPNLMap = openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0).filter(p)
+//                            mtmPNLMap = Allstatic.openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0).filter(p)
 //                                    .map(e -> getMtmPNL(
 //                                            AllData.priceMapBar.get(e.getKey()),
 //                                            getPrevClose(e.getKey()), e.getValue(),
@@ -694,7 +691,7 @@
 //                    ).thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setMtmPnl(Optional.ofNullable(a.lastEntry()).map(Entry::getValue).orElse(0.0)))),
 //
 //                    CompletableFuture.supplyAsync(() ->
-//                            tradePNLMap = tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
+//                            tradePNLMap = Allstatic.tradesMap.entrySet().stream().filter(p).filter(e -> e.getValue().size() > 0)
 //                                    .map(e -> tradePnlCompute(e.getKey(),
 //                                            AllData.priceMapBar.get(e.getKey())
 //                                            , e.getValue(), e1 -> true))
@@ -718,7 +715,7 @@
 //                    .thenAcceptAsync(a -> SwingUtilities.invokeLater(() -> gPnl.setBenchMap(a)));
 //
 //            CompletableFuture.supplyAsync(() ->
-//                    ChinaPosition.openPositionMap.entrySet().stream().filter(p).filter(e -> e.getValue() > 0)
+//                    Allstatic.openPositionMap.entrySet().stream().filter(p).filter(e -> e.getValue() > 0)
 //                            .collect(Collectors.groupingBy(e -> ChinaStock.benchSimpleMap.getOrDefault(e.getKey(), ""), HashMap::new,
 //                                    Collectors.summingDouble(e ->
 //                                            fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
@@ -778,11 +775,11 @@
 //    }
 //
 //    static double getNetPtfDeltaV2() {
-//        double openDelta = openPositionMap.entrySet().stream()
+//        double openDelta = Allstatic.openPositionMap.entrySet().stream()
 //                .mapToDouble(e ->
 //                        fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                * e.getValue() * AllData.priceMap.getOrDefault(e.getKey(), 0.0)).sum();
-//        double tradedDelta = tradesMap.entrySet().stream().mapToDouble(
+//        double tradedDelta = Allstatic.tradesMap.entrySet().stream().mapToDouble(
 //                e ->
 //                        fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
@@ -793,11 +790,11 @@
 //    }
 //
 //    public static double getStockPtfDelta() {
-//        double openDelta = openPositionMap.entrySet().stream()
+//        double openDelta = Allstatic.openPositionMap.entrySet().stream()
 //                .filter(e -> !e.getKey().startsWith("SGXA50"))
 //                .mapToDouble(e -> fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                        * e.getValue() * AllData.priceMap.getOrDefault(e.getKey(), 0.0)).sum();
-//        double tradedDelta = tradesMap.entrySet().stream()
+//        double tradedDelta = Allstatic.tradesMap.entrySet().stream()
 //                .filter(e -> !e.getKey().startsWith("SGXA50"))
 //                .mapToDouble(e -> fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                        * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
@@ -807,11 +804,11 @@
 //    }
 //
 //    public static double getStockPtfDeltaCustom(Predicate<? super Entry<String, ?>> p) {
-//        double openDelta = openPositionMap.entrySet().stream()
+//        double openDelta = Allstatic.openPositionMap.entrySet().stream()
 //                .filter(p).mapToDouble(e ->
 //                        fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                * e.getValue() * AllData.priceMap.getOrDefault(e.getKey(), 0.0)).sum();
-//        double tradedDelta = tradesMap.entrySet().stream()
+//        double tradedDelta = Allstatic.tradesMap.entrySet().stream()
 //                .filter(p).mapToDouble(e ->
 //                        fxMap.getOrDefault(currencyMap.getOrDefault(e.getKey(), CNY), 1.0)
 //                                * AllData.priceMap.getOrDefault(e.getKey(), 0.0)
@@ -824,12 +821,12 @@
 //    private static NavigableMap<LocalTime, Double> getDelta(String name, int tradesMultiplier) {
 //        NavigableMap<LocalTime, Double> res = new ConcurrentSkipListMap<>();
 //        double fx = fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0);
-//        int pos = openPositionMap.getOrDefault(name, 0);
+//        int pos = Allstatic.openPositionMap.getOrDefault(name, 0);
 //        for (LocalTime t : AllData.priceMapBar.get(name).keySet()) {
 //            double price = AllData.priceMapBar.get(name).get(t).getClose();
-//            if (tradesMap.containsKey(name) && tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).size() > 0) {
-//                for (LocalTime t1 : tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).keySet()) {
-//                    pos += tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).get(t1)
+//            if (Allstatic.tradesMap.containsKey(name) && Allstatic.tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).size() > 0) {
+//                for (LocalTime t1 : Allstatic.tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).keySet()) {
+//                    pos += Allstatic.tradesMap.get(name).subMap(t, true, t.plusMinutes(1), false).get(t1)
 //                            .getSizeAll() * tradesMultiplier;
 //                }
 //            }
@@ -888,13 +885,13 @@
 ////            }
 ////        });
 ////
-//        tradesMap.keySet().forEach(k -> {
-//            int bot = ChinaPosition.tradesMap.get(k).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
+//        Allstatic.tradesMap.keySet().forEach(k -> {
+//            int bot = Allstatic.tradesMap.get(k).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
 //                    .mapToInt(e -> e.getValue().getSizeAll()).sum();
-//            int sold = ChinaPosition.tradesMap.get(k).entrySet().stream().filter(e -> e.getValue().getSizeAll() < 0)
+//            int sold = Allstatic.tradesMap.get(k).entrySet().stream().filter(e -> e.getValue().getSizeAll() < 0)
 //                    .mapToInt(e -> e.getValue().getSizeAll()).sum();
-//            int openPos = currentPositionMap.getOrDefault(k, 0) - bot - sold;
-//            openPositionMap.put(k, openPos);
+//            int openPos = Allstatic.currentPositionMap.getOrDefault(k, 0) - bot - sold;
+//            Allstatic.openPositionMap.put(k, openPos);
 //        });
 //    }
 //
@@ -964,7 +961,7 @@
 //                        || dataList.get(chineseNameCol).startsWith("XD"))) {
 //                    String nam = Utility.addSHSZHK(dataList.get(stockCodeCol));
 //
-//                    openPositionMap.put(nam, Integer.parseInt(dataList.get(currentPosCol))
+//                    Allstatic.openPositionMap.put(nam, Integer.parseInt(dataList.get(currentPosCol))
 //                            + Integer.parseInt(dataList.get(todaySoldCol))
 //                            - Integer.parseInt(dataList.get(todayBoughtCol)));
 //                    costMap.put(nam, Double.parseDouble(dataList.get(costCol)));
@@ -1016,7 +1013,7 @@
 //                                || dataList.get(chineseNameCol).startsWith("XD"))) {
 //
 //                    String nam = Utility.addSHSZHK(dataList.get(stockCodeCol));
-//                    openPositionMap.put(nam, Integer.parseInt(dataList.get(openPosCol))
+//                    Allstatic.openPositionMap.put(nam, Integer.parseInt(dataList.get(openPosCol))
 //                            + Integer.parseInt(dataList.get(todaySoldCol))
 //                            - Integer.parseInt(dataList.get(todayBoughtCol)));
 //                    costMap.put(nam, Double.parseDouble(dataList.get(costCol)));
@@ -1067,19 +1064,19 @@
 //                    double p = Double.parseDouble(dataList.get(fillPriceCol));
 //                    int size = Integer.parseInt(dataList.get(fillAmtCol));
 //                    try {
-//                        if (tradesMap.containsKey(ticker)) {
+//                        if (Allstatic.tradesMap.containsKey(ticker)) {
 //                            if (dataList.get(buySellCol).equals("买入")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
 //                                    pr("merging normal ... ");
-//                                    tradesMap.get(ticker).get(lt).addTrade(new NormalTrade(p, size));
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new NormalTrade(p, size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new NormalTrade(p, size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new NormalTrade(p, size)));
 //                                }
 //                            } else if (dataList.get(buySellCol).equals("卖出")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
-//                                    tradesMap.get(ticker).get(lt).addTrade(new NormalTrade(p, -1 * size));
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new NormalTrade(p, -1 * size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new NormalTrade(p, -1 * size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new NormalTrade(p, -1 * size)));
 //                                }
 //                            }
 //                        } else {
@@ -1154,37 +1151,37 @@
 //                    try {
 //                        if (dataList.get(buySellCol).equals("证券买入")) {
 //                            if (dataList.get(beizhuCol).equals("融资开仓")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
 //                                    pr("merging margin... ");
-//                                    tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, size));
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, size)));
 //                                }
 //
 //                            } else if (dataList.get(beizhuCol).equals("买入担保品")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
 //                                    pr("merging normal... ");
-//                                    tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, size));
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, size)));
 //                                }
 //                            }
 //                            //pr( " name " + ticker + " " + tradesMapFront.get(ticker));
 //                        } else if (dataList.get(buySellCol).equals("证券卖出")) {
 //                            //treat all sells as normal stock with brokerage 2 bp
 //                            if (dataList.get(beizhuCol).equals("卖券还款")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
 //                                    pr("merging margin... ");
-//                                    tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, -1 * size));
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, -1 * size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, -1 * size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, -1 * size)));
 //                                }
 //                            } else if (dataList.get(beizhuCol).equals("卖出担保品")) {
-//                                if (tradesMap.get(ticker).containsKey(lt)) {
+//                                if (Allstatic.tradesMap.get(ticker).containsKey(lt)) {
 //                                    pr("merging margin... ");
-//                                    tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, -1 * size));
+//                                    Allstatic.tradesMap.get(ticker).get(lt).addTrade(new MarginTrade(p, -1 * size));
 //                                } else {
-//                                    tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, -1 * size)));
+//                                    Allstatic.tradesMap.get(ticker).put(lt, new TradeBlock(new MarginTrade(p, -1 * size)));
 //                                }
 //                            }
 //                        }
@@ -1208,19 +1205,19 @@
 //    }
 //
 //    static void updatePosition() {
-//        AllData.priceMapBar.keySet().forEach(s -> tradesMap.put(s, new ConcurrentSkipListMap<>()));
+//        AllData.priceMapBar.keySet().forEach(s -> Allstatic.tradesMap.put(s, new ConcurrentSkipListMap<>()));
 //        //getOpenPositionsNormal();
 //        //getCurrentPositionNormal();
 //        //getCurrentPositionMargin();
 //    }
 //
 //    static Map<String, Integer> getNetPosition() {
-//        if (openPositionMap.size() > 0 || tradesMap.size() > 0) {
-//            Map<String, Integer> trades = tradesMap.entrySet().stream().filter(e -> e.getValue().size() > 0)
+//        if (Allstatic.openPositionMap.size() > 0 || Allstatic.tradesMap.size() > 0) {
+//            Map<String, Integer> trades = Allstatic.tradesMap.entrySet().stream().filter(e -> e.getValue().size() > 0)
 //                    .collect(Collectors.toMap(Entry::getKey, e -> (Integer) e.getValue().entrySet().stream()
 //                            .mapToInt(e1 -> e1.getValue().getSizeAll()).sum()));
 //
-//            Map<String, Integer> nonEmptyOpenPosMap = openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0)
+//            Map<String, Integer> nonEmptyOpenPosMap = Allstatic.openPositionMap.entrySet().stream().filter(e -> e.getValue() != 0)
 //                    .collect(Collectors.toMap(Entry::getKey, Entry::getValue, (a, b) -> a, HashMap::new));
 //
 //            return Stream.of(nonEmptyOpenPosMap, trades).flatMap(e -> e.entrySet().stream())
@@ -1230,40 +1227,40 @@
 //    }
 //
 //    private int getTotalTodayBought(String name) {
-//        return (tradesMap.get(name).size() > 0) ? tradesMap.get(name).entrySet().stream()
+//        return (Allstatic.tradesMap.get(name).size() > 0) ? Allstatic.tradesMap.get(name).entrySet().stream()
 //                .mapToInt(e -> e.getValue().getSizeBot()).sum() : 0;
 //    }
 //
 //    private int getTotalTodaySold(String name) {
-//        return (tradesMap.get(name).size() > 0) ? tradesMap.get(name).entrySet().stream()
+//        return (Allstatic.tradesMap.get(name).size() > 0) ? Allstatic.tradesMap.get(name).entrySet().stream()
 //                .mapToInt(e -> e.getValue().getSizeSold()).sum() : 0;
 //    }
 //
 //    private double getTotalDeltaBought(String name) {
 //        double fx = fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0);
-//        return (tradesMap.get(name).size() > 0) ? tradesMap.get(name).entrySet().stream()
+//        return (Allstatic.tradesMap.get(name).size() > 0) ? Allstatic.tradesMap.get(name).entrySet().stream()
 //                .filter(e -> e.getValue().getSizeAll() > 0)
 //                .mapToDouble(e -> e.getValue().getDeltaAll()).sum() * fx : 0;
 //    }
 //
 //    private double getTotalDeltaSold(String name) {
 //        double fx = fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0);
-//        return (tradesMap.get(name).size() > 0) ? tradesMap.get(name).entrySet().stream()
+//        return (Allstatic.tradesMap.get(name).size() > 0) ? Allstatic.tradesMap.get(name).entrySet().stream()
 //                .filter(e -> e.getValue().getSizeAll() < 0)
 //                .mapToDouble(e -> e.getValue().getDeltaAll()).sum() * fx : 0;
 //    }
 //
 //    private double getAvgBCost(String name) {
-//        return (tradesMap.get(name).entrySet().stream().anyMatch(e -> e.getValue().getSizeAll() > 0))
-//                ? tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
+//        return (Allstatic.tradesMap.get(name).entrySet().stream().anyMatch(e -> e.getValue().getSizeAll() > 0))
+//                ? Allstatic.tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
 //                .collect(Collectors.collectingAndThen(toList(),
 //                        l -> (Double) l.stream().mapToDouble(e -> e.getValue().getCostBasisAll(name)).sum()
 //                                / (Double) l.stream().mapToDouble(e -> e.getValue().getSizeAll()).sum())) : 0.0;
 //    }
 //
 //    private double getAvgSCost(String name) {
-//        return (tradesMap.get(name).entrySet().stream().anyMatch(e -> e.getValue().getSizeAll() < 0))
-//                ? tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() < 0)
+//        return (Allstatic.tradesMap.get(name).entrySet().stream().anyMatch(e -> e.getValue().getSizeAll() < 0))
+//                ? Allstatic.tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() < 0)
 //                .collect(Collectors.collectingAndThen(toList(),
 //                        l -> l.stream().mapToDouble(e -> e.getValue().getCostBasisAll(name)).sum()
 //                                / l.stream().mapToDouble(e -> e.getValue().getSizeAll()).sum())) : 0.0;
@@ -1277,24 +1274,24 @@
 //        double price = AllData.priceMap.getOrDefault(name, 0.0) == 0.0 ?
 //                defaultPrice : AllData.priceMap.get(name);
 //
-//        return (tradesMap.get(name).size() > 0)
-//                ? tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
+//        return (Allstatic.tradesMap.get(name).size() > 0)
+//                ? Allstatic.tradesMap.get(name).entrySet().stream().filter(e -> e.getValue().getSizeAll() > 0)
 //                .mapToDouble(e -> e.getValue().getSizeAll() * price
 //                        + e.getValue().getCostBasisAll(name)).sum() * fx : 0.0;
 //    }
 //
 //    private static double getSellTradePnl(String name) {
 //        double fx = fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0);
-//        return (tradesMap.get(name).size() > 0 && Utility.noZeroArrayGen(name, AllData.priceMap))
-//                ? Math.round(tradesMap.get(name).entrySet().stream()
+//        return (Allstatic.tradesMap.get(name).size() > 0 && Utility.noZeroArrayGen(name, AllData.priceMap))
+//                ? Math.round(Allstatic.tradesMap.get(name).entrySet().stream()
 //                .filter(e -> e.getValue().getSizeAll() < 0)
 //                .mapToDouble(e -> e.getValue().getSizeAll() * AllData.priceMap.getOrDefault(name, 0.0)
 //                        + e.getValue().getCostBasisAll(name)).sum() * 100d * fx) / 100d : 0.0;
 //    }
 //
 //    private static int getNetPosition(String name) {
-//        if (openPositionMap.containsKey(name) || tradesMap.containsKey(name)) {
-//            return openPositionMap.getOrDefault(name, 0) + (Integer) tradesMap.get(name).entrySet().stream()
+//        if (Allstatic.openPositionMap.containsKey(name) || Allstatic.tradesMap.containsKey(name)) {
+//            return Allstatic.openPositionMap.getOrDefault(name, 0) + (Integer) Allstatic.tradesMap.get(name).entrySet().stream()
 //                    .mapToInt(e -> e.getValue().getSizeAll()).sum();
 //        } else {
 //            return 0;
@@ -1315,7 +1312,7 @@
 //
 //        double fx = fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0);
 //        return Math.round(100d * (fx * ((AllData.priceMap.getOrDefault(name, defaultPrice) -
-//                costMap.getOrDefault(name, 0.0)) * openPositionMap.getOrDefault(name, 0))
+//                costMap.getOrDefault(name, 0.0)) * Allstatic.openPositionMap.getOrDefault(name, 0))
 //                + getBuyTradePnl(name) + getSellTradePnl(name))) / 100d;
 //    }
 //
@@ -1329,8 +1326,8 @@
 //    }
 //
 //    private static boolean relevantStock(String stock) {
-//        return openPositionMap.containsKey(stock) ||
-//                (tradesMap.containsKey(stock) && tradesMap.get(stock).size() > 0);
+//        return Allstatic.openPositionMap.containsKey(stock) ||
+//                (Allstatic.tradesMap.containsKey(stock) && Allstatic.tradesMap.get(stock).size() > 0);
 //    }
 //
 //    private static double getPnLChange5m(String name) {
@@ -1340,16 +1337,16 @@
 //                    ? LocalTime.of(15, 0) : AllData.priceMapBar.get(name).lastKey();
 //            double p = AllData.priceMapBar.get(name).ceilingEntry(lastKey).getValue().getClose();
 //            double previousP = AllData.priceMapBar.get(name).ceilingEntry(lastKey.minusMinutes(6)).getValue().getClose();
-//            int openPos = openPositionMap.getOrDefault(name, 0);
+//            int openPos = Allstatic.openPositionMap.getOrDefault(name, 0);
 //            double tradeChgPnlAfter = 0.0;
 //            int tradedPosBefore = 0;
 //
-//            if (tradesMap.containsKey(name)) {
+//            if (Allstatic.tradesMap.containsKey(name)) {
 //
-//                tradedPosBefore = tradesMap.get(name).entrySet().stream().filter(e -> e.getKey().isBefore(lastKey.minusMinutes(5L)))
+//                tradedPosBefore = Allstatic.tradesMap.get(name).entrySet().stream().filter(e -> e.getKey().isBefore(lastKey.minusMinutes(5L)))
 //                        .mapToInt(e -> e.getValue().getSizeAll()).sum();
 //
-//                tradeChgPnlAfter = tradesMap.get(name).entrySet().stream()
+//                tradeChgPnlAfter = Allstatic.tradesMap.get(name).entrySet().stream()
 //                        .filter(e -> e.getKey().isAfter(lastKey.minusMinutes(6L)))
 //                        .mapToDouble(e -> e.getValue().getMtmPnlAll(name)).sum();
 //            }
@@ -1416,16 +1413,16 @@
 //            defaultPrice = AllData.priceMapBar.get(name).lastEntry().getValue().getClose();
 //        }
 //
-//        if (openPositionMap.containsKey(name)) {
+//        if (Allstatic.openPositionMap.containsKey(name)) {
 //            return r((AllData.priceMap.getOrDefault(name, defaultPrice) - closeMap.getOrDefault(name, defaultPrice))
-//                    * openPositionMap.getOrDefault(name, 0) *
+//                    * Allstatic.openPositionMap.getOrDefault(name, 0) *
 //                    fxMap.getOrDefault(currencyMap.getOrDefault(name, CNY), 1.0));
 //        }
 //        return 0.0;
 //    }
 //
 //    public static double getTradePnl(String name) {
-//        if (tradesMap.containsKey(name) && tradesMap.get(name).size() > 0) {
+//        if (Allstatic.tradesMap.containsKey(name) && Allstatic.tradesMap.get(name).size() > 0) {
 //            return (getBuyTradePnl(name) + getSellTradePnl(name));
 //        }
 //        return 0;
@@ -1609,7 +1606,7 @@
 //        @Override
 //        public Object getValueAt(int rowIn, int col) {
 //            String symbol = symbolNames.get(rowIn);
-//            int openpos = openPositionMap.getOrDefault(symbol, 0);
+//            int openpos = Allstatic.openPositionMap.getOrDefault(symbol, 0);
 //            double defaultPrice = 0.0;
 //
 //            if (AllData.priceMapBarDetail.containsKey(symbol) && AllData.priceMapBarDetail.get(symbol).size() > 0) {
@@ -1871,7 +1868,7 @@
 //        String symbol = ibContractToSymbol(contract);
 //
 //
-//        if (ChinaPosition.tradesMap.containsKey(symbol)) {
+//        if (Allstatic.tradesMap.containsKey(symbol)) {
 //
 //            int sign = (execution.side().equals("BOT")) ? 1 : -1;
 //
@@ -1893,21 +1890,21 @@
 //            if (symbol.startsWith("SGXA50")) {
 //                //pr("SGX", "ldt", ldt, "tradedate", tradeDate);
 //                if (ldt.getDayOfMonth() == tradeDate.getDayOfMonth() && t.isAfter(LocalTime.of(8, 59))) {
-//                    if (ChinaPosition.tradesMap.get(symbol).containsKey(lt)) {
-//                        ChinaPosition.tradesMap.get(symbol).get(lt)
+//                    if (Allstatic.tradesMap.get(symbol).containsKey(lt)) {
+//                        Allstatic.tradesMap.get(symbol).get(lt)
 //                                .addTrade(new FutureTrade(execution.price(), (int) Math.round(sign * execution.shares())));
 //                    } else {
-//                        ChinaPosition.tradesMap.get(symbol).put(lt,
+//                        Allstatic.tradesMap.get(symbol).put(lt,
 //                                new TradeBlock(new FutureTrade(execution.price(), (int) Math.round(sign * execution.shares()))));
 //                    }
 //                }
 //            } else if (contract.secType() == Types.SecType.STK) {
 //                if (ldt.getDayOfMonth() == tradeDate.getDayOfMonth()) {
-//                    if (ChinaPosition.tradesMap.get(symbol).containsKey(lt)) {
-//                        ChinaPosition.tradesMap.get(symbol).get(lt)
+//                    if (Allstatic.tradesMap.get(symbol).containsKey(lt)) {
+//                        Allstatic.tradesMap.get(symbol).get(lt)
 //                                .addTrade(new IBStockTrade(execution.price(), (int) Math.round(sign * execution.shares())));
 //                    } else {
-//                        ChinaPosition.tradesMap.get(symbol).put(lt, new TradeBlock(new IBStockTrade(execution.price(),
+//                        Allstatic.tradesMap.get(symbol).put(lt, new TradeBlock(new IBStockTrade(execution.price(),
 //                                (int) Math.round(sign * execution.shares()))));
 //                    }
 //                }
@@ -1918,7 +1915,7 @@
 //    @Override
 //    public void tradeReportEnd() {
 //        //pr("china position trade report end ");
-//        ChinaPosition.tradesMap.forEach((k, v) -> {
+//        Allstatic.tradesMap.forEach((k, v) -> {
 //            if (v.size() > 0) {
 //                //pr("chinapos trade report end ", k, v);
 //            }

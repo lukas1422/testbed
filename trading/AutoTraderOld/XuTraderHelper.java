@@ -1,7 +1,7 @@
 package AutoTraderOld;
 
 import TradeType.FutureTrade;
-import Trader.AllData;
+import Trader.Allstatic;
 //import api.SinaStock;
 import api.TradingConstants;
 import auxiliary.SimpleBar;
@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 
 import static AutoTraderOld.AutoTraderMain.*;
 import static AutoTraderOld.AutoTraderXU.activeFutCt;
-import static Trader.AllData.priceMapBar;
+import static Trader.Allstatic.priceMapBar;
 import static api.ChinaStock.currencyMap;
 import static api.TradingConstants.FTSE_INDEX;
 import static java.lang.System.out;
@@ -157,13 +157,6 @@ public class XuTraderHelper {
 //        outputDetailedXU("****************ORDER************************");
 //        outputPurelyOrders(s, order, detailed);
 //    }
-
-    public static void outputToAll(String s) {
-        outputDetailedXUSymbol("", s);
-        outputDetailedHKSymbol("", s);
-        outputDetailedUSSymbol("", s);
-
-    }
 
     static void outputSymbolMsg(String symbol, String msg) {
         if (symbol.startsWith("hk")) {
@@ -317,15 +310,6 @@ public class XuTraderHelper {
         return LocalDateTime.of(TDate, LocalTime.MIN);
     }
 
-    private static double roundToXUPricePassive(double x, Direction dir) {
-        return (Math.round(x * 10) - Math.round(x * 10) % 25 + (dir == Direction.Long ? 0 : 25)) / 10d;
-    }
-
-    public static double roundToPricePassiveGen(double x, Direction dir, double minPriceVar) {
-        return (Math.round(x * 10) - Math.round(x * 10) % (minPriceVar * 10)
-                + (dir == Direction.Long ? 0 : (minPriceVar * 10))) / 10d;
-    }
-
     static double roundToXUPriceVeryPassive(double x, Direction dir, long factor) {
         return (Math.round(x * 10) - Math.round(x * 10) % 25) / 10d + ((dir == Direction.Long ? -2.5 : 2.5) * factor);
     }
@@ -408,9 +392,9 @@ public class XuTraderHelper {
 //    }
 
     public static double getPD(double freshPrice) {
-        double indexPrice = (AllData.priceMapBar.containsKey(FTSE_INDEX) &&
-                AllData.priceMapBar.get(FTSE_INDEX).size() > 0) ?
-                AllData.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
+        double indexPrice = (Allstatic.priceMapBar.containsKey(FTSE_INDEX) &&
+                Allstatic.priceMapBar.get(FTSE_INDEX).size() > 0) ?
+                Allstatic.priceMapBar.get(FTSE_INDEX).lastEntry().getValue().getClose() : SinaStock.FTSE_OPEN;
         return (indexPrice != 0.0 && freshPrice != 0.0) ? (freshPrice / indexPrice - 1) : 0.0;
     }
 
@@ -609,13 +593,6 @@ public class XuTraderHelper {
     }
 
 
-    public static LocalDate getTradeDate(LocalDateTime ldt) {
-        if (TradingUtility.checkTimeRangeBool(ldt.toLocalTime(), 0, 0, 5, 0)) {
-            return ldt.toLocalDate().minusDays(1);
-        }
-        return ldt.toLocalDate();
-    }
-
     static LocalDate getPrevTradingDate(NavigableMap<LocalDateTime, SimpleBar> data) {
         if (data.size() < 1) {
             return LocalDate.now();
@@ -760,6 +737,6 @@ public class XuTraderHelper {
     }
 
     public static void main(String[] args) {
-        System.out.println(roundToXUPricePassive(12312.5, Direction.Short));
+        System.out.println(TradingUtility.roundToXUPricePassive(12312.5, Direction.Short));
     }
 }

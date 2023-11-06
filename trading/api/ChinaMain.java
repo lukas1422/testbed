@@ -23,13 +23,11 @@
 //import java.awt.event.ComponentEvent;
 //import java.awt.event.WindowAdapter;
 //import java.awt.event.WindowEvent;
-//import java.time.LocalDate;
 //import java.time.LocalDateTime;
 //import java.time.LocalTime;
 //import java.util.ArrayList;
 //import java.util.concurrent.*;
 //
-//import static AutoTraderOld.XuTraderHelper.getTradeDate;
 //import static AutoTraderOld.XuTraderHelper.outputToAll;
 //import static Trader.AllData.priceMapBar;
 //import static Trader.AllData.priceMapBarYtd;
@@ -41,8 +39,6 @@
 //public final class ChinaMain implements IConnectionHandler {
 //
 //    static final LocalTime START_ENGINE_TIME = LocalTime.now();
-//    public static final LocalDate MONDAY_OF_WEEK = Utility.getMondayOfWeek(LocalDateTime.now());
-//    public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
 //
 //    static {
 //        NewLookAndFeel.register();

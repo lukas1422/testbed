@@ -1,11 +1,11 @@
 package api;
 
+import Trader.Allstatic;
 import client.Contract;
 import client.TickType;
 import handler.HistoricalHandler;
 import handler.LiveHandler;
 import historical.Request;
-import utility.TradingUtility;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -16,9 +16,9 @@ import static utility.Utility.pr;
 public class IBDataHandler {
 
     public static void tickPrice(int reqId, int tickType, double price) {
-        if (TradingUtility.globalRequestMap.containsKey(reqId)) {
-            Request r = TradingUtility.globalRequestMap.get(reqId);
-            LiveHandler lh = (LiveHandler) TradingUtility.globalRequestMap.get(reqId).getHandler();
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
+            LiveHandler lh = (LiveHandler) Allstatic.globalRequestMap.get(reqId).getHandler();
             try {
                 lh.handlePrice(TickType.get(tickType), r.getContract(), price,
                         LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS));
@@ -30,8 +30,8 @@ public class IBDataHandler {
     }
 
     public static void tickSize(int reqId, int tickType, int size) {
-        if (TradingUtility.globalRequestMap.containsKey(reqId)) {
-            Request r = TradingUtility.globalRequestMap.get(reqId);
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
             LiveHandler lh = (LiveHandler) r.getHandler();
             lh.handleVol(TickType.get(tickType), ibContractToSymbol(r.getContract()), size,
                     LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
@@ -39,8 +39,8 @@ public class IBDataHandler {
     }
 
     public static void tickGeneric(int reqId, int tickType, double value) {
-        if (TradingUtility.globalRequestMap.containsKey(reqId)) {
-            Request r = TradingUtility.globalRequestMap.get(reqId);
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
             LiveHandler lh = (LiveHandler) r.getHandler();
             lh.handleGeneric(TickType.get(tickType), ibContractToSymbol(r.getContract()), value,
                     LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
@@ -49,8 +49,8 @@ public class IBDataHandler {
 
     public static void historicalData(int reqId, String date, double open, double high, double low,
                                       double close, long volume, int count, double wap) {
-        if (TradingUtility.globalRequestMap.containsKey(reqId)) {
-            Request r = TradingUtility.globalRequestMap.get(reqId);
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
             String symb = utility.Utility.ibContractToSymbol(r.getContract());
 
             if (r.getCustomFunctionNeeded()) {
@@ -75,8 +75,8 @@ public class IBDataHandler {
     }
 
     public static void historicalDataEnd(int reqId) {
-        if (TradingUtility.globalRequestMap.containsKey(reqId)) {
-            Request r = TradingUtility.globalRequestMap.get(reqId);
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
             Contract c = r.getContract();
             String symb = ibContractToSymbol(r.getContract());
             if (r.getCustomFunctionNeeded()) {

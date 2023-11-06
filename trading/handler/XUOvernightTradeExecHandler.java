@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import static AutoTraderOld.AutoTraderXU.overnightTradesMap;
+//import static AutoTraderOld.AutoTraderXU.overnightTradesMap;
 import static utility.Utility.ibContractToFutType;
 import static utility.Utility.ibContractToSymbol;
 
@@ -35,14 +35,14 @@ public class XUOvernightTradeExecHandler implements ApiController.ITradeReportHa
             String symbol = ibContractToSymbol(contract);
             if (symbol.startsWith("SGXA50")) {
                 FutType f = ibContractToFutType(contract);
-                if (overnightTradesMap.get(f).containsKey(ldt)) {
-                    overnightTradesMap.get(f).get(ldt)
-                            .addTrade(new FutureTrade(execution.price(), Math.round(sign * execution.shares().longValue())));
-                } else {
-                    overnightTradesMap.get(f).put(ldt,
-                            new TradeBlock(new FutureTrade(execution.price(),
-                                    Math.round(sign * execution.shares().longValue()))));
-                }
+//                if (overnightTradesMap.get(f).containsKey(ldt)) {
+//                    overnightTradesMap.get(f).get(ldt)
+//                            .addTrade(new FutureTrade(execution.price(), Math.round(sign * execution.shares().longValue())));
+//                } else {
+//                    overnightTradesMap.get(f).put(ldt,
+//                            new TradeBlock(new FutureTrade(execution.price(),
+//                                    Math.round(sign * execution.shares().longValue()))));
+//                }
             }
         }
     }

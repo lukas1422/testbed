@@ -939,7 +939,7 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
         } else {
             //finished
             //pr(" finished ", c.symbol(), date, open, close);
-            double size = holdingsMap.getOrDefault(c, 0.0);
+            double size = holdingsMap.getOrDefault(c, Decimal.ZERO).longValue();
             if (morningYtdData.containsKey(symbol) && morningYtdData.get(symbol).size() > 0) {
 
                 //pr(" last year day, last month day ", LAST_YEAR_DAY, LAST_MONTH_DAY);
@@ -1071,7 +1071,7 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
         //need to add stocks in position but not in symbolSize
         holdingsMap.forEach((ct, v) -> {
             String k = ibContractToSymbol(ct);
-            if (!symbolSize.containsKey(k) && v != 0.0) {
+            if (!symbolSize.containsKey(k) && !v.isZero()) {
                 chinaAllOutputString.add(new LinkedList<>(Arrays.asList(k, k, "美", "美", "USD", "STK")));
             }
         });

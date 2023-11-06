@@ -1,6 +1,6 @@
 package handler;
 
-import Trader.AllData;
+import Trader.Allstatic;
 //import api.ChinaStock;
 import auxiliary.SimpleBar;
 import client.Contract;
@@ -24,11 +24,11 @@ public interface LiveHandler extends GeneralHandler {
         public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
             String symbol = ibContractToSymbol(ct);
             if (tt == TickType.LAST) {
-                AllData.priceMap.put(symbol, price);
+                Allstatic.priceMap.put(symbol, price);
             } else if (tt == TickType.CLOSE) {
-                ChinaStock.closeMap.put(symbol, price);
+                Allstatic.closeMap.put(symbol, price);
             } else if (tt == TickType.OPEN) {
-                ChinaStock.openMap.put(symbol, price);
+                Allstatic.openMap.put(symbol, price);
             }
 
         }
@@ -48,19 +48,19 @@ public interface LiveHandler extends GeneralHandler {
             String symbol = ibContractToSymbol(ct);
             LocalTime lt = t.toLocalTime().truncatedTo(ChronoUnit.MINUTES);
             if (tt == TickType.LAST) {
-                AllData.priceMap.put(symbol, price);
-                if (AllData.priceMapBar.get(symbol).containsKey(lt)) {
-                    AllData.priceMapBar.get(symbol).get(lt).add(price);
+                Allstatic.priceMap.put(symbol, price);
+                if (Allstatic.priceMapBar.get(symbol).containsKey(lt)) {
+                    Allstatic.priceMapBar.get(symbol).get(lt).add(price);
                 } else {
-                    AllData.priceMapBar.get(symbol).put(lt, new SimpleBar(price));
+                    Allstatic.priceMapBar.get(symbol).put(lt, new SimpleBar(price));
                 }
             } else if (tt == TickType.CLOSE) {
-                ChinaStock.closeMap.put(symbol, price);
-                if (AllData.priceMap.getOrDefault(symbol, 0.0) == 0.0) {
-                    AllData.priceMap.put(symbol, price);
+                Allstatic.closeMap.put(symbol, price);
+                if (Allstatic.priceMap.getOrDefault(symbol, 0.0) == 0.0) {
+                    Allstatic.priceMap.put(symbol, price);
                 }
             } else if (tt == TickType.OPEN) {
-                ChinaStock.openMap.put(symbol, price);
+                Allstatic.openMap.put(symbol, price);
             }
         }
 
