@@ -96,7 +96,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                     Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
         });
         registerContract(tencent);
-
+        req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
     private static void registerContract(Contract ct) {
@@ -147,7 +147,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
         LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
 
-        pr(tt, symbol, price, t);
+        pr("price", tt, symbol, price, t);
 
         switch (tt) {
             case LAST:
@@ -200,6 +200,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
+
     }
 
 }
