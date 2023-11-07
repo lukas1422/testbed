@@ -87,8 +87,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                                 double close, long volume) {
 
         pr("test if called in ytldopen");
-
         String symbol = Utility.ibContractToSymbol(c);
+        pr("symb is", symbol);
+
+        if (!ytdDayData.containsKey(symbol)) {
+            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
+        }
+
+
         pr("date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
             LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));

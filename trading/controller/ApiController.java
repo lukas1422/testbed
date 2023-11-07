@@ -634,6 +634,7 @@ public class ApiController implements EWrapper {
     @Override
     public void tickPrice(int reqId, int tickType, double price, TickAttrib attribs) {
 
+        //ibdata handler steals the data and brings it home, it doess't go through IB's maps
         IBDataHandler.tickPrice(reqId, tickType, price);
 
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
@@ -645,6 +646,7 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickGeneric(int reqId, int tickType, double value) {
+
         IBDataHandler.tickGeneric(reqId, tickType, value);
 
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
@@ -667,7 +669,7 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickString(int reqId, int tickType, String value) {
-
+        IBDataHandler.tickString(reqId, tickType, value);
 
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
         if (handler != null) {
