@@ -28,7 +28,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static ApiController apDev;
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
 
-    Contract tencent = generateHKStockContract("700");
+    Contract gjs = generateHKStockContract("388");
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
@@ -94,7 +94,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         CompletableFuture.runAsync(() -> {
             //                histSemaphore.acquire();
-            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(tencent), Tester::todaySoFar,
+            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(gjs), Tester::todaySoFar,
                     2, Types.BarSize._1_min);
         });
 
@@ -103,7 +103,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(tencent), Tester::ytdOpen,
 //                    Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
 //        });
-        registerContract(tencent);
+        registerContract(gjs);
         //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
