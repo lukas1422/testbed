@@ -160,7 +160,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
             ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         } else {
-            if (!ytdDayData.get(symbol).firstKey().isBefore(Allstatic.LAST_YEAR_DAY)) {
+            if (!ytdDayData.get(symbol).firstKey().isBefore(Trader.Allstatic.LAST_YEAR_DAY)) {
                 pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
             }
 //            histSemaphore.release(1);

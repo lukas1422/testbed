@@ -21,6 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static utility.TradingUtility.getTradeDate;
 import static utility.Utility.*;
 
+//test
 public class Allstatic {
     public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
