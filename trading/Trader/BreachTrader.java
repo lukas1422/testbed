@@ -17,7 +17,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -50,8 +49,6 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     private static double longDelta = 0.0;
     private static double shortDelta = 0.0;
     private static ApiController apDev;
-
-    private static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
 
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     private static File devOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
@@ -206,7 +203,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
             LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
             ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         } else {
-            if (!ytdDayData.get(symbol).firstKey().isBefore(LAST_YEAR_DAY)) {
+            if (!ytdDayData.get(symbol).firstKey().isBefore(Allstatic.LAST_YEAR_DAY)) {
                 pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
             }
             histSemaphore.release(1);
@@ -279,10 +276,6 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 req1ContractLive(apDev, liveCompatibleCt(c), this, false);
             }, 10L, TimeUnit.SECONDS);
         });
-    }
-
-    private static int getCalendarYtdDays() {
-        return (int) ChronoUnit.DAYS.between(LAST_YEAR_DAY, LocalDate.now());
     }
 
     static double getDefaultSize(Contract ct, double last) {
@@ -637,17 +630,17 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     double mtdLow;
                     double maxMtdDev = 0.0;
 
-                    if (ytdDayData.get(symbol).firstKey().isAfter(LAST_YEAR_DAY)) {
-                        yStart = ytdDayData.get(symbol).ceilingEntry(LAST_YEAR_DAY).getValue().getOpen();
+                    if (ytdDayData.get(symbol).firstKey().isAfter(Allstatic.LAST_YEAR_DAY)) {
+                        yStart = ytdDayData.get(symbol).ceilingEntry(Allstatic.LAST_YEAR_DAY).getValue().getOpen();
                         ytdLow = ytdDayData.get(symbol).entrySet().stream()
-                                .filter(e -> e.getKey().isAfter(LAST_YEAR_DAY))
+                                .filter(e -> e.getKey().isAfter(Allstatic.LAST_YEAR_DAY))
                                 .min(BAR_LOW).map(Map.Entry::getValue).map(SimpleBar::getLow)
                                 .orElse(yStart);
                         maxYtdDrawdown = ytdLow / yStart - 1;
                     } else {
-                        yStart = ytdDayData.get(symbol).floorEntry(LAST_YEAR_DAY).getValue().getClose();
+                        yStart = ytdDayData.get(symbol).floorEntry(Allstatic.LAST_YEAR_DAY).getValue().getClose();
                         ytdLow = ytdDayData.get(symbol).entrySet().stream()
-                                .filter(e -> e.getKey().isAfter(LAST_YEAR_DAY))
+                                .filter(e -> e.getKey().isAfter(Allstatic.LAST_YEAR_DAY))
                                 .min(BAR_LOW).map(Map.Entry::getValue).map(SimpleBar::getLow)
                                 .orElse(yStart);
                         maxYtdDrawdown = ytdLow / yStart - 1;
@@ -767,6 +760,11 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
+
+    }
+
+    @Override
+    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
 
     }
 

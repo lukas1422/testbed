@@ -23,6 +23,7 @@ import static utility.Utility.*;
 
 public class Allstatic {
     public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
+    public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static AtomicInteger GLOBAL_REQ_ID = new AtomicInteger(30000);
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalTime, SimpleBar>> priceMapBar = new ConcurrentHashMap<>();

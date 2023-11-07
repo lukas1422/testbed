@@ -37,6 +37,15 @@ public class TradingUtility {
     }
 
 
+    public static Contract generateHKStockContract(String symb) {
+        Contract ct = new Contract();
+        ct.symbol(symb);
+        ct.exchange("SEHK");
+        ct.secType("STK");
+        ct.currency("HKD");
+        return ct;
+    }
+
     public static Contract getActiveMNQContract() {
         Contract ct = new Contract();
         ct.symbol("MNQ");
@@ -121,6 +130,7 @@ public class TradingUtility {
         o.outsideRth(true);
         return o;
     }
+
     static Order placeShortSellLimitTIF(double p, Decimal quantity, Types.TimeInForce tif) {
         if (quantity.longValue() <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
         //System.out.println(" place short sell " + p);
@@ -147,7 +157,7 @@ public class TradingUtility {
     }
 
     public static Order placeBidLimitTIF(double p, double quantity, Types.TimeInForce tif) {
-        if (quantity<= 0) throw new IllegalStateException(" cannot have 0 quantity ");
+        if (quantity <= 0) throw new IllegalStateException(" cannot have 0 quantity ");
         Order o = new Order();
         o.action(Types.Action.BUY);
         o.lmtPrice(p);
@@ -436,7 +446,7 @@ public class TradingUtility {
     public static void reqHistDayData(ApiController ap, int reqId, Contract c,
                                       HistDataConsumer<Contract, String, Double, Long> dc,
                                       int duration, Types.BarSize bs) {
-//        pr(" req hist data ", reqId, c.symbol());
+        pr(" req hist data ", reqId, c.symbol());
         Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
         Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
@@ -510,5 +520,9 @@ public class TradingUtility {
 //        outputDetailedHKSymbol("", s);
         outputDetailedUSSymbol("", s);
 
+    }
+
+    public static int getCalendarYtdDays() {
+        return (int) ChronoUnit.DAYS.between(Allstatic.LAST_YEAR_DAY, LocalDate.now());
     }
 }

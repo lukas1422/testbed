@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import api.IBDataHandler;
 import client.*;
 import client.*;
 
@@ -632,6 +633,9 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickPrice(int reqId, int tickType, double price, TickAttrib attribs) {
+
+        IBDataHandler.tickPrice(reqId, tickType, price);
+
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
         if (handler != null) {
             handler.tickPrice(TickType.get(tickType), price, attribs);
@@ -641,6 +645,8 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickGeneric(int reqId, int tickType, double value) {
+        IBDataHandler.tickGeneric(reqId, tickType, value);
+
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
         if (handler != null) {
             handler.tickPrice(TickType.get(tickType), value, new TickAttrib());
@@ -650,6 +656,8 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickSize(int reqId, int tickType, Decimal size) {
+        IBDataHandler.tickSize(reqId, tickType, size.longValue());
+
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
         if (handler != null) {
             handler.tickSize(TickType.get(tickType), size);
@@ -659,6 +667,8 @@ public class ApiController implements EWrapper {
 
     @Override
     public void tickString(int reqId, int tickType, String value) {
+
+
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
         if (handler != null) {
             handler.tickString(TickType.get(tickType), value);
@@ -1156,6 +1166,9 @@ public class ApiController implements EWrapper {
 
     @Override
     public void historicalData(int reqId, client.Bar bar) {
+        IBDataHandler.historicalData(reqId, bar.time(), bar.open(), bar.high(), bar.low(), bar.close(),
+                bar.volume().longValue(), bar.count(), bar.wap().longValue());
+
         IHistoricalDataHandler handler = m_historicalDataMap.get(reqId);
         if (handler != null) {
             if (bar.time().startsWith("finished")) {

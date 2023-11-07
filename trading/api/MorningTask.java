@@ -866,6 +866,11 @@ public final class MorningTask implements HistoricalHandler, LiveHandler, ApiCon
 
     }
 
+    @Override
+    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
+
+    }
+
     //positions
     @Override
     public void position(String account, Contract contract, Decimal position, double avgCost) {

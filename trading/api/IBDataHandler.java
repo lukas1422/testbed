@@ -29,7 +29,7 @@ public class IBDataHandler {
         }
     }
 
-    public static void tickSize(int reqId, int tickType, int size) {
+    public static void tickSize(int reqId, int tickType, long size) {
         if (Allstatic.globalRequestMap.containsKey(reqId)) {
             Request r = Allstatic.globalRequestMap.get(reqId);
             LiveHandler lh = (LiveHandler) r.getHandler();
@@ -43,6 +43,15 @@ public class IBDataHandler {
             Request r = Allstatic.globalRequestMap.get(reqId);
             LiveHandler lh = (LiveHandler) r.getHandler();
             lh.handleGeneric(TickType.get(tickType), ibContractToSymbol(r.getContract()), value,
+                    LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
+        }
+    }
+
+    public static void tickString(int reqId, int tickType, String value) {
+        if (Allstatic.globalRequestMap.containsKey(reqId)) {
+            Request r = Allstatic.globalRequestMap.get(reqId);
+            LiveHandler lh = (LiveHandler) r.getHandler();
+            lh.handleString(TickType.get(tickType), ibContractToSymbol(r.getContract()), value,
                     LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
         }
     }

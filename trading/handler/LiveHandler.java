@@ -19,6 +19,8 @@ public interface LiveHandler extends GeneralHandler {
 
     void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t);
 
+    void handleString(TickType tt, String symbol, String str, LocalDateTime t);
+
     class PriceMapUpdater implements LiveHandler {
         @Override
         public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
@@ -39,6 +41,11 @@ public interface LiveHandler extends GeneralHandler {
 
         @Override
         public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
+        }
+
+        @Override
+        public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
+
         }
     }
 
@@ -70,6 +77,11 @@ public interface LiveHandler extends GeneralHandler {
 
         @Override
         public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
+
+        }
+
+        @Override
+        public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
 
         }
     }

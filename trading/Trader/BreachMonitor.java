@@ -402,6 +402,11 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
     }
 
+    @Override
+    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
+
+    }
+
     private static double getPriceFromYtd(Contract ct) {
         String symbol = ibContractToSymbol(ct);
         if (ytdDayData.containsKey(symbol) && ytdDayData.get(symbol).size() > 0) {
