@@ -29,7 +29,7 @@ public class TradingUtility {
     public static final String A50_LAST_EXPIRY = getXINA50PrevExpiry().format(TradingConstants.expPattern);
     public static final String A50_FRONT_EXPIRY = getXINA50FrontExpiry().format(TradingConstants.expPattern);
     public static final String A50_BACK_EXPIRY = getXINA50BackExpiry().format(TradingConstants.expPattern);
-    public static final boolean keepUptoDate = false;
+    public static final boolean keepUptoDate = true;
     public static final boolean regulatorySnapshot = false;
 
     private TradingUtility() throws OperationNotSupportedException {
@@ -442,6 +442,19 @@ public class TradingUtility {
                 barSize.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
     }
 
+    public static void reqHistMinuteData(ApiController ap, int reqId, Contract c,
+                                      HistDataConsumer<Contract, String, Double, Long> dc,
+                                      int duration, Types.BarSize bs) {
+        pr(" req hist data ", reqId, c.symbol());
+        Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
+        String durationStr = duration + " " + durationUnit.toString().charAt(0);
+        Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
+        Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
+        CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
+                bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
+    }
+
+
     //requ month open
     public static void reqHistDayData(ApiController ap, int reqId, Contract c,
                                       HistDataConsumer<Contract, String, Double, Long> dc,
@@ -453,6 +466,8 @@ public class TradingUtility {
         Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
                 bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
+
+        //formatdate 1 vs 2 whats the diff
     }
 
     public static void getSGXA50Historical2(ApiController ap, int reqID, HistoricalHandler hh) {
