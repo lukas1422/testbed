@@ -34,11 +34,25 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
 
+    //data
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>>
+            liveData = new ConcurrentSkipListMap<>();
+    private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
+
+    //historical data
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>>
+            ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
+
+
+    //position
+
     private volatile static Map<Contract, Decimal> contractPosMap =
             new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>>
-            ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
+    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+
 
     private void connectAndReqPos() {
         ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
@@ -81,6 +95,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(tencent), Tester::ytdOpen,
                     Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
         });
+        registerContract(tencent);
+
+    }
+
+    private static void registerContract(Contract ct) {
+        contractPosMap.put(ct, Decimal.ZERO);
+        symbolPosMap.put(ibContractToSymbol(ct), Decimal.ZERO);
+        String symbol = ibContractToSymbol(ct);
+        if (!liveData.containsKey(symbol)) {
+            liveData.put(symbol, new ConcurrentSkipListMap<>());
+        }
     }
 
     private static void ytdOpen(Contract c, String date, double open, double high, double low,
@@ -115,21 +140,45 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     //live data start
     @Override
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
+        String symbol = ibContractToSymbol(ct);
+
+        LocalDate prevMonthCutoff = getPrevMonthCutoff(ct, getMonthBeginMinus1Day(t.toLocalDate()));
+        LocalDateTime dayStartTime = LocalDateTime.of(t.toLocalDate(), ltof(9, 30, 0));
+        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
+        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
+
+        pr(tt, symbol, price, t);
+
+        switch (tt) {
+            case LAST:
+                liveData.get(symbol).put(t, price);
+                lastMap.put(symbol, price);
+
+            case BID:
+                bidMap.put(symbol, price);
+                break;
+            case ASK:
+                askMap.put(symbol, price);
+                break;
+        }
 
     }
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
+        pr("vol", symbol, tt, vol, t);
 
     }
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
+        pr("geneirc", symbol, tt, value, t);
 
     }
 
     @Override
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
+        pr("string", symbol, tt, str, t);
 
     }
     //livedata end
