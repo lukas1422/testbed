@@ -29,6 +29,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
 
     Contract gjs = generateHKStockContract("388");
+    Contract wmt = generateUSStockContract("WMT");
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
@@ -47,9 +48,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             todayData = new ConcurrentSkipListMap<>(String::compareTo);
 
-
     //position
-
     private volatile static Map<Contract, Decimal> contractPosMap =
             new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
@@ -94,7 +93,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         CompletableFuture.runAsync(() -> {
             //                histSemaphore.acquire();
-            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(gjs), Tester::todaySoFar,
+            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(wmt), Tester::todaySoFar,
                     2, Types.BarSize._1_min);
         });
 
@@ -104,6 +103,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //                    Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
 //        });
         registerContract(gjs);
+        registerContract(wmt);
         //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
@@ -118,7 +118,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
                                    long volume) {
-//        pr("test today data");
+        pr("test today data");
         String symbol = Utility.ibContractToSymbol(c);
 //        pr("symb is", symbol);
 
@@ -127,10 +127,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         }
 
 
-        pr("date", date, open, high, low, close);
+        pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
             LocalDateTime ld =
-                    LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date)*1000), TimeZone
+                    LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone
                             .getDefault().toZoneId());
             pr("ld is", ld);
 //            LocalDateTime ld = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd hh:mm:ss"));
@@ -207,7 +207,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
-        pr("geneirc", symbol, tt, value, t);
+        pr("generic", symbol, tt, value, t);
 
     }
 
@@ -232,20 +232,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     static void calculatePercentile() {
         pr("calculate percentile", todayData.size());
-        todayData.entrySet().forEach((e) -> {
-            String st = e.getKey();
-            pr("stock", st);
-            pr("map", e.getValue());
-            ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = e.getValue();
-            double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
-            double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
-            double last = m.lastEntry().getValue().getClose();
-            pr("max min last", maxValue, minValue, last);
+        if (!todayData.isEmpty()) {
+            todayData.entrySet().forEach((e) -> {
+                String st = e.getKey();
+                pr("stock", st);
+                pr("map", e.getValue());
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = e.getValue();
+                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
+                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
+                double last = m.lastEntry().getValue().getClose();
+                pr("max min last", maxValue, minValue, last);
 
-            double percentile = r((maxValue - last) / (maxValue - minValue) * 100);
+                double percentile = r((maxValue - last) / (maxValue - minValue) * 100);
 
-            pr("time, stock percentile", LocalDateTime.now(), st, percentile);
-        });
+                pr("time, stock percentile", LocalDateTime.now(), st, percentile);
+            });
+        }
     }
     //position end
 

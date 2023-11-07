@@ -36,6 +36,14 @@ public class TradingUtility {
         throw new OperationNotSupportedException(" cannot instantiate utility class ");
     }
 
+    public static Contract generateUSStockContract(String symb) {
+        Contract ct = new Contract();
+        ct.symbol(symb);
+        ct.exchange("SMART");
+        ct.secType("STK");
+        ct.currency("USD");
+        return ct;
+    }
 
     public static Contract generateHKStockContract(String symb) {
         Contract ct = new Contract();
