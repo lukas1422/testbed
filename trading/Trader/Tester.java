@@ -30,6 +30,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
 
     Contract gjs = generateHKStockContract("388");
+    Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
@@ -44,7 +45,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
 
     //historical data
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
+            = new ConcurrentSkipListMap<>(String::compareTo);
 
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData = new ConcurrentSkipListMap<>(String::compareTo);
 
@@ -97,19 +99,24 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         pr(" Time after latch released " + LocalTime.now());
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
-        targetStockList.forEach(ct -> CompletableFuture.runAsync(() -> {
-            //                histSemaphore.acquire();
-            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct),
-                    Tester::todaySoFar, 2, Types.BarSize._1_min);
-        }));
-//        CompletableFuture.runAsync(() -> {
-//            //                histSemaphore.acquire();
-//            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(tencent), Tester::ytdOpen,
-//                    Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
-//        });
+        targetStockList.forEach(ct -> {
+            CompletableFuture.runAsync(() -> {
+                //                histSemaphore.acquire();
+                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct),
+                        Tester::todaySoFar, 2, Types.BarSize._1_min);
+            });
+            CompletableFuture.runAsync(() -> {
+                //                histSemaphore.acquire();
+                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct), Tester::ytdOpen,
+                        Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
+            });
+
+        });
+
 
 //        registerContract(wmt);
-        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500, TimeUnit.MILLISECONDS);
+        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500,
+                TimeUnit.MILLISECONDS);
         //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
@@ -135,7 +142,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
-            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone.getDefault().toZoneId());
+            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+                    TimeZone.getDefault().toZoneId());
             pr("ld is", ld);
 //            LocalDateTime ld = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd hh:mm:ss"));
             todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
@@ -190,7 +198,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             case LAST:
                 liveData.get(symbol).put(t, price);
                 lastMap.put(symbol, price);
-
             case BID:
                 bidMap.put(symbol, price);
                 break;
@@ -233,27 +240,39 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     @Override
     public void positionEnd() {
-
+        pr("position end");
     }
 
     static void calculatePercentile() {
-        pr("calculate percentile", todayData.size());
-        if (!todayData.isEmpty()) {
-            todayData.entrySet().forEach((e) -> {
-                String st = e.getKey();
-                pr("stock", st);
-                pr("map", e.getValue());
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = e.getValue();
+        pr("calculate percentile", LocalDateTime.now(), targetStockList.size());
+//        pr("calculate percentile", targetStockList.size());
+
+        targetStockList.forEach(ct -> {
+            String symb = ibContractToSymbol(ct);
+            pr("stock", symb);
+
+            if (todayData.containsKey(symb) && !todayData.get(symb).isEmpty()) {
+                pr("map", todayData.get(symb));
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = todayData.get(symb);
                 double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
                 double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
                 double last = m.lastEntry().getValue().getClose();
-                pr("max min last", maxValue, minValue, last);
 
-                double percentile = r((maxValue - last) / (maxValue - minValue) * 100);
+                double percentile = r((last-minValue) / (maxValue - minValue) * 100);
+                pr("time, stock percentile", LocalDateTime.now(), symb, percentile,"max min last", maxValue,minValue,last);
+            }
 
-                pr("time, stock percentile", LocalDateTime.now(), st, percentile);
-            });
-        }
+            if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
+//                pr("hist data", ytdDayData.get(symb));
+                ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
+                double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
+                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
+                        / lastYearClose - 1;
+                pr("ytd return", symb, returnOnYear);
+            }
+
+
+        });
     }
 
     //position end
@@ -261,6 +280,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
-        es.schedule(Tester::calculatePercentile, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(Tester::calculatePercentile, 10L, 10L, TimeUnit.SECONDS);
     }
 }
