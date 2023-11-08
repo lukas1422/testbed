@@ -39,8 +39,9 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     static volatile NavigableMap<Integer, OrderAugmented> devOrderMap = new ConcurrentSkipListMap<>();
     static volatile AtomicInteger devTradeID = new AtomicInteger(100);
 
-    private static DateTimeFormatter f = DateTimeFormatter.ofPattern("M-d H:mm:ss");
-    private static final DateTimeFormatter f1 = DateTimeFormatter.ofPattern("M-d H:mm");
+    public static DateTimeFormatter f = DateTimeFormatter.ofPattern("M-d H:mm:ss");
+
+    public static final DateTimeFormatter f1 = DateTimeFormatter.ofPattern("M-d H:mm");
     public static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
 
     private static double totalDelta = 0.0;

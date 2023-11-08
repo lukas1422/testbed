@@ -112,8 +112,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         });
 
-
-//        registerContract(wmt);
         Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500,
                 TimeUnit.MILLISECONDS);
         req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
@@ -130,9 +128,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     }
 
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
-//        pr("test today data");
         String symbol = Utility.ibContractToSymbol(c);
-//        pr("symb is", symbol);
 
         if (!todayData.containsKey(symbol)) {
             todayData.put(symbol, new ConcurrentSkipListMap<>());
@@ -144,14 +140,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                     TimeZone.getDefault().toZoneId());
             pr("ld is", ld);
-//            LocalDateTime ld = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd hh:mm:ss"));
             todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         }
-//        else {
-//            if (!todayData.get(symbol).firstKey().isBefore(Allstatic.LAST_YEAR_DAY)) {
-//                pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
-//            }
-//        }
+
     }
 
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
@@ -197,6 +188,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             case LAST:
                 liveData.get(symbol).put(t, price);
                 lastMap.put(symbol, price);
+
+                //trade logic
+
             case BID:
                 bidMap.put(symbol, price);
                 break;
