@@ -60,7 +60,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     public Tester() {
         pr("initializing...");
-        registerContract(gjs);
+        registerContract(wmt);
     }
 
 
@@ -116,7 +116,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        registerContract(wmt);
         Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500,
                 TimeUnit.MILLISECONDS);
-        //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
+        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
     }
 
     private static void registerContract(Contract ct) {
@@ -191,7 +191,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
         LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
 
-        pr("price", tt, symbol, price, t);
+        pr("live price", tt, symbol, price, t);
 
         switch (tt) {
             case LAST:
@@ -208,19 +208,19 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
-        pr("vol", symbol, tt, vol, t);
+        pr("live vol", symbol, tt, vol, t);
 
     }
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
-        pr("generic", symbol, tt, value, t);
+        pr("live generic", symbol, tt, value, t);
 
     }
 
     @Override
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
-        pr("string", symbol, tt, str, t);
+        pr("live string", symbol, tt, str, t);
 
     }
     //livedata end
