@@ -49,7 +49,8 @@ public class SharpeUtility {
         double mean = getMean(mp);
         int count = mp.size();
 
-        return count == 0 ? 0 : Math.sqrt(mp.entrySet().stream().mapToDouble(Map.Entry::getValue).map(v -> Math.pow(v - mean, 2)).sum() / (count - 1));
+        return count == 0 ? 0 : Math.sqrt(mp.entrySet().stream()
+                .mapToDouble(Map.Entry::getValue).map(v -> Math.pow(v - mean, 2)).sum() / (count - 1));
     }
 
     public static double getSharpe(NavigableMap<? extends Temporal, Double> mp, double factor) {

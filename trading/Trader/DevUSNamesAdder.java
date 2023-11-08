@@ -88,19 +88,7 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
                 , 500, TimeUnit.MILLISECONDS);
     }
 
-    public static void main(String[] args) {
-        DevUSNamesAdder adder = new DevUSNamesAdder();
-        adder.getFromIB();
 
-        ScheduledExecutorService es = Executors.newSingleThreadScheduledExecutor();
-        es.schedule(() -> {
-            pr("***Delay 20s*** output to breach, updateChinaAll ");
-            symbolLotsize.forEach(Utility::pr);
-            outputToBreach();
-//            updateChinaAll();
-        }, 20, TimeUnit.SECONDS);
-        es.schedule(() -> System.exit(0), 60, TimeUnit.SECONDS);
-    }
 
     @Override
     public void position(String account, Contract contract, Decimal position, double avgCost) {
@@ -178,7 +166,6 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
         } else {
             throw new IllegalStateException(" symbol size 0 , no output ");
         }
-
     }
 
     private static void updateChinaAll() {
@@ -210,5 +197,19 @@ public class DevUSNamesAdder implements ApiController.IPositionHandler {
 
         clearFile(chinaAll);
         chinaAllOutputString.forEach(l -> simpleWriteToFile(String.join("\t", l), true, chinaAll));
+    }
+
+    public static void main(String[] args) {
+        DevUSNamesAdder adder = new DevUSNamesAdder();
+        adder.getFromIB();
+
+        ScheduledExecutorService es = Executors.newSingleThreadScheduledExecutor();
+        es.schedule(() -> {
+            pr("***Delay 20s*** output to breach, updateChinaAll ");
+            symbolLotsize.forEach(Utility::pr);
+            outputToBreach();
+//            updateChinaAll();
+        }, 20, TimeUnit.SECONDS);
+        es.schedule(() -> System.exit(0), 60, TimeUnit.SECONDS);
     }
 }

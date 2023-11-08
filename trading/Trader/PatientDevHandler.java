@@ -68,6 +68,5 @@ public class PatientDevHandler implements ApiController.IOrderHandler {
     public void handle(int errorCode, String errorMsg) {
         outputToError(str("ERROR: Patient Dev Handler:", tradeID, errorCode, errorMsg
                 , devOrderMap.get(tradeID)));
-
     }
 }

@@ -91,8 +91,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         try {
             l.await();
             pr("connected");
-//            connectionStatus = true;
-            //ap.setConnected();
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -270,13 +269,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                         / lastYearClose - 1;
                 pr("ytd return", symb, returnOnYear);
             }
-
-
         });
     }
 
     //position end
-    //main method
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
