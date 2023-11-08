@@ -6,6 +6,7 @@ import client.Contract;
 import client.Decimal;
 import client.TickType;
 import client.Types;
+import com.sun.source.tree.Tree;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
@@ -35,30 +36,34 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
 
     //data
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>>
-            liveData = new ConcurrentSkipListMap<>();
+
+    private static volatile TreeSet<Contract> targetStockList = new TreeSet<>(Comparator.comparing(k -> k.symbol()));
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
     private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
 
     //historical data
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>>
-            ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
 
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
-            todayData = new ConcurrentSkipListMap<>(String::compareTo);
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData = new ConcurrentSkipListMap<>(String::compareTo);
+
 
     //position
-    private volatile static Map<Contract, Decimal> contractPosMap =
-            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
+    private volatile static Map<Contract, Decimal> contractPosMap = new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
     private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
 
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
+    public Tester() {
+        pr("initializing...");
+        registerContract(gjs);
+    }
+
+
     private void connectAndReqPos() {
-        ApiController ap = new ApiController(new DefaultConnectionHandler(),
-                new Utility.DefaultLogger(), new Utility.DefaultLogger());
+        ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
         apDev = ap;
         CountDownLatch l = new CountDownLatch(1);
         boolean connectionStatus = false;
@@ -84,7 +89,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         try {
             l.await();
             pr("connected");
-            connectionStatus = true;
+//            connectionStatus = true;
             //ap.setConnected();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -92,25 +97,24 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         pr(" Time after latch released " + LocalTime.now());
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
-        CompletableFuture.runAsync(() -> {
+        targetStockList.forEach(ct -> CompletableFuture.runAsync(() -> {
             //                histSemaphore.acquire();
-            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(wmt), Tester::todaySoFar,
-                    2, Types.BarSize._1_min);
-        });
-
+            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct),
+                    Tester::todaySoFar, 2, Types.BarSize._1_min);
+        }));
 //        CompletableFuture.runAsync(() -> {
 //            //                histSemaphore.acquire();
 //            reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(tencent), Tester::ytdOpen,
 //                    Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
 //        });
-        registerContract(gjs);
-        registerContract(wmt);
-        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this)
-                , 500, TimeUnit.MILLISECONDS);
+
+//        registerContract(wmt);
+        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500, TimeUnit.MILLISECONDS);
         //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
     private static void registerContract(Contract ct) {
+        targetStockList.add(ct);
         contractPosMap.put(ct, Decimal.ZERO);
         symbolPosMap.put(ibContractToSymbol(ct), Decimal.ZERO);
         String symbol = ibContractToSymbol(ct);
@@ -119,9 +123,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         }
     }
 
-    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
-                                   long volume) {
-        pr("test today data");
+    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+//        pr("test today data");
         String symbol = Utility.ibContractToSymbol(c);
 //        pr("symb is", symbol);
 
@@ -132,9 +135,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
-            LocalDateTime ld =
-                    LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone
-                            .getDefault().toZoneId());
+            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone.getDefault().toZoneId());
             pr("ld is", ld);
 //            LocalDateTime ld = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd hh:mm:ss"));
             todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
@@ -146,8 +147,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        }
     }
 
-    private static void ytdOpen(Contract c, String date, double open, double high, double low,
-                                double close, long volume) {
+    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
 
         pr("test if called in ytdopen");
         String symbol = Utility.ibContractToSymbol(c);
@@ -156,7 +156,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         if (!ytdDayData.containsKey(symbol)) {
             ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
-
 
         pr("date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
@@ -199,7 +198,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 askMap.put(symbol, price);
                 break;
         }
-
     }
 
     @Override
@@ -229,6 +227,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             contractPosMap.put(contract, position);
             symbolPosMap.put(ibContractToSymbol(contract), position);
         }
+//        contractPosMap.entrySet().stream().forEach(e -> pr(e.getKey().symbol(), e.getValue()));
+//     pr("contract map", contractPosMap);
     }
 
     @Override
@@ -255,15 +255,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             });
         }
     }
-    //position end
 
+    //position end
     //main method
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
         es.schedule(Tester::calculatePercentile, 10L, TimeUnit.SECONDS);
-
-
     }
-
 }
