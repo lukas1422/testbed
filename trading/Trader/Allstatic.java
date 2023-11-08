@@ -26,16 +26,16 @@ public class Allstatic {
     public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
+    public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
+    public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
     public static AtomicInteger GLOBAL_REQ_ID = new AtomicInteger(30000);
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalTime, SimpleBar>> priceMapBar = new ConcurrentHashMap<>();
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> priceMapBarDetail
             = new ConcurrentHashMap<>();
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalTime, SimpleBar>> priceMapBarYtd = new ConcurrentHashMap<>();
-    public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
-    public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
+
     public static volatile Map<Integer, Request> globalRequestMap = new ConcurrentHashMap<>();
-    public volatile static Map<String, Decimal> currentPositionMap
-            = new TreeMap<>(String::compareTo);
+    public volatile static Map<String, Decimal> currentPositionMap = new TreeMap<>(String::compareTo);
     public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
     public volatile static Map<String, ConcurrentSkipListMap<LocalTime, TradeBlock>> tradesMap = new ConcurrentHashMap<>();
     public static volatile NavigableMap<Integer, OrderAugmented> globalIdOrderMap =

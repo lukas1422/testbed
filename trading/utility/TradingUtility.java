@@ -31,6 +31,8 @@ public class TradingUtility {
     public static final String A50_BACK_EXPIRY = getXINA50BackExpiry().format(TradingConstants.expPattern);
     public static final boolean keepUptoDate = true;
     public static final boolean regulatorySnapshot = false;
+    public static final LocalDate LAST_MONTH_DAY = getMonthBeginMinus1Day();
+    public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
 
     private TradingUtility() throws OperationNotSupportedException {
         throw new OperationNotSupportedException(" cannot instantiate utility class ");

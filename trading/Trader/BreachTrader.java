@@ -31,7 +31,6 @@ import static utility.Utility.*;
 public class BreachTrader implements LiveHandler, ApiController.IPositionHandler {
 
     private static final String HEDGER_INDEX = "MES";
-
     static final int MAX_LIQ_ATTEMPTS = 100;
     private static final double MAX_ENTRY_DEV = 0.05;
     private static final double MAX_DRAWDOWN = -0.05;

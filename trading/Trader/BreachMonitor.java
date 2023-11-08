@@ -30,8 +30,6 @@ public class BreachMonitor implements LiveHandler, ApiController.IPositionHandle
 
     private static final DateTimeFormatter f = DateTimeFormatter.ofPattern("M-d");
     private static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:ss");
-    private static final LocalDate LAST_MONTH_DAY = getMonthBeginMinus1Day();
-    private static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>>
             ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
 

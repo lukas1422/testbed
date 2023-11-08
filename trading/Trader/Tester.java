@@ -57,7 +57,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
     private void connectAndReqPos() {
-        ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
+        ApiController ap = new ApiController(new DefaultConnectionHandler(),
+                new Utility.DefaultLogger(), new Utility.DefaultLogger());
         apDev = ap;
         CountDownLatch l = new CountDownLatch(1);
         boolean connectionStatus = false;
@@ -104,6 +105,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        });
         registerContract(gjs);
         registerContract(wmt);
+        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this)
+                , 500, TimeUnit.MILLISECONDS);
         //req1ContractLive(apDev, liveCompatibleCt(tencent), this, false);
     }
 
@@ -146,7 +149,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static void ytdOpen(Contract c, String date, double open, double high, double low,
                                 double close, long volume) {
 
-        pr("test if called in ytldopen");
+        pr("test if called in ytdopen");
         String symbol = Utility.ibContractToSymbol(c);
         pr("symb is", symbol);
 
@@ -221,8 +224,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     //position start
     @Override
-    public void position(String account, Contract contract, Decimal pos, double avgCost) {
-
+    public void position(String account, Contract contract, Decimal position, double avgCost) {
+        if (!contract.symbol().equals("USD")) {
+            contractPosMap.put(contract, position);
+            symbolPosMap.put(ibContractToSymbol(contract), position);
+        }
     }
 
     @Override
@@ -256,6 +262,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
         es.schedule(Tester::calculatePercentile, 10L, TimeUnit.SECONDS);
+
+
     }
 
 }
