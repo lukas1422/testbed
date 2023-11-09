@@ -42,7 +42,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     //files
 //    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
-    private static File testOutputFile = new File("trading/TradingFiles/output");
+    static File testOutputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
 

@@ -14,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Tester.orderMap;
+import static Trader.Tester.testOutputFile;
 import static api.TradingConstants.f2;
 import static api.TradingConstants.miscOutput;
 import static client.OrderStatus.Filled;
@@ -25,7 +26,6 @@ public class PatientOrderHandler implements ApiController.IOrderHandler {
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
     private int tradeID;
 //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-
 
     PatientOrderHandler(int id) {
         tradeID = id;
@@ -50,7 +50,7 @@ public class PatientOrderHandler implements ApiController.IOrderHandler {
                 outputToSymbolFile(orderMap.get(tradeID).getSymbol(),
                         str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDRE FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID)), miscOutput);
+                                now.format(f2), orderMap.get(tradeID)), testOutputFile);
                 outputDetailedGen(str(orderMap.get(tradeID).getSymbol(), now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
             }

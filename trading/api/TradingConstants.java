@@ -26,8 +26,8 @@ public final class TradingConstants {
 
     public static final String RELATIVEPATH = "trading/TradingFiles/";
 
-    public static File fillsOutput = new File(GLOBALPATH + "fills.txt");
-    public static File miscOutput = new File(GLOBALPATH + "misc.txt");
+    public static File fillsOutput = new File(RELATIVEPATH + "fills");
+    public static File miscOutput = new File(RELATIVEPATH + "misc");
 
 
     public static final String DESKTOPPATH = System.getProperty("os.name").equalsIgnoreCase("linux") ?
