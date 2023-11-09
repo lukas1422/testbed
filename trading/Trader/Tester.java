@@ -41,7 +41,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
 
     //files
-    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
+//    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
+    private static File testOutputFile = new File("trading/TradingFiles/output");
+    //File f = new File("trading/TradingFiles/output");
 
 
     //data
@@ -80,7 +82,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private Tester() {
         pr("initializing...");
         registerContract(wmt);
-        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
+//        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
+        File f = new File("trading/TradingFiles/output");
+        pr(f.getAbsolutePath());
+
+        outputToFile("test", f);
+
     }
 
 
@@ -210,7 +217,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         switch (tt) {
             case LAST:
-//                liveData.get(symbol).put(t, price);
                 lastMap.put(symbol, price);
                 liveData.get(symbol).put(t, price);
 
@@ -308,20 +314,19 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (!added && !liquidated && percentile < 10) {
+        if (!added && !liquidated) {
             addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
-
 //            bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
 
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
                     orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
         }
     }
 
@@ -342,10 +347,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             Order o = placeOfferLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER SELLER:",
                     orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
         }
     }
 
