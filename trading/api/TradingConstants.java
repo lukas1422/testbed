@@ -44,6 +44,11 @@ public final class TradingConstants {
 
     public static final Predicate<LocalDateTime> FUT_COLLECTION_TIME =
             ldt -> ldt.toLocalTime().isBefore(LocalTime.of(5, 0)) || ldt.toLocalTime().isAfter(LocalTime.of(8, 59));
+    public static final DateTimeFormatter f1 = DateTimeFormatter.ofPattern("M-d H:mm");
+
+    public static DateTimeFormatter f = DateTimeFormatter.ofPattern("M-d H:mm:ss");
+
+    public static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
 
 
     private static final Predicate<LocalDateTime> FUT_OPEN_PRED = (lt)

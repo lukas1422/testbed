@@ -1,17 +1,17 @@
 package Trader;
 
 import api.OrderAugmented;
+import api.TradingConstants;
 import auxiliary.SimpleBar;
-import client.Contract;
-import client.Decimal;
-import client.TickType;
-import client.Types;
+import client.*;
 import com.sun.source.tree.Tree;
 import controller.ApiController;
+import enums.Direction;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
 
+import java.io.File;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,8 +19,13 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static api.ControllerCalls.placeOrModifyOrderCheck;
+import static api.TradingConstants.f1;
+import static client.Types.TimeInForce.DAY;
+import static enums.AutoOrderType.*;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
@@ -33,34 +38,51 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
 
+
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
 
-    //data
+    //files
+    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
 
+
+    //data
     private static volatile TreeSet<Contract> targetStockList = new TreeSet<>(Comparator.comparing(k -> k.symbol()));
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
     private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> percentileMap = new ConcurrentHashMap<>();
+
 
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
 
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData = new ConcurrentSkipListMap<>(String::compareTo);
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
+            = new ConcurrentSkipListMap<>(String::compareTo);
 
 
     //position
-    private volatile static Map<Contract, Decimal> contractPosMap = new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
+    private volatile static Map<Contract, Decimal> contractPosMap =
+            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
     private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
 
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
-    public Tester() {
+    //avoid too many requests at once, only 50 requests allowed at one time.
+    private static Semaphore histSemaphore = new Semaphore(45);
+
+    //Trade
+    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
+    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
+
+
+    private Tester() {
         pr("initializing...");
         registerContract(wmt);
+        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
     }
 
 
@@ -134,6 +156,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             todayData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
+        if (!liveData.containsKey(symbol)) {
+            liveData.put(symbol, new ConcurrentSkipListMap<>());
+        }
+
 
         pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
@@ -141,8 +167,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                     TimeZone.getDefault().toZoneId());
             pr("ld is", ld);
             todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+            liveData.get(symbol).put(ld, close);
         }
-
     }
 
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
@@ -186,10 +212,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         switch (tt) {
             case LAST:
-                liveData.get(symbol).put(t, price);
+//                liveData.get(symbol).put(t, price);
                 lastMap.put(symbol, price);
+                liveData.get(symbol).put(t, price);
 
                 //trade logic
+                if (percentileMap.containsKey(symbol) && percentileMap.get(symbol) < 10) {
+                    outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), outputFile);
+                    inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
+                }
 
             case BID:
                 bidMap.put(symbol, price);
@@ -251,8 +282,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
                 double last = m.lastEntry().getValue().getClose();
 
-                double percentile = r((last-minValue) / (maxValue - minValue) * 100);
-                pr("time, stock percentile", LocalDateTime.now(), symb, percentile,"max min last", maxValue,minValue,last);
+                double percentile = r((last - minValue) / (maxValue - minValue) * 100);
+                percentileMap.put(symb, percentile);
+                pr("time, stock percentile", LocalDateTime.now(), symb, percentile, "max min last", maxValue, minValue, last);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
@@ -266,7 +298,60 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         });
     }
 
-    //position end
+    //Trade
+    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double percentile) {
+        String symbol = ibContractToSymbol(ct);
+        Decimal pos = symbolPosMap.get(symbol);
+
+//        Decimal defaultS = Decimal.get(getDefaultSize(ct, price));
+        Decimal defaultS = Decimal.get(10);
+        //double prevClose = getLastPriceFromYtd(ct);
+
+        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+
+        if (!added && !liquidated && percentile < 10) {
+            addedMap.put(symbol, new AtomicBoolean(true));
+            int id = tradeID.incrementAndGet();
+            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+
+//            bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
+
+            Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
+            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
+            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
+                    orderMap.get(id), "p/b/a", price,
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol), outputFile);
+        }
+    }
+
+    private static void inventoryCutter(Contract ct, double price, LocalDateTime t, double percentile) {
+        String symbol = ibContractToSymbol(ct);
+        Decimal pos = symbolPosMap.get(symbol);
+
+        Decimal defaultS = Decimal.get(10);
+
+        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+
+        if (!added && !liquidated && percentile > 90) {
+            addedMap.put(symbol, new AtomicBoolean(true));
+            int id = tradeID.incrementAndGet();
+            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+
+            Order o = placeOfferLimitTIF(bidPrice, defaultS, DAY);
+            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+            placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
+            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER SELLER:",
+                    orderMap.get(id), "p/b/a", price,
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+        }
+    }
+
+
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();

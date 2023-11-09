@@ -20,6 +20,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static utility.Utility.*;
@@ -549,5 +550,9 @@ public class TradingUtility {
 
     public static int getCalendarYtdDays() {
         return (int) ChronoUnit.DAYS.between(Allstatic.LAST_YEAR_DAY, LocalDate.now());
+    }
+
+    public static double getDoubleFromMap(Map<String, Double> m, String symb) {
+        return m.getOrDefault(symb, 0.0);
     }
 }
