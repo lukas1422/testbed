@@ -323,7 +323,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
                     orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol), outputFile);
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
         }
     }
 
