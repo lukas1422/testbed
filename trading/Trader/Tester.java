@@ -140,6 +140,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         });
 
+        reqHoldings(apDev);
         Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500,
                 TimeUnit.MILLISECONDS);
         req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
@@ -309,28 +310,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        if (pos.longValue() < 10) {
-//        Decimal defaultS = Decimal.get(getDefaultSize(ct, price));
+        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+
+        if (pos.longValue() < 10 && !added) {
             Decimal defaultS = Decimal.get(10);
-            //double prevClose = getLastPriceFromYtd(ct);
+            addedMap.put(symbol, new AtomicBoolean(true));
+            int id = tradeID.incrementAndGet();
+            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+            Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
+            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
+            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
+                    orderMap.get(id), "p/b/a", price,
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
 
-            boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
-            boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
-
-            if (!added && !liquidated) {
-                addedMap.put(symbol, new AtomicBoolean(true));
-                int id = tradeID.incrementAndGet();
-                double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
-//            bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
-
-                Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
-                orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-                placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-                outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-                outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
-                        orderMap.get(id), "p/b/a", price,
-                        getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
-            }
         }
     }
 
@@ -363,5 +358,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(Tester::calculatePercentile, 10L, 10L, TimeUnit.SECONDS);
+//        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
     }
 }
