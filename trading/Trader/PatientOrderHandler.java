@@ -48,7 +48,7 @@ public class PatientOrderHandler implements ApiController.IOrderHandler {
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
                 outputToSymbolFile(orderMap.get(tradeID).getSymbol(),
-                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDRE FILL*"
+                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
                                 now.format(f2), orderMap.get(tradeID)), testOutputFile);
                 outputDetailedGen(str(orderMap.get(tradeID).getSymbol(), now.format(f2),

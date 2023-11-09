@@ -171,8 +171,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             liveData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
-
-        pr("test data today", "date", date, open, high, low, close);
+//        pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
             LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                     TimeZone.getDefault().toZoneId());
@@ -184,7 +183,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
 
-        pr("test if called in ytdopen");
+//        pr("test if called in ytdopen");
         String symbol = Utility.ibContractToSymbol(c);
         pr("symb is", symbol);
 
@@ -227,10 +226,19 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 liveData.get(symbol).put(t, price);
 
                 //trade logic
-                if (percentileMap.containsKey(symbol) && percentileMap.get(symbol) < 10
-                        && symbolPosMap.get(symbol).isZero()) {
-                    //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
-                    inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
+                if (percentileMap.containsKey(symbol)) {
+                    if (percentileMap.get(symbol) < 10 && symbolPosMap.get(symbol).isZero()) {
+                        //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
+                        inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
+//                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
+                    }
+
+                    pr("price divergence", price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE));
+
+                    if (!symbolPosMap.get(symbol).isZero()
+                            && price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE) > 1.003) {
+                        inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                    }
                 }
 
             case BID:
@@ -244,19 +252,19 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
-        pr("live vol", symbol, tt, vol, t);
+//        pr("live vol", symbol, tt, vol, t);
 
     }
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
-        pr("live generic", symbol, tt, value, t);
+//        pr("live generic", symbol, tt, value, t);
 
     }
 
     @Override
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
-        pr("live string", symbol, tt, str, t);
+//        pr("live string", symbol, tt, str, t);
 
     }
     //livedata end
@@ -299,7 +307,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             pr("stock", symb);
 
             if (todayData.containsKey(symb) && !todayData.get(symb).isEmpty()) {
-                pr("map", todayData.get(symb));
+//                pr("map", todayData.get(symb));
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = todayData.get(symb);
                 double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
                 double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
@@ -316,7 +324,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
                         / lastYearClose - 1;
-                pr("ytd return", symb, returnOnYear);
+//                pr("ytd return", symb, returnOnYear);
             }
         });
     }
@@ -349,21 +357,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        Decimal defaultS = Decimal.get(10);
-
-        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+//        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (!added && !liquidated && percentile > 90) {
-            addedMap.put(symbol, new AtomicBoolean(true));
+//        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
+        if (!liquidated && pos.longValue() > 0) {
+            liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
-            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+//            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+            double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
+                    contractAverageCostMap.getOrDefault(symbol, price) * 1.003));
 
-            Order o = placeOfferLimitTIF(bidPrice, defaultS, DAY);
+            Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
             outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER SELLER:",
+            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:",
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
         }
