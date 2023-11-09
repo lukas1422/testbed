@@ -2,6 +2,7 @@ package api;
 
 import utility.Utility;
 
+import java.io.File;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -22,6 +23,9 @@ public final class TradingConstants {
             "/home/l/Desktop/Trading/" :
             (System.getProperty("os.name").startsWith("Mac")? "/Users/luke/Desktop/Trading/":
                     "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\Trading\\");
+    public static File fillsOutput = new File(GLOBALPATH + "fills.txt");
+    public static File miscOutput = new File(GLOBALPATH + "misc.txt");
+
 
     public static final String DESKTOPPATH = System.getProperty("os.name").equalsIgnoreCase("linux") ?
             "/home/l/Desktop/" : "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\";

@@ -4,9 +4,7 @@ import api.OrderAugmented;
 import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.*;
-import com.sun.source.tree.Tree;
 import controller.ApiController;
-import enums.Direction;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
@@ -319,7 +317,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
+            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
                     orderMap.get(id), "p/b/a", price,
@@ -343,7 +341,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
             Order o = placeOfferLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientDevHandler(id));
+            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER SELLER:",
                     orderMap.get(id), "p/b/a", price,

@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static Trader.BreachTrader.f2;
+//import static Trader.BreachTrader.f2;
+import static api.TradingConstants.f2;
 import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.str;
 

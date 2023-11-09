@@ -11,21 +11,23 @@ import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static Trader.BreachTrader.devOrderMap;
-import static Trader.BreachTrader.f2;
+//import static Trader.BreachTrader.devOrderMap;
+//import static Trader.BreachTrader.f2;
+import static Trader.Tester.orderMap;
+import static api.TradingConstants.f2;
+import static api.TradingConstants.miscOutput;
 import static client.OrderStatus.Filled;
 import static utility.TradingUtility.outputToError;
 import static utility.Utility.*;
 
-public class PatientDevHandler implements ApiController.IOrderHandler {
+public class PatientOrderHandler implements ApiController.IOrderHandler {
 
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
     private int tradeID;
-    private static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-    private static File fillsOutput = new File(TradingConstants.GLOBALPATH + "fills.txt");
+//    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
 
 
-    PatientDevHandler(int id) {
+    PatientOrderHandler(int id) {
         tradeID = id;
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
@@ -37,36 +39,37 @@ public class PatientDevHandler implements ApiController.IOrderHandler {
     @Override
     public void orderState(OrderState orderState) {
         LocalDateTime now = LocalDateTime.now();
-        if (devOrderMap.containsKey(tradeID)) {
-            devOrderMap.get(tradeID).setAugmentedOrderStatus(orderState.status());
+        if (orderMap.containsKey(tradeID)) {
+            orderMap.get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
         }
 
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                outputToSymbolFile(devOrderMap.get(tradeID).getSymbol(),
-                        str(devOrderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT DEV FILL*"
+                outputToSymbolFile(orderMap.get(tradeID).getSymbol(),
+                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDRE FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), devOrderMap.get(tradeID)), breachMDevOutput);
-                outputDetailedGen(str(devOrderMap.get(tradeID).getSymbol(), now.format(f2),
-                        devOrderMap.get(tradeID)), fillsOutput);
+                                now.format(f2), orderMap.get(tradeID)), miscOutput);
+                outputDetailedGen(str(orderMap.get(tradeID).getSymbol(), now.format(f2),
+                        orderMap.get(tradeID)), TradingConstants.fillsOutput);
             }
             idStatusMap.put(tradeID, orderState.status());
         }
-
-
     }
 
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
+        outputDetailedGen(str(status, filled, remaining,
+                avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice), miscOutput);
+
     }
 
     @Override
     public void handle(int errorCode, String errorMsg) {
         outputToError(str("ERROR: Patient Dev Handler:", tradeID, errorCode, errorMsg
-                , devOrderMap.get(tradeID)));
+                , orderMap.get(tradeID)));
     }
 }

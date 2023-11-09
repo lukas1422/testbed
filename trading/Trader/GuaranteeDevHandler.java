@@ -16,12 +16,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static Trader.BreachTrader.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
+import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
 import static client.OrderStatus.PendingCancel;
 import static client.Types.TimeInForce.DAY;
 import static client.Types.TimeInForce.IOC;
-import static utility.TradingUtility.outputToError;
-import static utility.TradingUtility.outputToSpecial;
+import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
 public class GuaranteeDevHandler implements ApiController.IOrderHandler {
@@ -141,7 +141,7 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
                 o.tif(DAY);
 
                 int newID = devTradeID.incrementAndGet();
-                placeOrModifyOrderCheck(controller, ct, o, new PatientDevHandler(newID));
+                placeOrModifyOrderCheck(controller, ct, o, new PatientOrderHandler(newID));
 
                 devOrderMap.put(newID, new OrderAugmented(ct, LocalDateTime.now(), o,
                         devOrderMap.get(currentID).getOrderType(), false));
