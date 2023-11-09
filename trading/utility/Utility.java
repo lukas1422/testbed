@@ -535,7 +535,7 @@ public class Utility {
 
     public static <T extends Temporal, S> NavigableMap<T, S> trimMapWithLocalTimePred(NavigableMap<T, S> mp, Predicate<LocalTime> p) {
         return mp.entrySet().stream().filter(e -> e.getKey().getClass() == LocalTime.class ? p.test((LocalTime) e.getKey()) :
-                p.test(((LocalDateTime) e.getKey()).toLocalTime()))
+                        p.test(((LocalDateTime) e.getKey()).toLocalTime()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a,
                         ConcurrentSkipListMap::new));
 
@@ -1046,14 +1046,14 @@ public class Utility {
     public static void outputToSymbolFile(String symbol, String msg, File detailed) {
         pr("output", symbol, msg);
         if (!symbol.equals("")) {
-            outputDetailedGen(msg, new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
+            outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
         }
         outputDetailedGen(msg, detailed);
     }
 
     public static void outputDetailedUSSymbol(String symbol, String msg) {
-        outputDetailedGen(LocalDateTime.now().toString(), new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
-        outputDetailedGen(msg, new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
+        outputDetailedGen(LocalDateTime.now().toString(), new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
+        outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
     }
 
     public static void outputDetailedXUSymbol(String symbol, String msg) {
@@ -1062,8 +1062,8 @@ public class Utility {
 //                    , new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
 //        }
         outputDetailedGen(LocalDateTime.now().toString(),
-                new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
-        outputDetailedGen(msg, new File(TradingConstants.GLOBALPATH + symbol + ".txt"));
+                new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
+        outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
     }
 
     public static LocalDateTime ldtof(LocalDate d, LocalTime t) {

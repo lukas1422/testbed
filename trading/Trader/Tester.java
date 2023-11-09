@@ -313,7 +313,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.longValue() < 10 && !added) {
+        if (pos.longValue() < 10 && !added && percentile < 10) {
             Decimal defaultS = Decimal.get(10);
             addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();

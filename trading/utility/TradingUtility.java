@@ -542,6 +542,7 @@ public class TradingUtility {
     }
 
     public static void outputToAll(String s) {
+        //outputToFile(s, );
         outputDetailedXUSymbol("", s);
 //        outputDetailedHKSymbol("", s);
         outputDetailedUSSymbol("", s);

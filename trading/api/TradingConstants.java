@@ -21,8 +21,11 @@ public final class TradingConstants {
 
     public static final String GLOBALPATH = System.getProperty("os.name").equalsIgnoreCase("linux") ?
             "/home/l/Desktop/Trading/" :
-            (System.getProperty("os.name").startsWith("Mac")? "/Users/luke/Desktop/Trading/":
+            (System.getProperty("os.name").startsWith("Mac") ? "/Users/luke/Desktop/Trading/" :
                     "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\Trading\\");
+
+    public static final String RELATIVEPATH = "trading/TradingFiles/";
+
     public static File fillsOutput = new File(GLOBALPATH + "fills.txt");
     public static File miscOutput = new File(GLOBALPATH + "misc.txt");
 
