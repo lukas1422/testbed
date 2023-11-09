@@ -77,6 +77,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     //Trade
     private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
     private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
+    private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
 
 
     private Tester() {
@@ -221,8 +222,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 liveData.get(symbol).put(t, price);
 
                 //trade logic
-                if (percentileMap.containsKey(symbol) && percentileMap.get(symbol) < 10) {
-                    outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), outputFile);
+                if (percentileMap.containsKey(symbol) && percentileMap.get(symbol) < 10
+                        && !symbolPosMap.get(symbol).isZero()) {
+                    outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
                     inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
                 }
 
@@ -307,26 +309,28 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
+        if (pos.longValue() < 10) {
 //        Decimal defaultS = Decimal.get(getDefaultSize(ct, price));
-        Decimal defaultS = Decimal.get(10);
-        //double prevClose = getLastPriceFromYtd(ct);
+            Decimal defaultS = Decimal.get(10);
+            //double prevClose = getLastPriceFromYtd(ct);
 
-        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
-        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+            boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+            boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (!added && !liquidated) {
-            addedMap.put(symbol, new AtomicBoolean(true));
-            int id = tradeID.incrementAndGet();
-            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+            if (!added && !liquidated) {
+                addedMap.put(symbol, new AtomicBoolean(true));
+                int id = tradeID.incrementAndGet();
+                double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
 //            bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
 
-            Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
-            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
-                    orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
+                Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
+                orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+                placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
+                outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
+                        orderMap.get(id), "p/b/a", price,
+                        getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
+            }
         }
     }
 
