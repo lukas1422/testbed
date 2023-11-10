@@ -219,10 +219,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
 //        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
 
-        pr("live price", tt, symbol, price, t.format(f1));
 
         switch (tt) {
             case LAST:
+                pr("last price", tt, symbol, price, t.format(f1));
                 lastMap.put(symbol, price);
                 liveData.get(symbol).put(t, price);
                 pr("inventory status", symbol, stockStatusMap.get(symbol));
