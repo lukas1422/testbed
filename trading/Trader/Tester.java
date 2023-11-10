@@ -1,6 +1,7 @@
 package Trader;
 
 import api.OrderAugmented;
+import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
@@ -236,7 +237,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
                     if (costMap.containsKey(symbol)) {
-                        pr("price/cost", price / costMap.get(symbol));
+                        pr(symbol, "price/cost", price / costMap.get(symbol));
                         if (symbolPosMap.get(symbol).longValue() > 0 && price / costMap.get(symbol) > 1.005) {
                             inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
                         }
@@ -348,7 +349,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.isZero() && percentile < 10 && status == StockStatus.NO_INVENTORY) {
+        if (pos.isZero() && percentile < 40 && status == StockStatus.NO_INVENTORY) {
             Decimal defaultS = Decimal.get(10);
 //            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
@@ -398,5 +399,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(Tester::calculatePercentile, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            pr("closing hook ");
+            outputToFile(str("Ending Trader ", LocalDateTime.now()), outputFile);
+            orderMap.forEach((k, v) -> {
+                if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
+                        v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
+                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
+                }
+            });
+            apDev.cancelAllOrders();
+        }));
     }
 }

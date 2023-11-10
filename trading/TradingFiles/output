@@ -13,3 +13,15 @@ test
 ******** 11-9 23:43
 4 101 SELLER: WMT 11-9 23:43:31.490 client.Order@0 INVENTORY_CUTTER Created p/b/a 163.86 163.85 163.88
 4 101 *PATIENT ORDER FILL* Submitted->Filled 11-9 23:46:9.159 WMT 11-9 23:43:31.490 client.Order@0 INVENTORY_CUTTER Filled
+******** 11-10 22:37
+6 101 BUY INVENTORY: price: 164.02 WMT 11-10 22:37:52.947 INVENTORY_ADDER Created p/b/a 164.06 164.02 164.08
+11-10 22:37:55.023 status filled remaining avgPx Submitted 0 10 0.0
+6 101 *PATIENT ORDER FILL* Submitted->Filled 11-10 22:45:33.992 WMT 11-10 22:37:52.947 INVENTORY_ADDER Filled comm: 1.7976931348623157E308
+11-10 22:45:34.005 status filled remaining avgPx Filled 10 0 164.02
+11-10 22:45:34.009 status filled remaining avgPx Filled 10 0 164.02
+******** 11-10 22:45
+7 102 BUY INVENTORY: price: 149.92 PG 11-10 22:45:34.365 INVENTORY_ADDER Created p/b/a 149.92 149.92 149.96
+11-10 22:45:35.027 status filled remaining avgPx PreSubmitted 0 10 0.0
+7 102 *PATIENT ORDER FILL* PreSubmitted->Filled 11-10 22:45:35.035 PG 11-10 22:45:34.365 INVENTORY_ADDER Filled comm: 1.7976931348623157E308
+11-10 22:45:35.037 status filled remaining avgPx Filled 10 0 149.92
+11-10 22:45:35.063 status filled remaining avgPx Filled 10 0 149.92
