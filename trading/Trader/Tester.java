@@ -139,7 +139,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
                 reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(c),
-                        Tester::todaySoFar, 2, Types.BarSize._1_min);
+                        Tester::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
@@ -224,11 +224,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             case LAST:
                 lastMap.put(symbol, price);
                 liveData.get(symbol).put(t, price);
+                pr("inventory status", symbol, stockStatusMap.get(symbol));
+
 
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
                 if (percentileMap.containsKey(symbol)) {
-                    if (percentileMap.get(symbol) < 10 && symbolPosMap.get(symbol).isZero()) {
+                    if (percentileMap.get(symbol) < 40 && symbolPosMap.get(symbol).isZero()) {
                         //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
                         inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
@@ -311,7 +313,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        pr("calculate percentile", targetStockList.size());
 
         targetStockList.forEach(symb -> {
-            pr("stock", symb);
+//            pr("target stock", symb);
 
             if (todayData.containsKey(symb) && !todayData.get(symb).isEmpty()) {
 //                pr("map", todayData.get(symb));
