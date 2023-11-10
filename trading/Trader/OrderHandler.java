@@ -57,7 +57,8 @@ public class OrderHandler implements ApiController.IOrderHandler {
                 outputToSymbolFile(symb,
                         str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID), "comm:", orderState.commission()), outputFile);
+                                now.format(f2), orderMap.get(tradeID),
+                                "comm:", orderState.commission()), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == StockStatus.BUYING_INVENTORY) {

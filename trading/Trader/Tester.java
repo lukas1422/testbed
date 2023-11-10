@@ -236,10 +236,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                         inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
-                    if (costMap.containsKey(symbol)) {
-                        pr(symbol, "price/cost", price / costMap.get(symbol));
-                        if (symbolPosMap.get(symbol).longValue() > 0 && price / costMap.get(symbol) > 1.005) {
-                            inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                    if (symbolPosMap.get(symbol).longValue() > 0) {
+                        if (costMap.containsKey(symbol)) {
+                            pr(symbol, "price/cost", price / costMap.get(symbol));
+                            if (price / costMap.get(symbol) > 1.004) {
+                                inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                            }
                         }
                     }
                 }
@@ -380,7 +382,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.005));
+                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.004));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
