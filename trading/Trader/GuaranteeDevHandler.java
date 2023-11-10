@@ -141,7 +141,7 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
                 o.tif(DAY);
 
                 int newID = devTradeID.incrementAndGet();
-                placeOrModifyOrderCheck(controller, ct, o, new PatientOrderHandler(newID));
+                placeOrModifyOrderCheck(controller, ct, o, new OrderHandler(newID));
 
                 devOrderMap.put(newID, new OrderAugmented(ct, LocalDateTime.now(), o,
                         devOrderMap.get(currentID).getOrderType(), false));

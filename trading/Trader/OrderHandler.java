@@ -6,7 +6,6 @@ import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
 
-import java.io.File;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,20 +13,19 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Tester.orderMap;
-import static Trader.Tester.testOutputFile;
+import static Trader.Tester.outputFile;
 import static api.TradingConstants.f2;
-import static api.TradingConstants.miscOutput;
 import static client.OrderStatus.Filled;
 import static utility.TradingUtility.outputToError;
 import static utility.Utility.*;
 
-public class PatientOrderHandler implements ApiController.IOrderHandler {
+public class OrderHandler implements ApiController.IOrderHandler {
 
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
     private int tradeID;
 //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
 
-    PatientOrderHandler(int id) {
+    OrderHandler(int id) {
         tradeID = id;
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
@@ -50,7 +48,7 @@ public class PatientOrderHandler implements ApiController.IOrderHandler {
                 outputToSymbolFile(orderMap.get(tradeID).getSymbol(),
                         str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID)), testOutputFile);
+                                now.format(f2), orderMap.get(tradeID)), outputFile);
                 outputDetailedGen(str(orderMap.get(tradeID).getSymbol(), now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
             }
@@ -63,7 +61,7 @@ public class PatientOrderHandler implements ApiController.IOrderHandler {
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
         outputDetailedGen(str(status, filled, remaining,
-                avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice), miscOutput);
+                avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice), outputFile);
 
     }
 

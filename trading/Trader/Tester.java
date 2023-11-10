@@ -41,7 +41,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     //files
 //    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
-    static File testOutputFile = new File("trading/TradingFiles/output");
+    static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
 
@@ -68,8 +68,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //    private volatile static Map<Contract, Decimal> contractPosMap =
 //            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
-    private volatile static Map<String, Double> contractAverageCostMap =
-            new ConcurrentSkipListMap<>();
+    private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
 
 
     private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
@@ -206,10 +205,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
 
-        LocalDate prevMonthCutoff = getPrevMonthCutoff(ct, getMonthBeginMinus1Day(t.toLocalDate()));
-        LocalDateTime dayStartTime = LocalDateTime.of(t.toLocalDate(), ltof(9, 30, 0));
-        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
-        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
+//        LocalDate prevMonthCutoff = getPrevMonthCutoff(ct, getMonthBeginMinus1Day(t.toLocalDate()));
+//        LocalDateTime dayStartTime = LocalDateTime.of(t.toLocalDate(), ltof(9, 30, 0));
+//        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
+//        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
 
         pr("live price", tt, symbol, price, t);
 
@@ -226,10 +225,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
 
-                    pr("price/cost", price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE));
+                    pr("price/cost", price / costMap.getOrDefault(symbol, Double.MAX_VALUE));
 
                     if (symbolPosMap.get(symbol).longValue() > 0
-                            && price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE) > 1.002) {
+                            && price / costMap.getOrDefault(symbol, Double.MAX_VALUE) > 1.005) {
                         inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
                     }
                 }
@@ -270,7 +269,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         if (!contract.symbol().equals("USD")) {
 //            contractPosMap.put(contract, position);
             symbolPosMap.put(symb, position);
-            contractAverageCostMap.put(symb, avgCost);
+            costMap.put(symb, avgCost);
         }
 
         pr("account, contract, position, avgcost", account, symb, position, avgCost);
@@ -337,11 +336,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
+            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
 
         }
     }
@@ -357,16 +356,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+            double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    contractAverageCostMap.getOrDefault(ct, price) * 1.002));
+                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.002));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice,
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
+            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice, "cost:", cost,
                     orderMap.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
+                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
         }
     }
 

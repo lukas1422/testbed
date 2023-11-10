@@ -374,7 +374,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
             Order o = placeBidLimitTIF(bidPrice, posToAdd, DAY);
             if (checkDeltaImpact(ct, o)) {
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, CUSTOM_ADDER));
-                placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                 outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
                 outputToSymbolFile(symbol, str(o.orderId(), id, "CUSTOM ADDER BUY:",
                         devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
@@ -403,7 +403,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
                 if (checkDeltaImpact(ct, o)) {
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, BREACH_ADDER));
-                    placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                    placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                     outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
                                     devOrderMap.get(id), "yOpen:" + halfYearOpen, "prevClose", prevClose, "p/b/a", price,
@@ -437,7 +437,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
             offerPrice = roundToMinVariation(symbol, Direction.Short, offerPrice);
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             devOrderMap.put(id, new OrderAugmented(ct, t, o, CUSTOM_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
             outputToSymbolFile(symbol, str("********", t), devOutput);
             outputToSymbolFile(symbol, str(o.orderId(), id, "Custom Cutter Sell:",
                     "added?" + added, devOrderMap.get(id), "pos", pos, "price", price), devOutput);
@@ -467,7 +467,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 Order o = placeBidLimitTIF(bidPrice, sharesToBuy, DAY);
                 if (checkDeltaImpact(ct, o)) {
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_ADDER));
-                    placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                    placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                     outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "INDEX ETF BUY:",
                             devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
@@ -494,7 +494,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     offerPrice = roundToMinVariation(symbol, Direction.Short, offerPrice);
                     Order o = placeOfferLimitTIF(offerPrice, Decimal.get(Math.min(pos.longValue(), sharesToSell)), DAY);
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_CUTTER));
-                    placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                    placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                     outputToSymbolFile(symbol, str("********", t), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "ETF SELL:",
                             devOrderMap.get(id), "pos", pos, "sharesToSell", sharesToSell, "price", price), devOutput);
@@ -510,7 +510,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     Order o = placeBidLimitTIF(bidPrice, sharesToBuy, DAY);
                     if (checkDeltaImpact(ct, o)) {
                         devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_ADDER));
-                        placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                        placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                         outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
                         outputToSymbolFile(symbol, str(o.orderId(), id, "ETF BUY:",
                                 devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
@@ -535,7 +535,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
                 Order o = placeBidLimitTIF(bidPrice, pos, DAY);
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, BREACH_CUTTER));
-                placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                 outputToSymbolFile(symbol, str("********", t), devOutput);
                 outputToSymbolFile(symbol, str(o.orderId(), id, "Cutter BUY:",
                         "added?" + added, devOrderMap.get(id), "pos", pos, "half Year Max:" + halfYearMax,
@@ -549,7 +549,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 offerPrice = roundToMinVariation(symbol, Direction.Short, offerPrice);
                 Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, BREACH_CUTTER));
-                placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
+                placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
                 outputToSymbolFile(symbol, str("********", t), devOutput);
                 outputToSymbolFile(symbol, str(o.orderId(), id, "Cutter SELL:",
                         "added?" + added, devOrderMap.get(id), "pos", pos, "half Year Max:" + halfYearMax,
