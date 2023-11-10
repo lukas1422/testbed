@@ -129,15 +129,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         pr(" Time after latch released " + LocalTime.now());
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
-        targetStockList.forEach(ct -> {
+        targetStockList.forEach(symb -> {
+            Contract c = generateUSStockContract(symb);
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
-                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct),
+                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(c),
                         Tester::todaySoFar, 2, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
-                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(ct), Tester::ytdOpen,
+                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(c), Tester::ytdOpen,
                         Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
 
