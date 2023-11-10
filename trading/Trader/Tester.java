@@ -82,8 +82,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static Semaphore histSemaphore = new Semaphore(45);
 
     //Trade
-    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
-    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
+//    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
+//    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
     private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
 
 
@@ -322,8 +322,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //                pr("hist data", ytdDayData.get(symb));
                 ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
-                        / lastYearClose - 1;
+//                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
+//                        / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
 //                pr("ytd return", symb, returnOnYear);
             }
@@ -346,7 +346,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.BUYING));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
@@ -365,7 +365,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
 //        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
         if (pos.longValue() > 0 && status == StockStatus.BOUGHT) {
-            liquidatedMap.put(symbol, new AtomicBoolean(true));
+//            liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
@@ -374,7 +374,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.SELLING));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice, "cost:", cost,
                     orderMap.get(id), "p/b/a", price,

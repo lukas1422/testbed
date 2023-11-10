@@ -67,7 +67,6 @@ public class OrderHandler implements ApiController.IOrderHandler {
                 if (status == StockStatus.SELLING) {
                     Tester.stockStatusMap.put(symb, StockStatus.SOLD);
                 }
-
             }
             idStatusMap.put(tradeID, orderState.status());
         }
