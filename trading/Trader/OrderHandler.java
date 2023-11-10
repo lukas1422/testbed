@@ -23,9 +23,9 @@ import static utility.Utility.*;
 public class OrderHandler implements ApiController.IOrderHandler {
 
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
-    private int tradeID;
+    private final int tradeID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-    StockStatus status;
+    private StockStatus status;
 
     OrderHandler(int id) {
         tradeID = id;
@@ -60,9 +60,9 @@ public class OrderHandler implements ApiController.IOrderHandler {
                                 now.format(f2), orderMap.get(tradeID), "comm:", orderState.commission()), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
-                if (status == StockStatus.BUYING) {
-                    Tester.stockStatusMap.put(symb, StockStatus.BOUGHT);
-                } else if (status == StockStatus.SELLING) {
+                if (status == StockStatus.BUYING_INVENTORY) {
+                    Tester.stockStatusMap.put(symb, StockStatus.HAS_INVENTORY);
+                } else if (status == StockStatus.SELLING_INVENTORY) {
                     Tester.stockStatusMap.put(symb, StockStatus.SOLD);
                 }
             }

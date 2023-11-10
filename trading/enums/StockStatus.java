@@ -3,10 +3,10 @@ package enums;
 public enum StockStatus {
 
     UNKNOWN,
-    NOPOSITION,
-    BUYING,
-    BOUGHT,
-    SELLING,
+    NO_INVENTORY,
+    BUYING_INVENTORY,
+    HAS_INVENTORY,
+    SELLING_INVENTORY,
     SOLD
 
 

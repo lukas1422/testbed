@@ -276,9 +276,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
-                stockStatusMap.put(symb, StockStatus.BOUGHT);
+                stockStatusMap.put(symb, StockStatus.HAS_INVENTORY);
             } else if (position.isZero()) {
-                stockStatusMap.put(symb, StockStatus.NOPOSITION);
+                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
         }
 
@@ -293,7 +293,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         targetStockList.forEach(symb -> {
             pr(" symbol in positionEnd", symb);
             if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
-                stockStatusMap.put(symb, StockStatus.NOPOSITION);
+                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
 
             es.schedule(() -> {
@@ -319,15 +319,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
                 double percentile = r((last - minValue) / (maxValue - minValue) * 100);
                 percentileMap.put(symb, percentile);
-                pr("time stock percentile", LocalDateTime.now(), symb, percentile, "max min last", maxValue, minValue, last);
+                pr("time stock percentile", LocalDateTime.now().format(f1),
+                        symb, percentile, "max min last", maxValue, minValue, last);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
 //                pr("hist data", ytdDayData.get(symb));
-                ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
+//                ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-//                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
-//                        / lastYearClose - 1;
+//                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()/ lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
 //                pr("ytd return", symb, returnOnYear);
             }
@@ -343,19 +343,19 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.isZero() && percentile < 10 && status == StockStatus.NOPOSITION) {
+        if (pos.isZero() && percentile < 10 && status == StockStatus.NO_INVENTORY) {
             Decimal defaultS = Decimal.get(10);
 //            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.BUYING));
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:", "price:", bidPrice,
+            outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
-            stockStatusMap.put(symbol, StockStatus.BUYING);
+            stockStatusMap.put(symbol, StockStatus.BUYING_INVENTORY);
 
         }
     }
@@ -368,22 +368,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
 
 //        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
-        if (pos.longValue() > 0 && status == StockStatus.BOUGHT) {
+        if (pos.longValue() > 0 && status == StockStatus.HAS_INVENTORY) {
 //            liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.002));
+                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.005));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.SELLING));
+            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice, "cost:", cost,
-                    orderMap.get(id), "p/b/a", price,
+            outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
+                    , "offerprice:", offerPrice, "cost:", cost, orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
-            stockStatusMap.put(symbol, StockStatus.SELLING);
+            stockStatusMap.put(symbol, StockStatus.SELLING_INVENTORY);
         }
     }
 
