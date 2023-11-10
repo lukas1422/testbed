@@ -4,6 +4,7 @@ import api.OrderAugmented;
 import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
+import enums.StockStatus;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
@@ -43,6 +44,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
     static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
+
+    static volatile Map<String, StockStatus> stockStatusMap = new ConcurrentHashMap<>();
 
 
     //data
@@ -153,6 +156,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
         symbolPosMap.put(symb, Decimal.ZERO);
+        stockStatusMap.put(symb, StockStatus.UNKNOWN);
+
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
@@ -270,6 +275,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //            contractPosMap.put(contract, position);
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
+            stockStatusMap.put(symb, StockStatus.BOUGHT);
         }
 
         pr("account, contract, position, avgcost", account, symb, position, avgCost);
@@ -282,6 +288,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         pr("position end");
         targetStockList.forEach(symb -> {
             pr(" symbol in positionEnd", symb);
+            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
+                stockStatusMap.put(symb, StockStatus.NOPOSITION);
+            }
 
             es.schedule(() -> {
                 pr("Position end: requesting live for fut:", symb);
@@ -325,13 +334,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double percentile) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
+        StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
 
-        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
-        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+//        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
+//        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.longValue() == 0 && !added && percentile < 10) {
+        if (pos.isZero() && percentile < 10 && status == StockStatus.NOPOSITION) {
             Decimal defaultS = Decimal.get(10);
-            addedMap.put(symbol, new AtomicBoolean(true));
+//            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
@@ -341,6 +351,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+            stockStatusMap.put(symbol, StockStatus.BUYING);
 
         }
     }
@@ -349,10 +360,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+//        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
+        StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
 
 //        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
-        if (!liquidated && pos.longValue() > 0) {
+        if (pos.longValue() > 0 && status == StockStatus.BOUGHT) {
             liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
@@ -367,6 +379,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice, "cost:", cost,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+            stockStatusMap.put(symbol, StockStatus.SELLING);
         }
     }
 

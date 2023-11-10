@@ -5,6 +5,7 @@ import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
+import enums.StockStatus;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -23,10 +24,17 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
     private int tradeID;
-//    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
+    //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
+    StockStatus status;
 
     OrderHandler(int id) {
         tradeID = id;
+        idStatusMap.put(id, OrderStatus.ConstructedInHandler);
+    }
+
+    OrderHandler(int id, StockStatus s) {
+        tradeID = id;
+        status = s;
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
@@ -45,12 +53,21 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                outputToSymbolFile(orderMap.get(tradeID).getSymbol(),
+                String symb = orderMap.get(tradeID).getSymbol();
+                outputToSymbolFile(symb,
                         str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID)), outputFile);
-                outputDetailedGen(str(orderMap.get(tradeID).getSymbol(), now.format(f2),
+                                now.format(f2), orderMap.get(tradeID), "comm:", orderState.commission()), outputFile);
+                outputDetailedGen(str(symb, now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
+                if (status == StockStatus.BUYING) {
+                    Tester.stockStatusMap.put(symb, StockStatus.BOUGHT);
+                }
+
+                if (status == StockStatus.SELLING) {
+                    Tester.stockStatusMap.put(symb, StockStatus.SOLD);
+                }
+
             }
             idStatusMap.put(tradeID, orderState.status());
         }
@@ -60,8 +77,8 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
-        outputDetailedGen(str(status, filled, remaining,
-                avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice), outputFile);
+        outputDetailedGen(str(LocalDateTime.now().format(f2), "status filled remaining avgPx", status,
+                filled, remaining, avgFillPrice), outputFile);
 
     }
 
