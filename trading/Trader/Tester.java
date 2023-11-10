@@ -1,7 +1,6 @@
 package Trader;
 
 import api.OrderAugmented;
-import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
@@ -47,7 +46,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
 
     //data
-    private static volatile TreeSet<Contract> targetStockList = new TreeSet<>(Comparator.comparing(k -> k.symbol()));
+    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
     private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
@@ -62,13 +61,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
             = new ConcurrentSkipListMap<>(String::compareTo);
 
+    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+
 
     //position
-    private volatile static Map<Contract, Decimal> contractPosMap =
-            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
+//    private volatile static Map<Contract, Decimal> contractPosMap =
+//            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
 
-    private volatile static Map<Contract, Double> contractAverageCostMap =
-            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
+    private volatile static Map<String, Double> contractAverageCostMap =
+            new ConcurrentSkipListMap<>();
 
 
     private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
@@ -90,8 +91,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
         File f = new File("trading/TradingFiles/output");
         pr(f.getAbsolutePath());
-
-        outputToFile("test", f);
 
     }
 
@@ -151,12 +150,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     }
 
     private static void registerContract(Contract ct) {
-        targetStockList.add(ct);
-        contractPosMap.put(ct, Decimal.ZERO);
-        symbolPosMap.put(ibContractToSymbol(ct), Decimal.ZERO);
-        String symbol = ibContractToSymbol(ct);
-        if (!liveData.containsKey(symbol)) {
-            liveData.put(symbol, new ConcurrentSkipListMap<>());
+        String symb = ibContractToSymbol(ct);
+        targetStockList.add(symb);
+        symbolPosMap.put(symb, Decimal.ZERO);
+        if (!liveData.containsKey(symb)) {
+            liveData.put(symb, new ConcurrentSkipListMap<>());
         }
     }
 
@@ -171,11 +169,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             liveData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
-//        pr("test data today", "date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
             LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                     TimeZone.getDefault().toZoneId());
-            pr("ld is", ld);
             todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
             liveData.get(symbol).put(ld, close);
         }
@@ -183,15 +179,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
 
-//        pr("test if called in ytdopen");
         String symbol = Utility.ibContractToSymbol(c);
-        pr("symb is", symbol);
-
         if (!ytdDayData.containsKey(symbol)) {
             ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
-        pr("date", date, open, high, low, close);
         if (!date.startsWith("finished")) {
             LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
             ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
@@ -226,17 +218,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 liveData.get(symbol).put(t, price);
 
                 //trade logic
-                if (percentileMap.containsKey(symbol)) {
+                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
                     if (percentileMap.get(symbol) < 10 && symbolPosMap.get(symbol).isZero()) {
                         //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
                         inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
 
-                    pr("price divergence", price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE));
+                    pr("price/cost", price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE));
 
-                    if (!symbolPosMap.get(symbol).isZero()
-                            && price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE) > 1.003) {
+                    if (symbolPosMap.get(symbol).longValue() > 0
+                            && price / contractAverageCostMap.getOrDefault(ct, Double.MAX_VALUE) > 1.002) {
                         inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
                     }
                 }
@@ -273,13 +265,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     //position start
     @Override
     public void position(String account, Contract contract, Decimal position, double avgCost) {
+        String symb = ibContractToSymbol(contract);
         if (!contract.symbol().equals("USD")) {
-            contractPosMap.put(contract, position);
-            symbolPosMap.put(ibContractToSymbol(contract), position);
-            contractAverageCostMap.put(contract, avgCost);
+//            contractPosMap.put(contract, position);
+            symbolPosMap.put(symb, position);
+            contractAverageCostMap.put(symb, avgCost);
         }
 
-        pr("account, contract, position, avgcost", account, ibContractToSymbol(contract), position, avgCost);
+        pr("account, contract, position, avgcost", account, symb, position, avgCost);
 //        contractPosMap.entrySet().stream().forEach(e -> pr(e.getKey().symbol(), e.getValue()));
 //     pr("contract map", contractPosMap);
     }
@@ -287,23 +280,21 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     @Override
     public void positionEnd() {
         pr("position end");
-        targetStockList.forEach(c -> {
-            String symb = ibContractToSymbol(c);
+        targetStockList.forEach(symb -> {
             pr(" symbol in positionEnd", symb);
 
             es.schedule(() -> {
                 pr("Position end: requesting live for fut:", symb);
-                req1ContractLive(apDev, liveCompatibleCt(c), this, false);
+                req1ContractLive(apDev, liveCompatibleCt(generateUSStockContract(symb)), this, false);
             }, 10L, TimeUnit.SECONDS);
         });
     }
 
     static void calculatePercentile() {
-        pr("calculate percentile", LocalDateTime.now(), targetStockList.size());
+        pr("calculate percentile", LocalDateTime.now(), "size", targetStockList.size());
 //        pr("calculate percentile", targetStockList.size());
 
-        targetStockList.forEach(ct -> {
-            String symb = ibContractToSymbol(ct);
+        targetStockList.forEach(symb -> {
             pr("stock", symb);
 
             if (todayData.containsKey(symb) && !todayData.get(symb).isEmpty()) {
@@ -315,7 +306,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
                 double percentile = r((last - minValue) / (maxValue - minValue) * 100);
                 percentileMap.put(symb, percentile);
-                pr("time, stock percentile", LocalDateTime.now(), symb, percentile, "max min last", maxValue, minValue, last);
+                pr("time stock percentile", LocalDateTime.now(), symb, percentile, "max min last", maxValue, minValue, last);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
@@ -324,6 +315,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()
                         / lastYearClose - 1;
+                lastYearCloseMap.put(symb, lastYearClose);
 //                pr("ytd return", symb, returnOnYear);
             }
         });
@@ -346,7 +338,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
             outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
+            outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
 
@@ -357,7 +349,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-//        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
         boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
 //        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
@@ -366,13 +357,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             int id = tradeID.incrementAndGet();
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    contractAverageCostMap.getOrDefault(symbol, price) * 1.003));
+                    contractAverageCostMap.getOrDefault(ct, price) * 1.002));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apDev, ct, o, new PatientOrderHandler(id));
             outputToSymbolFile(symbol, str("********", t.format(f1)), testOutputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:",
+            outputToSymbolFile(symbol, str(o.orderId(), id, "SELLER:", "offerprice:", offerPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), testOutputFile);
         }

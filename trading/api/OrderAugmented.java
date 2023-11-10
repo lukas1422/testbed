@@ -114,7 +114,6 @@ public class OrderAugmented {
     public String getMsg() {
         return msg;
     }
-
     public AutoOrderType getOrderType() {
         return orderType;
     }
@@ -129,6 +128,6 @@ public class OrderAugmented {
 
     @Override
     public String toString() {
-        return str(ibContractToSymbol(contract), orderTime.format(f2), order, orderType, augmentedOrderStatus);
+        return str(ibContractToSymbol(contract), orderTime.format(f2), orderType, augmentedOrderStatus);
     }
 }
