@@ -275,7 +275,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //            contractPosMap.put(contract, position);
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            stockStatusMap.put(symb, StockStatus.BOUGHT);
+            if (position.longValue() > 0) {
+                stockStatusMap.put(symb, StockStatus.BOUGHT);
+            } else if (position.isZero()) {
+                stockStatusMap.put(symb, StockStatus.NOPOSITION);
+            }
         }
 
         pr("account, contract, position, avgcost", account, symb, position, avgCost);
