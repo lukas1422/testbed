@@ -35,6 +35,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     Contract gjs = generateHKStockContract("388");
     Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
+    Contract pg = generateUSStockContract("PG");
 
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
@@ -90,6 +91,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private Tester() {
         pr("initializing...");
         registerContract(wmt);
+        registerContract(pg);
 //        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
         File f = new File("trading/TradingFiles/output");
         pr(f.getAbsolutePath());
@@ -132,6 +134,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         pr(" Time after latch released " + LocalTime.now());
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
+            pr("target stock symb ", symb);
             Contract c = generateUSStockContract(symb);
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
@@ -215,7 +218,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
 //        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
 
-        pr("live price", tt, symbol, price, t);
+        pr("live price", tt, symbol, price, t.format(f1));
 
         switch (tt) {
             case LAST:
@@ -223,18 +226,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 liveData.get(symbol).put(t, price);
 
                 //trade logic
-                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
+//                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
+                if (percentileMap.containsKey(symbol)) {
                     if (percentileMap.get(symbol) < 10 && symbolPosMap.get(symbol).isZero()) {
                         //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
                         inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
-
-                    pr("price/cost", price / costMap.getOrDefault(symbol, Double.MAX_VALUE));
-
-                    if (symbolPosMap.get(symbol).longValue() > 0
-                            && price / costMap.getOrDefault(symbol, Double.MAX_VALUE) > 1.005) {
-                        inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                    if (costMap.containsKey(symbol)) {
+                        pr("price/cost", price / costMap.get(symbol));
+                        if (symbolPosMap.get(symbol).longValue() > 0 && price / costMap.get(symbol) > 1.005) {
+                            inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                        }
                     }
                 }
 
@@ -319,17 +322,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
                 double percentile = r((last - minValue) / (maxValue - minValue) * 100);
                 percentileMap.put(symb, percentile);
-                pr("time stock percentile", LocalDateTime.now().format(f1),
-                        symb, percentile, "max min last", maxValue, minValue, last);
+                pr("time stock percentile", "from ", m.firstKey().format(f1), LocalDateTime.now().format(f1),
+                        symb, "p%:", percentile, "max min last", maxValue, minValue, last);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
 //                pr("hist data", ytdDayData.get(symb));
 //                ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-//                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose()/ lastYearClose - 1;
+                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
-//                pr("ytd return", symb, returnOnYear);
+                pr("ytd return", symb, returnOnYear);
             }
         });
     }
