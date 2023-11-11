@@ -56,15 +56,20 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> percentileMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
 
 
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
 
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData
+            = new ConcurrentSkipListMap<>(String::compareTo);
+
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
             = new ConcurrentSkipListMap<>(String::compareTo);
+
 
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
 
@@ -87,6 +92,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
 //    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
     private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
+
+    public static final LocalDateTime TODAY_MARKET_START_TIME =
+            LocalDateTime.of(LocalDateTime.now().toLocalDate(), LocalTime.of(9, 30));
 
 
     private Tester() {
@@ -170,8 +178,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
         String symbol = Utility.ibContractToSymbol(c);
 
-        if (!todayData.containsKey(symbol)) {
-            todayData.put(symbol, new ConcurrentSkipListMap<>());
+        if (!threeDayData.containsKey(symbol)) {
+            threeDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
         if (!liveData.containsKey(symbol)) {
@@ -181,7 +189,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         if (!date.startsWith("finished")) {
             LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                     TimeZone.getDefault().toZoneId());
-            todayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+            threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
             liveData.get(symbol).put(ld, close);
         }
     }
@@ -212,7 +220,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     //live data start
     @Override
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
-        String symbol = ibContractToSymbol(ct);
+        String symb = ibContractToSymbol(ct);
 
 //        LocalDate prevMonthCutoff = getPrevMonthCutoff(ct, getMonthBeginMinus1Day(t.toLocalDate()));
 //        LocalDateTime dayStartTime = LocalDateTime.of(t.toLocalDate(), ltof(9, 30, 0));
@@ -222,35 +230,37 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
         switch (tt) {
             case LAST:
-                pr("last price", tt, symbol, price, t.format(f1));
-                lastMap.put(symbol, price);
-                liveData.get(symbol).put(t, price);
-                pr("inventory status", symbol, stockStatusMap.get(symbol));
+                pr("last price", tt, symb, price, t.format(f1));
+                lastMap.put(symb, price);
+                liveData.get(symb).put(t, price);
+                pr("inventory status", symb, stockStatusMap.get(symb));
 
 
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
-                if (percentileMap.containsKey(symbol)) {
-                    if (percentileMap.get(symbol) < 40 && symbolPosMap.get(symbol).isZero()) {
+                if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
+                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                         //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
-                        inventoryAdder(ct, price, t, percentileMap.getOrDefault(symbol, Double.MAX_VALUE));
+                        inventoryAdder(ct, price, t,
+                                threeDayPctMap.getOrDefault(symb, Double.MAX_VALUE),
+                                oneDayPctMap.getOrDefault(symb, Double.MAX_VALUE));
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
-                    if (symbolPosMap.get(symbol).longValue() > 0) {
-                        if (costMap.containsKey(symbol)) {
-                            pr(symbol, "price/cost", price / costMap.get(symbol));
-                            if (price / costMap.get(symbol) > 1.004) {
-                                inventoryCutter(ct, price, t, percentileMap.getOrDefault(symbol, 0.0));
+                    if (symbolPosMap.get(symb).longValue() > 0) {
+                        if (costMap.containsKey(symb)) {
+                            pr(symb, "price/cost", price / costMap.get(symb));
+                            if (price / costMap.get(symb) > 1.004) {
+                                inventoryCutter(ct, price, t, threeDayPctMap.getOrDefault(symb, 0.0));
                             }
                         }
                     }
                 }
 
             case BID:
-                bidMap.put(symbol, price);
+                bidMap.put(symb, price);
                 break;
             case ASK:
-                askMap.put(symbol, price);
+                askMap.put(symb, price);
                 break;
         }
     }
@@ -318,17 +328,20 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         targetStockList.forEach(symb -> {
 //            pr("target stock", symb);
 
-            if (todayData.containsKey(symb) && !todayData.get(symb).isEmpty()) {
+            if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 //                pr("map", todayData.get(symb));
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = todayData.get(symb);
-                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
-                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
-                double last = m.lastEntry().getValue().getClose();
-
-                double percentile = r((last - minValue) / (maxValue - minValue) * 100);
-                percentileMap.put(symb, percentile);
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = threeDayData.get(symb);
+//                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
+//                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
+//                double last = m.lastEntry().getValue().getClose();
+//                double percentile = r((last - minValue) / (maxValue - minValue) * 100);
+                double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
+                double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb)
+                        .tailMap(TODAY_MARKET_START_TIME));
+                threeDayPctMap.put(symb, threeDayPercentile);
+                oneDayPctMap.put(symb, oneDayPercentile);
                 pr("time stock percentile", "from ", m.firstKey().format(f1), LocalDateTime.now().format(f1),
-                        symb, "p%:", percentile, "max min last", maxValue, minValue, last);
+                        symb, "p%:", threeDayPercentile);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
@@ -343,7 +356,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     }
 
     //Trade
-    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double percentile) {
+    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double threeDPercentile, double oneDPercentile) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
         StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
@@ -351,7 +364,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.isZero() && percentile < 40 && status == StockStatus.NO_INVENTORY) {
+        if (pos.isZero() && status == StockStatus.NO_INVENTORY) {
             Decimal defaultS = Decimal.get(10);
 //            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
@@ -394,6 +407,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             stockStatusMap.put(symbol, StockStatus.SELLING_INVENTORY);
         }
     }
+
+    //request realized pnl
+
+
+    //request exe details
+
 
 
     public static void main(String[] args) {

@@ -3,6 +3,7 @@ package utility;
 import Trader.Allstatic;
 import api.ControllerCalls;
 import api.TradingConstants;
+import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
 import enums.Direction;
@@ -19,8 +20,10 @@ import java.io.IOException;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 import java.util.Collections;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
 
 import static utility.Utility.*;
@@ -555,5 +558,13 @@ public class TradingUtility {
 
     public static double getDoubleFromMap(Map<String, Double> m, String symb) {
         return m.getOrDefault(symb, 0.0);
+    }
+
+    public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
+        double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
+        double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
+        double last = m.lastEntry().getValue().getClose();
+        double percentile = r((last - minValue) / (maxValue - minValue) * 100);
+        return percentile;
     }
 }
