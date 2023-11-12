@@ -50,9 +50,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
 
-
-    //files
-//    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
     static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
@@ -342,7 +339,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         targetStockList.forEach(symb -> {
 //            pr("target stock", symb);
-
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 //                pr("map", todayData.get(symb));
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = threeDayData.get(symb);
