@@ -372,11 +372,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 * lastMap.getOrDefault(s, 0.0)).sum();
 
         //update individual stock delta
-        symbolPosMap.entrySet().forEach((e) -> {
-            String symb = e.getKey();
-            double pos = e.getValue().longValue();
-            symbolDeltaMap.put(symb, pos * lastMap.getOrDefault(symb, 0.0));
-        });
+        targetStockList.forEach((s) -> symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
+                * lastMap.getOrDefault(s, 0.0)));
 
     }
 
@@ -467,6 +464,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgeprice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
                 execution.avgPrice());
+        outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
+                execution.time(), execution.side(), execution.price(), execution.shares(),
+                execution.avgPrice()), outputFile);
     }
 
     @Override
@@ -478,5 +478,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
         pr("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
                 "realized pnl", commissionReport.realizedPNL());
+
+        outputToFile(str("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
+                "realized pnl", commissionReport.realizedPNL()), outputFile);
     }
 }
