@@ -59,7 +59,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
-    private static Map<String, Double> lastMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
     private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
@@ -242,7 +242,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         switch (tt) {
             case LAST:
                 pr("last price", tt, symb, price, t.format(f1));
-                lastMap.put(symb, price);
+                latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
                 pr("inventory status", symb, stockStatusMap.get(symb));
 
@@ -258,17 +258,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     if (aggregateDelta < DELTA_LIMIT
                             && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
                         if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
-                            //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
                             inventoryAdder(ct, price, t);
-//                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                         }
                     }
 
                     if (symbolPosMap.get(symb).longValue() > 0) {
-                        if (costMap.containsKey(symb)) {
+                        if (costMap.containsKey(symb) && Math.abs(costMap.get(symb) - 0.0) > 0.0001) {
                             pr(symb, "price/cost", price / costMap.get(symb));
                             if (price / costMap.get(symb) > PROFIT_LEVEL) {
-                                inventoryCutter(ct, price, t, threeDayPctMap.getOrDefault(symb, 0.0));
+//                                inventoryCutter(ct, price, t, oneDayPctMap.getOrDefault(symb, 0.0));
+                                inventoryCutter(ct, price, t);
                             }
                         }
                     }
@@ -367,15 +366,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         //update entire portfolio delta
         aggregateDelta = targetStockList.stream().mapToDouble(s -> symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
-                * lastMap.getOrDefault(s, 0.0)).sum();
+                * latestPriceMap.getOrDefault(s, 0.0)).sum();
+
 
         //update individual stock delta
         targetStockList.forEach((s) -> symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
-                * lastMap.getOrDefault(s, 0.0)));
+                * latestPriceMap.getOrDefault(s, 0.0)));
 
-    }
-
-    static void calculateAggregateDelta() {
+        pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
     }
 
     //Trade
@@ -403,18 +401,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
     }
 
-    private static void inventoryCutter(Contract ct, double price, LocalDateTime t, double percentile) {
+    private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-//        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
         StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
 
-//        if (!liquidated && percentile > 90 && pos.longValue() > 0) {
         if (pos.longValue() > 0 && status == StockStatus.HAS_INVENTORY) {
-//            liquidatedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
-//            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
                     costMap.getOrDefault(symbol, Double.MAX_VALUE) * PROFIT_LEVEL));
@@ -424,7 +418,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
-                    , "offerprice:", offerPrice, "cost:", cost, orderMap.get(id), "p/b/a", price,
+                    , "offerprice:", offerPrice, "cost:", cost, orderMap.get(id), "price/bid/ask:", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             stockStatusMap.put(symbol, StockStatus.SELLING_INVENTORY);
         }
@@ -433,7 +427,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //request realized pnl
 
     /**
-     *Execution details
+     * Execution details
      */
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
@@ -485,7 +479,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             apiController.cancelAllOrders();
         }));
     }
-
 
 
 }
