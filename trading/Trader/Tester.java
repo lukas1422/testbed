@@ -436,37 +436,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     //request realized pnl
 
-
-    //request exe details
-
-
-    public static void main(String[] args) {
-        Tester test1 = new Tester();
-        test1.connectAndReqPos();
-        es.scheduleAtFixedRate(Tester::computePercentileAndDelta, 10L, 10L, TimeUnit.SECONDS);
-//        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            pr("closing hook ");
-            outputToFile(str("Ending Trader ", LocalDateTime.now()), outputFile);
-            orderMap.forEach((k, v) -> {
-                if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
-                        v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
-                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
-                }
-            });
-            apiController.cancelAllOrders();
-        }));
-    }
-
-
-    //execution report
+    /**
+     *Execution details
+     */
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
 
         tradeKeyExecutionMap.put(tradeKey, execution);
 
-        pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgprice:",
+        pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
                 execution.avgPrice(), orderMap.get(execution.orderId()).getSymbol());
 
@@ -483,13 +461,35 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
 
-        pr("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
-                "realized pnl", commissionReport.realizedPNL());
+        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(exec ->
+                orderMap.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
 
-        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(e ->
-                orderMap.get(tradeKeyExecutionMap.get(tradeKey).orderId())).map(OrderAugmented::getSymbol).orElse("");
+        pr("commission report", "symb:", symb, "commission", commissionReport.commission(),
+                "realized pnl", commissionReport.realizedPNL());
 
         outputToFile(str("commission report", "symb:", symb, "commission", commissionReport.commission(),
                 "realized pnl", commissionReport.realizedPNL()), outputFile);
     }
+
+    public static void main(String[] args) {
+        Tester test1 = new Tester();
+        test1.connectAndReqPos();
+        es.scheduleAtFixedRate(Tester::computePercentileAndDelta, 10L, 10L, TimeUnit.SECONDS);
+//        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            pr("closing hook ");
+            outputToFile(str("Ending Trader ", LocalDateTime.now().format(f1)), outputFile);
+            orderMap.forEach((k, v) -> {
+                if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
+                        v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
+                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
+                }
+            });
+            apiController.cancelAllOrders();
+        }));
+    }
+
+
+
 }
