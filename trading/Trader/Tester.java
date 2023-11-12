@@ -35,6 +35,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
     static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
 
+    static volatile double aggregateDelta = 0.0;
+
 
     Contract gjs = generateHKStockContract("388");
     Contract xiaomi = generateHKStockContract("1810");
@@ -42,6 +44,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract pg = generateUSStockContract("PG");
 
     private static final double PROFIT_LEVEL = 1.004;
+    private static final double DELTA_LIMIT = 10000;
+    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
@@ -87,6 +91,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
 
     private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+
+    private volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
 
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
@@ -241,15 +247,24 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 liveData.get(symb).put(t, price);
                 pr("inventory status", symb, stockStatusMap.get(symb));
 
+                if (!symbolPosMap.get(symb).isZero()) {
+                    symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
+                }
+
 
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
                 if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
-                        //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
-                        inventoryAdder(ct, price, t);
+
+                    if (aggregateDelta < DELTA_LIMIT
+                            && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
+                        if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
+                            //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
+                            inventoryAdder(ct, price, t);
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
+                        }
                     }
+
                     if (symbolPosMap.get(symb).longValue() > 0) {
                         if (costMap.containsKey(symb)) {
                             pr(symb, "price/cost", price / costMap.get(symb));
@@ -319,7 +334,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         });
     }
 
-    static void calculatePercentile() {
+    static void computePercentileAndDelta() {
         pr("calculate percentile", LocalDateTime.now(), "size", targetStockList.size());
 //        pr("calculate percentile", targetStockList.size());
 
@@ -351,6 +366,21 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 pr("ytd return", symb, returnOnYear);
             }
         });
+
+        //update entire portfolio delta
+        aggregateDelta = targetStockList.stream().mapToDouble(s -> symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
+                * lastMap.getOrDefault(s, 0.0)).sum();
+
+        //update individual stock delta
+        symbolPosMap.entrySet().forEach((e) -> {
+            String symb = e.getKey();
+            double pos = e.getValue().longValue();
+            symbolDeltaMap.put(symb, pos * lastMap.getOrDefault(symb, 0.0));
+        });
+
+    }
+
+    static void calculateAggregateDelta() {
     }
 
     //Trade
@@ -414,7 +444,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
-        es.scheduleAtFixedRate(Tester::calculatePercentile, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(Tester::computePercentileAndDelta, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
