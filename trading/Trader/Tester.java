@@ -68,6 +68,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
     private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
 
+    private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+
 
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
@@ -461,9 +463,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //execution report
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
-        pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgeprice:",
+
+        tradeKeyExecutionMap.put(tradeKey, execution);
+
+        pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgprice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
-                execution.avgPrice());
+                execution.avgPrice(), orderMap.get(execution.orderId()).getSymbol());
+
         outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
                 execution.avgPrice()), outputFile);
@@ -476,10 +482,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
+
         pr("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
                 "realized pnl", commissionReport.realizedPNL());
 
-        outputToFile(str("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
+        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(e ->
+                orderMap.get(tradeKeyExecutionMap.get(tradeKey).orderId())).map(OrderAugmented::getSymbol).orElse("");
+
+        outputToFile(str("commission report", "symb:", symb, "commission", commissionReport.commission(),
                 "realized pnl", commissionReport.realizedPNL()), outputFile);
     }
 }

@@ -14,9 +14,13 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import Trader.Allstatic;
 import api.IBDataHandler;
 import client.*;
 import client.*;
+import historical.Request;
+
+import javax.swing.*;
 
 public class ApiController implements EWrapper {
     private ApiConnection m_client;
@@ -808,8 +812,14 @@ public class ApiController implements EWrapper {
         if (!checkConnection())
             return;
 
+        //add in stealer here
+        int reqId = m_reqId.incrementAndGet();
         m_tradeReportHandler = handler;
-        m_client.reqExecutions(m_reqId.incrementAndGet(), filter);
+        m_client.reqExecutions(reqId, filter);
+
+//        Allstatic.globalRequestMap.put(reqId,new Request())
+//        m_tradeReportHandler = handler;
+//        m_client.reqExecutions(m_reqId.incrementAndGet(), filter);
         sendEOM();
     }
 
