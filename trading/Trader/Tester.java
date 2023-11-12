@@ -28,19 +28,24 @@ import static enums.AutoOrderType.*;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
-public class Tester implements LiveHandler, ApiController.IPositionHandler {
+public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler {
 
-    private static ApiController apDev;
+    private static ApiController apiController;
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
+    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
+
 
     Contract gjs = generateHKStockContract("388");
     Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
 
+    private static final double PROFIT_LEVEL = 1.004;
+
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
-    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+
 
     //files
 //    private static File outputFile = new File(TradingConstants.GLOBALPATH + "output.txt");
@@ -110,7 +115,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     private void connectAndReqPos() {
         ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
-        apDev = ap;
+        apiController = ap;
         CountDownLatch l = new CountDownLatch(1);
         boolean connectionStatus = false;
 
@@ -147,21 +152,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             Contract c = generateUSStockContract(symb);
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
-                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(c),
+                reqHistDayData(apiController, ibStockReqId.addAndGet(5), histCompatibleCt(c),
                         Tester::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
-                reqHistDayData(apDev, ibStockReqId.addAndGet(5), histCompatibleCt(c), Tester::ytdOpen,
+                reqHistDayData(apiController, ibStockReqId.addAndGet(5), histCompatibleCt(c), Tester::ytdOpen,
                         Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
-
         });
 
 //        reqHoldings(apDev);
-        Executors.newScheduledThreadPool(10).schedule(() -> apDev.reqPositions(this), 500,
+        Executors.newScheduledThreadPool(10).schedule(() -> apiController.reqPositions(this), 500,
                 TimeUnit.MILLISECONDS);
 //        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
+        apiController.reqExecutions(new ExecutionFilter(), this);
+//        apiController.reqPnLSingle();
     }
 
     private static void registerContract(Contract ct) {
@@ -212,10 +218,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
         }
     }
 
-    private void reqHoldings(ApiController ap) {
-        pr("req holdings ");
-        ap.reqPositions(this);
-    }
+//    private void reqHoldings(ApiController ap) {
+//        pr("req holdings ");
+//        ap.reqPositions(this);
+//    }
 
     //live data start
     @Override
@@ -241,15 +247,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                 if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                         //outputToFile(str("can trade", t, symbol, percentileMap.get(symbol)), testOutputFile);
-                        inventoryAdder(ct, price, t,
-                                threeDayPctMap.getOrDefault(symb, Double.MAX_VALUE),
-                                oneDayPctMap.getOrDefault(symb, Double.MAX_VALUE));
+                        inventoryAdder(ct, price, t);
 //                    } else if (percentileMap.get(symbol) > 90 && !symbolPosMap.get(symbol).isZero()) {
                     }
                     if (symbolPosMap.get(symb).longValue() > 0) {
                         if (costMap.containsKey(symb)) {
                             pr(symb, "price/cost", price / costMap.get(symb));
-                            if (price / costMap.get(symb) > 1.004) {
+                            if (price / costMap.get(symb) > PROFIT_LEVEL) {
                                 inventoryCutter(ct, price, t, threeDayPctMap.getOrDefault(symb, 0.0));
                             }
                         }
@@ -267,20 +271,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
-//        pr("live vol", symbol, tt, vol, t);
-
     }
 
     @Override
     public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
-//        pr("live generic", symbol, tt, value, t);
-
     }
 
     @Override
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
-//        pr("live string", symbol, tt, str, t);
-
     }
     //livedata end
 
@@ -316,7 +314,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
             es.schedule(() -> {
                 pr("Position end: requesting live for fut:", symb);
-                req1ContractLive(apDev, liveCompatibleCt(generateUSStockContract(symb)), this, false);
+                req1ContractLive(apiController, liveCompatibleCt(generateUSStockContract(symb)), this, false);
             }, 10L, TimeUnit.SECONDS);
         });
     }
@@ -356,7 +354,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
     }
 
     //Trade
-    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double threeDPercentile, double oneDPercentile) {
+    private static void inventoryAdder(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
         StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
@@ -371,13 +369,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.BUYING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             stockStatusMap.put(symbol, StockStatus.BUYING_INVENTORY);
-
         }
     }
 
@@ -395,11 +392,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 //            double offerPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * 1.004));
+                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * PROFIT_LEVEL));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
                     , "offerprice:", offerPrice, "cost:", cost, orderMap.get(id), "p/b/a", price,
@@ -412,7 +409,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
 
 
     //request exe details
-
 
 
     public static void main(String[] args) {
@@ -430,7 +426,27 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler {
                             LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
                 }
             });
-            apDev.cancelAllOrders();
+            apiController.cancelAllOrders();
         }));
+    }
+
+
+    //execution report
+    @Override
+    public void tradeReport(String tradeKey, Contract contract, Execution execution) {
+        pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgeprice:",
+                execution.time(), execution.side(), execution.price(), execution.shares(),
+                execution.avgPrice());
+    }
+
+    @Override
+    public void tradeReportEnd() {
+        pr("trade report end");
+    }
+
+    @Override
+    public void commissionReport(String tradeKey, CommissionReport commissionReport) {
+        pr("commission report", "Tradekey:", tradeKey, "commission", commissionReport.commission(),
+                "realized pnl", commissionReport.realizedPNL());
     }
 }

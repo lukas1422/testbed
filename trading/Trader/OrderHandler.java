@@ -55,10 +55,9 @@ public class OrderHandler implements ApiController.IOrderHandler {
             if (orderState.status() == Filled) {
                 String symb = orderMap.get(tradeID).getSymbol();
                 outputToSymbolFile(symb,
-                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*PATIENT ORDER FILL*"
+                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID),
-                                "comm:", orderState.commission()), outputFile);
+                                now.format(f2), orderMap.get(tradeID)), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == StockStatus.BUYING_INVENTORY) {
@@ -82,7 +81,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public void handle(int errorCode, String errorMsg) {
-        outputToError(str("ERROR: Patient Dev Handler:", tradeID, errorCode, errorMsg
+        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg
                 , orderMap.get(tradeID)));
     }
 }
