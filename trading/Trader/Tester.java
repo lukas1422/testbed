@@ -11,10 +11,7 @@ import handler.LiveHandler;
 import utility.Utility;
 
 import java.io.File;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
@@ -106,9 +103,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
     private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
 
-    public static final LocalDateTime TODAY_MARKET_START_TIME =
-            LocalDateTime.of(LocalDateTime.now().toLocalDate(), LocalTime.of(9, 30));
+//    public static final LocalDateTime TODAY_MARKET_START_TIME =
+//            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
 
+    public static final LocalDateTime TODAY_MARKET_START_TIME =
+            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(),
+                    LocalTime.of(9, 30));
 
     private Tester() {
         pr("initializing...");
@@ -366,11 +366,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         targetStockList.forEach(symb -> {
 //            pr("target stock", symb);
-            pr("1. three day data, symb", symb, threeDayData.get(symb));
+//            pr("1. three day data, symb", symb, threeDayData.get(symb));
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 //                pr("map", todayData.get(symb));
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = threeDayData.get(symb);
-                pr("three day data, symb", symb, m);
+//                pr("three day data, symb", symb, m);
 //                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
 //                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
 //                double last = m.lastEntry().getValue().getClose();
@@ -378,10 +378,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb)
                         .tailMap(TODAY_MARKET_START_TIME));
+                pr("today market start time ", TODAY_MARKET_START_TIME);
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("time stock percentile", "from ", m.firstKey().format(f1), LocalDateTime.now().format(f1),
-                        symb, "p%:", threeDayPercentile);
+                        symb, "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile);
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
