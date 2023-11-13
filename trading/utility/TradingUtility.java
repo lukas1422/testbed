@@ -457,8 +457,8 @@ public class TradingUtility {
     }
 
     public static void reqHistMinuteData(ApiController ap, int reqId, Contract c,
-                                      HistDataConsumer<Contract, String, Double, Long> dc,
-                                      int duration, Types.BarSize bs) {
+                                         HistDataConsumer<Contract, String, Double, Long> dc,
+                                         int duration, Types.BarSize bs) {
         pr(" req hist data ", reqId, c.symbol());
         Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
@@ -561,6 +561,9 @@ public class TradingUtility {
     }
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
+        if (m.isEmpty()) {
+            return 0;
+        }
         double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
         double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
         double last = m.lastEntry().getValue().getClose();

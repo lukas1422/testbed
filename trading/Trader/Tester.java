@@ -116,6 +116,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
         File f = new File("trading/TradingFiles/output");
         pr(f.getAbsolutePath());
+        registerContract(wmt);
+        registerContract(pg);
 
     }
 
@@ -155,10 +157,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr(" Time after latch released " + LocalTime.now());
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
-            pr("target stock symb ", symb);
+            pr("request hist day data: target stock symb ", symb);
             Contract c = generateUSStockContract(symb);
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
+
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5), histCompatibleCt(c),
                         Tester::todaySoFar, 3, Types.BarSize._1_min);
             });
@@ -177,8 +180,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         apiController.reqExecutions(new ExecutionFilter(), this);
 //        apiController.reqPnLSingle();
         pr("requesting contract details");
-        registerContract(wmt);
-        registerContract(pg);
+//        registerContract(wmt);
+//        registerContract(pg);
         Executors.newScheduledThreadPool(10).schedule(() -> {
             registerContract(wmt);
             registerContract(pg);
@@ -192,10 +195,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         targetStockList.add(symb);
         symbolPosMap.put(symb, Decimal.ZERO);
         stockStatusMap.put(symb, StockStatus.UNKNOWN);
-        apiController.reqContractDetails(ct, list -> list.forEach(a -> {
-            pr(a.contract().symbol(), a.contract().conid());
-            symbolConIDMap.put(symb, a.contract().conid());
-        }));
+//        apiController.reqContractDetails(ct, list -> list.forEach(a -> {
+//            pr(a.contract().symbol(), a.contract().conid());
+//            symbolConIDMap.put(symb, a.contract().conid());
+//        }));
 
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
@@ -205,10 +208,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
                                    long volume) {
         String symbol = Utility.ibContractToSymbol(c);
+//        pr("today so far", symbol, date, open);
 
         if (!threeDayData.containsKey(symbol)) {
             threeDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
+
+//        pr("today so far ", threeDayData.getOrDefault(symbol, ""));
 
         if (!liveData.containsKey(symbol)) {
             liveData.put(symbol, new ConcurrentSkipListMap<>());
@@ -342,6 +348,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
 
+            apiController.reqContractDetails(generateUSStockContract(symb), list -> list.forEach(a -> {
+                pr(a.contract().symbol(), a.contract().conid());
+                symbolConIDMap.put(symb, a.contract().conid());
+            }));
+
             es.schedule(() -> {
                 pr("Position end: requesting live for fut:", symb);
                 req1ContractLive(apiController, liveCompatibleCt(generateUSStockContract(symb)), this, false);
@@ -355,9 +366,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         targetStockList.forEach(symb -> {
 //            pr("target stock", symb);
+            pr("1. three day data, symb", symb, threeDayData.get(symb));
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 //                pr("map", todayData.get(symb));
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = threeDayData.get(symb);
+                pr("three day data, symb", symb, m);
 //                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
 //                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
 //                double last = m.lastEntry().getValue().getClose();
@@ -379,7 +392,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 lastYearCloseMap.put(symb, lastYearClose);
                 pr("ytd return", symb, returnOnYear);
             }
-            pr("symbolconidmap", symbolConIDMap);
+//            pr("symbolconidmap", symbolConIDMap);
         });
 
         //update entire portfolio delta
