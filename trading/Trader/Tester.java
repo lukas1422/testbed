@@ -202,7 +202,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
     }
 
-    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
+                                   long volume) {
         String symbol = Utility.ibContractToSymbol(c);
 
         if (!threeDayData.containsKey(symbol)) {
@@ -221,7 +222,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
     }
 
-    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
+    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close,
+                                long volume) {
 
         String symbol = Utility.ibContractToSymbol(c);
         if (!ytdDayData.containsKey(symbol)) {
@@ -266,7 +268,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
-
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
                 if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
@@ -279,9 +280,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     }
 
                     if (symbolPosMap.get(symb).longValue() > 0) {
-                        if (costMap.containsKey(symb) && Math.abs(costMap.get(symb) - 0.0) > 0.0001) {
-                            pr(symb, "price/cost", price / costMap.get(symb));
-                            if (price / costMap.get(symb) > PROFIT_LEVEL) {
+                        if (costMap.containsKey(symb)) {
+                            pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
+                            if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > PROFIT_LEVEL) {
 //                                inventoryCutter(ct, price, t, oneDayPctMap.getOrDefault(symb, 0.0));
                                 inventoryCutter(ct, price, t);
                             }
