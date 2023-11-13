@@ -23,6 +23,7 @@ import static api.TradingConstants.f;
 import static api.TradingConstants.f1;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
+import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
@@ -134,7 +135,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             ap.connect("127.0.0.1", 4001, 5, "");
             connectionStatus = true;
             l.countDown();
-            pr(" Latch counted down 4001 " + LocalTime.now());
+//            pr(" Latch counted down 4001 " + LocalTime.now());
+            pr(" Latch counted down 4001 " + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York")))
+                    .format(f1));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }
@@ -143,7 +146,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             pr(" using port 7496");
             ap.connect("127.0.0.1", 7496, 5, "");
             l.countDown();
-            pr(" Latch counted down 7496" + LocalTime.now());
+            pr(" Latch counted down 7496" + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York")))
+                    .format(f1));
         }
 
         try {
@@ -159,6 +163,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
             Contract c = generateUSStockContract(symb);
+            if (!threeDayData.containsKey(symb)) {
+                threeDayData.put(symb, new ConcurrentSkipListMap<>());
+            }
+
+//        pr("today so far ", threeDayData.getOrDefault(symbol, ""));
+
+            if (!liveData.containsKey(symb)) {
+                liveData.put(symb, new ConcurrentSkipListMap<>());
+            }
+
+            pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 //                histSemaphore.acquire();
 
@@ -208,21 +223,25 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
                                    long volume) {
         String symbol = Utility.ibContractToSymbol(c);
-//        pr("today so far", symbol, date, open);
 
-        if (!threeDayData.containsKey(symbol)) {
-            threeDayData.put(symbol, new ConcurrentSkipListMap<>());
-        }
+        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+                TimeZone.getTimeZone("America/New_York").toZoneId());
 
-//        pr("today so far ", threeDayData.getOrDefault(symbol, ""));
-
-        if (!liveData.containsKey(symbol)) {
-            liveData.put(symbol, new ConcurrentSkipListMap<>());
-        }
+        pr("today so far", ld, open);
 
         if (!date.startsWith("finished")) {
-            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
-                    TimeZone.getDefault().toZoneId());
+//            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+//                    TimeZone.getDefault().toZoneId());
+//
+
+
+//            ZoneId zoneId = TimeZone.getDefault().toZoneId();
+//            pr("default time zone is  ", zoneId);
+//            TimeZone timeZoneLA = TimeZone.getTimeZone("America/New_York");
+//            ZoneId zoneIdLA = timeZoneLA.toZoneId();
+//            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(),
+//                    LocalTime.of(9, 30));
+
             threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
             liveData.get(symbol).put(ld, close);
         }
@@ -365,12 +384,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        pr("calculate percentile", targetStockList.size());
 
         targetStockList.forEach(symb -> {
-//            pr("target stock", symb);
+            pr("target stock", symb);
 //            pr("1. three day data, symb", symb, threeDayData.get(symb));
+            pr("three day data contains ", symb, threeDayData.containsKey(symb));
+//            pr("three day data is empty ", threeDayData);
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
-//                pr("map", todayData.get(symb));
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> m = threeDayData.get(symb);
-//                pr("three day data, symb", symb, m);
+                pr("map", todayData.get(symb));
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> oneDayMap =
+                        new ConcurrentSkipListMap<>(Optional.ofNullable(threeDayData.get(symb)
+                                .tailMap(TODAY_MARKET_START_TIME)).get());
+
+//                pr("one day data, symb", symb, oneDayMap.size(), !oneDayMap.isEmpty() ? oneDayMap : "");
 //                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
 //                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
 //                double last = m.lastEntry().getValue().getClose();
@@ -378,11 +403,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb)
                         .tailMap(TODAY_MARKET_START_TIME));
-                pr("today market start time ", TODAY_MARKET_START_TIME);
+                pr("three day, one day", threeDayPercentile, oneDayPercentile);
+
+//                pr("today market start time ", TODAY_MARKET_START_TIME);
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("time stock percentile", "from ", m.firstKey().format(f1), LocalDateTime.now().format(f1),
-                        symb, "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile);
+                pr("time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1),
+                        symb, "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
