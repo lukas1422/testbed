@@ -22,6 +22,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static api.ControllerCalls.placeOrModifyOrderCheck;
+import static api.TradingConstants.f;
 import static api.TradingConstants.f1;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
@@ -42,6 +43,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
+
+    private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.004;
     private static final double DELTA_LIMIT = 10000;
@@ -109,8 +112,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     private Tester() {
         pr("initializing...");
-        registerContract(wmt);
-        registerContract(pg);
+
 //        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
         File f = new File("trading/TradingFiles/output");
         pr(f.getAbsolutePath());
@@ -171,8 +173,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Executors.newScheduledThreadPool(10).schedule(() -> apiController.reqPositions(this), 500,
                 TimeUnit.MILLISECONDS);
 //        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
+        pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
 //        apiController.reqPnLSingle();
+        pr("requesting contract details");
+        registerContract(wmt);
+        registerContract(pg);
+        Executors.newScheduledThreadPool(10).schedule(() -> {
+            registerContract(wmt);
+            registerContract(pg);
+//            apiController.reqContractDetails(wmt,
+//                    list -> list.forEach(a -> pr(a.contract().symbol(), a.contract().conid())));
+        }, 1, TimeUnit.SECONDS);
     }
 
     private static void registerContract(Contract ct) {
@@ -180,6 +192,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         targetStockList.add(symb);
         symbolPosMap.put(symb, Decimal.ZERO);
         stockStatusMap.put(symb, StockStatus.UNKNOWN);
+        apiController.reqContractDetails(ct, list -> list.forEach(a -> {
+            pr(a.contract().symbol(), a.contract().conid());
+            symbolConIDMap.put(symb, a.contract().conid());
+        }));
 
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
@@ -333,7 +349,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     }
 
     static void computePercentileAndDelta() {
-        pr("calculate percentile", LocalDateTime.now(), "size", targetStockList.size());
+        pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
 //        pr("calculate percentile", targetStockList.size());
 
         targetStockList.forEach(symb -> {
@@ -362,6 +378,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 lastYearCloseMap.put(symb, lastYearClose);
                 pr("ytd return", symb, returnOnYear);
             }
+            pr("symbolconidmap", symbolConIDMap);
         });
 
         //update entire portfolio delta
@@ -401,6 +418,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
     }
 
+
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
@@ -418,11 +436,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
-                    , "offerprice:", offerPrice, "cost:", cost, orderMap.get(id), "price/bid/ask:", price,
+                    , "offer price:", offerPrice, "cost:", cost, orderMap.get(id), "price/bid/ask:", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             stockStatusMap.put(symbol, StockStatus.SELLING_INVENTORY);
         }
     }
+
 
     //request realized pnl
 
@@ -472,6 +491,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderMap.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
                         v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+
+                    pr("unexecuted orders:", v.getSymbol(), str("Shutdown status",
+                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v));
+
                     outputToSymbolFile(v.getSymbol(), str("Shutdown status",
                             LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
                 }
