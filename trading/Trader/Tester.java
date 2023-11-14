@@ -42,6 +42,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
 
+    Contract brk = generateUSStockContract("BRK B");
+
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.004;
@@ -109,7 +111,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     public static final LocalDateTime TODAY_MARKET_START_TIME =
             LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(),
-                    LocalTime.of(9, 30));
+                    ltof(9, 30));
 
     private Tester() {
         pr("initializing...");
@@ -119,7 +121,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr(f.getAbsolutePath());
         registerContract(wmt);
         registerContract(pg);
-
+        registerContract(brk);
     }
 
 
@@ -232,9 +234,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         if (!date.startsWith("finished")) {
 //            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
 //                    TimeZone.getDefault().toZoneId());
-//
-
-
 //            ZoneId zoneId = TimeZone.getDefault().toZoneId();
 //            pr("default time zone is  ", zoneId);
 //            TimeZone timeZoneLA = TimeZone.getTimeZone("America/New_York");
