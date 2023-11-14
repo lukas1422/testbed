@@ -44,12 +44,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     Contract brk = generateUSStockContract("BRK B");
 
+    Contract ul = generateUSStockContract("UL");
+
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.004;
     private static final double DELTA_LIMIT = 10000;
     private static final double DELTA_LIMIT_EACH_STOCK = 2000;
-
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
 
@@ -57,7 +58,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //File f = new File("trading/TradingFiles/output");
 
     static volatile Map<String, StockStatus> stockStatusMap = new ConcurrentHashMap<>();
-
 
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
@@ -122,6 +122,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         registerContract(wmt);
         registerContract(pg);
         registerContract(brk);
+        registerContract(ul);
     }
 
 
@@ -434,6 +435,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
     }
 
+
+    public static Decimal getTradeSizeFromPrice(double price) {
+        if (price < 100) {
+            return Decimal.get(20);
+        }
+        return Decimal.get(10);
+    }
+
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
@@ -444,7 +453,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
         if (pos.isZero() && status == StockStatus.NO_INVENTORY) {
-            Decimal defaultS = Decimal.get(10);
+//            Decimal defaultS = Decimal.get(10);
+            Decimal defaultS = getTradeSizeFromPrice(price);
 //            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
