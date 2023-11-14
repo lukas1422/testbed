@@ -427,7 +427,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         aggregateDelta = targetStockList.stream().mapToDouble(s -> symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
                 * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
-
         //update individual stock delta
         targetStockList.forEach((s) -> symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
                 * latestPriceMap.getOrDefault(s, 0.0)));
