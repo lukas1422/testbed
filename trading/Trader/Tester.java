@@ -227,7 +227,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        pr("today so far", ld, open);
+        pr("today so far", symbol, ld, open);
 
         if (!date.startsWith("finished")) {
 //            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
@@ -389,7 +389,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             pr("three day data contains ", symb, threeDayData.containsKey(symb));
 //            pr("three day data is empty ", threeDayData);
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
-                pr("map", todayData.get(symb));
+//                pr("map", threeDayData.get(symb));
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> oneDayMap =
                         new ConcurrentSkipListMap<>(Optional.ofNullable(threeDayData.get(symb)
