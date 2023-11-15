@@ -230,7 +230,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        pr("today so far", symbol, ld, open);
+//        pr("today so far", symbol, ld, open);
 
         if (!date.startsWith("finished")) {
 //            LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
@@ -302,8 +302,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                     if (aggregateDelta < DELTA_LIMIT
                             && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
-                        pr("first check", symb);
-                        if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
+                        pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
+                        if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 20 && symbolPosMap.get(symb).isZero()) {
                             pr("second check", symb);
                             inventoryAdder(ct, price, t);
                         }
@@ -385,6 +385,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     }
 
     static void computePercentileAndDelta() {
+
+        //could be buying here
+        targetStockList.forEach(symb -> {
+            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
+                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
+            }
+        });
+
         pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
 //        pr("calculate percentile", targetStockList.size());
 
