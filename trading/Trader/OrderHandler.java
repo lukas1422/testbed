@@ -38,9 +38,9 @@ public class OrderHandler implements ApiController.IOrderHandler {
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
-    int getTradeID() {
-        return tradeID;
-    }
+//    int getTradeID() {
+//        return tradeID;
+//    }
 
     @Override
     public void orderState(OrderState orderState) {
@@ -76,7 +76,6 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
         outputDetailedGen(str(LocalDateTime.now().format(f2), "status filled remaining avgPx", status,
                 filled, remaining, avgFillPrice), outputFile);
-
     }
 
     @Override

@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 //import static Trader.BreachTrader.f2;
+import static api.TradingConstants.f1;
 import static api.TradingConstants.f2;
 import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.str;
@@ -128,6 +129,6 @@ public class OrderAugmented {
 
     @Override
     public String toString() {
-        return str(ibContractToSymbol(contract), orderTime.format(f2), orderType, augmentedOrderStatus);
+        return str(ibContractToSymbol(contract), orderTime.format(f1), orderType, augmentedOrderStatus);
     }
 }

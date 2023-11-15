@@ -295,11 +295,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
+
+                // should change to US time, not china. Also 22 30 is without daylight savings.
+//                t.toLocalTime().isAfter(LocalTime.of(22, 30))
                 if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 
                     if (aggregateDelta < DELTA_LIMIT
                             && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
+                        pr("first check", symb);
                         if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
+                            pr("second check", symb);
                             inventoryAdder(ct, price, t);
                         }
                     }
@@ -408,7 +413,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //                pr("today market start time ", TODAY_MARKET_START_TIME);
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1),
+                pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1),
                         symb, "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
@@ -447,6 +452,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
         StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
+
+        pr("inventory adder", symbol, pos, status);
 
 //        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
@@ -505,7 +512,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
-                execution.avgPrice(), orderMap.get(execution.orderId()).getSymbol());
+                execution.avgPrice(), Optional.ofNullable(orderMap.get(execution.orderId())).map(e -> e.getSymbol()).orElse(""));
 
         outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
@@ -552,6 +559,4 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             apiController.cancelAllOrders();
         }));
     }
-
-
 }
