@@ -386,9 +386,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     static void computePercentileAndDelta() {
 
-        //could be buying here
+        //could be buying already and inventory is 0
         targetStockList.forEach(symb -> {
-            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
+            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()
+                    && stockStatusMap.get(symb) == StockStatus.UNKNOWN) {
+
                 stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
         });
