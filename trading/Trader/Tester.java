@@ -601,16 +601,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
-            outputToFile(str("Ending Trader ", LocalDateTime.now().format(f1)), outputFile);
+            outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
             orderMap.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
                         v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
 
-                    pr("unexecuted orders:", v.getSymbol(), str("Shutdown status",
-                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v));
+                    outputToFile(str("unexecuted orders:", v.getSymbol(), "Shutdown status",
+                            getESTLocalTimeNow().format(TradingConstants.f1),
+                            v.getAugmentedOrderStatus(), v), outputFile);
 
-                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
-                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
+//                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
+//                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
                 }
             });
             apiController.cancelAllOrders();
