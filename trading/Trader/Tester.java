@@ -52,7 +52,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static final double DELTA_LIMIT = 10000;
     private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
-    static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
+    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
+    //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
+    static volatile NavigableMap<Integer, Order> openOrders = new ConcurrentSkipListMap<>();
 
     public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
@@ -302,7 +304,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 
-                        if (inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
+                        if (symbolPosMap.get(symb).isZero()
+                                && inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
                             if (aggregateDelta < DELTA_LIMIT
                                     && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
                                 pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
@@ -353,7 +356,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symb = ibContractToSymbol(contract);
         if (!contract.symbol().equals("USD")) {
-//            contractPosMap.put(contract, position);
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
@@ -493,11 +495,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
-            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice,
-                    orderMap.get(id), "p/b/a", price,
+                    orderSubmitted.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
             inventoryStatusMap.put(symbol, InventoryStatus.BUYING_INVENTORY);
@@ -518,11 +520,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     costMap.getOrDefault(symbol, Double.MAX_VALUE) * PROFIT_LEVEL));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
-            orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+            orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
-                    , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderMap.get(id))
+                    , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id))
                     , "price/bid/ask:", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
@@ -543,7 +545,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
-                execution.avgPrice(), Optional.ofNullable(orderMap.get(execution.orderId())).map(e -> e.getSymbol()).orElse(""));
+                execution.avgPrice(), Optional.ofNullable(orderSubmitted.get(execution.orderId())).map(e -> e.getSymbol()).orElse(""));
 
         outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
@@ -559,7 +561,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
 
         String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(exec ->
-                orderMap.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
+                orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
 
 //        pr("commission report", "symb:", symb, "commission", commissionReport.commission(),
 //                "realized pnl", commissionReport.realizedPNL());
@@ -572,17 +574,21 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //Open Orders
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
-        outputToFile(str(ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
+        outputToFile(str("open order:",
+                ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
+        openOrders.put(order.orderId(), order);
     }
 
     @Override
     public void openOrderEnd() {
-
+        pr("open order end");
+        openOrders.forEach(Utility::pr);
     }
 
     @Override
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
-                            double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice,
+                            int clientId, String whyHeld, double mktCapPrice) {
         outputToFile(str("orderId", orderId, "OrderStatus", status, "filled",
                 filled, "remaining", remaining), outputFile);
     }
@@ -602,7 +608,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
             outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
-            orderMap.forEach((k, v) -> {
+            orderSubmitted.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
                         v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
 

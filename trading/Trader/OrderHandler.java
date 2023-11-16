@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
-import static Trader.Tester.orderMap;
+import static Trader.Tester.openOrders;
 import static Trader.Tester.outputFile;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
@@ -45,21 +45,21 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderState(OrderState orderState) {
         LocalDateTime now = LocalDateTime.now();
-        if (orderMap.containsKey(tradeID)) {
-            orderMap.get(tradeID).setAugmentedOrderStatus(orderState.status());
+        if (openOrders.containsKey(tradeID)) {
+            openOrders.get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
         }
 
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                String symb = orderMap.get(tradeID).getSymbol();
+                String symb = openOrders.get(tradeID).getSymbol();
                 outputToSymbolFile(symb,
-                        str(orderMap.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
+                        str(openOrders.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderMap.get(tradeID)), outputFile);
+                                now.format(f2), openOrders.get(tradeID)), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
-                        orderMap.get(tradeID)), TradingConstants.fillsOutput);
+                        openOrders.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
                     Tester.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
@@ -81,6 +81,6 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void handle(int errorCode, String errorMsg) {
         outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg
-                , orderMap.get(tradeID)));
+                , openOrders.get(tradeID)));
     }
 }
