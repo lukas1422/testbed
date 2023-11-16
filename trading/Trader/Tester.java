@@ -226,6 +226,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
     }
 
+    // this gets YTD return
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close,
                                 long volume) {
         String symbol = Utility.ibContractToSymbol(c);
@@ -252,27 +253,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
         String symb = ibContractToSymbol(ct);
 
-//        LocalDate prevMonthCutoff = getPrevMonthCutoff(ct, getMonthBeginMinus1Day(t.toLocalDate()));
-//        LocalDateTime dayStartTime = LocalDateTime.of(t.toLocalDate(), ltof(9, 30, 0));
-//        LocalDate previousQuarterCutoff = getQuarterBeginMinus1Day(t.toLocalDate());
-//        LocalDate previousHalfYearCutoff = getHalfYearBeginMinus1Day(t.toLocalDate());
-
-
         switch (tt) {
             case LAST:
                 pr("last price", tt, symb, price, t.format(f1));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
-                pr("inventory status", symb, inventoryStatusMap.get(symb));
+//                pr("inventory status", symb, inventoryStatusMap.get(symb));
 
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
                 //trade logic
-//                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
-                // should change to US time, not china. Also 22 30 is without daylight savings.
-//                t.toLocalTime().isAfter(LocalTime.of(22, 30))
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 
@@ -281,7 +273,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                             if (aggregateDelta < DELTA_LIMIT
                                     && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
                                 pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                                if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 20 && symbolPosMap.get(symb).isZero()) {
+                                if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                     pr("second check", symb);
                                     inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
                                 }
@@ -292,13 +284,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                             if (costMap.containsKey(symb)) {
                                 pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
                                 if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > PROFIT_LEVEL) {
-//                                inventoryCutter(ct, price, t, oneDayPctMap.getOrDefault(symb, 0.0));
                                     inventoryCutter(ct, price, t);
                                 }
                             }
                         }
                     }
                 }
+                break;
 
             case BID:
                 bidMap.put(symb, price);

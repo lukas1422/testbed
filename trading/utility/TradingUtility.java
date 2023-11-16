@@ -478,7 +478,8 @@ public class TradingUtility {
     }
 
 
-    //requ month open
+    // use regular trading hours
+
     public static void reqHistDayData(ApiController ap, int reqId, Contract c,
                                       HistDataConsumer<Contract, String, Double, Long> dc,
                                       int duration, Types.BarSize bs) {
