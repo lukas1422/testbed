@@ -57,6 +57,8 @@ public final class TradingConstants {
 
     public static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
 
+    public static final DateTimeFormatter simpleTime = DateTimeFormatter.ofPattern("H:mm:ss");
+
 
     private static final Predicate<LocalDateTime> FUT_OPEN_PRED = (lt)
             -> !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SATURDAY) && !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SUNDAY)

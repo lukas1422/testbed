@@ -34,7 +34,8 @@ public class TradingUtility {
     public static final String A50_LAST_EXPIRY = getXINA50PrevExpiry().format(TradingConstants.expPattern);
     public static final String A50_FRONT_EXPIRY = getXINA50FrontExpiry().format(TradingConstants.expPattern);
     public static final String A50_BACK_EXPIRY = getXINA50BackExpiry().format(TradingConstants.expPattern);
-    public static final boolean keepUptoDate = true;
+//    public static final boolean keepUptoDate = true;
+    public static final boolean keepUptoDate = false;
     public static final boolean regulatorySnapshot = false;
     public static final LocalDate LAST_MONTH_DAY = getMonthBeginMinus1Day();
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
@@ -484,10 +485,10 @@ public class TradingUtility {
         pr(" req hist data ", reqId, c.symbol());
         Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
-        Types.WhatToShow whatToShow = Types.WhatToShow.TRADES;
+        Types.WhatToShow whatToShow = Types.WhatToShow.ADJUSTED_LAST;
         Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
-                bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
+                bs.toString(), whatToShow.toString(), 1, 2, keepUptoDate, Collections.<TagValue>emptyList()));
 
         //formatdate 1 vs 2 whats the diff
     }
