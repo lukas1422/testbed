@@ -4,6 +4,7 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,6 +22,10 @@ import client.*;
 import historical.Request;
 
 import javax.swing.*;
+
+import static Trader.Tester.outputFile;
+import static utility.TradingUtility.outputToFile;
+import static utility.Utility.str;
 
 public class ApiController implements EWrapper {
     private ApiConnection m_client;
@@ -970,6 +975,7 @@ public class ApiController implements EWrapper {
 
         m_client.reqGlobalCancel();
         sendEOM();
+        outputToFile(str(LocalDateTime.now(), "global cancel orders"), outputFile);
     }
 
     public void exerciseOption(String account, Contract contract, Types.ExerciseType type, int quantity, boolean override) {

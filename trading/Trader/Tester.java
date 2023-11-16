@@ -53,7 +53,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     static volatile NavigableMap<Integer, OrderAugmented> orderMap = new ConcurrentSkipListMap<>();
 
-    static File outputFile = new File("trading/TradingFiles/output");
+    public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
     static volatile Map<String, StockStatus> stockStatusMap = new ConcurrentHashMap<>();
@@ -66,7 +66,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
     private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
     private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
-
     private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
 
 
@@ -124,6 +123,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         registerContract(pg);
         registerContract(brk);
         registerContract(ul);
+
     }
 
 
@@ -200,23 +200,26 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
+        outputToFile("cancelling all orders on start up", outputFile);
+        apiController.cancelAllOrders();
+
 //        apiController.reqPnLSingle();
-        pr("requesting contract details");
+//        pr("requesting contract details");
 //        registerContract(wmt);
 //        registerContract(pg);
-        Executors.newScheduledThreadPool(10).schedule(() -> {
-            registerContract(wmt);
-            registerContract(pg);
-//            apiController.reqContractDetails(wmt,
-//                    list -> list.forEach(a -> pr(a.contract().symbol(), a.contract().conid())));
-        }, 1, TimeUnit.SECONDS);
+//        Executors.newScheduledThreadPool(10).schedule(() -> {
+////            registerContract(wmt);
+////            registerContract(pg);
+////            apiController.reqContractDetails(wmt,
+////                    list -> list.forEach(a -> pr(a.contract().symbol(), a.contract().conid())));
+//        }, 1, TimeUnit.SECONDS);
     }
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
         //symbolPosMap.put(symb, Decimal.ZERO);
-        stockStatusMap.put(symb, StockStatus.UNKNOWN);
+//        stockStatusMap.put(symb, StockStatus.UNKNOWN);
 //        apiController.reqContractDetails(ct, list -> list.forEach(a -> {
 //            pr(a.contract().symbol(), a.contract().conid());
 //            symbolConIDMap.put(symb, a.contract().conid());
@@ -288,18 +291,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 liveData.get(symb).put(t, price);
                 pr("inventory status", symb, stockStatusMap.get(symb));
 
-                if (!symbolPosMap.get(symb).isZero()) {
+                if (symbolPosMap.containsKey(symb) && !symbolPosMap.get(symb).isZero()) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
                 //trade logic
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
-
                 // should change to US time, not china. Also 22 30 is without daylight savings.
 //                t.toLocalTime().isAfter(LocalTime.of(22, 30))
                 if (TRADING_TIME_PRED.test(getUSTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-
 
                         if (stockStatusMap.get(symb) != StockStatus.BUYING_INVENTORY) {
                             if (aggregateDelta < DELTA_LIMIT
@@ -372,9 +373,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("position end");
         targetStockList.forEach(symb -> {
             pr(" symbol in positionEnd", symb);
-            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
+
+            if (!symbolPosMap.containsKey(symb)) {
+                pr("symbol pos does not contain pos", symb);
+                symbolPosMap.put(symb, Decimal.ZERO);
                 stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
+
+//            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
+//            }
 
             apiController.reqContractDetails(generateUSStockContract(symb), list -> list.forEach(a -> {
                 pr(a.contract().symbol(), a.contract().conid());
@@ -392,9 +399,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         //could be buying already and inventory is 0
         targetStockList.forEach(symb -> {
-            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()
-                    && stockStatusMap.get(symb) == StockStatus.UNKNOWN) {
-
+            if (symbolPosMap.containsKey(symb) && symbolPosMap.get(symb).isZero()) {
                 stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
             }
         });
@@ -422,7 +427,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb)
                         .tailMap(TODAY_MARKET_START_TIME));
-                pr("three day, one day", threeDayPercentile, oneDayPercentile);
+//                pr(symb, "three day, one day", threeDayPercentile, oneDayPercentile);
 
 //                pr("today market start time ", TODAY_MARKET_START_TIME);
                 threeDayPctMap.put(symb, threeDayPercentile);
@@ -465,7 +470,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
-        StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
+
+        if (!stockStatusMap.containsKey(symbol)) {
+            return;
+        }
+
+        StockStatus status = stockStatusMap.get(symbol);
 
         pr("inventory adder", symbol, pos, status);
 
@@ -495,7 +505,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        StockStatus status = stockStatusMap.getOrDefault(symbol, StockStatus.UNKNOWN);
+        StockStatus status = stockStatusMap.get(symbol);
 
         if (pos.longValue() > 0 && status == StockStatus.HAS_INVENTORY) {
             int id = tradeID.incrementAndGet();
@@ -546,12 +556,37 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(exec ->
                 orderMap.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
 
-        pr("commission report", "symb:", symb, "commission", commissionReport.commission(),
-                "realized pnl", commissionReport.realizedPNL());
+//        pr("commission report", "symb:", symb, "commission", commissionReport.commission(),
+//                "realized pnl", commissionReport.realizedPNL());
 
         outputToFile(str("commission report", "symb:", symb, "commission", commissionReport.commission(),
                 "realized pnl", commissionReport.realizedPNL()), outputFile);
     }
+
+
+    //Open Orders
+    @Override
+    public void openOrder(Contract contract, Order order, OrderState orderState) {
+        outputToFile(str(ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
+    }
+
+    @Override
+    public void openOrderEnd() {
+
+    }
+
+    @Override
+    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+        outputToFile(str("orderId", orderId, "OrderStatus", status, "filled",
+                filled, "remaining", remaining), outputFile);
+    }
+
+    @Override
+    public void handle(int orderId, int errorCode, String errorMsg) {
+        outputToFile(str("order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
+    }
+    //open orders end
 
 
     public static void main(String[] args) {
@@ -577,27 +612,4 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }));
     }
 
-    //Open Orders
-    @Override
-    public void openOrder(Contract contract, Order order, OrderState orderState) {
-        outputToFile(str(ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
-    }
-
-    @Override
-    public void openOrderEnd() {
-
-    }
-
-    @Override
-    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
-                            double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("orderId", orderId, "OrderStatus", status, "filled",
-                filled, "remaining", remaining), outputFile);
-    }
-
-    @Override
-    public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToFile(str("order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
-    }
-    //open orders end
 }
