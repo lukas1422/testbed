@@ -578,7 +578,11 @@ public class TradingUtility {
 //        pr("req holdings ");
 //        ap.reqPositions(this);
 //    }
-    public static LocalTime getUSTimeNow() {
+
+    public static LocalDateTime getESTLocalDateTimeNow() {
+        return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
+    }
+    public static LocalTime getESTLocalTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
 }

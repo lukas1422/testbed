@@ -26,7 +26,8 @@ import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
-public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler,
+        ApiController.ILiveOrderHandler {
 
     private static ApiController apiController;
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
@@ -112,13 +113,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     ltof(9, 30));
 
     private Tester() {
-        pr("initializing...");
+        pr("initializing...", "time", LocalDateTime.now(), "US Time:", getESTLocalDateTimeNow());
 
 //        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
 //        File f = new File("trading/TradingFiles/output");
 //        pr(f.getAbsolutePath());
-        outputToFile(str("start time EST ", ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")))
-                , outputFile);
+        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:",
+                getESTLocalDateTimeNow()), outputFile);
         registerContract(wmt);
         registerContract(pg);
         registerContract(brk);
@@ -172,7 +173,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             }
 
 //        pr("today so far ", threeDayData.getOrDefault(symbol, ""));
-
 //            if (!liveData.containsKey(symb)) {
 //                liveData.put(symb, new ConcurrentSkipListMap<>());
 //            }
@@ -299,7 +299,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //                if (lastYearCloseMap.getOrDefault(symbol, 0.0) > price && percentileMap.containsKey(symbol)) {
                 // should change to US time, not china. Also 22 30 is without daylight savings.
 //                t.toLocalTime().isAfter(LocalTime.of(22, 30))
-                if (TRADING_TIME_PRED.test(getUSTimeNow())) {
+                if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 
                         if (inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
@@ -372,19 +372,23 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void positionEnd() {
         pr("position end");
         targetStockList.forEach(symb -> {
-            pr(" symbol in positionEnd", symb);
+//            pr(" symbol in positionEnd", symb);
 
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
                 inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                costMap.put(symb, 0.0);
             }
+
+            pr("SYMBOL POS INVENTORY"
+                    , symb, symbolPosMap.get(symb).longValue(), inventoryStatusMap.get(symb), costMap.get(symb));
 
 //            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
 //            }
 
             apiController.reqContractDetails(generateUSStockContract(symb), list -> list.forEach(a -> {
-                pr(a.contract().symbol(), a.contract().conid());
+                pr("CONTRACT ID:", a.contract().symbol(), a.contract().conid());
                 symbolConIDMap.put(symb, a.contract().conid());
             }));
 
@@ -410,7 +414,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         targetStockList.forEach(symb -> {
 //            pr("target stock", symb);
 //            pr("1. three day data, symb", symb, threeDayData.get(symb));
-            pr("three day data contains ", symb, threeDayData.containsKey(symb));
+            pr("three day data contains:", symb, threeDayData.containsKey(symb));
 //            pr("three day data is empty ", threeDayData);
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 //                pr("map", threeDayData.get(symb));
@@ -471,9 +475,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        if (!inventoryStatusMap.containsKey(symbol)) {
-            return;
-        }
+//        if (!inventoryStatusMap.containsKey(symbol)) {
+//            return;
+//        }
 
         InventoryStatus status = inventoryStatusMap.get(symbol);
 
@@ -505,9 +509,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        InventoryStatus status = inventoryStatusMap.get(symbol);
+//        InventoryStatus status = inventoryStatusMap.get(symbol);
 
-        if (pos.longValue() > 0 && status == InventoryStatus.HAS_INVENTORY) {
+        if (pos.longValue() > 0) {
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
@@ -533,6 +537,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
      */
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
+        pr("tradeReport", tradeKey, ibContractToSymbol(contract), execution);
 
         tradeKeyExecutionMap.put(tradeKey, execution);
 
