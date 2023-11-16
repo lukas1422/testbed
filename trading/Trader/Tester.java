@@ -20,6 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.f1;
+import static api.TradingConstants.f2;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static java.lang.Math.round;
@@ -28,22 +29,19 @@ import static utility.Utility.*;
 
 public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler,
         ApiController.ILiveOrderHandler {
-
     private static ApiController apiController;
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
-    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
+//    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
 
     static volatile double aggregateDelta = 0.0;
 
 
-    Contract gjs = generateHKStockContract("388");
-    Contract xiaomi = generateHKStockContract("1810");
+//    Contract gjs = generateHKStockContract("388");
+//    Contract xiaomi = generateHKStockContract("1810");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
-
     Contract brk = generateUSStockContract("BRK B");
-
     Contract ul = generateUSStockContract("UL");
 
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
@@ -293,7 +291,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 liveData.get(symb).put(t, price);
                 pr("inventory status", symb, inventoryStatusMap.get(symb));
 
-                if (symbolPosMap.containsKey(symb) && !symbolPosMap.get(symb).isZero()) {
+                if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
@@ -372,7 +370,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     @Override
     public void positionEnd() {
-        pr("position end");
+        pr("position end", LocalTime.now().format(DateTimeFormatter.ofPattern("H:mm:ss")));
         targetStockList.forEach(symb -> {
 //            pr(" symbol in positionEnd", symb);
 
@@ -481,12 +479,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         pr("inventory adder", symbol, pos, status);
 
-
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
-            Decimal defaultS = getTradeSizeFromPrice(price);
+            Decimal sizeToBuy = getTradeSizeFromPrice(price);
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
-            Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
+            Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
@@ -536,7 +533,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
                 execution.avgPrice(), Optional.ofNullable(orderSubmitted.get(execution.orderId()))
-                        .map(e -> e.getSymbol()).orElse(""));
+                        .map(OrderAugmented::getSymbol).orElse(""));
 
         outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
