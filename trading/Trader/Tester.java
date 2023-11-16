@@ -121,7 +121,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 getESTLocalDateTimeNow()), outputFile);
         registerContract(wmt);
         registerContract(pg);
-        registerContract(brk);
+//        registerContract(brk);
         registerContract(ul);
 
     }
@@ -238,9 +238,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         if (!date.startsWith("finished")) {
             LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
             ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-            if (symbol.equalsIgnoreCase("PG")) {
-                pr(symbol, "ytd data ld, O, H, L, C:", ld, open, high, low, close);
-            }
+//            if (symbol.equalsIgnoreCase("PG")) {
+//                pr(symbol, "ytd data ld, O, H, L, C:", ld, open, high, low, close);
+//            }
         } else {
             if (!ytdDayData.get(symbol).firstKey().isBefore(Trader.Allstatic.LAST_YEAR_DAY)) {
                 pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
@@ -319,12 +319,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     @Override
     public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symb = ibContractToSymbol(contract);
+
+        pr("Updating position", symb, LocalDateTime.now().format(f), position.longValue(), avgCost, "inventoryStatus",
+                inventoryStatusMap.getOrDefault(symb, InventoryStatus.UNKNOWN));
         if (!contract.symbol().equals("USD")) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
-            } else if (position.isZero()) {
+            } else if (position.isZero() && inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
                 inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
             }
         }
@@ -394,7 +397,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 }
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
-                pr("ytd return", symb, r(returnOnYear * 100), "%");
+//                pr("ytd return", symb, r(returnOnYear * 100), "%");
             }
         });
 
@@ -434,7 +437,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice,
+            outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
                     orderSubmitted.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
@@ -447,6 +450,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
+        if (inventoryStatusMap.get(symbol) == InventoryStatus.SELLING_INVENTORY) {
+            outputToGeneral(str("selling, cannot sell again", LocalDateTime.now(), symbol));
+            return;
+        }
+
         if (pos.longValue() > 0) {
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
@@ -458,7 +466,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
-                    , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id))
+                    , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented())
                     , "price/bid/ask:", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
@@ -513,7 +521,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
 //        openOrders.put(order.orderId(), order);
         pr("open order", ibContractToSymbol(contract),
-                "ordertype:", order.orderType(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
+                "ordertype:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
                 "orderstate", orderState);
     }
 
@@ -535,6 +543,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void handle(int orderId, int errorCode, String errorMsg) {
         outputToFile(str("order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
     }
+
     //open orders end
     public static void main(String[] args) {
         Tester test1 = new Tester();

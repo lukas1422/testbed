@@ -2,7 +2,7 @@ package enums;
 
 public enum InventoryStatus {
 
-    //UNKNOWN,
+    UNKNOWN,
     NO_INVENTORY,
     BUYING_INVENTORY,
     HAS_INVENTORY,

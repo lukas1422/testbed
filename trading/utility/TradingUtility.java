@@ -577,7 +577,7 @@ public class TradingUtility {
         double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
         double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
         double last = m.lastEntry().getValue().getClose();
-        double percentile = r((last - minValue) / (maxValue - minValue) * 100);
+        double percentile = Math.round((last - minValue) / (maxValue - minValue) * 100);
         return percentile;
     }
 

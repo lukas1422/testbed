@@ -57,9 +57,9 @@ public class OrderHandler implements ApiController.IOrderHandler {
                 outputToSymbolFile(symb,
                         str(orderSubmitted.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), openOrders.get(tradeID)), outputFile);
+                                now.format(f2), orderSubmitted.get(tradeID)), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
-                        openOrders.get(tradeID)), TradingConstants.fillsOutput);
+                        orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
                     Tester.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
@@ -81,6 +81,6 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void handle(int errorCode, String errorMsg) {
         outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg
-                , openOrders.get(tradeID)));
+                , orderSubmitted.get(tradeID)));
     }
 }

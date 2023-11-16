@@ -697,3 +697,833 @@ order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
 *****Ending***** 11-16 2:25
 2023-11-16T15:25:07.613389200 global cancel orders
+*****START***** HK TIME: 2023-11-16T22:33:35.569313 EST: 2023-11-16T09:33:35.569340
+cancelling all orders on start up
+2023-11-16T22:33:35.904269 global cancel orders
+******** 11-16 22:33
+6 101 BUY INVENTORY: price: 156.28 WMT 11-16 22:33 INVENTORY_ADDER Created p/b/a 156.28 0.0 0.0 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:33:52.645 status filled remaining avgPx Submitted 0 10 0.0
+orderId 6 OrderStatus Submitted filled 0 remaining 10
+6 101 *ORDER FILL* Submitted->Filled 11-16 22:33:53.732  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:33:53.743 status filled remaining avgPx Filled 10 0 156.28
+orderId 6 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@da9e1a2e
+11-16 22:33:53.748 status filled remaining avgPx Filled 10 0 156.28
+orderId 6 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:34
+7 102 SELL INVENTORY: offer price: 157.12 cost: 156.3140257 Optional[WMT 11-16 22:34 INVENTORY_CUTTER Created] price/bid/ask: 157.11 156.79 157.12
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:34:28.054 status filled remaining avgPx Submitted 0 10 0.0
+orderId 7 OrderStatus Submitted filled 0 remaining 10
+7 102 *ORDER FILL* Submitted->Filled 11-16 22:34:28.565  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:34:28.567 status filled remaining avgPx Filled 10 0 157.12
+orderId 7 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@36ef2b3c
+11-16 22:34:28.569 status filled remaining avgPx Filled 10 0 157.12
+orderId 7 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:34
+8 103 BUY INVENTORY: price: 157.12 WMT 11-16 22:34 INVENTORY_ADDER Created p/b/a 157.14 157.12 157.26 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:34:29.517 status filled remaining avgPx PreSubmitted 0 10 0.0
+orderId 8 OrderStatus PreSubmitted filled 0 remaining 10
+8 103 *ORDER FILL* PreSubmitted->Filled 11-16 22:34:29.524  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:34:29.526 status filled remaining avgPx Filled 10 0 157.12
+orderId 8 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@da9e1a2e
+11-16 22:34:29.555 status filled remaining avgPx Filled 10 0 157.12
+orderId 8 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:35
+9 104 SELL INVENTORY: offer price: 157.95 cost: 157.1540257 Optional[WMT 11-16 22:35 INVENTORY_CUTTER Created] price/bid/ask: 157.94 157.88 157.95
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:35:41.772 status filled remaining avgPx Submitted 0 10 0.0
+orderId 9 OrderStatus Submitted filled 0 remaining 10
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:0.636 status filled remaining avgPx Submitted 8 2 157.95
+orderId 9 OrderStatus Submitted filled 8 remaining 2
+9 104 *ORDER FILL* Submitted->Filled 11-16 22:40:0.642  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:0.645 status filled remaining avgPx Filled 10 0 157.95
+orderId 9 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@e02e7833
+11-16 22:40:0.646 status filled remaining avgPx Filled 10 0 157.95
+orderId 9 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@de99431
+11-16 22:40:0.679 status filled remaining avgPx Filled 10 0 157.95
+orderId 9 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:40
+10 105 BUY INVENTORY: price: 157.62 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 157.65 157.62 157.69 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:1.344 status filled remaining avgPx Submitted 0 10 0.0
+orderId 10 OrderStatus Submitted filled 0 remaining 10
+******** 11-16 22:40
+11 106 BUY INVENTORY: price: 157.87 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 157.87 157.87 157.97 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:6.644 status filled remaining avgPx Inactive 0 10 0.0
+orderId 11 OrderStatus Inactive filled 0 remaining 10
+order id 11 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.28; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:6.678 status filled remaining avgPx Inactive 0 10 0.0
+orderId 11 OrderStatus Inactive filled 0 remaining 10
+order id -1 errorCode 2107 msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+******** 11-16 22:40
+12 107 BUY INVENTORY: price: 157.74 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 157.82 157.74 157.85 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:17.057 status filled remaining avgPx Inactive 0 10 0.0
+orderId 12 OrderStatus Inactive filled 0 remaining 10
+order id 12 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3153.98; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:17.060 status filled remaining avgPx Inactive 0 10 0.0
+orderId 12 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:40
+13 108 BUY INVENTORY: price: 157.74 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 157.78 157.74 157.82 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:26.686 status filled remaining avgPx Inactive 0 10 0.0
+orderId 13 OrderStatus Inactive filled 0 remaining 10
+order id 13 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3153.98; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:26.690 status filled remaining avgPx Inactive 0 10 0.0
+orderId 13 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:40
+14 109 BUY INVENTORY: price: 157.83 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 157.87 157.83 157.89 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:36.833 status filled remaining avgPx Inactive 0 10 0.0
+orderId 14 OrderStatus Inactive filled 0 remaining 10
+order id 14 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3154.88; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:36.838 status filled remaining avgPx Inactive 0 10 0.0
+orderId 14 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:40
+15 110 BUY INVENTORY: price: 158.25 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 158.29 158.25 158.29 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:46.820 status filled remaining avgPx Inactive 0 10 0.0
+orderId 15 OrderStatus Inactive filled 0 remaining 10
+order id 15 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.08; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:46.824 status filled remaining avgPx Inactive 0 10 0.0
+orderId 15 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:40
+16 111 BUY INVENTORY: price: 158.34 WMT 11-16 22:40 INVENTORY_ADDER Created p/b/a 158.34 158.34 158.42 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:56.848 status filled remaining avgPx Inactive 0 10 0.0
+orderId 16 OrderStatus Inactive filled 0 remaining 10
+order id 16 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.98; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:40:56.853 status filled remaining avgPx Inactive 0 10 0.0
+orderId 16 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+17 112 BUY INVENTORY: price: 158.73 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.73 158.8 158.81 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:6.996 status filled remaining avgPx Inactive 0 10 0.0
+orderId 17 OrderStatus Inactive filled 0 remaining 10
+order id 17 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3163.88; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:6.999 status filled remaining avgPx Inactive 0 10 0.0
+orderId 17 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+18 113 BUY INVENTORY: price: 158.5 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.52 158.5 158.6 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:16.723 status filled remaining avgPx Inactive 0 10 0.0
+orderId 18 OrderStatus Inactive filled 0 remaining 10
+order id 18 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3161.58; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:16.725 status filled remaining avgPx Inactive 0 10 0.0
+orderId 18 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+19 114 BUY INVENTORY: price: 158.84 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.85 158.84 158.87 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:26.647 status filled remaining avgPx Inactive 0 10 0.0
+orderId 19 OrderStatus Inactive filled 0 remaining 10
+order id 19 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3164.98; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:26.651 status filled remaining avgPx Inactive 0 10 0.0
+orderId 19 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+20 115 BUY INVENTORY: price: 158.65 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.72 158.65 158.77 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:36.942 status filled remaining avgPx Inactive 0 10 0.0
+orderId 20 OrderStatus Inactive filled 0 remaining 10
+order id 20 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3163.08; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:36.945 status filled remaining avgPx Inactive 0 10 0.0
+orderId 20 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+21 116 BUY INVENTORY: price: 158.65 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.65 158.65 158.75 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:48.183 status filled remaining avgPx Inactive 0 10 0.0
+orderId 21 OrderStatus Inactive filled 0 remaining 10
+order id 21 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3163.08; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:48.185 status filled remaining avgPx Inactive 0 10 0.0
+orderId 21 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:41
+22 117 BUY INVENTORY: price: 158.62 WMT 11-16 22:41 INVENTORY_ADDER Created p/b/a 158.65 158.62 158.78 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:56.989 status filled remaining avgPx Inactive 0 10 0.0
+orderId 22 OrderStatus Inactive filled 0 remaining 10
+order id 22 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3162.78; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:41:56.991 status filled remaining avgPx Inactive 0 10 0.0
+orderId 22 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+23 118 BUY INVENTORY: price: 158.61 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.65 158.61 158.7 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:6.765 status filled remaining avgPx Inactive 0 10 0.0
+orderId 23 OrderStatus Inactive filled 0 remaining 10
+order id 23 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3162.68; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:6.769 status filled remaining avgPx Inactive 0 10 0.0
+orderId 23 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+24 119 BUY INVENTORY: price: 158.4 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.46 158.4 158.5 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:17.844 status filled remaining avgPx Inactive 0 10 0.0
+orderId 24 OrderStatus Inactive filled 0 remaining 10
+order id 24 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3160.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:17.847 status filled remaining avgPx Inactive 0 10 0.0
+orderId 24 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+25 120 BUY INVENTORY: price: 158.42 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.42 158.42 158.53 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:26.560 status filled remaining avgPx Inactive 0 10 0.0
+orderId 25 OrderStatus Inactive filled 0 remaining 10
+order id 25 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3160.78; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:26.563 status filled remaining avgPx Inactive 0 10 0.0
+orderId 25 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+26 121 BUY INVENTORY: price: 158.36 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.36 158.36 158.44 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:36.597 status filled remaining avgPx Inactive 0 10 0.0
+orderId 26 OrderStatus Inactive filled 0 remaining 10
+order id 26 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3160.18; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:36.600 status filled remaining avgPx Inactive 0 10 0.0
+orderId 26 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+27 122 BUY INVENTORY: price: 158.28 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.33 158.28 158.36 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:46.667 status filled remaining avgPx Inactive 0 10 0.0
+orderId 27 OrderStatus Inactive filled 0 remaining 10
+order id 27 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.38; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:46.670 status filled remaining avgPx Inactive 0 10 0.0
+orderId 27 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:42
+28 123 BUY INVENTORY: price: 158.21 WMT 11-16 22:42 INVENTORY_ADDER Created p/b/a 158.21 158.21 158.28 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:56.573 status filled remaining avgPx Inactive 0 10 0.0
+orderId 28 OrderStatus Inactive filled 0 remaining 10
+order id 28 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.68; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:42:56.576 status filled remaining avgPx Inactive 0 10 0.0
+orderId 28 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+29 124 BUY INVENTORY: price: 158.16 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.19 158.16 158.22 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:7.007 status filled remaining avgPx Inactive 0 10 0.0
+orderId 29 OrderStatus Inactive filled 0 remaining 10
+order id 29 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.18; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:7.010 status filled remaining avgPx Inactive 0 10 0.0
+orderId 29 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+30 125 BUY INVENTORY: price: 158.09 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.13 158.09 158.16 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:16.835 status filled remaining avgPx Inactive 0 10 0.0
+orderId 30 OrderStatus Inactive filled 0 remaining 10
+order id 30 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.48; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:16.838 status filled remaining avgPx Inactive 0 10 0.0
+orderId 30 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+31 126 BUY INVENTORY: price: 158.02 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.08 158.02 158.09 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:27.180 status filled remaining avgPx Inactive 0 10 0.0
+orderId 31 OrderStatus Inactive filled 0 remaining 10
+order id 31 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.78; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:27.186 status filled remaining avgPx Inactive 0 10 0.0
+orderId 31 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+32 127 BUY INVENTORY: price: 158.13 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.2 158.13 158.2 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:36.990 status filled remaining avgPx Inactive 0 10 0.0
+orderId 32 OrderStatus Inactive filled 0 remaining 10
+order id 32 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.88; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:36.993 status filled remaining avgPx Inactive 0 10 0.0
+orderId 32 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+33 128 BUY INVENTORY: price: 158.07 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.13 158.07 158.14 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:46.529 status filled remaining avgPx Inactive 0 10 0.0
+orderId 33 OrderStatus Inactive filled 0 remaining 10
+order id 33 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.28; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:46.532 status filled remaining avgPx Inactive 0 10 0.0
+orderId 33 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:43
+34 129 BUY INVENTORY: price: 158.13 WMT 11-16 22:43 INVENTORY_ADDER Created p/b/a 158.15 158.13 158.18 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:56.800 status filled remaining avgPx Inactive 0 10 0.0
+orderId 34 OrderStatus Inactive filled 0 remaining 10
+order id 34 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.88; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:43:56.803 status filled remaining avgPx Inactive 0 10 0.0
+orderId 34 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+35 130 BUY INVENTORY: price: 158.05 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 158.09 158.05 158.13 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:7.015 status filled remaining avgPx Inactive 0 10 0.0
+orderId 35 OrderStatus Inactive filled 0 remaining 10
+order id 35 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.08; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:7.018 status filled remaining avgPx Inactive 0 10 0.0
+orderId 35 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+36 131 BUY INVENTORY: price: 158.05 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 158.13 158.05 158.09 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:16.585 status filled remaining avgPx Inactive 0 10 0.0
+orderId 36 OrderStatus Inactive filled 0 remaining 10
+order id 36 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.08; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:16.589 status filled remaining avgPx Inactive 0 10 0.0
+orderId 36 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+37 132 BUY INVENTORY: price: 157.83 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 157.87 157.83 157.9 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:26.780 status filled remaining avgPx Inactive 0 10 0.0
+orderId 37 OrderStatus Inactive filled 0 remaining 10
+order id 37 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3154.88; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:26.783 status filled remaining avgPx Inactive 0 10 0.0
+orderId 37 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+38 133 BUY INVENTORY: price: 157.83 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 157.85 157.83 157.87 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:37.118 status filled remaining avgPx Inactive 0 10 0.0
+orderId 38 OrderStatus Inactive filled 0 remaining 10
+order id 38 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3154.88; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:37.122 status filled remaining avgPx Inactive 0 10 0.0
+orderId 38 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+39 134 BUY INVENTORY: price: 157.89 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 157.93 157.89 157.96 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:47.807 status filled remaining avgPx Inactive 0 10 0.0
+orderId 39 OrderStatus Inactive filled 0 remaining 10
+order id 39 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.48; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:47.810 status filled remaining avgPx Inactive 0 10 0.0
+orderId 39 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:44
+40 135 BUY INVENTORY: price: 157.95 WMT 11-16 22:44 INVENTORY_ADDER Created p/b/a 157.98 157.95 158.0 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:56.580 status filled remaining avgPx Inactive 0 10 0.0
+orderId 40 OrderStatus Inactive filled 0 remaining 10
+order id 40 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.08; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:44:56.583 status filled remaining avgPx Inactive 0 10 0.0
+orderId 40 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+41 136 BUY INVENTORY: price: 158.1 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.15 158.1 158.18 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:6.859 status filled remaining avgPx Inactive 0 10 0.0
+orderId 41 OrderStatus Inactive filled 0 remaining 10
+order id 41 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.58; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:6.862 status filled remaining avgPx Inactive 0 10 0.0
+orderId 41 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+42 137 BUY INVENTORY: price: 158.32 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.33 158.32 158.38 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:16.848 status filled remaining avgPx Inactive 0 10 0.0
+orderId 42 OrderStatus Inactive filled 0 remaining 10
+order id 42 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.78; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:16.851 status filled remaining avgPx Inactive 0 10 0.0
+orderId 42 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+43 138 BUY INVENTORY: price: 158.12 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.12 158.12 158.19 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:26.407 status filled remaining avgPx Inactive 0 10 0.0
+orderId 43 OrderStatus Inactive filled 0 remaining 10
+order id 43 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.78; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:26.410 status filled remaining avgPx Inactive 0 10 0.0
+orderId 43 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+44 139 BUY INVENTORY: price: 158.12 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.15 158.12 158.19 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:27.494 status filled remaining avgPx Inactive 0 10 0.0
+orderId 44 OrderStatus Inactive filled 0 remaining 10
+order id 44 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.78; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:27.497 status filled remaining avgPx Inactive 0 10 0.0
+orderId 44 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+45 140 BUY INVENTORY: price: 158.07 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.09 158.07 158.12 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:37.127 status filled remaining avgPx Inactive 0 10 0.0
+orderId 45 OrderStatus Inactive filled 0 remaining 10
+order id 45 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.28; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:37.131 status filled remaining avgPx Inactive 0 10 0.0
+orderId 45 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+46 141 BUY INVENTORY: price: 157.93 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 158.0 157.93 158.02 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:46.977 status filled remaining avgPx Inactive 0 10 0.0
+orderId 46 OrderStatus Inactive filled 0 remaining 10
+order id 46 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.88; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:46.982 status filled remaining avgPx Inactive 0 10 0.0
+orderId 46 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:45
+47 142 BUY INVENTORY: price: 157.91 WMT 11-16 22:45 INVENTORY_ADDER Created p/b/a 157.91 157.91 157.99 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:57.027 status filled remaining avgPx Inactive 0 10 0.0
+orderId 47 OrderStatus Inactive filled 0 remaining 10
+order id 47 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.68; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:45:57.030 status filled remaining avgPx Inactive 0 10 0.0
+orderId 47 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+48 143 BUY INVENTORY: price: 157.99 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.0 157.99 158.08 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:6.670 status filled remaining avgPx Inactive 0 10 0.0
+orderId 48 OrderStatus Inactive filled 0 remaining 10
+order id 48 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.48; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:6.671 status filled remaining avgPx Inactive 0 10 0.0
+orderId 48 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+49 144 BUY INVENTORY: price: 158.0 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.03 158.0 158.06 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:16.758 status filled remaining avgPx Inactive 0 10 0.0
+orderId 49 OrderStatus Inactive filled 0 remaining 10
+order id 49 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.58; THERE IS 3656.83 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:16.761 status filled remaining avgPx Inactive 0 10 0.0
+orderId 49 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+50 145 BUY INVENTORY: price: 158.15 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.18 158.15 158.22 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:27.540 status filled remaining avgPx Inactive 0 10 0.0
+orderId 50 OrderStatus Inactive filled 0 remaining 10
+order id 50 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.08; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:27.543 status filled remaining avgPx Inactive 0 10 0.0
+orderId 50 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+51 146 BUY INVENTORY: price: 158.15 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.22 158.15 158.21 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:37.279 status filled remaining avgPx Inactive 0 10 0.0
+orderId 51 OrderStatus Inactive filled 0 remaining 10
+order id 51 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.08; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:37.282 status filled remaining avgPx Inactive 0 10 0.0
+orderId 51 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+52 147 BUY INVENTORY: price: 158.2 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.21 158.2 158.28 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:47.305 status filled remaining avgPx Inactive 0 10 0.0
+orderId 52 OrderStatus Inactive filled 0 remaining 10
+order id 52 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:47.325 status filled remaining avgPx Inactive 0 10 0.0
+orderId 52 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:46
+53 148 BUY INVENTORY: price: 158.26 WMT 11-16 22:46 INVENTORY_ADDER Created p/b/a 158.28 158.26 158.35 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:58.404 status filled remaining avgPx Inactive 0 10 0.0
+orderId 53 OrderStatus Inactive filled 0 remaining 10
+order id 53 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.18; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:46:58.408 status filled remaining avgPx Inactive 0 10 0.0
+orderId 53 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+54 149 BUY INVENTORY: price: 158.19 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.19 158.19 158.24 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:7.172 status filled remaining avgPx Inactive 0 10 0.0
+orderId 54 OrderStatus Inactive filled 0 remaining 10
+order id 54 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.48; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:7.175 status filled remaining avgPx Inactive 0 10 0.0
+orderId 54 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+55 150 BUY INVENTORY: price: 158.11 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.16 158.11 158.2 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:16.875 status filled remaining avgPx Inactive 0 10 0.0
+orderId 55 OrderStatus Inactive filled 0 remaining 10
+order id 55 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.68; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:16.878 status filled remaining avgPx Inactive 0 10 0.0
+orderId 55 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+56 151 BUY INVENTORY: price: 158.25 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.28 158.25 158.31 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:27.036 status filled remaining avgPx Inactive 0 10 0.0
+orderId 56 OrderStatus Inactive filled 0 remaining 10
+order id 56 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.08; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:27.038 status filled remaining avgPx Inactive 0 10 0.0
+orderId 56 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+57 152 BUY INVENTORY: price: 158.25 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.27 158.25 158.29 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:36.867 status filled remaining avgPx Inactive 0 10 0.0
+orderId 57 OrderStatus Inactive filled 0 remaining 10
+order id 57 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.08; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:36.870 status filled remaining avgPx Inactive 0 10 0.0
+orderId 57 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+58 153 BUY INVENTORY: price: 158.4 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.41 158.4 158.45 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:47.476 status filled remaining avgPx Inactive 0 10 0.0
+orderId 58 OrderStatus Inactive filled 0 remaining 10
+order id 58 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3160.58; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:47.479 status filled remaining avgPx Inactive 0 10 0.0
+orderId 58 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:47
+59 154 BUY INVENTORY: price: 158.4 WMT 11-16 22:47 INVENTORY_ADDER Created p/b/a 158.49 158.4 158.5 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:56.598 status filled remaining avgPx Inactive 0 10 0.0
+orderId 59 OrderStatus Inactive filled 0 remaining 10
+order id 59 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3160.58; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:47:56.602 status filled remaining avgPx Inactive 0 10 0.0
+orderId 59 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+60 155 BUY INVENTORY: price: 158.3 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 158.32 158.3 158.38 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:8.534 status filled remaining avgPx Inactive 0 10 0.0
+orderId 60 OrderStatus Inactive filled 0 remaining 10
+order id 60 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.58; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:8.538 status filled remaining avgPx Inactive 0 10 0.0
+orderId 60 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+61 156 BUY INVENTORY: price: 158.33 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 158.36 158.33 158.39 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:17.436 status filled remaining avgPx Inactive 0 10 0.0
+orderId 61 OrderStatus Inactive filled 0 remaining 10
+order id 61 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3159.88; THERE IS 3656.81 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:17.439 status filled remaining avgPx Inactive 0 10 0.0
+orderId 61 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+62 157 BUY INVENTORY: price: 158.2 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 158.2 158.2 158.26 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:27.553 status filled remaining avgPx Inactive 0 10 0.0
+orderId 62 OrderStatus Inactive filled 0 remaining 10
+order id 62 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3158.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:27.556 status filled remaining avgPx Inactive 0 10 0.0
+orderId 62 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+63 158 BUY INVENTORY: price: 157.89 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 157.89 157.89 157.9 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:36.672 status filled remaining avgPx Inactive 0 10 0.0
+orderId 63 OrderStatus Inactive filled 0 remaining 10
+order id 63 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.48; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:36.677 status filled remaining avgPx Inactive 0 10 0.0
+orderId 63 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+64 159 BUY INVENTORY: price: 157.83 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 157.87 157.83 157.87 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:46.608 status filled remaining avgPx Inactive 0 10 0.0
+orderId 64 OrderStatus Inactive filled 0 remaining 10
+order id 64 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3154.88; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:46.610 status filled remaining avgPx Inactive 0 10 0.0
+orderId 64 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:48
+65 160 BUY INVENTORY: price: 157.93 WMT 11-16 22:48 INVENTORY_ADDER Created p/b/a 157.95 157.93 157.97 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:57.357 status filled remaining avgPx Inactive 0 10 0.0
+orderId 65 OrderStatus Inactive filled 0 remaining 10
+order id 65 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.88; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:48:57.361 status filled remaining avgPx Inactive 0 10 0.0
+orderId 65 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+66 161 BUY INVENTORY: price: 157.97 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.97 157.97 158.0 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:6.680 status filled remaining avgPx Inactive 0 10 0.0
+orderId 66 OrderStatus Inactive filled 0 remaining 10
+order id 66 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.28; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:6.684 status filled remaining avgPx Inactive 0 10 0.0
+orderId 66 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+67 162 BUY INVENTORY: price: 157.91 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.91 157.91 157.98 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:16.818 status filled remaining avgPx Inactive 0 10 0.0
+orderId 67 OrderStatus Inactive filled 0 remaining 10
+order id 67 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.68; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:16.820 status filled remaining avgPx Inactive 0 10 0.0
+orderId 67 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+68 163 BUY INVENTORY: price: 157.9 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.9 157.9 157.97 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:27.259 status filled remaining avgPx Inactive 0 10 0.0
+orderId 68 OrderStatus Inactive filled 0 remaining 10
+order id 68 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:27.262 status filled remaining avgPx Inactive 0 10 0.0
+orderId 68 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+69 164 BUY INVENTORY: price: 157.81 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.86 157.81 157.86 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:37.060 status filled remaining avgPx Inactive 0 10 0.0
+orderId 69 OrderStatus Inactive filled 0 remaining 10
+order id 69 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3154.68; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:37.064 status filled remaining avgPx Inactive 0 10 0.0
+orderId 69 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+70 165 BUY INVENTORY: price: 157.87 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.87 157.87 157.93 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:46.617 status filled remaining avgPx Inactive 0 10 0.0
+orderId 70 OrderStatus Inactive filled 0 remaining 10
+order id 70 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.28; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:46.620 status filled remaining avgPx Inactive 0 10 0.0
+orderId 70 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:49
+71 166 BUY INVENTORY: price: 157.85 WMT 11-16 22:49 INVENTORY_ADDER Created p/b/a 157.86 157.85 157.89 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:56.671 status filled remaining avgPx Inactive 0 10 0.0
+orderId 71 OrderStatus Inactive filled 0 remaining 10
+order id 71 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.08; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:49:56.673 status filled remaining avgPx Inactive 0 10 0.0
+orderId 71 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+72 167 BUY INVENTORY: price: 157.9 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 157.92 157.9 157.93 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:6.636 status filled remaining avgPx Inactive 0 10 0.0
+orderId 72 OrderStatus Inactive filled 0 remaining 10
+order id 72 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3155.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:6.639 status filled remaining avgPx Inactive 0 10 0.0
+orderId 72 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+73 168 BUY INVENTORY: price: 158.12 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 158.13 158.12 158.17 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:17.436 status filled remaining avgPx Inactive 0 10 0.0
+orderId 73 OrderStatus Inactive filled 0 remaining 10
+order id 73 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.78; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:17.438 status filled remaining avgPx Inactive 0 10 0.0
+orderId 73 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+74 169 BUY INVENTORY: price: 158.07 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 158.13 158.07 158.14 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:27.371 status filled remaining avgPx Inactive 0 10 0.0
+orderId 74 OrderStatus Inactive filled 0 remaining 10
+order id 74 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3157.28; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:27.375 status filled remaining avgPx Inactive 0 10 0.0
+orderId 74 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+75 170 BUY INVENTORY: price: 158.0 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 158.01 158.0 158.05 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:37.211 status filled remaining avgPx Inactive 0 10 0.0
+orderId 75 OrderStatus Inactive filled 0 remaining 10
+order id 75 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:37.214 status filled remaining avgPx Inactive 0 10 0.0
+orderId 75 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+76 171 BUY INVENTORY: price: 158.0 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 158.01 158.0 158.03 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:46.895 status filled remaining avgPx Inactive 0 10 0.0
+orderId 76 OrderStatus Inactive filled 0 remaining 10
+order id 76 errorCode 201 msg: Order rejected - reason:CASH AVAILABLE: 3027.15; CASH NEEDED FOR THIS ORDER AND OTHER PENDING ORDERS: 3156.58; THERE IS 3656.82 USD CASH ACROSS ALL CURRENCIES; PLEASE CONSIDER CONVERTING FUNDS TO USD AND TRYING ORDER AGAIN.
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:46.898 status filled remaining avgPx Inactive 0 10 0.0
+orderId 76 OrderStatus Inactive filled 0 remaining 10
+******** 11-16 22:50
+77 172 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.81 151.79 151.82
+open order: PG order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:47.802 status filled remaining avgPx Submitted 0 40 0.0
+orderId 77 OrderStatus Submitted filled 0 remaining 40
+******** 11-16 22:50
+78 173 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.82 151.79 151.82
+open order: PG order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:48.464 status filled remaining avgPx Inactive 0 40 0.0
+orderId 78 OrderStatus Inactive filled 0 remaining 40
+order id 78 errorCode 201 msg: Order rejected - reason:Short stock positions can only be held in a margin account (you are using a cash account).
+open order: PG order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:48.470 status filled remaining avgPx Inactive 0 40 0.0
+orderId 78 OrderStatus Inactive filled 0 remaining 40
+77 172 *ORDER FILL* Submitted->Filled 11-16 22:50:48.815  NULL 
+open order: PG order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:48.817 status filled remaining avgPx Filled 40 0 151.82
+orderId 77 OrderStatus Filled filled 40 remaining 0
+open order: PG order client.Order@0 orderstate: client.OrderState@f584934f
+11-16 22:50:48.818 status filled remaining avgPx Filled 40 0 151.82
+orderId 77 OrderStatus Filled filled 40 remaining 0
+******** 11-16 22:50
+79 174 BUY INVENTORY: price: 158.19 WMT 11-16 22:50 INVENTORY_ADDER Created p/b/a 158.19 158.19 158.25 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:50:56.966 status filled remaining avgPx Submitted 0 10 0.0
+orderId 79 OrderStatus Submitted filled 0 remaining 10
+79 174 *ORDER FILL* Submitted->Filled 11-16 22:51:2.066  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:51:2.067 status filled remaining avgPx Filled 10 0 158.19
+orderId 79 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@da9e1a2e
+11-16 22:51:2.068 status filled remaining avgPx Filled 10 0 158.19
+orderId 79 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:58
+80 175 SELL INVENTORY: offer price: 159.02 cost: 158.2240257 Optional[WMT 11-16 22:58 INVENTORY_CUTTER Created] price/bid/ask: 159.11 159.0 159.02
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:31.638 status filled remaining avgPx PreSubmitted 0 10 0.0
+orderId 80 OrderStatus PreSubmitted filled 0 remaining 10
+80 175 *ORDER FILL* PreSubmitted->Filled 11-16 22:58:31.644  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:31.646 status filled remaining avgPx Filled 10 0 159.12
+orderId 80 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@a640d59e
+11-16 22:58:31.667 status filled remaining avgPx Filled 10 0 159.12
+orderId 80 OrderStatus Filled filled 10 remaining 0
+******** 11-16 22:58
+81 176 BUY INVENTORY: price: 159.07 WMT 11-16 22:58 INVENTORY_ADDER Created p/b/a 159.07 159.07 159.19 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:32.857 status filled remaining avgPx Submitted 0 10 0.0
+orderId 81 OrderStatus Submitted filled 0 remaining 10
+******** 11-16 22:58
+82 177 BUY INVENTORY: price: 159.08 WMT 11-16 22:58 INVENTORY_ADDER Created p/b/a 159.09 159.08 159.13 3d perc/1d perc 0.15 0.61
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:36.712 status filled remaining avgPx Submitted 0 10 0.0
+orderId 82 OrderStatus Submitted filled 0 remaining 10
+82 177 *ORDER FILL* Submitted->Filled 11-16 22:58:43.426  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:43.427 status filled remaining avgPx Filled 10 0 159.08
+orderId 82 OrderStatus Filled filled 10 remaining 0
+81 176 *ORDER FILL* Submitted->Filled 11-16 22:58:43.431  NULL 
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+11-16 22:58:43.432 status filled remaining avgPx Filled 10 0 159.07
+orderId 81 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@da9e1a2e
+11-16 22:58:43.434 status filled remaining avgPx Filled 10 0 159.08
+orderId 82 OrderStatus Filled filled 10 remaining 0
+open order: WMT order client.Order@0 orderstate: client.OrderState@da9e1a2e
+11-16 22:58:43.436 status filled remaining avgPx Filled 10 0 159.07
+orderId 81 OrderStatus Filled filled 10 remaining 0
+*****Ending***** 11-16 10:02
+*****START***** HK TIME: 2023-11-16T23:02:20.460131 EST: 2023-11-16T10:02:20.460155
+cancelling all orders on start up
+2023-11-16T23:02:20.588840 global cancel orders
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:33:53 US/Eastern BOT 156.28 10 156.28
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:28 US/Eastern SLD 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:29 US/Eastern BOT 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 8 157.95
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 2 157.95
+tradeReport PG time, side, price, shares, avgPrice: 20231116 09:50:48 US/Eastern SLD 151.82 40 151.82
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:51:01 US/Eastern BOT 158.19 10 158.19
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:31 US/Eastern SLD 159.12 10 159.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.08 10 159.08
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.07 10 159.07
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.354277 realized pnl 7.705466
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.353526 realized pnl 6.014268
+commission report symb:  commission 8.17E-4 realized pnl 1.591131
+commission report symb:  commission 0.32864 realized pnl 30.44836
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.366437 realized pnl 8.593306
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+open order: WMT order client.Order@0 orderstate: client.OrderState@be100000
+orderId 10 OrderStatus PendingCancel filled 0 remaining 10
+orderId 10 OrderStatus Cancelled filled 0 remaining 10
+order id 10 errorCode 202 msg: Order Canceled - reason:
+order id -1 errorCode 2106 msg: HMDS data farm connection is OK:ushmds
+*****Ending***** 11-16 10:05
+2023-11-16T23:05:13.634720 global cancel orders
+*****START***** HK TIME: 2023-11-16T23:05:21.043434 EST: 2023-11-16T10:05:21.043688
+cancelling all orders on start up
+2023-11-16T23:05:21.196940 global cancel orders
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:33:53 US/Eastern BOT 156.28 10 156.28
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:28 US/Eastern SLD 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:29 US/Eastern BOT 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 8 157.95
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 2 157.95
+tradeReport PG time, side, price, shares, avgPrice: 20231116 09:50:48 US/Eastern SLD 151.82 40 151.82
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:51:01 US/Eastern BOT 158.19 10 158.19
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:31 US/Eastern SLD 159.12 10 159.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.08 10 159.08
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.07 10 159.07
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.354277 realized pnl 7.705466
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.353526 realized pnl 6.014268
+commission report symb:  commission 8.17E-4 realized pnl 1.591131
+commission report symb:  commission 0.32864 realized pnl 30.44836
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.366437 realized pnl 8.593306
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+*****Ending***** 11-16 10:08
+2023-11-16T23:08:05.372468 global cancel orders
+*****START***** HK TIME: 2023-11-16T23:08:12.179280 EST: 2023-11-16T10:08:12.179315
+cancelling all orders on start up
+2023-11-16T23:08:12.351427 global cancel orders
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:33:53 US/Eastern BOT 156.28 10 156.28
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:28 US/Eastern SLD 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:29 US/Eastern BOT 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 8 157.95
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 2 157.95
+tradeReport PG time, side, price, shares, avgPrice: 20231116 09:50:48 US/Eastern SLD 151.82 40 151.82
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:51:01 US/Eastern BOT 158.19 10 158.19
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:31 US/Eastern SLD 159.12 10 159.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.08 10 159.08
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.07 10 159.07
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.354277 realized pnl 7.705466
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.353526 realized pnl 6.014268
+commission report symb:  commission 8.17E-4 realized pnl 1.591131
+commission report symb:  commission 0.32864 realized pnl 30.44836
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.366437 realized pnl 8.593306
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+*****Ending***** 11-16 10:13
+2023-11-16T23:13:23.438816 global cancel orders
+*****START***** HK TIME: 2023-11-16T23:13:31.284876 EST: 2023-11-16T10:13:31.284904
+cancelling all orders on start up
+2023-11-16T23:13:31.405806 global cancel orders
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:33:53 US/Eastern BOT 156.28 10 156.28
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:28 US/Eastern SLD 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:34:29 US/Eastern BOT 157.12 10 157.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 8 157.95
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:40:00 US/Eastern SLD 157.95 2 157.95
+tradeReport PG time, side, price, shares, avgPrice: 20231116 09:50:48 US/Eastern SLD 151.82 40 151.82
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:51:01 US/Eastern BOT 158.19 10 158.19
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:31 US/Eastern SLD 159.12 10 159.12
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.08 10 159.08
+tradeReport WMT time, side, price, shares, avgPrice: 20231116 09:58:43 US/Eastern BOT 159.07 10 159.07
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.354277 realized pnl 7.705466
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.353526 realized pnl 6.014268
+commission report symb:  commission 8.17E-4 realized pnl 1.591131
+commission report symb:  commission 0.32864 realized pnl 30.44836
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.366437 realized pnl 8.593306
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
+commission report symb:  commission 0.340257 realized pnl 1.7976931348623157E308
