@@ -1,6 +1,6 @@
 package enums;
 
-public enum StockStatus {
+public enum InventoryStatus {
 
     //UNKNOWN,
     NO_INVENTORY,

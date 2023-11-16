@@ -5,7 +5,7 @@ import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
-import enums.StockStatus;
+import enums.InventoryStatus;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -25,14 +25,14 @@ public class OrderHandler implements ApiController.IOrderHandler {
     private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
     private final int tradeID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-    private StockStatus status;
+    private InventoryStatus status;
 
     OrderHandler(int id) {
         tradeID = id;
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
-    OrderHandler(int id, StockStatus s) {
+    OrderHandler(int id, InventoryStatus s) {
         tradeID = id;
         status = s;
         idStatusMap.put(id, OrderStatus.ConstructedInHandler);
@@ -60,10 +60,10 @@ public class OrderHandler implements ApiController.IOrderHandler {
                                 now.format(f2), orderMap.get(tradeID)), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
                         orderMap.get(tradeID)), TradingConstants.fillsOutput);
-                if (status == StockStatus.BUYING_INVENTORY) {
-                    Tester.stockStatusMap.put(symb, StockStatus.HAS_INVENTORY);
-                } else if (status == StockStatus.SELLING_INVENTORY) {
-                    Tester.stockStatusMap.put(symb, StockStatus.SOLD);
+                if (status == InventoryStatus.BUYING_INVENTORY) {
+                    Tester.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
+                } else if (status == InventoryStatus.SELLING_INVENTORY) {
+                    Tester.inventoryStatusMap.put(symb, InventoryStatus.SOLD);
                 }
             }
             idStatusMap.put(tradeID, orderState.status());

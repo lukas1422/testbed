@@ -5,7 +5,7 @@ import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
-import enums.StockStatus;
+import enums.InventoryStatus;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
@@ -56,7 +56,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
-    static volatile Map<String, StockStatus> stockStatusMap = new ConcurrentHashMap<>();
+    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
@@ -173,9 +173,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
 //        pr("today so far ", threeDayData.getOrDefault(symbol, ""));
 
-            if (!liveData.containsKey(symb)) {
-                liveData.put(symb, new ConcurrentSkipListMap<>());
-            }
+//            if (!liveData.containsKey(symb)) {
+//                liveData.put(symb, new ConcurrentSkipListMap<>());
+//            }
 
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
@@ -289,7 +289,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 pr("last price", tt, symb, price, t.format(f1));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
-                pr("inventory status", symb, stockStatusMap.get(symb));
+                pr("inventory status", symb, inventoryStatusMap.get(symb));
 
                 if (symbolPosMap.containsKey(symb) && !symbolPosMap.get(symb).isZero()) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
@@ -302,7 +302,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 if (TRADING_TIME_PRED.test(getUSTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 
-                        if (stockStatusMap.get(symb) != StockStatus.BUYING_INVENTORY) {
+                        if (inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
                             if (aggregateDelta < DELTA_LIMIT
                                     && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
                                 pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
@@ -357,9 +357,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
-                stockStatusMap.put(symb, StockStatus.HAS_INVENTORY);
+                inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero()) {
-                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
             }
         }
 
@@ -377,7 +377,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
             }
 
 //            if (symbolPosMap.getOrDefault(symb, Decimal.ZERO).isZero()) {
@@ -400,7 +400,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         //could be buying already and inventory is 0
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb) && symbolPosMap.get(symb).isZero()) {
-                stockStatusMap.put(symb, StockStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
             }
         });
 
@@ -471,18 +471,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        if (!stockStatusMap.containsKey(symbol)) {
+        if (!inventoryStatusMap.containsKey(symbol)) {
             return;
         }
 
-        StockStatus status = stockStatusMap.get(symbol);
+        InventoryStatus status = inventoryStatusMap.get(symbol);
 
         pr("inventory adder", symbol, pos, status);
 
 //        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
 //        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
-        if (pos.isZero() && status == StockStatus.NO_INVENTORY) {
+        if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
 //            Decimal defaultS = Decimal.get(10);
             Decimal defaultS = getTradeSizeFromPrice(price);
 //            addedMap.put(symbol, new AtomicBoolean(true));
@@ -490,13 +490,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.BUYING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice,
                     orderMap.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
-            stockStatusMap.put(symbol, StockStatus.BUYING_INVENTORY);
+            inventoryStatusMap.put(symbol, InventoryStatus.BUYING_INVENTORY);
         }
     }
 
@@ -505,9 +505,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-        StockStatus status = stockStatusMap.get(symbol);
+        InventoryStatus status = inventoryStatusMap.get(symbol);
 
-        if (pos.longValue() > 0 && status == StockStatus.HAS_INVENTORY) {
+        if (pos.longValue() > 0 && status == InventoryStatus.HAS_INVENTORY) {
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
@@ -515,13 +515,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderMap.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, StockStatus.SELLING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
                     , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderMap.get(id))
                     , "price/bid/ask:", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
-            stockStatusMap.put(symbol, StockStatus.SELLING_INVENTORY);
+            inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
         }
     }
 
