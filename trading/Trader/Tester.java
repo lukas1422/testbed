@@ -536,8 +536,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         outputToFile(str("order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
     }
     //open orders end
-
-
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
@@ -549,13 +547,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
                         v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-
                     outputToFile(str("unexecuted orders:", v.getSymbol(), "Shutdown status",
                             getESTLocalTimeNow().format(TradingConstants.f1),
                             v.getAugmentedOrderStatus(), v), outputFile);
-
-//                    outputToSymbolFile(v.getSymbol(), str("Shutdown status",
-//                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
                 }
             });
             apiController.cancelAllOrders();
