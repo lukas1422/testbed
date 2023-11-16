@@ -231,6 +231,11 @@ public class TradingUtility {
         }
     }
 
+    public static void outputToGeneral(String s) {
+        File outputFile = new File("trading/TradingFiles/output");
+        outputToFile(s, outputFile);
+    }
+
     public static void outputToFile(String s, File f) {
         try (BufferedWriter out = new BufferedWriter(new FileWriter(f, true))) {
             out.append(s);
@@ -582,6 +587,7 @@ public class TradingUtility {
     public static LocalDateTime getESTLocalDateTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
     }
+
     public static LocalTime getESTLocalTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }

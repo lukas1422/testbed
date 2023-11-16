@@ -477,21 +477,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
 
-//        if (!inventoryStatusMap.containsKey(symbol)) {
-//            return;
-//        }
-
         InventoryStatus status = inventoryStatusMap.get(symbol);
 
         pr("inventory adder", symbol, pos, status);
 
-//        boolean added = addedMap.containsKey(symbol) && addedMap.get(symbol).get();
-//        boolean liquidated = liquidatedMap.containsKey(symbol) && liquidatedMap.get(symbol).get();
 
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
-//            Decimal defaultS = Decimal.get(10);
             Decimal defaultS = getTradeSizeFromPrice(price);
-//            addedMap.put(symbol, new AtomicBoolean(true));
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
             Order o = placeBidLimitTIF(bidPrice, defaultS, DAY);
@@ -510,8 +502,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
         String symbol = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symbol);
-
-//        InventoryStatus status = inventoryStatusMap.get(symbol);
 
         if (pos.longValue() > 0) {
             int id = tradeID.incrementAndGet();
@@ -545,7 +535,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         pr("tradeReport:", tradeKey, ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),
-                execution.avgPrice(), Optional.ofNullable(orderSubmitted.get(execution.orderId())).map(e -> e.getSymbol()).orElse(""));
+                execution.avgPrice(), Optional.ofNullable(orderSubmitted.get(execution.orderId()))
+                        .map(e -> e.getSymbol()).orElse(""));
 
         outputToFile(str("tradeReport", ibContractToSymbol(contract), "time, side, price, shares, avgPrice:",
                 execution.time(), execution.side(), execution.price(), execution.shares(),

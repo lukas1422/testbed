@@ -13,11 +13,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
-import static Trader.Tester.openOrders;
-import static Trader.Tester.outputFile;
+import static Trader.Tester.*;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
 import static utility.TradingUtility.outputToError;
+import static utility.TradingUtility.outputToFile;
 import static utility.Utility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
@@ -45,17 +45,17 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderState(OrderState orderState) {
         LocalDateTime now = LocalDateTime.now();
-        if (openOrders.containsKey(tradeID)) {
-            openOrders.get(tradeID).setAugmentedOrderStatus(orderState.status());
+        if (orderSubmitted.containsKey(tradeID)) {
+            orderSubmitted.get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
         }
 
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                String symb = openOrders.get(tradeID).getSymbol();
+                String symb = orderSubmitted.get(tradeID).getSymbol();
                 outputToSymbolFile(symb,
-                        str(openOrders.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
+                        str(orderSubmitted.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
                                 now.format(f2), openOrders.get(tradeID)), outputFile);
                 outputDetailedGen(str(symb, now.format(f2),
