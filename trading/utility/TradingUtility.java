@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Predicate;
 
 import static utility.Utility.*;
 
@@ -37,6 +38,8 @@ public class TradingUtility {
     public static final boolean regulatorySnapshot = false;
     public static final LocalDate LAST_MONTH_DAY = getMonthBeginMinus1Day();
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
+    public static Predicate<LocalTime> TRADING_TIME_PRED = t -> t.isAfter(LocalTime.of(9, 30)) &&
+            t.isBefore(ltof(16, 0));
 
     private TradingUtility() throws OperationNotSupportedException {
         throw new OperationNotSupportedException(" cannot instantiate utility class ");
@@ -569,5 +572,13 @@ public class TradingUtility {
         double last = m.lastEntry().getValue().getClose();
         double percentile = r((last - minValue) / (maxValue - minValue) * 100);
         return percentile;
+    }
+
+    //    private void reqHoldings(ApiController ap) {
+//        pr("req holdings ");
+//        ap.reqPositions(this);
+//    }
+    public static LocalTime getUSTimeNow() {
+        return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
 }
