@@ -392,9 +392,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-                if (symb.equalsIgnoreCase("PG")) {
-                    pr("last year close", lastYearClose);
-                }
+//                if (symb.equalsIgnoreCase("PG")) {
+//                    pr("last year close", lastYearClose);
+//                }
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
 //                pr("ytd return", symb, r(returnOnYear * 100), "%");
