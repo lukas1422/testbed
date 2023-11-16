@@ -371,31 +371,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         });
 
         pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
-//        pr("calculate percentile", targetStockList.size());
 
         targetStockList.forEach(symb -> {
-//            pr("target stock", symb);
-//            pr("1. three day data, symb", symb, threeDayData.get(symb));
             pr("three day data contains:", symb, threeDayData.containsKey(symb));
-//            pr("three day data is empty ", threeDayData);
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
-//                pr("map", threeDayData.get(symb));
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
-//                ConcurrentSkipListMap<LocalDateTime, SimpleBar> oneDayMap =
-//                        new ConcurrentSkipListMap<>(Optional.of(threeDayData.get(symb)
-//                                .tailMap(TODAY_MARKET_START_TIME)).get());
 
-//                pr("one day data, symb", symb, oneDayMap.size(), !oneDayMap.isEmpty() ? oneDayMap : "");
-//                double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
-//                double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
-//                double last = m.lastEntry().getValue().getClose();
-//                double percentile = r((last - minValue) / (maxValue - minValue) * 100);
+                ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
+
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb)
                         .tailMap(TODAY_MARKET_START_TIME));
-//                pr(symb, "three day, one day", threeDayPercentile, oneDayPercentile);
-
-//                pr("today market start time ", TODAY_MARKET_START_TIME);
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1),
@@ -403,8 +388,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
-//                pr("hist data", ytdDayData.get(symb));
-//                ConcurrentSkipListMap<LocalDate, SimpleBar> m = ytdDayData.get(symb);
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 if (symb.equalsIgnoreCase("PG")) {
                     pr("last year close", lastYearClose);
@@ -413,7 +396,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 lastYearCloseMap.put(symb, lastYearClose);
                 pr("ytd return", symb, r(returnOnYear * 100), "%");
             }
-//            pr("symbolconidmap", symbolConIDMap);
         });
 
         //update entire portfolio delta
@@ -529,13 +511,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         outputToFile(str("open order:",
                 ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
-        openOrders.put(order.orderId(), order);
+//        openOrders.put(order.orderId(), order);
+        pr("open order", ibContractToSymbol(contract),
+                "ordertype:", order.orderType(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
+                "orderstate", orderState);
     }
 
     @Override
     public void openOrderEnd() {
         pr("open order end");
-        openOrders.forEach(Utility::pr);
+//        openOrders.forEach(Utility::pr);
     }
 
     @Override
