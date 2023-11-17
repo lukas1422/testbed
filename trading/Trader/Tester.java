@@ -339,8 +339,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     static void periodicCompute() {
         targetStockList.forEach(symb -> {
-            if (symbolPosMap.containsKey(symb) && symbolPosMap.get(symb).isZero()) {
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+            if (symbolPosMap.containsKey(symb)) {
+                if (symbolPosMap.get(symb).isZero()) {
+                    inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
+                    pr(symb, "price/cost", Math.round(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
+                }
             }
         });
 
@@ -367,13 +371,33 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             }
         });
 
-        aggregateDelta = targetStockList.stream().mapToDouble(s ->
-                symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() *
-                        latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())).sum();
+        aggregateDelta = targetStockList.stream().
+
+                mapToDouble(s ->
+                        symbolPosMap.getOrDefault(s, Decimal.ZERO).
+
+                                longValue() *
+                                latestPriceMap.getOrDefault(s, ytdDayData.get(s).
+
+                                        lastEntry().
+
+                                        getValue().
+
+                                        getClose())).
+
+                sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() *
-                        latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())));
+                symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).
+
+                        longValue() *
+                        latestPriceMap.getOrDefault(s, ytdDayData.get(s).
+
+                                lastEntry().
+
+                                getValue().
+
+                                getClose())));
 
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
 
@@ -385,6 +409,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             });
             outputToGeneral(str("openOrderMap is not empty", openOrders));
         }
+
     }
 
 
