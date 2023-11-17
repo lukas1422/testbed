@@ -366,6 +366,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                     pr("threeday data", threeDayData.get(symb));
                     pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
+                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
                 }
 
                 threeDayPctMap.put(symb, threeDayPercentile);
@@ -379,12 +383,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
 //                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
-                pr("last year close", lastYearClose);
+//                pr("last year close", lastYearClose);
 //                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
         });
         pr("before agg delta ");
-
 
         aggregateDelta = targetStockList.stream().mapToDouble(s ->
                 symbolPosMap.getOrDefault(s, Decimal.ZERO).
@@ -403,6 +406,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 }
             });
             outputToGeneral(str("openOrderMap is not empty", openOrders));
+        } else {
+            pr("there  is no open orders");
         }
 
     }
