@@ -223,36 +223,34 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
                                    long volume) {
-        String symbol = Utility.ibContractToSymbol(c);
+        String symbol = ibContractToSymbol(c);
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        if (!date.startsWith("finished")) {
-            threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-            liveData.get(symbol).put(ld, close);
-        }
+//        if (!date.startsWith("finished")) {
+        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        liveData.get(symbol).put(ld, close);
+//        }
     }
 
     // this gets YTD return
     private static void ytdOpen(Contract c, String date, double open, double high, double low, double close,
                                 long volume) {
-        String symbol = Utility.ibContractToSymbol(c);
+        String symbol = ibContractToSymbol(c);
 
         if (!ytdDayData.containsKey(symbol)) {
             ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
-        if (!date.startsWith("finished")) {
-            LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
-            ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-//            if (symbol.equalsIgnoreCase("PG")) {
-//                pr(symbol, "ytd data ld, O, H, L, C:", ld, open, high, low, close);
+//        pr("ytd open ", symbol, date, open, high, close);
+//        if (!date.startsWith("finished")) {
+        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+//        } else {
+//            if (!ytdDayData.get(symbol).firstKey().isBefore(Trader.Allstatic.LAST_YEAR_DAY)) {
+//                pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
 //            }
-        } else {
-            if (!ytdDayData.get(symbol).firstKey().isBefore(Trader.Allstatic.LAST_YEAR_DAY)) {
-                pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
-            }
-        }
+//        }
     }
 
     //live data start
@@ -484,13 +482,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Decimal pos = symbolPosMap.get(symbol);
 
         if (inventoryStatusMap.get(symbol) == InventoryStatus.SELLING_INVENTORY) {
-            outputToGeneral(str("INVENTORY CUTTER. selling, cannot sell again", LocalDateTime.now(), symbol));
+            outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symbol));
             return;
         }
 
         if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
             if (openOrders.get(symbol).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
-                pr("INVENTORY CUTTER. There is a live selling order",
+                pr("CUTTER FAIL. There is a live selling order",
                         openOrders.get(symbol).entrySet().stream().filter(e -> e.getValue().action() == Types.Action.SELL)
                                 .findFirst().get());
                 return;
@@ -499,7 +497,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
             outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT)
-                    , "inventory seller failed, wait 10 seconds");
+                    , "CUTTER FAIL, wait 10 seconds");
             return;
         }
 
@@ -575,7 +573,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         outputToGeneral("open order", getESTLocalDateTimeNow().format(f),
                 symb, "orderID", order.orderId(),
-                "ordertype:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
+                "orderType:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
                 "orderstate", orderState);
     }
 
