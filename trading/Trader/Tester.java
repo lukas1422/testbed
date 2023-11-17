@@ -415,22 +415,33 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                         e.getValue().orderId(), "B/S", e.getValue().action(),
                         "size:", e.getValue().totalQuantity(), "px:", e.getValue().lmtPrice());
             });
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, there are open orders", openOrders.get(symb));
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
+                    "buying failed, there are open orders", openOrders.get(symb));
+            pr(symb, "adding fail:open order");
             return;
         }
 
         if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
             outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, has only been",
                     Duration.between(lastOrderTime.get(symb), t).getSeconds(), "seconds");
+            pr(symb, "adding fail: need to wait longer");
             return;
         }
 
+        Decimal sizeToBuy = getTradeSizeFromPrice(price);
 
-        pr("inventory adder", symb, pos, status);
+        if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
+                > DELTA_LIMIT_EACH_STOCK) {
+            outputToGeneral(symb, "after buying exceeds delta limit", "current delta:",
+                    symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
+                    "proposed delta inc:", sizeToBuy.longValue() * price);
+            pr("proposed buy exceeds delta limit");
+            return;
+        }
+
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
             inventoryStatusMap.put(symb, InventoryStatus.BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
-            Decimal sizeToBuy = getTradeSizeFromPrice(price);
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
