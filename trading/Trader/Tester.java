@@ -436,45 +436,45 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
-        String symbol = ibContractToSymbol(ct);
-        Decimal pos = symbolPosMap.get(symbol);
+        String symb = ibContractToSymbol(ct);
+        Decimal pos = symbolPosMap.get(symb);
 
-        InventoryStatus status = inventoryStatusMap.get(symbol);
+        InventoryStatus status = inventoryStatusMap.get(symb);
 
         if (status == InventoryStatus.BUYING_INVENTORY) {
-            outputToGeneral(symbol, "is alrelady buying inventory, exiting ");
+            outputToGeneral(symb, "is alrelady buying inventory, exiting ");
             return;
         }
 
-        if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
-            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT),
-                    "inventory adder failed, there are open orders", openOrders.get(symbol));
+        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
+                    "inventory adder failed, there are open orders", openOrders.get(symb));
             return;
         }
 
-        if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
-            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT)
-                    , "inventory adder failed, wait 10 seconds", "has only been seconds",
-                    Duration.between(lastOrderTime.get(symbol), t).getSeconds());
+        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT)
+                    , "inventory adder failed, has only been seconds",
+                    Duration.between(lastOrderTime.get(symb), t).getSeconds());
             return;
         }
 
 
-        pr("inventory adder", symbol, pos, status);
+        pr("inventory adder", symb, pos, status);
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
-            lastOrderTime.put(symbol, t);
+            lastOrderTime.put(symb, t);
             Decimal sizeToBuy = getTradeSizeFromPrice(price);
             int id = tradeID.incrementAndGet();
-            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
+            double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID:", id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
+            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
                     orderSubmitted.get(id), "p/b/a", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
+                    getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
-            inventoryStatusMap.put(symbol, InventoryStatus.BUYING_INVENTORY);
+            inventoryStatusMap.put(symb, InventoryStatus.BUYING_INVENTORY);
         }
     }
 
