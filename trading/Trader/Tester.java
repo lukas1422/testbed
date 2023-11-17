@@ -296,7 +296,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symb = ibContractToSymbol(contract);
 
 
-        if (!contract.symbol().equals("USD")) {
+        if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
@@ -306,9 +306,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             } else {
                 inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
+            pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
+                    "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
         }
-        pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
-                "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
     }
 
     @Override
