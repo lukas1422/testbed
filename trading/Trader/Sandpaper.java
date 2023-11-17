@@ -15,13 +15,6 @@ import static utility.Utility.str;
 
 public class Sandpaper {
 
-
-    public static void testThis() {
-
-        for
-
-    }
-
     public static void main(String[] args) {
 
         Sandpaper s = new Sandpaper();

@@ -487,8 +487,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
                     , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented())
-                    , "price/bid/ask:", price,
-                    getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+                    , "price/bid/ask:", price, getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
         }
     }
