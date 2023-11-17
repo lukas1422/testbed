@@ -43,6 +43,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract ul = generateUSStockContract("UL");
     Contract mcd = generateUSStockContract("MCD");
 
+    Contract spy = generateUSStockContract("SPY");
+
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.005;
@@ -80,10 +82,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
 
 
-    //position
-//    private volatile static Map<Contract, Decimal> contractPosMap =
-//            new ConcurrentSkipListMap<>(Comparator.comparing(Utility::ibContractToSymbol));
-
     private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
 
 
@@ -106,20 +104,20 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //    public static final LocalDateTime TODAY_MARKET_START_TIME =
 //            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
 
-    public static final LocalDateTime TODAY_MARKET_START_TIME = LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(), ltof(9, 30));
+    public static final LocalDateTime TODAY_MARKET_START_TIME =
+            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private Tester() {
         pr("initializing...", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
+        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-//        outputToFile(str("Start time is", LocalDateTime.now()), outputFile);
-//        File f = new File("trading/TradingFiles/output");
-//        pr(f.getAbsolutePath());
         outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), outputFile);
         registerContract(wmt);
         registerContract(pg);
 //        registerContract(brk);
         registerContract(ul);
         registerContract(mcd);
+        registerContract(spy);
 
     }
 
@@ -213,10 +211,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symbol = ibContractToSymbol(c);
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone.getTimeZone("America/New_York").toZoneId());
 
-//        if (!date.startsWith("finished")) {
         threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);
-//        }
     }
 
     // this gets YTD return
@@ -227,15 +223,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
         }
 
-//        pr("ytd open ", symbol, date, open, high, close);
-//        if (!date.startsWith("finished")) {
         LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
         ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-//        } else {
-//            if (!ytdDayData.get(symbol).firstKey().isBefore(Trader.Allstatic.LAST_YEAR_DAY)) {
-//                pr("check YtdOpen", symbol, ytdDayData.get(symbol).firstKey());
-//            }
-//        }
     }
 
     //live data start
@@ -248,14 +237,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 pr("last price", tt, symb, price, t.format(f1));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
-//                pr("inventory status", symb, inventoryStatusMap.get(symb));
 
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
                 //trade logic
-//                pr("is trading time?", TRADING_TIME_PRED.test(getESTLocalTimeNow()));
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                         if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
@@ -308,7 +295,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void position(String account, Contract contract, Decimal position, double avgCost) {
         String symb = ibContractToSymbol(contract);
 
-        pr("Updating position", symb, LocalDateTime.now().format(f), position.longValue(), avgCost, "inventoryStatus", inventoryStatusMap.getOrDefault(symb, InventoryStatus.UNKNOWN));
+
         if (!contract.symbol().equals("USD")) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
@@ -316,14 +303,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero() && inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
                 inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+            } else {
+                inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
         }
+        pr("Updating position", symb, LocalDateTime.now().format(f), position.longValue(),
+                avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
 
-        pr("account, contract, position, avgcost", account, symb, position, avgCost);
-//        contractPosMap.entrySet().stream().forEach(e -> pr(e.getKey().symbol(), e.getValue()));
-//     pr("contract map", contractPosMap);
+//        pr("account, contract, position, avgcost", account, symb, position, avgCost);
     }
-
     @Override
     public void positionEnd() {
         pr("position end", LocalTime.now().format(DateTimeFormatter.ofPattern("H:mm:ss")));
@@ -360,7 +348,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
 
         targetStockList.forEach(symb -> {
-//            pr("three day data contains:", symb, threeDayData.containsKey(symb));
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
@@ -369,7 +356,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1), "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
+                pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1),
+                        LocalDateTime.now().format(f1), "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
@@ -444,7 +432,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(id), "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb), "3d perc/1d perc", perc3d, perc1d), outputFile);
+            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
+                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(id),
+                    "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
+                    "3d perc/1d perc", perc3d, perc1d), outputFile);
         }
     }
 

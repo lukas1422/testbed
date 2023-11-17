@@ -27,6 +27,7 @@ import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
+import static java.lang.Math.round;
 import static utility.Utility.*;
 
 public class TradingUtility {
@@ -551,12 +552,12 @@ public class TradingUtility {
     }
 
     public static double roundToPricePassiveGen(double x, Direction dir, double minPriceVar) {
-        return (Math.round(x * 10) - Math.round(x * 10) % (minPriceVar * 10)
+        return (round(x * 10) - round(x * 10) % (minPriceVar * 10)
                 + (dir == Direction.Long ? 0 : (minPriceVar * 10))) / 10d;
     }
 
     public static double roundToXUPricePassive(double x, Direction dir) {
-        return (Math.round(x * 10) - Math.round(x * 10) % 25 + (dir == Direction.Long ? 0 : 25)) / 10d;
+        return (round(x * 10) - round(x * 10) % 25 + (dir == Direction.Long ? 0 : 25)) / 10d;
     }
 
     public static void outputToAll(String s) {
@@ -582,14 +583,8 @@ public class TradingUtility {
         double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
         double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
         double last = m.lastEntry().getValue().getClose();
-        double percentile = Math.round((last - minValue) / (maxValue - minValue) * 100);
-        return percentile;
+        return (double) round((last - minValue) / (maxValue - minValue) * 100);
     }
-
-    //    private void reqHoldings(ApiController ap) {
-//        pr("req holdings ");
-//        ap.reqPositions(this);
-//    }
 
     public static LocalDateTime getESTLocalDateTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
