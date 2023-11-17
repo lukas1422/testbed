@@ -216,6 +216,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
+        if (!ytdDayData.containsKey(symb)) {
+            ytdDayData.put(symb, new ConcurrentSkipListMap<>());
+        }
     }
 
     private static void todaySoFar(Contract c, String date, double open, double high, double low, double close,
@@ -269,6 +272,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 }
 
                 //trade logic
+//                pr("is trading time?", TRADING_TIME_PRED.test(getESTLocalTimeNow()));
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                         if (symbolPosMap.get(symb).isZero()
@@ -368,8 +372,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     }
 
     static void periodicCompute() {
-
-        //could be buying already and inventory is 0
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb) && symbolPosMap.get(symb).isZero()) {
                 inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
@@ -379,7 +381,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
 
         targetStockList.forEach(symb -> {
-            pr("three day data contains:", symb, threeDayData.containsKey(symb));
+//            pr("three day data contains:", symb, threeDayData.containsKey(symb));
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 
                 ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
@@ -390,7 +392,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1), LocalDateTime.now().format(f1),
-                        symb, "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
+                        "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
@@ -400,17 +402,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //                }
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
-//                pr("ytd return", symb, r(returnOnYear * 100), "%");
+                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
         });
 
         //update entire portfolio delta
         aggregateDelta = targetStockList.stream().mapToDouble(s -> symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
-                * latestPriceMap.getOrDefault(s, 0.0)).sum();
+                * latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())).sum();
 
         //update individual stock delta
         targetStockList.forEach((s) -> symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
-                * latestPriceMap.getOrDefault(s, 0.0)));
+                * latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())));
 
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
 
@@ -452,7 +454,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
             outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT)
-                    , "inventory adder failed, wait 10 seconds");
+                    , "inventory adder failed, wait 10 seconds", "has only been seconds",
+                    Duration.between(lastOrderTime.get(symbol), t).getSeconds());
             return;
         }
 
