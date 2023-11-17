@@ -105,10 +105,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
 
     public static final LocalDateTime TODAY_MARKET_START_TIME =
-            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDate(), ltof(9, 30));
+            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
+//            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private Tester() {
         pr("initializing...", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
+        pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
         outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), outputFile);
@@ -212,6 +214,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000), TimeZone.getTimeZone("America/New_York").toZoneId());
 
         threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        pr("three day data today so far ", symbol, ld, close);
         liveData.get(symbol).put(ld, close);
     }
 
@@ -338,6 +341,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     }
 
     static void periodicCompute() {
+        pr("periodic compute", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (symbolPosMap.get(symb).isZero()) {
@@ -357,47 +361,38 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+
+                if (symb.equalsIgnoreCase("SPY")) {
+
+                    pr("threeday data", threeDayData.get(symb));
+                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+                }
+
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("compute", symb, getESTLocalTimeNow().format(simpleT),
                         "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
-
-            if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
+            pr("compute after percentile map", symb);
+            if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty() && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
+                pr("ytd size ", symb, ytdDayData.get(symb).size(), "first key", ytdDayData.get(symb).firstKey(), getYearBeginMinus1Day());
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
 //                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
+                pr("last year close", lastYearClose);
 //                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
         });
+        pr("before agg delta ");
 
-        aggregateDelta = targetStockList.stream().
 
-                mapToDouble(s ->
-                        symbolPosMap.getOrDefault(s, Decimal.ZERO).
-
-                                longValue() *
-                                latestPriceMap.getOrDefault(s, ytdDayData.get(s).
-
-                                        lastEntry().
-
-                                        getValue().
-
-                                        getClose())).
-
-                sum();
+        aggregateDelta = targetStockList.stream().mapToDouble(s ->
+                symbolPosMap.getOrDefault(s, Decimal.ZERO).
+                        longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).
-
-                        longValue() *
-                        latestPriceMap.getOrDefault(s, ytdDayData.get(s).
-
-                                lastEntry().
-
-                                getValue().
-
-                                getClose())));
+                symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
+                        .getOrDefault(s, 0.0)));
 
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
 
