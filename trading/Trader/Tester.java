@@ -462,8 +462,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Decimal pos = symbolPosMap.get(symbol);
 
         if (inventoryStatusMap.get(symbol) == InventoryStatus.SELLING_INVENTORY) {
-            outputToGeneral(str("selling, cannot sell again", LocalDateTime.now(), symbol));
+            outputToGeneral(str("INVENTORY CUTTER. selling, cannot sell again", LocalDateTime.now(), symbol));
             return;
+        }
+
+        if (openOrders.containsKey(symbol)) {
+            if (openOrders.get(symbol).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
+                pr("INVENTORY CUTTER. There is a live selling order",
+                        openOrders.get(symbol).entrySet().stream().filter(e -> e.getValue().action() == Types.Action.SELL)
+                                .findFirst().get());
+                return;
+            }
         }
 
         if (pos.longValue() > 0) {
@@ -556,13 +565,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                             int clientId, String whyHeld, double mktCapPrice) {
         outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus", status, "filled",
                 filled, "remaining", remaining), outputFile);
-        if (status == OrderStatus.Filled) {
-            openOrders.keySet().forEach(s -> {
-                if (openOrders.get(s).containsKey(orderId)) {
-                    openOrders.get(s).remove(orderId);
-                    outputToGeneral(str("removing order from ordermap.OrderID:", orderId,
-                            "order details:", openOrders.get(s).get(orderId)));
-                    outputToGeneral(str("remaining open orders", openOrders));
+        if (status == OrderStatus.Filled && remaining.isZero()) {
+            pr("in orderstatus deleting filled from liveorders");
+            openOrders.forEach((k, v) -> {
+                if (v.containsKey(orderId)) {
+                    v.remove(orderId);
+                    outputToGeneral(k, "removing order from ordermap.OrderID:", orderId,
+                            "order details:", v.get(orderId));
+                    outputToGeneral("remaining open orders for ", k, v);
+                    outputToGeneral("remaining ALL open orders", openOrders);
                 }
             });
         }
