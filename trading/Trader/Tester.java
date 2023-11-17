@@ -366,7 +366,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         });
     }
 
-    static void computePercentileAndDelta() {
+    static void periodicCompute() {
 
         //could be buying already and inventory is 0
         targetStockList.forEach(symb -> {
@@ -414,6 +414,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
 
         if (!openOrders.isEmpty()) {
+            openOrders.forEach((k, v) -> {
+                if (v.isEmpty()) {
+                    openOrders.remove(k);
+                }
+            });
             outputToGeneral(str("openOrderMap is not empty", openOrders));
         }
     }
@@ -433,6 +438,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         InventoryStatus status = inventoryStatusMap.get(symbol);
 
+        if (status == InventoryStatus.BUYING_INVENTORY) {
+            outputToGeneral(symbol, "is alrelady buying inventory, exiting ");
+            return;
+        }
+
         if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
             outputToGeneral(getESTLocalTimeNow().format(simpleT),
                     symbol, "inventory adder failed, there are open orders", openOrders.get(symbol));
@@ -448,7 +458,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
+            outputToSymbolFile(symbol, str(o.orderId(), id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
                     orderSubmitted.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
@@ -466,7 +476,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             return;
         }
 
-        if (openOrders.containsKey(symbol)) {
+        if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
             if (openOrders.get(symbol).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
                 pr("INVENTORY CUTTER. There is a live selling order",
                         openOrders.get(symbol).entrySet().stream().filter(e -> e.getValue().action() == Types.Action.SELL)
@@ -546,7 +556,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         openOrders.get(symb).put(order.orderId(), order);
 
-        pr("open order", getESTLocalDateTimeNow().format(f),
+        outputToGeneral("open order", getESTLocalDateTimeNow().format(f),
                 ibContractToSymbol(contract), "orderID", order.orderId(),
                 "ordertype:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
                 "orderstate", orderState);
@@ -588,7 +598,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public static void main(String[] args) {
         Tester test1 = new Tester();
         test1.connectAndReqPos();
-        es.scheduleAtFixedRate(Tester::computePercentileAndDelta, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(Tester::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
