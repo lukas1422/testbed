@@ -97,13 +97,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
+    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+
     //avoid too many requests at once, only 50 requests allowed at one time.
-    private static Semaphore histSemaphore = new Semaphore(45);
+//    private static Semaphore histSemaphore = new Semaphore(45);
 
     //Trade
 //    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
 //    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
-    private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
+//    private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
 
 //    public static final LocalDateTime TODAY_MARKET_START_TIME =
 //            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
@@ -269,7 +271,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 //trade logic
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
                     if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-
                         if (symbolPosMap.get(symb).isZero()
                                 && inventoryStatusMap.get(symb) != InventoryStatus.BUYING_INVENTORY) {
                             if (aggregateDelta < DELTA_LIMIT
@@ -444,13 +445,21 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
 
         if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
-            outputToGeneral(getESTLocalTimeNow().format(simpleT),
-                    symbol, "inventory adder failed, there are open orders", openOrders.get(symbol));
+            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT),
+                    "inventory adder failed, there are open orders", openOrders.get(symbol));
             return;
         }
 
+        if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
+            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT)
+                    , "inventory adder failed, wait 10 seconds");
+            return;
+        }
+
+
         pr("inventory adder", symbol, pos, status);
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
+            lastOrderTime.put(symbol, t);
             Decimal sizeToBuy = getTradeSizeFromPrice(price);
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symbol, price)));
@@ -485,7 +494,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             }
         }
 
+        if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
+            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT)
+                    , "inventory seller failed, wait 10 seconds");
+            return;
+        }
+
         if (pos.longValue() > 0) {
+            lastOrderTime.put(symbol, t);
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
@@ -536,11 +552,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).map(exec ->
                 orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
 
-//        pr("commission report", "symb:", symb, "commission", commissionReport.commission(),
-//                "realized pnl", commissionReport.realizedPNL());
-
-        outputToFile(str("commission report", "symb:", symb, "commission", commissionReport.commission(),
-                "realized pnl", commissionReport.realizedPNL()), outputFile);
+        outputToGeneral("commission report", "symb:", symb, "commission", commissionReport.commission(),
+                "realized pnl", commissionReport.realizedPNL());
     }
 
 
@@ -558,15 +571,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         openOrders.get(symb).put(order.orderId(), order);
 
         outputToGeneral("open order", getESTLocalDateTimeNow().format(f),
-                ibContractToSymbol(contract), "orderID", order.orderId(),
+                symb, "orderID", order.orderId(),
                 "ordertype:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
                 "orderstate", orderState);
     }
 
     @Override
     public void openOrderEnd() {
-        pr("open order end");
-//        openOrders.forEach(Utility::pr);
+        pr("Open order end. Print all open orders:", openOrders);
     }
 
     @Override

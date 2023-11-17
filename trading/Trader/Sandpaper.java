@@ -3,6 +3,8 @@ package Trader;
 import api.TradingConstants;
 import client.OrderStatus;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -18,15 +20,11 @@ public class Sandpaper {
     public static void main(String[] args) {
 
         Sandpaper s = new Sandpaper();
-        Map<String, ConcurrentHashMap<Integer, String>> m = new ConcurrentSkipListMap<>();
-        ConcurrentHashMap<Integer, String> o1 = new ConcurrentHashMap<>();
-        o1.put(1, "order1");
-        m.put("a", o1);
 
-        pr(m);
-        o1.remove(1);
-        pr(m.isEmpty(), m.get("a").isEmpty());
+        LocalDateTime lt1 = LocalDateTime.now();
+        LocalDateTime lt2 = LocalDateTime.now().minusSeconds(10);
 
+        pr(Duration.between(lt2, lt1).getSeconds());
 
     }
 
