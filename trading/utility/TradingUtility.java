@@ -34,7 +34,7 @@ public class TradingUtility {
     public static final String A50_LAST_EXPIRY = getXINA50PrevExpiry().format(TradingConstants.expPattern);
     public static final String A50_FRONT_EXPIRY = getXINA50FrontExpiry().format(TradingConstants.expPattern);
     public static final String A50_BACK_EXPIRY = getXINA50BackExpiry().format(TradingConstants.expPattern);
-//    public static final boolean keepUptoDate = true;
+    //    public static final boolean keepUptoDate = true;
     public static final boolean keepUptoDate = false;
     public static final boolean regulatorySnapshot = false;
     public static final LocalDate LAST_MONTH_DAY = getMonthBeginMinus1Day();
@@ -235,6 +235,11 @@ public class TradingUtility {
     public static void outputToGeneral(String s) {
         File outputFile = new File("trading/TradingFiles/output");
         outputToFile(s, outputFile);
+    }
+
+
+    public static void outputToGeneral(Object... cs) {
+        outputToGeneral(str(cs));
     }
 
     public static void outputToFile(String s, File f) {

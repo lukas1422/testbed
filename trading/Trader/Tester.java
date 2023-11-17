@@ -164,7 +164,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             e.printStackTrace();
         }
 
-        pr(" Time after latch released " + LocalTime.now().format(simpleTime));
+        pr(" Time after latch released " + LocalTime.now().format(simpleT));
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
@@ -433,8 +433,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         InventoryStatus status = inventoryStatusMap.get(symbol);
 
-        pr("inventory adder", symbol, pos, status);
+        if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
+            outputToGeneral(getESTLocalTimeNow().format(simpleT),
+                    symbol, "inventory adder failed, there are open orders", openOrders.get(symbol));
+            return;
+        }
 
+        pr("inventory adder", symbol, pos, status);
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
             Decimal sizeToBuy = getTradeSizeFromPrice(price);
             int id = tradeID.incrementAndGet();
@@ -555,8 +560,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             openOrders.keySet().forEach(s -> {
                 if (openOrders.get(s).containsKey(orderId)) {
                     openOrders.get(s).remove(orderId);
-                    outputToGeneral(str("removing order", orderId, "from openOrderMap, remaining:", openOrders));
-
+                    outputToGeneral(str("removing order from ordermap.OrderID:", orderId,
+                            "order details:", openOrders.get(s).get(orderId)));
+                    outputToGeneral(str("remaining open orders", openOrders));
                 }
             });
         }
