@@ -74,7 +74,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
 
-        outputDetailedGen(str(LocalDateTime.now().format(f2), "status filled remaining avgPx", status,
+        outputDetailedGen(str("orderhandler:", "tradeId", tradeID, LocalDateTime.now().format(f2), "status filled remaining avgPx", status,
                 filled, remaining, avgFillPrice), outputFile);
     }
 

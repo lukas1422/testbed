@@ -42,6 +42,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract pg = generateUSStockContract("PG");
     Contract brk = generateUSStockContract("BRK B");
     Contract ul = generateUSStockContract("UL");
+    Contract mcd = generateUSStockContract("MCD");
 
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
@@ -51,7 +52,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
-    static volatile NavigableMap<Integer, Order> openOrders = new ConcurrentSkipListMap<>();
+    static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
     public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
@@ -123,6 +124,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         registerContract(pg);
 //        registerContract(brk);
         registerContract(ul);
+        registerContract(mcd);
 
     }
 
@@ -410,6 +412,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 * latestPriceMap.getOrDefault(s, 0.0)));
 
         pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
+
+        if (!openOrders.isEmpty()) {
+            outputToGeneral(str("openOrderMap is not empty", openOrders));
+        }
     }
 
 
@@ -517,10 +523,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //Open Orders
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
-        outputToFile(str("open order:",
+        String symb = ibContractToSymbol(contract);
+        outputToFile(str("open order:", getESTLocalDateTimeNow().format(f),
                 ibContractToSymbol(contract), "order", order, "orderstate:", orderState), outputFile);
-//        openOrders.put(order.orderId(), order);
-        pr("open order", ibContractToSymbol(contract),
+
+        if (!openOrders.containsKey(symb)) {
+            openOrders.put(symb, new ConcurrentHashMap<>());
+        }
+
+        openOrders.get(symb).put(order.orderId(), order);
+
+        pr("open order", getESTLocalDateTimeNow().format(f),
+                ibContractToSymbol(contract), "orderID", order.orderId(),
                 "ordertype:", order.orderType(), "action:", order.action(), "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(),
                 "orderstate", orderState);
     }
@@ -535,13 +549,23 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("orderId", orderId, "OrderStatus", status, "filled",
+        outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus", status, "filled",
                 filled, "remaining", remaining), outputFile);
+        if (status == OrderStatus.Filled) {
+            openOrders.keySet().forEach(s -> {
+                if (openOrders.get(s).containsKey(orderId)) {
+                    openOrders.get(s).remove(orderId);
+                    outputToGeneral(str("removing order", orderId, "from openOrderMap, remaining:", openOrders));
+
+                }
+            });
+        }
     }
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToFile(str("order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
+        outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f),
+                "order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
     }
 
     //open orders end
