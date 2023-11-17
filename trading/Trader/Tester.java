@@ -307,7 +307,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
         }
-        pr("Updating position", symb, LocalDateTime.now().format(f), "Position:", position.longValue(),
+        pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
                 "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
     }
 
@@ -344,7 +344,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             }
         });
 
-        pr("calculate percentile", LocalDateTime.now().format(f1), "target list size", targetStockList.size());
+//        pr("calculate percentile", getESTLocalTimeNow().format(f1), "target list size", targetStockList.size());
 
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
@@ -355,13 +355,13 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr(symb, LocalTime.now().format(simpleT),
+                pr("compute", symb, getESTLocalTimeNow().format(simpleT),
                         "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
+//                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
 //                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
@@ -463,7 +463,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
             if (openOrders.get(symbol).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
-                pr("CUTTER FAIL. There is a live selling order", openOrders.get(symbol).entrySet().stream().filter(e -> e.getValue().action() == Types.Action.SELL).findFirst().get());
+                pr("CUTTER FAIL. There is a live selling order", openOrders.get(symbol).entrySet()
+                        .stream().filter(e -> e.getValue().action() == Types.Action.SELL).findFirst().get());
                 return;
             }
         }

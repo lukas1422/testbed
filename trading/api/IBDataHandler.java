@@ -10,6 +10,7 @@ import historical.Request;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.pr;
 
@@ -21,7 +22,7 @@ public class IBDataHandler {
             LiveHandler lh = (LiveHandler) Allstatic.globalRequestMap.get(reqId).getHandler();
             try {
                 lh.handlePrice(TickType.get(tickType), r.getContract(), price,
-                        LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS));
+                        getESTLocalDateTimeNow().truncatedTo(ChronoUnit.MILLIS));
             } catch (Exception ex) {
                 pr(" handling price has issues ");
                 ex.printStackTrace();
