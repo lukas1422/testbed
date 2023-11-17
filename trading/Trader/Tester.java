@@ -355,24 +355,22 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr(symb, "time stock percentile", "from ", threeDayMap.firstKey().format(f1),
-                        LocalDateTime.now().format(f1), "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
+                pr(symb, LocalTime.now().format(simpleT),
+                        "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
 
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()) {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
-                pr("ytd return", symb, round(returnOnYear * 100), "%");
+//                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
         });
 
-        //update entire portfolio delta
         aggregateDelta = targetStockList.stream().mapToDouble(s ->
                 symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() *
                         latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())).sum();
 
-        //update individual stock delta
         targetStockList.forEach((s) ->
                 symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() *
                         latestPriceMap.getOrDefault(s, ytdDayData.get(s).lastEntry().getValue().getClose())));
@@ -410,11 +408,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-            openOrders.get(symb).entrySet().forEach(e -> {
-                outputToGeneral("adder fails. Live order:", symb, "orderID:",
-                        e.getValue().orderId(), "B/S", e.getValue().action(),
-                        "size:", e.getValue().totalQuantity(), "px:", e.getValue().lmtPrice());
-            });
+            openOrders.get(symb).forEach((oID, ord) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
+                    ord.orderId(), "B/S", ord.action(),
+                    "size:", ord.totalQuantity(), "px:", ord.lmtPrice()));
             outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
                     "buying failed, there are open orders", openOrders.get(symb));
             pr(symb, "adding fail:open order");
@@ -435,7 +431,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             outputToGeneral(symb, "after buying exceeds delta limit", "current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed delta inc:", sizeToBuy.longValue() * price);
-            pr("proposed buy exceeds delta limit");
+            pr(symb, "proposed buy exceeds delta limit");
             return;
         }
 
