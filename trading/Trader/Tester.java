@@ -458,7 +458,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.BUYING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
+            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID:", id, o.action(), "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy,
                     orderSubmitted.get(id), "p/b/a", price,
                     getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
@@ -495,8 +495,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str(o.orderId(), id, "SELL INVENTORY:"
-                    , "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented())
+            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID", id, "SELL INVENTORY:"
+                    , "offer price:", offerPrice, "cost:", cost,
+                    Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented())
                     , "price/bid/ask:", price, getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
             inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
         }
