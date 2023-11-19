@@ -123,8 +123,8 @@ public class Research {
             double ytdRet = ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1;
             pr("ytdreturn ", Math.round(ytdRet * 100), "%");
             ytdReturn.put(s, 100 * ytdRet);
-            pr(s, "avg vola", ytdDayData.get(s).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
-                    .average().orElse(0.0) * 100, "%");
+            pr(s, "avg vola", r(ytdDayData.get(s).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
+                    .average().orElse(0.0) * 100), "%");
             dailyVolatility.put(s, ytdDayData.get(s).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
                     .average().orElse(0.0));
         });
