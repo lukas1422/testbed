@@ -140,13 +140,19 @@ public class Research {
                         .map(e -> str(e.getKey(), "vol:", r(100 * e.getValue()), "%"
                                 , "ytdRet:", r(ytdReturn.getOrDefault(e.getKey(), 0.0)), "%"))
                         .toList());
-    }
 
+        pr("rank by value2",
+                dailyVolatility.entrySet()
+                        .stream().sorted(Comparator.<Map.Entry<String, Double>>comparingDouble(Map.Entry::getValue).reversed())
+                        .collect(Collectors.groupingBy(Map.Entry::getKey, LinkedHashMap::new,
+                                Collectors.mapping(e -> str("vol:", r(100 * e.getValue()), "%"
+                                                , "ytdRet:", r(ytdReturn.getOrDefault(e.getKey(), 0.0)), "%")
+                                        , Collectors.joining(",")))));
+    }
 
     public static void main(String[] args) {
         Research r = new Research();
         r.connectAndReqPos();
         es.scheduleAtFixedRate(Research::compute, 10L, 10L, TimeUnit.SECONDS);
-
     }
 }
