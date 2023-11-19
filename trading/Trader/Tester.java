@@ -504,13 +504,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
-            double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price), costMap.getOrDefault(symbol, Double.MAX_VALUE) * PROFIT_LEVEL));
+            double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
+                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * PROFIT_LEVEL));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID", id, "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost, Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented()), "price/bid/ask:", price, getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID", id,
+                    "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
+                    Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented()),
+                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
         }
     }
 
