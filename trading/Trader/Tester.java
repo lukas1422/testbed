@@ -577,8 +577,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     }
 
     @Override
-    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus", status, "filled", filled, "remaining", remaining), outputFile);
+    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice,
+                            int clientId, String whyHeld, double mktCapPrice) {
+        outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus",
+                status, "filled", filled, "remaining", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders");
             openOrders.forEach((k, v) -> {
@@ -594,7 +597,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id", orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
+        outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id",
+                orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
     }
 
     //open orders end
@@ -608,7 +612,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
             orderSubmitted.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled && v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-                    outputToFile(str("unexecuted orders:", v.getSymbol(), "Shutdown status", getESTLocalTimeNow().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), outputFile);
+                    outputToFile(str("unexecuted orders:", v.getSymbol(),
+                            "Shutdown status", getESTLocalTimeNow().format(f1), v.getAugmentedOrderStatus(), v), outputFile);
                 }
             });
             apiController.cancelAllOrders();
