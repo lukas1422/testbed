@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import static Trader.Tester.*;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
+import static enums.InventoryStatus.*;
 import static utility.TradingUtility.outputToError;
 import static utility.TradingUtility.outputToFile;
 import static utility.Utility.*;
@@ -53,17 +54,17 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
         if (orderState.status() != idStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                String symb = orderSubmitted.get(tradeID).getSymbol();
-                outputToSymbolFile(symb,
+                String s = orderSubmitted.get(tradeID).getSymbol();
+                outputToSymbolFile(s,
                         str(orderSubmitted.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
                                 , idStatusMap.get(tradeID) + "->" + orderState.status(),
                                 now.format(f2), orderSubmitted.get(tradeID)), outputFile);
-                outputDetailedGen(str(symb, now.format(f2),
+                outputDetailedGen(str(s, now.format(f2),
                         orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
+                    Tester.inventoryStatusMap.put(s, HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(symb, InventoryStatus.SOLD);
+                    Tester.inventoryStatusMap.put(s, SOLD);
                 }
             }
             idStatusMap.put(tradeID, orderState.status());
@@ -73,9 +74,8 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-
-        outputDetailedGen(str("orderhandler:", "tradeId", tradeID, LocalDateTime.now().format(f2), "status filled remaining avgPx", status,
-                filled, remaining, avgFillPrice), outputFile);
+        outputDetailedGen(str("orderhandler orderStatus:", "tradeId", tradeID, LocalDateTime.now().format(f2),
+                "status filled remaining avgPx", status, filled, remaining, avgFillPrice), outputFile);
     }
 
     @Override

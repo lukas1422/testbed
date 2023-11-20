@@ -593,4 +593,11 @@ public class TradingUtility {
     public static LocalTime getESTLocalTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
+
+    public static double getRequiredProfitMargin(String s) {
+        if (s.equalsIgnoreCase("SPY")) {
+            return 1.002;
+        }
+        return 1.005;
+    }
 }
