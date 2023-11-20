@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static Trader.OrderHandler.tradeIDOrderStatusMap;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
@@ -50,7 +51,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static final double DELTA_LIMIT = 10000;
     private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
-    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
+    //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
+    static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
@@ -200,6 +202,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
+        orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
@@ -245,27 +248,45 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 }
 
                 //trade logic
-                if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-                        if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                            if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
-                                pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                                if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
-                                    pr("second check", symb);
-                                    inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                if (orderSubmitted.get(symb).values().stream().anyMatch(e -> e.getSymbol().equalsIgnoreCase(symb) &&
+                        e.getAugmentedOrderStatus() != OrderStatus.Filled)) {
+                    pr("All unfilled orders in orderSubmitted:", symb, orderSubmitted.get(symb).values().stream()
+                            .filter(e -> e.getAugmentedOrderStatus() != OrderStatus.Filled)
+                            .toList());
+                }
+                if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+                    pr("open orders:", symb, openOrders.get(symb));
+                }
+
+
+                if (!openOrders.containsKey(symb) || (openOrders.containsKey(symb) && openOrders.get(symb).isEmpty())) {
+                    if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
+                        if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
+                            if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
+                                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
+                                    pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
+                                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
+                                        pr("second check", symb);
+                                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                                    }
                                 }
                             }
-                        }
 
-                        if (symbolPosMap.get(symb).longValue() > 0) {
-                            if (costMap.containsKey(symb)) {
-                                pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
-                                if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
-                                    inventoryCutter(ct, price, t);
+                            if (symbolPosMap.get(symb).longValue() > 0) {
+                                if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
+                                    pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
+                                    if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
+                                        inventoryCutter(ct, price, t);
+                                    }
+//                                else if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) < 0.99) {
+//                                    inventoryAdder2More(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+//                                }
                                 }
                             }
                         }
                     }
+                } else {
+                    pr("there are open orders ", openOrders.get(symb).values());
                 }
                 break;
 
@@ -455,7 +476,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 int id = tradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
                 Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-                orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+                orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
                 placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, BUYING_INVENTORY));
                 outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
                 outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
@@ -464,6 +485,16 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                         "3d perc/1d perc", perc3d, perc1d), outputFile);
             }
         }
+
+    }
+
+    public boolean checkTradable(String symb) {
+        if (!openOrders.containsKey(symb) && !orderSubmitted.containsKey(symb)) {
+            return true;
+        }
+
+
+        //return false;
 
     }
 
@@ -511,7 +542,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-            orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
@@ -523,43 +554,43 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
-        String symbol = ibContractToSymbol(ct);
-        Decimal pos = symbolPosMap.get(symbol);
+        String symb = ibContractToSymbol(ct);
+        Decimal pos = symbolPosMap.get(symb);
 
-        if (inventoryStatusMap.get(symbol) == InventoryStatus.SELLING_INVENTORY) {
-            outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symbol));
+        if (inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
+            outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
             return;
         }
 
-        if (openOrders.containsKey(symbol) && !openOrders.get(symbol).isEmpty()) {
-            if (openOrders.get(symbol).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
-                pr("CUTTER FAIL. There is a live selling order", openOrders.get(symbol).entrySet()
+        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+            if (openOrders.get(symb).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
+                pr("CUTTER FAIL. There is a live selling order", openOrders.get(symb).entrySet()
                         .stream().filter(e -> e.getValue().action() == Types.Action.SELL).findFirst().get());
                 return;
             }
         }
 
-        if (lastOrderTime.containsKey(symbol) && Duration.between(lastOrderTime.get(symbol), t).getSeconds() < 10) {
-            outputToGeneral(symbol, getESTLocalTimeNow().format(simpleT), "CUTTER FAIL, wait 10 seconds");
+        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "CUTTER FAIL, wait 10 seconds");
             return;
         }
 
         if (pos.longValue() > 0) {
-            lastOrderTime.put(symbol, t);
-            inventoryStatusMap.put(symbol, InventoryStatus.SELLING_INVENTORY);
+            lastOrderTime.put(symb, t);
+            inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
             int id = tradeID.incrementAndGet();
-            double cost = costMap.getOrDefault(symbol, Double.MAX_VALUE);
-            double offerPrice = r(Math.max(askMap.getOrDefault(symbol, price),
-                    costMap.getOrDefault(symbol, Double.MAX_VALUE) * getRequiredProfitMargin(symbol)));
+            double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
+            double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
+                    costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
-            orderSubmitted.put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
-            outputToSymbolFile(symbol, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symbol, str("orderID:", o.orderId(), "tradeID", id,
+            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
                     "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
-                    Optional.ofNullable(orderSubmitted.get(id)).orElse(new OrderAugmented()),
-                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symbol), getDoubleFromMap(askMap, symbol)), outputFile);
+                    Optional.ofNullable(orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
+                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
         }
     }
 
@@ -579,7 +610,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice(),
-                Optional.ofNullable(orderSubmitted.get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
+                Optional.ofNullable(orderSubmitted.get(symb).get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
 
         outputToFile(str("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
@@ -593,12 +624,21 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
+        orderSubmitted.entrySet().forEach(e -> {
+            e.getValue().entrySet().forEach(f -> {
+                if (f.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
+                    outputToGeneral("commission report", "symb:", e.getKey(), "commission",
+                            commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
+                }
+                ;
+            });
+        });
 
-        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey))
-                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
+//        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).stream().anyMatch(e -> e.orderId())
+//                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
 
-        outputToGeneral("commission report", "symb:", symb, "commission",
-                commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
+//        outputToGeneral("commission report", "symb:", symb, "commission",
+//                commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
     }
 
 
@@ -659,6 +699,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
             outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
+//            orderSubmitted.forEach();
             orderSubmitted.forEach((k, v) -> {
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled && v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
                     outputToFile(str("unexecuted orders:", v.getSymbol(),

@@ -17,49 +17,44 @@ import static Trader.Tester.*;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
 import static enums.InventoryStatus.*;
-import static utility.TradingUtility.outputToError;
-import static utility.TradingUtility.outputToFile;
+import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
 
-    private static Map<Integer, OrderStatus> idStatusMap = new ConcurrentHashMap<>();
+    public static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
     private final int tradeID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
     private InventoryStatus status;
 
     OrderHandler(int id) {
         tradeID = id;
-        idStatusMap.put(id, OrderStatus.ConstructedInHandler);
+        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
     OrderHandler(int id, InventoryStatus s) {
         tradeID = id;
         status = s;
-        idStatusMap.put(id, OrderStatus.ConstructedInHandler);
+        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
-
-//    int getTradeID() {
-//        return tradeID;
-//    }
 
     @Override
     public void orderState(OrderState orderState) {
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime usNow = getESTLocalDateTimeNow();
         if (orderSubmitted.containsKey(tradeID)) {
             orderSubmitted.get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
         }
 
-        if (orderState.status() != idStatusMap.get(tradeID)) {
+        if (orderState.status() != tradeIDOrderStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
                 String s = orderSubmitted.get(tradeID).getSymbol();
-                outputToSymbolFile(s,
-                        str(orderSubmitted.get(tradeID).getOrder().orderId(), tradeID, "*ORDER FILL*"
-                                , idStatusMap.get(tradeID) + "->" + orderState.status(),
-                                now.format(f2), orderSubmitted.get(tradeID)), outputFile);
-                outputDetailedGen(str(s, now.format(f2),
+                outputToSymbolFile(s, str("orderID:", orderSubmitted.get(tradeID).getOrder().orderId(), "tradeID",
+                        tradeID, "*ORDER FILL*"
+                        , tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
+                        usNow.format(f2), orderSubmitted.get(tradeID)), outputFile);
+                outputDetailedGen(str(s, usNow.format(f2),
                         orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
                     Tester.inventoryStatusMap.put(s, HAS_INVENTORY);
@@ -67,7 +62,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
                     Tester.inventoryStatusMap.put(s, SOLD);
                 }
             }
-            idStatusMap.put(tradeID, orderState.status());
+            tradeIDOrderStatusMap.put(tradeID, orderState.status());
         }
     }
 
@@ -80,7 +75,6 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public void handle(int errorCode, String errorMsg) {
-        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg
-                , orderSubmitted.get(tradeID)));
+        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(tradeID)));
     }
 }

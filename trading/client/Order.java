@@ -413,6 +413,15 @@ public class Order {
         return m_totalQuantity;
     }
 
+    public Decimal getSignedQuantity() {
+        if (action() == Types.Action.BUY) {
+            return m_totalQuantity;
+        } else if (action() == Types.Action.SELL) {
+            return Decimal.get(-1 * m_totalQuantity.longValue());
+        }
+        throw new UnsupportedOperationException("cannot get signed quantity");
+    }
+
     public int permId() {
         return m_permId;
     }
@@ -1639,7 +1648,8 @@ public class Order {
     @Override
     public String toString() {
 
-        return str("orderID", orderId(), "ordertype:", orderType(), "action:", action(), "quantity", totalQuantity(), "orderPrice", lmtPrice());
+        return str("orderID", m_orderId, "ordertype:", m_orderType, "action:", m_action,
+                "quantity", m_totalQuantity, "filledQty", m_filledQuantity, "limitPrice", m_lmtPrice);
     }
 
 }
