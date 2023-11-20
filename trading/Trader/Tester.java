@@ -546,7 +546,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(id),
+                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
                     "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
         }
@@ -565,7 +565,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
             if (openOrders.get(symb).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
                 pr("CUTTER FAIL. There is a live selling order", openOrders.get(symb).entrySet()
-                        .stream().filter(e -> e.getValue().action() == Types.Action.SELL).findFirst().get());
+                        .stream().filter(e -> e.getValue().action() == Types.Action.SELL).toList());
                 return;
             }
         }
@@ -624,15 +624,17 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        orderSubmitted.entrySet().forEach(e -> {
-            e.getValue().entrySet().forEach(f -> {
-                if (f.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
-                    outputToGeneral("commission report", "symb:", e.getKey(), "commission",
-                            commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
-                }
-                ;
-            });
-        });
+        orderSubmitted.entrySet().stream().filter(e -> e.getValue().entrySet().stream()
+                        .anyMatch(e1 -> e1.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()))
+                .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
+                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
+
+        orderSubmitted.forEach((key, value) -> value.forEach((key1, value1) -> {
+            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
+                outputToGeneral("2.commission report", "symb:", key, "commission",
+                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
+            }
+        }));
 
 //        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).stream().anyMatch(e -> e.orderId())
 //                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
@@ -657,7 +659,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
         outputToGeneral("open order", getESTLocalDateTimeNow().format(f), symb,
                 "orderID", order.orderId(), "orderType:", order.orderType(), "action:", order.action(),
-                "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(), "orderstate", orderState);
+                "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(), "orderState", orderState);
     }
 
     @Override

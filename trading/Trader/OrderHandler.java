@@ -43,7 +43,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderState(OrderState orderState) {
         LocalDateTime usTimeNow = getESTLocalDateTimeNow();
-        if (orderSubmitted.containsKey(tradeID)) {
+        if (orderSubmitted.get(symbol).containsKey(tradeID)) {
             orderSubmitted.get(symbol).get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
@@ -51,12 +51,15 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
         if (orderState.status() != tradeIDOrderStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-//                String s = orderSubmitted.get(tradeID).getSymbol();
-                outputToSymbolFile(symbol, str("orderID:", orderSubmitted.get(symbol).get(tradeID).getOrder().orderId(), "tradeID",
-                        tradeID, "*ORDER FILL*", tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
-                        usTimeNow.format(f2), orderSubmitted.get(tradeID)), outputFile);
-                outputDetailedGen(str(symbol, usTimeNow.format(f2),
-                        orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
+                outputToSymbolFile(symbol, str("orderID:", orderSubmitted.get(symbol).get(tradeID).getOrder().orderId(),
+                        "tradeID", tradeID, "*ORDER FILL*", tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
+                        usTimeNow.format(f2), orderSubmitted.get(symbol).get(tradeID),
+                        "completed status", orderState.completedStatus(), "completed time:", orderState.completedTime(),
+                        "commission:", orderState.commission(), "warning:", orderState.warningText()), outputFile);
+                outputDetailedGen(str(symbol, usTimeNow.format(f2), "completed status", orderState.completedStatus(),
+                        "completed time:", orderState.completedTime(),
+                        "commission:", orderState.commission(), "warning:", orderState.warningText(),
+                        "status:", orderState.status(), orderSubmitted.get(symbol).get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
                     inventoryStatusMap.put(symbol, HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
@@ -70,12 +73,13 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputDetailedGen(str("orderhandler orderStatus:", "tradeId", tradeID, LocalDateTime.now().format(f2),
+        outputDetailedGen(str("orderhandler orderStatus:", "tradeId", tradeID, getESTLocalDateTimeNow().format(f2),
                 "status filled remaining avgPx", status, filled, remaining, avgFillPrice), outputFile);
     }
 
     @Override
     public void handle(int errorCode, String errorMsg) {
-        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(tradeID)));
+        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
+                .get(tradeID)));
     }
 }
