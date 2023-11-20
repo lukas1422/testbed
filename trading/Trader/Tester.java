@@ -477,7 +477,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
                 Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
                 orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-                placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, BUYING_INVENTORY));
+                placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
                 outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
                 outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                         "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(id),
@@ -492,10 +492,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         if (!openOrders.containsKey(symb) && !orderSubmitted.containsKey(symb)) {
             return true;
         }
-
-
-        //return false;
-
+        return false;
     }
 
     //Trade
@@ -543,7 +540,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, BUYING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                     "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(id),
@@ -585,7 +582,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(id, InventoryStatus.SELLING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
                     "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
@@ -699,12 +696,14 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
             outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
-//            orderSubmitted.forEach();
             orderSubmitted.forEach((k, v) -> {
-                if (v.getAugmentedOrderStatus() != OrderStatus.Filled && v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-                    outputToFile(str("unexecuted orders:", v.getSymbol(),
-                            "Shutdown status", getESTLocalTimeNow().format(f1), v.getAugmentedOrderStatus(), v), outputFile);
-                }
+                v.forEach((k1, v1) -> {
+                    if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
+                            v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+                        outputToFile(str("unexecuted orders:", v1.getSymbol(),
+                                "Shutdown status", getESTLocalTimeNow().format(f1), v1.getAugmentedOrderStatus(), v), outputFile);
+                    }
+                });
             });
             apiController.cancelAllOrders();
         }));

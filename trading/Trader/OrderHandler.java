@@ -26,13 +26,15 @@ public class OrderHandler implements ApiController.IOrderHandler {
     private final int tradeID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
     private InventoryStatus status;
+    private String symbol;
 
     OrderHandler(int id) {
         tradeID = id;
         tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
-    OrderHandler(int id, InventoryStatus s) {
+    OrderHandler(String symb, int id, InventoryStatus s) {
+        symbol = symb;
         tradeID = id;
         status = s;
         tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
@@ -42,24 +44,24 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void orderState(OrderState orderState) {
         LocalDateTime usNow = getESTLocalDateTimeNow();
         if (orderSubmitted.containsKey(tradeID)) {
-            orderSubmitted.get(tradeID).setAugmentedOrderStatus(orderState.status());
+            orderSubmitted.get(symbol).get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
             throw new IllegalStateException(" global id order map doesn't contain ID" + tradeID);
         }
 
         if (orderState.status() != tradeIDOrderStatusMap.get(tradeID)) {
             if (orderState.status() == Filled) {
-                String s = orderSubmitted.get(tradeID).getSymbol();
-                outputToSymbolFile(s, str("orderID:", orderSubmitted.get(tradeID).getOrder().orderId(), "tradeID",
+//                String s = orderSubmitted.get(tradeID).getSymbol();
+                outputToSymbolFile(symbol, str("orderID:", orderSubmitted.get(symbol).get(tradeID).getOrder().orderId(), "tradeID",
                         tradeID, "*ORDER FILL*"
                         , tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
                         usNow.format(f2), orderSubmitted.get(tradeID)), outputFile);
-                outputDetailedGen(str(s, usNow.format(f2),
+                outputDetailedGen(str(symbol, usNow.format(f2),
                         orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(s, HAS_INVENTORY);
+                    Tester.inventoryStatusMap.put(symbol, HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(s, SOLD);
+                    Tester.inventoryStatusMap.put(symbol, SOLD);
                 }
             }
             tradeIDOrderStatusMap.put(tradeID, orderState.status());
