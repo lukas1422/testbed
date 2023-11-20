@@ -42,7 +42,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public void orderState(OrderState orderState) {
-        LocalDateTime usNow = getESTLocalDateTimeNow();
+        LocalDateTime usTimeNow = getESTLocalDateTimeNow();
         if (orderSubmitted.containsKey(tradeID)) {
             orderSubmitted.get(symbol).get(tradeID).setAugmentedOrderStatus(orderState.status());
         } else {
@@ -53,15 +53,14 @@ public class OrderHandler implements ApiController.IOrderHandler {
             if (orderState.status() == Filled) {
 //                String s = orderSubmitted.get(tradeID).getSymbol();
                 outputToSymbolFile(symbol, str("orderID:", orderSubmitted.get(symbol).get(tradeID).getOrder().orderId(), "tradeID",
-                        tradeID, "*ORDER FILL*"
-                        , tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
-                        usNow.format(f2), orderSubmitted.get(tradeID)), outputFile);
-                outputDetailedGen(str(symbol, usNow.format(f2),
+                        tradeID, "*ORDER FILL*", tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
+                        usTimeNow.format(f2), orderSubmitted.get(tradeID)), outputFile);
+                outputDetailedGen(str(symbol, usTimeNow.format(f2),
                         orderSubmitted.get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(symbol, HAS_INVENTORY);
+                    inventoryStatusMap.put(symbol, HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
-                    Tester.inventoryStatusMap.put(symbol, SOLD);
+                    inventoryStatusMap.put(symbol, SOLD);
                 }
             }
             tradeIDOrderStatusMap.put(tradeID, orderState.status());

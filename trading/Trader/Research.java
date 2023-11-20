@@ -70,7 +70,7 @@ public class Research {
 
         try {
             pr(" using port 4001");
-            ap.connect("127.0.0.1", 4001, 5, "");
+            ap.connect("127.0.0.1", 4001, 6, "");
             connectionStatus = true;
             l.countDown();
 //            pr(" Latch counted down 4001 " + LocalTime.now());
@@ -81,7 +81,7 @@ public class Research {
 
         if (!connectionStatus) {
             pr(" using port 7496");
-            ap.connect("127.0.0.1", 7496, 5, "");
+            ap.connect("127.0.0.1", 7496, 6, "");
             l.countDown();
             pr(" Latch counted down 7496" + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(f1));
         }
