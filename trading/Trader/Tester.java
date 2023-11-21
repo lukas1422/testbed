@@ -279,7 +279,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                             if (symbolPosMap.get(symb).longValue() > 0) {
                                 if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
-                                    pr(symb, "price/cost", r(price / costMap.getOrDefault(symb, Double.MAX_VALUE)));
+                                    pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
                                     if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
                                         inventoryCutter(ct, price, t);
                                     }
@@ -370,7 +370,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 if (symbolPosMap.get(symb).isZero()) {
                     inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
-                    pr(symb, "price/cost", Math.round(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
+                    pr(symb, "price/cost", latestPriceMap.get(symb) / costMap.get(symb) - 1, "%");
                 }
             }
         });
@@ -395,8 +395,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("compute", symb, getESTLocalTimeNow().format(simpleT),
-                        "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
+                pr("computeNow:", symb, getESTLocalTimeNow().format(simpleT),
+                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile);
+//                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
 //            pr("compute after percentile map", symb);
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
@@ -606,8 +607,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
-
-        pr("tradeReport", "key:", tradeKey, symb, execution);
+//        pr("tradeReport", "key:", tradeKey, symb, execution);
 
         tradeKeyExecutionMap.put(tradeKey, execution);
 
