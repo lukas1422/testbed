@@ -1753,3 +1753,516 @@ HANDLE ORDER: 11-20 8:37:34 order id -1 errorCode 2157 msg: Sec-def data farm co
 HANDLE ORDER: 11-20 8:38:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
 *****Ending***** 11-20 8:39
 2023-11-20T21:39:17.835783300 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:27:53.114959400 EST: 2023-11-20T09:27:53.114959400
+cancelling all orders on start up
+2023-11-20T22:27:53.254586 global cancel orders
+HANDLE ORDER: 11-20 9:28:04 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 9:28:05 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 9:28:05 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 9:28:05 order id -1 errorCode 2103 msg: Market data farm connection is broken:usfarm
+HANDLE ORDER: 11-20 9:28:09 order id -1 errorCode 2104 msg: Market data farm connection is OK:usfarm
+*****Ending***** 11-20 9:28
+2023-11-20T22:28:10.148660800 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:28:13.377278500 EST: 2023-11-20T09:28:13.377278500
+cancelling all orders on start up
+2023-11-20T22:28:13.413181900 global cancel orders
+HANDLE ORDER: 11-20 9:28:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:29
+2023-11-20T22:29:41.690406800 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:29:44.412586700 EST: 2023-11-20T09:29:44.412586700
+cancelling all orders on start up
+2023-11-20T22:29:44.446381900 global cancel orders
+HANDLE ORDER: 11-20 9:30:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+******** 11-20 9:30
+orderID: 2 tradeID: 101 BUY BUY INVENTORY: price: 150.21 qty: 10 PG 11-20 9:30 INVENTORY_ADDER Created p/b/a 150.21 150.31 150.67 3d perc/1d perc 28.0 0.0
+open order: 11-20 9:30:10 PG order orderID 2 ordertype: LMT action: BUY quantity 10 filledQty  limitPrice 150.21 orderstate: client.OrderState@be100000
+open order 11-20 9:30:10 PG orderID 2 orderType: LMT action: BUY quantity 10 orderPrice 150.21 orderState client.OrderState@be100000
+orderhandler orderStatus: tradeId 101 11-20 9:30:10.846 status filled remaining avgPx Submitted 0 10 0.0
+openOrder orderstatus: orderId 2 OrderStatus Submitted filled 0 remaining 10
+HANDLE ORDER: 11-20 9:31:25 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:32:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:34:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:35:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:36:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:36
+*****START***** HK TIME: 2023-11-20T22:36:45.936059 EST: 2023-11-20T09:36:45.936059
+cancelling all orders on start up
+2023-11-20T22:36:45.991933400 global cancel orders
+open order: 11-20 9:36:47 PG order orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21 orderstate: client.OrderState@be100000
+open order 11-20 9:36:47 PG orderID 2 orderType: LMT action: BUY quantity 10 orderPrice 150.21 orderState client.OrderState@be100000
+openOrder orderstatus: orderId 2 OrderStatus PendingCancel filled 0 remaining 10
+openOrder orderstatus: orderId 2 OrderStatus Cancelled filled 0 remaining 10
+HANDLE ORDER: 11-20 9:36:47 order id 2 errorCode 202 msg: Order Canceled - reason:
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+HANDLE ORDER: 11-20 9:36:57 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 9:36:57 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 9:36:58 order id -1 errorCode 2103 msg: Market data farm connection is broken:usfarm
+HANDLE ORDER: 11-20 9:37:04 order id -1 errorCode 2104 msg: Market data farm connection is OK:usfarm
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+HANDLE ORDER: 11-20 9:37:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+HANDLE ORDER: 11-20 9:38:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+openOrderMap is not empty {PG={2=orderID: 2 ordertype: LMT action: BUY quantity: 10 filledQty:  limitPrice 150.21}}
+HANDLE ORDER: 11-20 9:39:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:39
+2023-11-20T22:39:46.952739200 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:39:48.996499400 EST: 2023-11-20T09:39:48.996499400
+cancelling all orders on start up
+2023-11-20T22:39:49.033113800 global cancel orders
+HANDLE ORDER: 11-20 9:40:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:42:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:43:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:44:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:45:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:47:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:48:19 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:49:25 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:50:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****START***** HK TIME: 2023-11-20T22:50:41.869061500 EST: 2023-11-20T09:50:41.869061500
+cancelling all orders on start up
+2023-11-20T22:50:41.897986500 global cancel orders
+HANDLE ORDER: 11-20 9:51:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:51:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:52:51 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:52:51 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:53
+2023-11-20T22:53:33.890414 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:53:36.845869200 EST: 2023-11-20T09:53:36.845869200
+cancelling all orders on start up
+2023-11-20T22:53:36.882769900 global cancel orders
+openOrderMap is not empty {}
+HANDLE ORDER: 11-20 9:53:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:53:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:55:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:55:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:55
+2023-11-20T22:55:30.376739100 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:55:31.808186800 EST: 2023-11-20T09:55:31.808186800
+cancelling all orders on start up
+2023-11-20T22:55:31.858054700 global cancel orders
+openOrderMap is not empty {}
+HANDLE ORDER: 11-20 9:56:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:56:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:57:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:57:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 9:57
+2023-11-20T22:57:53.029747500 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:57:55.918221900 EST: 2023-11-20T09:57:55.918221900
+cancelling all orders on start up
+2023-11-20T22:57:55.947126200 global cancel orders
+openOrderMap is not empty {}
+*****Ending***** 11-20 9:58
+2023-11-20T22:58:38.024927800 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:58:40.671529 EST: 2023-11-20T09:58:40.671529
+cancelling all orders on start up
+2023-11-20T22:58:40.699453300 global cancel orders
+HANDLE ORDER: 11-20 9:58:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 9:58:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+openOrderMap is not empty {}
+*****Ending***** 11-20 9:59
+2023-11-20T22:59:38.485489500 global cancel orders
+*****START***** HK TIME: 2023-11-20T22:59:41.147770500 EST: 2023-11-20T09:59:41.147770500
+cancelling all orders on start up
+2023-11-20T22:59:41.181680800 global cancel orders
+HANDLE ORDER: 11-20 10:00:02 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:00:02 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:01:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:01:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 10:01
+2023-11-20T23:01:39.975313300 global cancel orders
+HANDLE ORDER: 11-20 10:02:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:03:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:04:47 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:05:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:07:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:08:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:09:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:10:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:12:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:13:15 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:14:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:15:42 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:16:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:17:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:19:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:20:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:21:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:22:51 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:24:09 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:25:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:26:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:27:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:28:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:30:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:31:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:32:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:33:58 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:35:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:36:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:37:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:38:39 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:39:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:41:10 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:42:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:43:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:44:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:45:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:47:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:48:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:49:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:50:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:52:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:53:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:54:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:55:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:56:42 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:57:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 10:58:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:00:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:01:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:02:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:03:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:04:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:05:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:07:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:08:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:09:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:10:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:12:02 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:13:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:14:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:15:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:16:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:17:56 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:18:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:20:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:21:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:22:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:23:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:24:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:26:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:27:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:28:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:29:52 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:31:06 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:32:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:33:32 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:34:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:36:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:37:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:38:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:39:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:40:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:42:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:43:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:44:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:45:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:46:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:48:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:49:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:50:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:51:58 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:53:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:54:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:55:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:56:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:57:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 11:58:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:00:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:01:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:02:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:03:58 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:05:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:06:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:07:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:08:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:10:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:11:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:12:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:13:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:14:47 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:16:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:17:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:18:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:19:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:20:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:21:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:23:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:24:06 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:25:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:26:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:27:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:28:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:30:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:31:22 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:32:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:33:56 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:35:06 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:36:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:37:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:38:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:39:58 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:41:06 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:42:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:43:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:44:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:45:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:46:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:48:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:49:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:50:32 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:51:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:53:00 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:54:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:55:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:56:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:58:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 12:59:22 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:00:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:01:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:03:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:04:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:05:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:06:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:07:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:08:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:10:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:11:28 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:12:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:13:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:14:56 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:16:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:17:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:18:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:19:38 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:20:42 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:22:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:23:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:24:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:25:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:26:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:28:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:29:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:30:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:31:52 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:32:03 order id -1 errorCode 2103 msg: Market data farm connection is broken:hfarm
+HANDLE ORDER: 11-20 13:32:04 order id -1 errorCode 2104 msg: Market data farm connection is OK:hfarm
+HANDLE ORDER: 11-20 13:32:36 order id -1 errorCode 2103 msg: Market data farm connection is broken:hfarm
+HANDLE ORDER: 11-20 13:32:37 order id -1 errorCode 2104 msg: Market data farm connection is OK:hfarm
+HANDLE ORDER: 11-20 13:33:09 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:34:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:35:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:36:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:37:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:39:02 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:40:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:41:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:42:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:43:57 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:45:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:45:20 order id -1 errorCode 2103 msg: Market data farm connection is broken:hfarm
+HANDLE ORDER: 11-20 13:45:20 order id -1 errorCode 2104 msg: Market data farm connection is OK:hfarm
+HANDLE ORDER: 11-20 13:46:09 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:47:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:48:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:50:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:51:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:52:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:53:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:54:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:55:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:57:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:58:19 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 13:59:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:00:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:01:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:03:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:04:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:05:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:06:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:07:10 order id -1 errorCode 2105 msg: HMDS data farm connection is broken:ushmds
+HANDLE ORDER: 11-20 14:07:10 order id -1 errorCode 1100 msg: Connectivity between IB and Trader Workstation has been lost.
+HANDLE ORDER: 11-20 14:07:10 order id -1 errorCode 2103 msg: Market data farm connection is broken:usfarm
+HANDLE ORDER: 11-20 14:07:10 order id -1 errorCode 2103 msg: Market data farm connection is broken:hfarm
+HANDLE ORDER: 11-20 14:07:26 order id -1 errorCode 1100 msg: Connectivity between IB and Trader Workstation has been lost.
+HANDLE ORDER: 11-20 14:07:29 order id -1 errorCode 2104 msg: Market data farm connection is OK:hfarm
+HANDLE ORDER: 11-20 14:07:29 order id -1 errorCode 2119 msg: Market data farm is connecting:usfarm
+HANDLE ORDER: 11-20 14:07:30 order id -1 errorCode 2106 msg: HMDS data farm connection is OK:ushmds
+HANDLE ORDER: 11-20 14:07:30 order id -1 errorCode 2104 msg: Market data farm connection is OK:usfarm
+HANDLE ORDER: 11-20 14:07:38 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:07:59 order id -1 errorCode 1102 msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: hfarm; usfarm; ushmds. The following farms are not connected: hkhmds; secdefhk.
+HANDLE ORDER: 11-20 14:08:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:10:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:11:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:12:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:13:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:14:47 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:16:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:17:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:18:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:19:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:20:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:22:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:23:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:24:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:25:51 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:27:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:28:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:29:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:30:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:31:47 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:32:52 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:34:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:35:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:36:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:37:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:38:34 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:39:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:41:09 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:42:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:43:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:44:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:46:02 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:47:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:48:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:49:42 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:50:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:51:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:52:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:54:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:55:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:56:32 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:57:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 14:58:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:00:09 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:01:22 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:02:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:03:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:05:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:06:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:07:34 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:08:51 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:10:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:11:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:12:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:13:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:14:49 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:16:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:17:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:18:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:19:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:20:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:22:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:23:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:24:42 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:25:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:27:12 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:28:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:29:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:30:22 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:31:25 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:32:32 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:33:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:35:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:36:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:37:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:38:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:40:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:41:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:42:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:43:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:44:56 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:46:15 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:47:36 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:48:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:49:47 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:50:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:52:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:53:15 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:54:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:55:40 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:56:43 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:58:03 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 15:59:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:00:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:01:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:02:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:03:58 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:05:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:06:38 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:07:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:09:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:10:15 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:11:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:12:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:13:53 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:15:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:16:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:17:20 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:18:30 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:19:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:21:06 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:22:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:23:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:24:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:25:44 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:27:00 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:28:07 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:29:23 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:30:38 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:31:46 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:32:48 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:34:10 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:35:27 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:36:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:37:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:38:56 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:40:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:41:24 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:42:37 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:43:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:45:05 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:46:11 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:47:29 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:48:50 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:50:08 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:51:17 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:52:26 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:53:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:55:04 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:56:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:57:35 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:58:54 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 16:59:59 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:01:13 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:02:16 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:03:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:04:31 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:05:41 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:07:01 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:08:18 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:09:33 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:10:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:12:14 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:13:22 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:14:34 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:15:45 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:16:55 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:18:10 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+HANDLE ORDER: 11-20 17:19:21 order id -1 errorCode 2157 msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-20 17:19
+2023-11-21T06:19:32.184631900 global cancel orders

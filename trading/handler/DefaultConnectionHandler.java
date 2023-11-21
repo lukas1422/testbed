@@ -34,7 +34,7 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
         pr(TradingUtility.getESTLocalTimeNow().format(simpleT),
-                " DefaultConnHandler error ID " + id + " error code " + errorCode + " errormsg " + errorMsg);
+                " DefaultConnHandler error ID:" + id + " error code:" + errorCode + "errormsg:" + errorMsg);
     }
 
     @Override

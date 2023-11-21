@@ -1115,7 +1115,7 @@ public class Utility {
     public static class DefaultLogger implements ApiConnection.ILogger {
         @Override
         public void log(String valueOf) {
-            pr(" logging " + valueOf);
+//            pr(" logging " + valueOf);
         }
     }
 

@@ -44,13 +44,13 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.005;
-    private static final double DELTA_LIMIT = 10000;
+    private static final double DELTA_LIMIT = 4000;
 //    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
     static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
-    static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
+    private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
     public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
@@ -185,6 +185,8 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
+        openOrders.put(symb, new ConcurrentHashMap<>());
+        pr("open orders ", openOrders);
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
@@ -241,9 +243,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                     pr("open orders:", symb, openOrders.get(symb));
                 }
 
-
-                if (!openOrders.containsKey(symb) || (openOrders.containsKey(symb) && openOrders.get(symb).isEmpty())) {
-                    if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
+                if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
+//                    pr(symb, openOrders, openOrders.keySet());
+                    if (openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                                 if (aggregateDelta < DELTA_LIMIT) {
@@ -267,9 +269,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                                 }
                             }
                         }
+                    } else {
+                        pr("there are open orders ", openOrders.get(symb).values());
                     }
-                } else {
-                    pr("there are open orders ", openOrders.get(symb).values());
                 }
                 break;
 
@@ -364,15 +366,15 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
 
-                if (symb.equalsIgnoreCase("SPY")) {
-
-                    pr("threeday data", threeDayData.get(symb));
-                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
-                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
-                }
+//                if (symb.equalsIgnoreCase("SPY")) {
+//
+//                    pr("threeday data", threeDayData.get(symb));
+//                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+//                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+//                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
+//                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+//                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
+//                }
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
@@ -400,18 +402,18 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                 symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
                         .getOrDefault(s, 0.0)));
 
-        pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
+        pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
-        if (!openOrders.isEmpty()) {
-            openOrders.forEach((k, v) -> {
-                if (v.isEmpty()) {
-                    openOrders.remove(k);
-                }
-            });
-            outputToGeneral(str("openOrderMap is not empty", openOrders));
-        } else {
-            pr("there  is no open orders");
-        }
+//        if (!openOrders.isEmpty()) {
+//            openOrders.forEach((k, v) -> {
+//                if (v.isEmpty()) {
+//                    openOrders.remove(k);
+//                }
+//            });
+//            outputToGeneral(str("openOrderMap is not empty", openOrders));
+//        } else {
+//            pr("there  is no open orders");
+//        }
 
     }
 
@@ -425,9 +427,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     public static Decimal getTradeSizeFromPercentile(double perc) {
         if (perc < 30) {
-            return Decimal.get(20);
+            return Decimal.get(10);
         }
-        return Decimal.get(10);
+        return Decimal.get(5);
     }
 
     public static Decimal getAdder2Size(double price) {
@@ -497,9 +499,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             return;
         }
 
-        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+        if (!openOrders.get(symb).isEmpty()) {
             openOrders.get(symb).forEach((oID, ord) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
-                    ord.orderId(), "B/S", ord.action(), "size:", ord.totalQuantity(), "px:", ord.lmtPrice()));
+                    ord.orderId(), "B/S", ord.action(), "size:", ord.totalQuantity(), "price:", ord.lmtPrice()));
             outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
                     "buying failed, there are open orders", openOrders.get(symb));
             pr(symb, "adding fail:open order");
@@ -684,7 +686,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 //        Tester test1 = new Tester();
         SPYTrader trader1 = new SPYTrader();
         trader1.connectAndReqPos();
-        es.scheduleAtFixedRate(Tester::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(SPYTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");

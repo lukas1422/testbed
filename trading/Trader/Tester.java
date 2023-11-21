@@ -43,7 +43,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     Contract ul = generateUSStockContract("UL");
     Contract mcd = generateUSStockContract("MCD");
 
-    Contract spy = generateUSStockContract("SPY");
+//    Contract spy = generateUSStockContract("SPY");
 
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
@@ -54,7 +54,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
     static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
-    static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
+    private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
     public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
@@ -123,7 +123,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //        registerContract(brk);
         registerContract(ul);
         registerContract(mcd);
-        registerContract(spy);
+//        registerContract(spy);
     }
 
 
@@ -206,6 +206,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
+        openOrders.put(symb, new ConcurrentHashMap<>());
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
@@ -263,11 +264,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    if (!openOrders.containsKey(symb) || (openOrders.containsKey(symb) && openOrders.get(symb).isEmpty())) {
+                    if (openOrders.containsKey(symb)) {
+                        pr(symb, openOrders.get(symb).isEmpty());
+                    }
+
+                    if (openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
-                                    pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
+                                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
                                         inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
@@ -277,7 +282,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                             if (symbolPosMap.get(symb).longValue() > 0) {
                                 if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
-                                    pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
+                                    pr(symb, "price/cost", r(price / costMap.getOrDefault(symb, Double.MAX_VALUE)));
                                     if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
                                         inventoryCutter(ct, price, t);
                                     }
@@ -287,9 +292,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                                 }
                             }
                         }
+                    } else {
+                        pr("there are open orders ", openOrders.get(symb).values());
                     }
-                } else {
-                    pr("there are open orders ", openOrders.get(symb).values());
                 }
                 break;
 
@@ -383,15 +388,15 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
 
-                if (symb.equalsIgnoreCase("SPY")) {
-
-                    pr("threeday data", threeDayData.get(symb));
-                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
-                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
-                }
+//                if (symb.equalsIgnoreCase("SPY")) {
+//
+//                    pr("threeday data", threeDayData.get(symb));
+//                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+//                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+//                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
+//                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
+//                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
+//                }
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
@@ -418,18 +423,18 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
                         .getOrDefault(s, 0.0)));
 
-        pr("aggregate Delta", aggregateDelta, "each delta", symbolDeltaMap);
+        pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
-        if (!openOrders.isEmpty()) {
-            openOrders.forEach((k, v) -> {
-                if (v.isEmpty()) {
-                    openOrders.remove(k);
-                }
-            });
-            outputToGeneral(str("openOrderMap is not empty", openOrders));
-        } else {
-            pr("there  is no open orders");
-        }
+//        if (!openOrders.isEmpty()) {
+//            openOrders.forEach((k, v) -> {
+//                if (v.isEmpty()) {
+//                    openOrders.remove(k);
+//                }
+//            });
+//            outputToGeneral(str("openOrderMap is not empty", openOrders));
+//        } else {
+//            pr("periodic computing:no open orders");
+//        }
 
     }
 
@@ -671,7 +676,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus",
+        outputToFile(str("openOrder orderstatus:", "orderId", orderId, "OrderStatus",
                 status, "filled", filled, "remaining", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders");
