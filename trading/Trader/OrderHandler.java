@@ -81,5 +81,8 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void handle(int errorCode, String errorMsg) {
         outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
                 .get(tradeID)));
+
+        outputToGeneral("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
+                .get(tradeID));
     }
 }
