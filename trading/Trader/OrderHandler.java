@@ -73,16 +73,16 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputDetailedGen(str("orderhandler orderStatus:", "tradeId", tradeID, getESTLocalDateTimeNow().format(f2),
-                "status filled remaining avgPx", status, filled, remaining, avgFillPrice), outputFile);
+        outputDetailedGen(str("orderhandler orderStatus:", "tradeId:", tradeID, getESTLocalDateTimeNow().format(f2),
+                "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice), outputFile);
     }
 
     @Override
     public void handle(int errorCode, String errorMsg) {
-        outputToError(str("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
+        outputToError(str("ERROR in order handler:", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
                 .get(tradeID)));
 
-        outputToGeneral("ERROR in order handler", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
+        outputToGeneral("ERROR in order handler:", tradeID, errorCode, errorMsg, orderSubmitted.get(symbol)
                 .get(tradeID));
     }
 }

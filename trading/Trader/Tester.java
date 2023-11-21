@@ -251,6 +251,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 //trade logic
                 if (orderSubmitted.get(symb).values().stream().anyMatch(e ->
                         e.getAugmentedOrderStatus() != OrderStatus.Filled)) {
+
                     pr("All unfilled orders in orderSubmitted:", symb, orderSubmitted.get(symb).values().stream()
                             .filter(e -> e.getAugmentedOrderStatus() != OrderStatus.Filled)
                             .toList());
@@ -397,10 +398,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 pr("compute", symb, getESTLocalTimeNow().format(simpleT),
                         "3d p%:", round(threeDayPercentile), "1d p%:", round(oneDayPercentile));
             }
-            pr("compute after percentile map", symb);
+//            pr("compute after percentile map", symb);
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
                     && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
-                pr("ytd size ", symb, ytdDayData.get(symb).size(), "first key", ytdDayData.get(symb).firstKey(), getYearBeginMinus1Day());
+//                pr("ytd size ", symb, ytdDayData.get(symb).size(), "first key", ytdDayData.get(symb).firstKey(), getYearBeginMinus1Day());
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
 //                double returnOnYear = ytdDayData.get(symb).lastEntry().getValue().getClose() / lastYearClose - 1;
                 lastYearCloseMap.put(symb, lastYearClose);
@@ -484,7 +485,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
                 outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                         "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
-                        "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
+                        "p/b/a:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
                         "3d perc/1d perc", perc3d, perc1d), outputFile);
             }
         }
@@ -510,11 +511,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
-                    order.orderId(), "action:", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
-                    "buying failed, there are open orders", openOrders.get(symb));
-            pr(symb, "adding fail:open order");
+//            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
+//                    order.orderId(), "action:", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
+//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
+//                    "buying failed, there are open orders", openOrders.get(symb));
+            pr(symb, "adding fail:open order", openOrders.get(symb));
             return;
         }
 
@@ -604,9 +605,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
      */
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
-        pr("tradeReport", tradeKey, ibContractToSymbol(contract), execution);
-
         String symb = ibContractToSymbol(contract);
+
+        pr("tradeReport", "key:", tradeKey, symb, execution);
+
         tradeKeyExecutionMap.put(tradeKey, execution);
 
         pr("tradeReport:", tradeKey, symb,
@@ -651,7 +653,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
         outputToFile(str("open order:", getESTLocalDateTimeNow().format(f), symb,
-                "order", order, "orderstate:", orderState), outputFile);
+                "order:", order, "orderstate:", orderState), outputFile);
 
         if (!openOrders.containsKey(symb)) {
             openOrders.put(symb, new ConcurrentHashMap<>());
@@ -673,10 +675,10 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("openOrder orderstatus:", "orderId", orderId, "OrderStatus",
-                status, "filled", filled, "remaining", remaining), outputFile);
+        outputToFile(str("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
+                status, "filled:", filled, "remaining:", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
-            pr("in orderstatus deleting filled from liveorders");
+            pr("in orderstatus deleting filled from liveorders", openOrders);
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
                     outputToGeneral(k, "removing order from ordermap.OrderID:", orderId, "order details:", v.get(orderId));
