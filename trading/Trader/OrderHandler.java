@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
+import static Trader.Allstatic.orderSubmitted;
 import static Trader.ProfitTargetTrader.*;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;

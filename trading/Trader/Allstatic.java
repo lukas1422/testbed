@@ -5,6 +5,7 @@ import api.OrderAugmented;
 import auxiliary.SimpleBar;
 import client.Contract;
 import client.Decimal;
+import client.Order;
 import client.Types;
 import historical.Request;
 import utility.TradingUtility;
@@ -42,6 +43,10 @@ public class Allstatic {
             new ConcurrentSkipListMap<>();
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
+    //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
+    static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
+    //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
+    static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
     public static Contract getActiveA50Contract() {
         Contract ct = new Contract();
