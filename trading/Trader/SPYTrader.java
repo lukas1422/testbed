@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+//import static Trader.Allstatic.*;
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
@@ -33,11 +34,11 @@ import static utility.Utility.str;
 public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
 
     private static ApiController apiController;
-    private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
-    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+    //private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
+    //private static volatile AtomicInteger tradeID = new AtomicInteger(100);
 //    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
 
-    static volatile double aggregateDelta = 0.0;
+//    static volatile double aggregateDelta = 0.0;
 
 
     Contract spy = generateUSStockContract("SPY");
@@ -45,7 +46,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
     private static final double PROFIT_LEVEL = 1.005;
-    private static final double DELTA_LIMIT = 4000;
+    //private static final double DELTA_LIMIT = 4000;
 //    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
@@ -56,7 +57,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 //    public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
-    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
+    //static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();

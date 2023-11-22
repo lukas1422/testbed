@@ -12,7 +12,6 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
@@ -26,12 +25,7 @@ import static utility.Utility.*;
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
     private static ApiController apiController;
-    private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
-    static volatile AtomicInteger tradeID = new AtomicInteger(100);
-//    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
-
-    static volatile double aggregateDelta = 0.0;
-
+    //    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
 
     //    Contract gjs = generateHKStockContract("388");
 //    Contract xiaomi = generateHKStockContract("1810");
@@ -41,11 +35,7 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract ul = generateUSStockContract("UL");
     Contract mcd = generateUSStockContract("MCD");
 
-//    Contract spy = generateUSStockContract("SPY");
-
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
-
-
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
@@ -152,11 +142,11 @@ public class ProfitTargetTrader implements LiveHandler,
 
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
-                reqHistDayData(apiController, ibStockReqId.addAndGet(5),
+                reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         histCompatibleCt(c), ProfitTargetTrader::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
-                reqHistDayData(apiController, ibStockReqId.addAndGet(5),
+                reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         histCompatibleCt(c), ProfitTargetTrader::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
         });
@@ -254,7 +244,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     if (Allstatic.openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                                if (aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < Allstatic.DELTA_LIMIT_EACH_STOCK) {
+                                if (Allstatic.aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < Allstatic.DELTA_LIMIT_EACH_STOCK) {
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
@@ -399,7 +389,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-        aggregateDelta = targetStockList.stream().mapToDouble(s ->
+        Allstatic.aggregateDelta = targetStockList.stream().mapToDouble(s ->
                 symbolPosMap.getOrDefault(s, Decimal.ZERO).
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
@@ -407,7 +397,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
                         .getOrDefault(s, 0.0)));
 
-        pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
+        pr("aggregate Delta", r(Allstatic.aggregateDelta), "each delta", symbolDeltaMap);
 
 //        if (!openOrders.isEmpty()) {
 //            openOrders.forEach((k, v) -> {
@@ -465,7 +455,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 Decimal sizeToBuy = getAdder2Size(price);
                 Allstatic.inventoryStatusMap.put(symb, BUYING_INVENTORY);
                 lastOrderTime.put(symb, t);
-                int id = tradeID.incrementAndGet();
+                int id = Allstatic.tradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
                 Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
                 Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
@@ -528,7 +518,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
             Allstatic.inventoryStatusMap.put(symb, BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
-            int id = tradeID.incrementAndGet();
+            int id = Allstatic.tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
@@ -564,7 +554,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (pos.longValue() > 0) {
             lastOrderTime.put(symb, t);
             Allstatic.inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
-            int id = tradeID.incrementAndGet();
+            int id = Allstatic.tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
                     costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));

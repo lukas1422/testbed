@@ -53,6 +53,9 @@ public class Allstatic {
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
+    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+    static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
+    static volatile double aggregateDelta = 0.0;
 
     public static Contract getActiveA50Contract() {
         Contract ct = new Contract();

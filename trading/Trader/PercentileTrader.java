@@ -32,11 +32,10 @@ public class PercentileTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
 
     private static ApiController apiController;
-    private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
-    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+//    private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
+//    static volatile AtomicInteger tradeID = new AtomicInteger(100);
 //    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
-
-    static volatile double aggregateDelta = 0.0;
+//    static volatile double aggregateDelta = 0.0;
 
 
     //    Contract gjs = generateHKStockContract("388");
@@ -95,7 +94,7 @@ public class PercentileTrader implements LiveHandler,
 
     private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
-    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+    private static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     //avoid too many requests at once, only 50 requests allowed at one time.
     //private static Semaphore histSemaphore = new Semaphore(45);
@@ -130,7 +129,7 @@ public class PercentileTrader implements LiveHandler,
 
         try {
             pr(" using port 4001");
-            ap.connect("127.0.0.1", 4001, 7, "");
+            ap.connect("127.0.0.1", 4001, 8, "");
             connectionStatus = true;
             l.countDown();
 //            pr(" Latch counted down 4001 " + LocalTime.now());
@@ -141,7 +140,7 @@ public class PercentileTrader implements LiveHandler,
 
         if (!connectionStatus) {
             pr(" using port 7496");
-            ap.connect("127.0.0.1", 7496, 7, "");
+            ap.connect("127.0.0.1", 7496, 8, "");
             l.countDown();
             pr(" Latch counted down 7496" + getESTLocalTimeNow().format(f1));
         }
