@@ -26,6 +26,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.Predicate;
 
@@ -603,7 +604,7 @@ public class TradingUtility {
         return 1.005;
     }
 
-    public static String printStats(ConcurrentSkipListMap<LocalDateTime, SimpleBar> m) {
+    public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty()) {
             return "";
         }

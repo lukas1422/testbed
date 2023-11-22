@@ -24,7 +24,7 @@ import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
-public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+public class ProfitTargetTrader implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
     private static ApiController apiController;
     private static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
@@ -109,7 +109,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
 //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
-    private Tester() {
+    private ProfitTargetTrader() {
         pr("initializing...", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
@@ -167,11 +167,11 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Tester::todaySoFar, 3, Types.BarSize._1_min);
+                        histCompatibleCt(c), ProfitTargetTrader::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Tester::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
+                        histCompatibleCt(c), ProfitTargetTrader::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
         });
 
@@ -382,6 +382,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+                pr(symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
 
 
 //                if (symb.equalsIgnoreCase("SPY")) {
@@ -411,7 +412,6 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //                pr("ytd return", symb, round(returnOnYear * 100), "%");
             }
         });
-//        pr("before agg delta ");
 
         aggregateDelta = targetStockList.stream().mapToDouble(s ->
                 symbolPosMap.getOrDefault(s, Decimal.ZERO).
@@ -566,13 +566,8 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-            pr("cutter failed, there is live order.", openOrders.get(symb));
+            outputToGeneral("cutter failed, there is live order.", openOrders.get(symb));
             return;
-//            if (openOrders.get(symb).entrySet().stream().anyMatch(e -> e.getValue().action() == Types.Action.SELL)) {
-//                pr("CUTTER FAIL. There is a live selling order", openOrders.get(symb).entrySet()
-//                        .stream().filter(e -> e.getValue().action() == Types.Action.SELL).toList());
-//                return;
-//            }
         }
 
         if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
@@ -699,9 +694,9 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
     //open orders end
     public static void main(String[] args) {
-        Tester test1 = new Tester();
+        ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
-        es.scheduleAtFixedRate(Tester::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
@@ -719,5 +714,4 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 //            apiController.cancelAllOrders();
         }));
     }
-
 }

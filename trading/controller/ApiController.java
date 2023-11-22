@@ -4,7 +4,6 @@
 package controller;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,15 +14,10 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import Trader.Allstatic;
 import api.IBDataHandler;
 import client.*;
-import client.*;
-import historical.Request;
 
-import javax.swing.*;
-
-import static Trader.Tester.outputFile;
+import static Trader.ProfitTargetTrader.outputFile;
 import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.TradingUtility.outputToFile;
 import static utility.Utility.str;
