@@ -24,6 +24,7 @@ import historical.Request;
 import javax.swing.*;
 
 import static Trader.Tester.outputFile;
+import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.TradingUtility.outputToFile;
 import static utility.Utility.str;
 
@@ -975,7 +976,7 @@ public class ApiController implements EWrapper {
 
         m_client.reqGlobalCancel();
         sendEOM();
-        outputToFile(str(LocalDateTime.now(), "global cancel orders"), outputFile);
+        outputToFile(str(getESTLocalDateTimeNow(), "global cancel orders"), outputFile);
     }
 
     public void exerciseOption(String account, Contract contract, Types.ExerciseType type, int quantity, boolean override) {

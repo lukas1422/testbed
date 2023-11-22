@@ -22,9 +22,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.Predicate;
 
 import static java.lang.Math.round;
@@ -599,5 +601,20 @@ public class TradingUtility {
             return 1.002;
         }
         return 1.005;
+    }
+
+    public static String printStats(ConcurrentSkipListMap<LocalDateTime, SimpleBar> m) {
+        if (m.isEmpty()) {
+            return "";
+        }
+        double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
+        double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();
+        LocalDateTime maxTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
+                .map(e -> e.getKey()).get();
+        LocalDateTime minTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getLow()))
+                .map(e -> e.getKey()).get();
+        double range = max / min - 1;
+
+        return str("max", max, maxTime, "min", min, minTime, "range", Math.round(range * 100), "%");
     }
 }

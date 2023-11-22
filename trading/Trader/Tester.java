@@ -370,7 +370,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                 if (symbolPosMap.get(symb).isZero()) {
                     inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
-                    pr(symb, "price/cost", latestPriceMap.get(symb) / costMap.get(symb) - 1, "%");
+                    pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
                 }
             }
         });
@@ -382,6 +382,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+
 
 //                if (symb.equalsIgnoreCase("SPY")) {
 //
@@ -681,7 +682,7 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
             pr("in orderstatus deleting filled from liveorders", openOrders);
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToGeneral(k, "removing order from ordermap.OrderID:", orderId, "order details:", v.get(orderId));
+                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
                     v.remove(orderId);
                     outputToGeneral("remaining open orders for ", k, v);
                     outputToGeneral("remaining ALL open orders", openOrders);
@@ -710,11 +711,12 @@ public class Tester implements LiveHandler, ApiController.IPositionHandler, ApiC
                     if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
                             v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
                         outputToFile(str("unexecuted orders:", v1.getSymbol(),
-                                "Shutdown status", getESTLocalTimeNow().format(f1), v1.getAugmentedOrderStatus(), v), outputFile);
+                                "Shutdown status", getESTLocalTimeNow().format(f1),
+                                v1.getAugmentedOrderStatus(), v), outputFile);
                     }
                 });
             });
-            apiController.cancelAllOrders();
+//            apiController.cancelAllOrders();
         }));
     }
 
