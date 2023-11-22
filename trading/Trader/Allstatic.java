@@ -7,10 +7,12 @@ import client.Contract;
 import client.Decimal;
 import client.Order;
 import client.Types;
+import enums.InventoryStatus;
 import historical.Request;
 import utility.TradingUtility;
 import utility.Utility;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -26,6 +28,8 @@ import static utility.Utility.*;
 public class Allstatic {
     public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
+    static final double DELTA_LIMIT = 10000;
+    static final double DELTA_LIMIT_EACH_STOCK = 2000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
@@ -43,10 +47,12 @@ public class Allstatic {
             new ConcurrentSkipListMap<>();
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
+    public static File outputFile = new File("trading/TradingFiles/output");
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
-    static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
+    protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
+    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     public static Contract getActiveA50Contract() {
         Contract ct = new Contract();

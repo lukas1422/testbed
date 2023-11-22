@@ -8,7 +8,6 @@ import enums.InventoryStatus;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
-import java.io.File;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -46,14 +45,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
 
-    private static final double PROFIT_LEVEL = 1.005;
-    private static final double DELTA_LIMIT = 10000;
-    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
-
-    public static File outputFile = new File("trading/TradingFiles/output");
-    //File f = new File("trading/TradingFiles/output");
-
-    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
@@ -110,7 +101,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), outputFile);
+        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), Allstatic.outputFile);
         registerContract(wmt);
         registerContract(pg);
 //        registerContract(brk);
@@ -152,7 +143,6 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         pr(" Time after latch released " + LocalTime.now().format(simpleT));
-//        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
             Contract c = generateUSStockContract(symb);
@@ -179,7 +169,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
-        outputToFile("cancelling all orders on start up", outputFile);
+        outputToFile("cancelling all orders on start up", Allstatic.outputFile);
         apiController.cancelAllOrders();
 
 //        apiController.reqPnLSingle();
@@ -263,8 +253,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
                     if (Allstatic.openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-                            if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < DELTA_LIMIT_EACH_STOCK) {
+                            if (symbolPosMap.get(symb).isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
+                                if (aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < Allstatic.DELTA_LIMIT_EACH_STOCK) {
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
@@ -323,14 +313,14 @@ public class ProfitTargetTrader implements LiveHandler,
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
             if (position.longValue() > 0) {
-                inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
-            } else if (position.isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                Allstatic.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
+            } else if (position.isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
+                Allstatic.inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
             } else {
-                inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
+                Allstatic.inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
-                    "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
+                    "avgCost:", avgCost, "inventoryStatus", Allstatic.inventoryStatusMap.get(symb));
         }
     }
 
@@ -341,11 +331,11 @@ public class ProfitTargetTrader implements LiveHandler,
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                Allstatic.inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 costMap.put(symb, 0.0);
             }
 
-            pr("SYMBOL POS INVENTORY", symb, symbolPosMap.get(symb).longValue(), inventoryStatusMap.get(symb), costMap.get(symb));
+            pr("SYMBOL POS INVENTORY", symb, symbolPosMap.get(symb).longValue(), Allstatic.inventoryStatusMap.get(symb), costMap.get(symb));
 
             apiController.reqContractDetails(generateUSStockContract(symb), list -> list.forEach(a -> {
                 pr("CONTRACT ID:", a.contract().symbol(), a.contract().conid());
@@ -364,7 +354,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (symbolPosMap.get(symb).isZero()) {
-                    inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                    Allstatic.inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
                     pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
                 }
@@ -448,7 +438,7 @@ public class ProfitTargetTrader implements LiveHandler,
     private static void inventoryAdder2More(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
-        InventoryStatus status = inventoryStatusMap.get(symb);
+        InventoryStatus status = Allstatic.inventoryStatusMap.get(symb);
 
         if (!costMap.containsKey(symb)) {
             return;
@@ -473,18 +463,18 @@ public class ProfitTargetTrader implements LiveHandler,
         if (price < costMap.get(symb) * 0.99) {
             if (pos.longValue() > 0 && status != BUYING_INVENTORY) {
                 Decimal sizeToBuy = getAdder2Size(price);
-                inventoryStatusMap.put(symb, BUYING_INVENTORY);
+                Allstatic.inventoryStatusMap.put(symb, BUYING_INVENTORY);
                 lastOrderTime.put(symb, t);
                 int id = tradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
                 Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
                 Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
                 placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
-                outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+                outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
                 outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                         "adder2:", "price:", bidPrice, "qty:", sizeToBuy, Allstatic.orderSubmitted.get(symb).get(id),
                         "p/b/a:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                        "3d perc/1d perc", perc3d, perc1d), outputFile);
+                        "3d perc/1d perc", perc3d, perc1d), Allstatic.outputFile);
             }
         }
 
@@ -501,7 +491,7 @@ public class ProfitTargetTrader implements LiveHandler,
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
-        InventoryStatus status = inventoryStatusMap.get(symb);
+        InventoryStatus status = Allstatic.inventoryStatusMap.get(symb);
 
         if (status == BUYING_INVENTORY) {
             outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "already buying, exiting");
@@ -527,7 +517,7 @@ public class ProfitTargetTrader implements LiveHandler,
         Decimal sizeToBuy = getTradeSizeFromPrice(price);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
-                > DELTA_LIMIT_EACH_STOCK) {
+                > Allstatic.DELTA_LIMIT_EACH_STOCK) {
             outputToGeneral(symb, "after buying exceeds delta limit", "current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed delta inc:", sizeToBuy.longValue() * price);
@@ -536,18 +526,18 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
-            inventoryStatusMap.put(symb, BUYING_INVENTORY);
+            Allstatic.inventoryStatusMap.put(symb, BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
             int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
-            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                     "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, Allstatic.orderSubmitted.get(symb).get(id),
                     "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                    "3d perc/1d perc", perc3d, perc1d), outputFile);
+                    "3d perc/1d perc", perc3d, perc1d), Allstatic.outputFile);
         }
     }
 
@@ -556,7 +546,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 
-        if (inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
+        if (Allstatic.inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
             outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
             return;
         }
@@ -573,7 +563,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (pos.longValue() > 0) {
             lastOrderTime.put(symb, t);
-            inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
+            Allstatic.inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
@@ -582,11 +572,11 @@ public class ProfitTargetTrader implements LiveHandler,
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
-            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+            outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
                     "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
                     Optional.ofNullable(Allstatic.orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
-                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
+                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), Allstatic.outputFile);
         }
     }
 
@@ -610,7 +600,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         outputToFile(str("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice()), outputFile);
+                execution.price(), execution.shares(), execution.avgPrice()), Allstatic.outputFile);
     }
 
     @Override
@@ -645,7 +635,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
         outputToFile(str("open order:", getESTLocalDateTimeNow().format(f), symb,
-                "order:", order, "orderstate:", orderState), outputFile);
+                "order:", order, "orderstate:", orderState), Allstatic.outputFile);
 
         if (!Allstatic.openOrders.containsKey(symb)) {
             Allstatic.openOrders.put(symb, new ConcurrentHashMap<>());
@@ -668,7 +658,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
         outputToFile(str("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining), outputFile);
+                status, "filled:", filled, "remaining:", remaining), Allstatic.outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders", Allstatic.openOrders);
             Allstatic.openOrders.forEach((k, v) -> {
@@ -685,7 +675,7 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
         outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id",
-                orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
+                orderId, "errorCode", errorCode, "msg:", errorMsg), Allstatic.outputFile);
     }
 
     //open orders end
@@ -696,14 +686,14 @@ public class ProfitTargetTrader implements LiveHandler,
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
-            outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
+            outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), Allstatic.outputFile);
             Allstatic.orderSubmitted.forEach((k, v) -> {
                 v.forEach((k1, v1) -> {
                     if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
                             v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
                         outputToFile(str("unexecuted orders:", v1.getSymbol(),
                                 "Shutdown status", getESTLocalTimeNow().format(f1),
-                                v1.getAugmentedOrderStatus(), v), outputFile);
+                                v1.getAugmentedOrderStatus(), v), Allstatic.outputFile);
                     }
                 });
             });

@@ -16,8 +16,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static Trader.Allstatic.openOrders;
-import static Trader.Allstatic.orderSubmitted;
+import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static api.TradingConstants.f1;
@@ -54,7 +53,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
 //    private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
-    public static File outputFile = new File("trading/TradingFiles/output");
+//    public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
     static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();

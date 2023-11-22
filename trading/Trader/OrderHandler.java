@@ -14,7 +14,6 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Allstatic.orderSubmitted;
-import static Trader.ProfitTargetTrader.*;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
 import static enums.InventoryStatus.*;
@@ -56,15 +55,15 @@ public class OrderHandler implements ApiController.IOrderHandler {
                         "tradeID", tradeID, "*ORDER FILL*", tradeIDOrderStatusMap.get(tradeID) + "->" + orderState.status(),
                         usTimeNow.format(f2), orderSubmitted.get(symbol).get(tradeID),
                         "completed status", orderState.completedStatus(), "completed time:", orderState.completedTime(),
-                        "commission:", orderState.commission(), "warning:", orderState.warningText()), outputFile);
+                        "commission:", orderState.commission(), "warning:", orderState.warningText()), Allstatic.outputFile);
                 outputDetailedGen(str(symbol, usTimeNow.format(f2), "completed status", orderState.completedStatus(),
                         "completed time:", orderState.completedTime(),
                         "commission:", orderState.commission(), "warning:", orderState.warningText(),
                         "status:", orderState.status(), orderSubmitted.get(symbol).get(tradeID)), TradingConstants.fillsOutput);
                 if (status == InventoryStatus.BUYING_INVENTORY) {
-                    inventoryStatusMap.put(symbol, HAS_INVENTORY);
+                    Allstatic.inventoryStatusMap.put(symbol, HAS_INVENTORY);
                 } else if (status == InventoryStatus.SELLING_INVENTORY) {
-                    inventoryStatusMap.put(symbol, SOLD);
+                    Allstatic.inventoryStatusMap.put(symbol, SOLD);
                 }
             }
             tradeIDOrderStatusMap.put(tradeID, orderState.status());
@@ -75,7 +74,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
         outputDetailedGen(str("orderhandler orderStatus:", "tradeId:", tradeID, getESTLocalDateTimeNow().format(f2),
-                "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice), outputFile);
+                "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice), Allstatic.outputFile);
     }
 
     @Override

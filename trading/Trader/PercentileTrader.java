@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static Trader.Allstatic.orderSubmitted;
+import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static api.TradingConstants.f1;
@@ -53,12 +53,12 @@ public class PercentileTrader implements LiveHandler,
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
 //    static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
-    private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
+    //private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
 
-    public static File outputFile = new File("trading/TradingFiles/output");
+//    public static File outputFile = new File("trading/TradingFiles/output");
     //File f = new File("trading/TradingFiles/output");
 
-    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
+//    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
@@ -111,7 +111,8 @@ public class PercentileTrader implements LiveHandler,
 //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private PercentileTrader() {
-        pr("initializing percentile trader", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
+        pr("initializing percentile trader", "HK time",
+                LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 

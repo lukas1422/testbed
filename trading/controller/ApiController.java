@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import api.IBDataHandler;
 import client.*;
 
-import static Trader.ProfitTargetTrader.outputFile;
+import static Trader.Allstatic.outputFile;
 import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.TradingUtility.outputToFile;
 import static utility.Utility.str;
