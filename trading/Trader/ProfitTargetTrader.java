@@ -266,7 +266,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             }
                         }
                     } else {
-                        pr("there are open orders ", Allstatic.openOrders.get(symb).values());
+                        pr("there are open orders ", symb, Allstatic.openOrders.get(symb).values());
                     }
                 }
                 break;
@@ -358,7 +358,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-                pr(symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                pr("print stats:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
 
 
 //                if (symb.equalsIgnoreCase("SPY")) {

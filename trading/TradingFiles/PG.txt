@@ -32,3 +32,14 @@ orderID: 2 tradeID: 101 BUY BUY INVENTORY: price: 150.21 qty: 10 PG 11-20 9:30 I
 ******** 11-21 9:30
 orderID: 4 tradeID: 101 BUY BUY INVENTORY: price: 149.72 qty: 10 PG 11-21 9:30 INVENTORY_ADDER Created p/b/a 149.85 149.72 150.01 3d perc/1d perc 20.0 0.0
 orderID: 4 tradeID 101 *ORDER FILL* Submitted->Filled 11-21 9:30:36.035 PG 11-21 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:30
+orderID: 6 tradeID 101 SELL INVENTORY: offer price: 150.63 cost: 149.75313 PG 11-22 9:30 INVENTORY_CUTTER Created price/bid/ask: 150.63 150.54 150.63
+orderID: 6 tradeID 101 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:36.636 PG 11-22 9:30 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:30
+orderID: 7 tradeID: 102 BUY BUY INVENTORY: price: 150.59 qty: 10 PG 11-22 9:30 INVENTORY_ADDER Created p/b/a 150.59 150.59 150.65 3d perc/1d perc 20.0 0.0
+orderID: 7 tradeID 102 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:48.318 PG 11-22 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:48
+orderID: 8 tradeID 103 SELL INVENTORY: offer price: 151.35 cost: 150.5702257 PG 11-22 9:48 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.32 151.35
+******** 11-22 10:01
+orderID: 10 tradeID 101 SELL INVENTORY: offer price: 151.37 cost: 150.5702257 PG 11-22 10:01 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.34 151.37
+orderID: 10 tradeID 101 *ORDER FILL* Submitted->Filled 11-22 10:03:21.362 PG 11-22 10:01 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
