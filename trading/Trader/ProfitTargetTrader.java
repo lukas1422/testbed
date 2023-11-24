@@ -214,6 +214,7 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
         String symb = ibContractToSymbol(ct);
+        pr("last", tt, symb, price, t);
 
         switch (tt) {
             case LAST:
@@ -283,6 +284,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
+        pr("handlevol", tt, symbol, vol);
     }
 
     @Override
@@ -334,7 +336,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }));
 
             es.schedule(() -> {
-                pr("Position end: requesting live for fut:", symb);
+                pr("Position end: requesting live:", symb);
                 req1ContractLive(apiController, liveCompatibleCt(generateUSStockContract(symb)), this, false);
             }, 10L, TimeUnit.SECONDS);
         });
@@ -345,7 +347,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (symbolPosMap.get(symb).isZero()) {
-                    Allstatic.inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                    inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
                     pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
                 }
@@ -359,7 +361,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-                pr("print stats:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                pr("print stats 1d:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                pr("print stats 3d:", symb, printStats(threeDayData.get(symb)));
 
 
 //                if (symb.equalsIgnoreCase("SPY")) {
@@ -390,7 +393,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-        Allstatic.aggregateDelta = targetStockList.stream().mapToDouble(s ->
+        aggregateDelta = targetStockList.stream().mapToDouble(s ->
                 symbolPosMap.getOrDefault(s, Decimal.ZERO).
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
@@ -398,7 +401,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
                         .getOrDefault(s, 0.0)));
 
-        pr("aggregate Delta", r(Allstatic.aggregateDelta), "each delta", symbolDeltaMap);
+        pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
 //        if (!openOrders.isEmpty()) {
 //            openOrders.forEach((k, v) -> {

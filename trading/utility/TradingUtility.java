@@ -607,7 +607,7 @@ public class TradingUtility {
 
     public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty()) {
-            return "";
+            return "print stats:empty";
         }
         double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
         double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();

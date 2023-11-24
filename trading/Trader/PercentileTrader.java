@@ -381,7 +381,8 @@ public class PercentileTrader implements LiveHandler,
 
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-                pr(symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                pr(symb, "1 day stats:", printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                pr(symb, "3 day stats:", printStats(threeDayData.get(symb)));
 
 
 //                if (symb.equalsIgnoreCase("SPY")) {
