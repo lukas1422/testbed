@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 
+import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
@@ -91,7 +92,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), Allstatic.outputFile);
+        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), outputFile);
         registerContract(wmt);
         registerContract(pg);
 //        registerContract(brk);
@@ -159,7 +160,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
-        outputToFile("cancelling all orders on start up", Allstatic.outputFile);
+        outputToFile("cancelling all orders on start up", outputFile);
         apiController.cancelAllOrders();
 
 //        apiController.reqPnLSingle();
@@ -177,8 +178,8 @@ public class ProfitTargetTrader implements LiveHandler,
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
-        Allstatic.orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
-        Allstatic.openOrders.put(symb, new ConcurrentHashMap<>());
+        orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
+        openOrders.put(symb, new ConcurrentHashMap<>());
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
         }
@@ -225,10 +226,10 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
 
                 //trade logic
-                if (Allstatic.orderSubmitted.get(symb).values().stream().anyMatch(e ->
+                if (orderSubmitted.get(symb).values().stream().anyMatch(e ->
                         e.getAugmentedOrderStatus() != OrderStatus.Filled)) {
 
-                    pr("All unfilled orders in orderSubmitted:", symb, Allstatic.orderSubmitted.get(symb).values().stream()
+                    pr("All unfilled orders in orderSubmitted:", symb, orderSubmitted.get(symb).values().stream()
                             .filter(e -> e.getAugmentedOrderStatus() != OrderStatus.Filled)
                             .toList());
                 }
@@ -241,7 +242,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //                        pr(symb, openOrders.get(symb).isEmpty());
 //                    }
 
-                    if (Allstatic.openOrders.get(symb).isEmpty()) {
+                    if (openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                                 if (Allstatic.aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < Allstatic.DELTA_LIMIT_EACH_STOCK) {
@@ -266,7 +267,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             }
                         }
                     } else {
-                        pr("there are open orders ", symb, Allstatic.openOrders.get(symb).values());
+                        pr("there are open orders ", symb, openOrders.get(symb).values());
                     }
                 }
                 break;
@@ -434,11 +435,11 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (Allstatic.openOrders.containsKey(symb) && !Allstatic.openOrders.get(symb).isEmpty()) {
-            Allstatic.openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder2 fails. Live order:", symb, "orderID:",
+        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder2 fails. Live order:", symb, "orderID:",
                     order.orderId(), "B/S", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
             outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
-                    "adder2 failed, there are open orders", Allstatic.openOrders.get(symb));
+                    "adder2 failed, there are open orders", openOrders.get(symb));
             pr(symb, "adder2:open order");
             return;
         }
@@ -458,13 +459,13 @@ public class ProfitTargetTrader implements LiveHandler,
                 int id = Allstatic.tradeID.incrementAndGet();
                 double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
                 Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-                Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+                orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
                 placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
-                outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
+                outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
                 outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                        "adder2:", "price:", bidPrice, "qty:", sizeToBuy, Allstatic.orderSubmitted.get(symb).get(id),
+                        "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
                         "p/b/a:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                        "3d perc/1d perc", perc3d, perc1d), Allstatic.outputFile);
+                        "3d perc/1d perc", perc3d, perc1d), outputFile);
             }
         }
 
@@ -488,12 +489,12 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (Allstatic.openOrders.containsKey(symb) && !Allstatic.openOrders.get(symb).isEmpty()) {
+        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
 //            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
 //                    order.orderId(), "action:", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
 //            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
 //                    "buying failed, there are open orders", openOrders.get(symb));
-            pr(symb, "adding fail:open order", Allstatic.openOrders.get(symb));
+            pr(symb, "adding fail:open order", openOrders.get(symb));
             return;
         }
 
@@ -521,13 +522,13 @@ public class ProfitTargetTrader implements LiveHandler,
             int id = Allstatic.tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-            Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
-            outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
+            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, Allstatic.orderSubmitted.get(symb).get(id),
+                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
                     "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                    "3d perc/1d perc", perc3d, perc1d), Allstatic.outputFile);
+                    "3d perc/1d perc", perc3d, perc1d), outputFile);
         }
     }
 
@@ -541,8 +542,8 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (Allstatic.openOrders.containsKey(symb) && !Allstatic.openOrders.get(symb).isEmpty()) {
-            outputToGeneral("cutter failed, there is live order.", Allstatic.openOrders.get(symb));
+        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+            outputToGeneral("cutter failed, there is live order.", openOrders.get(symb));
             return;
         }
 
@@ -560,13 +561,13 @@ public class ProfitTargetTrader implements LiveHandler,
                     costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
-            Allstatic.orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
-            outputToSymbolFile(symb, str("********", t.format(f1)), Allstatic.outputFile);
+            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
                     "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
-                    Optional.ofNullable(Allstatic.orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
-                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), Allstatic.outputFile);
+                    Optional.ofNullable(orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
+                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
         }
     }
 
@@ -586,11 +587,11 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice(),
-                Optional.ofNullable(Allstatic.orderSubmitted.get(symb).get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
+                Optional.ofNullable(orderSubmitted.get(symb).get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
 
         outputToFile(str("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice()), Allstatic.outputFile);
+                execution.price(), execution.shares(), execution.avgPrice()), outputFile);
     }
 
     @Override
@@ -600,12 +601,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        Allstatic.orderSubmitted.entrySet().stream().filter(e -> e.getValue().entrySet().stream()
+        orderSubmitted.entrySet().stream().filter(e -> e.getValue().entrySet().stream()
                         .anyMatch(e1 -> e1.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()))
                 .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
 
-        Allstatic.orderSubmitted.forEach((key, value) -> value.forEach((key1, value1) -> {
+        orderSubmitted.forEach((key, value) -> value.forEach((key1, value1) -> {
             if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
                 outputToGeneral("2.commission report", "symb:", key, "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
@@ -625,13 +626,13 @@ public class ProfitTargetTrader implements LiveHandler,
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
         outputToFile(str("open order:", getESTLocalDateTimeNow().format(f), symb,
-                "order:", order, "orderstate:", orderState), Allstatic.outputFile);
+                "order:", order, "orderstate:", orderState), outputFile);
 
-        if (!Allstatic.openOrders.containsKey(symb)) {
-            Allstatic.openOrders.put(symb, new ConcurrentHashMap<>());
+        if (!openOrders.containsKey(symb)) {
+            openOrders.put(symb, new ConcurrentHashMap<>());
         }
 
-        Allstatic.openOrders.get(symb).put(order.orderId(), order);
+        openOrders.get(symb).put(order.orderId(), order);
 
         outputToGeneral("open order", getESTLocalDateTimeNow().format(f), symb,
                 "orderID", order.orderId(), "orderType:", order.orderType(), "action:", order.action(),
@@ -640,7 +641,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        pr("Open order end. Print all open orders:", Allstatic.openOrders);
+        pr("Open order end. Print all open orders:", openOrders);
     }
 
     @Override
@@ -648,15 +649,15 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
         outputToFile(str("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining), Allstatic.outputFile);
+                status, "filled:", filled, "remaining:", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
-            pr("in orderstatus deleting filled from liveorders", Allstatic.openOrders);
-            Allstatic.openOrders.forEach((k, v) -> {
+            pr("in orderstatus deleting filled from liveorders", openOrders);
+            openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
                     outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
                     v.remove(orderId);
                     outputToGeneral("remaining open orders for ", k, v);
-                    outputToGeneral("remaining ALL open orders", Allstatic.openOrders);
+                    outputToGeneral("remaining ALL open orders", openOrders);
                 }
             });
         }
@@ -665,7 +666,7 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
         outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id",
-                orderId, "errorCode", errorCode, "msg:", errorMsg), Allstatic.outputFile);
+                orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
     }
 
     //open orders end
@@ -676,14 +677,14 @@ public class ProfitTargetTrader implements LiveHandler,
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");
-            outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), Allstatic.outputFile);
-            Allstatic.orderSubmitted.forEach((k, v) -> {
+            outputToFile(str("*****Ending*****", getESTLocalDateTimeNow().format(f1)), outputFile);
+            orderSubmitted.forEach((k, v) -> {
                 v.forEach((k1, v1) -> {
                     if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
                             v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
                         outputToFile(str("unexecuted orders:", v1.getSymbol(),
                                 "Shutdown status", getESTLocalTimeNow().format(f1),
-                                v1.getAugmentedOrderStatus(), v), Allstatic.outputFile);
+                                v1.getAugmentedOrderStatus(), v), outputFile);
                     }
                 });
             });
