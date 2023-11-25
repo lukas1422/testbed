@@ -582,7 +582,7 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToFile(str("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
-            pr("in orderstatus deleting filled from liveorders", openOrders);
+            pr("in profit target/orderstatus/deleting filled from openorders", openOrders);
 
             targetStockList.forEach(s -> {
                 if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {

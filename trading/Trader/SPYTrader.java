@@ -24,6 +24,7 @@ import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.INVENTORY_ADDER;
 import static enums.AutoOrderType.INVENTORY_CUTTER;
 import static enums.InventoryStatus.BUYING_INVENTORY;
+import static enums.InventoryStatus.NO_INVENTORY;
 import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.TradingUtility.getESTLocalTimeNow;
@@ -312,7 +313,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             if (position.longValue() > 0) {
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, NO_INVENTORY);
             } else {
                 inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
@@ -328,7 +329,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, NO_INVENTORY);
                 costMap.put(symb, 0.0);
             }
 
@@ -351,9 +352,11 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         pr("periodic compute SPY", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
-                if (symbolPosMap.get(symb).isZero()) {
-                    inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
-                } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
+                if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
+                    inventoryStatusMap.put(symb, NO_INVENTORY);
+                }
+
+                if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
                     pr(symb, "price/cost", Math.round(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
@@ -364,20 +367,8 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
 
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
-
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-
-//                if (symb.equalsIgnoreCase("SPY")) {
-//
-//                    pr("threeday data", threeDayData.get(symb));
-//                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-//                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-//                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
-//                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-//                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
-//                }
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
@@ -503,7 +494,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             return;
         }
 
-        if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
+        if (pos.isZero() && status == NO_INVENTORY) {
             inventoryStatusMap.put(symb, BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
             int id = tradeID.incrementAndGet();

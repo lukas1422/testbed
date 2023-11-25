@@ -259,7 +259,7 @@ public class PercentileTrader implements LiveHandler,
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 30 && oneDayPctMap.get(symb) < 5 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
-                                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                                        percentileAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
                                     }
                                 }
                             }
@@ -269,7 +269,7 @@ public class PercentileTrader implements LiveHandler,
                                     pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
                                     if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)
                                             && oneDayPctMap.get(symb) > 90) {
-                                        inventoryCutter(ct, price, t);
+                                        percentileCutter(ct, price, t);
                                     }
 //                                else if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) < 0.99) {
 //                                    inventoryAdder2More(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
@@ -491,7 +491,7 @@ public class PercentileTrader implements LiveHandler,
 //    }
 
     //Trade
-    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
+    private static void percentileAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
         InventoryStatus status = inventoryStatusMap.get(symb);
@@ -502,10 +502,6 @@ public class PercentileTrader implements LiveHandler,
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-//            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
-//                    order.orderId(), "action:", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
-//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
-//                    "buying failed, there are open orders", openOrders.get(symb));
             pr(symb, "adding fail:open order", openOrders.get(symb));
             return;
         }
@@ -537,30 +533,30 @@ public class PercentileTrader implements LiveHandler,
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
+            outputToSymbolFile(symb, str("orderID:", "tradeID:", id, o.orderId(), o.action(),
+                    "BUY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
                     "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                    "3d perc/1d perc", perc3d, perc1d), outputFile);
+                    "3d p%/1d p%", perc3d, perc1d), outputFile);
         }
     }
 
 
-    private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
+    private static void percentileCutter(Contract ct, double price, LocalDateTime t) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 
         if (inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
-            outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
+            outputToGeneral(str("percentileCUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
             return;
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-            outputToGeneral("cutter failed, there is live order.", openOrders.get(symb));
+            outputToGeneral("percentilecutter failed, there is live order.", openOrders.get(symb));
             return;
         }
 
         if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "CUTTER FAIL, wait 10 seconds");
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "percentile CUTTER FAIL, wait 10 seconds");
             return;
         }
 
@@ -577,7 +573,7 @@ public class PercentileTrader implements LiveHandler,
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
-                    "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
+                    "percentileSELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
                     Optional.ofNullable(orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
                     "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
         }
@@ -598,12 +594,11 @@ public class PercentileTrader implements LiveHandler,
 
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice(),
-                Optional.ofNullable(orderSubmitted.get(symb).get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
+                execution.price(), execution.shares(), execution.avgPrice());
 
-        outputToFile(str("tradeReport", symb,
+        outputToGeneral("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice()), outputFile);
+                execution.price(), execution.shares(), execution.avgPrice());
     }
 
     @Override
@@ -624,25 +619,19 @@ public class PercentileTrader implements LiveHandler,
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
             }
         }));
-
-//        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).stream().anyMatch(e -> e.orderId())
-//                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
-
-//        outputToGeneral("commission report", "symb:", symb, "commission",
-//                commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
     }
 
 
-    //Open Orders
+    //***********************Open Orders************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
         outputToFile(str("open order:", getESTLocalDateTimeNow().format(f), symb,
                 "order:", order, "orderstate:", orderState), outputFile);
 
-        if (!openOrders.containsKey(symb)) {
-            openOrders.put(symb, new ConcurrentHashMap<>());
-        }
+//        if (!openOrders.containsKey(symb)) {
+//            openOrders.put(symb, new ConcurrentHashMap<>());
+//        }
 
         openOrders.get(symb).put(order.orderId(), order);
 
@@ -664,14 +653,26 @@ public class PercentileTrader implements LiveHandler,
                 status, "filled:", filled, "remaining:", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders", openOrders);
-            openOrders.forEach((k, v) -> {
-                if (v.containsKey(orderId)) {
-                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
-                    v.remove(orderId);
-                    outputToGeneral("remaining open orders for ", k, v);
-                    outputToGeneral("remaining ALL open orders", openOrders);
+
+            targetStockList.forEach(s -> {
+                if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {
+                    if (openOrders.get(s).containsKey(orderId)) {
+                        outputToGeneral(s, "removing order from ordermap. OrderID:", orderId, "order details:",
+                                openOrders.get(s).get(orderId));
+                        openOrders.get(s).remove(orderId);
+                        outputToGeneral("remaining open orders for ", s, openOrders.get(s));
+                        outputToGeneral("remaining ALL open orders", openOrders);
+                    }
                 }
             });
+//            openOrders.forEach((k, v) -> {
+//                if (v.containsKey(orderId)) {
+//                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
+//                    v.remove(orderId);
+//                    outputToGeneral("remaining open orders for ", k, v);
+//                    outputToGeneral("remaining ALL open orders", openOrders);
+//                }
+//            });
         }
     }
 
