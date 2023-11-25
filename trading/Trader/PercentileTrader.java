@@ -60,41 +60,41 @@ public class PercentileTrader implements LiveHandler,
 //    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
-    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
-            = new ConcurrentSkipListMap<>();
-    private static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
-    private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
-
-
-    //historical data
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
-            = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData
-            = new ConcurrentSkipListMap<>(String::compareTo);
-
-//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
-//    = new ConcurrentSkipListMap<>(String::compareTo);
-
-
-    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-
-
-    private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
-
-
-    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
-
-    private static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+//    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
+//            = new ConcurrentSkipListMap<>();
+//    private static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
+//    private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+//
+//
+//    //historical data
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
+//            = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData
+//            = new ConcurrentSkipListMap<>(String::compareTo);
+//
+////    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
+////    = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//
+//    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+//
+//
+//    private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
+//
+//
+//    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
+//
+//    private static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     //avoid too many requests at once, only 50 requests allowed at one time.
     //private static Semaphore histSemaphore = new Semaphore(45);
@@ -105,12 +105,12 @@ public class PercentileTrader implements LiveHandler,
     //    public static final LocalDateTime TODAY_MARKET_START_TIME =
     //            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
 
-    public static final LocalDateTime TODAY_MARKET_START_TIME =
-            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
-//            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
+//    public static final LocalDateTime TODAY_MARKET_START_TIME =
+//            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
+////            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private PercentileTrader() {
-        pr("initializing percentile trader", "HK time",
+        pr("percentile trader", "HK time",
                 LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
@@ -128,7 +128,7 @@ public class PercentileTrader implements LiveHandler,
         boolean connectionStatus = false;
 
         try {
-            pr(" using port 4001");
+            pr(" using port 4001 GATEWAY");
             ap.connect("127.0.0.1", 4001, 8, "");
             connectionStatus = true;
             l.countDown();
@@ -139,7 +139,7 @@ public class PercentileTrader implements LiveHandler,
         }
 
         if (!connectionStatus) {
-            pr(" using port 7496");
+            pr(" using port 7496 for TWS");
             ap.connect("127.0.0.1", 7496, 8, "");
             l.countDown();
             pr(" Latch counted down 7496" + getESTLocalTimeNow().format(f1));
@@ -215,7 +215,6 @@ public class PercentileTrader implements LiveHandler,
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
         threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-//        pr("three day data today so far ", symbol, ld, close);
         liveData.get(symbol).put(ld, close);
     }
 

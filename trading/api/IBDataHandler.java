@@ -17,6 +17,7 @@ import static utility.Utility.pr;
 public class IBDataHandler {
 
     public static void tickPrice(int reqId, int tickType, double price) {
+        pr("tickPrice", reqId, tickType, price);
         if (Allstatic.globalRequestMap.containsKey(reqId)) {
             Request r = Allstatic.globalRequestMap.get(reqId);
             LiveHandler lh = (LiveHandler) Allstatic.globalRequestMap.get(reqId).getHandler();

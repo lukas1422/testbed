@@ -9,15 +9,14 @@ import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
 
-import java.io.File;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 //import static Trader.Allstatic.*;
 import static Trader.Allstatic.*;
+import static Trader.Allstatic.threeDayPctMap;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static api.TradingConstants.f1;
@@ -43,9 +42,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     Contract spy = generateUSStockContract("SPY");
 
-    private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
-
-    private static final double PROFIT_LEVEL = 1.005;
+//    private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
+//
+//    private static final double PROFIT_LEVEL = 1.005;
     //private static final double DELTA_LIMIT = 4000;
 //    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
@@ -60,44 +59,44 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     //static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
     //data
-    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
-    private static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
-    private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
-    private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+//    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
+//    private static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
+//    private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
+//    private static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
 
 
     //historical data
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData = new ConcurrentSkipListMap<>(String::compareTo);
-
-
-    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-
-
-    private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
-
-
-    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
-
-    private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
-
-    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
-
-    public static final LocalDateTime TODAY_MARKET_START_TIME =
-            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//
+//    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+//
+//
+//    private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
+//
+//
+//    private volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
+//
+//    private static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
+//
+//    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+//
+//    public static final LocalDateTime TODAY_MARKET_START_TIME =
+//            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
 //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private SPYTrader() {
-        pr("initializing...", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
+        pr("SPYTrader", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
@@ -119,7 +118,6 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             ap.connect("127.0.0.1", 4001, 7, "");
             connectionStatus = true;
             l.countDown();
-//            pr(" Latch counted down 4001 " + LocalTime.now());
             pr(" Latch counted down 4001 " + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(f1));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);

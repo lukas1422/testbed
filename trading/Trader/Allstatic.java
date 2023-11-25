@@ -3,10 +3,7 @@ package Trader;
 import TradeType.TradeBlock;
 import api.OrderAugmented;
 import auxiliary.SimpleBar;
-import client.Contract;
-import client.Decimal;
-import client.Order;
-import client.Types;
+import client.*;
 import enums.InventoryStatus;
 import historical.Request;
 import utility.TradingUtility;
@@ -19,8 +16,11 @@ import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.TradingUtility.getTradeDate;
 import static utility.Utility.*;
 
@@ -28,6 +28,8 @@ import static utility.Utility.*;
 public class Allstatic {
     public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
+    static final LocalDateTime TODAY_MARKET_START_TIME =
+            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final double DELTA_LIMIT = 10000;
     static final double DELTA_LIMIT_EACH_STOCK = 2000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
@@ -56,6 +58,28 @@ public class Allstatic {
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
+    //data
+    static volatile TreeSet<String> targetStockList = new TreeSet<>();
+    static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
+    static Map<String, Double> bidMap = new ConcurrentHashMap<>();
+    static Map<String, Double> askMap = new ConcurrentHashMap<>();
+    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
+            = new ConcurrentSkipListMap<>();
+    static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData
+            = new ConcurrentSkipListMap<>(String::compareTo);
+    //historical data
+    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
+            = new ConcurrentSkipListMap<>(String::compareTo);
+    volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
+    volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+    volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
+    static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
+    static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
+    static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
+    static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+    static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
+    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     public static Contract getActiveA50Contract() {
         Contract ct = new Contract();
