@@ -10,9 +10,11 @@ import utility.TradingUtility;
 import utility.Utility;
 
 import java.io.File;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -59,7 +61,6 @@ public class Allstatic {
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
     //data
-    static volatile TreeSet<String> targetStockList = new TreeSet<>();
     static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();
@@ -113,5 +114,27 @@ public class Allstatic {
 //        ct.lastTradeDateOrContractMonth("20190");
         ct.currency("USD");
         return ct;
+    }
+
+    // this gets YTD return
+    static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
+        String symbol = ibContractToSymbol(c);
+
+        if (!ytdDayData.containsKey(symbol)) {
+            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
+        }
+
+        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+    }
+
+    static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+        String symbol = ibContractToSymbol(c);
+        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+                TimeZone.getTimeZone("America/New_York").toZoneId());
+
+        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+//        pr("three day data today so far ", symbol, ld, close);
+        liveData.get(symbol).put(ld, close);
     }
 }

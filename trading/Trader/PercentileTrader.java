@@ -44,10 +44,11 @@ public class PercentileTrader implements LiveHandler,
     Contract tsla = generateUSStockContract("TSLA");
 
     private static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
+    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
 
-    private static final double PROFIT_LEVEL = 1.005;
-    private static final double DELTA_LIMIT = 10000;
-    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
+//    private static final double PROFIT_LEVEL = 1.005;
+//    private static final double DELTA_LIMIT = 10000;
+//    private static final double DELTA_LIMIT_EACH_STOCK = 2000;
 
     //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
 //    static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
@@ -164,11 +165,11 @@ public class PercentileTrader implements LiveHandler,
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), PercentileTrader::todaySoFar, 3, Types.BarSize._1_min);
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), PercentileTrader::ytdOpen,
+                        histCompatibleCt(c), Allstatic::ytdOpen,
                         Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
         });
@@ -183,17 +184,6 @@ public class PercentileTrader implements LiveHandler,
         apiController.reqExecutions(new ExecutionFilter(), this);
         outputToFile("cancelling all orders on start up", outputFile);
         apiController.cancelAllOrders();
-
-//        apiController.reqPnLSingle();
-//        pr("requesting contract details");
-//        registerContract(wmt);
-//        registerContract(pg);
-//        Executors.newScheduledThreadPool(10).schedule(() -> {
-////            registerContract(wmt);
-////            registerContract(pg);
-////            apiController.reqContractDetails(wmt,
-////                    list -> list.forEach(a -> pr(a.contract().symbol(), a.contract().conid())));
-//        }, 1, TimeUnit.SECONDS);
     }
 
     private static void registerContract(Contract ct) {
@@ -209,26 +199,26 @@ public class PercentileTrader implements LiveHandler,
         }
     }
 
-    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
-                TimeZone.getTimeZone("America/New_York").toZoneId());
-
-        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-        liveData.get(symbol).put(ld, close);
-    }
-
-    // this gets YTD return
-    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-
-        if (!ytdDayData.containsKey(symbol)) {
-            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
-        }
-
-        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
-        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-    }
+//    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+//        String symbol = ibContractToSymbol(c);
+//        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+//                TimeZone.getTimeZone("America/New_York").toZoneId());
+//
+//        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+//        liveData.get(symbol).put(ld, close);
+//    }
+//
+//    // this gets YTD return
+//    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
+//        String symbol = ibContractToSymbol(c);
+//
+//        if (!ytdDayData.containsKey(symbol)) {
+//            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
+//        }
+//
+//        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+//        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+//    }
 
     //live data start
     @Override

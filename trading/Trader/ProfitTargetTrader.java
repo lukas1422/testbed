@@ -30,6 +30,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
     //    Contract gjs = generateHKStockContract("388");
 //    Contract xiaomi = generateHKStockContract("1810");
+    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
+
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     //    Contract brk = generateUSStockContract("BRK B");
@@ -73,11 +75,10 @@ public class ProfitTargetTrader implements LiveHandler,
         boolean connectionStatus = false;
 
         try {
-            pr(" using port 4001");
+            pr(" using port 4001 GATEWAY");
             ap.connect("127.0.0.1", 4001, 5, "");
             connectionStatus = true;
             l.countDown();
-//            pr(" Latch counted down 4001 " + LocalTime.now());
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
@@ -87,7 +88,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr(" using port 7496");
             ap.connect("127.0.0.1", 7496, 5, "");
             l.countDown();
-            pr(" Latch counted down 7496" + getESTLocalTimeNow().format(f1));
+            pr(" Latch counted down 7496 TWS" + getESTLocalTimeNow().format(f1));
         }
 
         try {
@@ -108,11 +109,11 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), ProfitTargetTrader::todaySoFar, 3, Types.BarSize._1_min);
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), ProfitTargetTrader::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
+                        histCompatibleCt(c), Allstatic::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
         });
 
@@ -127,16 +128,6 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToFile("cancelling all orders on start up", outputFile);
         apiController.cancelAllOrders();
 
-//        apiController.reqPnLSingle();
-//        pr("requesting contract details");
-//        registerContract(wmt);
-//        registerContract(pg);
-//        Executors.newScheduledThreadPool(10).schedule(() -> {
-////            registerContract(wmt);
-////            registerContract(pg);
-////            apiController.reqContractDetails(wmt,
-////                    list -> list.forEach(a -> pr(a.contract().symbol(), a.contract().conid())));
-//        }, 1, TimeUnit.SECONDS);
     }
 
     private static void registerContract(Contract ct) {
@@ -150,28 +141,6 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!ytdDayData.containsKey(symb)) {
             ytdDayData.put(symb, new ConcurrentSkipListMap<>());
         }
-    }
-
-    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
-                TimeZone.getTimeZone("America/New_York").toZoneId());
-
-        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-//        pr("three day data today so far ", symbol, ld, close);
-        liveData.get(symbol).put(ld, close);
-    }
-
-    // this gets YTD return
-    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-
-        if (!ytdDayData.containsKey(symbol)) {
-            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
-        }
-
-        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
-        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
     }
 
     //live data start
@@ -203,14 +172,12 @@ public class ProfitTargetTrader implements LiveHandler,
 //                }
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-//                    if (openOrders.containsKey(symb)) {
-//                        pr(symb, openOrders.get(symb).isEmpty());
-//                    }
 
                     if (openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                                if (Allstatic.aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) < Allstatic.DELTA_LIMIT_EACH_STOCK) {
+                                if (Allstatic.aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
+                                        < Allstatic.DELTA_LIMIT_EACH_STOCK) {
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
@@ -616,14 +583,27 @@ public class ProfitTargetTrader implements LiveHandler,
                 status, "filled:", filled, "remaining:", remaining), outputFile);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders", openOrders);
-            openOrders.forEach((k, v) -> {
-                if (v.containsKey(orderId)) {
-                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
-                    v.remove(orderId);
-                    outputToGeneral("remaining open orders for ", k, v);
-                    outputToGeneral("remaining ALL open orders", openOrders);
+
+            targetStockList.forEach(s -> {
+                if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {
+                    if (openOrders.get(s).containsKey(orderId)) {
+                        outputToGeneral(s, "removing order from ordermap. OrderID:", orderId, "order details:",
+                                openOrders.get(s).get(orderId));
+                        openOrders.get(s).remove(orderId);
+                        outputToGeneral("remaining open orders for ", s, openOrders.get(s));
+                        outputToGeneral("remaining ALL open orders", openOrders);
+                    }
                 }
             });
+
+//            openOrders.forEach((k, v) -> {
+//                if (v.containsKey(orderId)) {
+//                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
+//                    v.remove(orderId);
+//                    outputToGeneral("remaining open orders for ", k, v);
+//                    outputToGeneral("remaining ALL open orders", openOrders);
+//                }
+//            });
         }
     }
 
@@ -646,13 +626,12 @@ public class ProfitTargetTrader implements LiveHandler,
                 v.forEach((k1, v1) -> {
                     if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
                             v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-                        outputToFile(str("unexecuted orders:", v1.getSymbol(),
+                        outputToFile(str("unexecuted orders on closing:", v1.getSymbol(),
                                 "Shutdown status", getESTLocalTimeNow().format(f1),
                                 v1.getAugmentedOrderStatus(), v), outputFile);
                     }
                 });
             });
-//            apiController.cancelAllOrders();
         }));
     }
 }

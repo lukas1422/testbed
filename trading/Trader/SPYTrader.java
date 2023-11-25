@@ -58,6 +58,9 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     //static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
 
+    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
+
+
     //data
 //    private static volatile TreeSet<String> targetStockList = new TreeSet<>();
 //    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData = new ConcurrentSkipListMap<>();
@@ -114,7 +117,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
 
         try {
-            pr(" using port 4001");
+            pr(" using port 4001 GATEWAY");
             ap.connect("127.0.0.1", 4001, 7, "");
             connectionStatus = true;
             l.countDown();
@@ -124,7 +127,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         }
 
         if (!connectionStatus) {
-            pr(" using port 7496");
+            pr(" using port 7496 TWS");
             ap.connect("127.0.0.1", 7496, 7, "");
             l.countDown();
             pr(" Latch counted down 7496" + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(f1));
@@ -150,11 +153,11 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), SPYTrader::todaySoFar, 3, Types.BarSize._1_min);
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), SPYTrader::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
+                        histCompatibleCt(c), Allstatic::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
             });
         });
 
@@ -195,27 +198,27 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         }
     }
 
-    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
-                TimeZone.getTimeZone("America/New_York").toZoneId());
-
-        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-//        pr("three day data today so far ", symbol, ld, close);
-        liveData.get(symbol).put(ld, close);
-    }
-
-    // this gets YTD return
-    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-
-        if (!ytdDayData.containsKey(symbol)) {
-            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
-        }
-
-        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
-        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-    }
+//    private static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+//        String symbol = ibContractToSymbol(c);
+//        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+//                TimeZone.getTimeZone("America/New_York").toZoneId());
+//
+//        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+////        pr("three day data today so far ", symbol, ld, close);
+//        liveData.get(symbol).put(ld, close);
+//    }
+//
+//    // this gets YTD return
+//    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
+//        String symbol = ibContractToSymbol(c);
+//
+//        if (!ytdDayData.containsKey(symbol)) {
+//            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
+//        }
+//
+//        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
+//        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+//    }
 
     //live data start
     @Override
@@ -252,7 +255,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                                     pr("first check", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
                                         pr("second check", symb);
-                                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                                        spyAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
                                     }
                                 }
                             }
@@ -345,7 +348,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     }
 
     static void periodicCompute() {
-        pr("periodic compute", getESTLocalTimeNow().format(simpleT));
+        pr("periodic compute SPY", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (symbolPosMap.get(symb).isZero()) {
@@ -404,26 +407,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
-//        if (!openOrders.isEmpty()) {
-//            openOrders.forEach((k, v) -> {
-//                if (v.isEmpty()) {
-//                    openOrders.remove(k);
-//                }
-//            });
-//            outputToGeneral(str("openOrderMap is not empty", openOrders));
-//        } else {
-//            pr("there  is no open orders");
-//        }
-
     }
-
-
-//    public static Decimal getTradeSizeFromPrice(double price) {
-//        if (price < 100) {
-//            return Decimal.get(20);
-//        }
-//        return Decimal.get(10);
-//    }
 
     public static Decimal getTradeSizeFromPercentile(double perc) {
         if (perc < 30) {
@@ -481,15 +465,8 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     }
 
-    public boolean checkTradable(String symb) {
-        if (!openOrders.containsKey(symb) && !orderSubmitted.containsKey(symb)) {
-            return true;
-        }
-        return false;
-    }
-
     //Trade
-    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
+    private static void spyAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
         InventoryStatus status = inventoryStatusMap.get(symb);
