@@ -512,16 +512,15 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
-        tradeKeyExecutionMap.put(tradeKey, execution);
+        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(execution, symb));
 
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice(),
-                Optional.ofNullable(orderSubmitted.get(symb).get(execution.orderId())).map(OrderAugmented::getSymbol).orElse(""));
+                execution.price(), execution.shares(), execution.avgPrice());
 
-        outputToFile(str("tradeReport", symb,
+        outputToGeneral("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice()), outputFile);
+                execution.price(), execution.shares(), execution.avgPrice());
     }
 
     @Override
@@ -531,17 +530,19 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        orderSubmitted.entrySet().stream().filter(e -> e.getValue().entrySet().stream()
-                        .anyMatch(e1 -> e1.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()))
+        String symb = tradeKeyExecutionMap.get(tradeKey).getSymbol();
+
+        orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
+                        == tradeKeyExecutionMap.get(tradeKey).getExec().orderId())
                 .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
 
-        orderSubmitted.forEach((key, value) -> value.forEach((key1, value1) -> {
-            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
-                outputToGeneral("2.commission report", "symb:", key, "commission",
+        orderSubmitted.get(symb).forEach((key1, value1) -> {
+            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
+                outputToGeneral("2.commission report", "symb:", symb, "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
             }
-        }));
+        });
     }
 
 
