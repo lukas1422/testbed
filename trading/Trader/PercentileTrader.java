@@ -23,6 +23,7 @@ import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.INVENTORY_ADDER;
 import static enums.AutoOrderType.INVENTORY_CUTTER;
 import static enums.InventoryStatus.BUYING_INVENTORY;
+import static enums.InventoryStatus.NO_INVENTORY;
 import static utility.TradingUtility.*;
 import static utility.TradingUtility.getESTLocalTimeNow;
 import static utility.Utility.*;
@@ -317,9 +318,7 @@ public class PercentileTrader implements LiveHandler,
             if (position.longValue() > 0) {
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
-            } else {
-                inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
+                inventoryStatusMap.put(symb, NO_INVENTORY);
             }
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
                     "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
@@ -333,7 +332,7 @@ public class PercentileTrader implements LiveHandler,
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                inventoryStatusMap.put(symb, NO_INVENTORY);
                 costMap.put(symb, 0.0);
             }
 
@@ -355,8 +354,8 @@ public class PercentileTrader implements LiveHandler,
         pr("periodic compute", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
-                if (symbolPosMap.get(symb).isZero()) {
-                    inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
+                if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
+                    inventoryStatusMap.put(symb, NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
                     pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
                 }
@@ -524,7 +523,7 @@ public class PercentileTrader implements LiveHandler,
             return;
         }
 
-        if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
+        if (pos.isZero() && status == NO_INVENTORY) {
             inventoryStatusMap.put(symb, BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
             int id = tradeID.incrementAndGet();
@@ -686,7 +685,7 @@ public class PercentileTrader implements LiveHandler,
     public static void main(String[] args) {
         PercentileTrader p1 = new PercentileTrader();
         p1.connectAndReqPos();
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(PercentileTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
 //        es.scheduleAtFixedRate(Tester::reqHoldings, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             pr("closing hook ");

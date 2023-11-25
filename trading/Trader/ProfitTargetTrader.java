@@ -19,6 +19,7 @@ import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static enums.InventoryStatus.BUYING_INVENTORY;
+import static enums.InventoryStatus.SELLING_INVENTORY;
 import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
@@ -240,8 +241,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 Allstatic.inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero() && Allstatic.inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                 Allstatic.inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
-            } else {
-                Allstatic.inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
                     "avgCost:", avgCost, "inventoryStatus", Allstatic.inventoryStatusMap.get(symb));
@@ -296,17 +295,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 pr("print stats 1d:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
                 pr("print stats 3d:", symb, printStats(threeDayData.get(symb)));
 
-
-//                if (symb.equalsIgnoreCase("SPY")) {
-//
-//                    pr("threeday data", threeDayData.get(symb));
-//                    pr("oneday data", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-//                    pr("high time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-//                            .max(Comparator.comparingDouble(e -> e.getValue().getHigh())).get());
-//                    pr("low time ", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME).entrySet().stream()
-//                            .min(Comparator.comparingDouble(e -> e.getValue().getLow())).get());
-//                }
-
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("computeNow:", symb, getESTLocalTimeNow().format(simpleT),
@@ -330,17 +318,6 @@ public class ProfitTargetTrader implements LiveHandler,
                         .getOrDefault(s, 0.0)));
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
-
-//        if (!openOrders.isEmpty()) {
-//            openOrders.forEach((k, v) -> {
-//                if (v.isEmpty()) {
-//                    openOrders.remove(k);
-//                }
-//            });
-//            outputToGeneral(str("openOrderMap is not empty", openOrders));
-//        } else {
-//            pr("periodic computing:no open orders");
-//        }
 
     }
 
@@ -421,10 +398,6 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-//            openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder fails. Live order:", symb, "orderID:",
-//                    order.orderId(), "action:", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
-//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
-//                    "buying failed, there are open orders", openOrders.get(symb));
             pr(symb, "adding fail:open order", openOrders.get(symb));
             return;
         }
@@ -468,8 +441,8 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 
-        if (Allstatic.inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
-            outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
+        if (Allstatic.inventoryStatusMap.get(symb) == SELLING_INVENTORY) {
+            outputToGeneral("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb);
             return;
         }
 
@@ -485,7 +458,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (pos.longValue() > 0) {
             lastOrderTime.put(symb, t);
-            Allstatic.inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
+            Allstatic.inventoryStatusMap.put(symb, SELLING_INVENTORY);
             int id = Allstatic.tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
@@ -493,12 +466,13 @@ public class ProfitTargetTrader implements LiveHandler,
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, SELLING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
-                    "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
-                    Optional.ofNullable(orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
-                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
+            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
+                    "SELL:", "offer price:", offerPrice, "cost:", cost,
+                    orderSubmitted.get(symb).get(id),
+                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile)
+            ;
         }
     }
 
@@ -569,35 +543,44 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("Open order end. Print all open orders:", openOrders);
     }
 
+    void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
+        m.forEach((k, v) -> v.forEach((k1, v1) -> {
+            if (v1.orderId() == orderID) {
+                m.get(k).remove(k1);
+            }
+        }));
+
+    }
+
     @Override
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining), outputFile);
+        outputToGeneral("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
+                status, "filled:", filled, "remaining:", remaining);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in profit target/orderstatus/deleting filled from openorders", openOrders);
 
-            targetStockList.forEach(s -> {
-                if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {
-                    if (openOrders.get(s).containsKey(orderId)) {
-                        outputToGeneral(s, "removing order from ordermap. OrderID:", orderId, "order details:",
-                                openOrders.get(s).get(orderId));
-                        openOrders.get(s).remove(orderId);
-                        outputToGeneral("remaining open orders for ", s, openOrders.get(s));
-                        outputToGeneral("remaining ALL open orders", openOrders);
-                    }
-                }
-            });
-
-//            openOrders.forEach((k, v) -> {
-//                if (v.containsKey(orderId)) {
-//                    outputToGeneral(k, "removing order from ordermap. OrderID:", orderId, "order details:", v.get(orderId));
-//                    v.remove(orderId);
-//                    outputToGeneral("remaining open orders for ", k, v);
-//                    outputToGeneral("remaining ALL open orders", openOrders);
+//            targetStockList.forEach(s -> {
+//                if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {
+//                    if (openOrders.get(s).containsKey(orderId)) {
+//                        outputToGeneral(s, "removing order from ordermap. OrderID:", orderId, "order details:",
+//                                openOrders.get(s).get(orderId));
+//                        openOrders.get(s).remove(orderId);
+//                        outputToGeneral("remaining open orders for ", s, openOrders.get(s));
+//                        outputToGeneral("remaining ALL open orders", openOrders);
+//                    }
 //                }
 //            });
+
+            openOrders.forEach((k, v) -> {
+                if (v.containsKey(orderId)) {
+                    outputToGeneral(k, "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId));
+                    v.remove(orderId);
+                    outputToGeneral("remaining open orders for ", k, v);
+                    outputToGeneral("remaining ALL open orders", openOrders);
+                }
+            });
         }
     }
 

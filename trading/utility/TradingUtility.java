@@ -243,6 +243,7 @@ public class TradingUtility {
 
 
     public static void outputToGeneral(Object... cs) {
+        pr(str(cs));
         outputToGeneral(str(cs));
     }
 

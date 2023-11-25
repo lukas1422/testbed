@@ -23,8 +23,7 @@ import static api.TradingConstants.f1;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.INVENTORY_ADDER;
 import static enums.AutoOrderType.INVENTORY_CUTTER;
-import static enums.InventoryStatus.BUYING_INVENTORY;
-import static enums.InventoryStatus.NO_INVENTORY;
+import static enums.InventoryStatus.*;
 import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.TradingUtility.getESTLocalTimeNow;
@@ -314,8 +313,6 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
             } else if (position.isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                 inventoryStatusMap.put(symb, NO_INVENTORY);
-            } else {
-                inventoryStatusMap.put(symb, InventoryStatus.UNKNOWN);
             }
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
                     "avgCost:", avgCost, "inventoryStatus", inventoryStatusMap.get(symb));
@@ -515,7 +512,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 
-        if (inventoryStatusMap.get(symb) == InventoryStatus.SELLING_INVENTORY) {
+        if (inventoryStatusMap.get(symb) == SELLING_INVENTORY) {
             outputToGeneral(str("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb));
             return;
         }
@@ -535,7 +532,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
         if (pos.longValue() > 0) {
             lastOrderTime.put(symb, t);
-            inventoryStatusMap.put(symb, InventoryStatus.SELLING_INVENTORY);
+            inventoryStatusMap.put(symb, SELLING_INVENTORY);
             int id = tradeID.incrementAndGet();
             double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
             double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
@@ -543,10 +540,10 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
             Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, InventoryStatus.SELLING_INVENTORY));
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, SELLING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID", id,
-                    "SELL INVENTORY:", "offer price:", offerPrice, "cost:", cost,
+            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
+                    "SELL:", "offer price:", offerPrice, "cost:", cost,
                     Optional.ofNullable(orderSubmitted.get(symb).get(id)).orElse(new OrderAugmented()),
                     "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
         }
@@ -565,11 +562,7 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         String symb = ibContractToSymbol(contract);
         tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(execution, symb));
 
-        pr("tradeReport:", tradeKey, symb,
-                "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice());
-
-        outputToGeneral("tradeReport", symb,
+        outputToGeneral("tradeReport:", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
     }
