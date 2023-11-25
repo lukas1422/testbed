@@ -511,7 +511,6 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
-//        pr("tradeReport", "key:", tradeKey, symb, execution);
 
         tradeKeyExecutionMap.put(tradeKey, execution);
 
@@ -543,12 +542,6 @@ public class ProfitTargetTrader implements LiveHandler,
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
             }
         }));
-
-//        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).stream().anyMatch(e -> e.orderId())
-//                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
-
-//        outputToGeneral("commission report", "symb:", symb, "commission",
-//                commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
     }
 
 

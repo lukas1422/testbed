@@ -78,7 +78,8 @@ public class Allstatic {
     static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
-    static Map<String, Execution> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+    static Map<String, ExecutionAugmented> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
     static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 

@@ -590,7 +590,7 @@ public class PercentileTrader implements LiveHandler,
         String symb = ibContractToSymbol(contract);
 //        pr("tradeReport", "key:", tradeKey, symb, execution);
 
-        tradeKeyExecutionMap.put(tradeKey, execution);
+        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(execution, symb));
 
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
@@ -609,12 +609,12 @@ public class PercentileTrader implements LiveHandler,
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
         orderSubmitted.entrySet().stream().filter(e -> e.getValue().entrySet().stream()
-                        .anyMatch(e1 -> e1.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()))
+                        .anyMatch(e1 -> e1.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()))
                 .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
 
         orderSubmitted.forEach((key, value) -> value.forEach((key1, value1) -> {
-            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
+            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
                 outputToGeneral("2.commission report", "symb:", key, "commission",
                         commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
             }
