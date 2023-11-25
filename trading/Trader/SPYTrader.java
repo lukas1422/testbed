@@ -563,17 +563,15 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
         pr("tradeReport", tradeKey, ibContractToSymbol(contract), execution);
 
         String symb = ibContractToSymbol(contract);
-        tradeKeyExecutionMap.put(tradeKey, execution);
+        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(execution, symb));
 
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice(),
-                Optional.ofNullable(orderSubmitted.get(symb).get(execution.orderId()))
-                        .map(OrderAugmented::getSymbol).orElse(""));
+                execution.price(), execution.shares(), execution.avgPrice());
 
-        outputToFile(str("tradeReport", symb,
+        outputToGeneral("tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice()), outputFile);
+                execution.price(), execution.shares(), execution.avgPrice());
     }
 
     @Override
@@ -583,23 +581,20 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        orderSubmitted.entrySet().forEach(e -> {
-            e.getValue().entrySet().forEach(f -> {
-                if (f.getValue().getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).orderId()) {
-                    outputToGeneral("commission report", "symb:", e.getKey(), "commission",
-                            commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
-                }
-                ;
-            });
+        String symb = tradeKeyExecutionMap.get(tradeKey).getSymbol();
+
+        orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
+                        == tradeKeyExecutionMap.get(tradeKey).getExec().orderId())
+                .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
+                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
+
+        orderSubmitted.get(symb).forEach((key1, value1) -> {
+            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
+                outputToGeneral("2.commission report", "symb:", symb, "commission",
+                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
+            }
         });
-
-//        String symb = Optional.ofNullable(tradeKeyExecutionMap.get(tradeKey)).stream().anyMatch(e -> e.orderId())
-//                .map(exec -> orderSubmitted.get(exec.orderId())).map(OrderAugmented::getSymbol).orElse("");
-
-//        outputToGeneral("commission report", "symb:", symb, "commission",
-//                commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
     }
-
 
     //Open Orders
     @Override
@@ -628,8 +623,8 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-        outputToFile(str("openorder orderstatus:", "orderId", orderId, "OrderStatus",
-                status, "filled", filled, "remaining", remaining), outputFile);
+        outputToGeneral("openorder orderstatus:", "orderId", orderId, "OrderStatus",
+                status, "filled", filled, "remaining", remaining);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in orderstatus deleting filled from liveorders");
             openOrders.forEach((k, v) -> {
@@ -645,8 +640,8 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToFile(str("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id",
-                orderId, "errorCode", errorCode, "msg:", errorMsg), outputFile);
+        outputToGeneral("HANDLE ORDER:", getESTLocalDateTimeNow().format(f), "order id",
+                orderId, "errorCode", errorCode, "msg:", errorMsg);
     }
 
     //open orders end
@@ -671,6 +666,4 @@ public class SPYTrader implements LiveHandler, ApiController.IPositionHandler, A
             apiController.cancelAllOrders();
         }));
     }
-
-
 }
