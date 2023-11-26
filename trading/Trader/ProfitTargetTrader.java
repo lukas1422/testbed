@@ -523,7 +523,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    //Open Orders
+    //Open Orders ***************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
@@ -532,14 +532,22 @@ public class ProfitTargetTrader implements LiveHandler,
 
         openOrders.get(symb).put(order.orderId(), order);
 
-//        outputToGeneral("openOrder callback:", getESTLocalDateTimeNow().format(f), symb,
-//                "order:", order, "orderState", orderState);
+        if (orderState.status() == OrderStatus.Filled) {
+            try {
+                outputToGeneral("openOrder:removing order", order);
+                openOrders.get(symb).remove(order.orderId());
+            } catch (NullPointerException e) {
+                outputToGeneral("open order doesn't contain order:", symb, order);
+            }
+        }
     }
 
     @Override
     public void openOrderEnd() {
         outputToGeneral("open order end: print all openOrders", openOrders);
     }
+
+    //open orders end **********************
 
     void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
         m.forEach((k, v) -> v.forEach((k1, v1) -> {
