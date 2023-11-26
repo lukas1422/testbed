@@ -450,39 +450,33 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 
-        if (inventoryStatusMap.get(symb) == SELLING_INVENTORY) {
-            outputToGeneral("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb);
-            return;
-        }
+//        if (inventoryStatusMap.get(symb) == SELLING_INVENTORY) {
+//            outputToGeneral("CUTTER FAIL. selling, cannot sell again", LocalDateTime.now(), symb);
+//            return;
+//        }
+//        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
+//            outputToGeneral("cutter failed, there is live order.", openOrders.get(symb));
+//            return;
+//        }
+//        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
+//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "CUTTER FAIL, wait 10 seconds");
+//            return;
+//        }
+//            lastOrderTime.put(symb, t);
+//            inventoryStatusMap.put(symb, SELLING_INVENTORY);
+        int id = tradeID.incrementAndGet();
+        double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
+        double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
+                costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
 
-        if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
-            outputToGeneral("cutter failed, there is live order.", openOrders.get(symb));
-            return;
-        }
-
-        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "CUTTER FAIL, wait 10 seconds");
-            return;
-        }
-
-        if (pos.longValue() > 0) {
-            lastOrderTime.put(symb, t);
-            inventoryStatusMap.put(symb, SELLING_INVENTORY);
-            int id = Allstatic.tradeID.incrementAndGet();
-            double cost = costMap.getOrDefault(symb, Double.MAX_VALUE);
-            double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
-                    costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
-
-            Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
-            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, SELLING_INVENTORY));
-            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-            outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
-                    "SELL:", "offer price:", offerPrice, "cost:", cost,
-                    orderSubmitted.get(symb).get(id),
-                    "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile)
-            ;
-        }
+        Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
+        orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, SELLING_INVENTORY));
+        outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+        outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
+                "SELL:", "offer price:", offerPrice, "cost:", cost,
+                orderSubmitted.get(symb).get(id),
+                "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
     }
 
 
@@ -533,19 +527,18 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral("open order:", getESTLocalDateTimeNow().format(f), symb,
-                "order:", order, "orderState:", orderState);
+        outputToGeneral("openOrder callback:", getESTLocalDateTimeNow().format(f), symb,
+                "order:", order, "orderState status", orderState.status(), orderState.getStatus());
 
         openOrders.get(symb).put(order.orderId(), order);
 
-        outputToGeneral("open order", getESTLocalDateTimeNow().format(f), symb,
-                "orderID", order.orderId(), "orderType:", order.orderType(), "action:", order.action(),
-                "quantity", order.totalQuantity(), "orderPrice", order.lmtPrice(), "orderState", orderState);
+//        outputToGeneral("openOrder callback:", getESTLocalDateTimeNow().format(f), symb,
+//                "order:", order, "orderState", orderState);
     }
 
     @Override
     public void openOrderEnd() {
-        pr("Open order end. Print all open orders:", openOrders);
+        outputToGeneral("open order end: print all openOrders", openOrders);
     }
 
     void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
