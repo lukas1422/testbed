@@ -134,6 +134,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
+        orderStatusMap.put(symb, new ConcurrentSkipListMap<>());
         openOrders.put(symb, new ConcurrentHashMap<>());
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
@@ -141,6 +142,13 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!ytdDayData.containsKey(symb)) {
             ytdDayData.put(symb, new ConcurrentSkipListMap<>());
         }
+    }
+
+    static boolean noBlockingOrders(String symb) {
+        if (!orderStatusMap.containsKey(symb)) {
+            return true;
+        }
+        return orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
     }
 
     //live data start
@@ -169,7 +177,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //                }
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    if (openOrders.get(symb).isEmpty()) {
+                    if (openOrders.get(symb).isEmpty() && noBlockingOrders(symb)) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 //                            if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                             if (symbolPosMap.get(symb).isZero()) {
@@ -296,9 +304,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
-
-                ConcurrentSkipListMap<LocalDateTime, SimpleBar> threeDayMap = threeDayData.get(symb);
-
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
                 pr("print stats 1d:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
@@ -310,7 +315,6 @@ public class ProfitTargetTrader implements LiveHandler,
                         "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile,
                         "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
-//            pr("compute after percentile map", symb);
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
                     && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
@@ -387,12 +391,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     }
 
-//    public boolean checkTradable(String symb) {
-//        if (!openOrders.containsKey(symb) && !orderSubmitted.containsKey(symb)) {
-//            return true;
-//        }
-//        return false;
-//    }
 
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
@@ -425,12 +423,12 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-//            inventoryStatusMap.put(symb, BUYING_INVENTORY);
         lastOrderTime.put(symb, t);
         int id = tradeID.incrementAndGet();
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
         orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+        orderStatusMap.get(symb).put(id, OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
         outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
@@ -466,6 +464,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
         orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+        orderStatusMap.get(symb).put(id, OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
         outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
@@ -526,10 +525,15 @@ public class ProfitTargetTrader implements LiveHandler,
 
         openOrders.get(symb).put(order.orderId(), order);
 
+        orderStatusMap.get(symb).put(order.orderId(), orderState.status());
+
+
         if (orderState.status() == OrderStatus.Filled) {
             try {
                 outputToGeneral("openOrder:removing order", order);
-                openOrders.get(symb).remove(order.orderId());
+                if (openOrders.get(symb).containsKey(order.orderId())) {
+                    openOrders.get(symb).remove(order.orderId());
+                }
             } catch (NullPointerException e) {
                 outputToGeneral("open order doesn't contain order:", symb, order);
             }
@@ -545,12 +549,13 @@ public class ProfitTargetTrader implements LiveHandler,
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
+
         outputToGeneral("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
                 , "clientID:", clientId, "whyHeld", whyHeld);
+
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in profit target/orderstatus/deleting filled from open orders", openOrders);
-
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
                     outputToGeneral(k, "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId));
