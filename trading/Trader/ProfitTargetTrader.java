@@ -178,7 +178,8 @@ public class ProfitTargetTrader implements LiveHandler,
                             if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
                                         < DELTA_LIMIT_EACH_STOCK) {
-                                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
+                                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
+                                            oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10) {
                                         pr("second check", symb);
                                         inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
@@ -482,9 +483,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     //request realized pnl
 
-    /**
-     * Execution details
-     */
+    //Execution details *****************
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
@@ -522,6 +521,8 @@ public class ProfitTargetTrader implements LiveHandler,
         });
     }
 
+    //Execution end*********************************
+
 
     //Open Orders ***************************
     @Override
@@ -547,38 +548,15 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToGeneral("open order end: print all openOrders", openOrders);
     }
 
-    //open orders end **********************
-
-    void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
-        m.forEach((k, v) -> v.forEach((k1, v1) -> {
-            if (v1.orderId() == orderID) {
-                m.get(k).remove(k1);
-            }
-        }));
-    }
-
     @Override
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
         outputToGeneral("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining);
+                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
+                , "clientID:", clientId, "whyHeld", whyHeld);
         if (status == OrderStatus.Filled && remaining.isZero()) {
             pr("in profit target/orderstatus/deleting filled from open orders", openOrders);
-
-//            targetStockList.forEach(s -> {
-//                if (openOrders.containsKey(s) && !openOrders.get(s).isEmpty()) {
-//                    if (openOrders.get(s).containsKey(orderId)) {
-//                        outputToGeneral(s, "removing order from ordermap. OrderID:", orderId, "order details:",
-//                                openOrders.get(s).get(orderId));
-//                        openOrders.get(s).remove(orderId);
-//                        outputToGeneral("remaining open orders for ", s, openOrders.get(s));
-//                        outputToGeneral("remaining ALL open orders", openOrders);
-//                    }
-//                }
-//            });
-
-            //set invetorystatus here?
 
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
@@ -593,9 +571,20 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToGeneral("HANDLE ORDER ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
+        outputToGeneral("openOrder ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
+
+    //open orders end **********************
+
+    void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
+        m.forEach((k, v) -> v.forEach((k1, v1) -> {
+            if (v1.orderId() == orderID) {
+                m.get(k).remove(k1);
+            }
+        }));
+    }
+
 
     //open orders end
     public static void main(String[] args) {
@@ -604,16 +593,16 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1));
-            orderSubmitted.forEach((k, v) -> {
-                v.forEach((k1, v1) -> {
-                    if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
-                            v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-                        outputToFile(str("unexecuted orders on closing:", v1.getSymbol(),
-                                "Shutdown status", getESTLocalTimeNow().format(f1),
-                                v1.getAugmentedOrderStatus(), v), outputFile);
-                    }
-                });
-            });
+//            orderSubmitted.forEach((k, v) -> {
+//                v.forEach((k1, v1) -> {
+//                    if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
+//                            v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+//                        outputToFile(str("unexecuted orders on closing:", v1.getSymbol(),
+//                                "Shutdown status", getESTLocalTimeNow().format(f1),
+//                                v1.getAugmentedOrderStatus(), v), outputFile);
+//                    }
+//                });
+//            });
         }));
     }
 }

@@ -925,7 +925,8 @@ public class ApiController implements EWrapper {
     public interface IOrderHandler {
         void orderState(OrderState orderState);
 
-        void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice);
+        void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice,
+                         int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice);
 
         void handle(int errorCode, String errorMsg);
     }
@@ -1000,7 +1001,8 @@ public class ApiController implements EWrapper {
 
         void openOrderEnd();
 
-        void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice);
+        void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
+                         double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice);
 
         void handle(int orderId, int errorCode, String errorMsg);  // add permId?
     }
@@ -1060,10 +1062,14 @@ public class ApiController implements EWrapper {
     }
 
     @Override
-    public void orderStatus(int orderId, String status, Decimal filled, Decimal remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+    public void orderStatus(int orderId, String status, Decimal filled, Decimal remaining,
+                            double avgFillPrice, int permId, int parentId, double lastFillPrice,
+                            int clientId, String whyHeld, double mktCapPrice) {
+
         IOrderHandler handler = m_orderHandlers.get(orderId);
         if (handler != null) {
-            handler.orderStatus(OrderStatus.valueOf(status), filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice);
+            handler.orderStatus(OrderStatus.valueOf(status), filled, remaining,
+                    avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice);
         }
 
         IOrderCancelHandler orderCancelHandler = m_orderCancelHandlers.get(orderId);
@@ -1072,7 +1078,8 @@ public class ApiController implements EWrapper {
         }
 
         for (ILiveOrderHandler liveOrderHandler : m_liveOrderHandlers) {
-            liveOrderHandler.orderStatus(orderId, OrderStatus.valueOf(status), filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice);
+            liveOrderHandler.orderStatus(orderId, OrderStatus.valueOf(status), filled,
+                    remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice);
         }
         recEOM();
     }
