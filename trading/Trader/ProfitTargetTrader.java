@@ -325,7 +325,6 @@ public class ProfitTargetTrader implements LiveHandler,
                         .getOrDefault(s, 0.0)));
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
-
     }
 
 
@@ -427,17 +426,17 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (pos.isZero() && status == InventoryStatus.NO_INVENTORY) {
+        if (pos.isZero() && status == NO_INVENTORY) {
             inventoryStatusMap.put(symb, BUYING_INVENTORY);
             lastOrderTime.put(symb, t);
-            int id = Allstatic.tradeID.incrementAndGet();
+            int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
             orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id, BUYING_INVENTORY));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                    "BUY INVENTORY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
+                    "BUY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
                     "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
         }
