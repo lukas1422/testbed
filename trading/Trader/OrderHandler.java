@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
+import static Trader.Allstatic.inventoryStatusMap;
 import static Trader.Allstatic.orderSubmitted;
 import static api.TradingConstants.f2;
 import static client.OrderStatus.Filled;
@@ -25,7 +26,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
     private final int tradeID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-    private InventoryStatus status;
+    private InventoryStatus invStatus;
     private String symbol;
 
     OrderHandler(int id) {
@@ -36,7 +37,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     OrderHandler(String symb, int id, InventoryStatus s) {
         symbol = symb;
         tradeID = id;
-        status = s;
+        invStatus = s;
         tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
@@ -60,10 +61,12 @@ public class OrderHandler implements ApiController.IOrderHandler {
                         "completed time:", orderState.completedTime(),
                         "commission:", orderState.commission(), "warning:", orderState.warningText(),
                         "status:", orderState.status(), orderSubmitted.get(symbol).get(tradeID)), TradingConstants.fillsOutput);
-                if (status == InventoryStatus.BUYING_INVENTORY) {
-                    Allstatic.inventoryStatusMap.put(symbol, HAS_INVENTORY);
-                } else if (status == InventoryStatus.SELLING_INVENTORY) {
-                    Allstatic.inventoryStatusMap.put(symbol, SOLD);
+                if (invStatus == BUYING_INVENTORY) {
+                    inventoryStatusMap.put(symbol, HAS_INVENTORY);
+                } else if (invStatus == SELLING_INVENTORY) {
+                    inventoryStatusMap.put(symbol, SOLD);
+                } else {
+                    throw new IllegalStateException(str("inventory status is wrong:", invStatus));
                 }
             }
             tradeIDOrderStatusMap.put(tradeID, orderState.status());

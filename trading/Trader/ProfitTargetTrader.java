@@ -176,10 +176,10 @@ public class ProfitTargetTrader implements LiveHandler,
                     if (openOrders.get(symb).isEmpty()) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
-                                if (Allstatic.aggregateDelta < Allstatic.DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
-                                        < Allstatic.DELTA_LIMIT_EACH_STOCK) {
+                                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
+                                        < DELTA_LIMIT_EACH_STOCK) {
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb), oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10 && symbolPosMap.get(symb).isZero()) {
+                                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10) {
                                         pr("second check", symb);
                                         inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
                                     }
@@ -242,6 +242,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryStatusMap.put(symb, NO_INVENTORY);
                 } else if (inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                     inventoryStatusMap.put(symb, NO_INVENTORY);
+                } else if (inventoryStatusMap.get(symb) == SOLD) {
+                    inventoryStatusMap.put(symb, NO_INVENTORY);
                 }
             } else if (position.longValue() > 0) {
                 inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
@@ -284,6 +286,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("periodic compute", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
+                //if sold, can be reset here.
                 if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                     inventoryStatusMap.put(symb, InventoryStatus.NO_INVENTORY);
                 } else if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
