@@ -1,0 +1,45 @@
+******** 11-10 22:45
+7 102 BUY INVENTORY: price: 149.92 PG 11-10 22:45:34.365 INVENTORY_ADDER Created p/b/a 149.92 149.92 149.96
+7 102 *PATIENT ORDER FILL* PreSubmitted->Filled 11-10 22:45:35.035 PG 11-10 22:45:34.365 INVENTORY_ADDER Filled comm: 1.7976931348623157E308
+******** 11-10 23:06
+9 101 SELL INVENTORY: offerprice: 150.63 cost: 150.02 PG 11-10 23:06:15.304 INVENTORY_CUTTER Created p/b/a 150.64 150.6 150.63
+9 101 *PATIENT ORDER FILL* Submitted->Filled 11-10 23:06:16.001 PG 11-10 23:06:15.304 INVENTORY_CUTTER Filled comm: 1.7976931348623157E308
+******** 11-15 21:29
+2 101 BUY INVENTORY: price: 151.74 PG 11-15 21:29 INVENTORY_ADDER Created p/b/a 151.74 0.0 0.0
+Shutdown status 11-15 22:38 Submitted PG 11-15 21:29 INVENTORY_ADDER Submitted
+******** 11-15 23:17
+6 101 BUY INVENTORY: price: 151.03 PG 11-15 23:17 INVENTORY_ADDER Created p/b/a 151.05 151.03 151.05
+Shutdown status 11-15 23:17 Submitted PG 11-15 23:17 INVENTORY_ADDER Submitted
+******** 11-15 23:17
+8 101 BUY INVENTORY: price: 150.99 PG 11-15 23:17 INVENTORY_ADDER Created p/b/a 151.01 150.99 151.02
+******** 11-15 23:18
+9 102 BUY INVENTORY: price: 150.99 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 150.99 151.0 151.0
+******** 11-15 23:18
+10 103 BUY INVENTORY: price: 151.04 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 151.05 151.04 151.06
+******** 11-15 23:18
+11 104 BUY INVENTORY: price: 151.05 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 151.05 151.05 151.07
+11 104 *ORDER FILL* PreSubmitted->Filled 11-15 23:18:24.178 PG 11-15 23:18 INVENTORY_ADDER Filled
+10 103 *ORDER FILL* Submitted->Filled 11-15 23:18:35.785 PG 11-15 23:18 INVENTORY_ADDER Filled
+8 101 *ORDER FILL* Submitted->Filled 11-15 23:18:46.794 PG 11-15 23:17 INVENTORY_ADDER Filled
+9 102 *ORDER FILL* Submitted->Filled 11-15 23:18:46.800 PG 11-15 23:18 INVENTORY_ADDER Filled
+******** 11-16 22:50
+77 172 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.81 151.79 151.82
+******** 11-16 22:50
+78 173 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.82 151.79 151.82
+77 172 *ORDER FILL* Submitted->Filled 11-16 22:50:48.815  NULL 
+******** 11-20 9:30
+orderID: 2 tradeID: 101 BUY BUY INVENTORY: price: 150.21 qty: 10 PG 11-20 9:30 INVENTORY_ADDER Created p/b/a 150.21 150.31 150.67 3d perc/1d perc 28.0 0.0
+******** 11-21 9:30
+orderID: 4 tradeID: 101 BUY BUY INVENTORY: price: 149.72 qty: 10 PG 11-21 9:30 INVENTORY_ADDER Created p/b/a 149.85 149.72 150.01 3d perc/1d perc 20.0 0.0
+orderID: 4 tradeID 101 *ORDER FILL* Submitted->Filled 11-21 9:30:36.035 PG 11-21 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:30
+orderID: 6 tradeID 101 SELL INVENTORY: offer price: 150.63 cost: 149.75313 PG 11-22 9:30 INVENTORY_CUTTER Created price/bid/ask: 150.63 150.54 150.63
+orderID: 6 tradeID 101 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:36.636 PG 11-22 9:30 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:30
+orderID: 7 tradeID: 102 BUY BUY INVENTORY: price: 150.59 qty: 10 PG 11-22 9:30 INVENTORY_ADDER Created p/b/a 150.59 150.59 150.65 3d perc/1d perc 20.0 0.0
+orderID: 7 tradeID 102 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:48.318 PG 11-22 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+******** 11-22 9:48
+orderID: 8 tradeID 103 SELL INVENTORY: offer price: 151.35 cost: 150.5702257 PG 11-22 9:48 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.32 151.35
+******** 11-22 10:01
+orderID: 10 tradeID 101 SELL INVENTORY: offer price: 151.37 cost: 150.5702257 PG 11-22 10:01 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.34 151.37
+orderID: 10 tradeID 101 *ORDER FILL* Submitted->Filled 11-22 10:03:21.362 PG 11-22 10:01 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
