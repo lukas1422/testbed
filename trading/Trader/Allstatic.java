@@ -82,7 +82,7 @@ public class Allstatic {
     static Map<String, ExecutionAugmented> tradeKeyExecutionMap = new ConcurrentHashMap<>();
 
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
-    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+//    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     public static Contract getActiveA50Contract() {
         Contract ct = new Contract();

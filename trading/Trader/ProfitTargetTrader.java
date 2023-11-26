@@ -148,6 +148,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!orderStatusMap.containsKey(symb)) {
             return true;
         }
+        pr(symb, "no blocking orders check:", orderStatusMap.get(symb));
         return orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
     }
 
@@ -177,6 +178,8 @@ public class ProfitTargetTrader implements LiveHandler,
 //                }
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
+                    pr(symb, "open orders", openOrders.get(symb));
+                    pr(symb, "order status map", orderStatusMap.get(symb));
                     if (openOrders.get(symb).isEmpty() && noBlockingOrders(symb)) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
 //                            if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
@@ -186,7 +189,6 @@ public class ProfitTargetTrader implements LiveHandler,
                                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
                                             oneDayPctMap.get(symb), symbolPosMap.get(symb));
                                     if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10) {
-                                        pr("second check", symb);
                                         inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
                                     }
                                 }
@@ -368,18 +370,18 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, has only been",
-                    Duration.between(lastOrderTime.get(symb), t).getSeconds(), "seconds");
-            pr(symb, "adding fail: need to wait longer");
-            return;
-        }
+//        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
+//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, has only been",
+//                    Duration.between(lastOrderTime.get(symb), t).getSeconds(), "seconds");
+//            pr(symb, "adding fail: need to wait longer");
+//            return;
+//        }
 
         if (price < costMap.get(symb) * 0.99) {
 //            if (pos.longValue() > 0 && status != BUYING_INVENTORY) {
             Decimal sizeToBuy = getAdder2Size(price);
 //                inventoryStatusMap.put(symb, BUYING_INVENTORY);
-            lastOrderTime.put(symb, t);
+//            lastOrderTime.put(symb, t);
             int id = Allstatic.tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
@@ -409,12 +411,12 @@ public class ProfitTargetTrader implements LiveHandler,
 //            pr(symb, "adding fail:open order", openOrders.get(symb));
 //            return;
 //        }
-        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, has only been",
-                    Duration.between(lastOrderTime.get(symb), t).getSeconds(), "seconds");
-            pr(symb, "adding fail: need to wait longer");
-            return;
-        }
+//        if (lastOrderTime.containsKey(symb) && Duration.between(lastOrderTime.get(symb), t).getSeconds() < 10) {
+//            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "buying failed, has only been",
+//                    Duration.between(lastOrderTime.get(symb), t).getSeconds(), "seconds");
+//            pr(symb, "adding fail: need to wait longer");
+//            return;
+//        }
 
         Decimal sizeToBuy = getTradeSizeFromPrice(price);
 
@@ -427,7 +429,7 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        lastOrderTime.put(symb, t);
+//        lastOrderTime.put(symb, t);
         int id = tradeID.incrementAndGet();
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
