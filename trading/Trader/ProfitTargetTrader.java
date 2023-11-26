@@ -300,6 +300,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
                 }
             }
+
+
         });
 
         targetStockList.forEach(symb -> {
@@ -331,6 +333,8 @@ public class ProfitTargetTrader implements LiveHandler,
                         .getOrDefault(s, 0.0)));
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
+
+
     }
 
 
@@ -527,7 +531,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
-
         if (orderState.status() == OrderStatus.Filled) {
             try {
                 outputToGeneral("openOrder:removing order", order);
@@ -589,6 +592,12 @@ public class ProfitTargetTrader implements LiveHandler,
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(() -> {
+            targetStockList.forEach(symb -> {
+                outputToGeneral(symb, "orders status", orderStatusMap.get(symb));
+                outputToGeneral(symb, "open orders", openOrders.get(symb));
+            });
+        }, 10L, 60L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1));
 //            orderSubmitted.forEach((k, v) -> {
