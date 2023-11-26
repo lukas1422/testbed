@@ -40,6 +40,12 @@ public class OrderHandler implements ApiController.IOrderHandler {
         tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
+    OrderHandler(String symb, int id) {
+        symbol = symb;
+        tradeID = id;
+        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
+    }
+
     @Override
     public void orderState(OrderState orderState) {
         outputToGeneral("orderHandler/Orderstate:", orderState);
@@ -86,7 +92,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
             outputToGeneral("ERROR in order handler:", tradeID, "errorcode:", errorCode, "errormsg:", errorMsg
                     , orderSubmitted.get(symbol).get(tradeID));
         } catch (NullPointerException ex) {
-            outputToGeneral("tradeID not in orderSubmitted" );
+            outputToGeneral("tradeID not in orderSubmitted");
         }
     }
 }
