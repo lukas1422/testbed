@@ -1,10 +1,8 @@
 package Trader;
 
 import api.OrderAugmented;
-import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
-import enums.InventoryStatus;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
@@ -18,29 +16,19 @@ import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
-import static enums.InventoryStatus.*;
-import static java.lang.Math.round;
 import static utility.TradingUtility.*;
 import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
     private static ApiController apiController;
-    //    static volatile AtomicInteger allOtherReqID = new AtomicInteger(10000);
-
-    //    Contract gjs = generateHKStockContract("388");
-//    Contract xiaomi = generateHKStockContract("1810");
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
 
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
-    //    Contract brk = generateUSStockContract("BRK B");
     Contract ul = generateUSStockContract("UL");
     Contract mcd = generateUSStockContract("MCD");
-
-
-    //    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> todayData
-//    = new ConcurrentSkipListMap<>(String::compareTo);
+    Contract spy = generateUSStockContract("SPY");
 
     //avoid too many requests at once, only 50 requests allowed at one time.
     //private static Semaphore histSemaphore = new Semaphore(45);
@@ -58,15 +46,14 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-        outputToFile(str("*****START***** HK TIME:", LocalDateTime.now(), "EST:", getESTLocalDateTimeNow()), outputFile);
+        outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleT),
+                "EST:", getESTLocalDateTimeNow().format(simpleT));
         registerContract(wmt);
         registerContract(pg);
-//        registerContract(brk);
         registerContract(ul);
         registerContract(mcd);
-//        registerContract(spy);
+        registerContract(spy);
     }
-
 
     private void connectAndReqPos() {
         ApiController ap = new ApiController(new DefaultConnectionHandler(), new DefaultLogger(), new DefaultLogger());
@@ -95,7 +82,7 @@ public class ProfitTargetTrader implements LiveHandler,
             l.await();
             pr("connected");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            outputToGeneral("error in connetion:", e);
         }
 
         pr(" Time after latch released " + LocalTime.now().format(simpleT));
@@ -117,17 +104,14 @@ public class ProfitTargetTrader implements LiveHandler,
             });
         });
 
-//        reqHoldings(apDev);
         Executors.newScheduledThreadPool(10).schedule(() -> {
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
         }, 500, TimeUnit.MILLISECONDS);
-//        req1ContractLive(apDev, liveCompatibleCt(wmt), this, false);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
         outputToFile("cancelling all orders on start up", outputFile);
         apiController.cancelAllOrders();
-
     }
 
     private static void registerContract(Contract ct) {
@@ -160,7 +144,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-//                pr("last price", tt, symb, price, t.format(f1));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
 
@@ -171,18 +154,16 @@ public class ProfitTargetTrader implements LiveHandler,
                 //trade logic
 //                if (orderSubmitted.get(symb).values().stream().anyMatch(e ->
 //                        e.getAugmentedOrderStatus() != OrderStatus.Filled)) {
-//
 //                    pr("All unfilled orders in orderSubmitted:", symb, orderSubmitted.get(symb).values().stream()
 //                            .filter(e -> e.getAugmentedOrderStatus() != OrderStatus.Filled)
 //                            .toList());
 //                }
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    pr(symb, "open orders", openOrders.get(symb));
-                    pr(symb, "order status map", orderStatusMap.get(symb));
+//                    pr(symb, "open orders", openOrders.get(symb));
+//                    pr(symb, "order status map", orderStatusMap.get(symb));
                     if (openOrders.get(symb).isEmpty() && noBlockingOrders(symb)) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-//                            if (symbolPosMap.get(symb).isZero() && inventoryStatusMap.get(symb) != BUYING_INVENTORY) {
                             if (symbolPosMap.get(symb).isZero()) {
                                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
                                         < DELTA_LIMIT_EACH_STOCK) {

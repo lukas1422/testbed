@@ -582,7 +582,7 @@ public class TradingUtility {
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
         if (m.isEmpty()) {
-            pr("map is empty ");
+            pr("calculate p%: map is empty ");
             return 0;
         }
         double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
@@ -610,7 +610,7 @@ public class TradingUtility {
         if (m.isEmpty()) {
             return "print stats:empty";
         }
-        pr("map detail:",m);
+//        pr("map detail:", m);
 
         double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
         double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();
@@ -620,8 +620,8 @@ public class TradingUtility {
                 .map(e -> e.getKey()).get();
         double range = max / min - 1;
 
-        return str("**size", m.size(), "**firstEntry:", m.firstEntry()
-                , "**lastEntry:", m.lastEntry(), "**max:", max, maxTime, "**min", min, minTime, "**range", Math.round(range * 100), " % ");
+        return str("**size", m.size(), "**firstKey:", m.firstKey()
+                , "**lastKey:", m.lastKey(), "**max:", max, maxTime, "**min", min, minTime, "**range", Math.round(range * 100), " % ");
     }
 
     public static Contract getActiveA50Contract() {
