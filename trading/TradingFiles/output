@@ -4485,3 +4485,42 @@ UL orders status {}
 UL open orders {}
 WMT orders status {}
 WMT open orders {}
+*****Ending***** 11-27 2:00
+*****START***** HK TIME: 2023-11-27T15:00:25.381506700 EST: 2023-11-27T02:00:25.381506700
+cancelling all orders on start up
+2023-11-27T02:00:25.413420200 global cancel orders
+open order end: print all openOrders {MCD={}, PG={}, UL={}, WMT={}}
+openOrder ERROR: 11-27 2:00:26 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+MCD orders status {}
+MCD open orders {}
+PG orders status {}
+PG open orders {}
+UL orders status {}
+UL open orders {}
+WMT orders status {}
+WMT open orders {}
+openOrder ERROR: 11-27 2:00:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder ERROR: 11-27 2:00:42 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+*****Ending***** 11-27 2:01
+*****START***** HK TIME: 2023-11-27T15:01:37.491978400 EST: 2023-11-27T02:01:37.491978400
+cancelling all orders on start up
+2023-11-27T02:01:37.523890900 global cancel orders
+open order end: print all openOrders {MCD={}, PG={}, UL={}, WMT={}}
+MCD 2:01:47 orders status {}
+MCD open orders {}
+PG 2:01:47 orders status {}
+PG open orders {}
+UL 2:01:47 orders status {}
+UL open orders {}
+WMT 2:01:47 orders status {}
+WMT open orders {}
+openOrder ERROR: 11-27 2:01:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 2:02:47 orders status {}
+MCD open orders {}
+PG 2:02:47 orders status {}
+PG open orders {}
+UL 2:02:47 orders status {}
+UL open orders {}
+WMT 2:02:47 orders status {}
+WMT open orders {}
+openOrder ERROR: 11-27 2:02:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk

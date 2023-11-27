@@ -596,7 +596,7 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToGeneral(symb, "orders status", orderStatusMap.get(symb));
+                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orders status", orderStatusMap.get(symb));
                 outputToGeneral(symb, "open orders", openOrders.get(symb));
             });
         }, 10L, 60L, TimeUnit.SECONDS);
