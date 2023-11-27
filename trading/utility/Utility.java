@@ -27,6 +27,7 @@ import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static Trader.Allstatic.outputFile;
 import static Trader.Allstatic.priceMapBar;
 import static java.lang.Math.log;
 import static java.lang.Math.round;
@@ -1049,6 +1050,14 @@ public class Utility {
             outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
         }
         outputDetailedGen(msg, detailed);
+    }
+
+    public static void outputToSymbolFile(String symbol, String msg) {
+        pr("output", symbol, msg);
+        if (!symbol.equals("")) {
+            outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
+        }
+        outputDetailedGen(msg, outputFile);
     }
 
     public static void outputDetailedUSSymbol(String symbol, String msg) {

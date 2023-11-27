@@ -129,11 +129,9 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static boolean noBlockingOrders(String symb) {
-        if (!orderStatusMap.containsKey(symb)) {
-            return true;
-        }
         pr(symb, "no blocking orders check:", orderStatusMap.get(symb));
-        return orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
+        return orderStatusMap.get(symb).isEmpty() ||
+                orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
     }
 
     //live data start
@@ -152,7 +150,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
 
                 if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    if (openOrders.get(symb).isEmpty() && noBlockingOrders(symb)) {
+                    if (noBlockingOrders(symb)) {
                         if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
                             if (symbolPosMap.get(symb).isZero()) {
                                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
@@ -373,11 +371,9 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
         orderStatusMap.get(symb).put(id, OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
-        outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
-        outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                "BUY:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
-                "p/b/a", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
-                "3d perc/1d perc", perc3d, perc1d), outputFile);
+        outputToSymbolFile(symb, str("********", t.format(f1)));
+        outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
+                "BUY:", "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id)));
     }
 
 
@@ -394,11 +390,9 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(id, OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
-        outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+        outputToSymbolFile(symb, str("********", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
-                "SELL:", "offer price:", offerPrice, "cost:", cost,
-                orderSubmitted.get(symb).get(id),
-                "price/bid/ask:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb)), outputFile);
+                "SELL:", "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(id)));
     }
 
     //request realized pnl
@@ -476,12 +470,13 @@ public class ProfitTargetTrader implements LiveHandler,
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
                 , "clientID:", clientId, "whyHeld", whyHeld);
 
-        if ((status == OrderStatus.Filled && remaining.isZero()) || status.isFinished()) {
-            pr("in profit target/orderstatus/deleting filled from open orders", openOrders);
+        if (status.isFinished()) {
+            pr("openOrder/orderstatus/deleting filled from open orders", openOrders);
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
                     outputToGeneral(k, "status:", status,
-                            "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId));
+                            "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId),
+                            "remaining:", remaining);
                     v.remove(orderId);
                     outputToGeneral("remaining open orders for ", k, v);
                     outputToGeneral("remaining ALL open orders", openOrders);
