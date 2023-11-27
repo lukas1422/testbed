@@ -610,14 +610,41 @@ public class TradingUtility {
         if (m.isEmpty()) {
             return "print stats:empty";
         }
+        pr("map detail:",m);
+
         double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
         double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();
         LocalDateTime maxTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
                 .map(e -> e.getKey()).get();
-        LocalDateTime minTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getLow()))
+        LocalDateTime minTime = m.entrySet().stream().min(Comparator.comparingDouble(e -> e.getValue().getLow()))
                 .map(e -> e.getKey()).get();
         double range = max / min - 1;
 
-        return str("max", max, maxTime, "min", min, minTime, "range", Math.round(range * 100), "%");
+        return str("**size", m.size(), "**firstEntry:", m.firstEntry()
+                , "**lastEntry:", m.lastEntry(), "**max:", max, maxTime, "**min", min, minTime, "**range", Math.round(range * 100), " % ");
+    }
+
+    public static Contract getActiveA50Contract() {
+        Contract ct = new Contract();
+        ct.symbol("XINA50");
+        ct.exchange("SGX");
+        ct.secType(Types.SecType.FUT);
+        pr("A50 front expiry ", getXINA50FrontExpiry());
+        ct.lastTradeDateOrContractMonth(getXINA50FrontExpiry().format(futExpPattern));
+        ct.currency("USD");
+        return ct;
+    }
+
+    public static Contract getActiveBTCContract() {
+        Contract ct = new Contract();
+        ct.symbol("GXBT");
+        ct.exchange("CFECRYPTO");
+        ct.secType(Types.SecType.FUT);
+        pr("BTC expiry ", getActiveBTCExpiry());
+        pr("BTC expiry pattern ", getActiveBTCExpiry().format(futExpPattern2));
+        ct.lastTradeDateOrContractMonth(getActiveBTCExpiry().format(futExpPattern2));
+//        ct.lastTradeDateOrContractMonth("20190");
+        ct.currency("USD");
+        return ct;
     }
 }

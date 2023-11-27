@@ -714,7 +714,7 @@ public abstract class EClient {
             }
 
             closeAndSend(b);
-            pr("able to close and send");
+//            pr("able to close and send");
         } catch (EClientException e) {
             error(tickerId, e.error(), e.text());
         } catch (Exception e) {

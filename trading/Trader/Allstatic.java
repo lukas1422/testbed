@@ -4,10 +4,7 @@ import TradeType.TradeBlock;
 import api.OrderAugmented;
 import auxiliary.SimpleBar;
 import client.*;
-import enums.InventoryStatus;
 import historical.Request;
-import utility.TradingUtility;
-import utility.Utility;
 
 import java.io.File;
 import java.time.Instant;
@@ -57,7 +54,7 @@ public class Allstatic {
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>> orderStatusMap = new ConcurrentHashMap<>();
     //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
-//    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
+    //    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
@@ -83,40 +80,6 @@ public class Allstatic {
 
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 //    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
-
-    public static Contract getActiveA50Contract() {
-        Contract ct = new Contract();
-        ct.symbol("XINA50");
-        ct.exchange("SGX");
-        ct.secType(Types.SecType.FUT);
-        pr("A50 front expiry ", TradingUtility.getXINA50FrontExpiry());
-        ct.lastTradeDateOrContractMonth(TradingUtility.getXINA50FrontExpiry().format(futExpPattern));
-        ct.currency("USD");
-        return ct;
-
-//        long daysUntilFrontExp = ChronoUnit.DAYS.between(LocalDate.now(), getXINA50FrontExpiry());
-//        pr(" **********  days until expiry **********", daysUntilFrontExp, getXINA50FrontExpiry());
-//        if (daysUntilFrontExp <= 1) {
-//            pr(" using back fut ");
-//            return getBackFutContract();
-//        } else {
-//            pr(" using front fut ");
-//            return getFrontFutContract();
-//        }
-    }
-
-    public static Contract getActiveBTCContract() {
-        Contract ct = new Contract();
-        ct.symbol("GXBT");
-        ct.exchange("CFECRYPTO");
-        ct.secType(Types.SecType.FUT);
-        pr("BTC expiry ", TradingUtility.getActiveBTCExpiry());
-        pr("BTC expiry pattern ", TradingUtility.getActiveBTCExpiry().format(futExpPattern2));
-        ct.lastTradeDateOrContractMonth(TradingUtility.getActiveBTCExpiry().format(futExpPattern2));
-//        ct.lastTradeDateOrContractMonth("20190");
-        ct.currency("USD");
-        return ct;
-    }
 
     // this gets YTD return
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {

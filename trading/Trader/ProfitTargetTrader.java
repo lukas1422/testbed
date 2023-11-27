@@ -109,7 +109,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_hour);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
@@ -257,7 +257,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //                inventoryStatusMap.put(symb, InventoryStatus.HAS_INVENTORY);
 //            }
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
-                    "avgCost:", avgCost, "inventoryStatus", "");
+                    "avgCost:", avgCost);
         }
     }
 
@@ -268,7 +268,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                costMap.put(symb, 0.0);
+                costMap.put(symb, Double.MAX_VALUE);
             }
 
 //            if (!inventoryStatusMap.containsKey(symb)) {
