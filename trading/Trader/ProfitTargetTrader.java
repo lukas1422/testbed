@@ -510,19 +510,19 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToGeneral("openOrder callback:", getESTLocalDateTimeNow().format(f), symb,
                 "order:", order, "orderState status", orderState.status(), orderState.getStatus());
 
-        openOrders.get(symb).put(order.orderId(), order);
-
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
-        if (orderState.status() == OrderStatus.Filled) {
+        if (orderState.status().isFinished()) {
             try {
-                outputToGeneral("openOrder:removing order", order);
+                outputToGeneral("openOrder:removing order", order, "status:", orderState.status());
                 if (openOrders.get(symb).containsKey(order.orderId())) {
                     openOrders.get(symb).remove(order.orderId());
                 }
             } catch (NullPointerException e) {
                 outputToGeneral("open order doesn't contain order:", symb, order);
             }
+        } else { //order is not finished
+            openOrders.get(symb).put(order.orderId(), order);
         }
     }
 
@@ -540,11 +540,12 @@ public class ProfitTargetTrader implements LiveHandler,
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
                 , "clientID:", clientId, "whyHeld", whyHeld);
 
-        if (status == OrderStatus.Filled && remaining.isZero()) {
+        if ((status == OrderStatus.Filled && remaining.isZero()) || status.isFinished()) {
             pr("in profit target/orderstatus/deleting filled from open orders", openOrders);
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToGeneral(k, "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId));
+                    outputToGeneral(k, "status:", status,
+                            "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId));
                     v.remove(orderId);
                     outputToGeneral("remaining open orders for ", k, v);
                     outputToGeneral("remaining ALL open orders", openOrders);
@@ -560,39 +561,18 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     //open orders end **********************
-
-    void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
-        m.forEach((k, v) -> v.forEach((k1, v1) -> {
-            if (v1.orderId() == orderID) {
-                m.get(k).remove(k1);
-            }
-        }));
-    }
-
-
-    //open orders end
     public static void main(String[] args) {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orders status", orderStatusMap.get(symb));
-                outputToGeneral(symb, "open orders", openOrders.get(symb));
+                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orderStatus", orderStatusMap.get(symb));
+                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "openOrders", openOrders.get(symb));
             });
         }, 10L, 60L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1));
-//            orderSubmitted.forEach((k, v) -> {
-//                v.forEach((k1, v1) -> {
-//                    if (v1.getAugmentedOrderStatus() != OrderStatus.Filled &&
-//                            v1.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
-//                        outputToFile(str("unexecuted orders on closing:", v1.getSymbol(),
-//                                "Shutdown status", getESTLocalTimeNow().format(f1),
-//                                v1.getAugmentedOrderStatus(), v), outputFile);
-//                    }
-//                });
-//            });
         }));
     }
 }

@@ -26,6 +26,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.Predicate;
@@ -646,5 +647,13 @@ public class TradingUtility {
 //        ct.lastTradeDateOrContractMonth("20190");
         ct.currency("USD");
         return ct;
+    }
+
+    static void findAndRemoveOrder(NavigableMap<String, ConcurrentHashMap<Integer, Order>> m, int orderID) {
+        m.forEach((k, v) -> v.forEach((k1, v1) -> {
+            if (v1.orderId() == orderID) {
+                m.get(k).remove(k1);
+            }
+        }));
     }
 }
