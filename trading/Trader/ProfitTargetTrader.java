@@ -507,19 +507,15 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral("openOrder callback:", getESTLocalDateTimeNow().format(f), symb,
-                "order:", order, "orderState status", orderState.status(), orderState.getStatus());
+        outputToGeneral("openOrder callback:", getESTLocalTimeNow().format(f), symb,
+                "order:", order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status().isFinished()) {
-            try {
-                outputToGeneral("openOrder:removing order", order, "status:", orderState.status());
-                if (openOrders.get(symb).containsKey(order.orderId())) {
-                    openOrders.get(symb).remove(order.orderId());
-                }
-            } catch (NullPointerException e) {
-                outputToGeneral("open order doesn't contain order:", symb, order);
+            outputToGeneral("openOrder:removing order", order, "status:", orderState.status());
+            if (openOrders.get(symb).containsKey(order.orderId())) {
+                openOrders.get(symb).remove(order.orderId());
             }
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
