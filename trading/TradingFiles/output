@@ -3279,3 +3279,30 @@ UL 10:01:06 openOrders {}
 WMT 10:01:06 orderStatus {}
 WMT 10:01:06 openOrders {}
 openOrder ERROR: 11-28 10:01:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:02:06 orderStatus {}
+MCD 10:02:06 openOrders {}
+PG 10:02:06 orderStatus {}
+PG 10:02:06 openOrders {}
+SPY 10:02:06 orderStatus {}
+SPY 10:02:06 openOrders {}
+UL 10:02:06 orderStatus {}
+UL 10:02:06 openOrders {}
+WMT 10:02:06 orderStatus {}
+WMT 10:02:06 openOrders {}
+openOrder ERROR: 11-28 10:02:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:03:06 orderStatus {}
+MCD 10:03:06 openOrders {}
+PG 10:03:06 orderStatus {}
+PG 10:03:06 openOrders {}
+SPY 10:03:06 orderStatus {}
+SPY 10:03:06 openOrders {}
+UL 10:03:06 orderStatus {}
+UL 10:03:06 openOrders {}
+WMT 10:03:06 orderStatus {}
+WMT 10:03:06 openOrders {}
+*****Ending***** 11-28 10:03
+*****START***** HK TIME: 23:03:11 EST: 10:03:11
+cancelling all orders on start up
+10:03:11 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
