@@ -151,26 +151,32 @@ public class ProfitTargetTrader implements LiveHandler,
         return 1;
     }
 
-    static void tryToTrade(Contract ct, double price, LocalDateTime t) {
-        String symb = ibContractToSymbol(ct);
+    static boolean checkDeltaImpact(String symb, double deltaToBuy) {
+        return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + deltaToBuy
+                < DELTA_LIMIT_EACH_STOCK);
+    }
 
+    static void tryToTrade(Contract ct, double price, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
             pr("not trading time");
             return;
         }
-        if (!(noBlockingOrders(symb) && TRADING_ALLOWED)) {
-            outputToGeneral("checkblocking open orders ", symb, openOrders.get(symb).values(),
+
+        String symb = ibContractToSymbol(ct);
+        if (!noBlockingOrders(symb)) {
+            outputToGeneral("check blocking open orders ", symb, openOrders.get(symb).values(),
                     "**statusMap:", orderStatusMap);
             return;
         }
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
-            pr("forbidden to buy non USD securities");
+            pr("non USD stock not allowed");
             return;
         }
 
         if (!threeDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
-            outputToGeneral(symb, "no percentile info");
+            outputToGeneral(symb, "no percentile info", !threeDayPctMap.containsKey(symb) ? "3day" : "",
+                    !oneDayPctMap.containsKey(symb) ? "1day" : "");
             return;
         }
 
@@ -179,10 +185,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
         pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", symbolPosMap.get(symb));
 
-        if (oneDayPercentile < 20) {
+        if (oneDayPercentile < 10) {
             if (symbolPosMap.get(symb).isZero()) {
-                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
-                        < DELTA_LIMIT_EACH_STOCK) {
+                if (checkDeltaImpact(symb, getSizeFromPrice(price).longValue() * price)) {
                     if (threeDayPercentile < 40) {
                         inventoryAdder(ct, price, t, getSizeFromPrice(price));
                     }
