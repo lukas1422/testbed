@@ -30,7 +30,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public static final int TWS_PORT = 7496;
 
 
-    Contract tencent = generateHKStockContract("700");
+    //    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -60,7 +60,7 @@ public class ProfitTargetTrader implements LiveHandler,
         registerContract(ul);
         registerContract(mcd);
         registerContract(spy);
-        registerContract(tencent);
+//        registerContract(tencent);
     }
 
     private void connectAndReqPos() {
@@ -151,9 +151,9 @@ public class ProfitTargetTrader implements LiveHandler,
         return 1;
     }
 
-    static boolean checkDeltaImpact(String symb, double deltaToBuy) {
-        return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + deltaToBuy
-                < DELTA_LIMIT_EACH_STOCK);
+    static boolean checkDeltaImpact(String symb, double price) {
+        return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
     }
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
@@ -186,13 +186,10 @@ public class ProfitTargetTrader implements LiveHandler,
         Decimal position = symbolPosMap.get(symb);
         pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", position);
 
-
-        if (oneDayPercentile < 10) {
+        if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
-                if (checkDeltaImpact(symb, getSizeFromPrice(price).longValue() * price)) {
-                    if (threeDayPercentile < 40) {
-                        inventoryAdder(ct, price, t, getSizeFromPrice(price));
-                    }
+                if (threeDayPercentile < 40) {
+                    inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (symb.equalsIgnoreCase("SPY") && position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < 0.995) {
@@ -223,11 +220,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
-
                 tryToTrade(ct, price, t);
-
                 break;
-
             case BID:
                 bidMap.put(symb, price);
                 break;
@@ -339,10 +333,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
             });
         });
-
-
     }
-
 
     public static Decimal getSizeFromPrice(double price) {
         if (price < 100) {
