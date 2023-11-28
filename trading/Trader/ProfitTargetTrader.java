@@ -183,21 +183,23 @@ public class ProfitTargetTrader implements LiveHandler,
         double threeDayPercentile = threeDayPctMap.get(symb);
         double oneDayPercentile = oneDayPctMap.get(symb);
 
-        pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", symbolPosMap.get(symb));
+        Decimal position = symbolPosMap.get(symb);
+        pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", position);
+
 
         if (oneDayPercentile < 10) {
-            if (symbolPosMap.get(symb).isZero()) {
+            if (position.isZero()) {
                 if (checkDeltaImpact(symb, getSizeFromPrice(price).longValue() * price)) {
                     if (threeDayPercentile < 40) {
                         inventoryAdder(ct, price, t, getSizeFromPrice(price));
                     }
                 }
-            } else if (symb.equalsIgnoreCase("SPY") && symbolPosMap.get(symb).longValue() > 0 && costMap.containsKey(symb)) {
+            } else if (symb.equalsIgnoreCase("SPY") && position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < 0.995) {
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        } else if (oneDayPercentile > 80 && costMap.containsKey(symb) && symbolPosMap.get(symb).longValue() > 0) {
+        } else if (oneDayPercentile > 80 && costMap.containsKey(symb) && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
             pr(symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
@@ -344,7 +346,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static Decimal getSizeFromPrice(double price) {
         if (price < 100) {
-            return Decimal.get(120);
+            return Decimal.get(10);
         }
         return Decimal.get(5);
     }
