@@ -23,7 +23,6 @@ import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
-    public static boolean TRADING_ALLOWED = true;
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
@@ -108,7 +107,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("requesting day data", symb);
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_hour);
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
             });
             CompletableFuture.runAsync(() -> {
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
@@ -142,7 +141,10 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static boolean noBlockingOrders(String symb) {
-        pr(symb, "no blocking orders check:", orderStatusMap.get(symb));
+        if (!orderStatusMap.get(symb).isEmpty()) {
+            pr(symb, "no blocking orders check:", orderStatusMap.get(symb));
+        }
+
         return orderStatusMap.get(symb).isEmpty() ||
                 orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
     }
@@ -191,7 +193,7 @@ public class ProfitTargetTrader implements LiveHandler,
         double oneDayPercentile = oneDayPctMap.get(symb);
 
         Decimal position = symbolPosMap.get(symb);
-        pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", position);
+        pr("Check Perc", symb, "3dp:", threeDayPercentile, "1dp:", oneDayPercentile, "pos:", position);
 
         if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
@@ -299,7 +301,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
-                    pr(symb, "price/cost-1", 100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1), "%");
+                    pr(symb, "price/cost-1", r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
         });
@@ -314,8 +316,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("computeNow:", symb, getESTLocalTimeNow().format(simpleT),
-                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile,
-                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile);
+//                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
                     && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
@@ -499,7 +501,7 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral("openOrder callback:", getESTLocalTimeNow().format(f), symb,
+        outputToGeneral("openOrder callback:", getESTLocalTimeNow(), symb,
                 "order:", order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());

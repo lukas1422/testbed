@@ -2790,3 +2790,357 @@ UL 9:28:03 orderStatus {}
 UL 9:28:03 openOrders {}
 WMT 9:28:03 orderStatus {}
 WMT 9:28:03 openOrders {}
+openOrder ERROR: 11-28 9:28:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+*****Ending***** 11-28 9:29
+*****START***** HK TIME: 22:29:03 EST: 9:29:03
+cancelling all orders on start up
+9:29:03 global cancel orders
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+MCD 9:29:13 orderStatus {}
+MCD 9:29:13 openOrders {}
+PG 9:29:13 orderStatus {}
+PG 9:29:13 openOrders {}
+SPY 9:29:13 orderStatus {}
+SPY 9:29:13 openOrders {}
+UL 9:29:13 orderStatus {}
+UL 9:29:13 openOrders {}
+WMT 9:29:13 orderStatus {}
+WMT 9:29:13 openOrders {}
+openOrder ERROR: 11-28 9:29:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+SPY buying general
+******** 11-28 9:30
+orderID: 2 tradeID: 101 action: BUY BUY: px: 454.08 qty: 5 SPY 11-28 9:30 INVENTORY_ADDER Created
+9:30:01 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={}}
+MCD buying general
+******** 11-28 9:30
+orderID: 3 tradeID: 102 action: BUY BUY: px: 281.1 qty: 5 MCD 11-28 9:30 INVENTORY_ADDER Created
+9:30:01 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:02 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:03 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:03 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:03 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:04 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:04 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:04 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:05 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:05 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:06 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+9:30:07 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={101=Created}, WMT={}, MCD={102=Created}}
+orderHandler/Orderstate: ORDERSTATE toString: commission: 1.7976931348623157E308 completedTime:  NULL  completed Status:  NULL 
+MCD 9:30:13 orderStatus {102=Created}
+MCD 9:30:13 openOrders {}
+PG 9:30:13 orderStatus {}
+PG 9:30:13 openOrders {}
+SPY 9:30:13 orderStatus {101=Created}
+SPY 9:30:13 openOrders {}
+UL 9:30:13 orderStatus {}
+UL 9:30:13 openOrders {}
+WMT 9:30:13 orderStatus {}
+WMT 9:30:13 openOrders {}
+MCD 9:31:13 orderStatus {102=Created}
+MCD 9:31:13 openOrders {}
+PG 9:31:13 orderStatus {}
+PG 9:31:13 openOrders {}
+SPY 9:31:13 orderStatus {101=Created}
+SPY 9:31:13 openOrders {}
+UL 9:31:13 orderStatus {}
+UL 9:31:13 openOrders {}
+WMT 9:31:13 orderStatus {}
+WMT 9:31:13 openOrders {}
+MCD 9:32:13 orderStatus {102=Created}
+MCD 9:32:13 openOrders {}
+PG 9:32:13 orderStatus {}
+PG 9:32:13 openOrders {}
+SPY 9:32:13 orderStatus {101=Created}
+SPY 9:32:13 openOrders {}
+UL 9:32:13 orderStatus {}
+UL 9:32:13 openOrders {}
+WMT 9:32:13 orderStatus {}
+WMT 9:32:13 openOrders {}
+*****Ending***** 11-28 9:32
+*****START***** HK TIME: 22:32:30 EST: 9:32:30
+cancelling all orders on start up
+MCD 9:32:40 orderStatus {}
+MCD 9:32:40 openOrders {}
+PG 9:32:40 orderStatus {}
+PG 9:32:40 openOrders {}
+SPY 9:32:40 orderStatus {}
+SPY 9:32:40 openOrders {}
+UL 9:32:40 orderStatus {}
+UL 9:32:40 openOrders {}
+WMT 9:32:40 orderStatus {}
+WMT 9:32:40 openOrders {}
+*****Ending***** 11-28 9:33
+*****START***** HK TIME: 22:33:03 EST: 9:33:03
+cancelling all orders on start up
+MCD 9:33:14 orderStatus {}
+MCD 9:33:14 openOrders {}
+PG 9:33:14 orderStatus {}
+PG 9:33:14 openOrders {}
+SPY 9:33:14 orderStatus {}
+SPY 9:33:14 openOrders {}
+UL 9:33:14 orderStatus {}
+UL 9:33:14 openOrders {}
+WMT 9:33:14 orderStatus {}
+WMT 9:33:14 openOrders {}
+*****Ending***** 11-28 9:33
+*****START***** HK TIME: 22:33:27 EST: 9:33:27
+cancelling all orders on start up
+9:33:27 global cancel orders
+openOrder callback: 09:33:28.900438600 MCD order: orderID: 3 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 281.1 orderState status: PendingCancel
+openOrder orderstatus: orderId: 3 OrderStatus: PendingCancel filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5 whyHeld  NULL 
+openOrderEnd: print all openOrders {MCD={3=orderID: 3 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 281.1}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+openOrder orderstatus: orderId: 3 OrderStatus: Cancelled filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5 whyHeld  NULL 
+MCD status: Cancelled removing order from openOrders. OrderID: 3 order details: orderID: 3 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 281.1 remaining: 5
+remaining open orders for  MCD {}
+remaining ALL open orders {MCD={}, PG={}, SPY={}, UL={}, WMT={}}
+openOrder ERROR: 11-28 9:33:29 orderId: 3  errorCode: 202  msg: Order Canceled - reason:
+MCD 9:33:37 orderStatus {3=PendingCancel}
+MCD 9:33:37 openOrders {}
+PG 9:33:37 orderStatus {}
+PG 9:33:37 openOrders {}
+SPY 9:33:37 orderStatus {}
+SPY 9:33:37 openOrders {}
+UL 9:33:37 orderStatus {}
+UL 9:33:37 openOrders {}
+WMT 9:33:37 orderStatus {}
+WMT 9:33:37 openOrders {}
+9:33:39 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:33:41 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:33:42 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:33:57 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:33:58 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:06 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:08 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:09 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+openOrder ERROR: 11-28 9:34:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+9:34:16 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:19 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:21 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:21 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:31 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:36 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:34:37 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+MCD 9:34:37 orderStatus {3=PendingCancel}
+MCD 9:34:37 openOrders {}
+PG 9:34:37 orderStatus {}
+PG 9:34:37 openOrders {}
+SPY 9:34:37 orderStatus {}
+SPY 9:34:37 openOrders {}
+UL 9:34:37 orderStatus {}
+UL 9:34:37 openOrders {}
+WMT 9:34:37 orderStatus {}
+WMT 9:34:37 openOrders {}
+9:34:41 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:02 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:09 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:11 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:13 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:17 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:19 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:30 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:35:31 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+openOrder ERROR: 11-28 9:35:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:35:37 orderStatus {3=PendingCancel}
+MCD 9:35:37 openOrders {}
+PG 9:35:37 orderStatus {}
+PG 9:35:37 openOrders {}
+SPY 9:35:37 orderStatus {}
+SPY 9:35:37 openOrders {}
+UL 9:35:37 orderStatus {}
+UL 9:35:37 openOrders {}
+WMT 9:35:37 orderStatus {}
+WMT 9:35:37 openOrders {}
+9:36:04 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+9:36:07 order blocked: MCD [] **statusMap: {UL={}, PG={}, SPY={}, WMT={}, MCD={3=PendingCancel}}
+*****Ending***** 11-28 9:36
+*****START***** HK TIME: 22:36:09 EST: 9:36:09
+cancelling all orders on start up
+9:36:09 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+MCD 9:36:19 orderStatus {}
+MCD 9:36:19 openOrders {}
+PG 9:36:19 orderStatus {}
+PG 9:36:19 openOrders {}
+SPY 9:36:19 orderStatus {}
+SPY 9:36:19 openOrders {}
+UL 9:36:19 orderStatus {}
+UL 9:36:19 openOrders {}
+WMT 9:36:19 orderStatus {}
+WMT 9:36:19 openOrders {}
+openOrder ERROR: 11-28 9:36:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:37:19 orderStatus {}
+MCD 9:37:19 openOrders {}
+PG 9:37:19 orderStatus {}
+PG 9:37:19 openOrders {}
+SPY 9:37:19 orderStatus {}
+SPY 9:37:19 openOrders {}
+UL 9:37:19 orderStatus {}
+UL 9:37:19 openOrders {}
+WMT 9:37:19 orderStatus {}
+WMT 9:37:19 openOrders {}
+openOrder ERROR: 11-28 9:37:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:38:19 orderStatus {}
+MCD 9:38:19 openOrders {}
+PG 9:38:19 orderStatus {}
+PG 9:38:19 openOrders {}
+SPY 9:38:19 orderStatus {}
+SPY 9:38:19 openOrders {}
+UL 9:38:19 orderStatus {}
+UL 9:38:19 openOrders {}
+WMT 9:38:19 orderStatus {}
+WMT 9:38:19 openOrders {}
+*****Ending***** 11-28 9:38
+*****START***** HK TIME: 22:38:56 EST: 9:38:56
+cancelling all orders on start up
+9:38:56 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 11-28 9:38:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:39:06 orderStatus {}
+MCD 9:39:06 openOrders {}
+PG 9:39:06 orderStatus {}
+PG 9:39:06 openOrders {}
+SPY 9:39:06 orderStatus {}
+SPY 9:39:06 openOrders {}
+UL 9:39:06 orderStatus {}
+UL 9:39:06 openOrders {}
+WMT 9:39:06 orderStatus {}
+WMT 9:39:06 openOrders {}
+MCD 9:40:06 orderStatus {}
+MCD 9:40:06 openOrders {}
+PG 9:40:06 orderStatus {}
+PG 9:40:06 openOrders {}
+SPY 9:40:06 orderStatus {}
+SPY 9:40:06 openOrders {}
+UL 9:40:06 orderStatus {}
+UL 9:40:06 openOrders {}
+WMT 9:40:06 orderStatus {}
+WMT 9:40:06 openOrders {}
+openOrder ERROR: 11-28 9:40:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:41:06 orderStatus {}
+MCD 9:41:06 openOrders {}
+PG 9:41:06 orderStatus {}
+PG 9:41:06 openOrders {}
+SPY 9:41:06 orderStatus {}
+SPY 9:41:06 openOrders {}
+UL 9:41:06 orderStatus {}
+UL 9:41:06 openOrders {}
+WMT 9:41:06 orderStatus {}
+WMT 9:41:06 openOrders {}
+*****Ending***** 11-28 9:41
+*****START***** HK TIME: 22:41:31 EST: 9:41:31
+cancelling all orders on start up
+9:41:31 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+MCD 9:41:41 orderStatus {}
+MCD 9:41:41 openOrders {}
+PG 9:41:41 orderStatus {}
+PG 9:41:41 openOrders {}
+SPY 9:41:41 orderStatus {}
+SPY 9:41:41 openOrders {}
+UL 9:41:41 orderStatus {}
+UL 9:41:41 openOrders {}
+WMT 9:41:41 orderStatus {}
+WMT 9:41:41 openOrders {}
+MCD 9:42:41 orderStatus {}
+MCD 9:42:41 openOrders {}
+PG 9:42:41 orderStatus {}
+PG 9:42:41 openOrders {}
+SPY 9:42:41 orderStatus {}
+SPY 9:42:41 openOrders {}
+UL 9:42:41 orderStatus {}
+UL 9:42:41 openOrders {}
+WMT 9:42:41 orderStatus {}
+WMT 9:42:41 openOrders {}
+openOrder ERROR: 11-28 9:42:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:43:41 orderStatus {}
+MCD 9:43:41 openOrders {}
+PG 9:43:41 orderStatus {}
+PG 9:43:41 openOrders {}
+SPY 9:43:41 orderStatus {}
+SPY 9:43:41 openOrders {}
+UL 9:43:41 orderStatus {}
+UL 9:43:41 openOrders {}
+WMT 9:43:41 orderStatus {}
+WMT 9:43:41 openOrders {}
+openOrder ERROR: 11-28 9:43:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:44:41 orderStatus {}
+MCD 9:44:41 openOrders {}
+PG 9:44:41 orderStatus {}
+PG 9:44:41 openOrders {}
+SPY 9:44:41 orderStatus {}
+SPY 9:44:41 openOrders {}
+UL 9:44:41 orderStatus {}
+UL 9:44:41 openOrders {}
+WMT 9:44:41 orderStatus {}
+WMT 9:44:41 openOrders {}
+openOrder ERROR: 11-28 9:45:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:45:41 orderStatus {}
+MCD 9:45:41 openOrders {}
+PG 9:45:41 orderStatus {}
+PG 9:45:41 openOrders {}
+SPY 9:45:41 orderStatus {}
+SPY 9:45:41 openOrders {}
+UL 9:45:41 orderStatus {}
+UL 9:45:41 openOrders {}
+WMT 9:45:41 orderStatus {}
+WMT 9:45:41 openOrders {}
+openOrder ERROR: 11-28 9:46:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:46:41 orderStatus {}
+MCD 9:46:41 openOrders {}
+PG 9:46:41 orderStatus {}
+PG 9:46:41 openOrders {}
+SPY 9:46:41 orderStatus {}
+SPY 9:46:41 openOrders {}
+UL 9:46:41 orderStatus {}
+UL 9:46:41 openOrders {}
+WMT 9:46:41 orderStatus {}
+WMT 9:46:41 openOrders {}
+*****Ending***** 11-28 9:47
+*****START***** HK TIME: 22:47:38 EST: 9:47:38
+cancelling all orders on start up
+9:47:38 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 11-28 9:47:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:47:48 orderStatus {}
+MCD 9:47:48 openOrders {}
+PG 9:47:48 orderStatus {}
+PG 9:47:48 openOrders {}
+SPY 9:47:48 orderStatus {}
+SPY 9:47:48 openOrders {}
+UL 9:47:48 orderStatus {}
+UL 9:47:48 openOrders {}
+WMT 9:47:48 orderStatus {}
+WMT 9:47:48 openOrders {}
+MCD 9:48:48 orderStatus {}
+MCD 9:48:48 openOrders {}
+PG 9:48:48 orderStatus {}
+PG 9:48:48 openOrders {}
+SPY 9:48:48 orderStatus {}
+SPY 9:48:48 openOrders {}
+UL 9:48:48 orderStatus {}
+UL 9:48:48 openOrders {}
+WMT 9:48:48 orderStatus {}
+WMT 9:48:48 openOrders {}
+openOrder ERROR: 11-28 9:48:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:49:48 orderStatus {}
+MCD 9:49:48 openOrders {}
+PG 9:49:48 orderStatus {}
+PG 9:49:48 openOrders {}
+SPY 9:49:48 orderStatus {}
+SPY 9:49:48 openOrders {}
+UL 9:49:48 orderStatus {}
+UL 9:49:48 openOrders {}
+WMT 9:49:48 orderStatus {}
+WMT 9:49:48 openOrders {}
+*****Ending***** 11-28 9:50
+*****START***** HK TIME: 22:50:09 EST: 9:50:09
+cancelling all orders on start up
+9:50:09 global cancel orders
+tradeReport SPY time, side, price, shares, avgPrice: 20231128 22:30:32 Asia/Shanghai BOT 454.08 5 454.08
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 11-28 9:50:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk

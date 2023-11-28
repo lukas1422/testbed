@@ -3,6 +3,8 @@
 
 package client;
 
+import static utility.Utility.str;
+
 enum Liquidities {
     None,
     Added("Added Liquidity"),
@@ -272,5 +274,10 @@ public class Execution {
     public int hashCode() {
         // Since equals() uses m_execId only, the hashCode should do as well.
         return m_execId != null ? m_execId.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return str("orderID:", orderId(), "side:", side(), "qty:", cumQty().longValue(), "price:", price());
     }
 }
