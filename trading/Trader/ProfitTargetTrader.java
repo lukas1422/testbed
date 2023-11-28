@@ -209,7 +209,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         } else if (oneDayPercentile > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
-            pr(symb, priceDividedByCost(price, symb));
+            pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToGeneral("Sell", "P%:", oneDayPercentile, "priceOverCost:", priceOverCost);
                 inventoryCutter(ct, price, t);
@@ -316,7 +316,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("computeNow:", symb, getESTLocalTimeNow().format(simpleT),
-                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile);
+                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile, "print stats1d:",
+                        printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
 //                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
@@ -430,7 +431,7 @@ public class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
         outputToSymbolFile(symb, str("********", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "BUY:", "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id)));
+                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id)));
     }
 
 
@@ -449,7 +450,7 @@ public class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
         outputToSymbolFile(symb, str("********", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
-                "SELL:", "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(id)));
+                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(id)));
     }
 
     //request realized pnl
@@ -461,7 +462,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(symb, execution));
 
-        pr("tradeReport:", tradeKey, symb,
+        pr("tradeReport:", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
 
