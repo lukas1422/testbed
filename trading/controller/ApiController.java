@@ -21,6 +21,7 @@ import static Trader.Allstatic.outputFile;
 import static api.TradingConstants.simpleT;
 import static utility.TradingUtility.getESTLocalDateTimeNow;
 import static utility.TradingUtility.outputToFile;
+import static utility.Utility.pr;
 import static utility.Utility.str;
 
 public class ApiController implements EWrapper {
@@ -640,6 +641,7 @@ public class ApiController implements EWrapper {
     public void tickPrice(int reqId, int tickType, double price, TickAttrib attribs) {
 
         //ibdata handler steals the data and brings it home, it doess't go through IB's maps
+//        pr("reqID ticktype price", reqId, tickType, price);
         IBDataHandler.tickPrice(reqId, tickType, price);
 
         ITopMktDataHandler handler = m_topMktDataMap.get(reqId);
