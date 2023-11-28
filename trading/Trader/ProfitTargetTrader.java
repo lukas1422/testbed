@@ -553,13 +553,13 @@ public class ProfitTargetTrader implements LiveHandler,
     public static void main(String[] args) {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
-//        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
-//        es.scheduleAtFixedRate(() -> {
-//            targetStockList.forEach(symb -> {
-//                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orderStatus", orderStatusMap.get(symb));
-//                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "openOrders", openOrders.get(symb));
-//            });
-//        }, 10L, 60L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(() -> {
+            targetStockList.forEach(symb -> {
+                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orderStatus", orderStatusMap.get(symb));
+                outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "openOrders", openOrders.get(symb));
+            });
+        }, 10L, 60L, TimeUnit.SECONDS);
 //
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1));
