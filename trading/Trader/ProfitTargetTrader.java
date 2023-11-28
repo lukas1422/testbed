@@ -5,11 +5,13 @@ import client.*;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
+import utility.Utility;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
@@ -220,7 +222,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr("last", tt, symb, price, t);
+                pr("last", symb, price, t.format(simpleT));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
 
@@ -455,7 +457,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
-        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(execution, symb));
+        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(symb, execution));
 
         pr("tradeReport:", tradeKey, symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
@@ -469,6 +471,9 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void tradeReportEnd() {
         pr("trade report end");
+        pr("all executions:");
+        tradeKeyExecutionMap.values().stream().collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
+                Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList()))).forEach(Utility::pr);
     }
 
     @Override
@@ -511,7 +516,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral("open order end: print all openOrders", openOrders);
+        outputToGeneral("openOrderEnd: print all openOrders", openOrders, "***orderStatus:", orderStatusMap);
     }
 
     @Override

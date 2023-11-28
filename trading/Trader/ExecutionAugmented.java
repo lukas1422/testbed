@@ -7,7 +7,7 @@ public class ExecutionAugmented {
     private Execution execution;
     private String symbol;
 
-    public ExecutionAugmented(Execution e, String s) {
+    public ExecutionAugmented(String s, Execution e) {
         symbol = s;
         execution = e;
     }
