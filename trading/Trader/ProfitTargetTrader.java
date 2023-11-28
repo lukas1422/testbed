@@ -21,14 +21,16 @@ import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+    public static boolean TRADING_ALLOWED = false;
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
+    private static Map<String, Contract> symbolContractMap = new HashMap<>();
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
 
 
-    //    Contract tencent = generateHKStockContract("743");
+    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -58,7 +60,7 @@ public class ProfitTargetTrader implements LiveHandler,
         registerContract(ul);
         registerContract(mcd);
         registerContract(spy);
-//        registerContract(tencent);
+        registerContract(tencent);
     }
 
     private void connectAndReqPos() {
@@ -95,7 +97,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr(" Time after latch released " + LocalTime.now().format(simpleT));
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
-            Contract c = generateUSStockContract(symb);
+            Contract c = symbolContractMap.get(symb);
             if (!threeDayData.containsKey(symb)) {
                 threeDayData.put(symb, new ConcurrentSkipListMap<>());
             }
@@ -123,6 +125,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
+        symbolContractMap.put(symb, ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
         orderStatusMap.put(symb, new ConcurrentSkipListMap<>());
@@ -141,6 +144,61 @@ public class ProfitTargetTrader implements LiveHandler,
                 orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
     }
 
+    static double priceDividedByCost(double price, String symb) {
+        if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
+            return price / costMap.get(symb);
+        }
+        return 1;
+    }
+
+    static void tryToTrade(Contract ct, double price, LocalDateTime t) {
+        String symb = ibContractToSymbol(ct);
+
+        if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
+            pr("not trading time");
+            return;
+        }
+        if (!(noBlockingOrders(symb) && TRADING_ALLOWED)) {
+            outputToGeneral("there are open orders ", symb, openOrders.get(symb).values(),
+                    "statusMap:", orderStatusMap);
+            return;
+        }
+
+        if (!threeDayPctMap.containsKey(symb) || oneDayPctMap.containsKey(symb)) {
+            outputToGeneral(symb, "no percentile info");
+            return;
+        }
+        if (oneDayPctMap.get(symb) < 10) {
+            if (symbolPosMap.get(symb).isZero()) {
+                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
+                        < DELTA_LIMIT_EACH_STOCK) {
+                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
+                            oneDayPctMap.get(symb), symbolPosMap.get(symb));
+                    if (threeDayPctMap.get(symb) < 40 &&) {
+                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                    }
+                }
+            } else {
+                if (symb.equalsIgnoreCase("SPY") && priceDividedByCost(price, "SPY") < 0.99) {
+
+                }
+            }
+        }
+
+        if (oneDayPctMap.get(symb) > 80) {
+            if (symbolPosMap.get(symb).longValue() > 0) {
+                if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
+                    pr(symb, priceDividedByCost(price, symb));
+                    if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
+                        inventoryCutter(ct, price, t);
+                    }
+                }
+            }
+        }
+
+
+    }
+
     //live data start
     @Override
     public void handlePrice(TickType tt, Contract ct, double price, LocalDateTime t) {
@@ -156,35 +214,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
 
-                if (TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-                    if (noBlockingOrders(symb)) {
-                        if (threeDayPctMap.containsKey(symb) && oneDayPctMap.containsKey(symb)) {
-                            if (symbolPosMap.get(symb).isZero()) {
-                                if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
-                                        < DELTA_LIMIT_EACH_STOCK) {
-                                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
-                                            oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                                    if (threeDayPctMap.get(symb) < 40 && oneDayPctMap.get(symb) < 10) {
-                                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
-                                    }
-                                }
-                            }
+                tryToTrade(ct, price, t);
 
-                            if (symbolPosMap.get(symb).longValue() > 0) {
-                                if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
-                                    pr(symb, "price/cost", price / costMap.getOrDefault(symb, Double.MAX_VALUE));
-                                    if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
-                                        inventoryCutter(ct, price, t);
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        pr("there are open orders ", symb, openOrders.get(symb).values());
-                    }
-                } else {
-                    pr("not trading time");
-                }
                 break;
 
             case BID:
@@ -232,19 +263,20 @@ public class ProfitTargetTrader implements LiveHandler,
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
                 symbolPosMap.put(symb, Decimal.ZERO);
-                costMap.put(symb, Double.MAX_VALUE);
+//                costMap.put(symb, Double.MAX_VALUE);
             }
 
-            pr("SYMBOL POS COST", symb, symbolPosMap.get(symb).longValue(), costMap.get(symb));
+            pr("SYMBOL POS COST", symb, symbolPosMap.get(symb).longValue(), costMap.getOrDefault(symb, 0.0));
 
-            apiController.reqContractDetails(generateUSStockContract(symb), list -> list.forEach(a -> {
+            apiController.reqContractDetails(symbolContractMap.get(symb), list -> list.forEach(a -> {
 //                pr("CONTRACT ID:", a.contract().symbol(), a.contract().conid());
                 symbolConIDMap.put(symb, a.contract().conid());
             }));
 
             es.schedule(() -> {
                 pr("Position end: requesting live:", symb);
-                req1ContractLive(apiController, generateUSStockContract(symb), this, false);
+//                req1ContractLive(apiController, generateUSStockContract(symb), this, false);
+                req1ContractLive(apiController, symbolContractMap.get(symb), this, false);
             }, 10L, TimeUnit.SECONDS);
         });
     }
@@ -359,6 +391,11 @@ public class ProfitTargetTrader implements LiveHandler,
 
     }
 
+
+    private static void spyAdder(double price, LocalDateTime t) {
+        Decimal sizeToBuy = Decimal.get(5);
+
+    }
 
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
