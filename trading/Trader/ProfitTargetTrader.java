@@ -159,8 +159,8 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
         if (!(noBlockingOrders(symb) && TRADING_ALLOWED)) {
-            outputToGeneral("there are open orders ", symb, openOrders.get(symb).values(),
-                    "statusMap:", orderStatusMap);
+            outputToGeneral("checkblocking open orders ", symb, openOrders.get(symb).values(),
+                    "**statusMap:", orderStatusMap);
             return;
         }
 
@@ -169,26 +169,26 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (!threeDayPctMap.containsKey(symb) || oneDayPctMap.containsKey(symb)) {
+        if (!threeDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
             outputToGeneral(symb, "no percentile info");
             return;
         }
 
+        double threeDayPercentile = threeDayPctMap.get(symb);
         double oneDayPercentile = oneDayPctMap.get(symb);
-//        double priceOverCost = priceDividedByCost(price, symb);
 
-        if (oneDayPercentile < 10) {
+        pr("Check", symb, threeDayPercentile, oneDayPercentile, "pos:", symbolPosMap.get(symb));
+
+        if (oneDayPercentile < 20) {
             if (symbolPosMap.get(symb).isZero()) {
                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
                         < DELTA_LIMIT_EACH_STOCK) {
-                    pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
-                            oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                    if (threeDayPctMap.get(symb) < 40) {
+                    if (threeDayPercentile < 40) {
                         inventoryAdder(ct, price, t, getSizeFromPrice(price));
                     }
                 }
             } else if (symb.equalsIgnoreCase("SPY") && symbolPosMap.get(symb).longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < 0.99) {
+                if (priceDividedByCost(price, symb) < 0.995) {
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -200,8 +200,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 inventoryCutter(ct, price, t);
             }
         }
-
-
     }
 
     //live data start
