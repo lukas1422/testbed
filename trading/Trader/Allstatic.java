@@ -30,7 +30,7 @@ public class Allstatic {
     static final LocalDateTime TODAY_MARKET_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final double DELTA_LIMIT = 10000;
-    static final double DELTA_LIMIT_EACH_STOCK = 2000;
+    static final double DELTA_LIMIT_EACH_STOCK = 4000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();

@@ -21,7 +21,7 @@ import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
-    public static boolean TRADING_ALLOWED = false;
+    public static boolean TRADING_ALLOWED = true;
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
@@ -164,35 +164,40 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
+        if (!ct.currency().equalsIgnoreCase("USD")) {
+            pr("forbidden to buy non USD securities");
+            return;
+        }
+
         if (!threeDayPctMap.containsKey(symb) || oneDayPctMap.containsKey(symb)) {
             outputToGeneral(symb, "no percentile info");
             return;
         }
-        if (oneDayPctMap.get(symb) < 10) {
+
+        double oneDayPercentile = oneDayPctMap.get(symb);
+//        double priceOverCost = priceDividedByCost(price, symb);
+
+        if (oneDayPercentile < 10) {
             if (symbolPosMap.get(symb).isZero()) {
                 if (aggregateDelta < DELTA_LIMIT && symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE)
                         < DELTA_LIMIT_EACH_STOCK) {
                     pr("first check 3d 1d pos", symb, threeDayPctMap.get(symb),
                             oneDayPctMap.get(symb), symbolPosMap.get(symb));
-                    if (threeDayPctMap.get(symb) < 40 &&) {
-                        inventoryAdder(ct, price, t, threeDayPctMap.get(symb), oneDayPctMap.get(symb));
+                    if (threeDayPctMap.get(symb) < 40) {
+                        inventoryAdder(ct, price, t, getSizeFromPrice(price));
                     }
                 }
-            } else {
-                if (symb.equalsIgnoreCase("SPY") && priceDividedByCost(price, "SPY") < 0.99) {
-
+            } else if (symb.equalsIgnoreCase("SPY") && symbolPosMap.get(symb).longValue() > 0 && costMap.containsKey(symb)) {
+                if (priceDividedByCost(price, symb) < 0.99) {
+                    inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        }
-
-        if (oneDayPctMap.get(symb) > 80) {
-            if (symbolPosMap.get(symb).longValue() > 0) {
-                if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
-                    pr(symb, priceDividedByCost(price, symb));
-                    if (price / costMap.getOrDefault(symb, Double.MAX_VALUE) > getRequiredProfitMargin(symb)) {
-                        inventoryCutter(ct, price, t);
-                    }
-                }
+        } else if (oneDayPercentile > 80 && costMap.containsKey(symb) && symbolPosMap.get(symb).longValue() > 0) {
+            double priceOverCost = priceDividedByCost(price, symb);
+            pr(symb, priceDividedByCost(price, symb));
+            if (priceOverCost > getRequiredProfitMargin(symb)) {
+                outputToGeneral("Sell", "P%:", oneDayPercentile, "priceOverCost:", priceOverCost);
+                inventoryCutter(ct, price, t);
             }
         }
 
@@ -336,9 +341,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static Decimal getSizeFromPrice(double price) {
         if (price < 100) {
-            return Decimal.get(20);
+            return Decimal.get(120);
         }
-        return Decimal.get(10);
+        return Decimal.get(5);
     }
 
     public static Decimal getAdder2Size(double price) {
@@ -398,13 +403,12 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     //Trade
-    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
+    private static void inventoryAdder(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
-        Decimal sizeToBuy = getSizeFromPrice(price);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
                 > DELTA_LIMIT_EACH_STOCK) {
-            outputToGeneral(symb, getESTLocalTimeNow(), "after buying exceeds delta limit", "current delta:",
+            outputToGeneral(symb, getESTLocalTimeNow(), "buying exceeds limit", "current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed delta inc:", sizeToBuy.longValue() * price);
             pr(symb, "proposed buy exceeds delta limit");
