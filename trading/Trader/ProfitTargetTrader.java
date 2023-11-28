@@ -194,14 +194,16 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
                 if (threeDayPercentile < 40) {
+                    outputToGeneral(symb, "buying general");
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (symb.equalsIgnoreCase("SPY") && position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < 0.995) {
+                if (priceDividedByCost(price, symb) < 0.99) {
+                    outputToGeneral("SPY buying additional");
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        } else if (oneDayPercentile > 80 && costMap.containsKey(symb) && position.longValue() > 0) {
+        } else if (oneDayPercentile > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
             pr(symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
@@ -406,6 +408,7 @@ public class ProfitTargetTrader implements LiveHandler,
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
+//        checkDeltaImpact(symb, price);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
                 > DELTA_LIMIT_EACH_STOCK) {
