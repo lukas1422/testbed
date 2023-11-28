@@ -171,7 +171,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
-            outputToGeneral("check blocking open orders ", symb, openOrders.get(symb).values(),
+            outputToGeneral(t.format(simpleT), "order blocked:", symb, openOrders.get(symb).values(),
                     "**statusMap:", orderStatusMap);
             return;
         }
@@ -200,7 +200,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (symb.equalsIgnoreCase("SPY") && position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < 0.99) {
+                if (priceDividedByCost(price, symb) < 0.99 && threeDayPercentile < 50) {
                     outputToGeneral("SPY buying additional");
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
