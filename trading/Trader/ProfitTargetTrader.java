@@ -55,11 +55,13 @@ public class ProfitTargetTrader implements LiveHandler,
 
         outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleT),
                 "EST:", getESTLocalDateTimeNow().format(simpleT));
-        registerContract(wmt);
-        registerContract(pg);
-        registerContract(ul);
-        registerContract(mcd);
+
         registerContract(spy);
+        registerContract(wmt);
+        registerContract(ul);
+
+        registerContract(pg);
+        registerContract(mcd);
 //        registerContract(tencent);
     }
 
@@ -73,7 +75,6 @@ public class ProfitTargetTrader implements LiveHandler,
         try {
 //            pr(" using port 4001 GATEWAY");
             ap.connect("127.0.0.1", TWS_PORT, 5, "");
-            connectionStatus = true;
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
@@ -94,7 +95,7 @@ public class ProfitTargetTrader implements LiveHandler,
             outputToGeneral("error in connetion:", e);
         }
 
-        pr(" Time after latch released " + LocalTime.now().format(simpleT));
+        pr(" Time after latch released " + getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
             Contract c = symbolContractMap.get(symb);
@@ -152,6 +153,10 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static boolean checkDeltaImpact(String symb, double price) {
+        pr(symb, "check delta impact", "aggDelta<Limit", aggregateDelta < DELTA_LIMIT, "Current+Delta Inc<Limit Each"
+                , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                        getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
+
         return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                 getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
     }
@@ -175,7 +180,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (!threeDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
-            outputToGeneral(symb, "no percentile info", !threeDayPctMap.containsKey(symb) ? "3day" : "",
+            outputToGeneral(symb, "no percentile info check:", !threeDayPctMap.containsKey(symb) ? "3day" : "",
                     !oneDayPctMap.containsKey(symb) ? "1day" : "");
             return;
         }
