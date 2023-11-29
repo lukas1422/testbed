@@ -622,8 +622,8 @@ public class TradingUtility {
 
         return str("*size", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
                 "[", minTime.format(simpleDayTime), "]"
-                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", m.firstKey().format(simpleDayTime)
-                , "*last:", m.lastKey().format(simpleDayTime));
+                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleDayTime), "]"
+                , "*last:", "[", m.lastKey().format(simpleDayTime), "]");
     }
 
     public static Contract getActiveA50Contract() {

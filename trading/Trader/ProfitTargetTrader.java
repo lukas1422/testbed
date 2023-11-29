@@ -239,7 +239,6 @@ public class ProfitTargetTrader implements LiveHandler,
                     threeDayData.get(symb).put(t.truncatedTo(ChronoUnit.SECONDS), new SimpleBar(price));
                 }
 
-
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
@@ -314,7 +313,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.getOrDefault(symb, 0.0) != 0.0) {
                     pr(symb, "price", latestPriceMap.get(symb),
-                            "cost:", costMap.get(symb), "price/cost-1",
+                            "cost:", r(costMap.get(symb)), "p/c-1",
                             r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
