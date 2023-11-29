@@ -612,12 +612,12 @@ public class TradingUtility {
             return "print stats:empty";
         }
 
-        double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
-        double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();
+        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
+        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
         LocalDateTime maxTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
-                .map(e -> e.getKey()).get();
+                .map(Map.Entry::getKey).get();
         LocalDateTime minTime = m.entrySet().stream().min(Comparator.comparingDouble(e -> e.getValue().getLow()))
-                .map(e -> e.getKey()).get();
+                .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
         return str("*size", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
