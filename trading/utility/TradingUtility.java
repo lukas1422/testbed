@@ -620,11 +620,10 @@ public class TradingUtility {
                 .map(e -> e.getKey()).get();
         double range = max / min - 1;
 
-        return str("*size", m.size(), "*1st Key:", m.firstKey().format(simpleDayTime)
-                , "*last:", m.lastKey().format(simpleDayTime)
-                , "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
+        return str("*size", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
                 "[", minTime.format(simpleDayTime), "]"
-                , "*rng", Math.round(range * 1000) / 10.0, "%");
+                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", m.firstKey().format(simpleDayTime)
+                , "*last:", m.lastKey().format(simpleDayTime));
     }
 
     public static Contract getActiveA50Contract() {

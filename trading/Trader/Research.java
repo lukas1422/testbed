@@ -1,13 +1,9 @@
 package Trader;
 
-import api.TradingConstants;
 import auxiliary.SimpleBar;
 import client.Contract;
-import client.ExecutionFilter;
-import client.OrderStatus;
 import client.Types;
 import controller.ApiController;
-import enums.FXCurrency;
 import handler.DefaultConnectionHandler;
 import utility.Utility;
 
@@ -15,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.rmi.server.RemoteServer;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -94,7 +89,7 @@ public class Research {
             e.printStackTrace();
         }
 
-        pr(" Time after latch released " + LocalTime.now().format(simpleT));
+        pr(" Time after latch released " + LocalTime.now().format(simpleHourMinuteSec));
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
             pr("requesting hist data", symb);
@@ -116,7 +111,7 @@ public class Research {
     }
 
     static void compute() {
-        pr("computing", LocalTime.now().format(simpleT));
+        pr("computing", LocalTime.now().format(simpleHourMinuteSec));
 
         targetStockList.forEach(s -> {
             double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();

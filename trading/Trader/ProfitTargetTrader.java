@@ -5,6 +5,7 @@ import client.*;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
+import utility.TradingUtility;
 import utility.Utility;
 
 import java.time.*;
@@ -54,8 +55,8 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-        outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleT),
-                "EST:", getESTLocalDateTimeNow().format(simpleT));
+        outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleHourMinuteSec),
+                "EST:", getESTLocalDateTimeNow().format(simpleHourMinuteSec));
 
         registerContract(spy);
         registerContract(wmt);
@@ -96,7 +97,7 @@ public class ProfitTargetTrader implements LiveHandler,
             outputToGeneral("error in connetion:", e);
         }
 
-        pr(" Time after latch released " + getESTLocalTimeNow().format(simpleT));
+        pr(" Time after latch released " + getESTLocalTimeNow().format(simpleHourMinuteSec));
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
             Contract c = symbolContractMap.get(symb);
@@ -173,7 +174,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
-            outputToGeneral(t.format(simpleT), "order blocked:", symb, openOrders.get(symb).values(),
+            outputToGeneral(t.format(simpleHourMinuteSec), "order blocked:", symb, openOrders.get(symb).values(),
                     "**statusMap:", orderStatusMap);
             return;
         }
@@ -224,7 +225,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr("last", symb, price, t.format(simpleT));
+                pr("last", symb, price, t.format(simpleHourMinuteSec));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
 
@@ -265,9 +266,9 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToGeneral(getESTLocalTimeNow().format(simpleT), "position update:", symb, position, avgCost);
+            outputToGeneral(getESTLocalTimeNow().format(simpleHourMinuteSec), "position update:", symb, position, avgCost);
 
-            pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
+            pr("Updating position", symb, getESTLocalTimeNow().format(simpleHourMinuteSec), "Position:", position.longValue(),
                     "avgCost:", avgCost);
         }
     }
@@ -318,8 +319,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("compute:", symb, getESTLocalTimeNow().format(simpleT),
-                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile, "*stats1d:",
+                pr("compute:", symb, getESTLocalTimeNow().format(simpleHourMinute),
+                        "*3dP%:", threeDayPercentile, "*1dP%:", oneDayPercentile, "*stats1d:",
                         printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
 //                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
@@ -335,8 +336,9 @@ public class ProfitTargetTrader implements LiveHandler,
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
-                        .getOrDefault(s, 0.0)));
+                symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
+                        .getOrDefault(s, 0.0))));
+
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
@@ -374,7 +376,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (openOrders.containsKey(symb) && !openOrders.get(symb).isEmpty()) {
             openOrders.get(symb).forEach((orderID, order) -> outputToGeneral("adder2 fails. Live order:", symb, "orderID:",
                     order.orderId(), "B/S", order.action(), "size:", order.totalQuantity(), "px:", order.lmtPrice()));
-            outputToGeneral(symb, getESTLocalTimeNow().format(simpleT),
+            outputToGeneral(symb, getESTLocalTimeNow().format(simpleHourMinuteSec),
                     "adder2 failed, there are open orders", openOrders.get(symb));
             pr(symb, "adder2:open order");
             return;
@@ -478,8 +480,10 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReportEnd() {
         pr("trade report end");
         pr("all executions:");
+        outputToGeneral("TradeReportEnd: all executions:");
         tradeKeyExecutionMap.values().stream().collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
-                Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList()))).forEach(Utility::pr);
+                        Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
+                .forEach(TradingUtility::outputToGeneral);
     }
 
     @Override
@@ -567,10 +571,10 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 if (!orderStatusMap.get(symb).isEmpty()) {
-                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "orderStatus", orderStatusMap.get(symb));
+                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleHourMinuteSec), "orderStatus", orderStatusMap.get(symb));
                 }
                 if (!openOrders.get(symb).isEmpty()) {
-                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleT), "openOrders", openOrders.get(symb));
+                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleHourMinuteSec), "openOrders", openOrders.get(symb));
                 }
             });
         }, 10L, 60L, TimeUnit.SECONDS);

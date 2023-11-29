@@ -3,10 +3,9 @@ package handler;
 import controller.ApiController;
 import utility.TradingUtility;
 
-import java.time.LocalTime;
 import java.util.List;
 
-import static api.TradingConstants.simpleT;
+import static api.TradingConstants.simpleHourMinuteSec;
 import static utility.Utility.pr;
 
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
@@ -33,7 +32,7 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
 
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
-        pr(TradingUtility.getESTLocalTimeNow().format(simpleT),
+        pr(TradingUtility.getESTLocalTimeNow().format(simpleHourMinuteSec),
                 " DefaultConnHandler error ID:" + id + " code:" + errorCode + " msg:" + errorMsg);
     }
 
