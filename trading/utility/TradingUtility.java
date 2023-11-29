@@ -30,6 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
+import static api.TradingConstants.simpleDayTime;
 import static java.lang.Math.round;
 import static utility.Utility.*;
 
@@ -610,7 +611,6 @@ public class TradingUtility {
         if (m.isEmpty()) {
             return "print stats:empty";
         }
-//        pr("map detail:", m);
 
         double max = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
         double min = m.entrySet().stream().mapToDouble(e -> e.getValue().getLow()).min().getAsDouble();
@@ -620,8 +620,11 @@ public class TradingUtility {
                 .map(e -> e.getKey()).get();
         double range = max / min - 1;
 
-        return str("**size", m.size(), "**firstKey:", m.firstKey()
-                , "**lastKey:", m.lastKey(), "**max:", max, maxTime, "**min", min, minTime, "**range", Math.round(range * 100), " % ");
+        return str("*size", m.size(), "*1st Key:", m.firstKey().format(simpleDayTime)
+                , "*last:", m.lastKey().format(simpleDayTime)
+                , "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
+                "[", minTime.format(simpleDayTime), "]"
+                , "*rng", Math.round(range * 1000) / 10.0, "%");
     }
 
     public static Contract getActiveA50Contract() {

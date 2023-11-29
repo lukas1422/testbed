@@ -265,6 +265,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
+            outputToGeneral(getESTLocalTimeNow().format(simpleT), "position update:", symb, position, avgCost);
 
             pr("Updating position", symb, getESTLocalTimeNow().format(simpleT), "Position:", position.longValue(),
                     "avgCost:", avgCost);
@@ -301,7 +302,9 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
-                    pr(symb, "price/cost-1", r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
+                    pr(symb, "price", latestPriceMap.get(symb),
+                            "cost:", costMap.get(symb), "price/cost-1",
+                            r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
         });
@@ -315,8 +318,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("computeNow:", symb, getESTLocalTimeNow().format(simpleT),
-                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile, "print stats1d:",
+                pr("compute:", symb, getESTLocalTimeNow().format(simpleT),
+                        "3d p%:", threeDayPercentile, "1d p%:", oneDayPercentile, "*stats1d:",
                         printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
 //                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
@@ -548,6 +551,10 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
+        if (errorCode == 2157) {
+            pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
+        }
+
         outputToGeneral("openOrder ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
