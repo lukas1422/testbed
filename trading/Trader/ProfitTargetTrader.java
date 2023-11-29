@@ -1,6 +1,7 @@
 package Trader;
 
 import api.OrderAugmented;
+import auxiliary.SimpleBar;
 import client.*;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
@@ -10,6 +11,7 @@ import utility.Utility;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -230,6 +232,13 @@ public class ProfitTargetTrader implements LiveHandler,
                 pr("last", symb, price, t.format(simpleHourMinuteSec));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
+
+                if (threeDayData.get(symb).containsKey(t.truncatedTo(ChronoUnit.SECONDS))) {
+                    threeDayData.get(symb).get(t.truncatedTo(ChronoUnit.SECONDS)).add(price);
+                } else {
+                    threeDayData.get(symb).put(t.truncatedTo(ChronoUnit.SECONDS), new SimpleBar(price));
+                }
+
 
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
