@@ -245,7 +245,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
-//        pr("handlevol", tt, symbol, vol);
     }
 
     @Override
@@ -314,15 +313,12 @@ public class ProfitTargetTrader implements LiveHandler,
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
-//                pr("print stats 1d:", symb, printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
-//                pr("print stats 3d:", symb, printStats(threeDayData.get(symb)));
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("compute:", symb, getESTLocalTimeNow().format(simpleHourMinute),
                         "*3dP%:", threeDayPercentile, "*1dP%:", oneDayPercentile, "*stats1d:",
                         printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
-//                        "1day data:", threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
             }
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
                     && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
@@ -410,15 +406,9 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    private static void spyAdder(double price, LocalDateTime t) {
-        Decimal sizeToBuy = Decimal.get(5);
-
-    }
-
     //Trade
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
-//        checkDeltaImpact(symb, price);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
                 > DELTA_LIMIT_EACH_STOCK) {
