@@ -76,7 +76,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
         try {
 //            pr(" using port 4001 GATEWAY");
-            ap.connect("127.0.0.1", TWS_PORT, 5, "");
+//            ap.connect("127.0.0.1", TWS_PORT, 5, "");
+            ap.connect("127.0.0.1", GATEWAY_PORT, 5, "");
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
@@ -105,8 +106,9 @@ public class ProfitTargetTrader implements LiveHandler,
                 threeDayData.put(symb, new ConcurrentSkipListMap<>());
             }
 
-            pr("requesting day data", symb);
+            pr("requesting hist day data", symb);
             CompletableFuture.runAsync(() -> {
+//                pr("requesting data", symb);
                 reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
             });
@@ -185,7 +187,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (!threeDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
-            outputToGeneral(symb, "no percentile info check:", !threeDayPctMap.containsKey(symb) ? "3day" : "",
+            pr(symb, "no percentile info check:", !threeDayPctMap.containsKey(symb) ? "3day" : "",
                     !oneDayPctMap.containsKey(symb) ? "1day" : "");
             return;
         }
@@ -212,7 +214,7 @@ public class ProfitTargetTrader implements LiveHandler,
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
-                outputToGeneral("Sell", "P%:", oneDayPercentile, "priceOverCost:", priceOverCost);
+                outputToGeneral(symb, "Sell P%:", oneDayPercentile, "priceOverCost:", priceOverCost);
                 inventoryCutter(ct, price, t);
             }
         }
@@ -301,7 +303,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //        pr("periodic compute", getESTLocalTimeNow().format(simpleT));
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
-                if (latestPriceMap.containsKey(symb) && costMap.containsKey(symb)) {
+                if (latestPriceMap.containsKey(symb) && costMap.getOrDefault(symb, 0.0) != 0.0) {
                     pr(symb, "price", latestPriceMap.get(symb),
                             "cost:", costMap.get(symb), "price/cost-1",
                             r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
@@ -312,6 +314,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
+//                pr(symb, "3dp", threeDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
 
                 threeDayPctMap.put(symb, threeDayPercentile);
@@ -393,11 +396,11 @@ public class ProfitTargetTrader implements LiveHandler,
             int id = Allstatic.tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
             Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-            orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+            orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
             placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
             outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
-                    "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id),
+                    "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()),
                     "p/b/a:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
                     "3d perc/1d perc", perc3d, perc1d), outputFile);
 //            }
@@ -421,12 +424,12 @@ public class ProfitTargetTrader implements LiveHandler,
         int id = tradeID.incrementAndGet();
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
-        orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-        orderStatusMap.get(symb).put(id, OrderStatus.Created);
-        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
+        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
+        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbolFile(symb, str("********", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(id)));
+                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
     }
 
 
@@ -440,12 +443,12 @@ public class ProfitTargetTrader implements LiveHandler,
                 costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
 
         Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
-        orderSubmitted.get(symb).put(id, new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-        orderStatusMap.get(symb).put(id, OrderStatus.Created);
-        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
+        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
+        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbolFile(symb, str("********", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
-                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(id)));
+                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(o.orderId())));
     }
 
     //request realized pnl

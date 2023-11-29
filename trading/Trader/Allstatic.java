@@ -94,6 +94,7 @@ public class Allstatic {
     }
 
     static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+        //pr("today so far ", ibContractToSymbol(c), )
         String symbol = ibContractToSymbol(c);
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
