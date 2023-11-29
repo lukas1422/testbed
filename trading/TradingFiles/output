@@ -5402,3 +5402,17 @@ MCD [orderID: 84 side: BOT qty: 5 price: 281.29]
 9:58:13 position update: WMT 20 159.109025
 9:58:13 position update: MCD 5 281.35905145
 openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+*****Ending***** 11-29 10:02
+*****START***** HK TIME: 23:02:27 EST: 10:02:27
+cancelling all orders on start up
+10:02:27 global cancel orders
+tradeReport MCD time, side, price, shares, avgPrice: 20231129 09:39:56 US/Eastern BOT 281.29 5 281.29
+tradeReport SPY time, side, price, shares, avgPrice: 20231129 09:39:56 US/Eastern SLD 457.811 5 457.811
+TradeReportEnd: all executions:
+SPY [orderID: 85 side: SLD qty: 5 price: 457.811]
+MCD [orderID: 84 side: BOT qty: 5 price: 281.29]
+10:02:28 position update: SPY 0 0.0
+10:02:28 position update: UL 20 48.386215
+10:02:28 position update: WMT 20 159.109025
+10:02:28 position update: MCD 5 281.35905145
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
