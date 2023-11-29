@@ -547,6 +547,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void handle(int orderId, int errorCode, String errorMsg) {
         if (errorCode == 2157) {
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
+            return;
         }
 
         outputToGeneral("openOrder ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
