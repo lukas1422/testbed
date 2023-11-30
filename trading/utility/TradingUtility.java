@@ -120,18 +120,19 @@ public class TradingUtility {
         return s.startsWith("hk");
     }
 
-    public static Order placeBidLimit(double p, Decimal quantity) {
-        return placeBidLimitTIF(p, quantity, Types.TimeInForce.DAY);
-    }
+//    public static Order placeBidLimit(double p, Decimal quantity) {
+//        return placeBidLimitTIF(p, quantity, Types.TimeInForce.DAY);
+//    }
+//
+//    public static Order placeOfferLimit(double p, Decimal quantity) {
+//        return placeOfferLimitTIF(p, quantity, Types.TimeInForce.DAY);
+//    }
 
-    public static Order placeOfferLimit(double p, Decimal quantity) {
-        return placeOfferLimitTIF(p, quantity, Types.TimeInForce.DAY);
-    }
-
-    public static Order placeOfferLimitTIF(double p, Decimal quantity, Types.TimeInForce tif) {
+    public static Order placeOfferLimitTIF(int id, double p, Decimal quantity, Types.TimeInForce tif) {
         if (quantity.longValue() <= 0) throw new IllegalStateException(" cannot have negative or 0 quantity");
 
         Order o = new Order();
+        o.orderId(id);
         o.action(Types.Action.SELL);
         o.lmtPrice(p);
         o.orderType(OrderType.LMT);
@@ -167,9 +168,10 @@ public class TradingUtility {
         return o;
     }
 
-    public static Order placeBidLimitTIF(double p, Decimal quantity, Types.TimeInForce tif) {
+    public static Order placeBidLimitTIF(int id, double p, Decimal quantity, Types.TimeInForce tif) {
         if (quantity.longValue() <= 0) throw new IllegalStateException(" cannot have 0 quantity ");
         Order o = new Order();
+        o.orderId(id);
         o.action(Types.Action.BUY);
         o.lmtPrice(p);
         o.orderType(OrderType.LMT);

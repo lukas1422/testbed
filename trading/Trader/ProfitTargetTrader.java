@@ -206,9 +206,9 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToGeneral(symb, "buying general");
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
-            } else if (symb.equalsIgnoreCase("SPY") && position.longValue() > 0 && costMap.containsKey(symb)) {
+            } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < 0.99 && threeDayPercentile < 50) {
-                    outputToGeneral("SPY buying additional");
+                    outputToGeneral(symb, "buying additional");
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -233,10 +233,10 @@ public class ProfitTargetTrader implements LiveHandler,
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
 
-                if (threeDayData.get(symb).containsKey(t.truncatedTo(ChronoUnit.SECONDS))) {
-                    threeDayData.get(symb).get(t.truncatedTo(ChronoUnit.SECONDS)).add(price);
+                if (threeDayData.get(symb).containsKey(t.truncatedTo(ChronoUnit.MINUTES))) {
+                    threeDayData.get(symb).get(t.truncatedTo(ChronoUnit.MINUTES)).add(price);
                 } else {
-                    threeDayData.get(symb).put(t.truncatedTo(ChronoUnit.SECONDS), new SimpleBar(price));
+                    threeDayData.get(symb).put(t.truncatedTo(ChronoUnit.MINUTES), new SimpleBar(price));
                 }
 
                 if (symbolPosMap.containsKey(symb)) {
@@ -401,12 +401,12 @@ public class ProfitTargetTrader implements LiveHandler,
             Decimal sizeToBuy = getAdder2Size(price);
 //                inventoryStatusMap.put(symb, BUYING_INVENTORY);
 //            lastOrderTime.put(symb, t);
-            int id = Allstatic.tradeID.incrementAndGet();
+            int id = tradeID.incrementAndGet();
             double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
-            Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
+            Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
             orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, id));
-            outputToSymbolFile(symb, str("********", t.format(f1)), outputFile);
+            placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
+            outputToSymbolFile(symb, str("****ADDER2****", symb, t.format(f)), outputFile);
             outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, o.action(),
                     "adder2:", "price:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()),
                     "p/b/a:", price, getDoubleFromMap(bidMap, symb), getDoubleFromMap(askMap, symb),
@@ -431,11 +431,11 @@ public class ProfitTargetTrader implements LiveHandler,
         }
         int id = tradeID.incrementAndGet();
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
-        Order o = placeBidLimitTIF(bidPrice, sizeToBuy, DAY);
+        Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbolFile(symb, str("********", t.format(f1)));
+        outputToSymbolFile(symb, str("****ADDER****", t.format(f)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
     }
@@ -450,11 +450,11 @@ public class ProfitTargetTrader implements LiveHandler,
         double offerPrice = r(Math.max(askMap.getOrDefault(symb, price),
                 costMap.getOrDefault(symb, Double.MAX_VALUE) * getRequiredProfitMargin(symb)));
 
-        Order o = placeOfferLimitTIF(offerPrice, pos, DAY);
+        Order o = placeOfferLimitTIF(id, offerPrice, pos, DAY);
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbolFile(symb, str("********", t.format(f1)));
+        outputToSymbolFile(symb, str("****CUTTER****", t.format(f1)));
         outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
                 o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(o.orderId())));
     }
