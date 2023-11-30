@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
-import static api.TradingConstants.simpleDayTime;
+import static api.TradingConstants.*;
 import static java.lang.Math.round;
 import static utility.Utility.*;
 
@@ -600,6 +600,10 @@ public class TradingUtility {
 
     public static LocalTime getESTLocalTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
+    }
+
+    public static String usTime() {
+        return getESTLocalTimeNow().format(simpleHourMinuteSec);
     }
 
     public static double getRequiredProfitMargin(String s) {

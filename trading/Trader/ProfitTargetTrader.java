@@ -353,7 +353,7 @@ public class ProfitTargetTrader implements LiveHandler,
         openOrders.forEach((k, v) -> {
             v.forEach((k1, v1) -> {
                 if (orderStatusMap.get(k).get(k1).isFinished()) {
-                    outputToGeneral("removing finished orders", k, "orderID:", k1);
+                    outputToGeneral("in compute removing finished orders", k, "orderID:", k1);
                     v.remove(k1);
                 }
             });
@@ -469,18 +469,18 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(symb, execution));
 
-        pr("tradeReport:", symb,
-                "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice());
+//        pr(usTime(),"tradeReport:", symb,
+//                "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
+//                execution.price(), execution.shares(), execution.avgPrice());
 
-        outputToGeneral("tradeReport", symb,
+        outputToGeneral(usTime(), "tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
     }
 
     @Override
     public void tradeReportEnd() {
-        pr("trade report end");
+        pr(usTime(), "trade report end");
         pr("all executions:");
         outputToGeneral("TradeReportEnd: all executions:");
         tradeKeyExecutionMap.values().stream().collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
@@ -511,7 +511,7 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral("openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
+        outputToGeneral(usTime(), "openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
                 order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
@@ -521,7 +521,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
-            outputToGeneral("openOrder callback:after removal, open orders:", symb, openOrders.get(symb));
+            outputToGeneral(usTime(), "openOrder callback:after removal, open orders:", symb, openOrders.get(symb));
 
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
@@ -538,14 +538,14 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
-        outputToGeneral("openOrder orderstatus callback:", "orderId:", orderId, "OrderStatus:",
+        outputToGeneral(usTime(), "openOrder orderstatus callback:", "orderId:", orderId, "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
                 , "clientID:", clientId);
 
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToGeneral("openOrder orderStatus Callback: deleting filled from open orders", openOrders);
+                    outputToGeneral(usTime(), "openOrder orderStatus Callback: deleting filled from open orders", openOrders);
                     outputToGeneral(k, "status:", status,
                             "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId),
                             "remaining:", remaining);
