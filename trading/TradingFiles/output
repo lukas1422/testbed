@@ -3879,20 +3879,30 @@ orderHandler/Orderstate: ORDERSTATE toString: commission: 0.345257 completedTime
 openOrder callback: 09:39:56.556219 MCD order: orderID: 84 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 281.29 orderState status: Filled
 openOrder:removing order orderID: 84 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 281.29 status: Filled
 orderhandler/orderStatus: tradeId: 101 11-29 9:39:56.557 status: Filled filled: 5 remaining: 0 avgPx: 281.29
+
 openOrder orderstatus: orderId: 84 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 281.29 lastFillPrice: 281.29 clientID: 5 whyHeld  NULL 
 1.commission report symb: 101 commission 0.345257 realized pnl 1.7976931348623157E308
 2.commission report symb: MCD commission 0.345257 realized pnl 1.7976931348623157E308
+
 9:39:56 position update: MCD 5 281.3590514
-orderHandler/Orderstate: ORDERSTATE toString: commission: 1.7976931348623157E308 completedTime:  NULL  completed Status:  NULL 
+orderHandler/Orderstate: ORDERSTATE toString: commission: 1.7976931348623157E308 completedTime:  NULL  completed Status:  NULL
+
 openOrder callback: 09:39:56.767306 SPY order: orderID: 85 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 457.81 orderState status: PreSubmitted
 orderhandler/orderStatus: tradeId: 102 11-29 9:39:56.768 status: PreSubmitted filled: 0 remaining: 5 avgPx: 0.0
-openOrder orderstatus: orderId: 85 OrderStatus: PreSubmitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5 whyHeld  NULL 
+openOrder orderstatus: orderId: 85 OrderStatus: PreSubmitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5 whyHeld  NULL
+
 9:39:56 position update: SPY 0 0.0
+
 tradeReport SPY time, side, price, shares, avgPrice: 20231129 09:39:56 US/Eastern SLD 457.811 5 457.811
-orderHandler/Orderstate: ORDERSTATE toString: commission: 1.7976931348623157E308 completedTime:  NULL  completed Status:  NULL 
+
+orderHandler/Orderstate: ORDERSTATE toString: commission: 1.7976931348623157E308 completedTime:  NULL  completed Status:  NULL
+
 openOrder callback: 09:39:56.790345 SPY order: orderID: 85 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 457.81 orderState status: Filled
+
 openOrder:removing order orderID: 85 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 457.81 status: Filled
+
 orderhandler/orderStatus: tradeId: 102 11-29 9:39:56.791 status: Filled filled: 5 remaining: 0 avgPx: 457.811
+
 openOrder orderstatus: orderId: 85 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 457.811 lastFillPrice: 457.811 clientID: 5 whyHeld  NULL 
 orderHandler/Orderstate: ORDERSTATE toString: commission: 0.370295 completedTime:  NULL  completed Status:  NULL 
 openOrder callback: 09:39:56.804395 SPY order: orderID: 85 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 457.81 orderState status: Filled
@@ -3901,6 +3911,7 @@ orderhandler/orderStatus: tradeId: 102 11-29 9:39:56.806 status: Filled filled: 
 openOrder orderstatus: orderId: 85 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 457.811 lastFillPrice: 457.811 clientID: 5 whyHeld  NULL 
 1.commission report symb: 102 commission 0.370295 realized pnl 17.941405
 2.commission report symb: SPY commission 0.370295 realized pnl 17.941405
+
 9:39:56 position update: SPY 0 0.0
 9:39:56 position update: SPY 0 0.0
 9:39:57 order blocked: SPY [] **statusMap: {UL={}, PG={}, SPY={85=Filled, 102=Created}, WMT={}, MCD={84=Filled, 101=Created}}

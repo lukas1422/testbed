@@ -371,7 +371,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
 
             bidPrice = roundToMinVariation(symbol, Direction.Long, bidPrice);
 
-            Order o = placeBidLimitTIF(bidPrice, posToAdd, DAY);
+            Order o = placeBidLimitTIF(id, bidPrice, posToAdd, DAY);
             if (checkDeltaImpact(ct, o)) {
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, CUSTOM_ADDER));
                 placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));

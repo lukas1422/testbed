@@ -493,13 +493,13 @@ public class ProfitTargetTrader implements LiveHandler,
 
         orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                         == tradeKeyExecutionMap.get(tradeKey).getExec().orderId())
-                .forEach(e2 -> outputToGeneral("1.commission report", "symb:", e2.getKey(), "commission",
-                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL()));
+                .forEach(e2 -> outputToGeneral("1.commission report", symb, "orderID:", e2.getKey(), "commission:",
+                        commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL()));
 
         orderSubmitted.get(symb).forEach((key1, value1) -> {
             if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
-                outputToGeneral("2.commission report", "symb:", symb, "commission",
-                        commissionReport.commission(), "realized pnl", commissionReport.realizedPNL());
+                outputToGeneral("2.commission report", symb, "commission:",
+                        commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL());
             }
         });
     }
@@ -537,7 +537,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         outputToGeneral("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
-                , "clientID:", clientId, "whyHeld", whyHeld);
+                , "clientID:", clientId);
 
         if (status.isFinished()) {
             pr("openOrder/orderstatus/deleting filled from open orders", openOrders);
