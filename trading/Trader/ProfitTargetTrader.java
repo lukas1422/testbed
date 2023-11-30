@@ -285,7 +285,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void positionEnd() {
-        pr("position end", LocalTime.now().format(DateTimeFormatter.ofPattern("H:mm:ss")));
+        pr(usTime(), "position end");
         targetStockList.forEach(symb -> {
             if (!symbolPosMap.containsKey(symb)) {
                 pr("symbol pos does not contain pos", symb);
@@ -563,7 +563,6 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
             return;
         }
-
         outputToGeneral("openOrder ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
@@ -576,10 +575,10 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 if (!orderStatusMap.get(symb).isEmpty()) {
-                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleHourMinuteSec), "orderStatus", orderStatusMap.get(symb));
+                    outputToGeneral("periodic check:", symb, usTime(), "orderStatus", orderStatusMap.get(symb));
                 }
                 if (!openOrders.get(symb).isEmpty()) {
-                    outputToGeneral(symb, getESTLocalTimeNow().format(simpleHourMinuteSec), "openOrders", openOrders.get(symb));
+                    outputToGeneral("periodic check:", symb, usTime(), "openOrders", openOrders.get(symb));
                 }
             });
         }, 10L, 60L, TimeUnit.SECONDS);
