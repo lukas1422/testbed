@@ -7,10 +7,8 @@ import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.TradingUtility;
-import utility.Utility;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
@@ -162,7 +160,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static boolean checkDeltaImpact(String symb, double price) {
-        pr(symb, "check delta impact", "aggDelta<Limit", aggregateDelta < DELTA_LIMIT, "Current+Delta Inc<Limit Each"
+        pr(symb, "check delta impact", "aggDelta<Limit", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit Each"
                 , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
 
@@ -207,7 +205,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < 0.99 && threeDayPercentile < 50) {
+                if (priceDividedByCost(price, symb) < getRefillPoint(symb) && threeDayPercentile < 40) {
                     outputToGeneral(symb, "buying additional",
                             "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
                     inventoryAdder(ct, price, t, Decimal.get(5));
@@ -469,10 +467,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(symb, execution));
 
-//        pr(usTime(),"tradeReport:", symb,
-//                "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
-//                execution.price(), execution.shares(), execution.avgPrice());
-
         outputToGeneral(usTime(), "tradeReport", symb,
                 "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
@@ -480,9 +474,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void tradeReportEnd() {
-        pr(usTime(), "trade report end");
-        pr("all executions:");
-        outputToGeneral("TradeReportEnd: all executions:");
+        outputToGeneral(usTime(), "TradeReportEnd: all executions:");
         tradeKeyExecutionMap.values().stream().collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
                         Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
                 .forEach(TradingUtility::outputToGeneral);

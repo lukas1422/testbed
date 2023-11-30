@@ -663,4 +663,13 @@ public class TradingUtility {
             }
         }));
     }
+
+    public static double getRefillPoint(String symb) {
+        if (symb.equalsIgnoreCase("SPY")) {
+            outputToGeneral(symb, "refill point is:", 0.995);
+            return 0.995;
+        }
+        outputToGeneral(symb, "refill point is:", 0.99);
+        return 0.99;
+    }
 }
