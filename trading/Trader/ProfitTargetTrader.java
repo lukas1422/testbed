@@ -201,11 +201,13 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
                 if (threeDayPercentile < 40) {
-                    outputToGeneral(symb, "buying general", "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
+                    outputToGeneral("****", symb, "buying general", "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < getRefillPoint(symb) && threeDayPercentile < 40) {
+                if (symb.equalsIgnoreCase("SPY")
+                        && priceDividedByCost(price, symb) < getRefillPoint(symb)
+                        && threeDayPercentile < 40) {
                     outputToGeneral(symb, "buying additional",
                             "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
                     inventoryAdder(ct, price, t, Decimal.get(5));

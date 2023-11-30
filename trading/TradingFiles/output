@@ -1,0 +1,75 @@
+openOrder ERROR: 11-30 4:13:10 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+*****Ending***** 11-30 9:27
+*****START***** HK TIME: 22:27:55 EST: 9:27:55
+cancelling all orders on start up
+9:27:56 global cancel orders
+9:27:56 TradeReportEnd: all executions:
+9:27:57 position update: SPY 0 0.0
+9:27:57 position update: UL 20 48.386215
+9:27:57 position update: MCD 5 281.35906
+9:27:57 position update: WMT 20 159.109025
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 11-30 9:27:58 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+PG buying general 3dp: 20.0 1dp: 0.0
+****ADDER**** 11-30 9:30:03
+PG orderID: 101 tradeID: 101 action: BUY px: 150.9 qty: 5 PG 11-30 9:30 INVENTORY_ADDER Created
+9:30:03 order blocked: PG [] **statusMap: {UL={}, PG={101=Created}, SPY={}, WMT={}, MCD={}}
+9:30:04 openOrder callback: 9:30:04 PG orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9 orderState status: Submitted
+9:30:04 openOrder orderstatus callback: orderId: 101 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5
+periodic check: PG 9:30:06 orderStatus {101=Submitted}
+periodic check: PG 9:30:06 openOrders {101=orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9}
+9:30:16 position update: PG 5 150.9
+9:30:16 tradeReport PG time, side, price, shares, avgPrice: 20231130 09:30:14 US/Eastern BOT 150.9 5 150.9
+9:30:16 openOrder callback: 9:30:16 PG orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9 orderState status: Filled
+openOrder callback:removing order orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9 status: Filled
+9:30:16 openOrder callback:after removal, open orders: PG {}
+9:30:16 openOrder orderstatus callback: orderId: 101 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 150.9 lastFillPrice: 150.9 clientID: 5
+9:30:16 openOrder callback: 9:30:16 PG orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9 orderState status: Filled
+openOrder callback:removing order orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 150.9 status: Filled
+9:30:16 openOrder callback:after removal, open orders: PG {}
+9:30:16 openOrder orderstatus callback: orderId: 101 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 150.9 lastFillPrice: 150.9 clientID: 5
+1.commission report PG orderID: 101 commission: 0.340757 realized pnl: 1.7976931348623157E308
+2.commission report PG commission: 0.340757 realized pnl: 1.7976931348623157E308
+9:30:16 position update: PG 5 150.9681514
+periodic check: PG 9:31:06 orderStatus {101=Filled}
+periodic check: PG 9:32:06 orderStatus {101=Filled}
+periodic check: PG 9:33:06 orderStatus {101=Filled}
+SPY buying general 3dp: 36.0 1dp: 4.0
+****ADDER**** 11-30 9:33:56
+SPY orderID: 102 tradeID: 102 action: BUY px: 455.24 qty: 5 SPY 11-30 9:33 INVENTORY_ADDER Created
+9:33:56 openOrder callback: 9:33:56 SPY orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24 orderState status: Submitted
+9:33:56 openOrder orderstatus callback: orderId: 102 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0 clientID: 5
+9:33:57 order blocked: SPY [orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24] **statusMap: {UL={}, PG={101=Filled}, SPY={102=Submitted}, WMT={}, MCD={}}
+9:33:57 order blocked: SPY [orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24] **statusMap: {UL={}, PG={101=Filled}, SPY={102=Submitted}, WMT={}, MCD={}}
+9:33:58 position update: SPY 5 455.235
+9:33:58 tradeReport SPY time, side, price, shares, avgPrice: 20231130 09:33:56 US/Eastern BOT 455.235 5 455.235
+9:33:58 openOrder callback: 9:33:58 SPY orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24 orderState status: Filled
+openOrder callback:removing order orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24 status: Filled
+9:33:58 openOrder callback:after removal, open orders: SPY {}
+9:33:58 openOrder orderstatus callback: orderId: 102 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 455.235 lastFillPrice: 455.235 clientID: 5
+9:33:58 openOrder callback: 9:33:58 SPY orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24 orderState status: Filled
+openOrder callback:removing order orderID: 102 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.24 status: Filled
+9:33:58 openOrder callback:after removal, open orders: SPY {}
+9:33:58 openOrder orderstatus callback: orderId: 102 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 455.235 lastFillPrice: 455.235 clientID: 5
+1.commission report SPY orderID: 102 commission: 0.351257 realized pnl: 1.7976931348623157E308
+2.commission report SPY commission: 0.351257 realized pnl: 1.7976931348623157E308
+9:33:58 position update: SPY 5 455.30525140000003
+periodic check: PG 9:34:06 orderStatus {101=Filled}
+periodic check: SPY 9:34:06 orderStatus {102=Filled}
+9:34:17 position update: SPY 5 455.30525145
+9:34:17 position update: PG 5 150.96815145
+9:34:17 position update: PG 5 150.96815145
+9:34:17 position update: SPY 5 455.30525145
+openOrder ERROR: 11-30 9:34:58 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+periodic check: PG 9:35:06 orderStatus {101=Filled}
+periodic check: SPY 9:35:06 orderStatus {102=Filled}
+periodic check: PG 9:36:06 orderStatus {101=Filled}
+periodic check: SPY 9:36:06 orderStatus {102=Filled}
+periodic check: PG 9:37:06 orderStatus {101=Filled}
+periodic check: SPY 9:37:06 orderStatus {102=Filled}
+periodic check: PG 9:38:06 orderStatus {101=Filled}
+periodic check: SPY 9:38:06 orderStatus {102=Filled}
+periodic check: PG 9:39:06 orderStatus {101=Filled}
+periodic check: SPY 9:39:06 orderStatus {102=Filled}
+periodic check: PG 9:40:06 orderStatus {101=Filled}
+periodic check: SPY 9:40:06 orderStatus {102=Filled}
