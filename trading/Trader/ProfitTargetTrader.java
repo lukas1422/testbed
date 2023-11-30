@@ -203,12 +203,13 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
                 if (threeDayPercentile < 40) {
-                    outputToGeneral(symb, "buying general");
+                    outputToGeneral(symb, "buying general", "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < 0.99 && threeDayPercentile < 50) {
-                    outputToGeneral(symb, "buying additional");
+                    outputToGeneral(symb, "buying additional",
+                            "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -436,7 +437,7 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbolFile(symb, str("****ADDER****", t.format(f)));
-        outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
+        outputToSymbolFile(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
     }
 
@@ -455,7 +456,7 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbolFile(symb, str("****CUTTER****", t.format(f1)));
-        outputToSymbolFile(symb, str("orderID:", o.orderId(), "tradeID:", id,
+        outputToSymbolFile(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id,
                 o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(o.orderId())));
     }
 
@@ -510,16 +511,18 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral("openOrder callback:", getESTLocalTimeNow(), symb,
-                "order:", order, "orderState status:", orderState.status());
+        outputToGeneral("openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
+                order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status().isFinished()) {
-            outputToGeneral("openOrder:removing order", order, "status:", orderState.status());
+            outputToGeneral("openOrder callback:removing order", order, "status:", orderState.status());
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
+            outputToGeneral("openOrder callback:after removal, open orders:", symb, openOrders.get(symb));
+
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
         }
@@ -535,14 +538,14 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
-        outputToGeneral("openOrder orderstatus:", "orderId:", orderId, "OrderStatus:",
+        outputToGeneral("openOrder orderstatus callback:", "orderId:", orderId, "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
                 , "clientID:", clientId);
 
         if (status.isFinished()) {
-            pr("openOrder/orderstatus/deleting filled from open orders", openOrders);
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
+                    outputToGeneral("openOrder orderStatus Callback: deleting filled from open orders", openOrders);
                     outputToGeneral(k, "status:", status,
                             "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId),
                             "remaining:", remaining);

@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Allstatic.*;
+import static api.TradingConstants.f;
 import static api.TradingConstants.f2;
 import static utility.TradingUtility.*;
 
@@ -43,7 +44,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public void orderState(OrderState orderState) {
-        outputToGeneral("orderHandler/Orderstate:", orderState);
+        outputToGeneral(symbol,"orderHandler/Orderstate:", orderState);
 //        LocalDateTime usTimeNow = getESTLocalDateTimeNow();
 //        if (orderSubmitted.get(symbol).containsKey(tradeID)) {
 //            orderSubmitted.get(symbol).get(tradeID).setAugmentedOrderStatus(orderState.status());
@@ -77,7 +78,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToGeneral("orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(f2),
+        outputToGeneral("orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(f),
                 "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice);
     }
 
