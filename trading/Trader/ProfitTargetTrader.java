@@ -217,7 +217,8 @@ public class ProfitTargetTrader implements LiveHandler,
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
-                outputToGeneral(symb, "Sell P%:", oneDayPercentile, "priceOverCost:", priceOverCost);
+                outputToGeneral(symb, "Sell P%:", oneDayPercentile,
+                        "priceOverCost:", priceOverCost);
                 inventoryCutter(ct, price, t);
             }
         }
@@ -313,7 +314,8 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.getOrDefault(symb, 0.0) != 0.0) {
-                    pr(symb, "price", latestPriceMap.get(symb),
+                    pr(symb, "position:", symbolPosMap.get(symb),
+                            "price", latestPriceMap.get(symb),
                             "cost:", r(costMap.get(symb)), "p/c-1",
                             r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
