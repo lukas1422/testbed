@@ -218,13 +218,13 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < getMinRefillPoint(symb)
+                if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)
                         && threeDayPerc < 40) {
                     outputToSymbol(symb, str("****ADD MORE****", t.format(f)));
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "p/c:", priceDividedByCost(price, symb), "refillPt"
-                            , getMinRefillPoint(symb));
+                            , getRequiredRefillPoint(symb));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -348,7 +348,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
                             .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
             averageDailyRange.put(s, rng);
-            pr("refill point:", getMinRefillPoint(s));
+            pr("refill point:", getRequiredRefillPoint(s));
 
         });
 
@@ -605,10 +605,12 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 if (!orderStatusMap.get(symb).isEmpty()) {
-                    outputToGeneral("periodic check:", symb, usTime(), "orderStatus", orderStatusMap.get(symb));
+                    outputToGeneral("periodic check:", symb, usTime(),
+                            "orderStatus", orderStatusMap.get(symb));
                 }
                 if (!openOrders.get(symb).isEmpty()) {
-                    outputToGeneral("periodic check:", symb, usTime(), "openOrders", openOrders.get(symb));
+                    outputToGeneral("periodic check:", symb, usTime(),
+                            "openOrders", openOrders.get(symb));
                 }
             });
         }, 10L, 60L, TimeUnit.SECONDS);

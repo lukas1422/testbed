@@ -671,7 +671,7 @@ public class TradingUtility {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double getMinRefillPoint(String symb) {
+    public static double getRequiredRefillPoint(String symb) {
         return Math.min(getDefaultRefill(symb)
                 , 1 - averageDailyRange.getOrDefault(symb, 0.0));
     }
