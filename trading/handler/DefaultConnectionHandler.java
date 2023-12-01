@@ -13,25 +13,25 @@ import static utility.Utility.pr;
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
     @Override
     public void connected() {
-        outputToGeneral(usTime(), "connection handler: connected");
+        outputToGeneral(usTime(), "DefaultConnectionHandler:connected");
         pr(usTime(), "Default Conn Handler: connected");
     }
 
     @Override
     public void disconnected() {
-        outputToGeneral(usTime(), "connection handler: disonnected");
+        outputToGeneral(usTime(), "DefaultConnectionHandler:disonnected");
         pr(usTime(), "Default Conn Handler: disconnected");
     }
 
     @Override
     public void accountList(List<String> list) {
-        outputToGeneral(usTime(), "connection handler: account list:", list);
+        outputToGeneral(usTime(), "DefaultConnectionHandler: account list:", list);
         pr(usTime(), "account list ", list);
     }
 
     @Override
     public void error(Exception e) {
-        outputToGeneral(" error in connection handler:", usTime(), e);
+        outputToGeneral("DefaultConnectionHandler error:", usTime(), e);
     }
 
     @Override

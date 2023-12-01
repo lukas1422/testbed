@@ -327,7 +327,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(s -> {
             double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).values().stream()
                     .mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
-            pr("average range:", s, rng, "firstkey:",
+            pr("average range:", s, round5Digits(rng), "firstkey:",
                     ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
                             .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
@@ -547,7 +547,7 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToSymbol(symb, "last Live price feed time:",
+                outputToSymbol(symb, usTime(), "last Live price feed time:",
                         latestPriceTimeMap.containsKey(symb) ? latestPriceTimeMap.get(symb) : "no live feed");
 
                 if (!orderStatusMap.get(symb).isEmpty()) {
