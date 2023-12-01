@@ -59,3 +59,34 @@ updating position: 7:24:11 position update: 0 0.0
 7:25:48 tradeReport time, side, price, shares, avgPrice: 2023-11-30T15:54:36 SLD 456.25 1 456.25
 list of executions [orderID: 104 time: 2023-11-30T15:54:36 side: SLD shares: 1 price: 456.25, orderID: 104 time: 2023-11-30T15:54:36 side: SLD shares: 4 price: 456.25]
 updating position: 7:25:49 position update: 0 0.0
+9:22:41 tradeReport time, side, price, shares, avgPrice: 2023-11-30T15:54:36 SLD 456.25 4 456.25
+9:22:41 tradeReport time, side, price, shares, avgPrice: 2023-11-30T15:54:36 SLD 456.25 1 456.25
+list of executions [orderID: 104 time: 2023-11-30T15:54:36 side: SLD shares: 1 price: 456.25, orderID: 104 time: 2023-11-30T15:54:36 side: SLD shares: 4 price: 456.25]
+updating position: 9:22:42 0 0.0
+9:24:19 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 4 456.25
+9:24:19 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 1 456.25
+list of executions [orderID: 104 time: 15:54:36 side: SLD shares: 1 price: 456.25, orderID: 104 time: 15:54:36 side: SLD shares: 4 price: 456.25]
+updating position: 9:24:20 0 0.0
+****FIRST**** 12-1 9:32:49
+orderID: 104 tradeID: 104 action: BUY px: 455.28 qty: 5 SPY 12-1 9:32 INVENTORY_ADDER Created
+9:32:50 openOrder callback: orderID: 104 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.28 orderState status: Submitted
+updating position: 9:32:51 5 455.28
+9:32:51 tradeReport time, side, price, shares, avgPrice: 09:32:51 BOT 455.28 5 455.28
+9:32:51 openOrder callback: orderID: 104 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.28 orderState status: Filled
+openOrder callback:removing order orderID: 104 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.28 status: Filled
+9:32:51 openOrder callback:after removal.open orders: SPY {}
+9:32:51 openOrder callback: orderID: 104 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.28 orderState status: Filled
+openOrder callback:removing order orderID: 104 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 455.28 status: Filled
+9:32:51 openOrder callback:after removal.open orders: SPY {}
+1.commission report SPY orderID: 104 commission: 0.343757 realized pnl: 1.7976931348623157E308
+2.commission report SPY commission: 0.343757 realized pnl: 1.7976931348623157E308
+updating position: 9:32:51 5 455.34875139999997
+periodic check: 9:33:29 orderStatus {104=Filled}
+periodic check: 9:34:29 orderStatus {104=Filled}
+updating position: 9:35:19 5 455.34875145
+updating position: 9:35:19 5 455.34875145
+periodic check: 9:35:29 orderStatus {104=Filled}
+periodic check: 9:36:29 orderStatus {104=Filled}
+periodic check: 9:37:29 orderStatus {104=Filled}
+periodic check: 9:38:29 orderStatus {104=Filled}
+periodic check: 9:39:29 orderStatus {104=Filled}

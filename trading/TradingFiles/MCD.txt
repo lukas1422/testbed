@@ -17,3 +17,33 @@ orderID: 84 tradeID: 101 action: BUY px: 281.29 qty: 5 MCD 11-29 9:39 INVENTORY_
 7:23:06 position update: 5 281.35906
 updating position: 7:24:11 position update: 5 281.35906
 updating position: 7:25:49 position update: 5 281.35906
+updating position: 9:22:42 5 281.35906
+updating position: 9:24:20 5 281.35906
+****CUT**** 12-1 9:30
+Sell 1dP%: 100.0 priceOverCost: 1.006756277903402 requiredMargin: 1.0052796373190138
+orderID: 103 tradeID: 103 SELL px: 283.28 qty: 5 costBasis: 281.35906 MCD 12-1 9:30 INVENTORY_CUTTER Created
+9:30:20 openOrder callback: orderID: 103 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 283.28 orderState status: Submitted
+updating position: 9:30:21 0 0.0
+9:30:21 tradeReport time, side, price, shares, avgPrice: 09:30:21 SLD 283.28 5 283.28
+9:30:21 openOrder callback: orderID: 103 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 283.28 orderState status: Filled
+openOrder callback:removing order orderID: 103 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 283.28 status: Filled
+9:30:21 openOrder callback:after removal.open orders: MCD {}
+9:30:21 openOrder callback: orderID: 103 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 283.28 orderState status: Filled
+openOrder callback:removing order orderID: 103 ordertype: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 283.28 status: Filled
+9:30:21 openOrder callback:after removal.open orders: MCD {}
+1.commission report MCD orderID: 103 commission: 0.357313 realized pnl: 9.247387
+2.commission report MCD commission: 0.357313 realized pnl: 9.247387
+updating position: 9:30:21 0 0.0
+updating position: 9:30:21 0 0.0
+periodic check: 9:30:29 orderStatus {103=Filled}
+periodic check: 9:31:29 orderStatus {103=Filled}
+periodic check: 9:32:29 orderStatus {103=Filled}
+periodic check: 9:33:29 orderStatus {103=Filled}
+periodic check: 9:34:29 orderStatus {103=Filled}
+updating position: 9:35:19 0 0.0
+updating position: 9:35:19 0 0.0
+periodic check: 9:35:29 orderStatus {103=Filled}
+periodic check: 9:36:29 orderStatus {103=Filled}
+periodic check: 9:37:29 orderStatus {103=Filled}
+periodic check: 9:38:29 orderStatus {103=Filled}
+periodic check: 9:39:29 orderStatus {103=Filled}

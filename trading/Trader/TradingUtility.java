@@ -614,7 +614,12 @@ public class TradingUtility {
         return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
     }
 
+    static double round5Digits(double n) {
+        return Math.round(n * 10000.0) / 10000.0;
+    }
+
     public static double getRequiredProfitMargin(String s) {
+        outputToSymbol(s, "avgRange:", averageDailyRange.getOrDefault(s, 0.0));
         return Math.max(getMinProfitMargin(s),
                 1 + averageDailyRange.getOrDefault(s, 0.0) / 2);
     }
@@ -681,10 +686,10 @@ public class TradingUtility {
     }
 
     public static void outputToSymbol(String symbol, Object... cs) {
-        pr("outputToSymbol:", symbol, str(cs));
+        pr("Symbol:", symbol, str(cs));
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }
-        outputToGeneral(cs);
+        outputToGeneral(symbol, cs);
     }
 }

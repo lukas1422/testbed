@@ -206,7 +206,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (position.isZero()) {
                 if (threeDayPerc < 40) {
                     outputToSymbol(symb, str("****FIRST****", t.format(f)));
-                    outputToGeneral("****", symb, "first buying", "3dp:",
+                    outputToSymbol(symb, "****first buying", "3dp:",
                             threeDayPerc, "1dp:", oneDayPerc);
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
@@ -322,7 +322,6 @@ public class ProfitTargetTrader implements LiveHandler,
                             r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
-
         });
 
         targetStockList.forEach(s -> {
@@ -333,8 +332,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
                             .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
             averageDailyRange.put(s, rng);
-            pr("refill point:", getRequiredRefillPoint(s));
-
+            pr("refill point:", round5Digits(getRequiredRefillPoint(s)));
         });
 
         targetStockList.forEach(symb -> {
@@ -362,7 +360,6 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach((s) ->
                 symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
                         .getOrDefault(s, 0.0))));
-
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
@@ -446,15 +443,14 @@ public class ProfitTargetTrader implements LiveHandler,
 
     }
 
-    public static LocalDateTime executionToUSTime(String time) {
+    public static LocalTime executionToUSTime(String time) {
         return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
-                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
+                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
 
     @Override
     public void tradeReportEnd() {
         outputToGeneral(usTime(), "TradeReportEnd: all executions:");
-//        pr("trade key execution map:", tradeKeyExecutionMap);
         tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
                 .collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
                         Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))

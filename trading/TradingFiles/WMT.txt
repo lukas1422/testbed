@@ -189,3 +189,32 @@
 7:23:06 position update: 20 159.109025
 updating position: 7:24:11 position update: 20 159.109025
 updating position: 7:25:49 position update: 20 159.109025
+updating position: 9:22:42 20 159.109025
+updating position: 9:24:20 20 159.109025
+****REFILL**** 12-1 9:30:00
+buyMore: 3dp: 19.0 1dp: 0.0 p/c: 0.9770030329832012 refillPt 0.9868069690727617
+orderID: 101 tradeID: 101 action: BUY px: 155.27 qty: 5 WMT 12-1 9:30 INVENTORY_ADDER Created
+9:30:01 openOrder callback: orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 155.27 orderState status: Submitted
+updating position: 9:30:03 25 158.34122
+9:30:03 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 155.27 5 155.27
+9:30:03 openOrder callback: orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 155.27 orderState status: Filled
+openOrder callback:removing order orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 155.27 status: Filled
+9:30:03 openOrder callback:after removal.open orders: WMT {}
+9:30:03 openOrder callback: orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 155.27 orderState status: Filled
+openOrder callback:removing order orderID: 101 ordertype: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 155.27 status: Filled
+9:30:03 openOrder callback:after removal.open orders: WMT {}
+1.commission report WMT orderID: 101 commission: 0.345257 realized pnl: 1.7976931348623157E308
+2.commission report WMT commission: 0.345257 realized pnl: 1.7976931348623157E308
+updating position: 9:30:03 25 158.35503028
+periodic check: 9:30:29 orderStatus {101=Filled}
+periodic check: 9:31:29 orderStatus {101=Filled}
+periodic check: 9:32:29 orderStatus {101=Filled}
+periodic check: 9:33:29 orderStatus {101=Filled}
+periodic check: 9:34:29 orderStatus {101=Filled}
+updating position: 9:35:19 25 158.3550303
+updating position: 9:35:19 25 158.3550303
+periodic check: 9:35:29 orderStatus {101=Filled}
+periodic check: 9:36:29 orderStatus {101=Filled}
+periodic check: 9:37:29 orderStatus {101=Filled}
+periodic check: 9:38:29 orderStatus {101=Filled}
+periodic check: 9:39:29 orderStatus {101=Filled}
