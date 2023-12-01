@@ -186,7 +186,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
-            outputToGeneral(t.format(simpleHourMinuteSec), "order blocked:", symb, openOrders.get(symb).values(),
+            outputToGeneral(t.format(simpleHourMinuteSec),
+                    "order blocked:", symb, openOrders.get(symb).values(),
                     "**statusMap:", orderStatusMap);
             return;
         }
@@ -202,32 +203,34 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        double threeDayPercentile = threeDayPctMap.get(symb);
-        double oneDayPercentile = oneDayPctMap.get(symb);
+        double threeDayPerc = threeDayPctMap.get(symb);
+        double oneDayPerc = oneDayPctMap.get(symb);
 
         Decimal position = symbolPosMap.get(symb);
-        pr("Check Perc", symb, "3dp:", threeDayPercentile, "1dp:", oneDayPercentile, "pos:", position);
+        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
 
-        if (oneDayPercentile < 10 && checkDeltaImpact(symb, price)) {
+        if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
-                if (threeDayPercentile < 40) {
-                    outputToGeneral("****", symb, "buying general", "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
+                if (threeDayPerc < 40) {
+                    outputToGeneral("****", symb, "buying general", "3dp:",
+                            threeDayPerc, "1dp:", oneDayPerc);
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (symb.equalsIgnoreCase("SPY")
-                        && priceDividedByCost(price, symb) < getMinRefillPoint(symb)
-                        && threeDayPercentile < 40) {
-                    outputToGeneral(symb, "buying additional",
-                            "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
+                if (priceDividedByCost(price, symb) < getMinRefillPoint(symb)
+                        && threeDayPerc < 40) {
+                    outputToSymbol(symb, "buyMore:",
+                            "3dp%:", threeDayPerc, "1dp%:", oneDayPerc,
+                            "p/c:", priceDividedByCost(price, symb), "refillPt"
+                            , getMinRefillPoint(symb));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        } else if (oneDayPercentile > 80 && position.longValue() > 0) {
+        } else if (oneDayPerc > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
-                outputToGeneral(symb, "Sell P%:", oneDayPercentile,
+                outputToSymbol(symb, "Sell 1dP%:", oneDayPerc,
                         "priceOverCost:", priceOverCost);
                 inventoryCutter(ct, price, t);
             }
@@ -341,7 +344,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
                             .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
             averageDailyRange.put(s, rng);
-            pr("refill point1", getRefillPoint1(s), "refill point2:",getRefillPoint2(s));
+            pr("refill point1", getRefillPoint1(s), "refill point2:", getRefillPoint2(s));
 
         });
 
@@ -397,7 +400,8 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    private static void inventoryAdder2More(Contract ct, double price, LocalDateTime t, double perc3d, double perc1d) {
+    private static void inventoryAdder2More(Contract ct, double price,
+                                            LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
 //        InventoryStatus status = inventoryStatusMap.get(symb);
@@ -461,8 +465,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbolFile(symb, str("****ADDER****", t.format(f)));
-        outputToSymbolFile(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
+        outputToSymbol(symb, str("****ADDER****", t.format(f)));
+        outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
     }
 
@@ -480,9 +484,10 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbolFile(symb, str("****CUTTER****", t.format(f1)));
-        outputToSymbolFile(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id,
-                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost, orderSubmitted.get(symb).get(o.orderId())));
+        outputToSymbol(symb, str("****CUTTER****", t.format(f1)));
+        outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id,
+                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost,
+                orderSubmitted.get(symb).get(o.orderId())));
     }
 
     //request realized pnl
@@ -513,12 +518,14 @@ public class ProfitTargetTrader implements LiveHandler,
 
         orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                         == tradeKeyExecutionMap.get(tradeKey).getExec().orderId())
-                .forEach(e2 -> outputToGeneral("1.commission report", symb, "orderID:", e2.getKey(), "commission:",
-                        commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL()));
+                .forEach(e2 -> outputToSymbol(symb, "1.commission report", symb,
+                        "orderID:", e2.getKey(),
+                        "commission:", commissionReport.commission(),
+                        "realized pnl:", commissionReport.realizedPNL()));
 
         orderSubmitted.get(symb).forEach((key1, value1) -> {
             if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
-                outputToGeneral("2.commission report", symb, "commission:",
+                outputToSymbol(symb, "2.commission report", symb, "commission:",
                         commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL());
             }
         });
@@ -530,13 +537,13 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToSymbolFile(symb, usTime(), "openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
+        outputToSymbol(symb, usTime(), "openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
                 order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status().isFinished()) {
-            outputToSymbolFile("openOrder callback:removing order", order, "status:", orderState.status());
+            outputToSymbol("openOrder callback:removing order", order, "status:", orderState.status());
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }

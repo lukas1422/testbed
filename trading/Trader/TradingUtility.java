@@ -1,6 +1,5 @@
 package Trader;
 
-import Trader.Allstatic;
 import api.ControllerCalls;
 import api.TradingConstants;
 import auxiliary.SimpleBar;
@@ -247,7 +246,7 @@ public class TradingUtility {
 
 
     public static void outputToGeneral(Object... cs) {
-        pr(str(cs));
+//        pr(str(cs));
         outputToGeneral(str(cs));
     }
 
@@ -607,11 +606,13 @@ public class TradingUtility {
         return getESTLocalTimeNow().format(simpleHourMinuteSec);
     }
 
+    public static double getMinProfitMargin(String s) {
+        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
+    }
+
     public static double getRequiredProfitMargin(String s) {
-        if (s.equalsIgnoreCase("SPY")) {
-            return 1.002;
-        }
-        return 1.005;
+        return Math.max(getMinProfitMargin(s),
+                1 + averageDailyRange.getOrDefault(s, 0.0) / 2);
     }
 
     public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
@@ -671,10 +672,8 @@ public class TradingUtility {
 
     public static double getRefillPoint1(String symb) {
         if (symb.equalsIgnoreCase("SPY")) {
-//            outputToGeneral(symb, "refill point is:", 0.995);
             return 0.995;
         }
-//        outputToGeneral(symb, "refill point is:", 0.99);
         return 0.99;
     }
 
@@ -683,5 +682,13 @@ public class TradingUtility {
             return getRefillPoint1(symb);
         }
         return Math.min(0.995, 1 - averageDailyRange.get(symb));
+    }
+
+    public static void outputToSymbol(String symbol, Object... cs) {
+        pr("output", symbol, str(cs));
+        if (!symbol.equals("")) {
+            outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
+        }
+        outputToGeneral(cs);
     }
 }
