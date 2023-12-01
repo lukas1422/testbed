@@ -1366,3 +1366,32 @@ openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***ord
 openOrder ERROR: 11-30 19:16:27 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
 openOrder ERROR: 11-30 21:00:01 orderId: -1  errorCode: 502  msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
 *****Ending***** 11-30 22:53
+*****START***** HK TIME: 18:14:46 EST: 5:14:46
+cancelling all orders on start up
+5:14:48 position update: SPY 0 0.0
+5:14:48 position update: UL 20 48.386215
+5:14:48 position update: MCD 5 281.35906
+5:14:48 position update: WMT 20 159.109025
+5:14:48 position update: PG 0 0.0
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 12-1 5:14:49 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+openOrder ERROR: 12-1 5:14:52 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+openOrder ERROR: 12-1 5:15:10 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+openOrder ERROR: 12-1 5:15:10 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+openOrder ERROR: 12-1 5:15:43 orderId: -1  errorCode: 502  msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+*****Ending***** 12-1 5:15
+*****START***** HK TIME: 18:17:31 EST: 5:17:31
+cancelling all orders on start up
+5:17:31 global cancel orders
+5:17:32 position update: SPY 0 0.0
+5:17:32 position update: UL 20 48.386215
+5:17:32 position update: MCD 5 281.35906
+5:17:32 position update: WMT 20 159.109025
+5:17:32 position update: PG 0 0.0
+openOrderEnd: print all openOrders {MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 12-1 5:18:50 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.cashfarm
+openOrder ERROR: 12-1 5:18:50 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.cashfarm
+openOrder ERROR: 12-1 5:18:54 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.eufarmnj
+openOrder ERROR: 12-1 5:18:54 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.eufarmnj
+openOrder ERROR: 12-1 5:19:37 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.jfarm
+openOrder ERROR: 12-1 5:19:37 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.jfarm

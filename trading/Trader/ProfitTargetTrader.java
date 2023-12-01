@@ -77,7 +77,7 @@ public class ProfitTargetTrader implements LiveHandler,
         try {
 //            pr(" using port 4001 GATEWAY");
 //            ap.connect("127.0.0.1", TWS_PORT, 5, "");
-            ap.connect("127.0.0.1", GATEWAY_PORT, 5, "");
+            ap.connect("127.0.0.1", TWS_PORT, 5, "");
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
@@ -341,8 +341,8 @@ public class ProfitTargetTrader implements LiveHandler,
         });
 
         targetStockList.forEach(s -> {
-            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
-                    .average().orElse(0.0);
+            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).values().stream()
+                    .mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
             pr("average range:", s, rng, "firstkey:",
                     ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
@@ -408,7 +408,6 @@ public class ProfitTargetTrader implements LiveHandler,
                                             LocalDateTime t, double perc3d, double perc1d) {
         String symb = ibContractToSymbol(ct);
         Decimal pos = symbolPosMap.get(symb);
-//        InventoryStatus status = inventoryStatusMap.get(symb);
 
         if (!costMap.containsKey(symb)) {
             return;
