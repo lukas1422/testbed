@@ -89,7 +89,7 @@ public class Research {
             e.printStackTrace();
         }
 
-        pr(" Time after latch released " + LocalTime.now().format(simpleHourMinuteSec));
+        pr(" Time after latch released " + LocalTime.now().format(simpleHrMinSec));
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
             pr("requesting hist data", symb);
@@ -111,7 +111,7 @@ public class Research {
     }
 
     static void compute() {
-        pr("computing", LocalTime.now().format(simpleHourMinuteSec));
+        pr("computing", LocalTime.now().format(simpleHrMinSec));
 
         targetStockList.forEach(s -> {
             double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();

@@ -45,7 +45,7 @@ public final class TradingConstants {
 
     public static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
 
-    public static final DateTimeFormatter simpleHourMinuteSec = DateTimeFormatter.ofPattern("H:mm:ss");
+    public static final DateTimeFormatter simpleHrMinSec = DateTimeFormatter.ofPattern("H:mm:ss");
     public static final DateTimeFormatter simpleHourMinute = DateTimeFormatter.ofPattern("H:mm");
     public static final DateTimeFormatter simpleDayTime = DateTimeFormatter.ofPattern("M-d H:mm");
 

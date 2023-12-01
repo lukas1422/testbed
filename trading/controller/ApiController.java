@@ -18,7 +18,7 @@ import api.IBDataHandler;
 import client.*;
 
 import static Trader.Allstatic.outputFile;
-import static api.TradingConstants.simpleHourMinuteSec;
+import static api.TradingConstants.simpleHrMinSec;
 import static Trader.TradingUtility.getESTLocalDateTimeNow;
 import static Trader.TradingUtility.outputToFile;
 import static utility.Utility.str;
@@ -973,7 +973,7 @@ public class ApiController implements EWrapper {
 
         m_client.reqGlobalCancel();
         sendEOM();
-        outputToFile(str(getESTLocalDateTimeNow().format(simpleHourMinuteSec), "global cancel orders"), outputFile);
+        outputToFile(str(getESTLocalDateTimeNow().format(simpleHrMinSec), "global cancel orders"), outputFile);
     }
 
     public void exerciseOption(String account, Contract contract, Types.ExerciseType type, int quantity, boolean override) {

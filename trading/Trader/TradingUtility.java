@@ -603,7 +603,7 @@ public class TradingUtility {
     }
 
     public static String usTime() {
-        return getESTLocalTimeNow().format(simpleHourMinuteSec);
+        return getESTLocalTimeNow().format(simpleHrMinSec);
     }
 
     public static double getMinProfitMargin(String s) {
@@ -678,7 +678,7 @@ public class TradingUtility {
 
     public static void outputToSymbol(String symbol, Object... cs) {
         pr("output", symbol, str(cs));
-        if (!symbol.equals("")) {
+        if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }
         outputToGeneral(cs);
