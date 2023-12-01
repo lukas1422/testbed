@@ -226,7 +226,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(f1));
-                outputToSymbol(symb, "Sell 1dP%:", oneDayPerc,
+                outputToSymbol(symb, "Sell 1dP%:", oneDayPerc, "3dp:", threeDayPerc,
                         "priceOverCost:", priceOverCost,
                         "requiredMargin:", getRequiredProfitMargin(symb), "avgRng:",
                         averageDailyRange.getOrDefault(symb, 0.0));
