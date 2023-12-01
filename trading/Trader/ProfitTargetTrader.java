@@ -177,7 +177,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
-            outputToGeneral(t.format(simpleHrMinSec),
+            outputToSymbol(symb, t.format(simpleHrMinSec),
                     "order blocked:", symb, openOrders.get(symb).values(),
                     "**statusMap:", orderStatusMap);
             return;
@@ -366,7 +366,7 @@ public class ProfitTargetTrader implements LiveHandler,
         openOrders.forEach((k, v) -> {
             v.forEach((k1, v1) -> {
                 if (orderStatusMap.get(k).get(k1).isFinished()) {
-                    outputToGeneral("in compute removing finished orders", k, "orderID:", k1);
+                    outputToSymbol(k, "in compute: removing finished orders", k, "orderID:", k1);
                     v.remove(k1);
                 }
             });
@@ -501,6 +501,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
+        outputToGeneral("open order end");
         outputToGeneral("openOrderEnd: print all openOrders", openOrders,
                 "***orderStatus:", orderStatusMap);
     }

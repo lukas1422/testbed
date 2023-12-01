@@ -14,19 +14,19 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     @Override
     public void connected() {
         outputToGeneral(usTime(), "connection handler: connected");
-        pr("Default Conn Handler: connected");
+        pr(usTime(), "Default Conn Handler: connected");
     }
 
     @Override
     public void disconnected() {
         outputToGeneral(usTime(), "connection handler: disonnected");
-        pr("Default Conn Handler: disconnected");
+        pr(usTime(), "Default Conn Handler: disconnected");
     }
 
     @Override
     public void accountList(List<String> list) {
         outputToGeneral(usTime(), "connection handler: account list:", list);
-        pr("account list ", list);
+        pr(usTime(), "account list ", list);
     }
 
     @Override

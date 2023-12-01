@@ -241,6 +241,7 @@ public class TradingUtility {
 
     public static void outputToGeneral(String s) {
         File outputFile = new File("trading/TradingFiles/output");
+//        pr("see what is printed", s);
         outputToFile(s, outputFile);
     }
 
@@ -691,6 +692,6 @@ public class TradingUtility {
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }
-        outputToGeneral(symbol, cs);
+        outputToGeneral(symbol, str(cs));
     }
 }
