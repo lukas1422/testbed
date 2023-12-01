@@ -606,6 +606,10 @@ public class TradingUtility {
         return getESTLocalTimeNow().format(simpleHrMinSec);
     }
 
+    public static String usDateTime() {
+        return getESTLocalDateTimeNow().format(simpleHrMinSec);
+    }
+
     public static double getMinProfitMargin(String s) {
         return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
     }

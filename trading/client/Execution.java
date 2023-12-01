@@ -3,6 +3,7 @@
 
 package client;
 
+import static Trader.ProfitTargetTrader.executionToUSTime;
 import static utility.Utility.str;
 
 enum Liquidities {
@@ -278,6 +279,6 @@ public class Execution {
 
     @Override
     public String toString() {
-        return str("orderID:", orderId(), "side:", side(), "qty:", cumQty().longValue(), "price:", price());
+        return str("orderID:", orderId(), "time:", executionToUSTime(time()), "side:", side(), "shares:", shares(), "price:", price());
     }
 }

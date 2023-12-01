@@ -8,6 +8,7 @@ import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
@@ -31,8 +32,6 @@ public class ProfitTargetTrader implements LiveHandler,
     public static final int TWS_PORT = 7496;
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
-
-    //    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -51,12 +50,12 @@ public class ProfitTargetTrader implements LiveHandler,
     //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private ProfitTargetTrader() {
-        pr("ProfitTarget", "HK time", LocalDateTime.now().format(f), "US Time:", getESTLocalDateTimeNow().format(f));
+        pr("ProfitTarget", "HK time", LocalDateTime.now().format(f), "US Time:", usDateTime());
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
         outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleHrMinSec),
-                "EST:", getESTLocalDateTimeNow().format(simpleHrMinSec));
+                "EST:", usTime());
 
         registerContract(spy);
         registerContract(wmt);
@@ -64,15 +63,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
         registerContract(pg);
         registerContract(mcd);
-//        registerContract(tencent);
     }
 
     private void connectAndReqPos() {
         ApiController ap = new ApiController(new DefaultConnectionHandler(), new DefaultLogger(), new DefaultLogger());
         apiController = ap;
         CountDownLatch l = new CountDownLatch(1);
-        boolean connectionStatus = false;
-
 
         try {
 //            pr(" using port 4001 GATEWAY");
@@ -95,10 +91,10 @@ public class ProfitTargetTrader implements LiveHandler,
             l.await();
             pr("connected");
         } catch (InterruptedException e) {
-            outputToGeneral("error in connetion:", e);
+            outputToGeneral("error in connection:", e);
         }
 
-        pr(" Time after latch released " + getESTLocalTimeNow().format(simpleHrMinSec));
+        pr(" Time after latch released " + usTime());
         targetStockList.forEach(symb -> {
             pr("request hist day data: target stock symb ", symb);
             Contract c = symbolContractMap.get(symb);
@@ -107,15 +103,12 @@ public class ProfitTargetTrader implements LiveHandler,
             }
 
             pr("requesting hist day data", symb);
-            CompletableFuture.runAsync(() -> {
-//                pr("requesting data", symb);
-                reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min);
-            });
-            CompletableFuture.runAsync(() -> {
-                reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                        histCompatibleCt(c), Allstatic::ytdOpen, Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day);
-            });
+            CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
+                    histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min));
+
+            CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
+                    histCompatibleCt(c), Allstatic::ytdOpen, Math.min(364, getCalendarYtdDays() + 10),
+                    Types.BarSize._1_day));
         });
 
         Executors.newScheduledThreadPool(10).schedule(() -> {
@@ -220,7 +213,7 @@ public class ProfitTargetTrader implements LiveHandler,
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)
                         && threeDayPerc < 40) {
-                    outputToSymbol(symb, str("****REFILL****", t.format(f)));
+                    outputToSymbol(symb, "****REFILL****", t.format(f));
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "p/c:", priceDividedByCost(price, symb), "refillPt"
@@ -232,7 +225,7 @@ public class ProfitTargetTrader implements LiveHandler,
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
-                outputToSymbol(symb, str("****CUT****", t.format(f1)));
+                outputToSymbol(symb, "****CUT****", t.format(f1));
                 outputToSymbol(symb, "Sell 1dP%:", oneDayPerc,
                         "priceOverCost:", priceOverCost,
                         "requiredMargin:", getRequiredProfitMargin(symb));
@@ -294,10 +287,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToSymbol(symb, usTime(), "position update:", position, avgCost);
-
-            pr("Updating position", symb, usTime(), "Position:", position.longValue(),
-                    "avgCost:", avgCost);
+            outputToSymbol(symb, "updating position:", usTime(), position, avgCost);
         }
     }
 
@@ -403,10 +393,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
                 > DELTA_LIMIT_EACH_STOCK) {
-            outputToGeneral(symb, getESTLocalTimeNow(), "buying exceeds limit", "current delta:",
+            outputToSymbol(symb, usTime(), "buying exceeds limit", "current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed delta inc:", sizeToBuy.longValue() * price);
-            pr(symb, "proposed buy exceeds delta limit");
             return;
         }
         int id = tradeID.incrementAndGet();
@@ -415,8 +404,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
+        outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
+                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
     }
 
 
@@ -433,9 +422,9 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id,
+        outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id,
                 o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost,
-                orderSubmitted.get(symb).get(o.orderId())));
+                orderSubmitted.get(symb).get(o.orderId()));
     }
 
     //request realized pnl
@@ -445,34 +434,46 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
-        tradeKeyExecutionMap.put(tradeKey, new ExecutionAugmented(symb, execution));
+        if (!tradeKeyExecutionMap.containsKey(tradeKey)) {
+            tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
+        }
 
-        outputToGeneral(usTime(), "tradeReport", symb,
-                "time, side, price, shares, avgPrice:", execution.time(), execution.side(),
+        tradeKeyExecutionMap.get(tradeKey).add(new ExecutionAugmented(symb, execution));
+
+        outputToSymbol(symb, usTime(), "tradeReport time, side, price, shares, avgPrice:",
+                executionToUSTime(execution.time()), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
+
+    }
+
+    public static LocalDateTime executionToUSTime(String time) {
+        return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
+                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
     }
 
     @Override
     public void tradeReportEnd() {
         outputToGeneral(usTime(), "TradeReportEnd: all executions:");
-        tradeKeyExecutionMap.values().stream().collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
+//        pr("trade key execution map:", tradeKeyExecutionMap);
+        tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
+                .collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
                         Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
-                .forEach((key, value) -> outputToSymbol(key, value));
+                .forEach((key, value) -> outputToSymbol(key, "list of executions", value));
     }
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        String symb = tradeKeyExecutionMap.get(tradeKey).getSymbol();
+        String symb = tradeKeyExecutionMap.get(tradeKey).get(0).getSymbol();
 
         orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
-                        == tradeKeyExecutionMap.get(tradeKey).getExec().orderId())
+                        == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                 .forEach(e2 -> outputToSymbol(symb, "1.commission report", symb,
                         "orderID:", e2.getKey(),
                         "commission:", commissionReport.commission(),
                         "realized pnl:", commissionReport.realizedPNL()));
 
         orderSubmitted.get(symb).forEach((key1, value1) -> {
-            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getExec().orderId()) {
+            if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                 outputToSymbol(symb, "2.commission report", symb, "commission:",
                         commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL());
             }
@@ -538,7 +539,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
             return;
         }
-        outputToGeneral("openOrder ERROR:", getESTLocalDateTimeNow().format(f), "orderId:",
+        outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
 

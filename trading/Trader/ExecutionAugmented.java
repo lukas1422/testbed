@@ -20,4 +20,11 @@ public class ExecutionAugmented {
         return symbol;
     }
 
+    @Override
+    public String toString() {
+        return "ExecutionAugmented{" +
+                "execution=" + execution +
+                ", symbol='" + symbol + '\'' +
+                '}';
+    }
 }
