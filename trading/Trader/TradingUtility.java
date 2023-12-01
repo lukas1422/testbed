@@ -1,4 +1,4 @@
-package utility;
+package Trader;
 
 import Trader.Allstatic;
 import api.ControllerCalls;
@@ -30,6 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
+import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
 import static utility.Utility.*;
@@ -664,12 +665,23 @@ public class TradingUtility {
         }));
     }
 
-    public static double getRefillPoint(String symb) {
+    public static double getMinRefillPoint(String symb) {
+        return Math.min(getRefillPoint2(symb), getRefillPoint1(symb));
+    }
+
+    public static double getRefillPoint1(String symb) {
         if (symb.equalsIgnoreCase("SPY")) {
-            outputToGeneral(symb, "refill point is:", 0.995);
+//            outputToGeneral(symb, "refill point is:", 0.995);
             return 0.995;
         }
-        outputToGeneral(symb, "refill point is:", 0.99);
+//        outputToGeneral(symb, "refill point is:", 0.99);
         return 0.99;
+    }
+
+    public static double getRefillPoint2(String symb) {
+        if (averageDailyRange.getOrDefault(symb, 0.0) == 0.0) {
+            return getRefillPoint1(symb);
+        }
+        return Math.min(0.995, 1 - averageDailyRange.get(symb));
     }
 }

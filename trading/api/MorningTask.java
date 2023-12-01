@@ -10,9 +10,8 @@ import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.HistoricalHandler;
 import handler.LiveHandler;
-import utility.TradingUtility;
+import Trader.TradingUtility;
 import utility.Utility;
-import utility.Utility.*;
 
 import java.io.*;
 import java.net.Proxy;

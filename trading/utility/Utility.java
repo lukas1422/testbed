@@ -2,13 +2,12 @@ package utility;
 
 import TradeType.TradeBlock;
 import Trader.Allstatic;
+import Trader.TradingUtility;
 import api.*;
 import auxiliary.SimpleBar;
 import client.Contract;
-import client.Order;
 import client.Types;
 import controller.ApiConnection;
-import enums.FXCurrency;
 import enums.FutType;
 //import graph.GraphIndustry;
 
@@ -20,7 +19,6 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.List;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.function.*;
@@ -32,7 +30,6 @@ import static Trader.Allstatic.priceMapBar;
 import static java.lang.Math.log;
 import static java.lang.Math.round;
 import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.mapping;
 
 public class Utility {
 
@@ -1052,12 +1049,20 @@ public class Utility {
         outputDetailedGen(msg, detailed);
     }
 
-    public static void outputToSymbolFile(String symbol, String msg) {
-        pr("output", symbol, msg);
+//    public static void outputToSymbolFile(String symbol, String msg) {
+//        pr("output", symbol, msg);
+//        if (!symbol.equals("")) {
+//            outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
+//        }
+//        outputDetailedGen(msg, outputFile);
+//    }
+
+    public static void outputToSymbolFile(String symbol, Object... cs) {
+        pr("output", symbol, str(cs));
         if (!symbol.equals("")) {
-            outputDetailedGen(msg, new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
+            outputDetailedGen(str(cs), new File(TradingConstants.RELATIVEPATH + symbol + ".txt"));
         }
-        outputDetailedGen(msg, outputFile);
+        outputDetailedGen(str(cs), outputFile);
     }
 
     public static void outputDetailedUSSymbol(String symbol, String msg) {

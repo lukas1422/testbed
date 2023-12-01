@@ -4,7 +4,7 @@ import client.Decimal;
 import client.OrderState;
 import client.OrderStatus;
 import controller.ApiController;
-import utility.TradingUtility;
+import Trader.TradingUtility;
 
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;

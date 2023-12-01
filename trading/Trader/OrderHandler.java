@@ -13,8 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Allstatic.*;
 import static api.TradingConstants.f;
-import static api.TradingConstants.f2;
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
 

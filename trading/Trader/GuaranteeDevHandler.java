@@ -21,7 +21,7 @@ import static client.OrderStatus.Filled;
 import static client.OrderStatus.PendingCancel;
 import static client.Types.TimeInForce.DAY;
 import static client.Types.TimeInForce.IOC;
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 
 public class GuaranteeDevHandler implements ApiController.IOrderHandler {

@@ -7,7 +7,6 @@ import controller.ApiController;
 import enums.FXCurrency;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
-import utility.TradingUtility;
 import utility.Utility;
 
 import java.io.BufferedReader;
@@ -23,7 +22,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 
 public class BreachMonitor implements LiveHandler, ApiController.IPositionHandler, ApiController.ITradeReportHandler {

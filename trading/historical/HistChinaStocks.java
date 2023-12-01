@@ -18,7 +18,7 @@
 //import handler.IBTradesHandler;
 //import handler.SGXPositionHandler;
 //import utility.SharpeUtility;
-//import utility.TradingUtility;
+//import Trader.TradingUtility;
 //import utility.Utility;
 //
 //import javax.swing.*;
@@ -49,7 +49,7 @@
 //import static Trader.Allstatic.tradesMap;
 //import static api.ChinaStock.currencyMap;
 //import static enums.FXCurrency.CNY;
-//import static utility.TradingUtility.getHistoricalCustom;
+//import static Trader.TradingUtility.getHistoricalCustom;
 //import static utility.Utility.*;
 //
 //@SuppressWarnings("SpellCheckingInspection")

@@ -2,25 +2,18 @@ package handler;
 
 import TradeType.*;
 //import api.ChinaMain;
-import Trader.Allstatic;
 import client.CommissionReport;
 import client.Contract;
 import client.Execution;
 import controller.ApiController;
 import enums.FutType;
 //import historical.HistChinaStocks;
-import utility.TradingUtility;
 import utility.Utility;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.util.stream.Collectors;
 
 //import static historical.HistChinaStocks.chinaTradeMap;
-import static java.util.stream.Collectors.summingInt;
 import static utility.Utility.*;
 
 public class IBTradesHandler implements ApiController.ITradeReportHandler {

@@ -10,7 +10,7 @@
 //import enums.AutoOrderType;
 //import enums.FXCurrency;
 //import enums.Direction;
-//import utility.TradingUtility;
+//import Trader.TradingUtility;
 //
 //import javax.swing.*;
 //import java.awt.*;

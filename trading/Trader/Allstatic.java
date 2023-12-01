@@ -19,8 +19,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static utility.TradingUtility.getESTLocalDateTimeNow;
-import static utility.TradingUtility.getTradeDate;
+import static Trader.TradingUtility.getESTLocalDateTimeNow;
+import static Trader.TradingUtility.getTradeDate;
 import static utility.Utility.*;
 
 //test

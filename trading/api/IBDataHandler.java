@@ -10,7 +10,7 @@ import historical.Request;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import static utility.TradingUtility.getESTLocalDateTimeNow;
+import static Trader.TradingUtility.getESTLocalDateTimeNow;
 import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.pr;
 

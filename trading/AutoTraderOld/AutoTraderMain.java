@@ -11,7 +11,7 @@
 //import enums.AutoOrderType;
 //import enums.HalfHour;
 //import enums.MinuteHour;
-//import utility.TradingUtility;
+//import Trader.TradingUtility;
 //
 //import javax.swing.*;
 //import java.io.*;

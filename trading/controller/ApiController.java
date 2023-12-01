@@ -19,8 +19,8 @@ import client.*;
 
 import static Trader.Allstatic.outputFile;
 import static api.TradingConstants.simpleHourMinuteSec;
-import static utility.TradingUtility.getESTLocalDateTimeNow;
-import static utility.TradingUtility.outputToFile;
+import static Trader.TradingUtility.getESTLocalDateTimeNow;
+import static Trader.TradingUtility.outputToFile;
 import static utility.Utility.str;
 
 public class ApiController implements EWrapper {

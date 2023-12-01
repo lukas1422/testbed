@@ -9,7 +9,6 @@ import enums.Direction;
 import enums.FXCurrency;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
-import utility.TradingUtility;
 import utility.Utility;
 
 import java.io.*;
@@ -26,7 +25,7 @@ import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.f;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 
 public class BreachTrader implements LiveHandler, ApiController.IPositionHandler {

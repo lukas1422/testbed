@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static api.TradingConstants.*;
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 import static utility.Utility.histCompatibleCt;
 

@@ -6,7 +6,6 @@ import client.*;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
-import utility.TradingUtility;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -19,7 +18,7 @@ import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
-import static utility.TradingUtility.*;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
@@ -30,6 +29,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
+    public static Map<String, Double> averageDailyRange = new HashMap<>();
 
 
     //    Contract tencent = generateHKStockContract("700");
@@ -121,11 +121,21 @@ public class ProfitTargetTrader implements LiveHandler,
         Executors.newScheduledThreadPool(10).schedule(() -> {
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
+//            computeRange();
         }, 500, TimeUnit.MILLISECONDS);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
         outputToFile("cancelling all orders on start up", outputFile);
         apiController.cancelAllOrders();
+    }
+
+    static void computeRange() {
+        targetStockList.forEach(s -> {
+            double rng = ytdDayData.get(s).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
+                    .average().orElse(0.0);
+            pr("average range:", s, rng);
+            averageDailyRange.put(s, rng);
+        });
     }
 
     private static void registerContract(Contract ct) {
@@ -206,7 +216,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (symb.equalsIgnoreCase("SPY")
-                        && priceDividedByCost(price, symb) < getRefillPoint(symb)
+                        && priceDividedByCost(price, symb) < getMinRefillPoint(symb)
                         && threeDayPercentile < 40) {
                     outputToGeneral(symb, "buying additional",
                             "3dp:", threeDayPercentile, "1dp:", oneDayPercentile);
@@ -320,6 +330,19 @@ public class ProfitTargetTrader implements LiveHandler,
                             r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
                 }
             }
+
+        });
+
+        targetStockList.forEach(s -> {
+            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
+                    .average().orElse(0.0);
+            pr("average range:", s, rng, "firstkey:",
+                    ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
+                    "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
+                            .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
+            averageDailyRange.put(s, rng);
+            pr("refill point1", getRefillPoint1(s), "refill point2:",getRefillPoint2(s));
+
         });
 
         targetStockList.forEach(symb -> {
@@ -507,17 +530,18 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String symb = ibContractToSymbol(contract);
-        outputToGeneral(usTime(), "openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
+        outputToSymbolFile(symb, usTime(), "openOrder callback:", getESTLocalTimeNow().format(simpleHourMinuteSec), symb,
                 order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status().isFinished()) {
-            outputToGeneral("openOrder callback:removing order", order, "status:", orderState.status());
+            outputToSymbolFile("openOrder callback:removing order", order, "status:", orderState.status());
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
-            outputToGeneral(usTime(), "openOrder callback:after removal, open orders:", symb, openOrders.get(symb));
+            outputToGeneral(usTime(), "openOrder callback:after removal, " +
+                    "open orders:", symb, openOrders.get(symb));
 
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
@@ -526,7 +550,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral("openOrderEnd: print all openOrders", openOrders, "***orderStatus:", orderStatusMap);
+        outputToGeneral("openOrderEnd: print all openOrders", openOrders,
+                "***orderStatus:", orderStatusMap);
     }
 
     @Override

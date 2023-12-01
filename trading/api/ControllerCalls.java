@@ -9,18 +9,11 @@ import controller.ApiController;
 import handler.HistoricalHandler;
 //import handler.SGXFutureReceiver;
 import historical.Request;
-import utility.TradingUtility;
-import utility.Utility;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Collections;
-import java.util.concurrent.CompletableFuture;
 
-import static utility.TradingUtility.outputToAll;
-import static utility.TradingUtility.keepUptoDate;
-import static utility.TradingUtility.regulatorySnapshot;
-import static utility.Utility.pr;
+import static Trader.TradingUtility.outputToAll;
+import static Trader.TradingUtility.keepUptoDate;
 import static utility.Utility.str;
 
 public class ControllerCalls {

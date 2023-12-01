@@ -1,5 +1,6 @@
 package utility;
 
+import Trader.TradingUtility;
 import client.Contract;
 import client.Types;
 import controller.ApiController;
@@ -12,8 +13,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.CountDownLatch;
 
-import static utility.TradingUtility.getActiveBTCExpiry;
-import static utility.TradingUtility.getPrevBTCExpiry;
+import static Trader.TradingUtility.getActiveBTCExpiry;
+import static Trader.TradingUtility.getPrevBTCExpiry;
 import static utility.Utility.*;
 
 public class TestAPI {

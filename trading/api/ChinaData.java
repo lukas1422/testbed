@@ -9,7 +9,7 @@
 ////import org.hibernate.Session;
 ////import org.hibernate.SessionFactory;
 ////import saving.*;
-//import utility.TradingUtility;
+//import Trader.TradingUtility;
 //import utility.Utility;
 //
 //import javax.swing.*;
@@ -39,7 +39,7 @@
 //import static enums.FXCurrency.CNY;
 //import static enums.FXCurrency.HKD;
 //import static java.util.Optional.ofNullable;
-//import static utility.TradingUtility.getHistoricalCustom;
+//import static Trader.TradingUtility.getHistoricalCustom;
 //import static utility.Utility.*;
 //
 //public final class ChinaData extends JPanel {
