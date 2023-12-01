@@ -19,8 +19,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static Trader.TradingUtility.getESTLocalDateTimeNow;
-import static Trader.TradingUtility.getTradeDate;
+import static Trader.TradingUtility.*;
 import static utility.Utility.*;
 
 //test
@@ -60,6 +59,8 @@ public class Allstatic {
     static volatile double aggregateDelta = 0.0;
     //data
     static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
+    static Map<String,LocalTime> latestPriceTimeMap = new ConcurrentHashMap<>();
+
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData

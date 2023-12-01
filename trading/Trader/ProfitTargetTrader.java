@@ -200,7 +200,7 @@ public class ProfitTargetTrader implements LiveHandler,
         double oneDayPerc = oneDayPctMap.get(symb);
 
         Decimal position = symbolPosMap.get(symb);
-        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
+//        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
 
         if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
@@ -245,6 +245,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 pr("last", symb, price, t.format(simpleHrMinSec));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
+                latestPriceTimeMap.put(symb, getESTLocalTimeNow());
 
                 if (threeDayData.get(symb).containsKey(t.truncatedTo(ChronoUnit.MINUTES))) {
                     threeDayData.get(symb).get(t.truncatedTo(ChronoUnit.MINUTES)).add(price);
@@ -288,7 +289,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToSymbol(symb, "updating position:", usTime(), position, avgCost);
+            outputToSymbol(symb, "updating position:", "time:", usTime(), "position:", position, "cost:", avgCost);
         }
     }
 
@@ -547,6 +548,9 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
+                outputToSymbol(symb, "last Live price feed time:",
+                        latestPriceTimeMap.containsKey(symb) ? latestPriceTimeMap.get(symb) : "no live feed");
+
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "orderStatus", orderStatusMap.get(symb));
