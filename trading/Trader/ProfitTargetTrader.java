@@ -50,17 +50,15 @@ public class ProfitTargetTrader implements LiveHandler,
     //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private ProfitTargetTrader() {
-        pr("ProfitTarget", "HK time", LocalDateTime.now().format(f), "US Time:", usDateTime());
-        pr("market start time today ", TODAY_MARKET_START_TIME);
-        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
-
+//        pr("ProfitTarget", "HK time", LocalDateTime.now().format(f), "US Time:", usDateTime());
         outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleHrMinSec),
                 "EST:", usTime());
+        pr("market start time today ", TODAY_MARKET_START_TIME);
+        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
         registerContract(spy);
         registerContract(wmt);
         registerContract(ul);
-
         registerContract(pg);
         registerContract(mcd);
     }
@@ -118,7 +116,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }, 500, TimeUnit.MILLISECONDS);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
-        outputToFile("cancelling all orders on start up", outputFile);
+        outputToGeneral("cancelling all orders on start up");
         apiController.cancelAllOrders();
     }
 

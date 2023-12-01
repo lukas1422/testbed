@@ -32,7 +32,6 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     @Override
     public void error(Exception e) {
         outputToGeneral(" error in connection handler:", usTime(), e);
-//        e.printStackTrace();
     }
 
     @Override
