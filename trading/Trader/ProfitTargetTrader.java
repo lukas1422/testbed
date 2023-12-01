@@ -217,7 +217,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "p/c:", priceDividedByCost(price, symb), "refillPt"
-                            , getRequiredRefillPoint(symb));
+                            , getRequiredRefillPoint(symb), "rng:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -228,7 +228,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, "****CUT****", t.format(f1));
                 outputToSymbol(symb, "Sell 1dP%:", oneDayPerc,
                         "priceOverCost:", priceOverCost,
-                        "requiredMargin:", getRequiredProfitMargin(symb));
+                        "requiredMargin:", getRequiredProfitMargin(symb), "avgRng:",
+                        averageDailyRange.getOrDefault(symb, 0.0));
                 inventoryCutter(ct, price, t);
             }
         }

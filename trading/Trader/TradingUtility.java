@@ -619,7 +619,7 @@ public class TradingUtility {
     }
 
     public static double getRequiredProfitMargin(String s) {
-        outputToSymbol(s, "avgRange:", averageDailyRange.getOrDefault(s, 0.0));
+//        outputToSymbol(s, "avgRange:", averageDailyRange.getOrDefault(s, 0.0));
         return Math.max(getMinProfitMargin(s),
                 1 + averageDailyRange.getOrDefault(s, 0.0) / 2);
     }
@@ -681,6 +681,7 @@ public class TradingUtility {
     }
 
     public static double getRequiredRefillPoint(String symb) {
+//        outputToSymbol(symb, "averageRange:", averageDailyRange.getOrDefault(symb, 0.0));
         return Math.min(getDefaultRefill(symb)
                 , 1 - averageDailyRange.getOrDefault(symb, 0.0));
     }
