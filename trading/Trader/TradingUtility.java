@@ -619,12 +619,13 @@ public class TradingUtility {
         if (m.isEmpty()) {
             return "print stats:empty";
         }
-
         double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
         double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
-        LocalDateTime maxTime = m.entrySet().stream().max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
+        LocalDateTime maxTime = m.entrySet().stream()
+                .max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
                 .map(Map.Entry::getKey).get();
-        LocalDateTime minTime = m.entrySet().stream().min(Comparator.comparingDouble(e -> e.getValue().getLow()))
+        LocalDateTime minTime = m.entrySet().stream()
+                .min(Comparator.comparingDouble(e -> e.getValue().getLow()))
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
@@ -666,22 +667,13 @@ public class TradingUtility {
         }));
     }
 
+    public static double getDefaultRefill(String symb) {
+        return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
+    }
+
     public static double getMinRefillPoint(String symb) {
-        return Math.min(getRefillPoint2(symb), getRefillPoint1(symb));
-    }
-
-    public static double getRefillPoint1(String symb) {
-        if (symb.equalsIgnoreCase("SPY")) {
-            return 0.995;
-        }
-        return 0.99;
-    }
-
-    public static double getRefillPoint2(String symb) {
-        if (averageDailyRange.getOrDefault(symb, 0.0) == 0.0) {
-            return getRefillPoint1(symb);
-        }
-        return Math.min(0.995, 1 - averageDailyRange.get(symb));
+        return Math.min(getDefaultRefill(symb)
+                , 1 - averageDailyRange.getOrDefault(symb, 0.0));
     }
 
     public static void outputToSymbol(String symbol, Object... cs) {

@@ -212,15 +212,17 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
                 if (threeDayPerc < 40) {
-                    outputToGeneral("****", symb, "buying general", "3dp:",
+                    outputToSymbol(symb, str("****1st ADD****", t.format(f)));
+                    outputToGeneral("****", symb, "first buying", "3dp:",
                             threeDayPerc, "1dp:", oneDayPerc);
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getMinRefillPoint(symb)
                         && threeDayPerc < 40) {
+                    outputToSymbol(symb, str("****ADD MORE****", t.format(f)));
                     outputToSymbol(symb, "buyMore:",
-                            "3dp%:", threeDayPerc, "1dp%:", oneDayPerc,
+                            "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "p/c:", priceDividedByCost(price, symb), "refillPt"
                             , getMinRefillPoint(symb));
                     inventoryAdder(ct, price, t, Decimal.get(5));
@@ -230,8 +232,10 @@ public class ProfitTargetTrader implements LiveHandler,
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
+                outputToSymbol(symb, str("****CUTTER****", t.format(f1)));
                 outputToSymbol(symb, "Sell 1dP%:", oneDayPerc,
-                        "priceOverCost:", priceOverCost);
+                        "priceOverCost:", priceOverCost,
+                        "requiredMargin:", getRequiredProfitMargin(symb));
                 inventoryCutter(ct, price, t);
             }
         }
@@ -344,7 +348,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
                             .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
             averageDailyRange.put(s, rng);
-            pr("refill point1", getRefillPoint1(s), "refill point2:", getRefillPoint2(s));
+            pr("refill point:", getMinRefillPoint(s));
 
         });
 
@@ -465,7 +469,6 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbol(symb, str("****ADDER****", t.format(f)));
         outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId())));
     }
@@ -484,7 +487,6 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbol(symb, str("****CUTTER****", t.format(f1)));
         outputToSymbol(symb, str(symb, "orderID:", o.orderId(), "tradeID:", id,
                 o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost,
                 orderSubmitted.get(symb).get(o.orderId())));
