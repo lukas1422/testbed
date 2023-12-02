@@ -122,7 +122,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     static void computeRange() {
         targetStockList.forEach(s -> {
-            double rng = ytdDayData.get(s).entrySet().stream().mapToDouble(e -> e.getValue().getHLRange())
+            double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
             pr("average range:", s, rng);
             averageDailyRange.put(s, rng);
@@ -171,7 +171,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-            pr("not trading time");
+//            pr("not trading time");
             return;
         }
 
@@ -240,7 +240,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr("last", symb, price, t.format(simpleHrMinSec));
+                pr("last::", symb, price, t.format(simpleHrMinSec));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
                 latestPriceTimeMap.put(symb, getESTLocalTimeNow());

@@ -48,18 +48,15 @@ public class Allstatic {
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
     public static File outputFile = new File("trading/TradingFiles/output");
-    //    static volatile NavigableMap<Integer, OrderAugmented> orderSubmitted = new ConcurrentSkipListMap<>();
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>> orderStatusMap = new ConcurrentHashMap<>();
-    //    static volatile NavigableMap<String, List<Order>> openOrders = new ConcurrentSkipListMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
-    //    static volatile Map<String, InventoryStatus> inventoryStatusMap = new ConcurrentHashMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(100);
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
     //data
     static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
-    static Map<String,LocalTime> latestPriceTimeMap = new ConcurrentHashMap<>();
+    static Map<String, LocalTime> latestPriceTimeMap = new ConcurrentHashMap<>();
 
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();
