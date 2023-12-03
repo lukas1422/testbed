@@ -3,7 +3,7 @@
 
 package client;
 
-import static Trader.ProfitTargetTrader.executionToUSTime;
+import static Trader.TradingUtility.executionToUSTime;
 import static utility.Utility.str;
 
 enum Liquidities {

@@ -8,7 +8,6 @@ import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
@@ -30,6 +29,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
+    public static final int PORT_TO_USE = TWS_PORT;
+
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
     Contract wmt = generateUSStockContract("WMT");
@@ -51,11 +52,10 @@ public class ProfitTargetTrader implements LiveHandler,
     //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
 
     private ProfitTargetTrader() {
-//        pr("ProfitTarget", "HK time", LocalDateTime.now().format(f), "US Time:", usDateTime());
-        outputToGeneral("*****START***** HK TIME:", LocalDateTime.now().format(simpleHrMinSec),
-                "EST:", usTime());
+        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime());
         pr("market start time today ", TODAY_MARKET_START_TIME);
-        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
+        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME,
+                getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
         registerContractAll(spy, wmt, ul, pg, mcd, ko);
 //        registerContract(spy);
@@ -74,7 +74,7 @@ public class ProfitTargetTrader implements LiveHandler,
         try {
 //            pr(" using port 4001 GATEWAY");
 //            ap.connect("127.0.0.1", TWS_PORT, 5, "");
-            ap.connect("127.0.0.1", TWS_PORT, 5, "");
+            ap.connect("127.0.0.1", PORT_TO_USE, 5, "");
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
@@ -115,7 +115,6 @@ public class ProfitTargetTrader implements LiveHandler,
         Executors.newScheduledThreadPool(10).schedule(() -> {
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
-//            computeRange();
         }, 500, TimeUnit.MILLISECONDS);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
@@ -294,7 +293,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToSymbol(symb, "updating position:", "time:", usTime(), "position:", position, "cost:", avgCost);
+            outputToSymbol(symb, "updating position:", usTime(), "position:", position, "cost:", avgCost);
         }
     }
 
@@ -303,11 +302,11 @@ public class ProfitTargetTrader implements LiveHandler,
         pr(usTime(), "position end");
         targetStockList.forEach(symb -> {
             if (!symbolPosMap.containsKey(symb)) {
-                pr("symbol pos does not contain pos", symb);
+                outputToSymbol(symb, "no position");
                 symbolPosMap.put(symb, Decimal.ZERO);
             }
 
-            pr("SYMBOL POS COST", symb, symbolPosMap.get(symb).longValue(), costMap.getOrDefault(symb, 0.0));
+            outputToSymbol(symb, "POS COST", symbolPosMap.get(symb).longValue(), costMap.getOrDefault(symb, 0.0));
 
             apiController.reqContractDetails(symbolContractMap.get(symb), list -> list.forEach(a ->
                     symbolConIDMap.put(symb, a.contract().conid())));
@@ -349,7 +348,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("compute:", symb, getESTLocalTimeNow().format(simpleHourMinute),
+                pr("compute:", symb, usTime(),
                         "*3dP%:", threeDayPercentile, "*1dP%:", oneDayPercentile, "*stats1d:",
                         printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
             }
@@ -380,18 +379,6 @@ public class ProfitTargetTrader implements LiveHandler,
         });
     }
 
-    public static Decimal getSizeFromPrice(double price) {
-        if (price < 100) {
-            return Decimal.get(10);
-        }
-        return Decimal.get(5);
-    }
-
-    public static Decimal getAdder2Size(double price) {
-        return Decimal.get(5);
-    }
-
-
     private static void inventoryAdder(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
 
@@ -409,9 +396,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "px:", bidPrice, "qty:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
+                "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
     }
-
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
         String symb = ibContractToSymbol(ct);
@@ -447,12 +433,6 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(symb, usTime(), "tradeReport time, side, price, shares, avgPrice:",
                 executionToUSTime(execution.time()), execution.side(),
                 execution.price(), execution.shares(), execution.avgPrice());
-
-    }
-
-    public static LocalTime executionToUSTime(String time) {
-        return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
-                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
 
     @Override
@@ -471,14 +451,16 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                         == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                 .forEach(e2 -> outputToSymbol(symb, "1.commission report", symb,
-                        "orderID:", e2.getKey(),
+                        "orderID:",
                         "commission:", commissionReport.commission(),
-                        "realized pnl:", commissionReport.realizedPNL()));
+                        e2.getValue().getOrder().action() == Types.Action.SELL ? str("realized pnl:", e2.getKey(),
+                                commissionReport.realizedPNL()) : "NO PNL"));
 
         orderSubmitted.get(symb).forEach((key1, value1) -> {
             if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                 outputToSymbol(symb, "2.commission report", symb, "commission:",
-                        commissionReport.commission(), "realized pnl:", commissionReport.realizedPNL());
+                        commissionReport.commission(), value1.getOrder().action() == Types.Action.SELL ?
+                                str("realized pnl:", commissionReport.realizedPNL()) : "no pnl");
             }
         });
     }

@@ -607,6 +607,10 @@ public class TradingUtility {
         return getESTLocalTimeNow().format(simpleHrMinSec);
     }
 
+    public static String hkTime() {
+        return LocalDateTime.now().format(simpleHrMinSec);
+    }
+
     public static String usDateTime() {
         return getESTLocalDateTimeNow().format(simpleHrMinSec);
     }
@@ -693,5 +697,17 @@ public class TradingUtility {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }
         outputToGeneral(symbol, str(cs));
+    }
+
+    public static Decimal getSizeFromPrice(double price) {
+        if (price < 100) {
+            return Decimal.get(10);
+        }
+        return Decimal.get(5);
+    }
+
+    public static LocalTime executionToUSTime(String time) {
+        return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
+                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
     }
 }
