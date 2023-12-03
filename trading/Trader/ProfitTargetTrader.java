@@ -37,6 +37,7 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract ul = generateUSStockContract("UL");
     Contract mcd = generateUSStockContract("MCD");
     Contract spy = generateUSStockContract("SPY");
+    Contract ko = generateUSStockContract("KO");
 
     //avoid too many requests at once, only 50 requests allowed at one time.
     //private static Semaphore histSemaphore = new Semaphore(45);
@@ -56,11 +57,13 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today ", TODAY_MARKET_START_TIME);
         pr("until market start time", Duration.between(TODAY_MARKET_START_TIME, getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
-        registerContract(spy);
-        registerContract(wmt);
-        registerContract(ul);
-        registerContract(pg);
-        registerContract(mcd);
+        registerContractAll(spy, wmt, ul, pg, mcd, ko);
+//        registerContract(spy);
+//        registerContract(wmt);
+//        registerContract(ul);
+//        registerContract(pg);
+//        registerContract(mcd);
+//        registerContract(ko);
     }
 
     private void connectAndReqPos() {
@@ -127,6 +130,10 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("average range:", s, rng);
             averageDailyRange.put(s, rng);
         });
+    }
+
+    private static void registerContractAll(Contract... cts) {
+        Arrays.stream(cts).forEach(ProfitTargetTrader::registerContract);
     }
 
     private static void registerContract(Contract ct) {
