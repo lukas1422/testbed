@@ -54,8 +54,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime());
-        pr("market start time today ", TODAY_MARKET_START_TIME);
-        pr("until market start time", Duration.between(TODAY_MARKET_START_TIME,
+        pr("market start time today ", TRADING_START_TIME);
+        pr("until market start time", Duration.between(TRADING_START_TIME,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
 
         registerContractAll(spy, wmt, ul, pg, mcd, ko);
@@ -345,13 +345,13 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
-                double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME));
+                double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TRADING_START_TIME));
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("compute:", symb, usTime(),
                         "*3dP%:", threeDayPercentile, "*1dP%:", oneDayPercentile, "*stats1d:",
-                        printStats(threeDayData.get(symb).tailMap(TODAY_MARKET_START_TIME)));
+                        printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
             }
             if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
                     && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
