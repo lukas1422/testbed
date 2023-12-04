@@ -33,7 +33,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
-//    Contract tencent = generateHKStockContract("700");
+    //    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -345,7 +345,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
-                double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(TRADING_START_TIME));
+                double oneDayPercentile = calculatePercentileFromMap(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME));
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
