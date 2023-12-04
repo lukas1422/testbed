@@ -29,10 +29,11 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = TWS_PORT;
+    public static final int PORT_TO_USE = GATEWAY_PORT;
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
+//    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -302,7 +303,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr(usTime(), "position end");
         targetStockList.forEach(symb -> {
             if (!symbolPosMap.containsKey(symb)) {
-                outputToSymbol(symb, "no position");
+//                outputToSymbol(symb, "no position");
                 symbolPosMap.put(symb, Decimal.ZERO);
             }
 
@@ -536,7 +537,8 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb, usTime(), "last Live price feed time:",
-                        latestPriceTimeMap.containsKey(symb) ? latestPriceTimeMap.get(symb) : "no live feed");
+                        latestPriceTimeMap.containsKey(symb) ? latestPriceTimeMap.get(symb).format(simpleHourMinute)
+                                : "no live feed");
 
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
