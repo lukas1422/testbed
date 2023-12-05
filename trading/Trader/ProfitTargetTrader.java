@@ -549,7 +549,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "openOrders", openOrders.get(symb));
                 }
             });
-        }, 10L, 60L, TimeUnit.SECONDS);
+        }, 10L, 600L, TimeUnit.SECONDS);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() ->
                 outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1))));
