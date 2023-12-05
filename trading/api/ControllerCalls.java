@@ -14,6 +14,7 @@ import java.util.Collections;
 
 import static Trader.TradingUtility.outputToAll;
 import static Trader.TradingUtility.keepUptoDate;
+import static utility.Utility.pr;
 import static utility.Utility.str;
 
 public class ControllerCalls {
@@ -130,6 +131,7 @@ public class ControllerCalls {
                     o.lmtPrice(), o.totalQuantity()));
             return;
         }
+        pr("place or modify order check");
         ap.placeOrModifyOrder(ct, o, handler);
     }
 

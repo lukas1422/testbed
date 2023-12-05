@@ -1648,7 +1648,7 @@ public class Order {
     @Override
     public String toString() {
 
-        return str("orderID:", m_orderId, "ordertype:", m_orderType, "action:", m_action,
+        return str("orderID:", m_orderId, "orderType:", m_orderType, "action:", m_action,
                 "totalQuantity:", m_totalQuantity, "filledQty:", m_filledQuantity, "limitPrice:", m_lmtPrice);
     }
 

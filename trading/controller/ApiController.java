@@ -18,10 +18,9 @@ import api.IBDataHandler;
 import client.*;
 
 import static Trader.Allstatic.outputFile;
+import static Trader.TradingUtility.*;
 import static api.TradingConstants.simpleHrMinSec;
-import static Trader.TradingUtility.getESTLocalDateTimeNow;
-import static Trader.TradingUtility.outputToFile;
-import static utility.Utility.str;
+import static utility.Utility.*;
 
 public class ApiController implements EWrapper {
     private ApiConnection m_client;
@@ -940,9 +939,12 @@ public class ApiController implements EWrapper {
     }
 
     public void placeOrModifyOrder(Contract contract, final Order order, final IOrderHandler handler) {
-        if (!checkConnection())
+        pr("place or modify order here");
+        if (!checkConnection()) {
+            pr("not connected in place or modify order");
             return;
-
+        }
+        pr("after checking connect");
         // when placing new order, assign new order id
         if (order.orderId() == 0) {
             order.orderId(m_orderId.incrementAndGet());
@@ -951,8 +953,13 @@ public class ApiController implements EWrapper {
             }
         }
 
+        pr("before placing order");
+
         m_client.placeOrder(contract, order);
+        pr("before sending EOM");
         sendEOM();
+        pr("after sending EOM");
+        outputToGeneral("order sent", usTime(), ibContractToSymbol(contract), order);
     }
 
     public void cancelOrder(int orderId, String manualOrderCancelTime, final IOrderCancelHandler orderCancelHandler) {
@@ -1195,6 +1202,7 @@ public class ApiController implements EWrapper {
         if (handler != null) {
             if (bar.time().startsWith("finished")) {
                 handler.historicalDataEnd();
+                pr("historical data end ", "request ID:", reqId);
             } else {
                 Bar bar2 = new Bar(bar.time(), bar.high(), bar.low(), bar.open(), bar.close(), bar.wap(), bar.volume(), bar.count());
                 handler.historicalData(bar2);
@@ -1601,6 +1609,7 @@ public class ApiController implements EWrapper {
     @Override
     public void historicalDataEnd(int reqId, String startDateStr, String endDateStr) {
         IHistoricalDataHandler handler = m_historicalDataMap.get(reqId);
+        IBDataHandler.historicalDataEnd(reqId);
 
         if (handler != null) {
             handler.historicalDataEnd();
