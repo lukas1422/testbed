@@ -30,7 +30,7 @@ public class Allstatic {
     static final LocalDateTime TRADING_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime PERCENTILE_START_TIME =
-            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(7, 30));
+            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_LIMIT = 10000;
     static final double DELTA_LIMIT_EACH_STOCK = 4000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
@@ -88,7 +88,7 @@ public class Allstatic {
     static int getNewTradeID() {
         LocalDateTime t = getESTLocalDateTimeNow();
 //        return (t.getYear()-2000)* pow(10,10)+t.getMonthValue()*pow(10,8)+
-        pr("get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond());
+        pr(t, "get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond());
         return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
     }
 

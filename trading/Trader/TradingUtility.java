@@ -247,14 +247,12 @@ public class TradingUtility {
 
     public static void outputToGeneral(String s) {
         File outputFile = new File("trading/TradingFiles/output");
-//        pr("see what is printed", s);
-        pr("outputtoGeneral:", s);
+        pr("Out::", s);
         outputToFile(s, outputFile);
     }
 
 
     public static void outputToGeneral(Object... cs) {
-        pr(str(cs));
         outputToGeneral(str(cs));
     }
 
@@ -464,9 +462,9 @@ public class TradingUtility {
         return ct;
     }
 
-    public static void req1ContractLive(ApiController ap, Contract ct, LiveHandler h, boolean snapshot) {
+    public static void req1ContractLive(ApiController ap, Contract ct, LiveHandler handler, boolean snapshot) {
         int reqId = ControllerCalls.getNextId();
-        Allstatic.globalRequestMap.put(reqId, new Request(ct, h));
+        Allstatic.globalRequestMap.put(reqId, new Request(ct, handler));
         ap.client().reqMktData(reqId, ct, "", snapshot, regulatorySnapshot,
                 Collections.<TagValue>emptyList());
     }

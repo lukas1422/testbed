@@ -81,7 +81,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //            ap.connect("127.0.0.1", TWS_PORT, 5, "");
             ap.connect("127.0.0.1", PORT_TO_USE, 5, "");
             l.countDown();
-            pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
+            pr(" Latch counted down", PORT_TO_USE, getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }
@@ -121,7 +121,7 @@ public class ProfitTargetTrader implements LiveHandler,
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
         }, 2, TimeUnit.SECONDS);
-        pr("req executions ");
+        pr("req Executions");
         apiController.reqExecutions(new ExecutionFilter(), this);
         outputToGeneral("cancelling all orders on start up");
         apiController.cancelAllOrders();
@@ -131,28 +131,28 @@ public class ProfitTargetTrader implements LiveHandler,
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
-            pr("average range:", s, rng);
+            pr("average range:", s, round5Digits(rng));
             averageDailyRange.put(s, rng);
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 lastYearCloseMap.put(s, lastYearClose);
                 pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()),
-                        "ret on year", ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
+                        "ret on year", round5Digits(ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1));
             }
         } else {
             pr("no historical data to compute ", s);
         }
     }
 
-    static void computeRange() {
-        targetStockList.forEach(s -> {
-            double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
-                    .average().orElse(0.0);
-            pr("average range:", s, rng);
-            averageDailyRange.put(s, rng);
-        });
-    }
+//    static void computeRange() {
+//        targetStockList.forEach(s -> {
+//            double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
+//                    .average().orElse(0.0);
+//            pr("average range:", s, rng);
+//            averageDailyRange.put(s, rng);
+//        });
+//    }
 
     private static void registerContractAll(Contract... cts) {
         Arrays.stream(cts).forEach(ProfitTargetTrader::registerContract);
@@ -190,7 +190,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static boolean checkDeltaImpact(String symb, double price) {
-        pr(symb, "check delta impact", "aggDelta<Limit", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit Each"
+        pr(symb, "check delta impact", "aggDelta<Limit:", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit:"
                 , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
 
@@ -207,8 +207,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
             outputToSymbol(symb, t.format(simpleHrMinSec),
-                    "order blocked:", symb, openOrders.get(symb).values(),
-                    "**statusMap:", orderStatusMap);
+                    "order blocked:", symb, openOrders.get(symb).values(), "**statusMap:", orderStatusMap);
             return;
         }
 
@@ -225,7 +224,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         double threeDayPerc = threeDayPctMap.get(symb);
         double oneDayPerc = oneDayPctMap.get(symb);
-
         Decimal position = symbolPosMap.get(symb);
 //        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
 
@@ -295,18 +293,12 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     @Override
-    public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
-    }
-
+    public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {}
     @Override
-    public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
-    }
-
+    public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {}
     @Override
-    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
-    }
+    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {}
     //livedata end
-
 
     //position start
     @Override
@@ -353,16 +345,16 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-        targetStockList.forEach(s -> {
-            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).values().stream()
-                    .mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
-//            pr("average range:", s, round5Digits(rng), "firstkey:",
-//                    ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
-//                    "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
-//                            .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
-            averageDailyRange.put(s, rng);
-//            pr("refill point:", round5Digits(getRequiredRefillPoint(s)));
-        });
+//        targetStockList.forEach(s -> {
+//            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).values().stream()
+//                    .mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
+////            pr("average range:", s, round5Digits(rng), "firstkey:",
+////                    ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
+////                    "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
+////                            .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
+//            averageDailyRange.put(s, rng);
+////            pr("refill point:", round5Digits(getRequiredRefillPoint(s)));
+//        });
 
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
@@ -372,10 +364,9 @@ public class ProfitTargetTrader implements LiveHandler,
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
                 pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
-                        "*1dP%:", oneDayPercentile, "*stats1d:",
+                        "*1dP%:", oneDayPercentile, "*stats 1d:",
                         printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
             }
-
         });
 
         aggregateDelta = targetStockList.stream().mapToDouble(s ->
@@ -383,8 +374,8 @@ public class ProfitTargetTrader implements LiveHandler,
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue() * latestPriceMap
-                        .getOrDefault(s, 0.0))));
+                symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
+                        * latestPriceMap.getOrDefault(s, 0.0))));
 
         pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
 
