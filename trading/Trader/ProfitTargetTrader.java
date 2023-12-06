@@ -435,14 +435,12 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     //request realized pnl
-
     //Execution details *****************
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
         if (symb.startsWith("hk")) {
-            pr("no care about HK stock", symb);
             return;
         }
 
@@ -468,12 +466,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-
         if (!tradeKeyExecutionMap.containsKey(tradeKey) || tradeKeyExecutionMap.get(tradeKey).isEmpty()) {
-            pr("empty trade key exec map");
             return;
         }
-
 
         String symb = tradeKeyExecutionMap.get(tradeKey).get(0).getSymbol();
 
@@ -496,7 +491,6 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     //Execution end*********************************
-
     //Open Orders ***************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
@@ -526,7 +520,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral("open order end");
         outputToGeneral("openOrderEnd: print all openOrders", openOrders,
                 "***orderStatus:", orderStatusMap);
     }
@@ -585,8 +578,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
             });
         }, 10L, 600L, TimeUnit.SECONDS);
-
-        Runtime.getRuntime().addShutdownHook(new Thread(() ->
-                outputToGeneral("*****Ending*****", usTime())));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));
     }
 }
