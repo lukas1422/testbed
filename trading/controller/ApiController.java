@@ -975,9 +975,10 @@ public class ApiController implements EWrapper {
     }
 
     public void cancelAllOrders() {
-        if (!checkConnection())
+        if (!checkConnection()) {
+            outputToGeneral("not connected");
             return;
-
+        }
         m_client.reqGlobalCancel();
         sendEOM();
         outputToFile(str(getESTLocalDateTimeNow().format(simpleHrMinSec), "global cancel orders"), outputFile);
@@ -1017,12 +1018,15 @@ public class ApiController implements EWrapper {
     }
 
     public void reqLiveOrders(ILiveOrderHandler handler) {
-        if (!checkConnection())
+        if (!checkConnection()) {
+            outputToGeneral("req liveorders not connected");
             return;
-
+        }
+        pr("after req live orders check connection");
         m_liveOrderHandlers.add(handler);
         m_client.reqAllOpenOrders();
         sendEOM();
+        outputToGeneral("req live orders successful");
     }
 
     public void takeTwsOrders(ILiveOrderHandler handler) {

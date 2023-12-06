@@ -49,7 +49,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
         ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
         apiController = ap;
         CountDownLatch l = new CountDownLatch(1);
-        apiController.cancelAllOrders();
 
 
         try {
@@ -76,7 +75,10 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 //                req1ContractLive(apiController, symbolContractMap.get(symb), this, false);
 //            }, 10L, TimeUnit.SECONDS);
 //        });
-
+        es.schedule(() -> {
+            apiController.cancelAllOrders();
+            apiController.reqLiveOrders(this);
+        }, 10L, TimeUnit.SECONDS);
     }
 
     private static void registerContractAll(Contract... cts) {
@@ -190,7 +192,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
         test1.connectAndReqPos();
 //        testTrade(wmt, 250, getESTLocalDateTimeNow(), Decimal.get(5));
 //        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
-        es.schedule(() -> testTrade(tencent, 280, getESTLocalDateTimeNow(), Decimal.get(100)), 10L, TimeUnit.SECONDS);
+        es.schedule(() -> testTrade(wmt, 50, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
 
     }
 }

@@ -229,20 +229,26 @@ public class TradingUtility {
         return t.isAfter(LocalTime.of(hrBeg, minBeg)) && t.isBefore(LocalTime.of(hrEnd, minEnd));
     }
 
+//    public static void outputToError(String s) {
+//        File output = new File(TradingConstants.GLOBALPATH + "autoError.txt");
+//        try (BufferedWriter out = new BufferedWriter(new FileWriter(output, true))) {
+//            out.append(s);
+//            out.newLine();
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
     public static void outputToError(String s) {
-        File output = new File(TradingConstants.GLOBALPATH + "autoError.txt");
-        try (BufferedWriter out = new BufferedWriter(new FileWriter(output, true))) {
-            out.append(s);
-            out.newLine();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        File output = new File("trading/TradingFiles/errors");
+        outputToFile(s, output);
+        outputToGeneral(s);
     }
 
     public static void outputToGeneral(String s) {
         File outputFile = new File("trading/TradingFiles/output");
 //        pr("see what is printed", s);
-        pr(s);
+        pr("outputtoGeneral:", s);
         outputToFile(s, outputFile);
     }
 
