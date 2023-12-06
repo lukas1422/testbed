@@ -513,7 +513,7 @@ public class TradingUtility {
         Types.WhatToShow whatToShow = Types.WhatToShow.ADJUSTED_LAST;
         Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
-                bs.toString(), whatToShow.toString(), 1, 2, keepUptoDate, Collections.<TagValue>emptyList()));
+                bs.toString(), whatToShow.toString(), 0, 2, keepUptoDate, Collections.<TagValue>emptyList()));
     }
 
     public static void reqHistDayData(ApiController ap, int reqId, Contract c,
@@ -665,10 +665,10 @@ public class TradingUtility {
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
-        return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleTime), "]", "*min", min,
-                "[", minTime.format(simpleTime), "]"
-                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleTime), "]"
-                , "*last:", "[", m.lastKey().format(simpleTime), "]");
+        return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
+                "[", minTime.format(simpleDayTime), "]"
+                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleDayTime), "]"
+                , "*last:", "[", m.lastKey().format(simpleDayTime), "]");
     }
 
     public static Contract getActiveA50Contract() {

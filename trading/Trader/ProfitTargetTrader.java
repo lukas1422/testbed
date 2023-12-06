@@ -235,7 +235,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr("px::", symb, price, t.format(simpleHrMinSec));
+                pr(t.format(simpleHrMinSec), "px::", symb, price);
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
                 latestPriceTimeMap.put(symb, getESTLocalTimeNow());
@@ -340,6 +340,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
                             "*1dP%:", oneDayPercentile, "*stats 1d:",
                             printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+                    pr("stats 3d:", printStats(threeDayData.get(symb)));
                 }
             }
         });
@@ -530,7 +531,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public static void main(String[] args) {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb,
@@ -545,7 +546,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "openOrders", openOrders.get(symb));
                 }
             });
-        }, 30L, 600L, TimeUnit.SECONDS);
+        }, 20L, 600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));
     }
 }
