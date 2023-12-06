@@ -92,7 +92,7 @@ public class IBDataHandler {
             Contract c = req.getContract();
             String symb = ibContractToSymbol(req.getContract());
             if (req.getPerformActionOnFinish()) {
-                pr(reqId, symb, "historical Data End: action on finish");
+//                pr(reqId, symb, "historical Data End: action on finish");
                 req.runRunnable();
             }
 //            else {

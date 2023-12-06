@@ -29,6 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
+import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
@@ -245,15 +246,16 @@ public class TradingUtility {
         outputToGeneral(s);
     }
 
-    public static void outputToGeneral(String s) {
-        File outputFile = new File("trading/TradingFiles/output");
-        pr("Out::", s);
-        outputToFile(s, outputFile);
-    }
+//    public static void outputToGeneral(String s) {
+//        File outputFile = new File("trading/TradingFiles/output");
+//        pr("Out::", s);
+//        outputToFile(s, outputFile);
+//    }
 
 
     public static void outputToGeneral(Object... cs) {
-        outputToGeneral(str(cs));
+        pr("out::", str(cs));
+        outputToFile(str(cs), outputFile);
     }
 
     public static void outputToFills(Object... cs) {
@@ -606,7 +608,7 @@ public class TradingUtility {
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
         if (m.isEmpty()) {
-            pr("calculate p%: map is empty ");
+//            pr("calculate p%: map is empty");
             return 0;
         }
         double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
@@ -663,7 +665,7 @@ public class TradingUtility {
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
-        return str("*size", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
+        return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
                 "[", minTime.format(simpleDayTime), "]"
                 , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleDayTime), "]"
                 , "*last:", "[", m.lastKey().format(simpleDayTime), "]");

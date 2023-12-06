@@ -85,7 +85,7 @@ public class Allstatic {
 
     // this gets YTD return
 
-    static int getNewTradeID() {
+    static int getSessionMasterTradeID() {
         LocalDateTime t = getESTLocalDateTimeNow();
 //        return (t.getYear()-2000)* pow(10,10)+t.getMonthValue()*pow(10,8)+
         pr(t, "get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond(), "ID:",

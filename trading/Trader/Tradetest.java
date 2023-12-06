@@ -134,7 +134,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
     private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
 //        int id = tradeID.incrementAndGet();
-        int id = getNewTradeID();
+        int id = getSessionMasterTradeID();
         pr("trade ID is ", id);
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
