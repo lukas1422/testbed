@@ -30,14 +30,12 @@ public class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
 
-
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
     public static final int PORT_TO_USE = TWS_PORT;
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
-    //    Contract tencent = generateHKStockContract("700");
     Contract wmt = generateUSStockContract("WMT");
     Contract pg = generateUSStockContract("PG");
     Contract ul = generateUSStockContract("UL");
@@ -45,30 +43,12 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract spy = generateUSStockContract("SPY");
     Contract ko = generateUSStockContract("KO");
 
-    //avoid too many requests at once, only 50 requests allowed at one time.
-    //private static Semaphore histSemaphore = new Semaphore(45);
-    //Trade
-    //    private static volatile Map<String, AtomicBoolean> addedMap = new ConcurrentHashMap<>();
-    //    private static volatile Map<String, AtomicBoolean> liquidatedMap = new ConcurrentHashMap<>();
-    //    private static volatile Map<String, AtomicBoolean> tradedMap = new ConcurrentHashMap<>();
-    //    public static final LocalDateTime TODAY_MARKET_START_TIME =
-    //            LocalDateTime.of(LocalDateTime.now().toLocalDate()., LocalTime.of(9, 30));
-
-    //            LocalDateTime.of(ZonedDateTime.now().withZoneSameInstant(ZoneId.off("America/New_York")).toLocalDate(), ltof(9, 30));
-
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime());
         pr("market start time today ", TRADING_START_TIME);
         pr("until market start time", Duration.between(TRADING_START_TIME,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
-
         registerContractAll(spy, wmt, ul, pg, mcd, ko);
-//        registerContract(spy);
-//        registerContract(wmt);
-//        registerContract(ul);
-//        registerContract(pg);
-//        registerContract(mcd);
-//        registerContract(ko);
     }
 
     private void connectAndReqPos() {
@@ -77,21 +57,12 @@ public class ProfitTargetTrader implements LiveHandler,
         CountDownLatch l = new CountDownLatch(1);
 
         try {
-//            pr(" using port 4001 GATEWAY");
-//            ap.connect("127.0.0.1", TWS_PORT, 5, "");
             ap.connect("127.0.0.1", PORT_TO_USE, 5, "");
             l.countDown();
             pr(" Latch counted down", PORT_TO_USE, getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }
-
-//        if (!connectionStatus) {
-////            pr(" using port 7496");
-//            ap.connect("127.0.0.1", 7496, 5, "");
-//            l.countDown();
-//            pr(" Latch counted down 7496 TWS" + getESTLocalTimeNow().format(f1));
-//        }
 
         try {
             l.await();
@@ -173,23 +144,22 @@ public class ProfitTargetTrader implements LiveHandler,
         }
     }
 
-    static boolean noBlockingOrders(String symb) {
-        if (!orderStatusMap.get(symb).isEmpty()) {
-            pr(symb, "no blocking orders check:", orderStatusMap.get(symb));
+    static boolean noBlockingOrders(String s) {
+        if (!orderStatusMap.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderStatusMap.get(s));
         }
-
-        return orderStatusMap.get(symb).isEmpty() ||
-                orderStatusMap.get(symb).values().stream().allMatch(OrderStatus::isFinished);
+        return orderStatusMap.get(s).isEmpty() ||
+                orderStatusMap.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
-    static double priceDividedByCost(double price, String symb) {
+    private static double priceDividedByCost(double price, String symb) {
         if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
             return price / costMap.get(symb);
         }
         return 1;
     }
 
-    static boolean checkDeltaImpact(String symb, double price) {
+    private static boolean checkDeltaImpact(String symb, double price) {
         pr(symb, "check delta impact", "aggDelta<Limit:", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit:"
                 , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
@@ -217,7 +187,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (!threeDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
-            pr(symb, "no percentile info check:", !threeDayPctMap.containsKey(symb) ? "3day" : "",
+            pr(symb, "no percentile info:", !threeDayPctMap.containsKey(symb) ? "3day" : "",
                     !oneDayPctMap.containsKey(symb) ? "1day" : "");
             return;
         }
@@ -227,7 +197,7 @@ public class ProfitTargetTrader implements LiveHandler,
         Decimal position = symbolPosMap.get(symb);
 //        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
 
-        if (oneDayPerc < 15 && checkDeltaImpact(symb, price)) {
+        if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
                 if (threeDayPerc < 40) {
                     outputToSymbol(symb, str("****FIRST****", t.format(f)));
@@ -236,8 +206,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)
-                        && threeDayPerc < 40) {
+                if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb) && threeDayPerc < 40) {
                     outputToSymbol(symb, "****REFILL****", t.format(f));
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
@@ -293,11 +262,16 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     @Override
-    public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {}
+    public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
+    }
+
     @Override
-    public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {}
+    public void handleGeneric(TickType tt, String symbol, double value, LocalDateTime t) {
+    }
+
     @Override
-    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {}
+    public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
+    }
     //livedata end
 
     //position start

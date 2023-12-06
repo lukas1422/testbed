@@ -635,12 +635,12 @@ public class TradingUtility {
         return getESTLocalDateTimeNow().format(simpleHrMinSec);
     }
 
-    public static double getMinProfitMargin(String s) {
-        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
-    }
-
     static double round5Digits(double n) {
         return Math.round(n * 10000.0) / 10000.0;
+    }
+
+    public static double getMinProfitMargin(String s) {
+        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
     }
 
     public static double getRequiredProfitMargin(String s) {
