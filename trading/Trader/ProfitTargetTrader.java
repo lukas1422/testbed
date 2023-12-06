@@ -66,12 +66,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
         try {
             l.await();
-            pr("connected");
+//            pr("connected");
         } catch (InterruptedException e) {
             outputToError("error in connection:", e);
         }
 
-        pr(" Time after latch released " + usTime());
+//        pr(" Time after latch released " + usTime());
 
         Executors.newScheduledThreadPool(10).schedule(() -> {
             targetStockList.forEach(symb -> {

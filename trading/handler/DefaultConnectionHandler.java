@@ -13,38 +13,34 @@ import static utility.Utility.pr;
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
     @Override
     public void connected() {
-        outputToGeneral(usTime(), "DefaultConnectionHandler:connected");
-        pr(usTime(), "Default Conn Handler: connected");
+        outputToGeneral(usTime(), "Conn:connected");
     }
 
     @Override
     public void disconnected() {
-        outputToGeneral(usTime(), "DefaultConnectionHandler:disonnected");
-        pr(usTime(), "Default Conn Handler: disconnected");
+        outputToGeneral(usTime(), "Conn:disonnected");
     }
 
     @Override
     public void accountList(List<String> list) {
-        outputToGeneral(usTime(), "DefaultConnectionHandler: account list:", list);
-        pr(usTime(), "account list ", list);
+        outputToGeneral(usTime(), "Conn: account list:", list);
+//        pr(usTime(), "account list ", list);
     }
 
     @Override
     public void error(Exception e) {
-        outputToGeneral("DefaultConnectionHandler error:", usTime(), e);
+        outputToGeneral("Conn error:", usTime(), e);
     }
 
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
         outputToGeneral(usTime(),
-                "DefaultConnHandler error ID:", id, "code:", errorCode, "msg:", errorMsg, "rejectJson:", advancedORderRejectJson);
+                "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg, "rejectJson:", advancedORderRejectJson);
     }
 
     @Override
     public void show(String string) {
         pr(" show string " + string);
     }
-
-
 }
 

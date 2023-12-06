@@ -1022,11 +1022,11 @@ public class ApiController implements EWrapper {
             outputToGeneral("req liveorders not connected");
             return;
         }
-        pr("after req live orders check connection");
+        pr("req live orders: after check connection");
         m_liveOrderHandlers.add(handler);
         m_client.reqAllOpenOrders();
         sendEOM();
-        outputToGeneral("req live orders successful");
+        outputToGeneral("req live orders complete");
     }
 
     public void takeTwsOrders(ILiveOrderHandler handler) {
