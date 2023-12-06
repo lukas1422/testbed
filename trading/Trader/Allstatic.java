@@ -20,6 +20,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static Trader.TradingUtility.*;
+import static java.lang.Math.pow;
 import static utility.Utility.*;
 
 //test
@@ -53,7 +54,8 @@ public class Allstatic {
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>> orderStatusMap = new ConcurrentHashMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>> openOrders = new ConcurrentSkipListMap<>();
-    static volatile AtomicInteger tradeID = new AtomicInteger(100);
+    //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
+    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
     //data
@@ -82,6 +84,14 @@ public class Allstatic {
 //    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     // this gets YTD return
+
+    static int getNewTradeID() {
+        LocalDateTime t = getESTLocalDateTimeNow();
+//        return (t.getYear()-2000)* pow(10,10)+t.getMonthValue()*pow(10,8)+
+        pr("get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond());
+        return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
+    }
+
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
         String symbol = ibContractToSymbol(c);
 

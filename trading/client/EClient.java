@@ -1366,6 +1366,7 @@ public abstract class EClient {
 
     public synchronized void placeOrder(int id, Contract contract, Order order) {
         // not connected?
+        pr("eclient placeorder");
         if (!isConnected()) {
             notConnected();
             return;
@@ -1687,6 +1688,8 @@ public abstract class EClient {
                 return;
             }
         }
+
+        pr("past all error checking ");
 
         int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 45;
 
@@ -2154,6 +2157,8 @@ public abstract class EClient {
             error(id, EClientErrors.FAIL_SEND_ORDER, e.toString());
             close();
         }
+
+        pr("order sent in Eclient");
     }
 
     public synchronized void reqAccountUpdates(boolean subscribe, String acctCode) {

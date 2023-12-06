@@ -242,12 +242,13 @@ public class TradingUtility {
     public static void outputToGeneral(String s) {
         File outputFile = new File("trading/TradingFiles/output");
 //        pr("see what is printed", s);
+        pr(s);
         outputToFile(s, outputFile);
     }
 
 
     public static void outputToGeneral(Object... cs) {
-//        pr(str(cs));
+        pr(str(cs));
         outputToGeneral(str(cs));
     }
 

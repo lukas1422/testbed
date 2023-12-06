@@ -91,7 +91,7 @@ public class IBDataHandler {
             Contract c = r.getContract();
             String symb = ibContractToSymbol(r.getContract());
             if (r.getCustomFunctionNeeded()) {
-                pr("historical Data End: custom handling needed ");
+                pr(reqId, symb, "historical Data End: custom handling needed ");
             } else {
                 HistoricalHandler hh = (HistoricalHandler) r.getHandler();
                 hh.actionUponFinish(c);

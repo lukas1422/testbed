@@ -4,6 +4,8 @@ import client.Contract;
 import handler.GeneralHandler;
 import handler.HistDataConsumer;
 
+import static utility.Utility.ibContractToSymbol;
+
 public class Request {
 
     private Contract contract;
@@ -43,7 +45,7 @@ public class Request {
 
     @Override
     public String toString() {
-        return contract.toString() + " " + handler.toString()
+        return ibContractToSymbol(contract) + " " + handler.toString()
                 + " custom handling needed " + getCustomFunctionNeeded();
     }
 }
