@@ -258,6 +258,10 @@ public class TradingUtility {
         outputToGeneral(str(cs));
     }
 
+    public static void outputToFills(Object... cs) {
+        outputToFile(str(cs), fillsOutput);
+    }
+
     public static void outputToFile(String s, File f) {
         try (BufferedWriter out = new BufferedWriter(new FileWriter(f, true))) {
             out.append(s);
@@ -710,7 +714,7 @@ public class TradingUtility {
     }
 
     public static void outputToSymbol(String symbol, Object... cs) {
-        pr("Symbol:", symbol, str(cs));
+        pr("output Symbol:", symbol, str(cs));
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }

@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
+import static client.OrderStatus.Filled;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
@@ -115,8 +116,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         histCompatibleCt(c), Allstatic::ytdOpen, () -> computeHistoricalData(symb)
-                        , Math.min(364, getCalendarYtdDays() + 10),
-                        Types.BarSize._1_day));
+                        , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
             });
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
@@ -128,10 +128,21 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static void computeHistoricalData(String s) {
-        double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
-                .average().orElse(0.0);
-        pr("average range:", s, rng);
-        averageDailyRange.put(s, rng);
+        if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
+            double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
+                    .average().orElse(0.0);
+            pr("average range:", s, rng);
+            averageDailyRange.put(s, rng);
+
+            if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
+                double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
+                lastYearCloseMap.put(s, lastYearClose);
+                pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()),
+                        "ret on year", ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
+            }
+        } else {
+            pr("no historical data to compute ", s);
+        }
     }
 
     static void computeRange() {
@@ -364,11 +375,7 @@ public class ProfitTargetTrader implements LiveHandler,
                         "*1dP%:", oneDayPercentile, "*stats1d:",
                         printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
             }
-            if (ytdDayData.containsKey(symb) && !ytdDayData.get(symb).isEmpty()
-                    && ytdDayData.get(symb).firstKey().isBefore(getYearBeginMinus1Day())) {
-                double lastYearClose = ytdDayData.get(symb).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
-                lastYearCloseMap.put(symb, lastYearClose);
-            }
+
         });
 
         aggregateDelta = targetStockList.stream().mapToDouble(s ->
@@ -493,14 +500,15 @@ public class ProfitTargetTrader implements LiveHandler,
     //Open Orders ***************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
-        pr("openOrder call back ");
+        pr("openOrder call back");
         String symb = ibContractToSymbol(contract);
         outputToSymbol(symb, usTime(), "openOrder callback:", order, "orderState status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
-        if (orderState.status() == OrderStatus.Filled) {
-            outputToFile(str(symb, "filled", order), fillsOutput);
+        if (orderState.status() == Filled) {
+            outputToFills(symb, "filled", order);
+            outputToSymbol(symb, "filled", order);
         }
 
         if (orderState.status().isFinished()) {
@@ -529,8 +537,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             int clientId, String whyHeld, double mktCapPrice) {
 
         outputToGeneral(usTime(), "openOrder orderStatus callback:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
-                , "clientID:", clientId);
+                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
@@ -565,10 +572,9 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 10L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToSymbol(symb, usTime(), "last Live price feed time:",
-                        latestPriceTimeMap.containsKey(symb) ? latestPriceTimeMap.get(symb).format(simpleHourMinute)
-                                : "no live feed");
-
+                outputToSymbol(symb,
+                        latestPriceTimeMap.containsKey(symb) ? str(usTime(), "last Live price feed time:",
+                                latestPriceTimeMap.get(symb).format(simpleHourMinute)) : "no live feed");
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "orderStatus", orderStatusMap.get(symb));
@@ -581,6 +587,6 @@ public class ProfitTargetTrader implements LiveHandler,
         }, 10L, 600L, TimeUnit.SECONDS);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() ->
-                outputToGeneral("*****Ending*****", getESTLocalDateTimeNow().format(f1))));
+                outputToGeneral("*****Ending*****", usTime())));
     }
 }

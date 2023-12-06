@@ -33,7 +33,8 @@ public enum OrderStatus {
     }
 
     public boolean isFinished() {
-        return this == Cancelled || this == Filled || this == Inactive || this == PendingCancel;
+        return this == Cancelled || this == Filled || this == Inactive;
+        //|| this == PendingCancel;
     }
 
 }
