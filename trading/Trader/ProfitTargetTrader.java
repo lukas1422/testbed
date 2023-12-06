@@ -107,7 +107,8 @@ public class ProfitTargetTrader implements LiveHandler,
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 lastYearCloseMap.put(s, lastYearClose);
-                pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()),
+                pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getKey(),
+                        ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose(),
                         "YTD:", round5Digits(ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1));
             }
         } else {
@@ -235,7 +236,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr("last::", symb, price, t.format(simpleHrMinSec));
+                pr("px::", symb, price, t.format(simpleHrMinSec));
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
                 latestPriceTimeMap.put(symb, getESTLocalTimeNow());
@@ -352,7 +353,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
                         * latestPriceMap.getOrDefault(s, 0.0))));
 
-        pr("aggregate Delta", r(aggregateDelta), "each delta", symbolDeltaMap);
+        pr("aggregate Delta", r(aggregateDelta), symbolDeltaMap);
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
             if (orderStatusMap.get(k).get(k1).isFinished()) {
@@ -545,7 +546,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "openOrders", openOrders.get(symb));
                 }
             });
-        }, 10L, 600L, TimeUnit.SECONDS);
+        }, 30L, 600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));
     }
 }
