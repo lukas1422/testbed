@@ -163,7 +163,6 @@ public class ProfitTargetTrader implements LiveHandler,
         pr(symb, "check delta impact", "aggDelta<Limit:", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit:"
                 , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
-
         return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                 getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
     }

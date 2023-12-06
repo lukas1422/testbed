@@ -665,10 +665,10 @@ public class TradingUtility {
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
-        return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
-                "[", minTime.format(simpleDayTime), "]"
-                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleDayTime), "]"
-                , "*last:", "[", m.lastKey().format(simpleDayTime), "]");
+        return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleTime), "]", "*min", min,
+                "[", minTime.format(simpleTime), "]"
+                , "*rng", Math.round(range * 1000) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleTime), "]"
+                , "*last:", "[", m.lastKey().format(simpleTime), "]");
     }
 
     public static Contract getActiveA50Contract() {

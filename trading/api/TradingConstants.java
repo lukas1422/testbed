@@ -48,9 +48,13 @@ public final class TradingConstants {
     public static final DateTimeFormatter simpleHrMinSec = DateTimeFormatter.ofPattern("H:mm:ss");
     public static final DateTimeFormatter simpleHourMinute = DateTimeFormatter.ofPattern("H:mm");
     public static final DateTimeFormatter simpleDayTime = DateTimeFormatter.ofPattern("M-d H:mm");
+    public static final DateTimeFormatter simpleTime = DateTimeFormatter.ofPattern("H:mm");
 
 
-    private static final Predicate<LocalDateTime> FUT_OPEN_PRED = (lt) -> !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SATURDAY) && !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SUNDAY) && lt.toLocalTime().isAfter(LocalTime.of(9, 0, 30));
+//    private static final Predicate<LocalDateTime> FUT_OPEN_PRED = (lt) ->
+//            !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SATURDAY)
+//                    && !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SUNDAY)
+//                    && lt.toLocalTime().isAfter(LocalTime.of(9, 0, 30));
 
 
     private TradingConstants() {
