@@ -239,9 +239,9 @@ public class TradingUtility {
 //        }
 //    }
 
-    public static void outputToError(String s) {
+    public static void outputToError(Object... s) {
         File output = new File("trading/TradingFiles/errors");
-        outputToFile(s, output);
+        outputToFile(str(s), output);
         outputToGeneral(s);
     }
 
@@ -500,7 +500,6 @@ public class TradingUtility {
 
 
     // use regular trading hours
-
     public static void reqHistDayData(ApiController ap, int reqId, Contract c,
                                       HistDataConsumer<Contract, String, Double, Long> dc,
                                       int duration, Types.BarSize bs) {
@@ -509,6 +508,18 @@ public class TradingUtility {
         String durationStr = duration + " " + durationUnit.toString().charAt(0);
         Types.WhatToShow whatToShow = Types.WhatToShow.ADJUSTED_LAST;
         Allstatic.globalRequestMap.put(reqId, new Request(c, dc));
+        CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
+                bs.toString(), whatToShow.toString(), 1, 2, keepUptoDate, Collections.<TagValue>emptyList()));
+    }
+
+    public static void reqHistDayData(ApiController ap, int reqId, Contract c,
+                                      HistDataConsumer<Contract, String, Double, Long> dc, Runnable r,
+                                      int duration, Types.BarSize bs) {
+        pr(" req hist data ", reqId, c.symbol());
+        Types.DurationUnit durationUnit = Types.DurationUnit.DAY;
+        String durationStr = duration + " " + durationUnit.toString().charAt(0);
+        Types.WhatToShow whatToShow = Types.WhatToShow.ADJUSTED_LAST;
+        Allstatic.globalRequestMap.put(reqId, new Request(c, dc, r));
         CompletableFuture.runAsync(() -> ap.client().reqHistoricalData(reqId, c, "", durationStr,
                 bs.toString(), whatToShow.toString(), 1, 2, keepUptoDate, Collections.<TagValue>emptyList()));
 

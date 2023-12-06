@@ -87,15 +87,17 @@ public class IBDataHandler {
 
     public static void historicalDataEnd(int reqId) {
         if (Allstatic.globalRequestMap.containsKey(reqId)) {
-            Request r = Allstatic.globalRequestMap.get(reqId);
-            Contract c = r.getContract();
-            String symb = ibContractToSymbol(r.getContract());
-            if (r.getCustomFunctionNeeded()) {
-                pr(reqId, symb, "historical Data End: custom handling needed ");
-            } else {
-                HistoricalHandler hh = (HistoricalHandler) r.getHandler();
-                hh.actionUponFinish(c);
+            Request req = Allstatic.globalRequestMap.get(reqId);
+            Contract c = req.getContract();
+            String symb = ibContractToSymbol(req.getContract());
+            if (req.getPerformActionOnFinish()) {
+                req.runRunnable();
+                pr(reqId, symb, "historical Data End: action on finish");
             }
+//            else {
+//                HistoricalHandler hh = (HistoricalHandler) req.getHandler();
+//                hh.actionUponFinish(c);
+//            }
         }
     }
 

@@ -981,7 +981,7 @@ public class ApiController implements EWrapper {
         }
         m_client.reqGlobalCancel();
         sendEOM();
-        outputToFile(str(getESTLocalDateTimeNow().format(simpleHrMinSec), "global cancel orders"), outputFile);
+        outputToGeneral(usTime(), "global cancel orders");
     }
 
     public void exerciseOption(String account, Contract contract, Types.ExerciseType type, int quantity, boolean override) {

@@ -8,9 +8,9 @@ import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
 import java.time.*;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -27,6 +27,8 @@ public class ProfitTargetTrader implements LiveHandler,
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
+    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
+
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
@@ -94,34 +96,42 @@ public class ProfitTargetTrader implements LiveHandler,
             l.await();
             pr("connected");
         } catch (InterruptedException e) {
-            outputToGeneral("error in connection:", e);
+            outputToError("error in connection:", e);
         }
 
         pr(" Time after latch released " + usTime());
-        targetStockList.forEach(symb -> {
-            pr("request hist day data: target stock symb ", symb);
-            Contract c = symbolContractMap.get(symb);
-            if (!threeDayData.containsKey(symb)) {
-                threeDayData.put(symb, new ConcurrentSkipListMap<>());
-            }
-
-            pr("requesting hist day data", symb);
-            CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                    histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min));
-
-            CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
-                    histCompatibleCt(c), Allstatic::ytdOpen, Math.min(364, getCalendarYtdDays() + 10),
-                    Types.BarSize._1_day));
-        });
 
         Executors.newScheduledThreadPool(10).schedule(() -> {
+            targetStockList.forEach(symb -> {
+                pr("request hist day data: target stock symb ", symb);
+                Contract c = symbolContractMap.get(symb);
+                if (!threeDayData.containsKey(symb)) {
+                    threeDayData.put(symb, new ConcurrentSkipListMap<>());
+                }
+
+                pr("requesting hist day data", symb);
+                CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
+                        histCompatibleCt(c), Allstatic::todaySoFar, 3, Types.BarSize._1_min));
+
+                CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
+                        histCompatibleCt(c), Allstatic::ytdOpen, () -> computeHistoricalData(symb)
+                        , Math.min(364, getCalendarYtdDays() + 10),
+                        Types.BarSize._1_day));
+            });
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
-        }, 500, TimeUnit.MILLISECONDS);
+        }, 2, TimeUnit.SECONDS);
         pr("req executions ");
         apiController.reqExecutions(new ExecutionFilter(), this);
         outputToGeneral("cancelling all orders on start up");
         apiController.cancelAllOrders();
+    }
+
+    static void computeHistoricalData(String s) {
+        double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
+                .average().orElse(0.0);
+        pr("average range:", s, rng);
+        averageDailyRange.put(s, rng);
     }
 
     static void computeRange() {
