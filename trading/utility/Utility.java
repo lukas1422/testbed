@@ -793,7 +793,7 @@ public class Utility {
             } else if (ct.lastTradeDateOrContractMonth().equalsIgnoreCase(TradingUtility.A50_LAST_EXPIRY)) {
                 return "SGXA50PR";
             }
-        } else if (ct.secType() == Types.SecType.STK && ct.exchange().equals("SEHK") && ct.currency().equals("HKD")) {
+        } else if (ct.secType() == Types.SecType.STK && ct.currency().equals("HKD")) {
             return "hk" + ct.symbol();
         } else if (ct.secType() == Types.SecType.STK && ct.currency().equals("USD")) {
             return ct.symbol();

@@ -634,7 +634,7 @@ public class TradingUtility {
     }
 
     public static String usDateTime() {
-        return getESTLocalDateTimeNow().format(simpleHrMinSec);
+        return getESTLocalDateTimeNow().format(f1);
     }
 
     static double round5Digits(double n) {

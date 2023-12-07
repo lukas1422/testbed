@@ -131,6 +131,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
+        outputToSymbol(symb,"****************STARTS", usDateTime());
         symbolContractMap.put(symb, ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
@@ -209,8 +210,9 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "****REFILL****", t.format(f));
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
-                            "p/c:", priceDividedByCost(price, symb), "refillPt"
-                            , getRequiredRefillPoint(symb), "rng:", averageDailyRange.getOrDefault(symb, 0.0));
+                            "p/c:", priceDividedByCost(price, symb), "refillPx"
+                            , getRequiredRefillPoint(symb) * price,
+                            "rng:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -412,8 +414,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status() == Filled) {
-            outputToFills(symb, "filled", order);
-            outputToSymbol(symb, "filled", order);
+            outputToFills(symb, usTime(), "filled", order);
+            outputToSymbol(symb, usTime(), "filled", order);
         }
 
         if (orderState.status().isFinished()) {
@@ -545,6 +547,10 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "openOrders", openOrders.get(symb));
                 }
+                outputToSymbol(symb, usTime(), "*3dP%:", threeDayPctMap.getOrDefault(symb, 0.0),
+                        "*1dP%:", oneDayPctMap.getOrDefault(symb, 0.0), "stats 3d:", printStats(threeDayData.get(symb)),
+                        "*stats 1d:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+
             });
         }, 20L, 600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));

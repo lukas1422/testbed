@@ -12191,3 +12191,1297 @@ WMT 9:22:32 last Live price feed time: 9:22
 9:26:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
 9:27:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
 9:28:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:29:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO ****FIRST**** 12-6 9:30:02
+KO ****first buying 3dp: 27.0 1dp: 0.0
+order sent 9:30:02 KO orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57
+KO orderID: 92212 tradeID: 92212 action: BUY px: 58.57 size: 10 KO 12-6 9:30 INVENTORY_ADDER Created
+KO 9:30:03 openOrder callback: orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57 orderState status: Submitted
+9:30:03 openOrder orderStatus callback: orderId: 92212 OrderStatus: Submitted filled: 0 remaining: 10 fillPrice 0.0 lastFillPrice: 0.0
+KO updating position: 9:30:03 position: 10 cost: 58.57
+KO 9:30:03 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+KO 9:30:03 openOrder callback: orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57 orderState status: Filled
+KO filled orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57
+KO openOrder callback:removing order orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57 status: Filled
+KO 9:30:03 openOrder callback:after removal.open orders: KO {}
+9:30:03 openOrder orderStatus callback: orderId: 92212 OrderStatus: Filled filled: 10 remaining: 0 fillPrice 58.57 lastFillPrice: 58.57
+KO 9:30:03 openOrder callback: orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57 orderState status: Filled
+KO filled orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57
+KO openOrder callback:removing order orderID: 92212 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 58.57 status: Filled
+KO 9:30:03 openOrder callback:after removal.open orders: KO {}
+9:30:03 openOrder orderStatus callback: orderId: 92212 OrderStatus: Filled filled: 10 remaining: 0 fillPrice 58.57 lastFillPrice: 58.57
+KO 1.commission report orderID: 92212 commission: 0.352257 NO PNL
+KO 2.commission report orderID: 92212 commission: 0.352257 no pnl
+KO updating position: 9:30:03 position: 10 cost: 58.6052257
+9:30:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:32:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+PG ****FIRST**** 12-6 9:32:22
+PG ****first buying 3dp: 10.0 1dp: 8.0
+order sent 9:32:22 PG orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77
+PG orderID: 92213 tradeID: 92213 action: BUY px: 146.77 size: 5 PG 12-6 9:32 INVENTORY_ADDER Created
+PG 9:32:22 openOrder callback: orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77 orderState status: Submitted
+9:32:22 openOrder orderStatus callback: orderId: 92213 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+PG 9:32:24 order blocked: PG [orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Submitted}, SPY={}, WMT={}, MCD={}}
+PG updating position: 9:32:29 position: 5 cost: 146.77
+PG 9:32:29 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+PG 9:32:29 openOrder callback: orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77 orderState status: Filled
+PG filled orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77
+PG openOrder callback:removing order orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77 status: Filled
+PG 9:32:29 openOrder callback:after removal.open orders: PG {}
+9:32:29 openOrder orderStatus callback: orderId: 92213 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 146.77 lastFillPrice: 146.77
+PG 9:32:29 openOrder callback: orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77 orderState status: Filled
+PG filled orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77
+PG openOrder callback:removing order orderID: 92213 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 146.77 status: Filled
+PG 9:32:29 openOrder callback:after removal.open orders: PG {}
+9:32:29 openOrder orderStatus callback: orderId: 92213 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 146.77 lastFillPrice: 146.77
+PG 1.commission report orderID: 92213 commission: 0.345257 NO PNL
+PG 2.commission report orderID: 92213 commission: 0.345257 no pnl
+PG updating position: 9:32:29 position: 5 cost: 146.83905140000002
+KO 9:32:32 last Live price feed time: 9:32
+KO periodic check: 9:32:32 orderStatus {92212=Filled}
+MCD 9:32:32 last Live price feed time: 9:32
+PG 9:32:32 last Live price feed time: 9:32
+PG periodic check: 9:32:32 orderStatus {92213=Filled}
+SPY 9:32:32 last Live price feed time: 9:32
+UL 9:32:32 last Live price feed time: 9:32
+WMT 9:32:32 last Live price feed time: 9:32
+9:33:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:34:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO updating position: 9:35:12 position: 10 cost: 58.6052257
+PG updating position: 9:35:12 position: 5 cost: 146.83905145
+KO updating position: 9:35:12 position: 10 cost: 58.6052257
+PG updating position: 9:35:12 position: 5 cost: 146.83905145
+9:35:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:36:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:37:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:38:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:40:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:41:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:42:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 9:42:32 last Live price feed time: 9:42
+KO periodic check: 9:42:32 orderStatus {92212=Filled}
+MCD 9:42:32 last Live price feed time: 9:42
+PG 9:42:32 last Live price feed time: 9:42
+PG periodic check: 9:42:32 orderStatus {92213=Filled}
+SPY 9:42:32 last Live price feed time: 9:42
+UL 9:42:32 last Live price feed time: 9:42
+WMT 9:42:32 last Live price feed time: 9:42
+9:43:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:44:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:46:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:47:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:48:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:49:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:50:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:51:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 9:52:32 last Live price feed time: 9:52
+KO periodic check: 9:52:32 orderStatus {92212=Filled}
+MCD 9:52:32 last Live price feed time: 9:52
+PG 9:52:32 last Live price feed time: 9:52
+PG periodic check: 9:52:32 orderStatus {92213=Filled}
+SPY 9:52:32 last Live price feed time: 9:52
+UL 9:52:32 last Live price feed time: 9:52
+WMT 9:52:32 last Live price feed time: 9:52
+9:53:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:54:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:55:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:56:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:57:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+9:58:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:00:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:01:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:02:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:02:32 last Live price feed time: 10:02
+KO periodic check: 10:02:32 orderStatus {92212=Filled}
+MCD 10:02:32 last Live price feed time: 10:02
+PG 10:02:32 last Live price feed time: 10:02
+PG periodic check: 10:02:32 orderStatus {92213=Filled}
+SPY 10:02:32 last Live price feed time: 10:02
+UL 10:02:32 last Live price feed time: 10:02
+WMT 10:02:32 last Live price feed time: 10:02
+10:03:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:05:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:06:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:07:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:08:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:10:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:11:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:12:32 last Live price feed time: 10:12
+KO periodic check: 10:12:32 orderStatus {92212=Filled}
+MCD 10:12:32 last Live price feed time: 10:12
+PG 10:12:32 last Live price feed time: 10:12
+PG periodic check: 10:12:32 orderStatus {92213=Filled}
+SPY 10:12:32 last Live price feed time: 10:12
+UL 10:12:32 last Live price feed time: 10:12
+WMT 10:12:32 last Live price feed time: 10:12
+10:12:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:14:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:15:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:16:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:17:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:18:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:19:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:20:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:22:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:22:32 last Live price feed time: 10:22
+KO periodic check: 10:22:32 orderStatus {92212=Filled}
+MCD 10:22:32 last Live price feed time: 10:22
+PG 10:22:32 last Live price feed time: 10:22
+PG periodic check: 10:22:32 orderStatus {92213=Filled}
+SPY 10:22:32 last Live price feed time: 10:22
+UL 10:22:32 last Live price feed time: 10:22
+WMT 10:22:32 last Live price feed time: 10:22
+10:23:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:24:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:25:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:27:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:28:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:29:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:30:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:31:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:32:32 last Live price feed time: 10:32
+KO periodic check: 10:32:32 orderStatus {92212=Filled}
+MCD 10:32:32 last Live price feed time: 10:32
+PG 10:32:32 last Live price feed time: 10:32
+PG periodic check: 10:32:32 orderStatus {92213=Filled}
+SPY 10:32:32 last Live price feed time: 10:32
+UL 10:32:32 last Live price feed time: 10:32
+WMT 10:32:32 last Live price feed time: 10:32
+10:32:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:34:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:35:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:36:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:37:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:38:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:39:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:41:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:42:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:42:32 last Live price feed time: 10:42
+KO periodic check: 10:42:32 orderStatus {92212=Filled}
+MCD 10:42:32 last Live price feed time: 10:42
+PG 10:42:32 last Live price feed time: 10:42
+PG periodic check: 10:42:32 orderStatus {92213=Filled}
+SPY 10:42:32 last Live price feed time: 10:42
+UL 10:42:32 last Live price feed time: 10:42
+WMT 10:42:32 last Live price feed time: 10:42
+10:43:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:44:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:45:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:46:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:48:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:49:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:50:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:51:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 10:52:32 last Live price feed time: 10:52
+KO periodic check: 10:52:32 orderStatus {92212=Filled}
+MCD 10:52:32 last Live price feed time: 10:52
+PG 10:52:32 last Live price feed time: 10:52
+PG periodic check: 10:52:32 orderStatus {92213=Filled}
+SPY 10:52:32 last Live price feed time: 10:52
+UL 10:52:32 last Live price feed time: 10:52
+WMT 10:52:32 last Live price feed time: 10:52
+10:52:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:53:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:54:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:55:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:57:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:58:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:59:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:01:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:02:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:02:32 last Live price feed time: 11:02
+KO periodic check: 11:02:32 orderStatus {92212=Filled}
+MCD 11:02:32 last Live price feed time: 11:02
+PG 11:02:32 last Live price feed time: 11:02
+PG periodic check: 11:02:32 orderStatus {92213=Filled}
+SPY 11:02:32 last Live price feed time: 11:02
+UL 11:02:32 last Live price feed time: 11:02
+WMT 11:02:32 last Live price feed time: 11:02
+11:03:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:04:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:05:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:07:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:08:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:09:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:10:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:12:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:12:32 last Live price feed time: 11:12
+KO periodic check: 11:12:32 orderStatus {92212=Filled}
+MCD 11:12:32 last Live price feed time: 11:12
+PG 11:12:32 last Live price feed time: 11:12
+PG periodic check: 11:12:32 orderStatus {92213=Filled}
+SPY 11:12:32 last Live price feed time: 11:12
+UL 11:12:32 last Live price feed time: 11:12
+WMT 11:12:32 last Live price feed time: 11:12
+11:13:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:14:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:15:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:17:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:18:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:19:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:20:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:22:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:22:32 last Live price feed time: 11:22
+KO periodic check: 11:22:32 orderStatus {92212=Filled}
+MCD 11:22:32 last Live price feed time: 11:22
+PG 11:22:32 last Live price feed time: 11:22
+PG periodic check: 11:22:32 orderStatus {92213=Filled}
+SPY 11:22:32 last Live price feed time: 11:22
+UL 11:22:32 last Live price feed time: 11:21
+WMT 11:22:32 last Live price feed time: 11:22
+11:23:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:24:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:25:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:26:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:27:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:29:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:30:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:31:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:32:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:32:32 last Live price feed time: 11:32
+KO periodic check: 11:32:32 orderStatus {92212=Filled}
+MCD 11:32:32 last Live price feed time: 11:32
+PG 11:32:32 last Live price feed time: 11:32
+PG periodic check: 11:32:32 orderStatus {92213=Filled}
+SPY 11:32:32 last Live price feed time: 11:32
+UL 11:32:32 last Live price feed time: 11:32
+WMT 11:32:32 last Live price feed time: 11:32
+11:33:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY ****FIRST**** 12-6 11:33:42
+SPY ****first buying 3dp: 39.0 1dp: 2.0
+order sent 11:33:42 SPY orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09
+SPY orderID: 92214 tradeID: 92214 action: BUY px: 456.09 size: 5 SPY 12-6 11:33 INVENTORY_ADDER Created
+SPY 11:33:42 order blocked: SPY [] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Created}, WMT={}, MCD={}}
+SPY 11:33:43 openOrder callback: orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09 orderState status: Submitted
+11:33:43 openOrder orderStatus callback: orderId: 92214 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+SPY 11:33:43 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY 11:33:44 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY 11:33:45 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY 11:33:50 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY 11:33:51 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY 11:33:51 order blocked: SPY [orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09] **statusMap: {KO={92212=Filled}, UL={}, PG={92213=Filled}, SPY={92214=Submitted}, WMT={}, MCD={}}
+SPY updating position: 11:33:52 position: 5 cost: 456.0887
+SPY 11:33:52 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+SPY 11:33:52 openOrder callback: orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09 orderState status: Filled
+SPY filled orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09
+SPY openOrder callback:removing order orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09 status: Filled
+SPY 11:33:52 openOrder callback:after removal.open orders: SPY {}
+11:33:52 openOrder orderStatus callback: orderId: 92214 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 456.0887 lastFillPrice: 456.0887
+SPY 11:33:52 openOrder callback: orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09 orderState status: Filled
+SPY filled orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09
+SPY openOrder callback:removing order orderID: 92214 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 456.09 status: Filled
+SPY 11:33:52 openOrder callback:after removal.open orders: SPY {}
+11:33:52 openOrder orderStatus callback: orderId: 92214 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 456.0887 lastFillPrice: 456.0887
+SPY 1.commission report orderID: 92214 commission: 0.351257 NO PNL
+SPY 2.commission report orderID: 92214 commission: 0.351257 no pnl
+SPY updating position: 11:33:52 position: 5 cost: 456.15895140000003
+11:34:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:36:01 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:37:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:38:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY updating position: 11:39:15 position: 5 cost: 456.15895145
+SPY updating position: 11:39:15 position: 5 cost: 456.15895145
+11:39:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:40:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:41:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:42:32 last Live price feed time: 11:42
+KO periodic check: 11:42:32 orderStatus {92212=Filled}
+MCD 11:42:32 last Live price feed time: 11:42
+PG 11:42:32 last Live price feed time: 11:42
+PG periodic check: 11:42:32 orderStatus {92213=Filled}
+SPY 11:42:32 last Live price feed time: 11:42
+SPY periodic check: 11:42:32 orderStatus {92214=Filled}
+UL 11:42:32 last Live price feed time: 11:41
+WMT 11:42:32 last Live price feed time: 11:42
+11:42:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:44:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:45:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:46:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:47:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:48:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:50:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:51:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 11:52:32 last Live price feed time: 11:52
+KO periodic check: 11:52:32 orderStatus {92212=Filled}
+MCD 11:52:32 last Live price feed time: 11:52
+PG 11:52:32 last Live price feed time: 11:52
+PG periodic check: 11:52:32 orderStatus {92213=Filled}
+SPY 11:52:32 last Live price feed time: 11:52
+SPY periodic check: 11:52:32 orderStatus {92214=Filled}
+UL 11:52:32 last Live price feed time: 11:51
+WMT 11:52:32 last Live price feed time: 11:52
+11:52:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:53:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:54:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:55:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:57:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:58:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+11:59:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:00:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:01:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:02:32 last Live price feed time: 12:02
+KO periodic check: 12:02:32 orderStatus {92212=Filled}
+MCD 12:02:32 last Live price feed time: 12:02
+PG 12:02:32 last Live price feed time: 12:02
+PG periodic check: 12:02:32 orderStatus {92213=Filled}
+SPY 12:02:32 last Live price feed time: 12:02
+SPY periodic check: 12:02:32 orderStatus {92214=Filled}
+UL 12:02:32 last Live price feed time: 12:00
+WMT 12:02:32 last Live price feed time: 12:02
+12:03:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:04:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:05:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:06:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:07:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:08:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:10:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:11:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:12:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:12:32 last Live price feed time: 12:12
+KO periodic check: 12:12:32 orderStatus {92212=Filled}
+MCD 12:12:32 last Live price feed time: 12:12
+PG 12:12:32 last Live price feed time: 12:12
+PG periodic check: 12:12:32 orderStatus {92213=Filled}
+SPY 12:12:32 last Live price feed time: 12:12
+SPY periodic check: 12:12:32 orderStatus {92214=Filled}
+UL 12:12:32 last Live price feed time: 12:12
+WMT 12:12:32 last Live price feed time: 12:12
+12:13:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:14:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:15:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:17:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:18:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:19:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:20:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:21:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:22:32 last Live price feed time: 12:22
+KO periodic check: 12:22:32 orderStatus {92212=Filled}
+MCD 12:22:32 last Live price feed time: 12:22
+PG 12:22:32 last Live price feed time: 12:22
+PG periodic check: 12:22:32 orderStatus {92213=Filled}
+SPY 12:22:32 last Live price feed time: 12:22
+SPY periodic check: 12:22:32 orderStatus {92214=Filled}
+UL 12:22:32 last Live price feed time: 12:22
+WMT 12:22:32 last Live price feed time: 12:22
+12:23:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:24:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:25:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:26:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:27:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:28:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:30:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:31:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:32:32 last Live price feed time: 12:32
+KO periodic check: 12:32:32 orderStatus {92212=Filled}
+MCD 12:32:32 last Live price feed time: 12:32
+PG 12:32:32 last Live price feed time: 12:32
+PG periodic check: 12:32:32 orderStatus {92213=Filled}
+SPY 12:32:32 last Live price feed time: 12:32
+SPY periodic check: 12:32:32 orderStatus {92214=Filled}
+UL 12:32:32 last Live price feed time: 12:32
+WMT 12:32:32 last Live price feed time: 12:32
+12:32:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:33:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL ****REFILL**** 12-6 12:34:48
+UL buyMore: 3dp: 24.0 1dp: 8.0 p/c: 0.9887113509498522 refillPt 0.9899064977704934 rng: 0.010093502229506576
+order sent 12:34:48 UL orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83
+UL orderID: 92215 tradeID: 92215 action: BUY px: 47.83 size: 5 UL 12-6 12:34 INVENTORY_ADDER Created
+UL 12:34:49 openOrder callback: orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83 orderState status: Submitted
+12:34:49 openOrder orderStatus callback: orderId: 92215 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+12:34:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 12:34:57 order blocked: UL [orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83] **statusMap: {KO={92212=Filled}, UL={92215=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 12:35:04 order blocked: UL [orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83] **statusMap: {KO={92212=Filled}, UL={92215=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 12:35:43 order blocked: UL [orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83] **statusMap: {KO={92212=Filled}, UL={92215=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 12:35:44 order blocked: UL [orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83] **statusMap: {KO={92212=Filled}, UL={92215=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL updating position: 12:35:52 position: 25 cost: 48.274972
+UL 12:35:52 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 12:35:52 openOrder callback: orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83 orderState status: Filled
+UL filled orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83
+UL openOrder callback:removing order orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83 status: Filled
+UL 12:35:52 openOrder callback:after removal.open orders: UL {}
+12:35:52 openOrder orderStatus callback: orderId: 92215 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.83 lastFillPrice: 47.83
+UL 12:35:52 openOrder callback: orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83 orderState status: Filled
+UL filled orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83
+UL openOrder callback:removing order orderID: 92215 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.83 status: Filled
+UL 12:35:52 openOrder callback:after removal.open orders: UL {}
+12:35:52 openOrder orderStatus callback: orderId: 92215 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.83 lastFillPrice: 47.83
+UL 1.commission report orderID: 92215 commission: 0.343257 NO PNL
+UL 2.commission report orderID: 92215 commission: 0.343257 no pnl
+UL updating position: 12:35:52 position: 25 cost: 48.288702279999995
+12:36:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:37:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:38:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:39:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL updating position: 12:40:23 position: 25 cost: 48.2887023
+12:40:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:42:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:42:32 last Live price feed time: 12:42
+KO periodic check: 12:42:32 orderStatus {92212=Filled}
+MCD 12:42:32 last Live price feed time: 12:42
+PG 12:42:32 last Live price feed time: 12:42
+PG periodic check: 12:42:32 orderStatus {92213=Filled}
+SPY 12:42:32 last Live price feed time: 12:42
+SPY periodic check: 12:42:32 orderStatus {92214=Filled}
+UL 12:42:32 last Live price feed time: 12:42
+UL periodic check: 12:42:32 orderStatus {92215=Filled}
+WMT 12:42:32 last Live price feed time: 12:42
+12:43:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL ****REFILL**** 12-6 12:43:42
+UL buyMore: 3dp: 20.0 1dp: 0.0 p/c: 0.989879572721506 refillPt 0.9899064977704934 rng: 0.010093502229506576
+order sent 12:43:42 UL orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8
+UL orderID: 92216 tradeID: 92216 action: BUY px: 47.8 size: 5 UL 12-6 12:43 INVENTORY_ADDER Created
+UL 12:43:42 openOrder callback: orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8 orderState status: PreSubmitted
+12:43:42 openOrder orderStatus callback: orderId: 92216 OrderStatus: PreSubmitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+UL updating position: 12:43:42 position: 30 cost: 48.20725191666667
+UL 12:43:42 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 12:43:42 openOrder callback: orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8 orderState status: Filled
+UL filled orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8
+UL openOrder callback:removing order orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8 status: Filled
+UL 12:43:42 openOrder callback:after removal.open orders: UL {}
+12:43:42 openOrder orderStatus callback: orderId: 92216 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.8 lastFillPrice: 47.8
+UL 12:43:42 openOrder callback: orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8 orderState status: Filled
+UL filled orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8
+UL openOrder callback:removing order orderID: 92216 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.8 status: Filled
+UL 12:43:42 openOrder callback:after removal.open orders: UL {}
+12:43:42 openOrder orderStatus callback: orderId: 92216 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.8 lastFillPrice: 47.8
+UL 1.commission report orderID: 92216 commission: 0.366257 NO PNL
+UL 2.commission report orderID: 92216 commission: 0.366257 no pnl
+UL updating position: 12:43:42 position: 30 cost: 48.219460483333336
+12:44:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:45:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:46:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL updating position: 12:47:49 position: 30 cost: 48.2194605
+12:48:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:49:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:50:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:51:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 12:52:32 last Live price feed time: 12:52
+KO periodic check: 12:52:32 orderStatus {92212=Filled}
+MCD 12:52:32 last Live price feed time: 12:52
+PG 12:52:32 last Live price feed time: 12:52
+PG periodic check: 12:52:32 orderStatus {92213=Filled}
+SPY 12:52:32 last Live price feed time: 12:52
+SPY periodic check: 12:52:32 orderStatus {92214=Filled}
+UL 12:52:32 last Live price feed time: 12:52
+UL periodic check: 12:52:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 12:52:32 last Live price feed time: 12:52
+12:52:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:54:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:55:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:56:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:57:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+12:59:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:00:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:01:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:02:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:02:32 last Live price feed time: 13:02
+KO periodic check: 13:02:32 orderStatus {92212=Filled}
+MCD 13:02:32 last Live price feed time: 13:02
+PG 13:02:32 last Live price feed time: 13:02
+PG periodic check: 13:02:32 orderStatus {92213=Filled}
+SPY 13:02:32 last Live price feed time: 13:02
+SPY periodic check: 13:02:32 orderStatus {92214=Filled}
+UL 13:02:32 last Live price feed time: 13:02
+UL periodic check: 13:02:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:02:32 last Live price feed time: 13:02
+13:03:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:04:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:06:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:07:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:08:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:09:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:11:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:12:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:12:32 last Live price feed time: 13:12
+KO periodic check: 13:12:32 orderStatus {92212=Filled}
+MCD 13:12:32 last Live price feed time: 13:12
+PG 13:12:32 last Live price feed time: 13:12
+PG periodic check: 13:12:32 orderStatus {92213=Filled}
+SPY 13:12:32 last Live price feed time: 13:12
+SPY periodic check: 13:12:32 orderStatus {92214=Filled}
+UL 13:12:32 last Live price feed time: 13:11
+UL periodic check: 13:12:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:12:32 last Live price feed time: 13:12
+13:13:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:14:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:15:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:16:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:18:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:19:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:20:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:21:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:22:32 last Live price feed time: 13:22
+KO periodic check: 13:22:32 orderStatus {92212=Filled}
+MCD 13:22:32 last Live price feed time: 13:22
+PG 13:22:32 last Live price feed time: 13:22
+PG periodic check: 13:22:32 orderStatus {92213=Filled}
+SPY 13:22:32 last Live price feed time: 13:22
+SPY periodic check: 13:22:32 orderStatus {92214=Filled}
+UL 13:22:32 last Live price feed time: 13:22
+UL periodic check: 13:22:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:22:32 last Live price feed time: 13:22
+13:22:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:23:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:25:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:26:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:27:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:28:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:29:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:31:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:32:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:32:32 last Live price feed time: 13:32
+KO periodic check: 13:32:32 orderStatus {92212=Filled}
+MCD 13:32:32 last Live price feed time: 13:32
+PG 13:32:32 last Live price feed time: 13:32
+PG periodic check: 13:32:32 orderStatus {92213=Filled}
+SPY 13:32:32 last Live price feed time: 13:32
+SPY periodic check: 13:32:32 orderStatus {92214=Filled}
+UL 13:32:32 last Live price feed time: 13:32
+UL periodic check: 13:32:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:32:32 last Live price feed time: 13:32
+13:33:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 13:34:14 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+13:34:14 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:hfarm rejectJson:  NULL 
+openOrder ERROR: 13:34:15 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+13:34:15 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+13:34:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:35:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:36:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:38:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:39:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:40:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:41:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:42:32 last Live price feed time: 13:42
+KO periodic check: 13:42:32 orderStatus {92212=Filled}
+MCD 13:42:32 last Live price feed time: 13:42
+PG 13:42:32 last Live price feed time: 13:42
+PG periodic check: 13:42:32 orderStatus {92213=Filled}
+SPY 13:42:32 last Live price feed time: 13:42
+SPY periodic check: 13:42:32 orderStatus {92214=Filled}
+UL 13:42:32 last Live price feed time: 13:42
+UL periodic check: 13:42:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:42:32 last Live price feed time: 13:42
+13:42:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:43:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:45:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:46:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:47:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:48:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:49:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:51:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:52:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 13:52:32 last Live price feed time: 13:52
+KO periodic check: 13:52:32 orderStatus {92212=Filled}
+MCD 13:52:32 last Live price feed time: 13:51
+PG 13:52:32 last Live price feed time: 13:52
+PG periodic check: 13:52:32 orderStatus {92213=Filled}
+SPY 13:52:32 last Live price feed time: 13:52
+SPY periodic check: 13:52:32 orderStatus {92214=Filled}
+UL 13:52:32 last Live price feed time: 13:51
+UL periodic check: 13:52:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 13:52:32 last Live price feed time: 13:52
+13:53:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:54:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:55:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:57:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:58:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+13:59:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:00:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:01:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:02:32 last Live price feed time: 14:02
+KO periodic check: 14:02:32 orderStatus {92212=Filled}
+MCD 14:02:32 last Live price feed time: 14:02
+PG 14:02:32 last Live price feed time: 14:02
+PG periodic check: 14:02:32 orderStatus {92213=Filled}
+SPY 14:02:32 last Live price feed time: 14:02
+SPY periodic check: 14:02:32 orderStatus {92214=Filled}
+UL 14:02:32 last Live price feed time: 14:02
+UL periodic check: 14:02:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:02:32 last Live price feed time: 14:02
+14:02:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:03:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:04:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:06:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:07:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:08:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:09:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:10:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:11:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:12:32 last Live price feed time: 14:12
+KO periodic check: 14:12:32 orderStatus {92212=Filled}
+MCD 14:12:32 last Live price feed time: 14:12
+PG 14:12:32 last Live price feed time: 14:12
+PG periodic check: 14:12:32 orderStatus {92213=Filled}
+SPY 14:12:32 last Live price feed time: 14:12
+SPY periodic check: 14:12:32 orderStatus {92214=Filled}
+UL 14:12:32 last Live price feed time: 14:12
+UL periodic check: 14:12:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:12:32 last Live price feed time: 14:12
+14:12:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:14:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:15:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:16:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:17:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:19:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:20:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:21:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:22:32 last Live price feed time: 14:22
+KO periodic check: 14:22:32 orderStatus {92212=Filled}
+MCD 14:22:32 last Live price feed time: 14:22
+PG 14:22:32 last Live price feed time: 14:22
+PG periodic check: 14:22:32 orderStatus {92213=Filled}
+SPY 14:22:32 last Live price feed time: 14:22
+SPY periodic check: 14:22:32 orderStatus {92214=Filled}
+UL 14:22:32 last Live price feed time: 14:21
+UL periodic check: 14:22:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:22:32 last Live price feed time: 14:22
+14:22:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:24:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:25:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:26:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:27:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:28:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:29:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:30:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:32:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:32:32 last Live price feed time: 14:32
+KO periodic check: 14:32:32 orderStatus {92212=Filled}
+MCD 14:32:32 last Live price feed time: 14:32
+PG 14:32:32 last Live price feed time: 14:32
+PG periodic check: 14:32:32 orderStatus {92213=Filled}
+SPY 14:32:32 last Live price feed time: 14:32
+SPY periodic check: 14:32:32 orderStatus {92214=Filled}
+UL 14:32:32 last Live price feed time: 14:31
+UL periodic check: 14:32:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:32:32 last Live price feed time: 14:32
+14:33:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:34:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:35:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:37:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:38:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:39:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:40:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:41:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:42:32 last Live price feed time: 14:42
+KO periodic check: 14:42:32 orderStatus {92212=Filled}
+MCD 14:42:32 last Live price feed time: 14:42
+PG 14:42:32 last Live price feed time: 14:42
+PG periodic check: 14:42:32 orderStatus {92213=Filled}
+SPY 14:42:32 last Live price feed time: 14:42
+SPY periodic check: 14:42:32 orderStatus {92214=Filled}
+UL 14:42:32 last Live price feed time: 14:42
+UL periodic check: 14:42:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:42:32 last Live price feed time: 14:42
+14:42:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:43:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:45:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:46:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:47:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:49:01 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:50:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:51:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:52:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 14:52:32 last Live price feed time: 14:52
+KO periodic check: 14:52:32 orderStatus {92212=Filled}
+MCD 14:52:32 last Live price feed time: 14:52
+PG 14:52:32 last Live price feed time: 14:52
+PG periodic check: 14:52:32 orderStatus {92213=Filled}
+SPY 14:52:32 last Live price feed time: 14:52
+SPY periodic check: 14:52:32 orderStatus {92214=Filled}
+UL 14:52:32 last Live price feed time: 14:51
+UL periodic check: 14:52:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 14:52:32 last Live price feed time: 14:52
+14:53:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:54:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:55:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:56:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:58:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+14:59:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:00:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:01:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:02:32 last Live price feed time: 15:02
+KO periodic check: 15:02:32 orderStatus {92212=Filled}
+MCD 15:02:32 last Live price feed time: 15:02
+PG 15:02:32 last Live price feed time: 15:02
+PG periodic check: 15:02:32 orderStatus {92213=Filled}
+SPY 15:02:32 last Live price feed time: 15:02
+SPY periodic check: 15:02:32 orderStatus {92214=Filled}
+UL 15:02:32 last Live price feed time: 15:01
+UL periodic check: 15:02:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 15:02:32 last Live price feed time: 15:02
+15:02:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:03:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:04:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:06:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:07:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:08:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:09:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:10:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:12:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:12:32 last Live price feed time: 15:12
+KO periodic check: 15:12:32 orderStatus {92212=Filled}
+MCD 15:12:32 last Live price feed time: 15:12
+PG 15:12:32 last Live price feed time: 15:12
+PG periodic check: 15:12:32 orderStatus {92213=Filled}
+SPY 15:12:32 last Live price feed time: 15:12
+SPY periodic check: 15:12:32 orderStatus {92214=Filled}
+UL 15:12:32 last Live price feed time: 15:11
+UL periodic check: 15:12:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 15:12:32 last Live price feed time: 15:12
+15:13:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:14:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:15:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:16:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:18:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:19:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:20:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:21:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:22:32 last Live price feed time: 15:22
+KO periodic check: 15:22:32 orderStatus {92212=Filled}
+MCD 15:22:32 last Live price feed time: 15:22
+PG 15:22:32 last Live price feed time: 15:22
+PG periodic check: 15:22:32 orderStatus {92213=Filled}
+SPY 15:22:32 last Live price feed time: 15:22
+SPY periodic check: 15:22:32 orderStatus {92214=Filled}
+UL 15:22:32 last Live price feed time: 15:22
+UL periodic check: 15:22:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 15:22:32 last Live price feed time: 15:22
+15:22:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:24:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:25:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:26:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:27:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:28:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:30:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:31:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 15:32:02 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+15:32:02 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:hkhmds rejectJson:  NULL 
+openOrder ERROR: 15:32:09 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+15:32:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+15:32:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:32:32 last Live price feed time: 15:32
+KO periodic check: 15:32:32 orderStatus {92212=Filled}
+MCD 15:32:32 last Live price feed time: 15:32
+PG 15:32:32 last Live price feed time: 15:32
+PG periodic check: 15:32:32 orderStatus {92213=Filled}
+SPY 15:32:32 last Live price feed time: 15:32
+SPY periodic check: 15:32:32 orderStatus {92214=Filled}
+UL 15:32:32 last Live price feed time: 15:32
+UL periodic check: 15:32:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 15:32:32 last Live price feed time: 15:32
+15:33:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:34:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:35:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:37:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:38:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:39:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:40:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:41:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:42:32 last Live price feed time: 15:42
+KO periodic check: 15:42:32 orderStatus {92212=Filled}
+MCD 15:42:32 last Live price feed time: 15:42
+PG 15:42:32 last Live price feed time: 15:42
+PG periodic check: 15:42:32 orderStatus {92213=Filled}
+SPY 15:42:32 last Live price feed time: 15:42
+SPY periodic check: 15:42:32 orderStatus {92214=Filled}
+UL 15:42:32 last Live price feed time: 15:41
+UL periodic check: 15:42:32 orderStatus {92215=Filled, 92216=Filled}
+WMT 15:42:32 last Live price feed time: 15:42
+15:42:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:44:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:45:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:46:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL ****REFILL**** 12-6 15:46:34
+UL buyMore: 3dp: 8.0 1dp: 0.0 p/c: 0.9898493161282881 refillPt 0.9899064977704934 rng: 0.010093502229506576
+order sent 15:46:34 UL orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73
+UL orderID: 92217 tradeID: 92217 action: BUY px: 47.73 size: 5 UL 12-6 15:46 INVENTORY_ADDER Created
+UL 15:46:34 openOrder callback: orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73 orderState status: Submitted
+15:46:34 openOrder orderStatus callback: orderId: 92217 OrderStatus: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+UL 15:46:35 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:46:51 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:47:06 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+15:47:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 15:48:01 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:48:07 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:48:22 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:48:44 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+15:48:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 15:49:01 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:49:25 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:49:41 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:49:50 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+15:49:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 15:50:21 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:50:28 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+15:51:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 15:51:13 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:14 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:21 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:22 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:35 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:37 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:41 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:41 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:44 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:48 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:51:58 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:52:02 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL 15:52:10 order blocked: UL [orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73] **statusMap: {KO={92212=Filled}, UL={92215=Filled, 92216=Filled, 92217=Submitted}, PG={92213=Filled}, SPY={92214=Filled}, WMT={}, MCD={}}
+UL updating position: 15:52:12 position: 35 cost: 48.14953757142857
+UL 15:52:12 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+UL 15:52:12 openOrder callback: orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73 orderState status: Filled
+UL filled orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73
+UL openOrder callback:removing order orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73 status: Filled
+UL 15:52:12 openOrder callback:after removal.open orders: UL {}
+15:52:12 openOrder orderStatus callback: orderId: 92217 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.73 lastFillPrice: 47.73
+UL 15:52:12 openOrder callback: orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73 orderState status: Filled
+UL filled orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73
+UL openOrder callback:removing order orderID: 92217 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.73 status: Filled
+UL 15:52:12 openOrder callback:after removal.open orders: UL {}
+15:52:12 openOrder orderStatus callback: orderId: 92217 OrderStatus: Filled filled: 5 remaining: 0 fillPrice 47.73 lastFillPrice: 47.73
+UL 1.commission report orderID: 92217 commission: 0.339257 NO PNL
+UL 2.commission report orderID: 92217 commission: 0.339257 no pnl
+UL updating position: 15:52:12 position: 35 cost: 48.15923062857142
+15:52:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 15:52:32 last Live price feed time: 15:52
+KO periodic check: 15:52:32 orderStatus {92212=Filled}
+MCD 15:52:32 last Live price feed time: 15:52
+PG 15:52:32 last Live price feed time: 15:52
+PG periodic check: 15:52:32 orderStatus {92213=Filled}
+SPY 15:52:32 last Live price feed time: 15:52
+SPY periodic check: 15:52:32 orderStatus {92214=Filled}
+UL 15:52:32 last Live price feed time: 15:52
+UL periodic check: 15:52:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 15:52:32 last Live price feed time: 15:52
+15:53:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:54:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:55:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL updating position: 15:56:32 position: 35 cost: 48.1592306
+15:57:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:58:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+15:59:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:00:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:01:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:02:32 last Live price feed time: 16:00
+KO periodic check: 16:02:32 orderStatus {92212=Filled}
+MCD 16:02:32 last Live price feed time: 16:00
+PG 16:02:32 last Live price feed time: 16:00
+PG periodic check: 16:02:32 orderStatus {92213=Filled}
+SPY 16:02:32 last Live price feed time: 16:02
+SPY periodic check: 16:02:32 orderStatus {92214=Filled}
+UL 16:02:32 last Live price feed time: 15:59
+UL periodic check: 16:02:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:02:32 last Live price feed time: 16:01
+16:02:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:03:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:05:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:06:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:07:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:08:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:09:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:10:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:11:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:12:32 last Live price feed time: 16:05
+KO periodic check: 16:12:32 orderStatus {92212=Filled}
+MCD 16:12:32 last Live price feed time: 16:00
+PG 16:12:32 last Live price feed time: 16:00
+PG periodic check: 16:12:32 orderStatus {92213=Filled}
+SPY 16:12:32 last Live price feed time: 16:12
+SPY periodic check: 16:12:32 orderStatus {92214=Filled}
+UL 16:12:32 last Live price feed time: 15:59
+UL periodic check: 16:12:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:12:32 last Live price feed time: 16:11
+16:13:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:14:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:15:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:16:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:17:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:18:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:19:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:21:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:22:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:22:32 last Live price feed time: 16:20
+KO periodic check: 16:22:32 orderStatus {92212=Filled}
+MCD 16:22:32 last Live price feed time: 16:00
+PG 16:22:32 last Live price feed time: 16:00
+PG periodic check: 16:22:32 orderStatus {92213=Filled}
+SPY 16:22:32 last Live price feed time: 16:22
+SPY periodic check: 16:22:32 orderStatus {92214=Filled}
+UL 16:22:32 last Live price feed time: 15:59
+UL periodic check: 16:22:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:22:32 last Live price feed time: 16:15
+16:23:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:24:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:26:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:27:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:28:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:29:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:30:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:32:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:32:32 last Live price feed time: 16:27
+KO periodic check: 16:32:32 orderStatus {92212=Filled}
+MCD 16:32:32 last Live price feed time: 16:00
+PG 16:32:32 last Live price feed time: 16:27
+PG periodic check: 16:32:32 orderStatus {92213=Filled}
+SPY 16:32:32 last Live price feed time: 16:31
+SPY periodic check: 16:32:32 orderStatus {92214=Filled}
+UL 16:32:32 last Live price feed time: 15:59
+UL periodic check: 16:32:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:32:32 last Live price feed time: 16:31
+16:33:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:34:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:35:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:37:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:38:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:39:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:40:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:41:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:42:32 last Live price feed time: 16:33
+KO periodic check: 16:42:32 orderStatus {92212=Filled}
+MCD 16:42:32 last Live price feed time: 16:00
+PG 16:42:32 last Live price feed time: 16:27
+PG periodic check: 16:42:32 orderStatus {92213=Filled}
+SPY 16:42:32 last Live price feed time: 16:42
+SPY periodic check: 16:42:32 orderStatus {92214=Filled}
+UL 16:42:32 last Live price feed time: 15:59
+UL periodic check: 16:42:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:42:32 last Live price feed time: 16:31
+16:43:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:44:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:45:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:46:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:47:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:48:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:50:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:51:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 16:52:32 last Live price feed time: 16:45
+KO periodic check: 16:52:32 orderStatus {92212=Filled}
+MCD 16:52:32 last Live price feed time: 16:00
+PG 16:52:32 last Live price feed time: 16:27
+PG periodic check: 16:52:32 orderStatus {92213=Filled}
+SPY 16:52:32 last Live price feed time: 16:52
+SPY periodic check: 16:52:32 orderStatus {92214=Filled}
+UL 16:52:32 last Live price feed time: 15:59
+UL periodic check: 16:52:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 16:52:32 last Live price feed time: 16:47
+16:52:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:53:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:54:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:55:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:57:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:58:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+16:59:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:00:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:02:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:02:32 last Live price feed time: 16:45
+KO periodic check: 17:02:32 orderStatus {92212=Filled}
+MCD 17:02:32 last Live price feed time: 16:00
+PG 17:02:32 last Live price feed time: 16:27
+PG periodic check: 17:02:32 orderStatus {92213=Filled}
+SPY 17:02:32 last Live price feed time: 16:58
+SPY periodic check: 17:02:32 orderStatus {92214=Filled}
+UL 17:02:32 last Live price feed time: 15:59
+UL periodic check: 17:02:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:02:32 last Live price feed time: 16:47
+17:03:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:04:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:05:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:07:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:08:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:09:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:10:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:11:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:12:32 last Live price feed time: 17:07
+KO periodic check: 17:12:32 orderStatus {92212=Filled}
+MCD 17:12:32 last Live price feed time: 16:00
+PG 17:12:32 last Live price feed time: 16:27
+PG periodic check: 17:12:32 orderStatus {92213=Filled}
+SPY 17:12:32 last Live price feed time: 17:11
+SPY periodic check: 17:12:32 orderStatus {92214=Filled}
+UL 17:12:32 last Live price feed time: 15:59
+UL periodic check: 17:12:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:12:32 last Live price feed time: 17:11
+17:12:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:14:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:15:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:16:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:17:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:19:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:20:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:21:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:22:32 last Live price feed time: 17:07
+KO periodic check: 17:22:32 orderStatus {92212=Filled}
+MCD 17:22:32 last Live price feed time: 16:00
+PG 17:22:32 last Live price feed time: 16:27
+PG periodic check: 17:22:32 orderStatus {92213=Filled}
+SPY 17:22:32 last Live price feed time: 17:20
+SPY periodic check: 17:22:32 orderStatus {92214=Filled}
+UL 17:22:32 last Live price feed time: 15:59
+UL periodic check: 17:22:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:22:32 last Live price feed time: 17:18
+17:22:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:23:51 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:25:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:26:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:27:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:28:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:29:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:31:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:32:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:32:32 last Live price feed time: 17:07
+KO periodic check: 17:32:32 orderStatus {92212=Filled}
+MCD 17:32:32 last Live price feed time: 17:26
+PG 17:32:32 last Live price feed time: 16:27
+PG periodic check: 17:32:32 orderStatus {92213=Filled}
+SPY 17:32:32 last Live price feed time: 17:30
+SPY periodic check: 17:32:32 orderStatus {92214=Filled}
+UL 17:32:32 last Live price feed time: 15:59
+UL periodic check: 17:32:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:32:32 last Live price feed time: 17:18
+17:33:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:34:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:36:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:37:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:38:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:39:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:40:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:42:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:42:32 last Live price feed time: 17:07
+KO periodic check: 17:42:32 orderStatus {92212=Filled}
+MCD 17:42:32 last Live price feed time: 17:26
+PG 17:42:32 last Live price feed time: 16:27
+PG periodic check: 17:42:32 orderStatus {92213=Filled}
+SPY 17:42:32 last Live price feed time: 17:39
+SPY periodic check: 17:42:32 orderStatus {92214=Filled}
+UL 17:42:32 last Live price feed time: 15:59
+UL periodic check: 17:42:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:42:32 last Live price feed time: 17:41
+17:43:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:44:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:45:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:46:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:47:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:48:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:50:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:51:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 17:52:32 last Live price feed time: 17:07
+KO periodic check: 17:52:32 orderStatus {92212=Filled}
+MCD 17:52:32 last Live price feed time: 17:26
+PG 17:52:32 last Live price feed time: 16:27
+PG periodic check: 17:52:32 orderStatus {92213=Filled}
+SPY 17:52:32 last Live price feed time: 17:52
+SPY periodic check: 17:52:32 orderStatus {92214=Filled}
+UL 17:52:32 last Live price feed time: 15:59
+UL periodic check: 17:52:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 17:52:32 last Live price feed time: 17:50
+17:52:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:53:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:54:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:56:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:57:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+17:58:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 18:00:00 orderId: -1  errorCode: 502  msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+18:00:00 Conn error ID: -1 code: 502 msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002 rejectJson:  NULL 
+18:00:00 Conn:disonnected
+KO 18:02:32 last Live price feed time: 17:07
+KO periodic check: 18:02:32 orderStatus {92212=Filled}
+MCD 18:02:32 last Live price feed time: 17:26
+PG 18:02:32 last Live price feed time: 16:27
+PG periodic check: 18:02:32 orderStatus {92213=Filled}
+SPY 18:02:32 last Live price feed time: 17:59
+SPY periodic check: 18:02:32 orderStatus {92214=Filled}
+UL 18:02:32 last Live price feed time: 15:59
+UL periodic check: 18:02:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:02:32 last Live price feed time: 17:50
+KO 18:12:32 last Live price feed time: 17:07
+KO periodic check: 18:12:32 orderStatus {92212=Filled}
+MCD 18:12:32 last Live price feed time: 17:26
+PG 18:12:32 last Live price feed time: 16:27
+PG periodic check: 18:12:32 orderStatus {92213=Filled}
+SPY 18:12:32 last Live price feed time: 17:59
+SPY periodic check: 18:12:32 orderStatus {92214=Filled}
+UL 18:12:32 last Live price feed time: 15:59
+UL periodic check: 18:12:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:12:32 last Live price feed time: 17:50
+KO 18:22:32 last Live price feed time: 17:07
+KO periodic check: 18:22:32 orderStatus {92212=Filled}
+MCD 18:22:32 last Live price feed time: 17:26
+PG 18:22:32 last Live price feed time: 16:27
+PG periodic check: 18:22:32 orderStatus {92213=Filled}
+SPY 18:22:32 last Live price feed time: 17:59
+SPY periodic check: 18:22:32 orderStatus {92214=Filled}
+UL 18:22:32 last Live price feed time: 15:59
+UL periodic check: 18:22:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:22:32 last Live price feed time: 17:50
+KO 18:32:32 last Live price feed time: 17:07
+KO periodic check: 18:32:32 orderStatus {92212=Filled}
+MCD 18:32:32 last Live price feed time: 17:26
+PG 18:32:32 last Live price feed time: 16:27
+PG periodic check: 18:32:32 orderStatus {92213=Filled}
+SPY 18:32:32 last Live price feed time: 17:59
+SPY periodic check: 18:32:32 orderStatus {92214=Filled}
+UL 18:32:32 last Live price feed time: 15:59
+UL periodic check: 18:32:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:32:32 last Live price feed time: 17:50
+KO 18:42:32 last Live price feed time: 17:07
+KO periodic check: 18:42:32 orderStatus {92212=Filled}
+MCD 18:42:32 last Live price feed time: 17:26
+PG 18:42:32 last Live price feed time: 16:27
+PG periodic check: 18:42:32 orderStatus {92213=Filled}
+SPY 18:42:32 last Live price feed time: 17:59
+SPY periodic check: 18:42:32 orderStatus {92214=Filled}
+UL 18:42:32 last Live price feed time: 15:59
+UL periodic check: 18:42:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:42:32 last Live price feed time: 17:50
+KO 18:52:32 last Live price feed time: 17:07
+KO periodic check: 18:52:32 orderStatus {92212=Filled}
+MCD 18:52:32 last Live price feed time: 17:26
+PG 18:52:32 last Live price feed time: 16:27
+PG periodic check: 18:52:32 orderStatus {92213=Filled}
+SPY 18:52:32 last Live price feed time: 17:59
+SPY periodic check: 18:52:32 orderStatus {92214=Filled}
+UL 18:52:32 last Live price feed time: 15:59
+UL periodic check: 18:52:32 orderStatus {92215=Filled, 92216=Filled, 92217=Filled}
+WMT 18:52:32 last Live price feed time: 17:50
+*****Ending***** 19:01:40
+*****START***** HK TIME: 8:01:43 EST: 19:01:43 MASTER ID: 190143
+SPY **************** 19:01:43
+WMT **************** 19:01:43
+UL **************** 19:01:43
+PG **************** 19:01:43
+MCD **************** 19:01:43
+KO **************** 19:01:43
+19:01:43 Conn error ID: -1 code: 504 msg: Not connected rejectJson:  NULL 
+cancelling all orders on start up
+19:01:43 Conn error ID: -1 code: 504 msg: Not connected rejectJson:  NULL 
+not connected
+19:01:43 Conn: account list: [U7998608]
+19:01:43 Conn:connected
+19:01:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+19:01:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+req live orders complete
+SPY updating position: 19:01:45 position: 5 cost: 456.15895145
+UL updating position: 19:01:45 position: 35 cost: 48.1592306
+KO updating position: 19:01:45 position: 10 cost: 58.6052257
+WMT updating position: 19:01:45 position: 25 cost: 158.355032
+PG updating position: 19:01:45 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+19:01:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 19:02:03 last Live price feed time: 19:01
+KO 19:02:03 *3dP%: 0.0 *1dP%: 0.0 stats 3d: *n: 2585 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:01 ] *stats 1d: *n: 873 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 19:01 ]
+MCD 19:02:03 last Live price feed time: 19:01
+MCD 19:02:03 *3dP%: 88.0 *1dP%: 100.0 stats 3d: *n: 2027 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:01 ] *stats 1d: *n: 587 *max: 287.4 [ 12-6 19:01 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 19:01 ]
+PG 19:02:03 last Live price feed time: 19:01
+PG 19:02:03 *3dP%: 10.0 *1dP%: 44.0 stats 3d: *n: 2301 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:01 ] *stats 1d: *n: 846 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 19:01 ]
+SPY 19:02:03 last Live price feed time: 19:02
+SPY 19:02:03 *3dP%: 6.0 *1dP%: 6.0 stats 3d: *n: 2820 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 19:02 ] *stats 1d: *n: 900 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 19:02 ]
+UL 19:02:03 last Live price feed time: 19:01
+UL 19:02:03 *3dP%: 14.0 *1dP%: 14.0 stats 3d: *n: 2719 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:01 ] *stats 1d: *n: 896 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 19:01 ]
+WMT 19:02:03 last Live price feed time: 19:01
+WMT 19:02:03 *3dP%: 25.0 *1dP%: 14.0 stats 3d: *n: 2764 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:01 ] *stats 1d: *n: 899 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 19:01 ]
+*****Ending***** 19:02:22
+*****START***** HK TIME: 8:02:25 EST: 19:02:25 MASTER ID: 190225
+SPY **************** 12-6 19:02
+WMT **************** 12-6 19:02
+UL **************** 12-6 19:02
+PG **************** 12-6 19:02
+MCD **************** 12-6 19:02
+KO **************** 12-6 19:02
+19:02:25 Conn:connected
+cancelling all orders on start up
+19:02:25 global cancel orders
+19:02:25 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+19:02:25 Conn: account list: [U7998608]
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+19:02:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+req live orders complete
+KO no live feed
+KO 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+MCD no live feed
+MCD 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+PG no live feed
+PG 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+SPY no live feed
+SPY 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+UL no live feed
+UL 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+WMT no live feed
+WMT 19:02:45 *3dP%: 0.0 *1dP%: 0.0 stats 3d: print stats:empty *stats 1d: print stats:empty
+*****Ending***** 19:05:15
+*****START***** HK TIME: 8:05:19 EST: 19:05:19 MASTER ID: 190519
+SPY ****************STARTS 12-6 19:05
+WMT ****************STARTS 12-6 19:05
+UL ****************STARTS 12-6 19:05
+PG ****************STARTS 12-6 19:05
+MCD ****************STARTS 12-6 19:05
+KO ****************STARTS 12-6 19:05
+19:05:19 Conn:connected
+cancelling all orders on start up
+19:05:19 global cancel orders
+19:05:19 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+19:05:19 Conn: account list: [U7998608]
+19:05:19 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+19:05:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 19:05:19 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 19:05:19 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 19:05:19 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 19:05:19 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+19:05:19 TradeReportEnd: all executions:
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 19:05:21 position: 5 cost: 456.15895145
+UL updating position: 19:05:21 position: 35 cost: 48.1592306
+KO updating position: 19:05:21 position: 10 cost: 58.6052257
+WMT updating position: 19:05:21 position: 25 cost: 158.355032
+PG updating position: 19:05:21 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 19:05:39 last Live price feed time: 19:05
+KO 19:05:39 *3dP%: 0.0 *1dP%: 0.0 stats 3d: *n: 2589 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 877 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 19:05 ]
+MCD 19:05:39 last Live price feed time: 19:05
+MCD 19:05:39 *3dP%: 88.0 *1dP%: 100.0 stats 3d: *n: 2031 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 591 *max: 287.4 [ 12-6 19:05 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 19:05 ]
+PG 19:05:39 last Live price feed time: 19:05
+PG 19:05:39 *3dP%: 10.0 *1dP%: 44.0 stats 3d: *n: 2305 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 850 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 19:05 ]
+SPY 19:05:39 last Live price feed time: 19:05
+SPY 19:05:39 *3dP%: 8.0 *1dP%: 8.0 stats 3d: *n: 2823 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 903 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 19:05 ]
+UL 19:05:39 last Live price feed time: 19:05
+UL 19:05:39 *3dP%: 14.0 *1dP%: 14.0 stats 3d: *n: 2723 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 900 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 19:05 ]
+WMT 19:05:39 last Live price feed time: 19:05
+WMT 19:05:39 *3dP%: 25.0 *1dP%: 14.0 stats 3d: *n: 2768 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:05 ] *stats 1d: *n: 903 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 19:05 ]
