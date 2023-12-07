@@ -131,7 +131,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
-        outputToSymbol(symb,"****************STARTS", usDateTime());
+        outputToSymbol(symb, "****************STARTS", usDateTime());
         symbolContractMap.put(symb, ct);
         targetStockList.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
@@ -210,9 +210,10 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "****REFILL****", t.format(f));
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
-                            "p/c:", priceDividedByCost(price, symb), "refillPx"
+                            "costBasis:", costMap.getOrDefault(symb, 0.0),
+                            "px/cost:", priceDividedByCost(price, symb), "refill Price:"
                             , getRequiredRefillPoint(symb) * price,
-                            "rng:", averageDailyRange.getOrDefault(symb, 0.0));
+                            "average range:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -383,6 +384,9 @@ public class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
+
+        outputToSymbol(symb, "3 Day Stats:", printStats(threeDayData.get(symb)),
+                "1DStats:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
     }
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
@@ -399,8 +403,13 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id,
-                o.action(), "px:", offerPrice, "qty:", pos, "costBasis:", cost,
-                orderSubmitted.get(symb).get(o.orderId()));
+                o.action(), "sell px:", offerPrice, "qty:", pos, "costBasis:", cost,
+                orderSubmitted.get(symb).get(o.orderId()), "required Margin:", getRequiredProfitMargin(symb)
+                , "targetPrice:", cost * getRequiredProfitMargin(symb),
+                "askPrice", askMap.getOrDefault(symb, 0.0));
+
+        outputToSymbol(symb, "3DStats:", printStats(threeDayData.get(symb)),
+                "1DStats:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
     }
 
 
@@ -538,7 +547,8 @@ public class ProfitTargetTrader implements LiveHandler,
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usTime(), "last Live price feed time:",
-                                latestPriceTimeMap.get(symb).format(simpleHourMinute)) : "no live feed");
+                                latestPriceTimeMap.get(symb).format(simpleHourMinute)
+                                , "px:", latestPriceMap.getOrDefault(symb, 0.0)) : "no live feed");
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "orderStatus", orderStatusMap.get(symb));
