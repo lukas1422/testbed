@@ -339,7 +339,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                if (symb.equalsIgnoreCase("MCD")) {
+                if (symb.equalsIgnoreCase("WMT")) {
                     pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
                             "*1dP%:", oneDayPercentile, "*stats 1d:",
                             printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));

@@ -32,6 +32,7 @@ import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
+import static java.util.Collections.reverseOrder;
 import static java.util.Comparator.comparingDouble;
 import static utility.Utility.*;
 
@@ -606,20 +607,6 @@ public class TradingUtility {
         return m.getOrDefault(symb, 0.0);
     }
 
-    public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
-        if (m.isEmpty()) {
-//            pr("calculate p%: map is empty");
-            return 0;
-        }
-//        sorted((Map.Entry.<String, Long>comparingByValue())
-//        double maxValue = m.entrySet().stream().sorted(Collections.reverseOrder(Comparator.comparingDouble(e -> e.getValue().getHigh())))
-//                .skip(1).limit(1).mapToDouble(b -> b.getValue().getHigh()).average().getAsDouble();
-
-        double maxValue = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
-        double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
-        double last = m.lastEntry().getValue().getClose();
-        return (double) round((last - minValue) / (maxValue - minValue) * 100);
-    }
 
     public static LocalDateTime getESTLocalDateTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
@@ -655,12 +642,40 @@ public class TradingUtility {
                 1 + averageDailyRange.getOrDefault(s, 0.0) / 2);
     }
 
+    public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
+        if (m.isEmpty() || m.size() < 5) {
+//            pr("calculate p%: map is empty");
+            return 0;
+        }
+//        sorted((Map.Entry.<String, Long>comparingByValue())
+//        double maxValue = m.entrySet().stream().sorted(Collections.reverseOrder(Comparator.comparingDouble(e -> e.getValue().getHigh())))
+//                .skip(1).limit(1).mapToDouble(b -> b.getValue().getHigh()).average().getAsDouble();
+
+//        double maxValue = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
+//        double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
+
+        double maxValue = m.entrySet().stream().sorted(reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
+                .limit(5).skip(1).mapToDouble(e -> e.getValue().getHigh()).average().getAsDouble();
+
+        double minValue = m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
+                .limit(5).skip(1).mapToDouble(e -> e.getValue().getLow()).average().getAsDouble();
+        double last = m.lastEntry().getValue().getClose();
+        return (double) round((last - minValue) / (maxValue - minValue) * 100);
+    }
+
     public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
-        if (m.isEmpty()) {
+        if (m.isEmpty() || m.size() < 5) {
             return "print stats:empty";
         }
-        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
-        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
+//        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
+//        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
+
+        double max = m.entrySet().stream().sorted(reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
+                .limit(5).skip(1).mapToDouble(e -> e.getValue().getHigh()).average().getAsDouble();
+
+        double min = m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
+                .limit(5).skip(1).mapToDouble(e -> e.getValue().getLow()).average().getAsDouble();
+
         LocalDateTime maxTime = m.entrySet().stream()
                 .max(comparingDouble(e -> e.getValue().getHigh()))
                 .map(Map.Entry::getKey).get();
@@ -669,14 +684,14 @@ public class TradingUtility {
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
-        pr("lowest 5", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow())).limit(5)
-                .collect(Collectors.toMap(e -> e.getKey(), e1 -> e1.getValue().getLow(), (u, v) -> {
-                    throw new IllegalStateException();
-                }, LinkedHashMap::new)));
-        pr("lowest 5 skip 1", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
-                .limit(5).skip(1).collect(Collectors.toMap(e -> e.getKey(), e1 -> e1.getValue().getLow(), (u, v) -> {
-                    throw new IllegalStateException();
-                }, LinkedHashMap::new)));
+//        pr("lowest 5", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow())).limit(5)
+//                .collect(Collectors.toMap(Map.Entry::getKey, e1 -> e1.getValue().getLow(), (u, v) -> {
+//                    throw new IllegalStateException();
+//                }, LinkedHashMap::new)));
+//        pr("lowest 5 skip 1", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
+//                .limit(5).skip(1).collect(Collectors.toMap(Map.Entry::getKey, e1 -> e1.getValue().getLow(), (u, v) -> {
+//                    throw new IllegalStateException();
+//                }, LinkedHashMap::new)));
 //        pr("highest 5", m.entrySet().stream().sorted(Collections.reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
 //                .limit(5).collect(Collectors.toList()));
 
