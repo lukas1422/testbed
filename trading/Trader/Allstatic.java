@@ -60,7 +60,7 @@ public class Allstatic {
     static volatile double aggregateDelta = 0.0;
     //data
     static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
-    static Map<String, LocalTime> latestPriceTimeMap = new ConcurrentHashMap<>();
+    static Map<String, LocalDateTime> latestPriceTimeMap = new ConcurrentHashMap<>();
 
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();

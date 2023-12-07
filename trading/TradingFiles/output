@@ -13631,3 +13631,1311 @@ WMT 20:15:39 *3dP%: 25.0 *1dP%: 14.0 stats 3d: *n: 2772 *max: 156.2 [ 12-6 8:58 
 20:17:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
 20:18:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
 20:19:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 20:19:36
+*****START***** HK TIME: 9:19:38 EST: 20:19:38 MASTER ID: 201938
+SPY ****************STARTS 12-6 20:19
+WMT ****************STARTS 12-6 20:19
+UL ****************STARTS 12-6 20:19
+PG ****************STARTS 12-6 20:19
+MCD ****************STARTS 12-6 20:19
+KO ****************STARTS 12-6 20:19
+20:19:39 Conn:connected
+cancelling all orders on start up
+20:19:39 global cancel orders
+20:19:39 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+20:19:39 Conn: account list: [U7998608]
+20:19:39 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+20:19:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 20:19:39 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 20:19:39 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 20:19:39 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 20:19:39 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 20:19:39 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 20:19:39 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+20:19:39 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 20:19:41 position: 5 cost: 456.15895145
+UL updating position: 20:19:41 position: 35 cost: 48.1592306
+KO updating position: 20:19:41 position: 10 cost: 58.6052257
+WMT updating position: 20:19:41 position: 25 cost: 158.355032
+PG updating position: 20:19:41 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 20:19:59 last Live price feed time: 20:19 px: 58.5
+KO 20:19:59 *3dP%: 0.0 *1dP%: 0.0 stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:19 ]
+MCD 20:19:59 last Live price feed time: 20:19 px: 287.0
+MCD 20:19:59 *3dP%: 85.0 *1dP%: 96.0 stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:19 ]
+PG 20:19:59 last Live price feed time: 20:19 px: 146.36
+PG 20:19:59 *3dP%: 10.0 *1dP%: 44.0 stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:19 ]
+SPY 20:19:59 last Live price feed time: 20:19 px: 454.9
+SPY 20:19:59 *3dP%: 13.0 *1dP%: 13.0 stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:19 ]
+UL 20:19:59 last Live price feed time: 20:19 px: 47.77
+UL 20:19:59 *3dP%: 14.0 *1dP%: 14.0 stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:19 ]
+WMT 20:19:59 last Live price feed time: 20:19 px: 154.0
+WMT 20:19:59 *3dP%: 25.0 *1dP%: 14.0 stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:19 ] *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:19 ]
+20:20:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 20:20:54
+*****START***** HK TIME: 9:20:58 EST: 20:20:58 MASTER ID: 202058
+SPY ****************STARTS 12-6 20:20
+WMT ****************STARTS 12-6 20:20
+UL ****************STARTS 12-6 20:20
+PG ****************STARTS 12-6 20:20
+MCD ****************STARTS 12-6 20:20
+KO ****************STARTS 12-6 20:20
+20:20:58 Conn:connected
+cancelling all orders on start up
+20:20:58 global cancel orders
+20:20:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+20:20:58 Conn: account list: [U7998608]
+20:20:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+20:20:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 20:20:58 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 20:20:58 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 20:20:58 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 20:20:58 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 20:20:58 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 20:20:58 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+20:20:58 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 20:21:00 position: 5 cost: 456.15895145
+UL updating position: 20:21:00 position: 35 cost: 48.1592306
+KO updating position: 20:21:00 position: 10 cost: 58.6052257
+WMT updating position: 20:21:00 position: 25 cost: 158.355032
+PG updating position: 20:21:00 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 20:21:18 last Live price feed time: 12-6 20:21 px: 58.5
+KO 20:21:18 *3dP%: 0.0 *1dP%: 0.0 stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:21 ]
+MCD 20:21:18 last Live price feed time: 12-6 20:21 px: 287.0
+MCD 20:21:18 *3dP%: 85.0 *1dP%: 96.0 stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:21 ]
+PG 20:21:18 last Live price feed time: 12-6 20:21 px: 146.36
+PG 20:21:18 *3dP%: 10.0 *1dP%: 44.0 stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:21 ]
+SPY 20:21:18 last Live price feed time: 12-6 20:21 px: 454.9
+SPY 20:21:18 *3dP%: 13.0 *1dP%: 13.0 stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:21 ]
+UL 20:21:18 last Live price feed time: 12-6 20:21 px: 47.77
+UL 20:21:18 *3dP%: 14.0 *1dP%: 14.0 stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:21 ]
+WMT 20:21:18 last Live price feed time: 12-6 20:21 px: 154.0
+WMT 20:21:18 *3dP%: 25.0 *1dP%: 14.0 stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:21 ] *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:21 ]
+20:21:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 20:22:18
+*****START***** HK TIME: 9:22:21 EST: 20:22:21 MASTER ID: 202221
+SPY ****************STARTS 12-6 20:22
+WMT ****************STARTS 12-6 20:22
+UL ****************STARTS 12-6 20:22
+PG ****************STARTS 12-6 20:22
+MCD ****************STARTS 12-6 20:22
+KO ****************STARTS 12-6 20:22
+20:22:21 Conn:connected
+cancelling all orders on start up
+20:22:21 global cancel orders
+20:22:21 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+20:22:21 Conn: account list: [U7998608]
+20:22:21 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+20:22:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 20:22:21 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 20:22:21 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 20:22:21 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 20:22:21 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 20:22:21 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 20:22:21 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+20:22:21 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 20:22:23 position: 5 cost: 456.15895145
+UL updating position: 20:22:23 position: 35 cost: 48.1592306
+KO updating position: 20:22:23 position: 10 cost: 58.6052257
+WMT updating position: 20:22:23 position: 25 cost: 158.355032
+PG updating position: 20:22:23 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 20:22:41 last Live price feed time: 12-6 20:22 px: 58.5
+KO 20:22:41 *3dP%: 39.0 *1dP%: 57.0
+stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:22 ]
+MCD 20:22:41 last Live price feed time: 12-6 20:22 px: 287.0
+MCD 20:22:41 *3dP%: 85.0 *1dP%: 96.0
+stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:22 ]
+PG 20:22:41 last Live price feed time: 12-6 20:22 px: 146.36
+PG 20:22:41 *3dP%: 10.0 *1dP%: 44.0
+stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:22 ]
+SPY 20:22:41 last Live price feed time: 12-6 20:22 px: 454.9
+SPY 20:22:41 *3dP%: 13.0 *1dP%: 13.0
+stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:22 ]
+UL 20:22:41 last Live price feed time: 12-6 20:22 px: 47.77
+UL 20:22:41 *3dP%: 14.0 *1dP%: 14.0
+stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:22 ]
+WMT 20:22:41 last Live price feed time: 12-6 20:22 px: 154.0
+WMT 20:22:41 *3dP%: 25.0 *1dP%: 14.0
+stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:22 ]
+*stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:22 ]
+20:22:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 20:23:15
+*****START***** HK TIME: 9:23:18 EST: 20:23:18 MASTER ID: 202318
+SPY ****************STARTS 12-6 20:23
+WMT ****************STARTS 12-6 20:23
+UL ****************STARTS 12-6 20:23
+PG ****************STARTS 12-6 20:23
+MCD ****************STARTS 12-6 20:23
+KO ****************STARTS 12-6 20:23
+20:23:18 Conn:connected
+cancelling all orders on start up
+20:23:18 global cancel orders
+20:23:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+20:23:18 Conn: account list: [U7998608]
+20:23:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+20:23:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 20:23:18 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 20:23:18 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 20:23:18 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 20:23:18 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 20:23:18 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 20:23:18 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+20:23:18 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 20:23:20 position: 5 cost: 456.15895145
+UL updating position: 20:23:20 position: 35 cost: 48.1592306
+KO updating position: 20:23:20 position: 10 cost: 58.6052257
+WMT updating position: 20:23:20 position: 25 cost: 158.355032
+PG updating position: 20:23:20 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 20:23:38 last Live price feed time: 12-6 20:23 px: 58.5
+KO 20:23:38 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:23 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:23 ]
+MCD 20:23:38 last Live price feed time: 12-6 20:23 px: 287.0
+MCD 20:23:38 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:23 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:23 ]
+PG 20:23:38 last Live price feed time: 12-6 20:23 px: 146.36
+PG 20:23:38 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:23 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:23 ]
+SPY 20:23:38 last Live price feed time: 12-6 20:23 px: 454.9
+SPY 20:23:38 *3dP%: 13.0 *1dP%: 13.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:23 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:23 ]
+UL 20:23:38 last Live price feed time: 12-6 20:23 px: 47.77
+UL 20:23:38 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:23 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:23 ]
+WMT 20:23:38 last Live price feed time: 12-6 20:23 px: 154.0
+WMT 20:23:38 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:23 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:23 ]
+20:23:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 20:24:08
+*****START***** HK TIME: 9:24:09 EST: 20:24:09 MASTER ID: 202409
+SPY ****************STARTS 12-6 20:24
+WMT ****************STARTS 12-6 20:24
+UL ****************STARTS 12-6 20:24
+PG ****************STARTS 12-6 20:24
+MCD ****************STARTS 12-6 20:24
+KO ****************STARTS 12-6 20:24
+20:24:09 Conn:connected
+cancelling all orders on start up
+20:24:09 global cancel orders
+20:24:09 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+20:24:09 Conn: account list: [U7998608]
+20:24:09 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+20:24:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 20:24:09 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 20:24:09 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 20:24:09 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 20:24:09 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 20:24:09 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 20:24:09 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+20:24:09 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 20:24:11 position: 5 cost: 456.15895145
+UL updating position: 20:24:11 position: 35 cost: 48.1592306
+KO updating position: 20:24:11 position: 10 cost: 58.6052257
+WMT updating position: 20:24:11 position: 25 cost: 158.355032
+PG updating position: 20:24:11 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 20:24:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 20:24:29 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 1 *max: 58.5 [ 12-6 20:24 ] *min 58.5 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 1 *max: 58.5 [ 12-6 20:24 ] *min 58.5 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+MCD 20:24:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 20:24:29 *3dP%: 0.0 *1dP%: 0.0
+MCD stats 3d: *n: 1 *max: 287.0 [ 12-6 20:24 ] *min 287.0 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 1 *max: 287.0 [ 12-6 20:24 ] *min 287.0 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+PG 20:24:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 20:24:29 *3dP%: 0.0 *1dP%: 0.0
+PG stats 3d: *n: 1 *max: 146.36 [ 12-6 20:24 ] *min 146.36 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 1 *max: 146.36 [ 12-6 20:24 ] *min 146.36 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+SPY 20:24:29 last Live price feed time: 12-6 20:24 px: 454.9
+SPY 20:24:29 *3dP%: 13.0 *1dP%: 13.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:24 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+UL 20:24:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 20:24:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 20:24:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 20:24:29 *3dP%: 0.0 *1dP%: 0.0
+WMT stats 3d: *n: 1 *max: 154.0 [ 12-6 20:24 ] *min 154.0 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 1 *max: 154.0 [ 12-6 20:24 ] *min 154.0 [ 12-6 20:24 ] *rng 0.0 % *1st Key: [ 12-6 20:24 ] *last: [ 12-6 20:24 ]
+20:25:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:26:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:27:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:28:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:29:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:31:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:32:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:33:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 20:34:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 20:34:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 20:34:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 20:34:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 20:34:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 20:34:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 20:34:29 last Live price feed time: 12-6 20:24 px: 454.9
+SPY 20:34:29 *3dP%: 13.0 *1dP%: 13.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:24 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+UL 20:34:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 20:34:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 20:34:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 20:34:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+20:34:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:35:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:36:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:37:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:39:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:40:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:41:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:42:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:43:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 20:44:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 20:44:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 20:44:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 20:44:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 20:44:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 20:44:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 20:44:29 last Live price feed time: 12-6 20:36 px: 454.87
+SPY 20:44:29 *3dP%: 12.0 *1dP%: 12.0
+SPY stats 3d: *n: 2879 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:36 ]
+SPY *stats 1d: *n: 959 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:36 ]
+UL 20:44:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 20:44:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 20:44:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 20:44:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+20:44:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:45:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:47:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:48:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:49:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:50:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:51:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:53:01 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:54:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 20:54:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 20:54:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 20:54:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 20:54:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 20:54:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 20:54:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 20:54:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 20:54:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 20:54:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 20:54:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 20:54:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 20:54:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+20:55:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:56:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:57:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+20:59:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:00:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:01:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:02:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:03:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:04:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:04:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:04:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:04:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:04:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:04:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:04:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 21:04:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 21:04:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:04:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:04:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:04:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:04:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:06:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:07:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:08:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:09:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:10:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:11:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:13:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:14:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:14:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:14:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:14:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:14:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:14:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:14:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 21:14:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 21:14:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:14:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:14:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:14:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:14:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:15:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:17:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:18:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:19:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:20:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:21:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:23:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:24:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:24:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:24:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:24:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:24:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:24:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:24:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:24:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 21:24:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 21:24:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:24:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:24:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:24:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:25:19 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:26:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:27:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:29:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:30:09 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:31:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:32:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:33:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:34:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:34:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:34:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:34:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:34:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:34:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:34:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 21:34:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 21:34:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:34:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:34:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:34:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:34:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:36:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:37:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:38:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:39:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:40:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:41:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:42:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:44:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:44:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:44:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:44:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:44:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:44:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:44:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:44:29 last Live price feed time: 12-6 20:53 px: 454.62
+SPY 21:44:29 *3dP%: 7.0 *1dP%: 7.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 20:53 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:53 ]
+UL 21:44:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:44:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:44:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:44:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:45:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:46:33 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:47:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:48:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:49:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:51:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:52:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:53:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 21:54:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 21:54:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 21:54:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 21:54:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 21:54:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 21:54:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 21:54:29 last Live price feed time: 12-6 21:48 px: 454.48
+SPY 21:54:29 *3dP%: 4.0 *1dP%: 4.0
+SPY stats 3d: *n: 2881 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:48 ]
+SPY *stats 1d: *n: 961 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:48 ]
+UL 21:54:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 21:54:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 21:54:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 21:54:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+21:54:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:56:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:57:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:58:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+21:59:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:00:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:01:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:02:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:04:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:04:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 22:04:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 22:04:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 22:04:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 22:04:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 22:04:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 22:04:29 last Live price feed time: 12-6 21:57 px: 454.57
+SPY 22:04:29 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2882 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:57 ]
+SPY *stats 1d: *n: 962 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:57 ]
+UL 22:04:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 22:04:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 22:04:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 22:04:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+22:05:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:06:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:07:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:08:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:09:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:11:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:12:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:13:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:14:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:14:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 22:14:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 22:14:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 22:14:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 22:14:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 22:14:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 22:14:29 last Live price feed time: 12-6 21:57 px: 454.57
+SPY 22:14:29 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2882 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:57 ]
+SPY *stats 1d: *n: 962 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:57 ]
+UL 22:14:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 22:14:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 22:14:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 22:14:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+22:15:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:16:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:17:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:19:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:20:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:21:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:22:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:23:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:24:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 22:24:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 22:24:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 22:24:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 22:24:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 22:24:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 22:24:29 last Live price feed time: 12-6 21:57 px: 454.57
+SPY 22:24:29 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2882 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:57 ]
+SPY *stats 1d: *n: 962 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:57 ]
+UL 22:24:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 22:24:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 22:24:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 22:24:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+22:24:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:25:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:27:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:28:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:29:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:30:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:31:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:33:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:34:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:34:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 22:34:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 22:34:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 22:34:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 22:34:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 22:34:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 22:34:29 last Live price feed time: 12-6 21:57 px: 454.57
+SPY 22:34:29 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2882 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:57 ]
+SPY *stats 1d: *n: 962 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:57 ]
+UL 22:34:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 22:34:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 22:34:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 22:34:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+22:35:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:36:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:37:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:39:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:40:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:41:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:42:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:44:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:44:29 last Live price feed time: 12-6 20:24 px: 58.5
+KO 22:44:29 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 20:24 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 20:24 ]
+MCD 22:44:29 last Live price feed time: 12-6 20:24 px: 287.0
+MCD 22:44:29 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 20:24 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 20:24 ]
+PG 22:44:29 last Live price feed time: 12-6 20:24 px: 146.36
+PG 22:44:29 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 20:24 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 20:24 ]
+SPY 22:44:29 last Live price feed time: 12-6 21:57 px: 454.57
+SPY 22:44:29 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2882 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 21:57 ]
+SPY *stats 1d: *n: 962 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 21:57 ]
+UL 22:44:29 last Live price feed time: 12-6 20:24 px: 47.77
+UL 22:44:29 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 20:24 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 20:24 ]
+WMT 22:44:29 last Live price feed time: 12-6 20:24 px: 154.0
+WMT 22:44:29 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 20:24 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 20:24 ]
+*****Ending***** 22:44:59
+*****START***** HK TIME: 11:45:02 EST: 22:45:02 MASTER ID: 224502
+SPY ****************STARTS 12-6 22:45
+WMT ****************STARTS 12-6 22:45
+UL ****************STARTS 12-6 22:45
+PG ****************STARTS 12-6 22:45
+MCD ****************STARTS 12-6 22:45
+KO ****************STARTS 12-6 22:45
+22:45:02 Conn:connected
+cancelling all orders on start up
+22:45:02 global cancel orders
+22:45:02 Conn: account list: [U7998608]
+22:45:02 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+22:45:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 22:45:02 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 22:45:02 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 22:45:02 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 22:45:02 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 22:45:02 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 22:45:02 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+PG 22:45:02 tradeReport time, side, price, shares, avgPrice: 11:09:04 SLD 151.74 5 151.74
+SPY 22:45:02 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 4 456.25
+SPY 22:45:02 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 1 456.25
+WMT 22:45:03 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 155.27 5 155.27
+MCD 22:45:03 tradeReport time, side, price, shares, avgPrice: 09:30:21 SLD 283.28 5 283.28
+SPY 22:45:03 tradeReport time, side, price, shares, avgPrice: 09:32:51 BOT 455.28 5 455.28
+SPY 22:45:03 tradeReport time, side, price, shares, avgPrice: 10:02:39 SLD 457.03 5 457.03
+22:45:03 TradeReportEnd: all executions:
+KO list of executions java.util.stream.SortedOps$OfRef@c833d73
+PG list of executions java.util.stream.SortedOps$OfRef@59e99945
+UL list of executions java.util.stream.SortedOps$OfRef@6a256f08
+SPY list of executions java.util.stream.SortedOps$OfRef@37a637e3
+WMT list of executions java.util.stream.SortedOps$OfRef@225becc1
+MCD list of executions java.util.stream.SortedOps$OfRef@376d7a7e
+req live orders complete
+SPY updating position: 22:45:04 position: 5 cost: 456.15895145
+UL updating position: 22:45:04 position: 35 cost: 48.1592306
+KO updating position: 22:45:04 position: 10 cost: 58.6052257
+WMT updating position: 22:45:04 position: 25 cost: 158.355032
+PG updating position: 22:45:04 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+22:45:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:45:22 last Live price feed time: 12-6 22:45 px: 58.5
+KO 22:45:22 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:45 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:45 ]
+MCD 22:45:22 last Live price feed time: 12-6 22:45 px: 287.0
+MCD 22:45:22 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:45 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:45 ]
+PG 22:45:22 last Live price feed time: 12-6 22:45 px: 146.36
+PG 22:45:22 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:45 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:45 ]
+SPY 22:45:22 last Live price feed time: 12-6 22:45 px: 454.57
+SPY 22:45:22 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 22:45 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:45 ]
+UL 22:45:22 last Live price feed time: 12-6 22:45 px: 47.77
+UL 22:45:22 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:45 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:45 ]
+WMT 22:45:22 last Live price feed time: 12-6 22:45 px: 154.0
+WMT 22:45:22 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:45 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:45 ]
+*****Ending***** 22:45:27
+*****START***** HK TIME: 11:45:30 EST: 22:45:30 MASTER ID: 224530
+SPY ****************STARTS 12-6 22:45
+WMT ****************STARTS 12-6 22:45
+UL ****************STARTS 12-6 22:45
+PG ****************STARTS 12-6 22:45
+MCD ****************STARTS 12-6 22:45
+KO ****************STARTS 12-6 22:45
+22:45:30 Conn:connected
+cancelling all orders on start up
+22:45:30 global cancel orders
+22:45:30 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+22:45:30 Conn: account list: [U7998608]
+22:45:30 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+22:45:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 22:45:30 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+UL 22:45:30 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+UL 22:45:30 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 22:45:30 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 22:45:30 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 22:45:30 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+PG 22:45:30 tradeReport time, side, price, shares, avgPrice: 11:09:04 SLD 151.74 5 151.74
+SPY 22:45:30 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 4 456.25
+SPY 22:45:30 tradeReport time, side, price, shares, avgPrice: 15:54:36 SLD 456.25 1 456.25
+WMT 22:45:30 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 155.27 5 155.27
+MCD 22:45:30 tradeReport time, side, price, shares, avgPrice: 09:30:21 SLD 283.28 5 283.28
+SPY 22:45:30 tradeReport time, side, price, shares, avgPrice: 09:32:51 BOT 455.28 5 455.28
+SPY 22:45:30 tradeReport time, side, price, shares, avgPrice: 10:02:39 SLD 457.03 5 457.03
+22:45:30 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 103 time: 11:09:04 side: SLD shares: 5 price: 151.74, orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY list of executions [orderID: 104 time: 09:32:51 side: BOT shares: 5 price: 455.28, orderID: 104 time: 15:54:36 side: SLD shares: 1 price: 456.25, orderID: 104 time: 15:54:36 side: SLD shares: 4 price: 456.25, orderID: 105 time: 10:02:39 side: SLD shares: 5 price: 457.03, orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+WMT list of executions [orderID: 101 time: 09:30:03 side: BOT shares: 5 price: 155.27]
+MCD list of executions [orderID: 103 time: 09:30:21 side: SLD shares: 5 price: 283.28]
+req live orders complete
+SPY updating position: 22:45:32 position: 5 cost: 456.15895145
+UL updating position: 22:45:32 position: 35 cost: 48.1592306
+KO updating position: 22:45:32 position: 10 cost: 58.6052257
+WMT updating position: 22:45:32 position: 25 cost: 158.355032
+PG updating position: 22:45:32 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 22:45:50 last Live price feed time: 12-6 22:45 px: 58.5
+KO 22:45:50 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:45 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:45 ]
+MCD 22:45:50 last Live price feed time: 12-6 22:45 px: 287.0
+MCD 22:45:50 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:45 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:45 ]
+PG 22:45:50 last Live price feed time: 12-6 22:45 px: 146.36
+PG 22:45:50 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:45 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:45 ]
+SPY 22:45:50 last Live price feed time: 12-6 22:45 px: 454.57
+SPY 22:45:50 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 22:45 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:45 ]
+UL 22:45:50 last Live price feed time: 12-6 22:45 px: 47.77
+UL 22:45:50 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:45 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:45 ]
+WMT 22:45:50 last Live price feed time: 12-6 22:45 px: 154.0
+WMT 22:45:50 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:45 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:45 ]
+*****Ending***** 22:45:55
+*****START***** HK TIME: 11:45:57 EST: 22:45:57 MASTER ID: 224557
+SPY ****************STARTS 12-6 22:45
+WMT ****************STARTS 12-6 22:45
+UL ****************STARTS 12-6 22:45
+PG ****************STARTS 12-6 22:45
+MCD ****************STARTS 12-6 22:45
+KO ****************STARTS 12-6 22:45
+22:45:57 Conn:connected
+cancelling all orders on start up
+22:45:57 global cancel orders
+22:45:57 Conn: account list: [U7998608]
+22:45:57 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+SPY 22:45:57 tradeReport time, side, price, shares, avgPrice: 11:33:52 BOT 456.0887 5 456.0887
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+22:45:57 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+UL 22:45:57 tradeReport time, side, price, shares, avgPrice: 12:35:51 BOT 47.83 5 47.83
+22:45:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+UL 22:45:57 tradeReport time, side, price, shares, avgPrice: 12:43:42 BOT 47.8 5 47.8
+UL 22:45:57 tradeReport time, side, price, shares, avgPrice: 15:52:12 BOT 47.73 5 47.73
+KO 22:45:57 tradeReport time, side, price, shares, avgPrice: 09:30:03 BOT 58.57 10 58.57
+PG 22:45:57 tradeReport time, side, price, shares, avgPrice: 09:32:29 BOT 146.77 5 146.77
+22:45:57 TradeReportEnd: all executions:
+KO list of executions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG list of executions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL list of executions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY list of executions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 22:45:59 position: 5 cost: 456.15895145
+UL updating position: 22:45:59 position: 35 cost: 48.1592306
+KO updating position: 22:45:59 position: 10 cost: 58.6052257
+WMT updating position: 22:45:59 position: 25 cost: 158.355032
+PG updating position: 22:45:59 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+22:46:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:46:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 22:46:17 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 22:46:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 22:46:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 22:46:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 22:46:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 22:46:17 last Live price feed time: 12-6 22:46 px: 454.57
+SPY 22:46:17 *3dP%: 6.0 *1dP%: 6.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 22:46 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+UL 22:46:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 22:46:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 22:46:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 22:46:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+22:47:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:48:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:50:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:51:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:52:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:53:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:54:27 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:55:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 22:56:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 22:56:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 22:56:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 22:56:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 22:56:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 22:56:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 22:56:17 last Live price feed time: 12-6 22:47 px: 454.48
+SPY 22:56:17 *3dP%: 4.0 *1dP%: 4.0
+SPY stats 3d: *n: 2879 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 22:47 ]
+SPY *stats 1d: *n: 959 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:47 ]
+UL 22:56:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 22:56:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 22:56:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 22:56:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+22:57:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:58:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+22:59:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:00:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:01:49 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:02:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:04:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:05:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:06:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 23:06:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 23:06:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 23:06:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 23:06:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 23:06:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 23:06:17 last Live price feed time: 12-6 23:05 px: 454.73
+SPY 23:06:17 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:05 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:05 ]
+UL 23:06:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 23:06:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 23:06:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 23:06:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+23:06:52 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:08:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:09:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:10:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:11:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:12:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:13:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:15:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:16:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 23:16:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 23:16:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 23:16:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 23:16:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 23:16:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 23:16:17 last Live price feed time: 12-6 23:05 px: 454.73
+SPY 23:16:17 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:05 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:05 ]
+UL 23:16:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 23:16:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 23:16:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 23:16:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+23:16:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:17:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:18:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:19:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:21:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:22:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:23:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:24:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:25:59 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:26:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 23:26:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 23:26:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 23:26:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 23:26:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 23:26:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 23:26:17 last Live price feed time: 12-6 23:05 px: 454.73
+SPY 23:26:17 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2880 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:05 ]
+SPY *stats 1d: *n: 960 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:05 ]
+UL 23:26:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 23:26:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 23:26:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 23:26:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+23:27:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:28:21 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:29:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:30:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:31:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:33:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 23:34:12 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usbond
+23:34:12 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usbond rejectJson:  NULL 
+openOrder ERROR: 23:34:13 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usbond
+23:34:13 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+openOrder ERROR: 23:34:16 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:euhmds
+23:34:16 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:euhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:16 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+23:34:16 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 23:34:17 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds.nj
+23:34:17 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 23:34:17 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:euhmds
+23:34:17 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:17 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:fundfarm
+23:34:17 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+openOrder ERROR: 23:34:18 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+23:34:18 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds rejectJson:  NULL 
+openOrder ERROR: 23:34:18 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+23:34:18 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm rejectJson:  NULL 
+openOrder ERROR: 23:34:19 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:cashhmds
+23:34:19 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:cashhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:19 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds.nj
+23:34:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 23:34:19 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+23:34:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+openOrder ERROR: 23:34:20 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:cashhmds
+23:34:20 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:21 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+23:34:21 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+openOrder ERROR: 23:34:21 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm.nj
+23:34:21 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 23:34:23 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm.nj
+23:34:23 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+23:34:34 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 23:34:44 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+23:34:44 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:hfarm rejectJson:  NULL 
+openOrder ERROR: 23:34:44 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+23:34:44 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:hkhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:44 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+23:34:44 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+openOrder ERROR: 23:34:44 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+23:34:44 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+23:35:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:36:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 23:36:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 23:36:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 23:36:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 23:36:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 23:36:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 23:36:17 last Live price feed time: 12-6 23:29 px: 454.71
+SPY 23:36:17 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2881 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:29 ]
+SPY *stats 1d: *n: 961 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:29 ]
+UL 23:36:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 23:36:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 23:36:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 23:36:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+openOrder ERROR: 23:36:28 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+23:36:28 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usbond
+23:36:33 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usbond rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm.nj
+23:36:33 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+23:36:33 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:hfarm rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+23:36:33 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:euhmds
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:euhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds.nj
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:hkhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:cashhmds
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:cashhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 23:36:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+23:36:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds rejectJson:  NULL 
+WMT updating position: 23:36:33 position: 25 cost: 158.355032
+SPY updating position: 23:36:33 position: 5 cost: 456.15895145
+KO updating position: 23:36:33 position: 10 cost: 58.6052257
+PG updating position: 23:36:33 position: 5 cost: 146.83905145
+UL updating position: 23:36:33 position: 35 cost: 48.1592306
+UL updating position: 23:36:34 position: 35 cost: 48.1592306
+SPY updating position: 23:36:34 position: 5 cost: 456.15895145
+openOrder ERROR: 23:36:34 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+23:36:34 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:35 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+23:36:35 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+openOrder ERROR: 23:36:35 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:fundfarm
+23:36:35 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+openOrder ERROR: 23:36:35 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds.nj
+23:36:35 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 23:36:35 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:euhmds
+23:36:35 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:35 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm.nj
+23:36:35 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 23:36:36 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usbond
+23:36:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+openOrder ERROR: 23:36:36 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:cashhmds
+23:36:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+openOrder ERROR: 23:36:36 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+23:36:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+openOrder ERROR: 23:36:36 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+23:36:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+23:37:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 23:37:03 orderId: -1  errorCode: 1102  msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: usbond; usfarm.nj; hfarm; usfarm; euhmds; ushmds.nj; cashhmds; hkhmds; fundfarm; ushmds. The following farms are not connected: secdefhk.
+23:37:03 Conn error ID: -1 code: 1102 msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: usbond; usfarm.nj; hfarm; usfarm; euhmds; ushmds.nj; cashhmds; hkhmds; fundfarm; ushmds. The following farms are not connected: secdefhk. rejectJson:  NULL 
+23:38:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:39:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:40:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:41:47 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:42:54 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:44:07 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:45:10 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:46:17 last Live price feed time: 12-6 22:46 px: 58.5
+KO 23:46:17 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 22:46 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 22:46 ]
+MCD 23:46:17 last Live price feed time: 12-6 22:46 px: 287.0
+MCD 23:46:17 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 22:46 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 22:46 ]
+PG 23:46:17 last Live price feed time: 12-6 22:46 px: 146.36
+PG 23:46:17 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 22:46 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 22:46 ]
+SPY 23:46:17 last Live price feed time: 12-6 23:29 px: 454.71
+SPY 23:46:17 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2881 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:29 ]
+SPY *stats 1d: *n: 961 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:29 ]
+UL 23:46:17 last Live price feed time: 12-6 22:46 px: 47.77
+UL 23:46:17 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2778 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 22:46 ]
+UL *stats 1d: *n: 955 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 22:46 ]
+WMT 23:46:17 last Live price feed time: 12-6 22:46 px: 154.0
+WMT 23:46:17 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
+23:46:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
