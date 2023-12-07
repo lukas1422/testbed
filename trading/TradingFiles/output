@@ -14939,3 +14939,711 @@ WMT 23:46:17 *3dP%: 25.0 *1dP%: 14.0
 WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 22:46 ]
 WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 22:46 ]
 23:46:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:47:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:48:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:49:45 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:51:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:52:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:53:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 23:54:21
+*****START***** HK TIME: 12:54:24 EST: 23:54:24 MASTER ID: 235424
+SPY ****************STARTS 12-6 23:54
+WMT ****************STARTS 12-6 23:54
+UL ****************STARTS 12-6 23:54
+PG ****************STARTS 12-6 23:54
+MCD ****************STARTS 12-6 23:54
+KO ****************STARTS 12-6 23:54
+23:54:24 Conn:connected
+cancelling all orders on start up
+23:54:24 global cancel orders
+23:54:24 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+23:54:24 Conn: account list: [U7998608]
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+23:54:24 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 23:54:24 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 23:54:24 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 23:54:24 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 23:54:24 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 23:54:24 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 23:54:24 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+23:54:24 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 23:54:26 position: 5 cost: 456.15895145
+UL updating position: 23:54:26 position: 35 cost: 48.1592306
+KO updating position: 23:54:26 position: 10 cost: 58.6052257
+WMT updating position: 23:54:26 position: 25 cost: 158.355032
+PG updating position: 23:54:26 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+*****Ending***** 23:54:41
+*****START***** HK TIME: 12:54:43 EST: 23:54:43 MASTER ID: 235443
+SPY ****************STARTS 12-6 23:54
+WMT ****************STARTS 12-6 23:54
+UL ****************STARTS 12-6 23:54
+PG ****************STARTS 12-6 23:54
+MCD ****************STARTS 12-6 23:54
+KO ****************STARTS 12-6 23:54
+23:54:43 Conn:connected
+cancelling all orders on start up
+23:54:43 global cancel orders
+23:54:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+23:54:43 Conn: account list: [U7998608]
+23:54:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+23:54:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 23:54:43 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 23:54:43 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 23:54:43 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 23:54:43 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 23:54:43 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 23:54:43 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+23:54:43 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 23:54:45 position: 5 cost: 456.15895145
+UL updating position: 23:54:45 position: 35 cost: 48.1592306
+KO updating position: 23:54:45 position: 10 cost: 58.6052257
+WMT updating position: 23:54:45 position: 25 cost: 158.355032
+PG updating position: 23:54:45 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+23:54:46 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 23:55:03 last Live price feed time: 12-6 23:54 px: 58.5
+KO 23:55:03 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 23:54 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 23:54 ]
+MCD 23:55:03 last Live price feed time: 12-6 23:54 px: 287.0
+MCD 23:55:03 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 23:54 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 23:54 ]
+PG 23:55:03 last Live price feed time: 12-6 23:54 px: 146.36
+PG 23:55:03 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 23:54 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 23:54 ]
+SPY 23:55:03 last Live price feed time: 12-6 23:54 px: 454.71
+SPY 23:55:03 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:54 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:54 ]
+UL no live feed
+UL 23:55:03 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: *n: 954 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 19:59 ]
+WMT 23:55:03 last Live price feed time: 12-6 23:54 px: 154.0
+WMT 23:55:03 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 23:54 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:54 ]
+23:56:03 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:57:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:58:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+23:59:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:00:03 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+0:00:03 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:00:04 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:fundfarm
+0:00:04 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:00:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+0:00:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:00:33 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:euhmds
+0:00:33 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:euhmds rejectJson:  NULL 
+0:00:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:00:54 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+0:00:54 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:00:54 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:euhmds
+0:00:54 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:euhmds rejectJson:  NULL 
+openOrder ERROR: 0:00:55 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:fundfarm
+0:00:55 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:00:55 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:euhmds
+0:00:55 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+openOrder ERROR: 0:01:18 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds.nj
+0:01:18 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 0:01:19 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds.nj
+0:01:19 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+openOrder ERROR: 0:01:27 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:fundfarm
+0:01:27 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:01:27 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:fundfarm
+0:01:27 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+openOrder ERROR: 0:01:27 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:euhmds
+0:01:27 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:euhmds rejectJson:  NULL 
+openOrder ERROR: 0:01:27 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:euhmds
+0:01:27 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:01:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:02:48 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+0:02:48 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds rejectJson:  NULL 
+openOrder ERROR: 0:03:03 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:cashhmds
+0:03:03 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:cashhmds rejectJson:  NULL 
+openOrder ERROR: 0:03:04 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:cashhmds
+0:03:04 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+openOrder ERROR: 0:03:06 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+0:03:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:03:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:04:30 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO 0:05:03 last Live price feed time: 12-6 23:54 px: 58.5
+KO 0:05:03 *3dP%: 39.0 *1dP%: 57.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 23:54 ]
+KO *stats 1d: *n: 932 *max: 58.73 [ 12-6 13:42 ] *min 58.2 [ 12-6 10:09 ] *rng 0.9 % *1st Key: [ 12-6 4:29 ] *last: [ 12-6 23:54 ]
+MCD 0:05:03 last Live price feed time: 12-6 23:54 px: 287.0
+MCD 0:05:03 *3dP%: 85.0 *1dP%: 96.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 23:54 ]
+MCD *stats 1d: *n: 646 *max: 287.39 [ 12-6 18:54 ] *min 277.33 [ 12-6 9:15 ] *rng 3.6 % *1st Key: [ 12-6 9:15 ] *last: [ 12-6 23:54 ]
+PG 0:05:03 last Live price feed time: 12-6 23:54 px: 146.36
+PG 0:05:03 *3dP%: 10.0 *1dP%: 44.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 23:54 ]
+PG *stats 1d: *n: 905 *max: 147.29 [ 12-6 8:00 ] *min 145.64 [ 12-6 11:30 ] *rng 1.1 % *1st Key: [ 12-6 4:56 ] *last: [ 12-6 23:54 ]
+SPY 0:05:03 last Live price feed time: 12-6 23:54 px: 454.71
+SPY 0:05:03 *3dP%: 9.0 *1dP%: 9.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-6 23:54 ]
+SPY *stats 1d: *n: 958 *max: 458.94 [ 12-6 9:26 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:54 ]
+UL no live feed
+UL 0:05:03 *3dP%: 14.0 *1dP%: 14.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: *n: 954 *max: 48.07 [ 12-6 9:30 ] *min 47.72 [ 12-6 15:52 ] *rng 0.7 % *1st Key: [ 12-6 4:06 ] *last: [ 12-6 19:59 ]
+WMT 0:05:03 last Live price feed time: 12-6 23:54 px: 154.0
+WMT 0:05:03 *3dP%: 25.0 *1dP%: 14.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 23:54 ]
+WMT *stats 1d: *n: 958 *max: 156.2 [ 12-6 8:58 ] *min 153.65 [ 12-6 10:27 ] *rng 1.7 % *1st Key: [ 12-6 4:03 ] *last: [ 12-6 23:54 ]
+0:05:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:06:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:07:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:08:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 0:09:45
+*****START***** HK TIME: 13:09:48 EST: 0:09:48 MASTER ID: 948
+SPY ****************STARTS 12-7 0:09
+WMT ****************STARTS 12-7 0:09
+UL ****************STARTS 12-7 0:09
+PG ****************STARTS 12-7 0:09
+MCD ****************STARTS 12-7 0:09
+KO ****************STARTS 12-7 0:09
+0:09:48 Conn:connected
+cancelling all orders on start up
+0:09:48 global cancel orders
+0:09:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:09:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:09:48 Conn: account list: [U7998608]
+SPY 0:09:48 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:09:48 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:09:49 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:09:49 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:09:49 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:09:49 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:09:49 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:09:50 position: 5 cost: 456.15895145
+UL updating position: 0:09:50 position: 35 cost: 48.1592306
+KO updating position: 0:09:50 position: 10 cost: 58.6052257
+WMT updating position: 0:09:50 position: 25 cost: 158.355032
+PG updating position: 0:09:50 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 0:10:08 last Live price feed time: 12-7 0:10 px: 58.5
+KO 0:10:08 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-7 0:10 ]
+KO *stats 1d: print stats:empty
+MCD 0:10:08 last Live price feed time: 12-7 0:10 px: 287.0
+MCD 0:10:08 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-7 0:10 ]
+MCD *stats 1d: print stats:empty
+PG 0:10:08 last Live price feed time: 12-7 0:10 px: 146.36
+PG 0:10:08 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-7 0:10 ]
+PG *stats 1d: print stats:empty
+SPY 0:10:08 last Live price feed time: 12-7 0:10 px: 454.71
+SPY 0:10:08 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:10 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:10:08 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT 0:10:08 last Live price feed time: 12-7 0:10 px: 154.0
+WMT 0:10:08 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-7 0:10 ]
+WMT *stats 1d: print stats:empty
+0:10:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:11:35 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 0:11:39
+*****START***** HK TIME: 13:11:42 EST: 0:11:42 MASTER ID: 1142
+SPY ****************STARTS 12-7 0:11
+WMT ****************STARTS 12-7 0:11
+UL ****************STARTS 12-7 0:11
+PG ****************STARTS 12-7 0:11
+MCD ****************STARTS 12-7 0:11
+KO ****************STARTS 12-7 0:11
+0:11:42 Conn:connected
+cancelling all orders on start up
+0:11:42 global cancel orders
+0:11:42 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:11:42 Conn: account list: [U7998608]
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:11:42 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 0:11:42 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:11:42 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:11:42 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:11:42 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:11:42 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:11:42 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:11:42 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:11:44 position: 5 cost: 456.15895145
+UL updating position: 0:11:44 position: 35 cost: 48.1592306
+KO updating position: 0:11:44 position: 10 cost: 58.6052257
+WMT updating position: 0:11:44 position: 25 cost: 158.355032
+PG updating position: 0:11:44 position: 5 cost: 146.83905145
+KO POS COST 10 58.6052257
+MCD POS COST 0 0.0
+PG POS COST 5 146.83905145
+SPY POS COST 5 456.15895145
+UL POS COST 35 48.1592306
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 0:12:02 last Live price feed time: 12-7 0:11 px: 58.5
+KO 0:12:02 *3dP%: 39.0 *1dP%: 0.0
+KO stats 3d: *n: 2644 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-7 0:11 ]
+KO *stats 1d: print stats:empty
+MCD 0:12:02 last Live price feed time: 12-7 0:11 px: 287.0
+MCD 0:12:02 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2086 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-7 0:11 ]
+MCD *stats 1d: print stats:empty
+PG 0:12:02 last Live price feed time: 12-7 0:11 px: 146.36
+PG 0:12:02 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2360 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-7 0:11 ]
+PG *stats 1d: print stats:empty
+SPY 0:12:02 last Live price feed time: 12-7 0:11 px: 454.71
+SPY 0:12:02 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:11 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:12:02 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT 0:12:02 last Live price feed time: 12-7 0:11 px: 154.0
+WMT 0:12:02 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2823 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-7 0:11 ]
+WMT *stats 1d: print stats:empty
+0:12:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:12:43 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm.nj
+0:12:43 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 0:12:44 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm.nj
+0:12:44 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 0:13:04 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:04 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:10 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:10 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:15 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:15 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:19 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:19 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:25 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:25 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:28 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:28 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:40 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:40 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:13:54 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:13:54 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:14:10 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:14:10 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:14:34 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+0:14:34 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+0:15:00 Conn error ID: -1 code: 2108 msg: Market data farm connection is inactive but should be available upon demand.usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+0:15:00 Conn error ID: -1 code: 2108 msg: Market data farm connection is inactive but should be available upon demand.usfarm.nj rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+0:15:00 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:hkhmds rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+0:15:00 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:ushmds rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+0:15:00 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:hfarm rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+0:15:00 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm rejectJson:  NULL 
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:cashhmds
+0:15:00 Conn error ID: -1 code: 2105 msg: HMDS data farm connection is broken:cashhmds rejectJson:  NULL 
+WMT updating position: 0:15:00 position: 25 cost: 158.355032
+SPY updating position: 0:15:00 position: 5 cost: 456.15896
+KO updating position: 0:15:00 position: 10 cost: 58.60523
+PG updating position: 0:15:00 position: 5 cost: 146.83906
+UL updating position: 0:15:00 position: 35 cost: 48.15922855
+openOrder ERROR: 0:15:00 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+0:15:00 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+UL updating position: 0:15:00 position: 35 cost: 48.15922855
+SPY updating position: 0:15:00 position: 5 cost: 456.15896
+openOrder ERROR: 0:15:01 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+0:15:01 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:15:01 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:15:01 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:cashhmds
+0:15:01 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+openOrder ERROR: 0:15:02 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+0:15:02 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+openOrder ERROR: 0:15:02 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+0:15:02 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+*****Ending***** 0:15:13
+*****START***** HK TIME: 13:15:16 EST: 0:15:16 MASTER ID: 1516
+SPY ****************STARTS 12-7 0:15
+WMT ****************STARTS 12-7 0:15
+UL ****************STARTS 12-7 0:15
+PG ****************STARTS 12-7 0:15
+MCD ****************STARTS 12-7 0:15
+KO ****************STARTS 12-7 0:15
+0:15:16 Conn:connected
+cancelling all orders on start up
+0:15:16 global cancel orders
+0:15:16 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:15:16 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:15:16 Conn: account list: [U7998608]
+0:15:16 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 0:15:16 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:15:16 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:15:16 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:15:16 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:15:16 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:15:16 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:15:16 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:15:18 position: 5 cost: 456.15896
+UL updating position: 0:15:18 position: 35 cost: 48.15922855
+KO updating position: 0:15:18 position: 10 cost: 58.60523
+WMT updating position: 0:15:18 position: 25 cost: 158.355032
+PG updating position: 0:15:18 position: 5 cost: 146.83906
+KO POS COST 10 58.60523
+MCD POS COST 0 0.0
+PG POS COST 5 146.83906
+SPY POS COST 5 456.15896
+UL POS COST 35 48.15922855
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+openOrder ERROR: 0:15:30 orderId: -1  errorCode: 1102  msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: usbond; hfarm; usfarm; euhmds; ushmds.nj; cashhmds; hkhmds; fundfarm; ushmds. The following farms are not connected: secdefhk.
+0:15:30 Conn error ID: -1 code: 1102 msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: usbond; hfarm; usfarm; euhmds; ushmds.nj; cashhmds; hkhmds; fundfarm; ushmds. The following farms are not connected: secdefhk. rejectJson:  NULL 
+KO no live feed
+KO 0:15:36 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2643 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:59 ]
+KO *stats 1d: print stats:empty
+MCD no live feed
+MCD 0:15:36 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2085 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:59 ]
+MCD *stats 1d: print stats:empty
+PG no live feed
+PG 0:15:36 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2359 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:59 ]
+PG *stats 1d: print stats:empty
+SPY 0:15:36 last Live price feed time: 12-7 0:15 px: 454.71
+SPY 0:15:36 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:15 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:15:36 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT no live feed
+WMT 0:15:36 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2822 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:59 ]
+WMT *stats 1d: print stats:empty
+0:16:11 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:17:28 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:18:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:19:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:21:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+openOrder ERROR: 0:22:10 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usbond
+0:22:10 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usbond rejectJson:  NULL 
+openOrder ERROR: 0:22:10 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+0:22:10 Conn error ID: -1 code: 2103 msg: Market data farm connection is broken:usfarm rejectJson:  NULL 
+openOrder ERROR: 0:22:12 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usbond
+0:22:12 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+openOrder ERROR: 0:22:13 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+0:22:13 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:22:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:23:39 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 0:24:45
+*****START***** HK TIME: 13:24:48 EST: 0:24:48 MASTER ID: 2448
+SPY ****************STARTS 12-7 0:24
+WMT ****************STARTS 12-7 0:24
+UL ****************STARTS 12-7 0:24
+PG ****************STARTS 12-7 0:24
+MCD ****************STARTS 12-7 0:24
+KO ****************STARTS 12-7 0:24
+0:24:48 Conn:connected
+cancelling all orders on start up
+0:24:48 global cancel orders
+0:24:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:24:48 Conn: account list: [U7998608]
+0:24:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:24:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 0:24:48 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:24:48 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:24:48 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:24:48 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:24:48 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:24:48 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:24:48 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:24:50 position: 5 cost: 456.15896
+UL updating position: 0:24:50 position: 35 cost: 48.15922855
+KO updating position: 0:24:50 position: 10 cost: 58.60523
+WMT updating position: 0:24:50 position: 25 cost: 158.355032
+PG updating position: 0:24:50 position: 5 cost: 146.83906
+KO POS COST 10 58.60523
+MCD POS COST 0 0.0
+PG POS COST 5 146.83906
+SPY POS COST 5 456.15896
+UL POS COST 35 48.15922855
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+WMT updating position: 0:24:50 position: 25 cost: 158.355032
+SPY updating position: 0:24:50 position: 5 cost: 456.15896
+KO updating position: 0:24:50 position: 10 cost: 58.60523
+PG updating position: 0:24:50 position: 5 cost: 146.83906
+UL updating position: 0:24:50 position: 35 cost: 48.15922855
+0:24:50 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+KO no live feed
+KO 0:25:08 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2643 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:59 ]
+KO *stats 1d: print stats:empty
+MCD no live feed
+MCD 0:25:08 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2085 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:59 ]
+MCD *stats 1d: print stats:empty
+PG no live feed
+PG 0:25:08 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2359 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:59 ]
+PG *stats 1d: print stats:empty
+SPY 0:25:08 last Live price feed time: 12-7 0:25 px: 454.71
+SPY 0:25:08 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:25 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:25:08 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT no live feed
+WMT 0:25:08 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2822 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:59 ]
+WMT *stats 1d: print stats:empty
+0:26:02 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:27:22 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:28:25 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 0:29:15
+*****START***** HK TIME: 13:29:18 EST: 0:29:18 MASTER ID: 2918
+SPY ****************STARTS 12-7 0:29
+WMT ****************STARTS 12-7 0:29
+UL ****************STARTS 12-7 0:29
+PG ****************STARTS 12-7 0:29
+MCD ****************STARTS 12-7 0:29
+KO ****************STARTS 12-7 0:29
+0:29:18 Conn:connected
+cancelling all orders on start up
+0:29:18 global cancel orders
+0:29:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:29:18 Conn: account list: [U7998608]
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:29:18 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 0:29:18 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:29:18 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:29:18 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:29:18 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:29:18 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:29:18 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:29:18 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:29:20 position: 5 cost: 456.15896
+UL updating position: 0:29:20 position: 35 cost: 48.15922855
+KO updating position: 0:29:20 position: 10 cost: 58.60523
+WMT updating position: 0:29:20 position: 25 cost: 158.355032
+PG updating position: 0:29:20 position: 5 cost: 146.83906
+KO POS COST 10 58.60523
+MCD POS COST 0 0.0
+PG POS COST 5 146.83906
+SPY POS COST 5 456.15896
+UL POS COST 35 48.15922855
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO no live feed
+KO 0:29:38 *3dP%: 39.0 *1dP%: 0.0
+KO stats 3d: *n: 2643 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:59 ]
+KO *stats 1d: print stats:empty
+MCD no live feed
+MCD 0:29:38 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2085 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:59 ]
+MCD *stats 1d: print stats:empty
+PG no live feed
+PG 0:29:38 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2359 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:59 ]
+PG *stats 1d: print stats:empty
+SPY 0:29:38 last Live price feed time: 12-7 0:29 px: 454.71
+SPY 0:29:38 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:29 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:29:38 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT no live feed
+WMT 0:29:38 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2822 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:59 ]
+WMT *stats 1d: print stats:empty
+0:29:41 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:30:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+*****Ending***** 0:31:05
+*****START***** HK TIME: 13:31:08 EST: 0:31:08 MASTER ID: 3108
+SPY ****************STARTS 12-7 0:31
+WMT ****************STARTS 12-7 0:31
+UL ****************STARTS 12-7 0:31
+PG ****************STARTS 12-7 0:31
+MCD ****************STARTS 12-7 0:31
+KO ****************STARTS 12-7 0:31
+0:31:08 Conn:connected
+cancelling all orders on start up
+0:31:08 global cancel orders
+0:31:08 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm rejectJson:  NULL 
+0:31:08 Conn: account list: [U7998608]
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds rejectJson:  NULL 
+0:31:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+SPY 0:31:08 tradeReport time: 11:33:52 BOT exec price: 456.0887 shares: 5 avgExecPrice: 456.0887
+UL 0:31:09 tradeReport time: 12:35:51 BOT exec price: 47.83 shares: 5 avgExecPrice: 47.83
+UL 0:31:09 tradeReport time: 12:43:42 BOT exec price: 47.8 shares: 5 avgExecPrice: 47.8
+UL 0:31:09 tradeReport time: 15:52:12 BOT exec price: 47.73 shares: 5 avgExecPrice: 47.73
+KO 0:31:09 tradeReport time: 09:30:03 BOT exec price: 58.57 shares: 10 avgExecPrice: 58.57
+PG 0:31:09 tradeReport time: 09:32:29 BOT exec price: 146.77 shares: 5 avgExecPrice: 146.77
+0:31:09 TradeReportEnd: all executions:
+KO listOfExecutions [orderID: 92212 time: 09:30:03 side: BOT shares: 10 price: 58.57]
+PG listOfExecutions [orderID: 92213 time: 09:32:29 side: BOT shares: 5 price: 146.77]
+UL listOfExecutions [orderID: 92215 time: 12:35:51 side: BOT shares: 5 price: 47.83, orderID: 92216 time: 12:43:42 side: BOT shares: 5 price: 47.8, orderID: 92217 time: 15:52:12 side: BOT shares: 5 price: 47.73]
+SPY listOfExecutions [orderID: 92214 time: 11:33:52 side: BOT shares: 5 price: 456.0887]
+req live orders complete
+SPY updating position: 0:31:10 position: 5 cost: 456.15896
+UL updating position: 0:31:10 position: 35 cost: 48.15922855
+KO updating position: 0:31:10 position: 10 cost: 58.60523
+WMT updating position: 0:31:10 position: 25 cost: 158.355032
+PG updating position: 0:31:10 position: 5 cost: 146.83906
+KO POS COST 10 58.60523
+MCD POS COST 0 0.0
+PG POS COST 5 146.83906
+SPY POS COST 5 456.15896
+UL POS COST 35 48.15922855
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO no live feed
+KO 0:31:28 *3dP%: 0.0 *1dP%: 0.0
+KO stats 3d: *n: 2643 *max: 58.96 [ 12-4 9:49 ] *min 58.2 [ 12-6 10:09 ] *rng 1.3 % *1st Key: [ 12-4 4:04 ] *last: [ 12-6 19:59 ]
+KO *stats 1d: print stats:empty
+MCD no live feed
+MCD 0:31:28 *3dP%: 85.0 *1dP%: 0.0
+MCD stats 3d: *n: 2085 *max: 288.76 [ 12-5 13:16 ] *min 277.33 [ 12-6 9:15 ] *rng 4.1 % *1st Key: [ 12-4 8:00 ] *last: [ 12-6 19:59 ]
+MCD *stats 1d: print stats:empty
+PG no live feed
+PG 0:31:28 *3dP%: 10.0 *1dP%: 0.0
+PG stats 3d: *n: 2359 *max: 152.61 [ 12-5 9:31 ] *min 145.64 [ 12-6 11:30 ] *rng 4.8 % *1st Key: [ 12-4 7:42 ] *last: [ 12-6 19:59 ]
+PG *stats 1d: print stats:empty
+SPY 0:31:28 last Live price feed time: 12-7 0:31 px: 454.71
+SPY 0:31:28 *3dP%: 9.0 *1dP%: 0.0
+SPY stats 3d: *n: 2878 *max: 459.0 [ 12-4 4:00 ] *min 454.31 [ 12-6 15:54 ] *rng 1.0 % *1st Key: [ 12-4 4:00 ] *last: [ 12-7 0:31 ]
+SPY *stats 1d: print stats:empty
+UL no live feed
+UL 0:31:28 *3dP%: 14.0 *1dP%: 0.0
+UL stats 3d: *n: 2777 *max: 48.28 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
+UL *stats 1d: print stats:empty
+WMT no live feed
+WMT 0:31:28 *3dP%: 25.0 *1dP%: 0.0
+WMT stats 3d: *n: 2822 *max: 156.2 [ 12-6 8:58 ] *min 153.25 [ 12-4 9:29 ] *rng 1.9 % *1st Key: [ 12-4 4:32 ] *last: [ 12-6 19:59 ]
+WMT *stats 1d: print stats:empty
+0:31:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+0:33:13 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 

@@ -339,7 +339,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                if (symb.equalsIgnoreCase("SPY")) {
+                if (symb.equalsIgnoreCase("MCD")) {
                     pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
                             "*1dP%:", oneDayPercentile, "*stats 1d:",
                             printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
@@ -496,9 +496,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.get(tradeKey).add(new ExecutionAugmented(symb, execution));
 
-        outputToSymbol(symb, usTime(), "tradeReport time, side, price, shares, avgPrice:",
-                executionToUSTime(execution.time()), execution.side(),
-                execution.price(), execution.shares(), execution.avgPrice());
+        outputToSymbol(symb, usTime(), "tradeReport time:",
+                executionToUSTime(execution.time()), execution.side(), "exec price:",
+                execution.price(), "shares:", execution.shares(), "avgExecPrice:", execution.avgPrice());
     }
 
     @Override

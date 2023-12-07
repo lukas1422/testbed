@@ -20,19 +20,19 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.NavigableMap;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
+import static java.util.Comparator.comparingDouble;
 import static utility.Utility.*;
 
 public class TradingUtility {
@@ -611,7 +611,11 @@ public class TradingUtility {
 //            pr("calculate p%: map is empty");
             return 0;
         }
-        double maxValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getHigh()).max().getAsDouble();
+//        sorted((Map.Entry.<String, Long>comparingByValue())
+//        double maxValue = m.entrySet().stream().sorted(Collections.reverseOrder(Comparator.comparingDouble(e -> e.getValue().getHigh())))
+//                .skip(1).limit(1).mapToDouble(b -> b.getValue().getHigh()).average().getAsDouble();
+
+        double maxValue = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
         double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
         double last = m.lastEntry().getValue().getClose();
         return (double) round((last - minValue) / (maxValue - minValue) * 100);
@@ -658,12 +662,23 @@ public class TradingUtility {
         double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
         double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
         LocalDateTime maxTime = m.entrySet().stream()
-                .max(Comparator.comparingDouble(e -> e.getValue().getHigh()))
+                .max(comparingDouble(e -> e.getValue().getHigh()))
                 .map(Map.Entry::getKey).get();
         LocalDateTime minTime = m.entrySet().stream()
-                .min(Comparator.comparingDouble(e -> e.getValue().getLow()))
+                .min(comparingDouble(e -> e.getValue().getLow()))
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
+
+        pr("lowest 5", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow())).limit(5)
+                .collect(Collectors.toMap(e -> e.getKey(), e1 -> e1.getValue().getLow(), (u, v) -> {
+                    throw new IllegalStateException();
+                }, LinkedHashMap::new)));
+        pr("lowest 5 skip 1", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
+                .limit(5).skip(1).collect(Collectors.toMap(e -> e.getKey(), e1 -> e1.getValue().getLow(), (u, v) -> {
+                    throw new IllegalStateException();
+                }, LinkedHashMap::new)));
+//        pr("highest 5", m.entrySet().stream().sorted(Collections.reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
+//                .limit(5).collect(Collectors.toList()));
 
         return str("*n:", m.size(), "*max:", max, "[", maxTime.format(simpleDayTime), "]", "*min", min,
                 "[", minTime.format(simpleDayTime), "]"
