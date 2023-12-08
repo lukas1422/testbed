@@ -563,7 +563,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, "stats 3d:", printStats(threeDayData.get(symb)));
                 outputToSymbol(symb, "*stats 1d:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
             });
-        }, 20L, 600L, TimeUnit.SECONDS);
+        }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));
     }
 }
