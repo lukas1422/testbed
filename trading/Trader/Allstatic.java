@@ -109,9 +109,9 @@ public class Allstatic {
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        if (symbol.equalsIgnoreCase("MCD")) {
-            pr("MCD", symbol, ld, open, high, low, close);
-        }
+//        if (symbol.equalsIgnoreCase("MCD")) {
+//            pr("MCD", symbol, ld, open, high, low, close);
+//        }
 
         threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);

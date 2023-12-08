@@ -1452,3 +1452,399 @@ no live feed
 1:39:06 *3dP%: 14.0 *1dP%: 0.0
 stats 3d: *n: 2777 *max: 48.260000000000005 [ 12-4 9:49 ] *min 47.69 [ 12-5 14:39 ] *rng 1.2 % *1st Key: [ 12-4 5:37 ] *last: [ 12-6 19:59 ]
 *stats 1d: print stats:empty
+****************STARTS 12-7 9:34
+****************STARTS 12-7 9:35
+updating position: 9:35:39 position: 35 cost: 48.15922855
+POS COST 35 48.15922855
+9:35:57 last Live price feed time: 12-7 9:35 px: 47.76
+9:35:57 *3dP%: 15.0 *1dP%: 18.0
+stats 3d: *n: 2250 *max: 48.155 [ 12-5 4:00 ] *min 47.69 [ 12-5 14:39 ] *rng 1.0 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 9:35 ]
+*stats 1d: *n: 336 *max: 47.9375 [ 12-7 7:21 ] *min 47.72 [ 12-7 9:33 ] *rng 0.5 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 9:35 ]
+9:45:57 last Live price feed time: 12-7 9:45 px: 47.74
+9:45:57 *3dP%: 11.0 *1dP%: 16.0
+stats 3d: *n: 2259 *max: 48.155 [ 12-5 4:00 ] *min 47.69 [ 12-7 9:38 ] *rng 1.0 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 9:45 ]
+*stats 1d: *n: 345 *max: 47.9375 [ 12-7 7:21 ] *min 47.7025 [ 12-7 9:38 ] *rng 0.5 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 9:45 ]
+****REFILL**** 12-7 9:53:30
+buyMore: 3dp: -2.0 1dp: -4.0 costBasis: 48.15922855 px/cost: 0.9898414371506787 refill Price: 47.1910067812835 average range: 0.010048106119498686
+orderID: 93538 tradeID: 93538 action: BUY px: 47.67 size: 5 UL 12-7 9:53 INVENTORY_ADDER Created
+3 Day Stats: *n: 2267 *max: 48.155 [ 12-5 4:00 ] *min 47.6875 [ 12-7 9:53 ] *rng 1.0 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 9:53 ] 1DStats: *n: 353 *max: 47.9375 [ 12-7 7:21 ] *min 47.69 [ 12-7 9:53 ] *rng 0.5 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 9:53 ]
+9:53:30 openOrder callback: orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67 orderState status: Submitted
+9:53:41 order blocked: UL [orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67] **statusMap: {KO={}, UL={93538=Submitted}, PG={}, SPY={}, WMT={}, MCD={}}
+9:53:49 order blocked: UL [orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67] **statusMap: {KO={}, UL={93538=Submitted}, PG={}, SPY={}, WMT={}, MCD={}}
+9:54:31 order blocked: UL [orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67] **statusMap: {KO={}, UL={93538=Submitted}, PG={}, SPY={}, WMT={}, MCD={}}
+9:54:38 order blocked: UL [orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67] **statusMap: {KO={}, UL={93538=Submitted}, PG={}, SPY={}, WMT={}, MCD={}}
+updating position: 9:54:46 position: 40 cost: 48.09807498125
+9:54:46 tradeReport time: 09:54:46 BOT exec price: 47.67 shares: 5 avgExecPrice: 47.67
+9:54:47 openOrder callback: orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67 orderState status: Filled
+9:54:47 filled orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67
+openOrder callback:removing order orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67 status: Filled
+9:54:47 openOrder callback:after removal.open orders: UL {}
+9:54:47 openOrder callback: orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67 orderState status: Filled
+9:54:47 filled orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67
+openOrder callback:removing order orderID: 93538 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.67 status: Filled
+9:54:47 openOrder callback:after removal.open orders: UL {}
+1.commission report orderID: 93538 commission: 0.345257 NO PNL
+2.commission report orderID: 93538 commission: 0.345257 no pnl
+updating position: 9:54:47 position: 40 cost: 48.10670640625
+9:55:57 last Live price feed time: 12-7 9:55 px: 47.67
+periodic check: 9:55:57 orderStatus {93538=Filled}
+9:55:57 *3dP%: -2.0 *1dP%: -3.0
+stats 3d: *n: 2269 *max: 48.155 [ 12-5 4:00 ] *min 47.6775 [ 12-7 9:55 ] *rng 1.0 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 9:55 ]
+*stats 1d: *n: 355 *max: 47.9375 [ 12-7 7:21 ] *min 47.6775 [ 12-7 9:55 ] *rng 0.5 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 9:55 ]
+updating position: 10:00:01 position: 40 cost: 48.10670645
+updating position: 10:00:01 position: 40 cost: 48.10670645
+****REFILL**** 12-7 10:00:09
+buyMore: 3dp: -5.0 1dp: -9.0 costBasis: 48.10670645 px/cost: 0.9898827734027924 refill Price: 47.14150918658947 average range: 0.010048106119498686
+orderID: 93539 tradeID: 93539 action: BUY px: 47.62 size: 5 UL 12-7 10:00 INVENTORY_ADDER Created
+3 Day Stats: *n: 2272 *max: 48.155 [ 12-5 4:00 ] *min 47.655 [ 12-7 10:00 ] *rng 1.0 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:00 ] 1DStats: *n: 358 *max: 47.9375 [ 12-7 7:21 ] *min 47.655 [ 12-7 10:00 ] *rng 0.6 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:00 ]
+10:00:10 openOrder callback: orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62 orderState status: Submitted
+10:00:10 order blocked: UL [orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62] **statusMap: {KO={}, UL={93538=Filled, 93539=Submitted}, PG={}, SPY={}, WMT={}, MCD={}}
+updating position: 10:00:13 position: 45 cost: 48.05262795555556
+10:00:13 tradeReport time: 10:00:13 BOT exec price: 47.62 shares: 5 avgExecPrice: 47.62
+10:00:14 openOrder callback: orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62 orderState status: Filled
+10:00:14 filled orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62
+openOrder callback:removing order orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62 status: Filled
+10:00:14 openOrder callback:after removal.open orders: UL {}
+10:00:14 openOrder callback: orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62 orderState status: Filled
+10:00:14 filled orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62
+openOrder callback:removing order orderID: 93539 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 47.62 status: Filled
+10:00:14 openOrder callback:after removal.open orders: UL {}
+1.commission report orderID: 93539 commission: 0.349257 NO PNL
+2.commission report orderID: 93539 commission: 0.349257 no pnl
+updating position: 10:00:14 position: 45 cost: 48.06038922222223
+updating position: 10:05:18 position: 45 cost: 48.0603892
+10:05:57 last Live price feed time: 12-7 10:05 px: 47.66
+periodic check: 10:05:57 orderStatus {93538=Filled, 93539=Filled}
+10:05:57 *3dP%: 6.0 *1dP%: 10.0
+stats 3d: *n: 2277 *max: 48.155 [ 12-5 4:00 ] *min 47.6275 [ 12-7 10:00 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:05 ]
+*stats 1d: *n: 363 *max: 47.9375 [ 12-7 7:21 ] *min 47.6275 [ 12-7 10:00 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:05 ]
+10:15:57 last Live price feed time: 12-7 10:15 px: 47.69
+periodic check: 10:15:57 orderStatus {93538=Filled, 93539=Filled}
+10:15:57 *3dP%: 14.0 *1dP%: 24.0
+stats 3d: *n: 2287 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:15 ]
+*stats 1d: *n: 373 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:15 ]
+10:25:57 last Live price feed time: 12-7 10:25 px: 47.73
+periodic check: 10:25:57 orderStatus {93538=Filled, 93539=Filled}
+10:25:57 *3dP%: 22.0 *1dP%: 36.0
+stats 3d: *n: 2295 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:25 ]
+*stats 1d: *n: 381 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:25 ]
+10:35:57 last Live price feed time: 12-7 10:34 px: 47.76
+periodic check: 10:35:57 orderStatus {93538=Filled, 93539=Filled}
+10:35:57 *3dP%: 27.0 *1dP%: 45.0
+stats 3d: *n: 2304 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:34 ]
+*stats 1d: *n: 390 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:34 ]
+10:45:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 10:45:57 orderStatus {93538=Filled, 93539=Filled}
+10:45:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+10:55:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 10:55:57 orderStatus {93538=Filled, 93539=Filled}
+10:55:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:05:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:05:57 orderStatus {93538=Filled, 93539=Filled}
+11:05:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:15:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:15:57 orderStatus {93538=Filled, 93539=Filled}
+11:15:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:25:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:25:57 orderStatus {93538=Filled, 93539=Filled}
+11:25:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:35:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:35:57 orderStatus {93538=Filled, 93539=Filled}
+11:35:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:45:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:45:57 orderStatus {93538=Filled, 93539=Filled}
+11:45:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+11:55:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 11:55:57 orderStatus {93538=Filled, 93539=Filled}
+11:55:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:05:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:05:57 orderStatus {93538=Filled, 93539=Filled}
+12:05:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:15:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:15:57 orderStatus {93538=Filled, 93539=Filled}
+12:15:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:25:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:25:57 orderStatus {93538=Filled, 93539=Filled}
+12:25:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:35:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:35:57 orderStatus {93538=Filled, 93539=Filled}
+12:35:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:45:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:45:57 orderStatus {93538=Filled, 93539=Filled}
+12:45:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+12:55:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 12:55:57 orderStatus {93538=Filled, 93539=Filled}
+12:55:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:05:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:05:57 orderStatus {93538=Filled, 93539=Filled}
+13:05:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:15:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:15:57 orderStatus {93538=Filled, 93539=Filled}
+13:15:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:25:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:25:57 orderStatus {93538=Filled, 93539=Filled}
+13:25:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:35:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:35:57 orderStatus {93538=Filled, 93539=Filled}
+13:35:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:45:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:45:57 orderStatus {93538=Filled, 93539=Filled}
+13:45:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+13:55:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 13:55:57 orderStatus {93538=Filled, 93539=Filled}
+13:55:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:05:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:05:57 orderStatus {93538=Filled, 93539=Filled}
+14:05:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:15:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:15:57 orderStatus {93538=Filled, 93539=Filled}
+14:15:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:25:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:25:57 orderStatus {93538=Filled, 93539=Filled}
+14:25:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:35:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:35:57 orderStatus {93538=Filled, 93539=Filled}
+14:35:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:45:57 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:45:57 orderStatus {93538=Filled, 93539=Filled}
+14:45:57 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+14:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 14:55:58 orderStatus {93538=Filled, 93539=Filled}
+14:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:05:58 orderStatus {93538=Filled, 93539=Filled}
+15:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:15:58 orderStatus {93538=Filled, 93539=Filled}
+15:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:25:58 orderStatus {93538=Filled, 93539=Filled}
+15:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:35:58 orderStatus {93538=Filled, 93539=Filled}
+15:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:45:58 orderStatus {93538=Filled, 93539=Filled}
+15:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+15:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 15:55:58 orderStatus {93538=Filled, 93539=Filled}
+15:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:05:58 orderStatus {93538=Filled, 93539=Filled}
+16:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:15:58 orderStatus {93538=Filled, 93539=Filled}
+16:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:25:58 orderStatus {93538=Filled, 93539=Filled}
+16:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:35:58 orderStatus {93538=Filled, 93539=Filled}
+16:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:45:58 orderStatus {93538=Filled, 93539=Filled}
+16:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+16:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 16:55:58 orderStatus {93538=Filled, 93539=Filled}
+16:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:05:58 orderStatus {93538=Filled, 93539=Filled}
+17:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:15:58 orderStatus {93538=Filled, 93539=Filled}
+17:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:25:58 orderStatus {93538=Filled, 93539=Filled}
+17:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:35:58 orderStatus {93538=Filled, 93539=Filled}
+17:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:45:58 orderStatus {93538=Filled, 93539=Filled}
+17:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+17:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 17:55:58 orderStatus {93538=Filled, 93539=Filled}
+17:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:05:58 orderStatus {93538=Filled, 93539=Filled}
+18:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:15:58 orderStatus {93538=Filled, 93539=Filled}
+18:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:25:58 orderStatus {93538=Filled, 93539=Filled}
+18:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:35:58 orderStatus {93538=Filled, 93539=Filled}
+18:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:45:58 orderStatus {93538=Filled, 93539=Filled}
+18:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+18:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 18:55:58 orderStatus {93538=Filled, 93539=Filled}
+18:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:05:58 orderStatus {93538=Filled, 93539=Filled}
+19:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:15:58 orderStatus {93538=Filled, 93539=Filled}
+19:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:25:58 orderStatus {93538=Filled, 93539=Filled}
+19:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:35:58 orderStatus {93538=Filled, 93539=Filled}
+19:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:45:58 orderStatus {93538=Filled, 93539=Filled}
+19:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+19:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 19:55:58 orderStatus {93538=Filled, 93539=Filled}
+19:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:05:58 orderStatus {93538=Filled, 93539=Filled}
+20:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:15:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:15:58 orderStatus {93538=Filled, 93539=Filled}
+20:15:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:25:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:25:58 orderStatus {93538=Filled, 93539=Filled}
+20:25:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:35:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:35:58 orderStatus {93538=Filled, 93539=Filled}
+20:35:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:45:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:45:58 orderStatus {93538=Filled, 93539=Filled}
+20:45:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+20:55:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 20:55:58 orderStatus {93538=Filled, 93539=Filled}
+20:55:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]
+21:05:58 last Live price feed time: 12-7 10:44 px: 47.74
+periodic check: 21:05:58 orderStatus {93538=Filled, 93539=Filled}
+21:05:58 *3dP%: 24.0 *1dP%: 39.0
+stats 3d: *n: 2313 *max: 48.155 [ 12-5 4:00 ] *min 47.6125 [ 12-7 10:09 ] *rng 1.1 % *1st Key: [ 12-5 4:00 ] *last: [ 12-7 10:44 ]
+*stats 1d: *n: 399 *max: 47.9375 [ 12-7 7:21 ] *min 47.6125 [ 12-7 10:09 ] *rng 0.7 % *1st Key: [ 12-7 4:00 ] *last: [ 12-7 10:44 ]

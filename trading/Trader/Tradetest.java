@@ -32,21 +32,17 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
     public static final int TWS_PORT = 7496;
     public static final int PORT_TO_USE = TWS_PORT;
 
-    static Contract tencent = generateHKStockContract("700");
+//    static Contract tencent = generateHKStockContract("700");
     static Contract wmt = generateUSStockContract("WMT");
 
 
     private Tradetest() {
-        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime());
-        pr("market start time today ", TRADING_START_TIME);
-        pr("until market start time", Duration.between(TRADING_START_TIME,
-                getESTLocalDateTimeNow()).toMinutes(), "minutes");
-
-        registerContractAll(wmt, tencent);
+        registerContractAll(wmt);
     }
 
     private void connectAndReqPos() {
-        ApiController ap = new ApiController(new DefaultConnectionHandler(), new Utility.DefaultLogger(), new Utility.DefaultLogger());
+        ApiController ap = new ApiController(new DefaultConnectionHandler(),
+                new Utility.DefaultLogger(), new Utility.DefaultLogger());
         apiController = ap;
         CountDownLatch l = new CountDownLatch(1);
 
@@ -54,7 +50,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
         try {
 //            pr(" using port 4001 GATEWAY");
 //            ap.connect("127.0.0.1", TWS_PORT, 5, "");
-            ap.connect("127.0.0.1", PORT_TO_USE, 5, "");
+            ap.connect("127.0.0.1", PORT_TO_USE, 6, "");
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
         } catch (IllegalStateException ex) {
@@ -64,7 +60,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 
         try {
             l.await();
-            pr("connected");
         } catch (InterruptedException e) {
             outputToGeneral("error in connection:", e);
         }
@@ -133,16 +128,15 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 
     private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
-//        int id = tradeID.incrementAndGet();
         int id = getSessionMasterTradeID();
         pr("trade ID is ", id);
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
-        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
+//        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
+//        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         pr(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
+                "px:", bidPrice, "size:", sizeToBuy);
     }
 
 
