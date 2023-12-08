@@ -660,7 +660,7 @@ public class TradingUtility {
         double minValue = m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
                 .limit(5).skip(1).mapToDouble(e -> e.getValue().getLow()).average().getAsDouble();
         double last = m.lastEntry().getValue().getClose();
-        return (double) round((last - minValue) / (maxValue - minValue) * 100);
+        return Math.max(0.0, Math.min(100, round((last - minValue) / (maxValue - minValue) * 100)));
     }
 
     public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
@@ -744,7 +744,7 @@ public class TradingUtility {
     }
 
     public static void outputToSymbol(String symbol, Object... cs) {
-        pr("output Symbol:", symbol, str(cs));
+//        pr("output Symbol:", symbol, str(cs));
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
         }
