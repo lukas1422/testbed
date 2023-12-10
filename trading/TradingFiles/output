@@ -81,14 +81,7 @@ WMT *stats 1d: print stats:empty
 openOrder ERROR: 5:40:40 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.jfarm
 5:40:40 Conn error ID: -1 code: 2108 msg: Market data farm connection is inactive but should be available upon demand.jfarm rejectJson:  NULL 
 openOrder ERROR: 5:40:40 orderId: -1  errorCode: 2108  msg: Market data farm connection is inactive but should be available upon demand.jfarm
-5:40:40 Conn error ID: -1 code: 2108 msg: Market data farm connection is inactive but should be available upon demand.jfarm rejectJson:  NULL 
-5:41:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:42:44 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:44:04 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:45:15 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:46:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:47:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-5:48:48 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+5:40:40 Conn error ID: -1 code: 2108 msg: Market data farm connection is inactive but should be available upon demand.jfarm rejectJson:  NULL
 KO 5:49:31 last Live price feed time: 12-8 5:39 px: 58.62
 KO 5:49:31 *3dP%: 61.0 *1dP%: 0.0
 KO stats 3d: *n: 1840 *max: 58.88 [ 12-7 12:20 ] *min 58.215 [ 12-6 10:09 ] *rng 1.1 % *1st Key: [ 12-6 4:29 ] *last: [ 12-8 5:39 ]
@@ -22417,58 +22410,7 @@ MCD stats 3d: *n: 2021 *max: 288.1 [ 12-7 14:02 ] *min 283.455 [ 12-6 9:15 ] *rn
 MCD *stats 1d: *n: 624 *max: 287.8025 [ 12-8 10:17 ] *min 285.1 [ 12-8 15:06 ] *rng 0.9 % *1st Key: [ 12-8 8:00 ] *last: [ 12-8 19:39 ]
 PG 23:22:50 last Live price feed time: 12-8 18:22 px: 145.15
 PG 23:22:50 *3dP%: 22.0 *1dP%: 30.0
-PG stats 3d: *n: 2461 *max: 147.28 [ 12-6 8:00 ] *min 144.565 [ 12-8 11:52 ] *rng 1.9 % *1st Key: [ 12-6 4:56 ] *last: [ 12-8 18:22 ]
-PG *stats 1d: *n: 837 *max: 146.5 [ 12-8 4:56 ] *min 144.565 [ 12-8 11:52 ] *rng 1.3 % *1st Key: [ 12-8 4:26 ] *last: [ 12-8 18:22 ]
-SPY 23:22:50 last Live price feed time: 12-8 19:59 px: 460.59
-SPY 23:22:50 *3dP%: 98.0 *1dP%: 98.0
-SPY stats 3d: *n: 2823 *max: 460.695 [ 12-8 15:39 ] *min 454.26 [ 12-7 4:20 ] *rng 1.4 % *1st Key: [ 12-6 4:03 ] *last: [ 12-8 19:59 ]
-SPY *stats 1d: *n: 906 *max: 460.695 [ 12-8 15:39 ] *min 456.0525 [ 12-8 8:30 ] *rng 1.0 % *1st Key: [ 12-8 4:00 ] *last: [ 12-8 19:59 ]
-UL 23:22:50 last Live price feed time: 12-8 18:22 px: 47.45
-UL 23:22:50 *3dP%: 19.0 *1dP%: 28.0
-UL stats 3d: *n: 2777 *max: 48.06 [ 12-6 9:30 ] *min 47.31 [ 12-8 12:15 ] *rng 1.6 % *1st Key: [ 12-6 4:06 ] *last: [ 12-8 18:22 ]
-UL *stats 1d: *n: 863 *max: 47.807500000000005 [ 12-8 8:44 ] *min 47.31 [ 12-8 12:15 ] *rng 1.1 % *1st Key: [ 12-8 4:00 ] *last: [ 12-8 18:22 ]
-WMT 23:22:50 last Live price feed time: 12-8 19:41 px: 150.9
-WMT 23:22:50 *3dP%: 12.0 *1dP%: 27.0
-WMT stats 3d: *n: 2545 *max: 155.6219 [ 12-6 8:58 ] *min 150.2475 [ 12-8 14:30 ] *rng 3.6 % *1st Key: [ 12-6 4:03 ] *last: [ 12-8 19:41 ]
-WMT *stats 1d: *n: 663 *max: 152.7 [ 12-8 8:00 ] *min 150.2475 [ 12-8 14:30 ] *rng 1.6 % *1st Key: [ 12-8 7:31 ] *last: [ 12-8 19:41 ]
-23:23:56 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:25:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:26:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:27:23 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:28:40 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:30:00 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:31:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:32:20 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:33:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-23:34:37 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
-openOrder ERROR: 23:35:21 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:21 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:27 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:27 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:32 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:32 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:36 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:36 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:42 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:42 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:45 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:45 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:35:57 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:35:57 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:36:09 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:36:09 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:36:22 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:36:22 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:36:44 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:36:44 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:37:02 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:37:02 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:37:33 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:37:33 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:38:12 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:38:12 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
-openOrder ERROR: 23:38:49 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
-23:38:49 Conn error ID: -1 code: 1100 msg: Connectivity between IB and Trader Workstation has been lost. rejectJson:  NULL 
+
 openOrder ERROR: 23:39:06 orderId: -1  errorCode: 502  msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
 23:39:06 Conn error ID: -1 code: 502 msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002 rejectJson:  NULL 
 23:39:06 Conn:disonnected

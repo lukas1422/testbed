@@ -176,8 +176,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
-            outputToSymbol(symb, t.format(simpleHrMinSec),
-                    "order blocked:", symb, openOrders.get(symb).values(), "**statusMap:", orderStatusMap);
+            outputToSymbol(symb, t.format(simpleHrMinSec), "order blocked:", symb,
+                    openOrders.get(symb).values(), "**statusMap:", orderStatusMap.get(symb));
             return;
         }
 
@@ -211,9 +211,9 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "buyMore:",
                             "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
-                            "px/cost:", priceDividedByCost(price, symb), "refill Price:"
-                            , getRequiredRefillPoint(symb) * price,
-                            "average range:", averageDailyRange.getOrDefault(symb, 0.0));
+                            "px/cost:", round5Digits(priceDividedByCost(price, symb)), "refill Price:"
+                            , getRequiredRefillPoint(symb) * costMap.get(symb),
+                            "avgRng:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
@@ -248,7 +248,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 } else {
                     threeDayData.get(symb).put(t.truncatedTo(MINUTES), new SimpleBar(price));
                 }
-
                 if (symbolPosMap.containsKey(symb)) {
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }

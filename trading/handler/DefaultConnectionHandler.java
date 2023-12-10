@@ -9,6 +9,7 @@ import static Trader.TradingUtility.outputToGeneral;
 import static Trader.TradingUtility.usTime;
 import static api.TradingConstants.simpleHrMinSec;
 import static utility.Utility.pr;
+import static utility.Utility.str;
 
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
     @Override
@@ -35,7 +36,8 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
         outputToGeneral(usTime(),
-                "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg, "rejectJson:", advancedORderRejectJson);
+                "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg, advancedORderRejectJson == null ? "" :
+                        str("", advancedORderRejectJson));
     }
 
     @Override
