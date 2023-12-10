@@ -2,6 +2,10 @@ package Trader;
 
 import client.OrderStatus;
 
+import java.time.LocalDateTime;
+
+import static Trader.TradingUtility.getESTLocalDateTimeNow;
+import static java.lang.Math.pow;
 import static utility.Utility.pr;
 
 public class Sandpaper {
@@ -16,8 +20,8 @@ public class Sandpaper {
 //        pr(Duration.between(lt2, lt1).getSeconds()<11);
 //
 //    }
-
-        OrderStatus a = OrderStatus.Filled;
-        pr(a.isFinished());
+        LocalDateTime t = getESTLocalDateTimeNow();
+        int id = (int) (t.getYear() * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
+        pr(t.getYear()*pow(10,7)+t.getMonthValue()*pow(10,5)+t.getDayOfMonth()*pow(10,3)+1);
     }
 }

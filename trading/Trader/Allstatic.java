@@ -88,9 +88,14 @@ public class Allstatic {
     static int getSessionMasterTradeID() {
         LocalDateTime t = getESTLocalDateTimeNow();
 //        return (t.getYear()-2000)* pow(10,10)+t.getMonthValue()*pow(10,8)+
-        pr(t, "get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond(), "ID:",
-                (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond()));
-        return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
+//        pr(t, "get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond(), "ID:",
+//                (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond()));
+//        return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
+        pr("year is ", (t.getYear() - 2000) * pow(10, 7), "month:", t.getMonthValue() * pow(10, 5), "day:", t.getDayOfMonth() * pow(10, 3));
+        int id = (int) ((t.getYear() - 2000) * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
+//        int id = (int) (t.getYear() * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
+        outputToGeneral("MasterTradeID is:", id);
+        return id;
     }
 
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {

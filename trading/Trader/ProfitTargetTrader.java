@@ -30,7 +30,7 @@ public class ProfitTargetTrader implements LiveHandler,
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     static final int MASTER_TRADE_ID = getSessionMasterTradeID();
-    static volatile AtomicInteger tradeID = new AtomicInteger(MASTER_TRADE_ID);
+    static volatile AtomicInteger tradeID = new AtomicInteger(MASTER_TRADE_ID + 1);
 
 
     public static final int GATEWAY_PORT = 4001;
@@ -565,6 +565,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, "*stats 1d:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usTime())));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*****Ending*****", usDateTime())));
     }
 }
