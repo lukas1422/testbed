@@ -208,8 +208,7 @@ public class ProfitTargetTrader implements LiveHandler,
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb) && threeDayPerc < 40) {
                     outputToSymbol(symb, "****REFILL****", t.format(f));
-                    outputToSymbol(symb, "buyMore:",
-                            "3dp:", threeDayPerc, "1dp:", oneDayPerc,
+                    outputToSymbol(symb, "buyMore:", "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
                             "px/cost:", round5Digits(priceDividedByCost(price, symb)), "refill Price:"
                             , getRequiredRefillPoint(symb) * costMap.get(symb),
@@ -221,7 +220,7 @@ public class ProfitTargetTrader implements LiveHandler,
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
-                outputToSymbol(symb, "****CUT****", t.format(f1));
+                outputToSymbol(symb, "****CUT****", t.format(f));
                 outputToSymbol(symb, "Sell 1dP%:", oneDayPerc, "3dp:", threeDayPerc,
                         "priceOverCost:", priceOverCost,
                         "requiredMargin:", getRequiredProfitMargin(symb), "avgRng:",
