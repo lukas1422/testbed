@@ -2121,7 +2121,7 @@ SPY 10:18:02 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={
 UL 10:18:02 order blocked: UL [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
 SPY 10:18:03 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
 SPY 10:18:07 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
-10:18:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL 
+10:18:08 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk rejectJson:  NULL
 SPY 10:18:09 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
 SPY 10:18:10 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
 SPY 10:18:10 order blocked: SPY [] **statusMap: {KO={}, UL={83250=Created}, PG={}, SPY={83251=Created}, WMT={}, MCD={}}
@@ -22487,3 +22487,142 @@ WMT 2:22:50 *3dP%: 12.0 *1dP%: 27.0
 WMT stats 3d: *n: 2545 *max: 155.6219 [ 12-6 8:58 ] *min 150.2475 [ 12-8 14:30 ] *rng 3.6 % *1st Key: [ 12-6 4:03 ] *last: [ 12-8 19:41 ]
 WMT *stats 1d: *n: 663 *max: 152.7 [ 12-8 8:00 ] *min 150.2475 [ 12-8 14:30 ] *rng 1.6 % *1st Key: [ 12-8 7:31 ] *last: [ 12-8 19:41 ]
 *****Ending***** 12-9 2:31
+4:28:58 Conn: account list: [U7998608]
+4:28:58 Conn:connected
+4:28:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:28:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:28:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:28:58 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:28:58 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:28:58 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:29:08 global cancel orders
+req live orders complete
+order sent 4:29:08 WMT orderID: 10000 orderType: LMT action: BUY totalQuantity: 1 filledQty:  limitPrice: 50.0
+4:29:17 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+openOrder ERROR: 4:29:26 orderId: 10000  errorCode: 202  msg: Order Canceled - reason:
+4:29:26 Conn error ID: 10000 code: 202 msg: Order Canceled - reason: 
+4:29:36 Conn:connected
+4:29:36 Conn: account list: [U7998608]
+4:29:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:29:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:29:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:29:36 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:29:36 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:29:36 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:29:46 global cancel orders
+req live orders complete
+order sent 4:29:46 WMT orderID: 9999 orderType: LMT action: BUY totalQuantity: 1 filledQty:  limitPrice: 50.0
+openOrder ERROR: 4:29:46 orderId: 9999  errorCode: 103  msg: Duplicate order id
+4:29:46 Conn error ID: 9999 code: 103 msg: Duplicate order id 
+4:30:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:31:14 Conn: account list: [U7998608]
+4:31:14 Conn:connected
+4:31:14 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:31:14 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:31:14 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:31:14 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:31:14 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:31:14 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:31:24 global cancel orders
+req live orders complete
+order sent 4:31:24 WMT orderID: 9998 orderType: LMT action: BUY totalQuantity: 1 filledQty:  limitPrice: 50.0
+openOrder ERROR: 4:31:32 orderId: 9998  errorCode: 202  msg: Order Canceled - reason:
+4:31:32 Conn error ID: 9998 code: 202 msg: Order Canceled - reason: 
+4:31:32 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:31:38 Conn:connected
+4:31:38 Conn: account list: [U7998608]
+4:31:38 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:31:38 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:31:38 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:31:38 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:31:38 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:31:38 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:31:48 global cancel orders
+req live orders complete
+order sent 4:31:48 WMT orderID: 9997 orderType: LMT action: BUY totalQuantity: 1 filledQty:  limitPrice: 50.0
+openOrder ERROR: 4:31:48 orderId: 9997  errorCode: 103  msg: Duplicate order id
+4:31:48 Conn error ID: 9997 code: 103 msg: Duplicate order id 
+4:32:06 Conn: account list: [U7998608]
+4:32:06 Conn:connected
+4:32:06 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:32:06 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:32:06 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:32:06 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:32:06 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:32:06 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:32:16 global cancel orders
+req live orders complete
+order sent 4:32:16 WMT orderID: 9997 orderType: LMT action: BUY totalQuantity: 1 filledQty:  limitPrice: 50.0
+openOrder ERROR: 4:32:22 orderId: 9997  errorCode: 202  msg: Order Canceled - reason:
+4:32:22 Conn error ID: 9997 code: 202 msg: Order Canceled - reason: 
+4:32:53 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:33:57 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:35:05 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:36:12 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:37:26 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:38:29 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:39:43 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:40:55 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+MasterTradeID is: 231211001
+*****START***** HK TIME: 17:41:31 EST: 4:41:31 MASTER ID: 231211001
+SPY ****************STARTS 12-11 4:41
+WMT ****************STARTS 12-11 4:41
+UL ****************STARTS 12-11 4:41
+PG ****************STARTS 12-11 4:41
+MCD ****************STARTS 12-11 4:41
+KO ****************STARTS 12-11 4:41
+4:41:31 Conn:connected
+cancelling all orders on start up
+4:41:31 global cancel orders
+4:41:31 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usbond 
+4:41:31 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm.nj 
+4:41:31 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:hfarm 
+4:41:31 Conn error ID: -1 code: 2104 msg: Market data farm connection is OK:usfarm 
+4:41:31 Conn: account list: [U7998608]
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:euhmds 
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds.nj 
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:cashhmds 
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:hkhmds 
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:ushmds 
+4:41:31 Conn error ID: -1 code: 2106 msg: HMDS data farm connection is OK:fundfarm 
+4:41:31 Conn error ID: -1 code: 2157 msg: Sec-def data farm connection is broken:secdefhk 
+4:41:31 TradeReportEnd: all executions:
+req live orders complete
+SPY updating position: 4:41:33 position: 5 cost: 456.15896
+KO updating position: 4:41:33 position: 10 cost: 58.60523
+UL updating position: 4:41:33 position: 45 cost: 48.0603889
+WMT updating position: 4:41:33 position: 25 cost: 158.355032
+PG updating position: 4:41:33 position: 5 cost: 146.83906
+KO POS COST 10 58.60523
+MCD POS COST 0 0.0
+PG POS COST 5 146.83906
+SPY POS COST 5 456.15896
+UL POS COST 45 48.0603889
+WMT POS COST 25 158.355032
+openOrderEnd: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} ***orderStatus: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+*****Ending***** 12-11 4:41

@@ -32,7 +32,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
     public static final int TWS_PORT = 7496;
     public static final int PORT_TO_USE = TWS_PORT;
 
-//    static Contract tencent = generateHKStockContract("700");
+    //    static Contract tencent = generateHKStockContract("700");
     static Contract wmt = generateUSStockContract("WMT");
 
 
@@ -128,12 +128,13 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 
     private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
-        int id = getSessionMasterTradeID()+10000000;
+        int id =9997;
         pr("trade ID is ", id);
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
 //        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
 //        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
+//        apiController.
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         pr(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy);
