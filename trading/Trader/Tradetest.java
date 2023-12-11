@@ -128,7 +128,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 
     private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
-        int id =9997;
+        int id = 9997;
         pr("trade ID is ", id);
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
@@ -186,7 +186,8 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
         test1.connectAndReqPos();
 //        testTrade(wmt, 250, getESTLocalDateTimeNow(), Decimal.get(5));
 //        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
-        es.schedule(() -> testTrade(wmt, 50, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
+        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
+
 
     }
 }

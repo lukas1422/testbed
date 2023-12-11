@@ -762,6 +762,17 @@ public class TradingUtility {
         return Decimal.get(5);
     }
 
+    public static Decimal getSizeFromPrice(double price, double position) {
+        if (position > 0) {
+            return Decimal.get(5);
+        }
+
+        if (price < 100) {
+            return Decimal.get(10);
+        }
+        return Decimal.get(5);
+    }
+
     public static LocalTime executionToUSTime(String time) {
         return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
                 withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();

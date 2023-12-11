@@ -161,11 +161,15 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
-        pr(symb, "check delta impact", "aggDelta<Limit:", aggregateDelta < DELTA_LIMIT, "Current+Inc<Limit:"
-                , symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
-        return aggregateDelta < DELTA_LIMIT && (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
+        double position = symbolPosMap.get(symb).longValue();
+        double addition = getSizeFromPrice(price, position).longValue() * price;
+
+        pr(symb, "check delta impact", "aggDelta+addition<Delta Limit:", aggregateDelta + addition < DELTA_LIMIT,
+                "Current+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                        getSizeFromPrice(price, position).longValue() * price < DELTA_LIMIT_EACH_STOCK);
+        return aggregateDelta + addition < DELTA_LIMIT &&
+                (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                        addition < DELTA_LIMIT_EACH_STOCK);
     }
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
@@ -216,15 +220,15 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        } else if (oneDayPerc > 80 && position.longValue() > 0) {
+        } else if (oneDayPerc > 80 && threeDayPerc > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(f));
                 outputToSymbol(symb, "Sell 1dP%:", oneDayPerc, "3dp:", threeDayPerc,
-                        "priceOverCost:", priceOverCost,
-                        "requiredMargin:", getRequiredProfitMargin(symb), "avgRng:",
-                        averageDailyRange.getOrDefault(symb, 0.0));
+                        "priceOverCost:", round5Digits(priceOverCost),
+                        "requiredMargin:", round5Digits(getRequiredProfitMargin(symb)), "avgRng:",
+                        round5Digits(averageDailyRange.getOrDefault(symb, 0.0)));
                 inventoryCutter(ct, price, t);
             }
         }
@@ -251,6 +255,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
                 tryToTrade(ct, price, t);
+                apiController.client().reqIds(-1);
+//                apiController.
                 break;
             case BID:
                 bidMap.put(symb, price);
@@ -422,8 +428,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status() == Filled) {
-            outputToFills(symb, usTime(), "filled", order);
-            outputToSymbol(symb, usTime(), "filled", order);
+            outputToFills(symb, usDateTime(), "filled", order);
+            outputToSymbol(symb, usDateTime(), "filled", order);
         }
 
         if (orderState.status().isFinished()) {
