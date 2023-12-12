@@ -35,7 +35,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = TWS_PORT;
+    public static final int PORT_TO_USE = GATEWAY_PORT;
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
@@ -241,7 +241,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr(t.format(simpleHrMinSec), "px::", symb, price);
+                pr(t.format(simpleHrMinSec), "last px::", symb, price);
                 latestPriceMap.put(symb, price);
                 liveData.get(symb).put(t, price);
                 latestPriceTimeMap.put(symb, getESTLocalDateTimeNow());
@@ -501,14 +501,14 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.get(tradeKey).add(new ExecutionAugmented(symb, execution));
 
-        outputToSymbol(symb, usTime(), "tradeReport time:",
+        outputToSymbol(symb, usDateTime(), "tradeReport time:",
                 executionToUSTime(execution.time()), execution.side(), "exec price:",
                 execution.price(), "shares:", execution.shares(), "avgExecPrice:", execution.avgPrice());
     }
 
     @Override
     public void tradeReportEnd() {
-        outputToGeneral(usTime(), "TradeReportEnd: all executions:");
+        outputToGeneral(usDateTime(), "TradeReportEnd: all executions:");
         tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
                 .collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
                         Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
@@ -563,7 +563,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "openOrders", openOrders.get(symb));
                 }
-                outputToSymbol(symb, usTime(), "*3dP%:", threeDayPctMap.getOrDefault(symb, 0.0),
+                outputToSymbol(symb, usDateTime(), "*3dP%:", threeDayPctMap.getOrDefault(symb, 0.0),
                         "*1dP%:", oneDayPctMap.getOrDefault(symb, 0.0));
                 outputToSymbol(symb, "stats 3d:", printStats(threeDayData.get(symb)));
                 outputToSymbol(symb, "*stats 1d:", printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
