@@ -35,7 +35,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = GATEWAY_PORT;
+    public static final int PORT_TO_USE = TWS_PORT;
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
