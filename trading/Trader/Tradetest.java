@@ -30,14 +30,14 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = TWS_PORT;
+    public static final int PORT_TO_USE = GATEWAY_PORT;
 
     //    static Contract tencent = generateHKStockContract("700");
     static Contract wmt = generateUSStockContract("WMT");
 
 
     private Tradetest() {
-        registerContractAll(wmt);
+//        registerContractAll(wmt);
     }
 
     private void connectAndReqPos() {
@@ -71,7 +71,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 //            }, 10L, TimeUnit.SECONDS);
 //        });
         es.schedule(() -> {
-            apiController.cancelAllOrders();
+//            apiController.cancelAllOrders();
             apiController.reqLiveOrders(this);
         }, 10L, TimeUnit.SECONDS);
     }
@@ -186,7 +186,7 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
         test1.connectAndReqPos();
 //        testTrade(wmt, 250, getESTLocalDateTimeNow(), Decimal.get(5));
 //        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
-        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
+//        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
 
 
     }

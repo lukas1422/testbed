@@ -35,7 +35,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = TWS_PORT;
+    public static final int PORT_TO_USE = GATEWAY_PORT;
 
     public static Map<String, Double> averageDailyRange = new HashMap<>();
 
@@ -455,17 +455,33 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
-        outputToGeneral(usTime(), "openOrder orderStatus callback:", "orderId:", orderId, "OrderStatus:",
+        orderStatusMap.forEach((k, v) -> {
+            if (v.containsKey(orderId)) {
+                orderStatusMap.get(k).put(orderId, status);
+                outputToSymbol(k, usTime(), "OrderStatus::", "orderID:", orderId,
+                        "status:", status, "filled:", filled, "remaining:", remaining,
+                        "avgFillPrice:", avgFillPrice, "clientID:", clientId);
+                outputToSymbol("Orderstatus::", status);
+            } else {
+                outputToError(usTime(), "orphan order:", orderId,
+                        "status:", status, "filled:", filled, "remaining:", remaining,
+                        "avgFillPrice:", avgFillPrice, "clientID:", clientId);
+            }
+        });
+
+        outputToGeneral(usTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+                "OrderStatus:",
                 status, "filled:", filled, "remaining:", remaining,
                 "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToSymbol(k, usTime(), "openOrder orderStatus " +
+                    outputToSymbol(k, usTime(), "openOrder orderStatus:", status,
                             "Callback: deleting filled from open orders", openOrders);
-                    outputToSymbol(k, "status:", status,
-                            "removing order from openOrders. OrderID:", orderId, "order details:", v.get(orderId),
+                    outputToSymbol(k, usTime(), "status:", status,
+                            "removing order from openOrders. OrderID:", orderId,
+                            "order details:", v.get(orderId),
                             "remaining:", remaining);
                     v.remove(orderId);
                     outputToSymbol(k, "remaining open orders for ", k, v);

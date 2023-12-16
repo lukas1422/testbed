@@ -43,7 +43,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     @Override
     public void orderState(OrderState orderState) {
-        outputToGeneral(symbol,"orderHandler/Orderstate:", orderState);
+        outputToSymbol(symbol, "orderHandler/Orderstate:", orderState);
 //        LocalDateTime usTimeNow = getESTLocalDateTimeNow();
 //        if (orderSubmitted.get(symbol).containsKey(tradeID)) {
 //            orderSubmitted.get(symbol).get(tradeID).setAugmentedOrderStatus(orderState.status());
@@ -77,17 +77,17 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToGeneral("orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(f),
+        outputToSymbol(symbol, "orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(f),
                 "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice);
     }
 
     @Override
     public void handle(int errorCode, String errorMsg) {
         try {
-            outputToGeneral("ERROR in order handler:", orderID, "errorcode:", errorCode, "errormsg:", errorMsg
+            outputToSymbol(symbol, "ERROR in order handler:", orderID, "errorcode:", errorCode, "errormsg:", errorMsg
                     , orderSubmitted.get(symbol).get(orderID));
         } catch (NullPointerException ex) {
-            outputToGeneral("tradeID not in orderSubmitted");
+            outputToSymbol(symbol, "tradeID not in orderSubmitted");
         }
     }
 }
