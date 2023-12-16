@@ -1,12 +1,10 @@
 package handler;
 
 import controller.ApiController;
-import Trader.TradingUtility;
 
 import java.util.List;
 
 import static Trader.TradingUtility.*;
-import static api.TradingConstants.simpleHrMinSec;
 import static utility.Utility.pr;
 import static utility.Utility.str;
 
