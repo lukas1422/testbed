@@ -423,7 +423,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         pr("openOrder call back");
         String symb = ibContractToSymbol(contract);
-        outputToSymbol(symb, usTime(), "openOrder callback:", order, "orderState status:", orderState.status());
+        outputToSymbol(symb, usTime(), "openOrder callback:", order, "orderState.status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
@@ -476,28 +476,28 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.forEach((k, v) -> {
             if (v.containsKey(orderId)) {
                 orderStatusMap.get(k).put(orderId, status);
-                outputToSymbol(k, usTime(), "OrderStatus callback::", "orderID:", orderId,
+                outputToSymbol(k, usDateTime(), "OrderStatus callback::", "orderID:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "avgFillPrice:", avgFillPrice, "clientID:", clientId);
                 outputToSymbol("Orderstatus::", status);
             } else {
-                outputToError(usTime(),
+                outputToError(usDateTime(),
                         "orderstatus Callback: orderID not in orderStatusMap:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "avgFillPrice:", avgFillPrice, "clientID:", clientId);
             }
         });
 
-        outputToGeneral(usTime(), "openOrder orderStatus callback:", "orderId:", orderId,
-                "OrderStatus:", status, "filled:", filled, "remaining:", remaining,
+        outputToGeneral(usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+                "status:", status, "filled:", filled, "remaining:", remaining,
                 "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToSymbol(k, usTime(), "openOrder orderStatus:", status,
+                    outputToSymbol(k, usDateTime(), "openOrder orderStatus:", status,
                             "Callback: deleting filled from open orders", openOrders);
-                    outputToSymbol(k, usTime(), "status:", status,
+                    outputToSymbol(k, usDateTime(), "status:", status,
                             "removing order from openOrders. OrderID:", orderId,
                             "order details:", v.get(orderId),
                             "remaining:", remaining);
@@ -522,6 +522,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void handle(int orderId, int errorCode, String errorMsg) {
         outputToError("openOrder Error", usDateTime(), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
+
         if (errorCode == 2157) {
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
             return;
