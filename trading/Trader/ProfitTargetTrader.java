@@ -255,7 +255,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
                 tryToTrade(ct, price, t);
-                apiController.client().reqIds(-1);
+//                apiController.client().reqIds(-1);
 //                apiController.
                 break;
             case BID:
@@ -493,10 +493,15 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
+
+        outputToError("openOrder Error", usDateTime(), "orderId:",
+                orderId, " errorCode:", errorCode, " msg:", errorMsg);
+
         if (errorCode == 2157) {
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
             return;
         }
+
         outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
@@ -568,7 +573,8 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb,
-                        latestPriceTimeMap.containsKey(symb) ? str(usTime(), "last Live price feed time:",
+                        latestPriceTimeMap.containsKey(symb) ? str(usTime(),
+                                "last Live price feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
                                 , "px:", latestPriceMap.getOrDefault(symb, 0.0)) : "no live feed");
                 if (!orderStatusMap.get(symb).isEmpty()) {

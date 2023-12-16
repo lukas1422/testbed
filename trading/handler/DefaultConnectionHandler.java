@@ -5,8 +5,7 @@ import Trader.TradingUtility;
 
 import java.util.List;
 
-import static Trader.TradingUtility.outputToGeneral;
-import static Trader.TradingUtility.usTime;
+import static Trader.TradingUtility.*;
 import static api.TradingConstants.simpleHrMinSec;
 import static utility.Utility.pr;
 import static utility.Utility.str;
@@ -30,7 +29,8 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
 
     @Override
     public void error(Exception e) {
-        outputToGeneral("Conn error:", usTime(), e);
+        outputToError("Connection error", usDateTime(), e);
+        outputToGeneral("Conn error:", usDateTime(), e);
     }
 
     @Override
