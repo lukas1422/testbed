@@ -36,10 +36,10 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     //    static Contract tencent = generateHKStockContract("700");
     static Contract wmt = generateUSStockContract("WMT");
 
-
-    private Tradetest() {
-//        registerContractAll(wmt);
-    }
+//
+//    private Tradetest() {
+////        registerContractAll(wmt);
+//    }
 
     private void connectAndReqPos() {
         ApiController ap = new ApiController(new DefaultConnectionHandler(),
@@ -72,7 +72,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
 //            }, 10L, TimeUnit.SECONDS);
 //        });
         es.schedule(() -> {
-//            apiController.cancelAllOrders();
             apiController.reqLiveOrders(this);
         }, 10L, TimeUnit.SECONDS);
     }
@@ -111,7 +110,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
         pr("vol::", symbol, vol, t);
-
     }
 
     @Override
@@ -121,11 +119,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     @Override
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
     }
-    //livedata end
-
-
-    //position start
-
 
     private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
         String symb = ibContractToSymbol(ct);
@@ -133,21 +126,11 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
         pr("trade ID is ", id);
         double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
         Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
-//        orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-//        orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
-//        apiController.
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         pr(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy);
     }
 
-
-    //request realized pnl
-
-    //Execution details *****************
-
-
-    //Execution end*********************************
 
     //Open Orders ***************************
     @Override
@@ -164,11 +147,9 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
-
         pr(usTime(), "openOrder orderStatus callback:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice
-                , "clientID:", clientId);
-
+                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice,
+                "lastFillPrice:", lastFillPrice, "clientID:", clientId);
     }
 
     @Override
@@ -188,8 +169,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
 //        testTrade(wmt, 250, getESTLocalDateTimeNow(), Decimal.get(5));
 //        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
 //        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
-
-
     }
 
     @Override
