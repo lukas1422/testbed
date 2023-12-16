@@ -456,10 +456,21 @@ public class ProfitTargetTrader implements LiveHandler,
                             int clientId, String whyHeld, double mktCapPrice) {
 
         String symb = findSymbolByID(orderId);
+        if (symb.equalsIgnoreCase("")) {
+            outputToError("orderID not found:", orderId);
+            return;
+        }
 
         if (status == Filled) {
             outputToFills(symb, usDateTime(), "orderStatus Callback:filled", orderId);
             outputToSymbol(symb, usDateTime(), "orderStatus Callback:filled", orderId);
+            if (openOrders.containsKey(symb) && openOrders.get(symb).containsKey(orderId)) {
+                outputToFills(symb, usDateTime(), openOrders.get(symb).get(orderId));
+            } else {
+                outputToError(symb, usDateTime(), "order not in openOrderMap. ID:", orderId,
+                        "status:", status, "filled:", filled, "remaining:", remaining,
+                        "px:", avgFillPrice, "clientID:", clientId);
+            }
         }
 
         orderStatusMap.forEach((k, v) -> {
