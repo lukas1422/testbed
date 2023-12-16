@@ -15,18 +15,18 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     public void connected() {
         pr(usTime(), "connected");
         if (getESTLocalDateTimeNow().getMinute() == 1 && getESTLocalDateTimeNow().getSecond() < 30) {
-            outputToGeneral(usTime(), "Conn:connected");
+            outputToGeneral(usDateTime(), "Conn:connected");
         }
     }
 
     @Override
     public void disconnected() {
-        outputToError(usTime(), "Conn:disconnected");
+        outputToError(usDateTime(), "Conn:disconnected");
     }
 
     @Override
     public void accountList(List<String> list) {
-        outputToGeneral(usTime(), "Conn: account list:", list);
+        outputToGeneral(usDateTime(), "Conn: account list:", list);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
 
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
-        outputToError(usTime(),
+        outputToError(usDateTime(),
                 "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg,
                 advancedORderRejectJson == null ? "" : str("", advancedORderRejectJson));
     }
