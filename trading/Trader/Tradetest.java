@@ -23,7 +23,8 @@ import static enums.AutoOrderType.INVENTORY_ADDER;
 import static utility.Utility.*;
 import static utility.Utility.pr;
 
-public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
+public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
+        ApiController.ITradeReportHandler {
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
@@ -189,5 +190,28 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler {
 //        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
 
 
+    }
+
+    @Override
+    public void tradeReport(String tradeKey, Contract contract, Execution execution) {
+        String symb = ibContractToSymbol(contract);
+
+        if (symb.startsWith("hk")) {
+            return;
+        }
+
+        pr(symb, usDateTime(), "tradeReport time:",
+                executionToUSTime(execution.time()), execution.side(), "exec price:",
+                execution.price(), "shares:", execution.shares(), "avgExecPrice:", execution.avgPrice());
+    }
+
+    @Override
+    public void tradeReportEnd() {
+        pr("trade report end");
+    }
+
+    @Override
+    public void commissionReport(String tradeKey, CommissionReport commissionReport) {
+        pr("tradeKey, commission", tradeKey, commissionReport.commission());
     }
 }
