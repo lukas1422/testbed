@@ -13,31 +13,33 @@ import static utility.Utility.str;
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
     @Override
     public void connected() {
-        outputToGeneral(usTime(), "Conn:connected");
+        pr(usTime(), "connected");
+        if (getESTLocalDateTimeNow().getMinute() == 1 && getESTLocalDateTimeNow().getSecond() < 30) {
+            //avoid printing too much, check every hour
+            outputToGeneral(usTime(), "Conn:connected");
+        }
     }
 
     @Override
     public void disconnected() {
-        outputToGeneral(usTime(), "Conn:disonnected");
+        outputToError(usTime(), "Conn:disconnected");
     }
 
     @Override
     public void accountList(List<String> list) {
         outputToGeneral(usTime(), "Conn: account list:", list);
-//        pr(usTime(), "account list ", list);
     }
 
     @Override
     public void error(Exception e) {
         outputToError("Connection error", usDateTime(), e);
-        outputToGeneral("Conn error:", usDateTime(), e);
     }
 
     @Override
     public void message(int id, int errorCode, String errorMsg, String advancedORderRejectJson) {
-        outputToGeneral(usTime(),
-                "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg, advancedORderRejectJson == null ? "" :
-                        str("", advancedORderRejectJson));
+        outputToError(usTime(),
+                "Conn error ID:", id, "code:", errorCode, "msg:", errorMsg,
+                advancedORderRejectJson == null ? "" : str("", advancedORderRejectJson));
     }
 
     @Override

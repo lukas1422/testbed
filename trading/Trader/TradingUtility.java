@@ -242,8 +242,7 @@ public class TradingUtility {
 //    }
 
     public static void outputToError(Object... s) {
-        File output = new File("trading/TradingFiles/errors");
-        outputToFile(str(s), output);
+        outputToFile(str(s), new File("trading/TradingFiles/errors"));
         outputToGeneral(s);
     }
 
