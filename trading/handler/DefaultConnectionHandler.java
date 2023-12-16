@@ -15,7 +15,6 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     public void connected() {
         pr(usTime(), "connected");
         if (getESTLocalDateTimeNow().getMinute() == 1 && getESTLocalDateTimeNow().getSecond() < 30) {
-            //avoid printing too much, check every hour
             outputToGeneral(usTime(), "Conn:connected");
         }
     }

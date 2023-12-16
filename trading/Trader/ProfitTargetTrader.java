@@ -428,8 +428,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status() == Filled) {
-            outputToFills(symb, usDateTime(), "filled", order);
-            outputToSymbol(symb, usDateTime(), "filled", order);
+            outputToFills(symb, usDateTime(), "openOrderCallback:filled", order);
+            outputToSymbol(symb, usDateTime(), "openOrderCallback:filled", order);
         }
 
         if (orderState.status().isFinished()) {
@@ -455,23 +455,30 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
+        String symb = findSymbolByID(orderId);
+
+        if (status == Filled) {
+            outputToFills(symb, usDateTime(), "orderStatus Callback:filled", orderId);
+            outputToSymbol(symb, usDateTime(), "orderStatus Callback:filled", orderId);
+        }
+
         orderStatusMap.forEach((k, v) -> {
             if (v.containsKey(orderId)) {
                 orderStatusMap.get(k).put(orderId, status);
-                outputToSymbol(k, usTime(), "OrderStatus::", "orderID:", orderId,
+                outputToSymbol(k, usTime(), "OrderStatus callback::", "orderID:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "avgFillPrice:", avgFillPrice, "clientID:", clientId);
                 outputToSymbol("Orderstatus::", status);
             } else {
-                outputToError(usTime(), "orphan order:", orderId,
+                outputToError(usTime(),
+                        "orderstatus Callback: orderID not in orderStatusMap:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "avgFillPrice:", avgFillPrice, "clientID:", clientId);
             }
         });
 
         outputToGeneral(usTime(), "openOrder orderStatus callback:", "orderId:", orderId,
-                "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining,
+                "OrderStatus:", status, "filled:", filled, "remaining:", remaining,
                 "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status.isFinished()) {
@@ -489,6 +496,15 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
             });
         }
+    }
+
+    static String findSymbolByID(int id) {
+        for (String k : orderStatusMap.keySet()) {
+            if (orderStatusMap.get(k).containsKey(id)) {
+                return k;
+            }
+        }
+        return "";
     }
 
     @Override
