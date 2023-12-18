@@ -528,8 +528,8 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
-                orderId, " errorCode:", errorCode, " msg:", errorMsg);
+//        outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
+//                orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
 
     //request realized pnl
@@ -538,7 +538,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
-        if (symb.startsWith("hk")) {
+        if (symb.startsWith("hk") || symb.startsWith("USD")) {
             return;
         }
 
