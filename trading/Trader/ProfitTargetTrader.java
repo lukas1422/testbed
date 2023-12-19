@@ -47,6 +47,7 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract ko = generateUSStockContract("KO");
 
     private ProfitTargetTrader() {
+
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime(), "MASTER ID:", MASTER_TRADE_ID);
         pr("market start time today ", TRADING_START_TIME);
         pr("until market start time", Duration.between(TRADING_START_TIME,
@@ -103,6 +104,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     .average().orElse(0.0);
             pr("average range:", s, round5Digits(rng));
             averageDailyRange.put(s, rng);
+            outputToSymbol(s, usDateTime(),
+                    "profit margin required:", getRequiredProfitMargin(s));
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
@@ -131,6 +134,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
+        outputToSymbol(symb, "*******************************************");
         outputToSymbol(symb, "****************STARTS", usDateTime());
         symbolContractMap.put(symb, ct);
         targetStockList.add(symb);
@@ -288,7 +292,8 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToSymbol(symb, "updating position:", usTime(), "position:", position, "cost:", avgCost);
+            outputToSymbol(symb, "updating position:", usTime(),
+                    "position:", position, "cost:", avgCost);
         }
     }
 
@@ -576,8 +581,9 @@ public class ProfitTargetTrader implements LiveHandler,
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> outputToSymbol(symb, "1.commission report",
                             "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
-                            e2.getValue().getOrder().action() == Types.Action.SELL ? str("realized pnl:", e2.getKey(),
-                                    commissionReport.realizedPNL()) : "NO PNL"));
+                            e2.getValue().getOrder().action() == Types.Action.SELL ?
+                                    str("realized pnl:", e2.getKey(),
+                                            commissionReport.realizedPNL()) : "NO PNL"));
 
             orderSubmitted.get(symb).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
@@ -588,9 +594,8 @@ public class ProfitTargetTrader implements LiveHandler,
             });
         }
     }
+
     //Execution end*********************************
-
-
     //open orders end **********************
     public static void main(String[] args) {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
@@ -599,10 +604,11 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb,
-                        latestPriceTimeMap.containsKey(symb) ? str(usTime(),
+                        latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
                                 "last Live price feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
-                                , "px:", latestPriceMap.getOrDefault(symb, 0.0)) : "no live feed");
+                                , "px:", latestPriceMap.getOrDefault(symb, 0.0)) :
+                                str(usDateTime(), "no live feed"));
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
                             "orderStatus", orderStatusMap.get(symb));
