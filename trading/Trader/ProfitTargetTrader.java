@@ -410,9 +410,9 @@ public class ProfitTargetTrader implements LiveHandler,
     //Open Orders ***************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
-        pr("openOrder call back");
+
         String symb = ibContractToSymbol(contract);
-        outputToSymbol(symb, usTime(), "openOrder callback:", order, "orderState.status:", orderState.status());
+        outputToSymbol(symb, usDateTime(), "openOrder callback:", order, "orderState.status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
@@ -426,11 +426,12 @@ public class ProfitTargetTrader implements LiveHandler,
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
-            outputToSymbol(symb, usTime(), "openOrder callback:after removal." +
+            outputToSymbol(symb, usDateTime(), "openOrder callback:after removal." +
                     "open orders:", symb, openOrders.get(symb));
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
         }
+        openOrders.forEach((s, v) -> outputToSymbol(s, v));
     }
 
     @Override
@@ -453,6 +454,10 @@ public class ProfitTargetTrader implements LiveHandler,
             outputToError("orderID not found:", orderId);
             return;
         }
+
+        outputToSymbol(symb, usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+                "status:", status, "filled:", filled, "remaining:", remaining,
+                "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status == Filled) {
             outputToFills(symb, usDateTime(), "orderStatus Callback:filled.Order ID:", orderId);
