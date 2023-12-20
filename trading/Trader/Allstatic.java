@@ -46,8 +46,7 @@ public class Allstatic {
     public volatile static Map<String, Decimal> currentPositionMap = new TreeMap<>(String::compareTo);
     public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
     public volatile static Map<String, ConcurrentSkipListMap<LocalTime, TradeBlock>> tradesMap = new ConcurrentHashMap<>();
-    public static volatile NavigableMap<Integer, OrderAugmented> globalIdOrderMap =
-            new ConcurrentSkipListMap<>();
+    public static volatile NavigableMap<Integer, OrderAugmented> globalIdOrderMap = new ConcurrentSkipListMap<>();
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
     public static File outputFile = new File("trading/TradingFiles/output");

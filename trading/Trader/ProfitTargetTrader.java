@@ -32,7 +32,6 @@ public class ProfitTargetTrader implements LiveHandler,
     static final int MASTER_TRADE_ID = getSessionMasterTradeID();
     static volatile AtomicInteger tradeID = new AtomicInteger(MASTER_TRADE_ID + 1);
 
-
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
     public static final int PORT_TO_USE = GATEWAY_PORT;
@@ -80,11 +79,9 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (!threeDayData.containsKey(symb)) {
                     threeDayData.put(symb, new ConcurrentSkipListMap<>());
                 }
-
                 pr("requesting hist day data", symb);
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::todaySoFar, 3, Types.BarSize._1_min));
-
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::ytdOpen, () -> computeHistoricalData(symb)
                         , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
@@ -179,7 +176,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
-//            pr("not trading time");
             return;
         }
 
@@ -204,7 +200,6 @@ public class ProfitTargetTrader implements LiveHandler,
         double threeDayPerc = threeDayPctMap.get(symb);
         double oneDayPerc = oneDayPctMap.get(symb);
         Decimal position = symbolPosMap.get(symb);
-//        pr("Check Perc", symb, "3dp:", threeDayPerc, "1dp:", oneDayPerc, "pos:", position);
 
         if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
             if (position.isZero()) {
@@ -303,7 +298,6 @@ public class ProfitTargetTrader implements LiveHandler,
         pr(usTime(), "position end");
         targetStockList.forEach(symb -> {
             if (!symbolPosMap.containsKey(symb)) {
-//                outputToSymbol(symb, "no position");
                 symbolPosMap.put(symb, Decimal.ZERO);
             }
 
@@ -319,7 +313,7 @@ public class ProfitTargetTrader implements LiveHandler,
         });
     }
 
-    static void periodicCompute() {
+    private static void periodicCompute() {
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.getOrDefault(symb, 0.0) != 0.0) {
@@ -333,17 +327,6 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-//        targetStockList.forEach(s -> {
-//            double rng = ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).values().stream()
-//                    .mapToDouble(SimpleBar::getHLRange).average().orElse(0.0);
-////            pr("average range:", s, round5Digits(rng), "firstkey:",
-////                    ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).firstKey(),
-////                    "lastkey:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30))
-////                            .lastKey(), "size:", ytdDayData.get(s).tailMap(LocalDate.now().minusDays(30)).size());
-//            averageDailyRange.put(s, rng);
-////            pr("refill point:", round5Digits(getRequiredRefillPoint(s)));
-//        });
-
         targetStockList.forEach(symb -> {
             if (threeDayData.containsKey(symb) && !threeDayData.get(symb).isEmpty()) {
                 double threeDayPercentile = calculatePercentileFromMap(threeDayData.get(symb));
@@ -351,13 +334,11 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-//                if (symb.equalsIgnoreCase("WMT")) {
                 pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
                         "*1dP%:", oneDayPercentile, "last:",
                         latestPriceMap.getOrDefault(symb, 0.0), "*stats 1d:",
                         printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
                 pr("stats 3d:", printStats(threeDayData.get(symb)));
-//                }
             }
         });
 
@@ -463,6 +444,10 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
+        outputToGeneral(usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+                "status:", status, "filled:", filled, "remaining:", remaining,
+                "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
+
         String symb = findSymbolByID(orderId);
         if (symb.equalsIgnoreCase("")) {
             outputToError("orderID not found:", orderId);
@@ -470,8 +455,8 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (status == Filled) {
-            outputToFills(symb, usDateTime(), "orderStatus Callback:filled", orderId);
-            outputToSymbol(symb, usDateTime(), "orderStatus Callback:filled", orderId);
+            outputToFills(symb, usDateTime(), "orderStatus Callback:filled.Order ID:", orderId);
+            outputToSymbol(symb, usDateTime(), "orderStatus Callback:filled. Order ID:", orderId);
             if (openOrders.containsKey(symb) && openOrders.get(symb).containsKey(orderId)) {
                 outputToFills(symb, usDateTime(), openOrders.get(symb).get(orderId));
             } else {
@@ -496,9 +481,6 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-        outputToGeneral(usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
-                "status:", status, "filled:", filled, "remaining:", remaining,
-                "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
@@ -517,7 +499,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }
     }
 
-    static String findSymbolByID(int id) {
+    private static String findSymbolByID(int id) {
         for (String k : orderStatusMap.keySet()) {
             if (orderStatusMap.get(k).containsKey(id)) {
                 return k;
@@ -533,11 +515,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (errorCode == 2157) {
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
-            return;
         }
-
-//        outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
-//                orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
 
     //request realized pnl
