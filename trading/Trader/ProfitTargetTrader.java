@@ -168,7 +168,8 @@ public class ProfitTargetTrader implements LiveHandler,
         double position = symbolPosMap.get(symb).longValue();
         double addition = getSizeFromPrice(price, position).longValue() * price;
 
-        pr(symb, "check delta impact", "aggDelta+addition<Delta Limit:", aggregateDelta + addition < DELTA_LIMIT,
+        pr(symb, "check delta impact", "aggDelta+addition<Delta Limit:",
+                aggregateDelta + addition < DELTA_LIMIT,
                 "Current+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         getSizeFromPrice(price, position).longValue() * price < DELTA_LIMIT_EACH_STOCK);
         return aggregateDelta + addition < DELTA_LIMIT &&
@@ -292,7 +293,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (!contract.symbol().equals("USD") && targetStockList.contains(symb)) {
             symbolPosMap.put(symb, position);
             costMap.put(symb, avgCost);
-            outputToSymbol(symb, "updating position:", usTime(),
+            outputToSymbol(symb, "updating position:", usDateTime(),
                     "position:", position, "cost:", avgCost);
         }
     }
@@ -325,7 +326,9 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr(symb, "position:", symbolPosMap.get(symb),
                             "price", latestPriceMap.get(symb),
                             "cost:", r(costMap.get(symb)), "p/c-1",
-                            r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%");
+                            r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%",
+                            "1dp:", oneDayPctMap.getOrDefault(symb, 0.0),
+                            "3dp:", threeDayPctMap.getOrDefault(symb, 0.0));
                 }
             }
         });
@@ -348,13 +351,13 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                if (symb.equalsIgnoreCase("WMT")) {
-                    pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
-                            "*1dP%:", oneDayPercentile, "last:",
-                            latestPriceMap.getOrDefault(symb, 0.0), "*stats 1d:",
-                            printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
-                    pr("stats 3d:", printStats(threeDayData.get(symb)));
-                }
+//                if (symb.equalsIgnoreCase("WMT")) {
+                pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
+                        "*1dP%:", oneDayPercentile, "last:",
+                        latestPriceMap.getOrDefault(symb, 0.0), "*stats 1d:",
+                        printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+                pr("stats 3d:", printStats(threeDayData.get(symb)));
+//                }
             }
         });
 
@@ -605,7 +608,7 @@ public class ProfitTargetTrader implements LiveHandler,
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
-                                "last Live price feed time:",
+                                "last Live feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
                                 , "px:", latestPriceMap.getOrDefault(symb, 0.0)) :
                                 str(usDateTime(), "no live feed"));
