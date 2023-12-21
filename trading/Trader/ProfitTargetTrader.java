@@ -515,12 +515,11 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-        outputToError("openOrder Error", usDateTime(), "orderId:",
-                orderId, " errorCode:", errorCode, " msg:", errorMsg);
-
         if (errorCode == 2157) {
             pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
         }
+        outputToError("openOrder Error", usDateTime(), "orderId:",
+                orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
 
     //request realized pnl
