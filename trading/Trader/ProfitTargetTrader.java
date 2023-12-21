@@ -102,7 +102,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("average range:", s, round5Digits(rng));
             averageDailyRange.put(s, rng);
             outputToSymbol(s, usDateTime(),
-                    "profit margin required:", getRequiredProfitMargin(s));
+                    "profit margin required:", round5Digits(getRequiredProfitMargin(s)));
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
@@ -338,7 +338,7 @@ public class ProfitTargetTrader implements LiveHandler,
                         "*1dP%:", oneDayPercentile, "last:",
                         latestPriceMap.getOrDefault(symb, 0.0), "*stats 1d:",
                         printStats(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
-                pr("stats 3d:", printStats(threeDayData.get(symb)));
+                pr(symb, "stats 3d:", printStats(threeDayData.get(symb)));
             }
         });
 
@@ -588,11 +588,14 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
+                outputToSymbol(symb, "***Periodic***");
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
                                 "last Live feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
-                                , "px:", latestPriceMap.getOrDefault(symb, 0.0)) :
+                                , "px:", latestPriceMap.getOrDefault(symb, 0.0), "px/cost:",
+                                round5Digits(latestPriceMap.getOrDefault(symb, 0.0)
+                                        / costMap.getOrDefault(symb, 0.0))) :
                                 str(usDateTime(), "no live feed"));
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "periodic check:", usTime(),
