@@ -220,7 +220,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, Decimal.get(5));
                 }
             }
-        } else if (oneDayPerc > 80 && threeDayPerc > 80 && position.longValue() > 0) {
+        } else if (oneDayPerc > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
