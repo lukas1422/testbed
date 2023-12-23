@@ -46,7 +46,6 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract ko = generateUSStockContract("KO");
 
     private ProfitTargetTrader() {
-
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime(),
                 "MASTER ID:", MASTER_TRADE_ID);
         pr("market start time today ", TRADING_START_TIME);
@@ -185,7 +184,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
         if (!noBlockingOrders(symb)) {
             outputToSymbol(symb, t.format(simpleHrMinSec), "order blocked:", symb,
-                    openOrders.get(symb).values(), "**statusMap:", orderStatusMap.get(symb));
+                    openOrders.get(symb).values(), "orderStatus:", orderStatusMap.get(symb));
             return;
         }
 
@@ -471,27 +470,18 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         //put status in orderstatusmap
-        orderStatusMap.forEach((k, v) -> {
-            if (v.containsKey(orderId)) {
-                orderStatusMap.get(k).put(orderId, status);
-            }
-        });
+        orderStatusMap.get(symb).put(orderId, status);
+
 
         //removing finished orders
         if (status.isFinished()) {
-            openOrders.forEach((k, v) -> {
-                if (v.containsKey(orderId)) {
-                    outputToSymbol(k, usDateTime(), "*OrderStatus*", status,
-                            "deleting filled from open orders", openOrders);
-                    outputToSymbol(k, usDateTime(), "status:", status,
-                            "removing order from openOrders. OrderID:", orderId,
-                            "order details:", v.get(orderId),
-                            "remaining:", remaining);
-                    v.remove(orderId);
-                    outputToSymbol(k, "remaining open orders for", k, v);
-                    outputToSymbol(k, "print aLL open orders:", openOrders);
-                }
-            });
+            if (openOrders.get(symb).containsKey(orderId)) {
+                outputToSymbol(symb, usDateTime(), "*OrderStatus*", status,
+                        "deleting filled from open orders", openOrders);
+                openOrders.get(symb).remove(orderId);
+                outputToSymbol(symb, "remaining open orders for", status, openOrders.get(symb));
+                outputToSymbol(symb, "print aLL open orders:", openOrders);
+            }
         }
     }
 
@@ -539,7 +529,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void tradeReportEnd() {
-        outputToGeneral(usDateTime(), "TradeReportEnd: all executions:");
+        outputToGeneral(usDateTime(), "*TradeReportEnd*: all executions:", tradeKeyExecutionMap);
         tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
                 .collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
                         Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
