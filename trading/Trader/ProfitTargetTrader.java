@@ -89,11 +89,13 @@ public class ProfitTargetTrader implements LiveHandler,
             });
             apiController.reqPositions(this);
             apiController.reqLiveOrders(this);
+
+            pr("req Executions");
+            apiController.reqExecutions(new ExecutionFilter(), this);
+            outputToGeneral("cancelling all orders on start up");
+            apiController.cancelAllOrders();
+
         }, 2, TimeUnit.SECONDS);
-        pr("req Executions");
-        apiController.reqExecutions(new ExecutionFilter(), this);
-        outputToGeneral("cancelling all orders on start up");
-        apiController.cancelAllOrders();
     }
 
     static void computeHistoricalData(String s) {
@@ -471,7 +473,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (openOrders.containsKey(symb) && openOrders.get(symb).containsKey(orderId)) {
                 outputToFills(symb, usDateTime(), openOrders.get(symb).get(orderId));
             } else {
-                outputToError(symb, usDateTime(), "order not in openOrderMap. ID:", orderId,
+                outputToSymbol(symb, usDateTime(), "order not in openOrderMap. ID:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "px:", avgFillPrice, "clientID:", clientId);
             }
@@ -487,7 +489,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         });
 
-
+        //removing finished orders
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
@@ -529,6 +531,12 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
+        outputToSymbol(symb, usDateTime(), "tradeReport time:",
+                executionToUSTime(execution.time()), execution.side(), "exec price:",
+                execution.price(), "shares:", execution.shares(),
+                "avgExecPrice:", execution.avgPrice());
+
+
         if (symb.startsWith("hk") || symb.startsWith("USD")) {
             return;
         }
@@ -539,9 +547,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
         tradeKeyExecutionMap.get(tradeKey).add(new ExecutionAugmented(symb, execution));
 
-        outputToSymbol(symb, usDateTime(), "tradeReport time:",
-                executionToUSTime(execution.time()), execution.side(), "exec price:",
-                execution.price(), "shares:", execution.shares(), "avgExecPrice:", execution.avgPrice());
     }
 
     @Override
