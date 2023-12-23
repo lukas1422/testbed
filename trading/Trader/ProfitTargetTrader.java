@@ -415,17 +415,17 @@ public class ProfitTargetTrader implements LiveHandler,
     public void openOrder(Contract contract, Order order, OrderState orderState) {
 
         String symb = ibContractToSymbol(contract);
-        outputToSymbol(symb, usDateTime(), "openOrder Callback:", order,
-                "orderState.status:", orderState.status());
+        outputToSymbol(symb, usDateTime(), "*openOrder*", order,
+                "status:", orderState.status());
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status() == Filled) {
-            outputToFills(symb, usDateTime(), "openOrder Callback:filled", order);
+            outputToFills(symb, usDateTime(), "*openOrder* filled", order);
         }
 
         if (orderState.status().isFinished()) {
-            outputToSymbol(symb, "openOrder Callback:removing order", order, "status:", orderState.status());
+            outputToSymbol(symb, "*openOrder*:removing order", order, "status:", orderState.status());
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
@@ -436,14 +436,14 @@ public class ProfitTargetTrader implements LiveHandler,
         }
         openOrders.forEach((s, v) -> {
             if (!v.isEmpty()) {
-                outputToSymbol(s, "after removal open orders:", v);
+                outputToSymbol(s, "*openOrder* after removal open orders:", v);
             }
         });
     }
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral("openOrderEnd: print all openOrders", openOrders,
+        outputToGeneral(usDateTime(), "*openOrderEnd*: print all openOrders", openOrders,
                 "***orderStatus:", orderStatusMap);
     }
 
@@ -468,22 +468,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (status == Filled) {
             outputToFills(symb, usDateTime(), "*OrderStatus*:filled. Order ID:", orderId);
-            if (openOrders.containsKey(symb) && openOrders.get(symb).containsKey(orderId)) {
-                outputToFills(symb, usDateTime(), openOrders.get(symb).get(orderId));
-            } else {
-                outputToSymbol(symb, usDateTime(), "order not in openOrderMap. ID:", orderId,
-                        "status:", status, "filled:", filled, "remaining:", remaining,
-                        "px:", avgFillPrice, "clientID:", clientId);
-            }
         }
 
+        //put status in orderstatusmap
         orderStatusMap.forEach((k, v) -> {
             if (v.containsKey(orderId)) {
                 orderStatusMap.get(k).put(orderId, status);
-                outputToSymbol(k, usDateTime(), "*OrderStatus*", status, "orderID:", orderId,
-                        "filled:", filled, "remaining:", remaining,
-                        "avgFillPrice:", avgFillPrice, "clientID:", clientId);
-                outputToSymbol(k, "Orderstatus::", status);
             }
         });
 
