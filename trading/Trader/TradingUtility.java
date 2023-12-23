@@ -746,6 +746,10 @@ public class TradingUtility {
                 , 1 - averageDailyRange.getOrDefault(symb, 0.0));
     }
 
+    public static void outputToConnection(Object... cs) {
+        outputDetailedGen(str(cs), connectionOutput);
+    }
+
     public static void outputToSymbol(String symbol, Object... cs) {
 //        pr("output Symbol:", symbol, str(cs));
         if (!symbol.isEmpty()) {

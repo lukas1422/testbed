@@ -72,8 +72,11 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
 //            }, 10L, TimeUnit.SECONDS);
 //        });
         es.schedule(() -> {
-            apiController.reqLiveOrders(this);
+            //apiController.reqLiveOrders(this);
+            apiController.reqExecutions(new ExecutionFilter(),this);
         }, 10L, TimeUnit.SECONDS);
+
+
     }
 
     private static void registerContractAll(Contract... cts) {
@@ -166,13 +169,16 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     public static void main(String[] args) {
         Tradetest test1 = new Tradetest();
         test1.connectAndReqPos();
+        //pr("trade key exec map", getSessionMasterTradeID());
 //        testTrade(wmt, 50, getESTLocalDateTimeNow(), Decimal.get(1));
-        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
+//        es.schedule(() -> testTrade(wmt, 100, getESTLocalDateTimeNow(), Decimal.get(1)), 10L, TimeUnit.SECONDS);
 //        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
     }
 
     @Override
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
+        pr("tradekey",tradeKey);
+
         String symb = ibContractToSymbol(contract);
 
         if (symb.startsWith("hk")) {

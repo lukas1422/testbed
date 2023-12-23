@@ -518,3 +518,115 @@ stats 3d: *n: 1800 *max: 291.65 [ 12-19 9:31 ] *min 288.35 [ 12-20 16:13 ] *rng 
 12-21 19:13 *3dP%: 92.0 *1dP%: 95.0
 stats 3d: *n: 1801 *max: 291.65 [ 12-19 9:31 ] *min 288.35 [ 12-20 16:13 ] *rng 1.1 % *1st Key: [ 12-19 7:47 ] *last: [ 12-21 19:12 ]
 *stats 1d: *n: 400 *max: 291.5 [ 12-21 16:01 ] *min 289.37 [ 12-21 6:13 ] *rng 0.7 % *1st Key: [ 12-21 6:13 ] *last: [ 12-21 19:12 ]
+*******************************************
+****************STARTS 12-22 9:13
+updating position: 12-22 9:13 position: 5 cost: 290.09906
+POS COST 5 290.09906
+***Periodic***
+12-22 9:13 no live feed
+12-22 9:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 1421 *max: 291.64 [ 12-20 12:21 ] *min 288.35 [ 12-20 16:13 ] *rng 1.1 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 9:13 ]
+*stats 1d: *n: 74 *max: 291.0 [ 12-22 8:00 ] *min 291.0 [ 12-22 8:00 ] *rng 0.0 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 9:13 ]
+12-22 9:13 profit margin required: 1.007
+*******************************************
+****************STARTS 12-22 9:15
+updating position: 12-22 9:15 position: 5 cost: 290.09906
+POS COST 5 290.09906
+***Periodic***
+12-22 9:16 no live feed
+12-22 9:16 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-22 9:16 profit margin required: 1.007
+{}
+{}
+{}
+****CUT**** 12-22 9:38:05
+Sell 1dP%: 100.0 3dp: 100.0 priceOverCost: 1.007 requiredMargin: 1.007 avgRng: 0.014
+orderID: 231222004 tradeID: 231222004 SELL sell px: 292.16 qty: 5 costBasis: 290.09906 MCD 12-22 9:38 INVENTORY_CUTTER Created required Margin: 1.0069997930314232 targetPrice: 292.1296933786104 askPrice 292.16
+3DStats: *n: 1433 *max: 291.87 [ 12-22 9:38 ] *min 288.35 [ 12-20 16:13 ] *rng 1.2 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 9:38 ] 1DStats: *n: 86 *max: 291.86 [ 12-22 9:38 ] *min 291.0 [ 12-22 9:30 ] *rng 0.3 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 9:38 ]
+12-22 9:38 openOrder callback: orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16 orderState.status: Submitted
+{231222004=orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16}
+12-22 9:38 openOrder orderStatus callback: orderId: 231222004 status: Submitted filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+12-22 9:38 OrderStatus callback:: orderID: 231222004 status: Submitted filled: 0 remaining: 5 avgFillPrice: 0.0 clientID: 5
+updating position: 12-22 9:38 position: 0 cost: 0.0
+12-22 9:38 openOrder callback: orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16 orderState.status: Filled
+12-22 9:38 openOrderCallback:filled orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16
+openOrder callback:removing order orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16 status: Filled
+12-22 9:38 openOrder callback:after removal.open orders: MCD {}
+{}
+12-22 9:38 openOrder orderStatus callback: orderId: 231222004 status: Filled filled: 5 remaining: 0 fillPrice 292.16 lastFillPrice: 292.16
+12-22 9:38 orderStatus Callback:filled. Order ID: 231222004
+12-22 9:38 OrderStatus callback:: orderID: 231222004 status: Filled filled: 5 remaining: 0 avgFillPrice: 292.16 clientID: 5
+12-22 9:38 openOrder callback: orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16 orderState.status: Filled
+12-22 9:38 openOrderCallback:filled orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16
+openOrder callback:removing order orderID: 231222004 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 292.16 status: Filled
+12-22 9:38 openOrder callback:after removal.open orders: MCD {}
+{}
+12-22 9:38 openOrder orderStatus callback: orderId: 231222004 status: Filled filled: 5 remaining: 0 fillPrice 292.16 lastFillPrice: 292.16
+12-22 9:38 orderStatus Callback:filled. Order ID: 231222004
+12-22 9:38 OrderStatus callback:: orderID: 231222004 status: Filled filled: 5 remaining: 0 avgFillPrice: 292.16 clientID: 5
+updating position: 12-22 9:38 position: 0 cost: 0.0
+updating position: 12-22 9:38 position: 0 cost: 0.0
+updating position: 12-22 9:42 position: 0 cost: 0.0
+***Periodic***
+12-22 10:16 last Live feed time: 12-22 10:15 px: 291.88 px/cost: 9.223372036854776E14
+periodic check: 10:16:04 orderStatus {231222004=Filled}
+12-22 10:16 *3dP%: 86.0 *1dP%: 61.0
+stats 3d: *n: 1470 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 10:15 ]
+*stats 1d: *n: 123 *max: 292.44 [ 12-22 9:41 ] *min 291.0 [ 12-22 9:30 ] *rng 0.5 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 10:15 ]
+***Periodic***
+12-22 11:16 last Live feed time: 12-22 11:15 px: 291.26 px/cost: 9.223372036854776E14
+periodic check: 11:16:04 orderStatus {231222004=Filled}
+12-22 11:16 *3dP%: 71.0 *1dP%: 30.0
+stats 3d: *n: 1530 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 11:15 ]
+*stats 1d: *n: 183 *max: 292.44 [ 12-22 9:41 ] *min 290.75 [ 12-22 11:00 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 11:15 ]
+***Periodic***
+12-22 12:16 last Live feed time: 12-22 12:16 px: 290.96 px/cost: 9.223372036854776E14
+periodic check: 12:16:04 orderStatus {231222004=Filled}
+12-22 12:16 *3dP%: 64.0 *1dP%: 13.0
+stats 3d: *n: 1591 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 12:16 ]
+*stats 1d: *n: 244 *max: 292.44 [ 12-22 9:41 ] *min 290.75 [ 12-22 11:00 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 12:16 ]
+***Periodic***
+12-22 13:16 last Live feed time: 12-22 13:14 px: 291.64 px/cost: 9.223372036854776E14
+periodic check: 13:16:04 orderStatus {231222004=Filled}
+12-22 13:16 *3dP%: 80.0 *1dP%: 53.0
+stats 3d: *n: 1649 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 13:14 ]
+*stats 1d: *n: 302 *max: 292.44 [ 12-22 9:41 ] *min 290.75 [ 12-22 11:00 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 13:14 ]
+***Periodic***
+12-22 14:16 last Live feed time: 12-22 14:15 px: 291.27 px/cost: 9.223372036854776E14
+periodic check: 14:16:04 orderStatus {231222004=Filled}
+12-22 14:16 *3dP%: 71.0 *1dP%: 31.0
+stats 3d: *n: 1708 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 14:15 ]
+*stats 1d: *n: 361 *max: 292.44 [ 12-22 9:41 ] *min 290.75 [ 12-22 11:00 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 14:15 ]
+***Periodic***
+12-22 15:16 last Live feed time: 12-22 15:15 px: 291.55 px/cost: 9.223372036854776E14
+periodic check: 15:16:04 orderStatus {231222004=Filled}
+12-22 15:16 *3dP%: 78.0 *1dP%: 52.0
+stats 3d: *n: 1767 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 15:15 ]
+*stats 1d: *n: 420 *max: 292.44 [ 12-22 9:41 ] *min 290.6 [ 12-22 14:35 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 15:15 ]
+***Periodic***
+12-22 16:16 last Live feed time: 12-22 16:00 px: 291.7 px/cost: 9.223372036854776E14
+periodic check: 16:16:04 orderStatus {231222004=Filled}
+12-22 16:16 *3dP%: 82.0 *1dP%: 60.0
+stats 3d: *n: 1812 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 16:00 ]
+*stats 1d: *n: 465 *max: 292.44 [ 12-22 9:41 ] *min 290.6 [ 12-22 14:35 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 16:00 ]
+***Periodic***
+12-22 17:16 last Live feed time: 12-22 16:55 px: 291.0 px/cost: 9.223372036854776E14
+periodic check: 17:16:04 orderStatus {231222004=Filled}
+12-22 17:16 *3dP%: 65.0 *1dP%: 22.0
+stats 3d: *n: 1813 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 16:55 ]
+*stats 1d: *n: 466 *max: 292.44 [ 12-22 9:41 ] *min 290.6 [ 12-22 14:35 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 16:55 ]
+***Periodic***
+12-22 18:16 last Live feed time: 12-22 16:55 px: 291.0 px/cost: 9.223372036854776E14
+periodic check: 18:16:04 orderStatus {231222004=Filled}
+12-22 18:16 *3dP%: 65.0 *1dP%: 22.0
+stats 3d: *n: 1813 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 16:55 ]
+*stats 1d: *n: 466 *max: 292.44 [ 12-22 9:41 ] *min 290.6 [ 12-22 14:35 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 16:55 ]
+***Periodic***
+12-22 19:16 last Live feed time: 12-22 16:55 px: 291.0 px/cost: 9.223372036854776E14
+periodic check: 19:16:04 orderStatus {231222004=Filled}
+12-22 19:16 *3dP%: 65.0 *1dP%: 22.0
+stats 3d: *n: 1813 *max: 292.44 [ 12-22 9:41 ] *min 288.35 [ 12-20 16:13 ] *rng 1.4 % *1st Key: [ 12-20 8:52 ] *last: [ 12-22 16:55 ]
+*stats 1d: *n: 466 *max: 292.44 [ 12-22 9:41 ] *min 290.6 [ 12-22 14:35 ] *rng 0.6 % *1st Key: [ 12-22 8:00 ] *last: [ 12-22 16:55 ]
+updating position: 12-22 19:24 position: 0 cost: 0.0

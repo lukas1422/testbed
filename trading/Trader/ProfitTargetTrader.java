@@ -47,7 +47,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private ProfitTargetTrader() {
 
-        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime(), "MASTER ID:", MASTER_TRADE_ID);
+        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime(),
+                "MASTER ID:", MASTER_TRADE_ID);
         pr("market start time today ", TRADING_START_TIME);
         pr("until market start time", Duration.between(TRADING_START_TIME,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
@@ -417,21 +418,25 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
         if (orderState.status() == Filled) {
-            outputToFills(symb, usDateTime(), "openOrderCallback:filled", order);
-            outputToSymbol(symb, usDateTime(), "openOrderCallback:filled", order);
+            outputToFills(symb, usDateTime(), "openOrder Callback:filled", order);
+            outputToSymbol(symb, usDateTime(), "openOrder Callback:filled", order);
         }
 
         if (orderState.status().isFinished()) {
-            outputToSymbol(symb, "openOrder callback:removing order", order, "status:", orderState.status());
+            outputToSymbol(symb, "openOrder Callback:removing order", order, "status:", orderState.status());
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
-            outputToSymbol(symb, usDateTime(), "openOrder callback:after removal." +
+            outputToSymbol(symb, usDateTime(), "openOrder Callback:after removal." +
                     "open orders:", symb, openOrders.get(symb));
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
         }
-        openOrders.forEach((s, v) -> outputToSymbol(s, v));
+        openOrders.forEach((s, v) -> {
+            if (!v.isEmpty()) {
+                outputToSymbol(s, "after removal open orders:", v);
+            }
+        });
     }
 
     @Override
@@ -445,7 +450,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             double avgFillPrice, int permId, int parentId, double lastFillPrice,
                             int clientId, String whyHeld, double mktCapPrice) {
 
-        outputToGeneral(usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+        outputToGeneral(usDateTime(), "OrderStatus Callback:", "orderId:", orderId,
                 "status:", status, "filled:", filled, "remaining:", remaining,
                 "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
@@ -455,13 +460,14 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        outputToSymbol(symb, usDateTime(), "openOrder orderStatus callback:", "orderId:", orderId,
+        outputToSymbol(symb, usDateTime(), "OrderStatus callback:",
+                "orderId:", orderId,
                 "status:", status, "filled:", filled, "remaining:", remaining,
                 "fillPrice", avgFillPrice, "lastFillPrice:", lastFillPrice);
 
         if (status == Filled) {
-            outputToFills(symb, usDateTime(), "orderStatus Callback:filled.Order ID:", orderId);
-            outputToSymbol(symb, usDateTime(), "orderStatus Callback:filled. Order ID:", orderId);
+            outputToFills(symb, usDateTime(), "OrderStatus Callback:filled. Order ID:", orderId);
+            outputToSymbol(symb, usDateTime(), "OrderStatus Callback:filled. Order ID:", orderId);
             if (openOrders.containsKey(symb) && openOrders.get(symb).containsKey(orderId)) {
                 outputToFills(symb, usDateTime(), openOrders.get(symb).get(orderId));
             } else {
@@ -477,12 +483,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(k, usDateTime(), "OrderStatus callback::", "orderID:", orderId,
                         "status:", status, "filled:", filled, "remaining:", remaining,
                         "avgFillPrice:", avgFillPrice, "clientID:", clientId);
-                outputToSymbol("Orderstatus::", status);
-            } else {
-                outputToError(usDateTime(),
-                        "orderstatus Callback: orderID not in orderStatusMap:", orderId,
-                        "status:", status, "filled:", filled, "remaining:", remaining,
-                        "avgFillPrice:", avgFillPrice, "clientID:", clientId);
+                outputToSymbol(k, "Orderstatus::", status);
             }
         });
 
@@ -490,15 +491,15 @@ public class ProfitTargetTrader implements LiveHandler,
         if (status.isFinished()) {
             openOrders.forEach((k, v) -> {
                 if (v.containsKey(orderId)) {
-                    outputToSymbol(k, usDateTime(), "openOrder orderStatus:", status,
-                            "Callback: deleting filled from open orders", openOrders);
+                    outputToSymbol(k, usDateTime(), "OrderStatus callback status:", status,
+                            "deleting filled from open orders", openOrders);
                     outputToSymbol(k, usDateTime(), "status:", status,
                             "removing order from openOrders. OrderID:", orderId,
                             "order details:", v.get(orderId),
                             "remaining:", remaining);
                     v.remove(orderId);
-                    outputToSymbol(k, "remaining open orders for ", k, v);
-                    outputToSymbol(k, "remaining ALL open orders", openOrders);
+                    outputToSymbol(k, "remaining open orders for", k, v);
+                    outputToSymbol(k, "print aLL open orders:", openOrders);
                 }
             });
         }

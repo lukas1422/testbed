@@ -24,6 +24,7 @@ public final class TradingConstants {
     public static final String RELATIVEPATH = "trading/TradingFiles/";
 
     public static File fillsOutput = new File(RELATIVEPATH + "fills");
+    public static File connectionOutput = new File(RELATIVEPATH + "connection");
     public static File miscOutput = new File(RELATIVEPATH + "misc");
 
 
