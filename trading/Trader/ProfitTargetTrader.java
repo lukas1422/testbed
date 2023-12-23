@@ -20,6 +20,7 @@ import static client.OrderStatus.Filled;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
+import static java.lang.Math.round;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import static utility.Utility.*;
 
@@ -318,10 +319,10 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (symbolPosMap.containsKey(symb)) {
                 if (latestPriceMap.containsKey(symb) && costMap.getOrDefault(symb, 0.0) != 0.0) {
-                    pr(symb, "position:", symbolPosMap.get(symb),
+                    pr(symb, usTime(), "position:", symbolPosMap.get(symb),
                             "price", latestPriceMap.get(symb),
-                            "cost:", r(costMap.get(symb)), "p/c-1",
-                            r(100 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)), "%",
+                            "cost:", r(costMap.get(symb)), "rtn:",
+                            r(1000.0 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)) / 10.0, "%",
                             "1dp:", oneDayPctMap.getOrDefault(symb, 0.0),
                             "3dp:", threeDayPctMap.getOrDefault(symb, 0.0));
                 }
@@ -335,11 +336,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
                 threeDayPctMap.put(symb, threeDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-                pr("compute:", symb, usTime(), "*3dP%:", threeDayPercentile,
-                        "*1dP%:", oneDayPercentile, "last:",
-                        latestPriceMap.getOrDefault(symb, 0.0), "*stats 1d:",
-                        genStatsString(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
-                pr(symb, "stats 3d:", genStatsString(threeDayData.get(symb)));
+//                pr("compute:", symb, usTime(), "*3dP%:", round(threeDayPercentile),
+//                        "*1dP%:", round(oneDayPercentile), "last:",
+//                        latestPriceMap.getOrDefault(symb, 0.0));
+//                pr(symb, "*stats 1d:",
+//                        genStatsString(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+//                pr(symb, "stats 3d:", genStatsString(threeDayData.get(symb)));
             }
         });
 
@@ -348,14 +350,15 @@ public class ProfitTargetTrader implements LiveHandler,
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, (double) Math.round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
+                symbolDeltaMap.put(s, (double) round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
                         * latestPriceMap.getOrDefault(s, 0.0))));
 
         pr("aggregate Delta", r(aggregateDelta), symbolDeltaMap);
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
             if (orderStatusMap.get(k).get(k1).isFinished()) {
-                outputToSymbol(k, "in compute: removing finished orders", k, "orderID:", k1);
+                outputToSymbol(k, "in compute: removing finished orders", "orderID:",
+                        k1, "order:", v1);
                 v.remove(k1);
             }
         }));
