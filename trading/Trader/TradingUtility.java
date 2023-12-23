@@ -24,9 +24,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
-import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
@@ -666,7 +664,7 @@ public class TradingUtility {
         return Math.max(0.0, Math.min(100, round((last - minValue) / (maxValue - minValue) * 100)));
     }
 
-    public static String printStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
+    public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
             return "print stats:empty";
         }
