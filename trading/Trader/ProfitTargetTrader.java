@@ -311,7 +311,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr(symb, usTime(), "position:", symbolPosMap.get(symb),
                             "price", latestPriceMap.get(symb),
                             "cost:", r(costMap.get(symb)), "rtn:",
-                            r(1000.0 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)) / 10.0, "%",
+                            round(1000.0 * (latestPriceMap.get(symb) / costMap.get(symb) - 1)) / 10.0, "%",
                             "1dp:", oneDayPctMap.getOrDefault(symb, 0.0),
                             "3dp:", threeDayPctMap.getOrDefault(symb, 0.0));
                 }
@@ -339,8 +339,8 @@ public class ProfitTargetTrader implements LiveHandler,
                         longValue() * latestPriceMap.getOrDefault(s, 0.0)).sum();
 
         targetStockList.forEach((s) ->
-                symbolDeltaMap.put(s, (double) round(symbolPosMap.getOrDefault(s, Decimal.ZERO).longValue()
-                        * latestPriceMap.getOrDefault(s, 0.0))));
+                symbolDeltaMap.put(s, (double) round(symbolPosMap.getOrDefault(s, Decimal.ZERO)
+                        .longValue() * latestPriceMap.getOrDefault(s, 0.0))));
 
         pr("aggregate Delta", r(aggregateDelta), symbolDeltaMap);
 
@@ -522,7 +522,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 .collect(groupingBy(ExecutionAugmented::getSymbol,
                         mapping(ExecutionAugmented::getExec, toList())))
                 .forEach((key, value) -> outputToSymbol(key, "listOfExecutions",
-                        value.stream().sorted(Comparator.comparingDouble(Execution::orderId)).toList()));
+                        value.stream().sorted(Comparator.comparingDouble(Execution::orderId))
+                                .collect(toList())));
     }
 
     @Override

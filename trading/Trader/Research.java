@@ -125,16 +125,17 @@ public class Research {
         });
         pr("daily vol",
                 ytdReturn.entrySet()
-                        .stream().sorted(Comparator.<Map.Entry<String, Double>>comparingDouble(Map.Entry::getValue).reversed()).toList());
+                        .stream().sorted(Comparator.<Map.Entry<String, Double>>comparingDouble(Map.Entry::getValue).reversed())
+                        .collect(Collectors.toList()));
 
         pr("rank by value reversed",
-                dailyVolatility.entrySet().stream().sorted(Map.Entry.comparingByValue()).toList());
+                dailyVolatility.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList()));
         pr("rank by value",
                 dailyVolatility.entrySet()
                         .stream().sorted(Comparator.<Map.Entry<String, Double>>comparingDouble(Map.Entry::getValue).reversed())
                         .map(e -> str(e.getKey(), "vol:", r(100 * e.getValue()), "%"
                                 , "ytdRet:", r(ytdReturn.getOrDefault(e.getKey(), 0.0)), "%"))
-                        .toList());
+                        .collect(Collectors.toList()));
 
         pr("rank by value2",
                 dailyVolatility.entrySet()
