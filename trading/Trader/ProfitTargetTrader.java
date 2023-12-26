@@ -11,7 +11,6 @@ import java.time.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
@@ -22,6 +21,7 @@ import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
 import static java.lang.Math.round;
 import static java.time.temporal.ChronoUnit.MINUTES;
+import static java.util.stream.Collectors.*;
 import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
@@ -91,7 +91,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
             pr("req Executions");
             apiController.reqExecutions(new ExecutionFilter(), this);
-            outputToGeneral("cancelling all orders on start up");
+            outputToGeneral(usDateTime(), "cancelling all orders on start up");
             apiController.cancelAllOrders();
 
         }, 2, TimeUnit.SECONDS);
@@ -117,15 +117,6 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("no historical data to compute ", s);
         }
     }
-
-//    static void computeRange() {
-//        targetStockList.forEach(s -> {
-//            double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
-//                    .average().orElse(0.0);
-//            pr("average range:", s, rng);
-//            averageDailyRange.put(s, rng);
-//        });
-//    }
 
     private static void registerContractAll(Contract... cts) {
         Arrays.stream(cts).forEach(ProfitTargetTrader::registerContract);
@@ -257,8 +248,6 @@ public class ProfitTargetTrader implements LiveHandler,
                     symbolDeltaMap.put(symb, price * symbolPosMap.get(symb).longValue());
                 }
                 tryToTrade(ct, price, t);
-//                apiController.client().reqIds(-1);
-//                apiController.
                 break;
             case BID:
                 bidMap.put(symb, price);
@@ -500,9 +489,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
-//        if (errorCode == 2157) {
-//            pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
-//        }
         outputToError("openOrder Error", usDateTime(), "orderId:",
                 orderId, " errorCode:", errorCode, " msg:", errorMsg);
     }
@@ -517,7 +503,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 executionToUSTime(execution.time()), execution.side(), "exec price:",
                 execution.price(), "shares:", execution.shares(),
                 "avgExecPrice:", execution.avgPrice());
-
 
 //        if (symb.startsWith("hk") || symb.startsWith("USD")) {
 //            //return;
@@ -534,8 +519,8 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReportEnd() {
         outputToGeneral(usDateTime(), "*TradeReportEnd*: all executions:", tradeKeyExecutionMap);
         tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
-                .collect(Collectors.groupingBy(ExecutionAugmented::getSymbol,
-                        Collectors.mapping(ExecutionAugmented::getExec, Collectors.toList())))
+                .collect(groupingBy(ExecutionAugmented::getSymbol,
+                        mapping(ExecutionAugmented::getExec, toList())))
                 .forEach((key, value) -> outputToSymbol(key, "listOfExecutions",
                         value.stream().sorted(Comparator.comparingDouble(Execution::orderId)).toList()));
     }

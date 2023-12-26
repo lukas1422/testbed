@@ -3,6 +3,7 @@ package Trader;
 import client.OrderStatus;
 
 import java.time.LocalDateTime;
+import java.util.LinkedHashMap;
 
 import static Trader.TradingUtility.getESTLocalDateTimeNow;
 import static java.lang.Math.pow;
@@ -12,16 +13,20 @@ public class Sandpaper {
 
     public static void main(String[] args) {
 
-//        Sandpaper s = new Sandpaper();
-//
-//        LocalDateTime lt1 = LocalDateTime.now();
-//        LocalDateTime lt2 = LocalDateTime.now().minusSeconds(10);
-//
-//        pr(Duration.between(lt2, lt1).getSeconds()<11);
-//
-//    }
-        LocalDateTime t = getESTLocalDateTimeNow();
-        int id = (int) (t.getYear() * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
-        pr(t.getYear()*pow(10,7)+t.getMonthValue()*pow(10,5)+t.getDayOfMonth()*pow(10,3)+1);
+        LinkedHashMap<Integer, Integer> m = new LinkedHashMap<>();
+        m.put(1, 1);
+        pr(m);
+        pr(add(m));
+        pr(m);
+
+    }
+
+    static void modify(LinkedHashMap<Integer, String> n) {
+        n.put(2, "two");
+    }
+
+    static int add(LinkedHashMap<Integer, Integer> n) {
+        n.put(1, 2);
+        return n.get(1) + 3;
     }
 }
