@@ -1,45 +1,238 @@
-******** 11-10 22:45
-7 102 BUY INVENTORY: price: 149.92 PG 11-10 22:45:34.365 INVENTORY_ADDER Created p/b/a 149.92 149.92 149.96
-7 102 *PATIENT ORDER FILL* PreSubmitted->Filled 11-10 22:45:35.035 PG 11-10 22:45:34.365 INVENTORY_ADDER Filled comm: 1.7976931348623157E308
-******** 11-10 23:06
-9 101 SELL INVENTORY: offerprice: 150.63 cost: 150.02 PG 11-10 23:06:15.304 INVENTORY_CUTTER Created p/b/a 150.64 150.6 150.63
-9 101 *PATIENT ORDER FILL* Submitted->Filled 11-10 23:06:16.001 PG 11-10 23:06:15.304 INVENTORY_CUTTER Filled comm: 1.7976931348623157E308
-******** 11-15 21:29
-2 101 BUY INVENTORY: price: 151.74 PG 11-15 21:29 INVENTORY_ADDER Created p/b/a 151.74 0.0 0.0
-Shutdown status 11-15 22:38 Submitted PG 11-15 21:29 INVENTORY_ADDER Submitted
-******** 11-15 23:17
-6 101 BUY INVENTORY: price: 151.03 PG 11-15 23:17 INVENTORY_ADDER Created p/b/a 151.05 151.03 151.05
-Shutdown status 11-15 23:17 Submitted PG 11-15 23:17 INVENTORY_ADDER Submitted
-******** 11-15 23:17
-8 101 BUY INVENTORY: price: 150.99 PG 11-15 23:17 INVENTORY_ADDER Created p/b/a 151.01 150.99 151.02
-******** 11-15 23:18
-9 102 BUY INVENTORY: price: 150.99 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 150.99 151.0 151.0
-******** 11-15 23:18
-10 103 BUY INVENTORY: price: 151.04 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 151.05 151.04 151.06
-******** 11-15 23:18
-11 104 BUY INVENTORY: price: 151.05 PG 11-15 23:18 INVENTORY_ADDER Created p/b/a 151.05 151.05 151.07
-11 104 *ORDER FILL* PreSubmitted->Filled 11-15 23:18:24.178 PG 11-15 23:18 INVENTORY_ADDER Filled
-10 103 *ORDER FILL* Submitted->Filled 11-15 23:18:35.785 PG 11-15 23:18 INVENTORY_ADDER Filled
-8 101 *ORDER FILL* Submitted->Filled 11-15 23:18:46.794 PG 11-15 23:17 INVENTORY_ADDER Filled
-9 102 *ORDER FILL* Submitted->Filled 11-15 23:18:46.800 PG 11-15 23:18 INVENTORY_ADDER Filled
-******** 11-16 22:50
-77 172 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.81 151.79 151.82
-******** 11-16 22:50
-78 173 SELL INVENTORY: offer price: 151.82 cost: 151.050575 Optional[PG 11-16 22:50 INVENTORY_CUTTER Created] price/bid/ask: 151.82 151.79 151.82
-77 172 *ORDER FILL* Submitted->Filled 11-16 22:50:48.815  NULL 
-******** 11-20 9:30
-orderID: 2 tradeID: 101 BUY BUY INVENTORY: price: 150.21 qty: 10 PG 11-20 9:30 INVENTORY_ADDER Created p/b/a 150.21 150.31 150.67 3d perc/1d perc 28.0 0.0
-******** 11-21 9:30
-orderID: 4 tradeID: 101 BUY BUY INVENTORY: price: 149.72 qty: 10 PG 11-21 9:30 INVENTORY_ADDER Created p/b/a 149.85 149.72 150.01 3d perc/1d perc 20.0 0.0
-orderID: 4 tradeID 101 *ORDER FILL* Submitted->Filled 11-21 9:30:36.035 PG 11-21 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
-******** 11-22 9:30
-orderID: 6 tradeID 101 SELL INVENTORY: offer price: 150.63 cost: 149.75313 PG 11-22 9:30 INVENTORY_CUTTER Created price/bid/ask: 150.63 150.54 150.63
-orderID: 6 tradeID 101 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:36.636 PG 11-22 9:30 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
-******** 11-22 9:30
-orderID: 7 tradeID: 102 BUY BUY INVENTORY: price: 150.59 qty: 10 PG 11-22 9:30 INVENTORY_ADDER Created p/b/a 150.59 150.59 150.65 3d perc/1d perc 20.0 0.0
-orderID: 7 tradeID 102 *ORDER FILL* PreSubmitted->Filled 11-22 9:30:48.318 PG 11-22 9:30 INVENTORY_ADDER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
-******** 11-22 9:48
-orderID: 8 tradeID 103 SELL INVENTORY: offer price: 151.35 cost: 150.5702257 PG 11-22 9:48 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.32 151.35
-******** 11-22 10:01
-orderID: 10 tradeID 101 SELL INVENTORY: offer price: 151.37 cost: 150.5702257 PG 11-22 10:01 INVENTORY_CUTTER Created price/bid/ask: 151.34 151.34 151.37
-orderID: 10 tradeID 101 *ORDER FILL* Submitted->Filled 11-22 10:03:21.362 PG 11-22 10:01 INVENTORY_CUTTER Filled completed status  NULL  completed time:  NULL  commission: 1.7976931348623157E308 warning:  NULL 
+12-20 2:45 no live feed
+12-20 2:45 *3dP%: 73.0 *1dP%: 0.0
+stats 3d: *n: 2633 *max: 147.48 [ 12-18 11:38 ] *min 142.57 [ 12-15 9:30 ] *rng 3.4 % *1st Key: [ 12-15 7:16 ] *last: [ 12-19 19:59 ]
+*stats 1d: print stats:empty
+12-20 3:45 no live feed
+12-20 3:45 *3dP%: 73.0 *1dP%: 0.0
+stats 3d: *n: 2633 *max: 147.48 [ 12-18 11:38 ] *min 142.57 [ 12-15 9:30 ] *rng 3.4 % *1st Key: [ 12-15 7:16 ] *last: [ 12-19 19:59 ]
+*stats 1d: print stats:empty
+*******************************************
+****************STARTS 12-20 9:12
+updating position: 12-20 9:12 position: 10 cost: 144.7836
+POS COST 10 144.7836
+12-20 9:13 no live feed
+12-20 9:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-20 9:13 profit margin required: 1.0072397554966366
+12-20 10:13 last Live feed time: 12-20 10:12 px: 145.36
+12-20 10:13 *3dP%: 37.0 *1dP%: 9.0
+stats 3d: *n: 2068 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 10:12 ]
+*stats 1d: *n: 199 *max: 146.15 [ 12-20 9:13 ] *min 145.28 [ 12-20 10:09 ] *rng 0.6 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 10:12 ]
+12-20 11:13 last Live feed time: 12-20 11:12 px: 145.22
+12-20 11:13 *3dP%: 33.0 *1dP%: 1.0
+stats 3d: *n: 2128 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 11:12 ]
+*stats 1d: *n: 259 *max: 146.15 [ 12-20 9:13 ] *min 145.21 [ 12-20 11:10 ] *rng 0.6 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 11:12 ]
+12-20 12:13 last Live feed time: 12-20 12:12 px: 145.13
+12-20 12:13 *3dP%: 31.0 *1dP%: 13.0
+stats 3d: *n: 2188 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 12:12 ]
+*stats 1d: *n: 319 *max: 146.15 [ 12-20 9:13 ] *min 144.98 [ 12-20 12:01 ] *rng 0.8 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 12:12 ]
+12-20 13:13 last Live feed time: 12-20 13:11 px: 145.1
+12-20 13:13 *3dP%: 30.0 *1dP%: 10.0
+stats 3d: *n: 2247 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 13:11 ]
+*stats 1d: *n: 378 *max: 146.15 [ 12-20 9:13 ] *min 144.98 [ 12-20 12:01 ] *rng 0.8 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 13:11 ]
+12-20 14:13 last Live feed time: 12-20 14:12 px: 145.06
+12-20 14:13 *3dP%: 28.0 *1dP%: 7.0
+stats 3d: *n: 2307 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 14:12 ]
+*stats 1d: *n: 438 *max: 146.15 [ 12-20 9:13 ] *min 144.98 [ 12-20 12:01 ] *rng 0.8 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 14:12 ]
+12-20 15:13 last Live feed time: 12-20 15:12 px: 144.35
+12-20 15:13 *3dP%: 7.0 *1dP%: 0.0
+stats 3d: *n: 2367 *max: 147.48 [ 12-18 11:38 ] *min 144.1 [ 12-18 7:00 ] *rng 2.3 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 15:12 ]
+*stats 1d: *n: 498 *max: 146.15 [ 12-20 9:13 ] *min 144.39 [ 12-20 15:12 ] *rng 1.2 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 15:12 ]
+12-20 16:13 last Live feed time: 12-20 16:00 px: 143.91
+12-20 16:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 2415 *max: 147.48 [ 12-18 11:38 ] *min 143.92 [ 12-20 15:59 ] *rng 2.5 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 16:00 ]
+*stats 1d: *n: 546 *max: 146.15 [ 12-20 9:13 ] *min 143.92 [ 12-20 15:59 ] *rng 1.5 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 16:00 ]
+12-20 17:13 last Live feed time: 12-20 16:20 px: 143.91
+12-20 17:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 2417 *max: 147.48 [ 12-18 11:38 ] *min 143.91 [ 12-20 15:59 ] *rng 2.5 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 16:20 ]
+*stats 1d: *n: 548 *max: 146.15 [ 12-20 9:13 ] *min 143.91 [ 12-20 15:59 ] *rng 1.6 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 16:20 ]
+12-20 18:13 last Live feed time: 12-20 16:20 px: 143.91
+12-20 18:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 2417 *max: 147.48 [ 12-18 11:38 ] *min 143.91 [ 12-20 15:59 ] *rng 2.5 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 16:20 ]
+*stats 1d: *n: 548 *max: 146.15 [ 12-20 9:13 ] *min 143.91 [ 12-20 15:59 ] *rng 1.6 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 16:20 ]
+12-20 19:13 last Live feed time: 12-20 18:25 px: 144.0
+12-20 19:13 *3dP%: 3.0 *1dP%: 4.0
+stats 3d: *n: 2418 *max: 147.48 [ 12-18 11:38 ] *min 143.91 [ 12-20 15:59 ] *rng 2.5 % *1st Key: [ 12-18 4:45 ] *last: [ 12-20 18:25 ]
+*stats 1d: *n: 549 *max: 146.15 [ 12-20 9:13 ] *min 143.91 [ 12-20 15:59 ] *rng 1.6 % *1st Key: [ 12-20 6:47 ] *last: [ 12-20 18:25 ]
+*******************************************
+****************STARTS 12-21 6:10
+updating position: 12-21 6:10 position: 10 cost: 144.7836
+POS COST 10 144.7836
+12-21 6:10 no live feed
+12-21 6:10 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-21 6:10 profit margin required: 1.0072
+*******************************************
+****************STARTS 12-21 6:13
+updating position: 12-21 6:13 position: 10 cost: 144.7836
+POS COST 10 144.7836
+12-21 6:13 no live feed
+12-21 6:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 1747 *max: 146.46 [ 12-19 8:03 ] *min 143.9 [ 12-20 15:59 ] *rng 1.8 % *1st Key: [ 12-19 4:06 ] *last: [ 12-20 19:59 ]
+*stats 1d: print stats:empty
+12-21 6:13 profit margin required: 1.0072
+12-21 7:13 no live feed
+12-21 7:13 *3dP%: 4.0 *1dP%: 0.0
+stats 3d: *n: 1747 *max: 146.46 [ 12-19 8:03 ] *min 143.9 [ 12-20 15:59 ] *rng 1.8 % *1st Key: [ 12-19 4:06 ] *last: [ 12-20 19:59 ]
+*stats 1d: print stats:empty
+12-21 8:13 last Live feed time: 12-21 8:00 px: 144.21
+12-21 8:13 *3dP%: 12.0 *1dP%: 0.0
+stats 3d: *n: 1749 *max: 146.46 [ 12-19 8:03 ] *min 143.9 [ 12-20 15:59 ] *rng 1.8 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 8:00 ]
+*stats 1d: print stats:empty
+12-21 9:13 last Live feed time: 12-21 9:07 px: 144.55
+12-21 9:13 *3dP%: 25.0 *1dP%: 0.0
+stats 3d: *n: 1752 *max: 146.46 [ 12-19 8:03 ] *min 143.9 [ 12-20 15:59 ] *rng 1.8 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 9:07 ]
+*stats 1d: *n: 5 *max: 144.35 [ 12-21 9:07 ] *min 144.43 [ 12-21 8:32 ] *rng -0.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 9:07 ]
+12-21 10:13 last Live feed time: 12-21 10:13 px: 143.57
+12-21 10:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: *n: 1797 *max: 146.46 [ 12-19 8:03 ] *min 143.64 [ 12-21 10:13 ] *rng 2.0 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 10:13 ]
+*stats 1d: *n: 50 *max: 144.69 [ 12-21 9:32 ] *min 143.64 [ 12-21 10:13 ] *rng 0.7 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 10:13 ]
+12-21 11:13 last Live feed time: 12-21 11:13 px: 143.73
+12-21 11:13 *3dP%: 6.0 *1dP%: 15.0
+stats 3d: *n: 1857 *max: 146.46 [ 12-19 8:03 ] *min 143.54 [ 12-21 10:15 ] *rng 2.0 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 11:13 ]
+*stats 1d: *n: 110 *max: 144.69 [ 12-21 9:32 ] *min 143.54 [ 12-21 10:15 ] *rng 0.8 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 11:13 ]
+12-21 12:13 last Live feed time: 12-21 12:13 px: 143.36
+12-21 12:13 *3dP%: 5.0 *1dP%: 10.0
+stats 3d: *n: 1917 *max: 146.46 [ 12-19 8:03 ] *min 143.21 [ 12-21 12:05 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 12:13 ]
+*stats 1d: *n: 170 *max: 144.69 [ 12-21 9:32 ] *min 143.21 [ 12-21 12:05 ] *rng 1.0 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 12:13 ]
+12-21 13:13 last Live feed time: 12-21 13:13 px: 143.26
+12-21 13:13 *3dP%: 3.0 *1dP%: 7.0
+stats 3d: *n: 1977 *max: 146.46 [ 12-19 8:03 ] *min 143.15 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 13:13 ]
+*stats 1d: *n: 230 *max: 144.69 [ 12-21 9:32 ] *min 143.15 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 13:13 ]
+12-21 14:13 last Live feed time: 12-21 14:13 px: 143.41
+12-21 14:13 *3dP%: 8.0 *1dP%: 18.0
+stats 3d: *n: 2037 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 14:13 ]
+*stats 1d: *n: 290 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 14:13 ]
+12-21 15:13 last Live feed time: 12-21 15:13 px: 143.88
+12-21 15:13 *3dP%: 22.0 *1dP%: 48.0
+stats 3d: *n: 2097 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 15:13 ]
+*stats 1d: *n: 350 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 15:13 ]
+12-21 16:13 last Live feed time: 12-21 16:11 px: 144.1
+12-21 16:13 *3dP%: 29.0 *1dP%: 62.0
+stats 3d: *n: 2147 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 16:11 ]
+*stats 1d: *n: 400 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 16:11 ]
+12-21 17:13 last Live feed time: 12-21 17:12 px: 144.12
+12-21 17:13 *3dP%: 30.0 *1dP%: 63.0
+stats 3d: *n: 2150 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 17:12 ]
+*stats 1d: *n: 403 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 17:12 ]
+12-21 18:13 last Live feed time: 12-21 17:12 px: 144.12
+12-21 18:13 *3dP%: 30.0 *1dP%: 63.0
+stats 3d: *n: 2150 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 17:12 ]
+*stats 1d: *n: 403 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 17:12 ]
+12-21 19:13 last Live feed time: 12-21 18:27 px: 143.93
+12-21 19:13 *3dP%: 24.0 *1dP%: 51.0
+stats 3d: *n: 2151 *max: 146.46 [ 12-19 8:03 ] *min 143.13 [ 12-21 12:20 ] *rng 2.3 % *1st Key: [ 12-19 4:06 ] *last: [ 12-21 18:27 ]
+*stats 1d: *n: 404 *max: 144.69 [ 12-21 9:32 ] *min 143.13 [ 12-21 12:20 ] *rng 1.1 % *1st Key: [ 12-21 7:53 ] *last: [ 12-21 18:27 ]
+*******************************************
+****************STARTS 12-22 9:13
+updating position: 12-22 9:13 position: 10 cost: 144.7836
+POS COST 10 144.7836
+***Periodic***
+12-22 9:13 no live feed
+12-22 9:13 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-22 9:13 profit margin required: 1.0072
+*******************************************
+****************STARTS 12-22 9:15
+updating position: 12-22 9:15 position: 10 cost: 144.7836
+POS COST 10 144.7836
+***Periodic***
+12-22 9:16 no live feed
+12-22 9:16 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-22 9:16 profit margin required: 1.0072
+{}
+{}
+{}
+{}
+{}
+{}
+***Periodic***
+12-22 10:16 last Live feed time: 12-22 10:15 px: 145.24 px/cost: 1.0032
+12-22 10:16 *3dP%: 70.0 *1dP%: 82.0
+stats 3d: *n: 1725 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 10:15 ]
+*stats 1d: *n: 205 *max: 145.47 [ 12-22 10:08 ] *min 144.18 [ 12-22 6:38 ] *rng 0.9 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 10:15 ]
+***Periodic***
+12-22 11:16 last Live feed time: 12-22 11:16 px: 145.2 px/cost: 1.0029
+12-22 11:16 *3dP%: 69.0 *1dP%: 79.0
+stats 3d: *n: 1786 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 11:16 ]
+*stats 1d: *n: 266 *max: 145.47 [ 12-22 10:08 ] *min 144.18 [ 12-22 6:38 ] *rng 0.9 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 11:16 ]
+***Periodic***
+12-22 12:16 last Live feed time: 12-22 12:16 px: 145.41 px/cost: 1.0043
+12-22 12:16 *3dP%: 75.0 *1dP%: 92.0
+stats 3d: *n: 1846 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 12:16 ]
+*stats 1d: *n: 326 *max: 145.51 [ 12-22 12:07 ] *min 144.18 [ 12-22 6:38 ] *rng 0.9 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 12:16 ]
+***Periodic***
+12-22 13:16 last Live feed time: 12-22 13:16 px: 145.4 px/cost: 1.0043
+12-22 13:16 *3dP%: 75.0 *1dP%: 85.0
+stats 3d: *n: 1906 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 13:16 ]
+*stats 1d: *n: 386 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 13:16 ]
+***Periodic***
+12-22 14:16 last Live feed time: 12-22 14:16 px: 145.17 px/cost: 1.0027
+12-22 14:16 *3dP%: 68.0 *1dP%: 69.0
+stats 3d: *n: 1966 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 14:16 ]
+*stats 1d: *n: 446 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 14:16 ]
+***Periodic***
+12-22 15:16 last Live feed time: 12-22 15:15 px: 145.23 px/cost: 1.0031
+12-22 15:16 *3dP%: 70.0 *1dP%: 73.0
+stats 3d: *n: 2025 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 15:15 ]
+*stats 1d: *n: 505 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 15:15 ]
+***Periodic***
+12-22 16:16 last Live feed time: 12-22 16:12 px: 145.1 px/cost: 1.0022
+12-22 16:16 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2071 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 16:12 ]
+*stats 1d: *n: 551 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 16:12 ]
+***Periodic***
+12-22 17:16 last Live feed time: 12-22 17:08 px: 145.01 px/cost: 1.0016
+12-22 17:16 *3dP%: 62.0 *1dP%: 58.0
+stats 3d: *n: 2072 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 17:08 ]
+*stats 1d: *n: 552 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 17:08 ]
+***Periodic***
+12-22 18:16 last Live feed time: 12-22 18:04 px: 145.1 px/cost: 1.0022
+12-22 18:16 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2073 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 18:04 ]
+*stats 1d: *n: 553 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 18:04 ]
+***Periodic***
+12-22 19:16 last Live feed time: 12-22 18:04 px: 145.1 px/cost: 1.0022
+12-22 19:16 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2073 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 18:04 ]
+*stats 1d: *n: 553 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 18:04 ]
+updating position: 12-22 19:24 position: 10 cost: 144.7836
+***Periodic***
+12-22 20:16 last Live feed time: 12-22 19:24 px: 145.1 px/cost: 1.0022
+12-22 20:16 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2074 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 19:24 ]
+*stats 1d: *n: 554 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 19:24 ]
+*******************************************
+****************STARTS 12-22 20:50
+updating position: 12-22 20:50 position: 10 cost: 144.7836
+POS COST 10 144.7836
+***Periodic***
+12-22 20:50 no live feed
+12-22 20:50 *3dP%: 0.0 *1dP%: 0.0
+stats 3d: print stats:empty
+*stats 1d: print stats:empty
+12-22 20:50 profit margin required: 1.0072
+***Periodic***
+12-22 21:50 last Live feed time: 12-22 20:50 px: 145.1 px/cost: 1.0022
+12-22 21:50 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2323 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 20:50 ]
+*stats 1d: *n: 803 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 20:50 ]
+***Periodic***
+12-22 22:50 last Live feed time: 12-22 20:50 px: 145.1 px/cost: 1.0022
+12-22 22:50 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2323 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 20:50 ]
+*stats 1d: *n: 803 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 20:50 ]
+***Periodic***
+12-22 23:50 last Live feed time: 12-22 20:50 px: 145.1 px/cost: 1.0022
+12-22 23:50 *3dP%: 65.0 *1dP%: 64.0
+stats 3d: *n: 2323 *max: 146.15 [ 12-20 9:12 ] *min 143.13 [ 12-21 12:20 ] *rng 2.1 % *1st Key: [ 12-20 6:47 ] *last: [ 12-22 20:50 ]
+*stats 1d: *n: 803 *max: 145.62 [ 12-22 12:55 ] *min 144.18 [ 12-22 6:38 ] *rng 1.0 % *1st Key: [ 12-22 6:38 ] *last: [ 12-22 20:50 ]
+*******************************************
+****************STARTS 12-23 0:56
+*******************************************
+****************STARTS 12-25 22:53
