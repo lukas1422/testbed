@@ -25,7 +25,7 @@ public final class TradingConstants {
 
     public static File fillsOutput = new File(RELATIVEPATH + "fills");
     public static File connectionOutput = new File(RELATIVEPATH + "connection");
-    public static File miscOutput = new File(RELATIVEPATH + "misc");
+//    public static File miscOutput = new File(RELATIVEPATH + "misc");
 
 
     public static final String DESKTOPPATH = System.getProperty("os.name").equalsIgnoreCase("linux") ? "/home/l/Desktop/" : "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\";
