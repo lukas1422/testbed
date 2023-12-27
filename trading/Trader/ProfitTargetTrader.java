@@ -557,9 +557,9 @@ public class ProfitTargetTrader implements LiveHandler,
                                 "last Live feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
                                 , "px:", latestPriceMap.getOrDefault(symb, 0.0),
-                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : "px/cost:",
-                                round5Digits(latestPriceMap.getOrDefault(symb, 0.0)
-                                        / costMap.getOrDefault(symb, 0.0))) :
+                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:",
+                                        round5Digits(latestPriceMap.getOrDefault(symb, 0.0)
+                                                / costMap.getOrDefault(symb, 0.0)))) :
                                 str(usDateTime(), "no live feed"));
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, "*check orderStatus*:", usDateTime(),

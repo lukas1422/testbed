@@ -363,3 +363,76 @@ openOrder Error 12-27 8:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm 
 openOrder Error 12-27 8:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
 openOrder Error 12-27 8:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
 openOrder Error 12-27 8:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-27 8:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-27 8:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-27 8:55 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+****Ending**** 12-27 8:55
+MasterTradeID is: 231227001
+*****START***** HK TIME: 21:55:50 EST: 8:55:50 MASTER ID: 231227001
+SPY *******************************************
+SPY ****************STARTS 12-27 8:55
+WMT *******************************************
+WMT ****************STARTS 12-27 8:55
+UL *******************************************
+UL ****************STARTS 12-27 8:55
+PG *******************************************
+PG ****************STARTS 12-27 8:55
+MCD *******************************************
+MCD ****************STARTS 12-27 8:55
+KO *******************************************
+KO ****************STARTS 12-27 8:55
+req live orders complete
+12-27 8:55 cancelling all orders on start up
+8:55:52 global cancel orders
+KO updating position: 12-27 8:55 position: 15 cost: 58.9049
+WMT updating position: 12-27 8:55 position: 25 cost: 158.355032
+PG updating position: 12-27 8:55 position: 0 cost: 0.0
+KO POS COST 15 58.9049
+MCD POS COST 0 0.0
+PG POS COST 0 0.0
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 25 158.355032
+12-27 8:55 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+PG 12-27 8:55 *tradeReport* time: 12:49:30 SLD exec price: 145.835 shares: 10 avgExecPrice: 145.835
+12-27 8:55 *TradeReportEnd*: all executions: {0000d884.658ae14d.01=[ExecutionAugmented{execution=orderID: 231226003 time: 12:49:30 side: SLD shares: 10 price: 145.835, symbol='PG'}]}
+PG listOfExecutions [orderID: 231226003 time: 12:49:30 side: SLD shares: 10 price: 145.835]
+openOrder Error 12-27 8:55 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+openOrder Error 12-27 8:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-27 8:56 last Live feed time: 12-27 8:56 px: 58.54 px/cost: 0.9938
+KO 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+KO *3d*: print stats:empty
+KO *1d*: print stats:empty
+MCD ****Periodic Run****
+MCD 12-27 8:56 last Live feed time: 12-27 8:56 px: 293.19 
+MCD 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+MCD *3d*: print stats:empty
+MCD *1d*: print stats:empty
+PG ****Periodic Run****
+PG 12-27 8:56 last Live feed time: 12-27 8:56 px: 145.58 
+PG 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+PG *3d*: print stats:empty
+PG *1d*: print stats:empty
+SPY ****Periodic Run****
+SPY 12-27 8:56 last Live feed time: 12-27 8:56 px: 475.85 
+SPY 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+SPY *3d*: print stats:empty
+SPY *1d*: print stats:empty
+UL ****Periodic Run****
+UL 12-27 8:56 last Live feed time: 12-27 8:56 px: 48.24 
+UL 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+UL *3d*: print stats:empty
+UL *1d*: print stats:empty
+WMT ****Periodic Run****
+WMT 12-27 8:56 last Live feed time: 12-27 8:56 px: 156.25 px/cost: 0.9867
+WMT 12-27 8:56 *3dP%: 0.0 *1dP%: 0.0
+WMT *3d*: print stats:empty
+WMT *1d*: print stats:empty
+openOrder Error 12-27 8:56 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+SPY 12-27 8:56 profit margin required: 1.0063
+MCD 12-27 8:56 profit margin required: 1.007
+WMT 12-27 8:56 profit margin required: 1.0076
+PG 12-27 8:56 profit margin required: 1.0072
+UL 12-27 8:56 profit margin required: 1.005
+KO 12-27 8:56 profit margin required: 1.0068
