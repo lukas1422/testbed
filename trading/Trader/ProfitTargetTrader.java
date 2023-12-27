@@ -405,8 +405,7 @@ public class ProfitTargetTrader implements LiveHandler,
     public void openOrder(Contract contract, Order order, OrderState orderState) {
 
         String symb = ibContractToSymbol(contract);
-        outputToSymbol(symb, usDateTime(), "*openOrder*", order,
-                "status:", orderState.status());
+        outputToSymbol(symb, usDateTime(), "*openOrder*", "status:", orderState.status(), order);
 
         orderStatusMap.get(symb).put(order.orderId(), orderState.status());
 
@@ -415,20 +414,19 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (orderState.status().isFinished()) {
-            outputToSymbol(symb, "*openOrder*:removing order", order, "status:", orderState.status());
+            outputToSymbol(symb, usDateTime(), "*openOrder*:removing order. Status:", orderState.status(), order);
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }
-            outputToSymbol(symb, usDateTime(), "openOrder Callback:after removal." +
+            outputToSymbol(symb, usDateTime(), "*openOrder*:after removal." +
                     "open orders:", symb, openOrders.get(symb));
         } else { //order is not finished
             openOrders.get(symb).put(order.orderId(), order);
         }
-        openOrders.forEach((s, v) -> {
-            if (!v.isEmpty()) {
-                outputToSymbol(s, "*openOrder* after removal open orders:", v);
-            }
-        });
+        if (!openOrders.get(symb).isEmpty()) {
+            outputToSymbol(symb, usDateTime(), "*openOrder* all live orders", openOrders.get(symb));
+        }
+
     }
 
     @Override
@@ -539,7 +537,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     .forEach(e2 -> outputToSymbol(symb, "1.*commission report*",
                             "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
                             e2.getValue().getOrder().action() == Types.Action.SELL ?
-                                    str("realized pnl:", e2.getKey(),
+                                    str("orderID:", e2.getKey(), "realized pnl:",
                                             commissionReport.realizedPNL()) : "NO PNL"));
 
             orderSubmitted.get(symb).forEach((key1, value1) -> {
