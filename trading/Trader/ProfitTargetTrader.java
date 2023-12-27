@@ -371,7 +371,6 @@ public class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
-
         outputToSymbol(symb, "3 Day Stats:", genStatsString(threeDayData.get(symb)),
                 "1DStats:", genStatsString(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
     }
@@ -566,7 +565,8 @@ public class ProfitTargetTrader implements LiveHandler,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
                                 "last Live feed time:",
                                 latestPriceTimeMap.get(symb).format(simpleDayTime)
-                                , "px:", latestPriceMap.getOrDefault(symb, 0.0), "px/cost:",
+                                , "px:", latestPriceMap.getOrDefault(symb, 0.0),
+                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : "px/cost:",
                                 round5Digits(latestPriceMap.getOrDefault(symb, 0.0)
                                         / costMap.getOrDefault(symb, 0.0))) :
                                 str(usDateTime(), "no live feed"));
