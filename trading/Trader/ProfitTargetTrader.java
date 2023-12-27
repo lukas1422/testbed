@@ -534,7 +534,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.containsKey(symb) && !orderSubmitted.get(symb).isEmpty()) {
             orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
-                    .forEach(e2 -> outputToSymbol(symb, "1.*commission report*",
+                    .forEach(e2 -> outputToSymbol(symb, "*1.commission report*",
                             "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
                             e2.getValue().getOrder().action() == Types.Action.SELL ?
                                     str("orderID:", e2.getKey(), "realized pnl:",
@@ -558,7 +558,7 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToSymbol(symb, "****Periodic****");
+                outputToSymbol(symb, "****Periodic Run****");
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
                                 "last Live feed time:",
@@ -569,11 +569,11 @@ public class ProfitTargetTrader implements LiveHandler,
                                         / costMap.getOrDefault(symb, 0.0))) :
                                 str(usDateTime(), "no live feed"));
                 if (!orderStatusMap.get(symb).isEmpty()) {
-                    outputToSymbol(symb, "periodic check:", usTime(),
+                    outputToSymbol(symb, "*check orderStatus*:", usDateTime(),
                             "orderStatus", orderStatusMap.get(symb));
                 }
                 if (!openOrders.get(symb).isEmpty()) {
-                    outputToSymbol(symb, "periodic check:", usTime(),
+                    outputToSymbol(symb, "*check openOrders*:", usDateTime(),
                             "openOrders", openOrders.get(symb));
                 }
                 outputToSymbol(symb, usDateTime(), "*3dP%:", threeDayPctMap.getOrDefault(symb, 0.0),
