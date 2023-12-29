@@ -1173,3 +1173,811 @@ openOrder Error 12-27 18:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm
 openOrder Error 12-27 18:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
 openOrder Error 12-27 18:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
 ****Ending**** 12-27 18:14
+MasterTradeID is: 231228001
+*****START***** HK TIME: 22:05:41 EST: 9:05:41 MASTER ID: 231228001
+SPY *******************************************
+SPY ****************STARTS 12-28 9:05
+WMT *******************************************
+WMT ****************STARTS 12-28 9:05
+UL *******************************************
+UL ****************STARTS 12-28 9:05
+PG *******************************************
+PG ****************STARTS 12-28 9:05
+MCD *******************************************
+MCD ****************STARTS 12-28 9:05
+KO *******************************************
+KO ****************STARTS 12-28 9:05
+req live orders complete
+12-28 9:05 cancelling all orders on start up
+9:05:44 global cancel orders
+KO updating position: 12-28 9:05 position: 15 cost: 58.9049
+WMT updating position: 12-28 9:05 position: 25 cost: 158.355032
+KO POS COST 15 58.9049
+MCD POS COST 0 0.0
+PG POS COST 0 0.0
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 25 158.355032
+12-28 9:05 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+12-28 9:05 *TradeReportEnd*: all executions: {}
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 12-28 9:05 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+KO 12-28 9:06 profit margin required: 1.0068
+KO ****Periodic Run****
+KO 12-28 9:06 no live feed
+KO 12-28 9:06 *3dP%: 0.0 *1dP%: 0.0
+KO *3d*: *n: 2108 *max: 58.79 [ 12-28 8:00 ] *min 58.13 [ 12-26 9:29 ] *rng 1.1 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 9:05 ]
+KO *1d*: *n: 305 *max: 58.78 [ 12-28 8:00 ] *min 58.6 [ 12-28 8:55 ] *rng 0.3 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 9:05 ]
+MCD ****Periodic Run****
+MCD 12-28 9:06 no live feed
+MCD 12-28 9:06 *3dP%: 94.0 *1dP%: 100.0
+MCD *3d*: *n: 1360 *max: 294.55 [ 12-27 15:59 ] *min 291.47 [ 12-26 9:30 ] *rng 1.1 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 9:05 ]
+MCD *1d*: *n: 31 *max: 294.31 [ 12-28 9:04 ] *min 294.3 [ 12-28 8:35 ] *rng 0.0 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 9:05 ]
+PG ****Periodic Run****
+PG 12-28 9:06 no live feed
+PG 12-28 9:06 *3dP%: 0.0 *1dP%: 0.0
+PG *3d*: print stats:empty
+PG *1d*: print stats:empty
+SPY ****Periodic Run****
+SPY 12-28 9:06 no live feed
+SPY 12-28 9:06 *3dP%: 0.0 *1dP%: 0.0
+SPY *3d*: print stats:empty
+SPY *1d*: print stats:empty
+UL ****Periodic Run****
+UL 12-28 9:06 no live feed
+UL 12-28 9:06 *3dP%: 0.0 *1dP%: 0.0
+UL *3d*: print stats:empty
+UL *1d*: print stats:empty
+WMT ****Periodic Run****
+WMT 12-28 9:06 no live feed
+WMT 12-28 9:06 *3dP%: 0.0 *1dP%: 0.0
+WMT *3d*: print stats:empty
+WMT *1d*: print stats:empty
+MCD 12-28 9:06 profit margin required: 1.007
+WMT 12-28 9:06 profit margin required: 1.0076
+PG 12-28 9:06 profit margin required: 1.0072
+UL 12-28 9:06 profit margin required: 1.005
+SPY 12-28 9:06 profit margin required: 1.0063
+openOrder Error 12-28 9:06 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 12-28 9:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:11 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.hkhmds
+openOrder Error 12-28 9:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:12 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+openOrder Error 12-28 9:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+PG ****FIRST**** 12-28 9:31:14
+PG ****first buying 3dp: 39.0 1dp: 0.0
+order sent 9:31:14 PG orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG orderID: 231228003 tradeID: 231228003 action: BUY px: 145.45 size: 5 PG 12-28 9:31 INVENTORY_ADDER Created
+PG 3 Day Stats: *n: 1502 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 9:31 ] 1DStats: *n: 69 *max: 146.06 [ 12-28 8:00 ] *min 145.87 [ 12-28 9:31 ] *rng 0.1 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 9:31 ]
+PG 9:31:14 order blocked: PG [] orderStatus: {231228003=Created}
+PG 12-28 9:31 *openOrder* status: Submitted orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG 12-28 9:31 *openOrder* all live orders {231228003=orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45}
+12-28 9:31 *OrderStatus*: Submitted orderId: 231228003 filled: 0 remaining: 5 fillPx 0.0 lastFillPx: 0.0
+PG 12-28 9:31 *OrderStatus*: Submitted orderId: 231228003 filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+PG 9:31:21 order blocked: PG [orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45] orderStatus: {231228003=Submitted}
+PG updating position: 12-28 9:31 position: 5 cost: 145.45
+PG 12-28 9:31 *tradeReport* time: 09:31:21 BOT exec price: 145.45 shares: 5 avgExecPrice: 145.45
+PG 12-28 9:31 *openOrder* status: Filled orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG 12-28 9:31 *openOrder*:removing order. Status: Filled orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG 12-28 9:31 *openOrder*:after removal.open orders: PG {}
+12-28 9:31 *OrderStatus*: Filled orderId: 231228003 filled: 5 remaining: 0 fillPx 145.45 lastFillPx: 145.45
+PG 12-28 9:31 *OrderStatus*: Filled orderId: 231228003 filled: 5 remaining: 0 fillPrice 145.45 lastFillPrice: 145.45
+PG 12-28 9:31 *openOrder* status: Filled orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG 12-28 9:31 *openOrder*:removing order. Status: Filled orderID: 231228003 orderType: LMT action: BUY totalQuantity: 5 filledQty:  limitPrice: 145.45
+PG 12-28 9:31 *openOrder*:after removal.open orders: PG {}
+12-28 9:31 *OrderStatus*: Filled orderId: 231228003 filled: 5 remaining: 0 fillPx 145.45 lastFillPx: 145.45
+PG 12-28 9:31 *OrderStatus*: Filled orderId: 231228003 filled: 5 remaining: 0 fillPrice 145.45 lastFillPrice: 145.45
+PG 1.*commission report* orderID: 231228003 commission: 0.345257 NO PNL
+PG 2.*commission report* orderID: 231228003 commission: 0.345257 no pnl
+PG updating position: 12-28 9:31 position: 5 cost: 145.5190514
+openOrder Error 12-28 9:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+PG updating position: 12-28 9:36 position: 5 cost: 145.51905145
+PG updating position: 12-28 9:36 position: 5 cost: 145.51905145
+openOrder Error 12-28 9:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:56 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 12-28 9:56 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 12-28 9:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 9:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 10:06 last Live feed time: 12-28 10:06 px: 58.8 px/cost: 0.9982
+KO 12-28 10:06 *3dP%: 93.0 *1dP%: 80.0
+KO *3d*: *n: 2152 *max: 58.85 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.2 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 10:06 ]
+KO *1d*: *n: 349 *max: 58.85 [ 12-28 9:47 ] *min 58.6 [ 12-28 8:55 ] *rng 0.4 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 10:06 ]
+MCD ****Periodic Run****
+MCD 12-28 10:06 last Live feed time: 12-28 10:05 px: 294.62 
+MCD 12-28 10:06 *3dP%: 89.0 *1dP%: 46.0
+MCD *3d*: *n: 1398 *max: 295.02 [ 12-28 9:37 ] *min 291.47 [ 12-26 9:30 ] *rng 1.2 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 10:05 ]
+MCD *1d*: *n: 69 *max: 295.02 [ 12-28 9:37 ] *min 294.27 [ 12-28 9:30 ] *rng 0.3 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 10:05 ]
+PG ****Periodic Run****
+PG 12-28 10:06 last Live feed time: 12-28 10:06 px: 145.81 px/cost: 1.002
+PG *check orderStatus*: 12-28 10:06 orderStatus {231228003=Filled}
+PG 12-28 10:06 *3dP%: 65.0 *1dP%: 66.0
+PG *3d*: *n: 1537 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 10:06 ]
+PG *1d*: *n: 104 *max: 146.06 [ 12-28 8:00 ] *min 145.32 [ 12-28 9:32 ] *rng 0.5 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 10:06 ]
+SPY ****Periodic Run****
+SPY 12-28 10:06 last Live feed time: 12-28 10:06 px: 476.89 
+SPY 12-28 10:06 *3dP%: 86.0 *1dP%: 35.0
+SPY *3d*: *n: 2285 *max: 477.39 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.7 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 10:06 ]
+SPY *1d*: *n: 367 *max: 477.39 [ 12-28 8:02 ] *min 476.62 [ 12-28 9:01 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 10:06 ]
+UL ****Periodic Run****
+UL 12-28 10:06 last Live feed time: 12-28 10:05 px: 48.65 
+UL 12-28 10:06 *3dP%: 98.0 *1dP%: 92.0
+UL *3d*: *n: 1940 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 10:05 ]
+UL *1d*: *n: 348 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 10:05 ]
+WMT ****Periodic Run****
+WMT 12-28 10:06 last Live feed time: 12-28 10:06 px: 158.21 px/cost: 0.9991
+WMT 12-28 10:06 *3dP%: 98.0 *1dP%: 97.0
+WMT *3d*: *n: 2017 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 10:06 ]
+WMT *1d*: *n: 116 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 10:06 ]
+openOrder Error 12-28 10:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 10:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 11:06 last Live feed time: 12-28 11:05 px: 58.82 px/cost: 0.9986
+KO 12-28 11:06 *3dP%: 94.0 *1dP%: 83.0
+KO *3d*: *n: 2210 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 11:05 ]
+KO *1d*: *n: 407 *max: 58.86 [ 12-28 9:47 ] *min 58.6 [ 12-28 8:55 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 11:05 ]
+MCD ****Periodic Run****
+MCD 12-28 11:06 last Live feed time: 12-28 11:05 px: 295.33 
+MCD 12-28 11:06 *3dP%: 99.0 *1dP%: 98.0
+MCD *3d*: *n: 1458 *max: 295.35 [ 12-28 10:49 ] *min 291.47 [ 12-26 9:30 ] *rng 1.3 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 11:05 ]
+MCD *1d*: *n: 129 *max: 295.35 [ 12-28 10:49 ] *min 294.27 [ 12-28 9:30 ] *rng 0.4 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 11:05 ]
+PG ****Periodic Run****
+PG 12-28 11:06 last Live feed time: 12-28 11:05 px: 145.58 px/cost: 1.0004
+PG *check orderStatus*: 12-28 11:06 orderStatus {231228003=Filled}
+PG 12-28 11:06 *3dP%: 48.0 *1dP%: 37.0
+PG *3d*: *n: 1596 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 11:05 ]
+PG *1d*: *n: 163 *max: 146.06 [ 12-28 8:00 ] *min 145.3 [ 12-28 9:32 ] *rng 0.5 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 11:05 ]
+SPY ****Periodic Run****
+SPY 12-28 11:06 last Live feed time: 12-28 11:06 px: 477.05 
+SPY 12-28 11:06 *3dP%: 88.0 *1dP%: 50.0
+SPY *3d*: *n: 2345 *max: 477.49 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 11:06 ]
+SPY *1d*: *n: 427 *max: 477.49 [ 12-28 8:02 ] *min 476.62 [ 12-28 9:01 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 11:06 ]
+UL ****Periodic Run****
+UL 12-28 11:06 last Live feed time: 12-28 11:05 px: 48.6 
+UL 12-28 11:06 *3dP%: 91.0 *1dP%: 69.0
+UL *3d*: *n: 1993 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 11:05 ]
+UL *1d*: *n: 401 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 11:05 ]
+WMT ****Periodic Run****
+WMT 12-28 11:06 last Live feed time: 12-28 11:05 px: 158.06 px/cost: 0.9981
+WMT 12-28 11:06 *3dP%: 91.0 *1dP%: 85.0
+WMT *3d*: *n: 2076 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 11:05 ]
+WMT *1d*: *n: 175 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 11:05 ]
+openOrder Error 12-28 11:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:42 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 12-28 11:42 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 12-28 11:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 11:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 12:06 last Live feed time: 12-28 12:05 px: 58.7 px/cost: 0.9965
+KO 12-28 12:06 *3dP%: 78.0 *1dP%: 38.0
+KO *3d*: *n: 2269 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 12:05 ]
+KO *1d*: *n: 466 *max: 58.86 [ 12-28 9:47 ] *min 58.6 [ 12-28 8:55 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 12:05 ]
+MCD ****Periodic Run****
+MCD 12-28 12:06 last Live feed time: 12-28 12:05 px: 295.39 
+MCD 12-28 12:06 *3dP%: 98.0 *1dP%: 94.0
+MCD *3d*: *n: 1518 *max: 295.46 [ 12-28 11:28 ] *min 291.47 [ 12-26 9:30 ] *rng 1.4 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 12:05 ]
+MCD *1d*: *n: 189 *max: 295.46 [ 12-28 11:28 ] *min 294.27 [ 12-28 9:30 ] *rng 0.4 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 12:05 ]
+PG ****Periodic Run****
+PG 12-28 12:06 last Live feed time: 12-28 12:05 px: 145.33 px/cost: 0.9987
+PG *check orderStatus*: 12-28 12:06 orderStatus {231228003=Filled}
+PG 12-28 12:06 *3dP%: 30.0 *1dP%: 13.0
+PG *3d*: *n: 1656 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 12:05 ]
+PG *1d*: *n: 223 *max: 146.06 [ 12-28 8:00 ] *min 145.22 [ 12-28 12:00 ] *rng 0.6 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 12:05 ]
+SPY ****Periodic Run****
+SPY 12-28 12:06 last Live feed time: 12-28 12:06 px: 477.13 
+SPY 12-28 12:06 *3dP%: 90.0 *1dP%: 59.0
+SPY *3d*: *n: 2405 *max: 477.49 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 12:06 ]
+SPY *1d*: *n: 487 *max: 477.49 [ 12-28 8:02 ] *min 476.61 [ 12-28 9:01 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 12:06 ]
+UL ****Periodic Run****
+UL 12-28 12:06 last Live feed time: 12-28 12:05 px: 48.58 
+UL 12-28 12:06 *3dP%: 88.0 *1dP%: 60.0
+UL *3d*: *n: 2038 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 12:05 ]
+UL *1d*: *n: 446 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 12:05 ]
+WMT ****Periodic Run****
+WMT 12-28 12:06 last Live feed time: 12-28 12:06 px: 157.98 px/cost: 0.9976
+WMT 12-28 12:06 *3dP%: 87.0 *1dP%: 79.0
+WMT *3d*: *n: 2137 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 12:06 ]
+WMT *1d*: *n: 236 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 12:06 ]
+openOrder Error 12-28 12:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 12:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 13:06 last Live feed time: 12-28 13:05 px: 58.54 px/cost: 0.9938
+KO 12-28 13:06 *3dP%: 56.0 *1dP%: 0.0
+KO *3d*: *n: 2329 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 13:05 ]
+KO *1d*: *n: 526 *max: 58.86 [ 12-28 9:47 ] *min 58.57 [ 12-28 13:05 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 13:05 ]
+MCD ****Periodic Run****
+MCD 12-28 13:06 last Live feed time: 12-28 13:05 px: 295.46 
+MCD 12-28 13:06 *3dP%: 93.0 *1dP%: 79.0
+MCD *3d*: *n: 1578 *max: 295.78 [ 12-28 12:55 ] *min 291.47 [ 12-26 9:30 ] *rng 1.5 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 13:05 ]
+MCD *1d*: *n: 249 *max: 295.78 [ 12-28 12:55 ] *min 294.27 [ 12-28 9:30 ] *rng 0.5 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 13:05 ]
+PG ****Periodic Run****
+PG 12-28 13:06 last Live feed time: 12-28 13:05 px: 145.08 px/cost: 0.997
+PG *check orderStatus*: 12-28 13:06 orderStatus {231228003=Filled}
+PG 12-28 13:06 *3dP%: 12.0 *1dP%: 3.0
+PG *3d*: *n: 1716 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 13:05 ]
+PG *1d*: *n: 283 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 13:05 ]
+SPY ****Periodic Run****
+SPY 12-28 13:06 last Live feed time: 12-28 13:06 px: 476.58 
+SPY 12-28 13:06 *3dP%: 75.0 *1dP%: 3.0
+SPY *3d*: *n: 2465 *max: 477.49 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 13:06 ]
+SPY *1d*: *n: 547 *max: 477.49 [ 12-28 8:02 ] *min 476.56 [ 12-28 13:03 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 13:06 ]
+UL ****Periodic Run****
+UL 12-28 13:06 last Live feed time: 12-28 13:05 px: 48.48 
+UL 12-28 13:06 *3dP%: 75.0 *1dP%: 14.0
+UL *3d*: *n: 2078 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 13:05 ]
+UL *1d*: *n: 486 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 13:05 ]
+WMT ****Periodic Run****
+WMT 12-28 13:06 last Live feed time: 12-28 13:05 px: 157.62 px/cost: 0.9954
+WMT 12-28 13:06 *3dP%: 70.0 *1dP%: 51.0
+WMT *3d*: *n: 2196 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 13:05 ]
+WMT *1d*: *n: 295 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 13:05 ]
+openOrder Error 12-28 13:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:27 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+openOrder Error 12-28 13:27 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+openOrder Error 12-28 13:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 13:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 14:06 last Live feed time: 12-28 14:05 px: 58.74 px/cost: 0.9972
+KO 12-28 14:06 *3dP%: 82.0 *1dP%: 57.0
+KO *3d*: *n: 2386 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 14:05 ]
+KO *1d*: *n: 583 *max: 58.86 [ 12-28 9:47 ] *min 58.55 [ 12-28 13:05 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 14:05 ]
+MCD ****Periodic Run****
+MCD 12-28 14:06 last Live feed time: 12-28 14:05 px: 296.08 
+MCD 12-28 14:06 *3dP%: 100.0 *1dP%: 100.0
+MCD *3d*: *n: 1638 *max: 296.06 [ 12-28 14:04 ] *min 291.47 [ 12-26 9:30 ] *rng 1.6 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 14:05 ]
+MCD *1d*: *n: 309 *max: 296.06 [ 12-28 14:04 ] *min 294.27 [ 12-28 9:30 ] *rng 0.6 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 14:05 ]
+PG ****Periodic Run****
+PG 12-28 14:06 last Live feed time: 12-28 14:05 px: 145.45 px/cost: 0.9995
+PG *check orderStatus*: 12-28 14:06 orderStatus {231228003=Filled}
+PG 12-28 14:06 *3dP%: 39.0 *1dP%: 40.0
+PG *3d*: *n: 1776 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 14:05 ]
+PG *1d*: *n: 343 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 14:05 ]
+SPY ****Periodic Run****
+SPY 12-28 14:06 last Live feed time: 12-28 14:06 px: 477.17 
+SPY 12-28 14:06 *3dP%: 91.0 *1dP%: 66.0
+SPY *3d*: *n: 2525 *max: 477.5 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 14:06 ]
+SPY *1d*: *n: 607 *max: 477.5 [ 12-28 8:02 ] *min 476.54 [ 12-28 13:06 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 14:06 ]
+UL ****Periodic Run****
+UL 12-28 14:06 last Live feed time: 12-28 14:05 px: 48.54 
+UL 12-28 14:06 *3dP%: 83.0 *1dP%: 41.0
+UL *3d*: *n: 2122 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 14:05 ]
+UL *1d*: *n: 530 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 14:05 ]
+WMT ****Periodic Run****
+WMT 12-28 14:06 last Live feed time: 12-28 14:05 px: 157.73 px/cost: 0.9961
+WMT 12-28 14:06 *3dP%: 76.0 *1dP%: 60.0
+WMT *3d*: *n: 2256 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 14:05 ]
+WMT *1d*: *n: 355 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 14:05 ]
+openOrder Error 12-28 14:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 14:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 15:06 last Live feed time: 12-28 15:05 px: 58.74 px/cost: 0.9972
+KO 12-28 15:06 *3dP%: 83.0 *1dP%: 61.0
+KO *3d*: *n: 2445 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 15:05 ]
+KO *1d*: *n: 642 *max: 58.86 [ 12-28 9:47 ] *min 58.55 [ 12-28 13:05 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 15:05 ]
+MCD ****Periodic Run****
+MCD 12-28 15:06 last Live feed time: 12-28 15:05 px: 296.28 
+MCD 12-28 15:06 *3dP%: 98.0 *1dP%: 96.0
+MCD *3d*: *n: 1698 *max: 296.36 [ 12-28 14:59 ] *min 291.47 [ 12-26 9:30 ] *rng 1.7 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 15:05 ]
+MCD *1d*: *n: 369 *max: 296.36 [ 12-28 14:59 ] *min 294.27 [ 12-28 9:30 ] *rng 0.7 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 15:05 ]
+PG ****Periodic Run****
+PG 12-28 15:06 last Live feed time: 12-28 15:05 px: 145.64 px/cost: 1.0008
+PG *check orderStatus*: 12-28 15:06 orderStatus {231228003=Filled}
+PG 12-28 15:06 *3dP%: 53.0 *1dP%: 59.0
+PG *3d*: *n: 1836 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 15:05 ]
+PG *1d*: *n: 403 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 15:05 ]
+SPY ****Periodic Run****
+SPY 12-28 15:06 last Live feed time: 12-28 15:06 px: 477.16 
+SPY 12-28 15:06 *3dP%: 91.0 *1dP%: 65.0
+SPY *3d*: *n: 2585 *max: 477.5 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 15:06 ]
+SPY *1d*: *n: 667 *max: 477.5 [ 12-28 8:02 ] *min 476.54 [ 12-28 13:06 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 15:06 ]
+UL ****Periodic Run****
+UL 12-28 15:06 last Live feed time: 12-28 15:05 px: 48.57 
+UL 12-28 15:06 *3dP%: 87.0 *1dP%: 55.0
+UL *3d*: *n: 2166 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 15:05 ]
+UL *1d*: *n: 574 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 15:05 ]
+WMT ****Periodic Run****
+WMT 12-28 15:06 last Live feed time: 12-28 15:05 px: 157.57 px/cost: 0.995
+WMT 12-28 15:06 *3dP%: 68.0 *1dP%: 48.0
+WMT *3d*: *n: 2315 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 15:05 ]
+WMT *1d*: *n: 414 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 15:05 ]
+openOrder Error 12-28 15:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 15:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 16:06 last Live feed time: 12-28 16:05 px: 58.73 px/cost: 0.997
+KO 12-28 16:06 *3dP%: 82.0 *1dP%: 57.0
+KO *3d*: *n: 2502 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 16:05 ]
+KO *1d*: *n: 699 *max: 58.86 [ 12-28 9:47 ] *min 58.55 [ 12-28 13:05 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 16:05 ]
+MCD ****Periodic Run****
+MCD 12-28 16:06 last Live feed time: 12-28 16:00 px: 295.84 
+MCD 12-28 16:06 *3dP%: 88.0 *1dP%: 73.0
+MCD *3d*: *n: 1753 *max: 296.43 [ 12-28 15:44 ] *min 291.47 [ 12-26 9:30 ] *rng 1.7 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 16:00 ]
+MCD *1d*: *n: 424 *max: 296.43 [ 12-28 15:44 ] *min 294.27 [ 12-28 9:30 ] *rng 0.7 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 16:00 ]
+PG ****Periodic Run****
+PG 12-28 16:06 last Live feed time: 12-28 16:00 px: 145.73 px/cost: 1.0014
+PG *check orderStatus*: 12-28 16:06 orderStatus {231228003=Filled}
+PG 12-28 16:06 *3dP%: 59.0 *1dP%: 67.0
+PG *3d*: *n: 1891 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 16:00 ]
+PG *1d*: *n: 458 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 16:00 ]
+SPY ****Periodic Run****
+SPY 12-28 16:06 last Live feed time: 12-28 16:06 px: 476.85 
+SPY 12-28 16:06 *3dP%: 82.0 *1dP%: 45.0
+SPY *3d*: *n: 2645 *max: 477.5 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 16:06 ]
+SPY *1d*: *n: 727 *max: 477.5 [ 12-28 8:02 ] *min 476.33 [ 12-28 15:57 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 16:06 ]
+UL ****Periodic Run****
+UL 12-28 16:06 last Live feed time: 12-28 16:00 px: 48.48 
+UL 12-28 16:06 *3dP%: 75.0 *1dP%: 14.0
+UL *3d*: *n: 2208 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 16:00 ]
+UL *1d*: *n: 616 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 16:00 ]
+WMT ****Periodic Run****
+WMT 12-28 16:06 last Live feed time: 12-28 16:00 px: 157.57 px/cost: 0.995
+WMT 12-28 16:06 *3dP%: 68.0 *1dP%: 48.0
+WMT *3d*: *n: 2370 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 16:00 ]
+WMT *1d*: *n: 469 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 16:00 ]
+openOrder Error 12-28 16:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 16:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run****
+KO 12-28 17:06 last Live feed time: 12-28 16:55 px: 58.74 px/cost: 0.9972
+KO 12-28 17:06 *3dP%: 83.0 *1dP%: 61.0
+KO *3d*: *n: 2511 *max: 58.86 [ 12-28 9:47 ] *min 58.13 [ 12-26 9:29 ] *rng 1.3 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 16:55 ]
+KO *1d*: *n: 708 *max: 58.86 [ 12-28 9:47 ] *min 58.55 [ 12-28 13:05 ] *rng 0.5 % *1st Key: [ 12-28 4:01 ] *last: [ 12-28 16:55 ]
+MCD ****Periodic Run****
+MCD 12-28 17:06 last Live feed time: 12-28 17:02 px: 295.84 
+MCD 12-28 17:06 *3dP%: 88.0 *1dP%: 73.0
+MCD *3d*: *n: 1757 *max: 296.43 [ 12-28 15:44 ] *min 291.47 [ 12-26 9:30 ] *rng 1.7 % *1st Key: [ 12-26 9:20 ] *last: [ 12-28 17:02 ]
+MCD *1d*: *n: 428 *max: 296.43 [ 12-28 15:44 ] *min 294.27 [ 12-28 9:30 ] *rng 0.7 % *1st Key: [ 12-28 8:35 ] *last: [ 12-28 17:02 ]
+PG ****Periodic Run****
+PG 12-28 17:06 last Live feed time: 12-28 17:02 px: 145.73 px/cost: 1.0014
+PG *check orderStatus*: 12-28 17:06 orderStatus {231228003=Filled}
+PG 12-28 17:06 *3dP%: 59.0 *1dP%: 67.0
+PG *3d*: *n: 1895 *max: 146.29 [ 12-27 13:50 ] *min 144.92 [ 12-26 8:07 ] *rng 0.9 % *1st Key: [ 12-26 8:07 ] *last: [ 12-28 17:02 ]
+PG *1d*: *n: 462 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 17:02 ]
+SPY ****Periodic Run****
+SPY 12-28 17:06 last Live feed time: 12-28 17:05 px: 476.8 
+SPY 12-28 17:06 *3dP%: 81.0 *1dP%: 40.0
+SPY *3d*: *n: 2694 *max: 477.5 [ 12-28 8:02 ] *min 473.89 [ 12-26 7:07 ] *rng 0.8 % *1st Key: [ 12-26 4:00 ] *last: [ 12-28 17:05 ]
+SPY *1d*: *n: 776 *max: 477.5 [ 12-28 8:02 ] *min 476.33 [ 12-28 15:57 ] *rng 0.2 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 17:05 ]
+UL ****Periodic Run****
+UL 12-28 17:06 last Live feed time: 12-28 16:00 px: 48.48 
+UL 12-28 17:06 *3dP%: 75.0 *1dP%: 14.0
+UL *3d*: *n: 2208 *max: 48.67 [ 12-28 9:55 ] *min 47.91 [ 12-26 11:04 ] *rng 1.6 % *1st Key: [ 12-26 9:28 ] *last: [ 12-28 16:00 ]
+UL *1d*: *n: 616 *max: 48.67 [ 12-28 9:55 ] *min 48.45 [ 12-28 7:47 ] *rng 0.4 % *1st Key: [ 12-28 4:00 ] *last: [ 12-28 16:00 ]
+WMT ****Periodic Run****
+WMT 12-28 17:06 last Live feed time: 12-28 16:29 px: 157.51 px/cost: 0.9947
+WMT 12-28 17:06 *3dP%: 65.0 *1dP%: 43.0
+WMT *3d*: *n: 2375 *max: 158.25 [ 12-28 9:30 ] *min 156.12 [ 12-26 12:42 ] *rng 1.4 % *1st Key: [ 12-26 4:02 ] *last: [ 12-28 16:29 ]
+WMT *1d*: *n: 474 *max: 158.25 [ 12-28 9:30 ] *min 156.95 [ 12-28 9:29 ] *rng 0.8 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 16:29 ]
+openOrder Error 12-28 17:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 12-28 17:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+****Ending**** 12-28 17:52
+MasterTradeID is: 231228001
+*****START***** HK TIME: 8:08:20 EST: 19:08:20 MASTER ID: 231228001
+SPY *******************************************
+SPY ****************STARTS 12-28 19:08
+WMT *******************************************
+WMT ****************STARTS 12-28 19:08
+UL *******************************************
+UL ****************STARTS 12-28 19:08
+PG *******************************************
+PG ****************STARTS 12-28 19:08
+MCD *******************************************
+MCD ****************STARTS 12-28 19:08
+KO *******************************************
+KO ****************STARTS 12-28 19:08
+****Ending**** 12-28 19:08

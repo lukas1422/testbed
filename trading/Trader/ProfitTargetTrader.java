@@ -551,7 +551,7 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetStockList.forEach(symb -> {
-                outputToSymbol(symb, "****Periodic Run****");
+                outputToSymbol(symb, "****Periodic Run****", usDateTime());
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
                                 "last Live feed time:",

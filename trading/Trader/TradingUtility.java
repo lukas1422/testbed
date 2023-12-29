@@ -633,6 +633,10 @@ public class TradingUtility {
         return Math.round(n * 100.0) / 100.0;
     }
 
+    static double round1Digits(double n) {
+        return Math.round(n * 10.0) / 10.0;
+    }
+
     public static double getMinProfitMargin(String s) {
         return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
     }
@@ -696,10 +700,12 @@ public class TradingUtility {
 //        pr("highest 5", m.entrySet().stream().sorted(Collections.reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
 //                .limit(5).collect(Collectors.toList()));
 
-        return str("*n:", m.size(), "*max:", round2Digits(max), "[", maxTime.format(simpleDayTime), "]", "*min", round2Digits(min),
-                "[", minTime.format(simpleDayTime), "]"
-                , "*rng", Math.round(range * 1000.0) / 10.0, "%", "*1st Key:", "[", m.firstKey().format(simpleDayTime), "]"
-                , "*last:", "[", m.lastKey().format(simpleDayTime), "]");
+        return str("*n:" + m.size(),
+                "*max:" + round1Digits(max) + " [" + maxTime.format(simpleDayTime) + "]",
+                "*min:" + round1Digits(min) + " [" + minTime.format(simpleDayTime) + "]",
+                "*rng:" + (Math.round(range * 1000.0) / 10.0) + "%",
+                "*1Key:[" + m.firstKey().format(simpleDayTime) + "]",
+                "*last:[" + m.lastKey().format(simpleDayTime) + "]");
     }
 
     public static Contract getActiveA50Contract() {

@@ -233,6 +233,5 @@ public enum AutoOrderType {
     BREACH_ADDER,
     BREACH_CUTTER,
     FUT_TEMP_CUTTER,
-    LOW_ADDER,
     UNKNOWN
 }
