@@ -12,21 +12,7 @@ import static utility.Utility.pr;
 public class Sandpaper {
 
     public static void main(String[] args) {
+        pr(Math.floor(80000/3/457.1));
 
-        LinkedHashMap<Integer, Integer> m = new LinkedHashMap<>();
-        m.put(1, 1);
-        pr(m);
-        pr(add(m));
-        pr(m);
-
-    }
-
-    static void modify(LinkedHashMap<Integer, String> n) {
-        n.put(2, "two");
-    }
-
-    static int add(LinkedHashMap<Integer, Integer> n) {
-        n.put(1, 2);
-        return n.get(1) + 3;
     }
 }

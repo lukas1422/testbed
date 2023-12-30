@@ -494,6 +494,10 @@ public class ProfitTargetTrader implements LiveHandler,
     public void tradeReport(String tradeKey, Contract contract, Execution execution) {
         String symb = ibContractToSymbol(contract);
 
+        if (symb.equalsIgnoreCase("USD")) {
+            return;
+        }
+
         outputToSymbol(symb, usDateTime(), "*tradeReport* time:",
                 executionToUSTime(execution.time()), execution.side(), "exec price:",
                 execution.price(), "shares:", execution.shares(),

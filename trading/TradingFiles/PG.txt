@@ -168,3 +168,111 @@ updating position: 12-28 9:36 position: 5 cost: 145.51905145
 *1d*: *n: 462 *max: 146.06 [ 12-28 8:00 ] *min 145.05 [ 12-28 12:27 ] *rng 0.7 % *1st Key: [ 12-28 8:00 ] *last: [ 12-28 17:02 ]
 *******************************************
 ****************STARTS 12-28 19:08
+*******************************************
+****************STARTS 12-29 8:09
+updating position: 12-29 8:09 position: 5 cost: 145.51906
+POS COST 5 145.51906
+12-29 8:10 profit margin required: 1.0072
+****Periodic Run**** 12-29 8:10
+12-29 8:10 last Live feed time: 12-29 8:10 px: 145.8 px/cost: 1.0019
+12-29 8:10 *3dP%: 61.0 *1dP%: 0.0
+*3d*: *n:1646 *max:146.3 [12-27 13:50] *min:145.0 [12-28 12:27] *rng:0.9% *1Key:[12-27 8:00] *last:[12-29 8:10]
+*1d*: *n:206 *max:145.8 [12-29 4:45] *min:145.8 [12-29 4:45] *rng:0.0% *1Key:[12-29 4:45] *last:[12-29 8:10]
+*******************************************
+****************STARTS 12-29 8:56
+updating position: 12-29 8:56 position: 5 cost: 145.51906
+POS COST 5 145.51906
+****Periodic Run**** 12-29 8:57
+12-29 8:57 no live feed
+12-29 8:57 *3dP%: 0.0 *1dP%: 0.0
+*3d*: print stats:empty
+*1d*: print stats:empty
+*******************************************
+****************STARTS 12-29 8:57
+updating position: 12-29 8:57 position: 5 cost: 145.51906
+POS COST 5 145.51906
+****Periodic Run**** 12-29 8:57
+12-29 8:57 last Live feed time: 12-29 8:57 px: 145.8 px/cost: 1.0019
+12-29 8:57 *3dP%: 0.0 *1dP%: 0.0
+*3d*: print stats:empty
+*1d*: print stats:empty
+12-29 8:59 profit margin required: 1.0072
+****Periodic Run**** 12-29 9:57
+12-29 9:57 last Live feed time: 12-29 9:57 px: 145.89 px/cost: 1.0025
+12-29 9:57 *3dP%: 68.0 *1dP%: 22.0
+*3d*: *n:1725 *max:146.3 [12-27 13:50] *min:145.0 [12-28 12:27] *rng:0.9% *1Key:[12-27 8:00] *last:[12-29 9:57]
+*1d*: *n:285 *max:146.2 [12-29 9:41] *min:145.8 [12-29 9:34] *rng:0.3% *1Key:[12-29 4:45] *last:[12-29 9:57]
+****CUT**** 12-29 10:33:37
+Sell 1dP%: 100.0 3dp: 100.0 priceOverCost: 1.0072 requiredMargin: 1.0072 avgRng: 0.0144
+orderID: 231229003 tradeID: 231229003 SELL sell px: 146.57 qty: 5 costBasis: 145.51906 PG 12-29 10:33 INVENTORY_CUTTER Created required Margin: 1.0072023187389492 targetPrice: 146.56713465271227 askPrice 146.57
+3DStats: *n:1761 *max:146.5 [12-29 10:33] *min:145.0 [12-28 12:27] *rng:1.0% *1Key:[12-27 8:00] *last:[12-29 10:33] 1DStats: *n:321 *max:146.5 [12-29 10:33] *min:145.8 [12-29 9:34] *rng:0.5% *1Key:[12-29 4:45] *last:[12-29 10:33]
+12-29 10:33 *openOrder* status: PreSubmitted orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57
+12-29 10:33 *openOrder* all live orders {231229003=orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57}
+12-29 10:33 *OrderStatus*: PreSubmitted orderId: 231229003 filled: 0 remaining: 5 fillPrice 0.0 lastFillPrice: 0.0
+updating position: 12-29 10:33 position: 0 cost: 0.0
+12-29 10:33 *tradeReport* time: 10:33:38 SLD exec price: 146.575 shares: 5 avgExecPrice: 146.575
+12-29 10:33 *openOrder* status: Filled orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57
+12-29 10:33 *openOrder*:removing order. Status: Filled orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57
+12-29 10:33 *openOrder*:after removal.open orders: PG {}
+12-29 10:33 *OrderStatus*: Filled orderId: 231229003 filled: 5 remaining: 0 fillPrice 146.575 lastFillPrice: 146.575
+12-29 10:33 *openOrder* status: Filled orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57
+12-29 10:33 *openOrder*:removing order. Status: Filled orderID: 231229003 orderType: LMT action: SELL totalQuantity: 5 filledQty:  limitPrice: 146.57
+12-29 10:33 *openOrder*:after removal.open orders: PG {}
+12-29 10:33 *OrderStatus*: Filled orderId: 231229003 filled: 5 remaining: 0 fillPrice 146.575 lastFillPrice: 146.575
+1.*commission report* orderID: 231229003 commission: 0.357845 orderID: 231229003 realized pnl: 4.921855
+2.*commission report* orderID: 231229003 commission: 0.357845 realized pnl: 4.921855
+updating position: 12-29 10:33 position: 0 cost: 0.0
+updating position: 12-29 10:33 position: 0 cost: 0.0
+updating position: 12-29 10:38 position: 0 cost: 0.0
+updating position: 12-29 10:38 position: 0 cost: 0.0
+updating position: 12-29 10:47 position: 0 cost: 0.0
+****Periodic Run**** 12-29 10:57
+12-29 10:57 last Live feed time: 12-29 10:57 px: 146.71 
+*check orderStatus*: 12-29 10:57 orderStatus {231229003=Filled}
+12-29 10:57 *3dP%: 97.0 *1dP%: 95.0
+*3d*: *n:1785 *max:146.8 [12-29 10:56] *min:145.0 [12-28 12:27] *rng:1.2% *1Key:[12-27 8:00] *last:[12-29 10:57]
+*1d*: *n:345 *max:146.8 [12-29 10:56] *min:145.8 [12-29 9:34] *rng:0.7% *1Key:[12-29 4:45] *last:[12-29 10:57]
+****Periodic Run**** 12-29 11:57
+12-29 11:57 last Live feed time: 12-29 11:57 px: 146.26 
+*check orderStatus*: 12-29 11:57 orderStatus {231229003=Filled}
+12-29 11:57 *3dP%: 64.0 *1dP%: 41.0
+*3d*: *n:1845 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 11:57]
+*1d*: *n:405 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 11:57]
+****Periodic Run**** 12-29 12:57
+12-29 12:57 last Live feed time: 12-29 12:57 px: 146.28 
+*check orderStatus*: 12-29 12:57 orderStatus {231229003=Filled}
+12-29 12:57 *3dP%: 66.0 *1dP%: 43.0
+*3d*: *n:1904 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 12:57]
+*1d*: *n:464 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 12:57]
+****Periodic Run**** 12-29 13:57
+12-29 13:57 last Live feed time: 12-29 13:57 px: 146.07 
+*check orderStatus*: 12-29 13:57 orderStatus {231229003=Filled}
+12-29 13:57 *3dP%: 54.0 *1dP%: 25.0
+*3d*: *n:1964 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 13:57]
+*1d*: *n:524 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 13:57]
+****Periodic Run**** 12-29 14:57
+12-29 14:57 last Live feed time: 12-29 14:57 px: 146.23 
+*check orderStatus*: 12-29 14:57 orderStatus {231229003=Filled}
+12-29 14:57 *3dP%: 63.0 *1dP%: 39.0
+*3d*: *n:2024 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 14:57]
+*1d*: *n:584 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 14:57]
+****Periodic Run**** 12-29 15:57
+12-29 15:57 last Live feed time: 12-29 15:57 px: 146.54 
+*check orderStatus*: 12-29 15:57 orderStatus {231229003=Filled}
+12-29 15:57 *3dP%: 79.0 *1dP%: 66.0
+*3d*: *n:2083 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 15:57]
+*1d*: *n:643 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 15:57]
+****Periodic Run**** 12-29 16:57
+12-29 16:57 last Live feed time: 12-29 16:46 px: 146.25 
+*check orderStatus*: 12-29 16:57 orderStatus {231229003=Filled}
+12-29 16:57 *3dP%: 64.0 *1dP%: 40.0
+*3d*: *n:2088 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 16:46]
+*1d*: *n:648 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 16:46]
+****Periodic Run**** 12-29 17:57
+12-29 17:57 last Live feed time: 12-29 17:57 px: 146.26 
+*check orderStatus*: 12-29 17:57 orderStatus {231229003=Filled}
+12-29 17:57 *3dP%: 64.0 *1dP%: 41.0
+*3d*: *n:2092 *max:146.9 [12-29 11:09] *min:145.0 [12-28 12:27] *rng:1.3% *1Key:[12-27 8:00] *last:[12-29 17:57]
+*1d*: *n:652 *max:146.9 [12-29 11:09] *min:145.8 [12-29 9:34] *rng:0.8% *1Key:[12-29 4:45] *last:[12-29 17:57]
+*******************************************
+****************STARTS 12-29 18:39
