@@ -31,8 +31,8 @@ public class Allstatic {
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime PERCENTILE_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
-    static final double DELTA_LIMIT = 50000;
-    static final double DELTA_LIMIT_EACH_STOCK = 10000;
+    static final double DELTA_LIMIT = 20000;
+    static final double DELTA_LIMIT_EACH_STOCK = 8000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
