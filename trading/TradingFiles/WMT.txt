@@ -226,3 +226,78 @@ POS COST 25 158.355032
 1-2 9:14 *3dP%: 10.0 *1dP%: 17.0
 *3d*: *n:1657 *max:158.3 [12-28 9:30] *min:157.0 [12-28 9:29] *rng:0.8% *1Key:[12-28 8:00] *last:[1-2 9:14]
 *1d*: *n:162 *max:157.3 [1-2 8:00] *min:157.0 [1-2 8:24] *rng:0.2% *1Key:[1-2 6:33] *last:[1-2 9:14]
+****Periodic Run**** 1-2 10:14
+1-2 10:14 last Live feed time: 1-2 10:14 px: 158.9 px/cost: 1.0034
+1-2 10:14 *3dP%: 95.0 *1dP%: 94.0
+*3d*: *n:1703 *max:159.0 [1-2 10:09] *min:157.0 [12-28 9:29] *rng:1.3% *1Key:[12-28 8:00] *last:[1-2 10:14]
+*1d*: *n:208 *max:159.0 [1-2 10:09] *min:157.0 [1-2 8:24] *rng:1.3% *1Key:[1-2 6:33] *last:[1-2 10:14]
+****CUT**** 1-2 10:49:46
+Sell 1dP%: 100.0 3dp: 100.0 priceOverCost: 1.0057 requiredMargin: 1.0057 avgRng: 0.0114
+orderID: 240102006 tradeID: 240102006 SELL sell px: 159.26 qty: 25 costBasis: 158.355032 WMT 1-2 10:49 INVENTORY_CUTTER Created required Margin: 1.0056935247192147 targetPrice: 159.25663028910404 askPrice 159.26
+3DStats: *n:1738 *max:159.2 [1-2 10:49] *min:157.0 [12-28 9:29] *rng:1.4% *1Key:[12-28 8:00] *last:[1-2 10:49] 1DStats: *n:243 *max:159.2 [1-2 10:49] *min:157.0 [1-2 8:24] *rng:1.4% *1Key:[1-2 6:33] *last:[1-2 10:49]
+1-2 10:49 *openOrder* status: Submitted orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26
+1-2 10:49 *openOrder* all live orders {240102006=orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26}
+1-2 10:49 *OrderStatus*: Submitted orderId: 240102006 filled: 0 remaining: 25 fillPrice 0.0 lastFillPrice: 0.0
+updating position: 1-2 10:49 position: 0 cost: 0.0
+1-2 10:49 *tradeReport* time: 10:49:47 SLD exec price: 159.27 shares: 25 avgExecPrice: 159.27
+1-2 10:49 *openOrder* status: Filled orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26
+1-2 10:49 *openOrder*:removing order. Status: Filled orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26
+1-2 10:49 *openOrder*:after removal.open orders: WMT {}
+1-2 10:49 *OrderStatus*: Filled orderId: 240102006 filled: 25 remaining: 0 fillPrice 159.27 lastFillPrice: 159.27
+1-2 10:49 *openOrder* status: Filled orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26
+1-2 10:49 *openOrder*:removing order. Status: Filled orderID: 240102006 orderType: LMT action: SELL totalQuantity: 25 filledQty:  limitPrice: 159.26
+1-2 10:49 *openOrder*:after removal.open orders: WMT {}
+1-2 10:49 *OrderStatus*: Filled orderId: 240102006 filled: 25 remaining: 0 fillPrice 159.27 lastFillPrice: 159.27
+1.*commission report* orderID: 240102006 commission: 0.391261 orderID: 240102006 realized pnl: 22.482939
+2.*commission report* orderID: 240102006 commission: 0.391261 realized pnl: 22.482939
+updating position: 1-2 10:49 position: 0 cost: 0.0
+updating position: 1-2 10:49 position: 0 cost: 0.0
+updating position: 1-2 10:55 position: 0 cost: 0.0
+****Periodic Run**** 1-2 11:14
+1-2 11:14 last Live feed time: 1-2 11:14 px: 158.87 
+*check orderStatus*: 1-2 11:14 orderStatus {240102006=Filled}
+1-2 11:14 *3dP%: 84.0 *1dP%: 84.0
+*3d*: *n:1763 *max:159.2 [1-2 10:50] *min:157.0 [12-28 9:29] *rng:1.4% *1Key:[12-28 8:00] *last:[1-2 11:14]
+*1d*: *n:268 *max:159.2 [1-2 10:50] *min:157.0 [1-2 8:24] *rng:1.4% *1Key:[1-2 6:33] *last:[1-2 11:14]
+****Periodic Run**** 1-2 12:14
+1-2 12:14 last Live feed time: 1-2 12:14 px: 159.21 
+*check orderStatus*: 1-2 12:14 orderStatus {240102006=Filled}
+1-2 12:14 *3dP%: 89.0 *1dP%: 88.0
+*3d*: *n:1823 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 12:14]
+*1d*: *n:328 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 12:14]
+****Periodic Run**** 1-2 13:14
+1-2 13:14 last Live feed time: 1-2 13:14 px: 159.16 
+*check orderStatus*: 1-2 13:14 orderStatus {240102006=Filled}
+1-2 13:14 *3dP%: 87.0 *1dP%: 86.0
+*3d*: *n:1883 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 13:14]
+*1d*: *n:388 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 13:14]
+****Periodic Run**** 1-2 14:14
+1-2 14:14 last Live feed time: 1-2 14:14 px: 158.77 
+*check orderStatus*: 1-2 14:14 orderStatus {240102006=Filled}
+1-2 14:14 *3dP%: 71.0 *1dP%: 71.0
+*3d*: *n:1943 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 14:14]
+*1d*: *n:448 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 14:14]
+****Periodic Run**** 1-2 15:14
+1-2 15:14 last Live feed time: 1-2 15:14 px: 158.91 
+*check orderStatus*: 1-2 15:14 orderStatus {240102006=Filled}
+1-2 15:14 *3dP%: 77.0 *1dP%: 76.0
+*3d*: *n:2003 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 15:14]
+*1d*: *n:508 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 15:14]
+****Periodic Run**** 1-2 16:14
+1-2 16:14 last Live feed time: 1-2 16:13 px: 159.25 
+*check orderStatus*: 1-2 16:14 orderStatus {240102006=Filled}
+1-2 16:14 *3dP%: 90.0 *1dP%: 90.0
+*3d*: *n:2050 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 16:13]
+*1d*: *n:555 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 16:13]
+****Periodic Run**** 1-2 17:14
+1-2 17:14 last Live feed time: 1-2 17:00 px: 159.34 
+*check orderStatus*: 1-2 17:14 orderStatus {240102006=Filled}
+1-2 17:14 *3dP%: 94.0 *1dP%: 94.0
+*3d*: *n:2053 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 17:00]
+*1d*: *n:558 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 17:00]
+****Periodic Run**** 1-2 18:14
+1-2 18:14 last Live feed time: 1-2 17:00 px: 159.34 
+*check orderStatus*: 1-2 18:14 orderStatus {240102006=Filled}
+1-2 18:14 *3dP%: 94.0 *1dP%: 94.0
+*3d*: *n:2053 *max:159.5 [1-2 12:00] *min:157.0 [12-28 9:29] *rng:1.6% *1Key:[12-28 8:00] *last:[1-2 17:00]
+*1d*: *n:558 *max:159.5 [1-2 12:00] *min:157.0 [1-2 8:24] *rng:1.6% *1Key:[1-2 6:33] *last:[1-2 17:00]
