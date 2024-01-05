@@ -212,7 +212,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "px/cost:", round5Digits(priceDividedByCost(price, symb)), "refill Price:"
                             , getRequiredRefillPoint(symb) * costMap.get(symb),
                             "avgRng:", averageDailyRange.getOrDefault(symb, 0.0));
-                    inventoryAdder(ct, price, t, Decimal.get(5));
+                    inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             }
         } else if (oneDayPerc > 80 && position.longValue() > 0) {
