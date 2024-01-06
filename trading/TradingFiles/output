@@ -7608,3 +7608,1611 @@ WMT 1-5 8:11 *3dP%: 33.0 *1dP%: 30.0
 WMT *3d*: *n:2216 *max:160.2 [1-3 9:30] *min:157.0 [1-2 8:24] *rng:2.0% *1Key:[1-2 6:33] *last:[1-4 19:48]
 WMT *1d*: *n:487 *max:159.4 [1-4 9:30] *min:157.5 [1-4 15:16] *rng:1.2% *1Key:[1-4 4:51] *last:[1-4 19:48]
 ****Ending**** 1-5 8:24
+MasterTradeID is: 240105001
+*****START***** HK TIME: 21:29:18 EST: 8:29:18 MASTER ID: 240105001
+SPY *******************************************
+SPY ****************STARTS 1-5 8:29
+WMT *******************************************
+WMT ****************STARTS 1-5 8:29
+UL *******************************************
+UL ****************STARTS 1-5 8:29
+PG *******************************************
+PG ****************STARTS 1-5 8:29
+MCD *******************************************
+MCD ****************STARTS 1-5 8:29
+KO *******************************************
+KO ****************STARTS 1-5 8:29
+req live orders complete
+1-5 8:29 cancelling all orders on start up
+8:29:21 global cancel orders
+SPY updating position: 1-5 8:29 position: 15 cost: 472.84892
+MCD updating position: 1-5 8:29 position: 14 cost: 294.73589285
+WMT updating position: 1-5 8:29 position: 16 cost: 158.27009375
+KO POS COST 0 0.0
+MCD POS COST 14 294.73589285
+PG POS COST 0 0.0
+SPY POS COST 15 472.84892
+UL POS COST 0 0.0
+WMT POS COST 16 158.27009375
+1-5 8:29 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+MCD 1-5 8:29 *tradeReport* time: 12:22:42 BOT exec price: 292.52 shares: 5 avgExecPrice: 292.52
+WMT 1-5 8:29 *tradeReport* time: 14:27:05 BOT exec price: 158.25 shares: 16 avgExecPrice: 158.25
+1-5 8:29 *TradeReportEnd*: all executions: {0000d894.6596dd4d.01=[ExecutionAugmented{execution=orderID: 240104003 time: 12:22:42 side: BOT shares: 5 price: 292.52, symbol='MCD'}], 0001ebb9.65966ca6.01=[ExecutionAugmented{execution=orderID: 240104004 time: 14:27:05 side: BOT shares: 16 price: 158.25, symbol='WMT'}]}
+WMT listOfExecutions [orderID: 240104004 time: 14:27:05 side: BOT shares: 16 price: 158.25]
+MCD listOfExecutions [orderID: 240104003 time: 12:22:42 side: BOT shares: 5 price: 292.52]
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+MCD 1-5 8:29 profit margin required: 1.0058
+KO 1-5 8:29 profit margin required: 1.0062
+PG 1-5 8:29 profit margin required: 1.0068
+WMT 1-5 8:29 profit margin required: 1.0058
+KO ****Periodic Run**** 1-5 8:29
+KO 1-5 8:29 no live feed
+KO 1-5 8:29 *3dP%: 0.0 *1dP%: 0.0
+KO *3d*: *n:2165 *max:60.3 [1-4 11:27] *min:59.6 [1-5 8:00] *rng:1.1% *1Key:[1-3 4:04] *last:[1-5 8:29]
+KO *1d*: *n:270 *max:59.8 [1-5 4:00] *min:59.6 [1-5 8:00] *rng:0.2% *1Key:[1-5 4:00] *last:[1-5 8:29]
+MCD ****Periodic Run**** 1-5 8:29
+MCD 1-5 8:29 no live feed
+MCD 1-5 8:29 *3dP%: 3.0 *1dP%: 13.0
+MCD *3d*: *n:1638 *max:297.9 [1-3 10:05] *min:289.3 [1-5 7:34] *rng:3.0% *1Key:[1-3 5:40] *last:[1-5 8:29]
+MCD *1d*: *n:66 *max:291.0 [1-5 7:24] *min:289.3 [1-5 7:34] *rng:0.6% *1Key:[1-5 7:24] *last:[1-5 8:29]
+PG ****Periodic Run**** 1-5 8:29
+PG 1-5 8:29 no live feed
+PG 1-5 8:29 *3dP%: 71.0 *1dP%: 0.0
+PG *3d*: *n:1663 *max:149.2 [1-4 11:15] *min:147.2 [1-3 15:53] *rng:1.4% *1Key:[1-3 4:16] *last:[1-4 19:59]
+PG *1d*: print stats:empty
+SPY ****Periodic Run**** 1-5 8:29
+SPY 1-5 8:29 no live feed
+SPY 1-5 8:29 *3dP%: 0.0 *1dP%: 0.0
+SPY *3d*: print stats:empty
+SPY *1d*: print stats:empty
+UL ****Periodic Run**** 1-5 8:29
+UL 1-5 8:29 no live feed
+UL 1-5 8:29 *3dP%: 0.0 *1dP%: 0.0
+UL *3d*: print stats:empty
+UL *1d*: print stats:empty
+WMT ****Periodic Run**** 1-5 8:29
+WMT 1-5 8:29 no live feed
+WMT 1-5 8:29 *3dP%: 0.0 *1dP%: 0.0
+WMT *3d*: print stats:empty
+WMT *1d*: print stats:empty
+SPY 1-5 8:29 profit margin required: 1.0038
+UL 1-5 8:29 profit margin required: 1.005
+openOrder Error 1-5 8:29 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 8:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:32 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.hkhmds
+openOrder Error 1-5 8:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:36 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+openOrder Error 1-5 8:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 8:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:17 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:18 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:18 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 9:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:22 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:23 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:23 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 9:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:24 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:24 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 9:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:26 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:26 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:26 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 9:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:29 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:29 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-5 9:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 9:29
+KO 1-5 9:29 last Live feed time: 1-5 9:29 px: 59.62 
+KO 1-5 9:29 *3dP%: 5.0 *1dP%: 19.0
+KO *3d*: *n:2175 *max:60.3 [1-4 11:27] *min:59.6 [1-5 8:00] *rng:1.1% *1Key:[1-3 4:04] *last:[1-5 9:29]
+KO *1d*: *n:280 *max:59.8 [1-5 4:00] *min:59.6 [1-5 8:00] *rng:0.3% *1Key:[1-5 4:00] *last:[1-5 9:29]
+MCD ****Periodic Run**** 1-5 9:29
+MCD 1-5 9:29 last Live feed time: 1-5 9:29 px: 289.35 px/cost: 0.9817
+MCD 1-5 9:29 *3dP%: 2.0 *1dP%: 11.0
+MCD *3d*: *n:1655 *max:297.9 [1-3 10:05] *min:289.1 [1-5 8:32] *rng:3.0% *1Key:[1-3 5:40] *last:[1-5 9:29]
+MCD *1d*: *n:83 *max:291.0 [1-5 7:24] *min:289.1 [1-5 8:32] *rng:0.6% *1Key:[1-5 7:24] *last:[1-5 9:29]
+PG ****Periodic Run**** 1-5 9:29
+PG 1-5 9:29 last Live feed time: 1-5 9:29 px: 148.65 
+PG 1-5 9:29 *3dP%: 71.0 *1dP%: 100.0
+PG *3d*: *n:1671 *max:149.2 [1-4 11:15] *min:147.2 [1-3 15:53] *rng:1.4% *1Key:[1-3 4:16] *last:[1-5 9:29]
+PG *1d*: *n:8 *max:148.3 [1-5 9:28] *min:148.0 [1-5 8:40] *rng:0.2% *1Key:[1-5 8:29] *last:[1-5 9:29]
+SPY ****Periodic Run**** 1-5 9:29
+SPY 1-5 9:29 last Live feed time: 1-5 9:29 px: 467.49 px/cost: 0.9887
+SPY 1-5 9:29 *3dP%: 37.0 *1dP%: 98.0
+SPY *3d*: *n:2249 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 9:29]
+SPY *1d*: *n:330 *max:467.5 [1-5 9:29] *min:464.7 [1-5 8:33] *rng:0.6% *1Key:[1-5 4:00] *last:[1-5 9:29]
+UL ****Periodic Run**** 1-5 9:29
+UL 1-5 9:29 last Live feed time: 1-5 9:29 px: 48.56 
+UL 1-5 9:29 *3dP%: 21.0 *1dP%: 92.0
+UL *3d*: *n:2225 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 9:29]
+UL *1d*: *n:314 *max:48.6 [1-5 9:24] *min:48.3 [1-5 8:32] *rng:0.6% *1Key:[1-5 4:00] *last:[1-5 9:29]
+WMT ****Periodic Run**** 1-5 9:29
+WMT 1-5 9:29 last Live feed time: 1-5 9:29 px: 157.86 px/cost: 0.9974
+WMT 1-5 9:29 *3dP%: 12.0 *1dP%: 75.0
+WMT *3d*: *n:2081 *max:160.2 [1-3 9:30] *min:157.5 [1-4 15:16] *rng:1.7% *1Key:[1-3 4:38] *last:[1-5 9:29]
+WMT *1d*: *n:250 *max:157.9 [1-5 4:30] *min:157.7 [1-5 7:10] *rng:0.1% *1Key:[1-5 4:30] *last:[1-5 9:29]
+MCD ****REFILL**** 1-5 9:30:09
+MCD buyMore: 3dp: 0.0 1dp: 0.0 costBasis: 294.73589285 px/cost: 0.98 refill Price: 291.30254643181263 avgRng: 0.011648891436289095
+order sent 9:30:09 MCD orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD orderID: 240105003 tradeID: 240105003 action: BUY px: 288.66 size: 9 MCD 1-5 9:30 INVENTORY_ADDER Created
+MCD 3 Day Stats: *n:1656 *max:297.9 [1-3 10:05] *min:289.1 [1-5 9:30] *rng:3.0% *1Key:[1-3 5:40] *last:[1-5 9:30] 1DStats: *n:84 *max:291.0 [1-5 7:24] *min:289.1 [1-5 9:30] *rng:0.6% *1Key:[1-5 7:24] *last:[1-5 9:30]
+MCD 9:30:10 order blocked: MCD [] orderStatus: {240105003=Created}
+MCD 1-5 9:30 *openOrder* status: Submitted orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 9:30 *openOrder* all live orders {240105003=orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66}
+1-5 9:30 *OrderStatus*: Submitted orderId: 240105003 filled: 0 remaining: 9 fillPx 0.0 lastFillPx: 0.0
+MCD 1-5 9:30 *OrderStatus*: Submitted orderId: 240105003 filled: 0 remaining: 9 fillPrice 0.0 lastFillPrice: 0.0
+MCD 9:30:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:30:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:30:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:20 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:31:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+PG ****FIRST**** 1-5 9:32:03
+PG ****first buying 3dp: 39.0 1dp: 3.0
+order sent 9:32:03 PG orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG orderID: 240105004 tradeID: 240105004 action: BUY px: 148.05 size: 18 PG 1-5 9:32 INVENTORY_ADDER Created
+PG 3 Day Stats: *n:1674 *max:149.2 [1-4 11:15] *min:147.2 [1-3 15:53] *rng:1.4% *1Key:[1-3 4:16] *last:[1-5 9:32] 1DStats: *n:11 *max:148.6 [1-5 9:30] *min:148.0 [1-5 8:40] *rng:0.4% *1Key:[1-5 8:29] *last:[1-5 9:32]
+PG 9:32:03 order blocked: PG [] orderStatus: {240105004=Created}
+PG 1-5 9:32 *openOrder* status: Submitted orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG 1-5 9:32 *openOrder* all live orders {240105004=orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05}
+1-5 9:32 *OrderStatus*: Submitted orderId: 240105004 filled: 0 remaining: 18 fillPx 0.0 lastFillPx: 0.0
+PG 1-5 9:32 *OrderStatus*: Submitted orderId: 240105004 filled: 0 remaining: 18 fillPrice 0.0 lastFillPrice: 0.0
+PG 9:32:05 order blocked: PG [orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05] orderStatus: {240105004=Submitted}
+MCD 9:32:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+PG updating position: 1-5 9:32 position: 18 cost: 148.05
+PG 1-5 9:32 *tradeReport* time: 09:32:05 BOT exec price: 148.05 shares: 18 avgExecPrice: 148.05
+PG 1-5 9:32 *openOrder* status: Filled orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG 1-5 9:32 *openOrder*:removing order. Status: Filled orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG 1-5 9:32 *openOrder*:after removal.open orders: PG {}
+1-5 9:32 *OrderStatus*: Filled orderId: 240105004 filled: 18 remaining: 0 fillPx 148.05 lastFillPx: 148.05
+PG 1-5 9:32 *OrderStatus*: Filled orderId: 240105004 filled: 18 remaining: 0 fillPrice 148.05 lastFillPrice: 148.05
+PG 1-5 9:32 *openOrder* status: Filled orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG 1-5 9:32 *openOrder*:removing order. Status: Filled orderID: 240105004 orderType: LMT action: BUY totalQuantity: 18 filledQty:  limitPrice: 148.05
+PG 1-5 9:32 *openOrder*:after removal.open orders: PG {}
+1-5 9:32 *OrderStatus*: Filled orderId: 240105004 filled: 18 remaining: 0 fillPx 148.05 lastFillPx: 148.05
+PG 1-5 9:32 *OrderStatus*: Filled orderId: 240105004 filled: 18 remaining: 0 fillPrice 148.05 lastFillPrice: 148.05
+PG 1.*commission report* orderID: 240105004 commission: 0.332257 NO PNL
+PG 2.*commission report* orderID: 240105004 commission: 0.332257 no pnl
+PG updating position: 1-5 9:32 position: 18 cost: 148.06845872222223
+MCD 9:32:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:32:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:33:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:33:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:34:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:34:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:35 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:35 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:35:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:35:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:35:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:35:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:35:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:35:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+KO ****FIRST**** 1-5 9:35:51
+KO ****first buying 3dp: 0.0 1dp: 1.0
+order sent 9:35:51 KO orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO orderID: 240105005 tradeID: 240105005 action: BUY px: 59.59 size: 44 KO 1-5 9:35 INVENTORY_ADDER Created
+KO 3 Day Stats: *n:2181 *max:60.3 [1-4 11:27] *min:59.6 [1-5 8:00] *rng:1.1% *1Key:[1-3 4:04] *last:[1-5 9:35] 1DStats: *n:286 *max:59.8 [1-5 9:30] *min:59.6 [1-5 8:00] *rng:0.3% *1Key:[1-5 4:00] *last:[1-5 9:35]
+MCD 9:35:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+KO 9:35:51 order blocked: KO [] orderStatus: {240105005=Created}
+KO 1-5 9:35 *openOrder* status: Submitted orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO 1-5 9:35 *openOrder* all live orders {240105005=orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59}
+1-5 9:35 *OrderStatus*: Submitted orderId: 240105005 filled: 0 remaining: 44 fillPx 0.0 lastFillPx: 0.0
+KO 1-5 9:35 *OrderStatus*: Submitted orderId: 240105005 filled: 0 remaining: 44 fillPrice 0.0 lastFillPrice: 0.0
+KO updating position: 1-5 9:35 position: 44 cost: 59.59
+KO 1-5 9:35 *tradeReport* time: 09:35:54 BOT exec price: 59.59 shares: 44 avgExecPrice: 59.59
+KO 1-5 9:35 *openOrder* status: Filled orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO 1-5 9:35 *openOrder*:removing order. Status: Filled orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO 1-5 9:35 *openOrder*:after removal.open orders: KO {}
+1-5 9:35 *OrderStatus*: Filled orderId: 240105005 filled: 44 remaining: 0 fillPx 59.59 lastFillPx: 59.59
+KO 1-5 9:35 *OrderStatus*: Filled orderId: 240105005 filled: 44 remaining: 0 fillPrice 59.59 lastFillPrice: 59.59
+KO 1-5 9:35 *openOrder* status: Filled orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO 1-5 9:35 *openOrder*:removing order. Status: Filled orderID: 240105005 orderType: LMT action: BUY totalQuantity: 44 filledQty:  limitPrice: 59.59
+KO 1-5 9:35 *openOrder*:after removal.open orders: KO {}
+1-5 9:35 *OrderStatus*: Filled orderId: 240105005 filled: 44 remaining: 0 fillPx 59.59 lastFillPx: 59.59
+KO 1-5 9:35 *OrderStatus*: Filled orderId: 240105005 filled: 44 remaining: 0 fillPrice 59.59 lastFillPrice: 59.59
+KO 1.*commission report* orderID: 240105005 commission: 0.306257 NO PNL
+KO 2.*commission report* orderID: 240105005 commission: 0.306257 no pnl
+KO updating position: 1-5 9:35 position: 44 cost: 59.59696038636364
+MCD 9:36:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+KO updating position: 1-5 9:36 position: 44 cost: 59.5969604
+PG updating position: 1-5 9:36 position: 18 cost: 148.06845875
+PG updating position: 1-5 9:36 position: 18 cost: 148.06845875
+KO updating position: 1-5 9:36 position: 44 cost: 59.5969604
+MCD 9:36:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:36:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:36:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:37:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:38 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:38 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:38:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:38:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:38:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:38:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:39:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:39:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:39 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:39 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:39:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:40:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:40:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:41 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:41 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:41 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:41:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:41:52 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:41:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:42:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:42:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:42:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:42 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:42 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:43:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:43:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:43:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:43:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:43:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:43 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:43 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:43:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:43:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:44:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:44:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:44:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:44:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:44:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:44:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:45:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:45:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:46:20 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:20 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:32 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:46:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:47:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:47:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:48:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:48:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:49 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:49 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:49:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:49:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:49:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:50:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:50:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:51:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:51:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:51:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:51:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:51:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:52:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:52:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:53:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:53:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:53 orderId: -1  errorCode: 1100  msg: Connectivity between IB and Trader Workstation has been lost.
+MCD 9:54:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:54:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:54:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:54:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+MCD 1-5 9:54 *openOrder* status: Submitted orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 9:54 *openOrder* all live orders {240105003=orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66}
+1-5 9:54 *OrderStatus*: Submitted orderId: 240105003 filled: 0 remaining: 9 fillPx 0.0 lastFillPx: 0.0
+MCD 1-5 9:54 *OrderStatus*: Submitted orderId: 240105003 filled: 0 remaining: 9 fillPrice 0.0 lastFillPrice: 0.0
+MCD updating position: 1-5 9:54 position: 14 cost: 294.73589285
+WMT updating position: 1-5 9:54 position: 16 cost: 158.27009375
+SPY updating position: 1-5 9:54 position: 15 cost: 472.84892
+KO updating position: 1-5 9:54 position: 44 cost: 59.5969604
+PG updating position: 1-5 9:54 position: 18 cost: 148.06845875
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+PG updating position: 1-5 9:54 position: 18 cost: 148.06845875
+WMT updating position: 1-5 9:54 position: 16 cost: 158.27009375
+MCD updating position: 1-5 9:54 position: 14 cost: 294.73589285
+KO updating position: 1-5 9:54 position: 44 cost: 59.5969604
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:54:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:54:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:54:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:54 orderId: -1  errorCode: 1102  msg: Connectivity between IB and Trader Workstation has been restored - data maintained. The following farms are connected: hfarm; usfarm. The following farms are not connected: hkhmds; ushmds; secdefhk.
+MCD 9:54:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:55:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:54 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:55:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:56:52 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:57:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:57:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 9:58:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:58:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 9:59 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 9:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 9:59 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 9:59:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 9:59:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:00:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:00:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:25 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:01:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:02:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:02:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:02:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:02:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:02:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:03:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:03:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:03:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:03:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:03:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:03:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:03 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 10:03 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-5 10:04 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+MCD 10:04:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:04:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:04:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:05:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:50 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:05:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:06:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:52 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:06:56 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:07:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:08:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:27 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:08:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:08:52 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:09:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:09:59 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:10:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:02 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:06 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:11:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:10 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:12 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:19 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:20 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:20 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:45 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:11:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:12:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:36 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:39 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:12:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:22 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:13:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:53 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:13:58 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:47 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:48 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:14:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:15:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:05 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:19 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:19 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:21 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:34 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:35 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:15:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:07 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:16:08 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:26 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:29 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:30 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:31 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:32 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:33 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:37 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:42 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:16:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:00 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:03 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:11 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:13 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:15 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:18 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:23 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:17:40 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:46 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:52 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:17:57 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:04 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:09 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:14 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:16 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:17 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:24 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:28 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:38 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:41 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:43 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:44 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:49 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+openOrder Error 1-5 10:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD 10:18:51 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:18:55 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:19:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD 10:19:01 order blocked: MCD [orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66] orderStatus: {240105003=Submitted}
+MCD updating position: 1-5 10:19 position: 23 cost: 292.3583695608696
+MCD 1-5 10:19 *tradeReport* time: 10:19:03 BOT exec price: 288.66 shares: 9 avgExecPrice: 288.66
+MCD 1-5 10:19 *openOrder* status: Filled orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 10:19 *openOrder*:removing order. Status: Filled orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 10:19 *openOrder*:after removal.open orders: MCD {}
+1-5 10:19 *OrderStatus*: Filled orderId: 240105003 filled: 9 remaining: 0 fillPx 288.66 lastFillPx: 288.66
+MCD 1-5 10:19 *OrderStatus*: Filled orderId: 240105003 filled: 9 remaining: 0 fillPrice 288.66 lastFillPrice: 288.66
+MCD 1-5 10:19 *openOrder* status: Filled orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 10:19 *openOrder*:removing order. Status: Filled orderID: 240105003 orderType: LMT action: BUY totalQuantity: 9 filledQty:  limitPrice: 288.66
+MCD 1-5 10:19 *openOrder*:after removal.open orders: MCD {}
+1-5 10:19 *OrderStatus*: Filled orderId: 240105003 filled: 9 remaining: 0 fillPx 288.66 lastFillPx: 288.66
+MCD 1-5 10:19 *OrderStatus*: Filled orderId: 240105003 filled: 9 remaining: 0 fillPrice 288.66 lastFillPrice: 288.66
+MCD 1.*commission report* orderID: 240105003 commission: 0.341257 NO PNL
+MCD 2.*commission report* orderID: 240105003 commission: 0.341257 no pnl
+MCD updating position: 1-5 10:19 position: 23 cost: 292.3732068217392
+openOrder Error 1-5 10:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+MCD updating position: 1-5 10:23 position: 23 cost: 292.37320685
+openOrder Error 1-5 10:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 10:29
+KO 1-5 10:29 last Live feed time: 1-5 10:29 px: 59.89 px/cost: 1.0049
+KO *check orderStatus*: 1-5 10:29 orderStatus {240105005=Filled}
+KO 1-5 10:29 *3dP%: 46.0 *1dP%: 89.0
+KO *3d*: *n:2235 *max:60.3 [1-4 11:27] *min:59.6 [1-5 8:00] *rng:1.1% *1Key:[1-3 4:04] *last:[1-5 10:29]
+KO *1d*: *n:340 *max:59.9 [1-5 10:20] *min:59.6 [1-5 8:00] *rng:0.6% *1Key:[1-5 4:00] *last:[1-5 10:29]
+MCD ****Periodic Run**** 1-5 10:29
+MCD 1-5 10:29 last Live feed time: 1-5 10:29 px: 288.41 px/cost: 0.9864
+MCD *check orderStatus*: 1-5 10:29 orderStatus {240105003=Filled}
+MCD 1-5 10:29 *3dP%: 1.0 *1dP%: 4.0
+MCD *3d*: *n:1715 *max:297.9 [1-3 10:05] *min:288.3 [1-5 10:27] *rng:3.3% *1Key:[1-3 5:40] *last:[1-5 10:29]
+MCD *1d*: *n:143 *max:291.4 [1-5 9:43] *min:288.3 [1-5 10:27] *rng:1.1% *1Key:[1-5 7:24] *last:[1-5 10:29]
+PG ****Periodic Run**** 1-5 10:29
+PG 1-5 10:29 last Live feed time: 1-5 10:29 px: 148.18 px/cost: 1.0008
+PG *check orderStatus*: 1-5 10:29 orderStatus {240105004=Filled}
+PG 1-5 10:29 *3dP%: 47.0 *1dP%: 45.0
+PG *3d*: *n:1731 *max:149.2 [1-4 11:15] *min:147.2 [1-3 15:53] *rng:1.4% *1Key:[1-3 4:16] *last:[1-5 10:29]
+PG *1d*: *n:68 *max:148.6 [1-5 9:30] *min:147.8 [1-5 9:35] *rng:0.5% *1Key:[1-5 8:29] *last:[1-5 10:29]
+SPY ****Periodic Run**** 1-5 10:29
+SPY 1-5 10:29 last Live feed time: 1-5 10:29 px: 469.45 px/cost: 0.9928
+SPY 1-5 10:29 *3dP%: 63.0 *1dP%: 87.0
+SPY *3d*: *n:2309 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 10:29]
+SPY *1d*: *n:390 *max:470.2 [1-5 10:10] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 10:29]
+UL ****Periodic Run**** 1-5 10:29
+UL 1-5 10:29 last Live feed time: 1-5 10:29 px: 48.86 
+UL 1-5 10:29 *3dP%: 43.0 *1dP%: 89.0
+UL *3d*: *n:2281 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 10:29]
+UL *1d*: *n:370 *max:48.9 [1-5 10:11] *min:48.3 [1-5 8:32] *rng:1.3% *1Key:[1-5 4:00] *last:[1-5 10:29]
+WMT ****Periodic Run**** 1-5 10:29
+WMT 1-5 10:29 last Live feed time: 1-5 10:29 px: 156.79 px/cost: 0.9906
+WMT 1-5 10:29 *3dP%: 9.0 *1dP%: 22.0
+WMT *3d*: *n:2141 *max:160.2 [1-3 9:30] *min:156.5 [1-5 9:55] *rng:2.4% *1Key:[1-3 4:38] *last:[1-5 10:29]
+WMT *1d*: *n:310 *max:157.9 [1-5 9:30] *min:156.5 [1-5 9:55] *rng:0.9% *1Key:[1-5 4:30] *last:[1-5 10:29]
+openOrder Error 1-5 10:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 10:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 11:29
+KO 1-5 11:29 last Live feed time: 1-5 11:29 px: 59.66 px/cost: 1.0011
+KO *check orderStatus*: 1-5 11:29 orderStatus {240105005=Filled}
+KO 1-5 11:29 *3dP%: 12.0 *1dP%: 22.0
+KO *3d*: *n:2295 *max:60.3 [1-4 11:27] *min:59.6 [1-5 8:00] *rng:1.1% *1Key:[1-3 4:04] *last:[1-5 11:29]
+KO *1d*: *n:400 *max:59.9 [1-5 11:05] *min:59.6 [1-5 8:00] *rng:0.6% *1Key:[1-5 4:00] *last:[1-5 11:29]
+MCD ****Periodic Run**** 1-5 11:29
+MCD 1-5 11:29 last Live feed time: 1-5 11:29 px: 288.29 px/cost: 0.986
+MCD *check orderStatus*: 1-5 11:29 orderStatus {240105003=Filled}
+MCD 1-5 11:29 *3dP%: 4.0 *1dP%: 13.0
+MCD *3d*: *n:1775 *max:297.9 [1-3 10:05] *min:287.8 [1-5 10:40] *rng:3.5% *1Key:[1-3 5:40] *last:[1-5 11:29]
+MCD *1d*: *n:203 *max:291.4 [1-5 9:43] *min:287.8 [1-5 10:40] *rng:1.2% *1Key:[1-5 7:24] *last:[1-5 11:29]
+PG ****Periodic Run**** 1-5 11:29
+PG 1-5 11:29 last Live feed time: 1-5 11:29 px: 147.83 px/cost: 0.9984
+PG *check orderStatus*: 1-5 11:29 orderStatus {240105004=Filled}
+PG 1-5 11:29 *3dP%: 29.0 *1dP%: 15.0
+PG *3d*: *n:1791 *max:149.2 [1-4 11:15] *min:147.2 [1-3 15:53] *rng:1.4% *1Key:[1-3 4:16] *last:[1-5 11:29]
+PG *1d*: *n:128 *max:148.6 [1-5 9:30] *min:147.7 [1-5 11:18] *rng:0.6% *1Key:[1-5 8:29] *last:[1-5 11:29]
+SPY ****Periodic Run**** 1-5 11:29
+SPY 1-5 11:29 last Live feed time: 1-5 11:29 px: 469.11 px/cost: 0.9921
+SPY 1-5 11:29 *3dP%: 58.0 *1dP%: 77.0
+SPY *3d*: *n:2369 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 11:29]
+SPY *1d*: *n:450 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 11:29]
+UL ****Periodic Run**** 1-5 11:29
+UL 1-5 11:29 last Live feed time: 1-5 11:29 px: 48.8 
+UL 1-5 11:29 *3dP%: 39.0 *1dP%: 77.0
+UL *3d*: *n:2338 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 11:29]
+UL *1d*: *n:427 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 11:29]
+WMT ****Periodic Run**** 1-5 11:29
+WMT 1-5 11:29 last Live feed time: 1-5 11:29 px: 156.82 px/cost: 0.9908
+WMT 1-5 11:29 *3dP%: 9.0 *1dP%: 24.0
+WMT *3d*: *n:2201 *max:160.2 [1-3 9:30] *min:156.5 [1-5 9:55] *rng:2.4% *1Key:[1-3 4:38] *last:[1-5 11:29]
+WMT *1d*: *n:370 *max:157.9 [1-5 9:30] *min:156.5 [1-5 9:55] *rng:0.9% *1Key:[1-5 4:30] *last:[1-5 11:29]
+openOrder Error 1-5 11:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 11:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 12:29
+KO 1-5 12:29 last Live feed time: 1-5 12:29 px: 59.23 px/cost: 0.9938
+KO *check orderStatus*: 1-5 12:29 orderStatus {240105005=Filled}
+KO 1-5 12:29 *3dP%: 5.0 *1dP%: 7.0
+KO *3d*: *n:2355 *max:60.3 [1-4 11:27] *min:59.2 [1-5 12:17] *rng:1.8% *1Key:[1-3 4:04] *last:[1-5 12:29]
+KO *1d*: *n:460 *max:59.9 [1-5 11:05] *min:59.2 [1-5 12:17] *rng:1.3% *1Key:[1-5 4:00] *last:[1-5 12:29]
+MCD ****Periodic Run**** 1-5 12:29
+MCD 1-5 12:29 last Live feed time: 1-5 12:29 px: 288.07 px/cost: 0.9853
+MCD *check orderStatus*: 1-5 12:29 orderStatus {240105003=Filled}
+MCD 1-5 12:29 *3dP%: 6.0 *1dP%: 16.0
+MCD *3d*: *n:1835 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 12:29]
+MCD *1d*: *n:263 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 12:29]
+PG ****Periodic Run**** 1-5 12:29
+PG 1-5 12:29 last Live feed time: 1-5 12:29 px: 146.91 px/cost: 0.9922
+PG *check orderStatus*: 1-5 12:29 orderStatus {240105004=Filled}
+PG 1-5 12:29 *3dP%: 1.0 *1dP%: 2.0
+PG *3d*: *n:1851 *max:149.2 [1-4 11:15] *min:146.9 [1-5 12:28] *rng:1.6% *1Key:[1-3 4:16] *last:[1-5 12:29]
+PG *1d*: *n:188 *max:148.6 [1-5 9:30] *min:146.9 [1-5 12:28] *rng:1.2% *1Key:[1-5 8:29] *last:[1-5 12:29]
+SPY ****Periodic Run**** 1-5 12:29
+SPY 1-5 12:29 last Live feed time: 1-5 12:29 px: 467.45 px/cost: 0.9886
+SPY 1-5 12:29 *3dP%: 36.0 *1dP%: 48.0
+SPY *3d*: *n:2429 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 12:29]
+SPY *1d*: *n:510 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 12:29]
+UL ****Periodic Run**** 1-5 12:29
+UL 1-5 12:29 last Live feed time: 1-5 12:28 px: 48.79 
+UL 1-5 12:29 *3dP%: 38.0 *1dP%: 75.0
+UL *3d*: *n:2392 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 12:28]
+UL *1d*: *n:481 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 12:28]
+WMT ****Periodic Run**** 1-5 12:29
+WMT 1-5 12:29 last Live feed time: 1-5 12:29 px: 155.87 px/cost: 0.9848
+WMT 1-5 12:29 *3dP%: 1.0 *1dP%: 2.0
+WMT *3d*: *n:2261 *max:160.2 [1-3 9:30] *min:155.8 [1-5 12:28] *rng:2.8% *1Key:[1-3 4:38] *last:[1-5 12:29]
+WMT *1d*: *n:430 *max:157.9 [1-5 9:30] *min:155.8 [1-5 12:28] *rng:1.3% *1Key:[1-5 4:30] *last:[1-5 12:29]
+openOrder Error 1-5 12:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 12:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:20 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+openOrder Error 1-5 13:20 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+openOrder Error 1-5 13:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:28 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+openOrder Error 1-5 13:28 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+openOrder Error 1-5 13:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 13:29
+KO 1-5 13:29 last Live feed time: 1-5 13:29 px: 59.24 px/cost: 0.994
+KO *check orderStatus*: 1-5 13:29 orderStatus {240105005=Filled}
+KO 1-5 13:29 *3dP%: 11.0 *1dP%: 16.0
+KO *3d*: *n:2415 *max:60.3 [1-4 11:27] *min:59.1 [1-5 13:19] *rng:1.9% *1Key:[1-3 4:04] *last:[1-5 13:29]
+KO *1d*: *n:520 *max:59.9 [1-5 11:05] *min:59.1 [1-5 13:19] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 13:29]
+MCD ****Periodic Run**** 1-5 13:29
+MCD 1-5 13:29 last Live feed time: 1-5 13:29 px: 289.12 px/cost: 0.9889
+MCD *check orderStatus*: 1-5 13:29 orderStatus {240105003=Filled}
+MCD 1-5 13:29 *3dP%: 16.0 *1dP%: 43.0
+MCD *3d*: *n:1894 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 13:29]
+MCD *1d*: *n:322 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 13:29]
+PG ****Periodic Run**** 1-5 13:29
+PG 1-5 13:29 last Live feed time: 1-5 13:29 px: 146.87 px/cost: 0.9919
+PG *check orderStatus*: 1-5 13:29 orderStatus {240105004=Filled}
+PG 1-5 13:29 *3dP%: 11.0 *1dP%: 14.0
+PG *3d*: *n:1911 *max:149.2 [1-4 11:15] *min:146.6 [1-5 13:19] *rng:1.8% *1Key:[1-3 4:16] *last:[1-5 13:29]
+PG *1d*: *n:248 *max:148.6 [1-5 9:30] *min:146.6 [1-5 13:19] *rng:1.4% *1Key:[1-5 8:29] *last:[1-5 13:29]
+SPY ****Periodic Run**** 1-5 13:29
+SPY 1-5 13:29 last Live feed time: 1-5 13:29 px: 467.74 px/cost: 0.9892
+SPY 1-5 13:29 *3dP%: 40.0 *1dP%: 53.0
+SPY *3d*: *n:2489 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 13:29]
+SPY *1d*: *n:570 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 13:29]
+UL ****Periodic Run**** 1-5 13:29
+UL 1-5 13:29 last Live feed time: 1-5 13:29 px: 48.72 
+UL 1-5 13:29 *3dP%: 33.0 *1dP%: 65.0
+UL *3d*: *n:2450 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 13:29]
+UL *1d*: *n:539 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 13:29]
+WMT ****Periodic Run**** 1-5 13:29
+WMT 1-5 13:29 last Live feed time: 1-5 13:29 px: 155.93 px/cost: 0.9852
+WMT 1-5 13:29 *3dP%: 7.0 *1dP%: 13.0
+WMT *3d*: *n:2321 *max:160.2 [1-3 9:30] *min:155.6 [1-5 13:17] *rng:2.9% *1Key:[1-3 4:38] *last:[1-5 13:29]
+WMT *1d*: *n:490 *max:157.9 [1-5 9:30] *min:155.6 [1-5 13:17] *rng:1.5% *1Key:[1-5 4:30] *last:[1-5 13:29]
+openOrder Error 1-5 13:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 13:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 14:29
+KO 1-5 14:29 last Live feed time: 1-5 14:29 px: 59.44 px/cost: 0.9974
+KO *check orderStatus*: 1-5 14:29 orderStatus {240105005=Filled}
+KO 1-5 14:29 *3dP%: 29.0 *1dP%: 40.0
+KO *3d*: *n:2474 *max:60.3 [1-4 11:27] *min:59.1 [1-5 13:19] *rng:1.9% *1Key:[1-3 4:04] *last:[1-5 14:29]
+KO *1d*: *n:579 *max:59.9 [1-5 11:05] *min:59.1 [1-5 13:19] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 14:29]
+MCD ****Periodic Run**** 1-5 14:29
+MCD 1-5 14:29 last Live feed time: 1-5 14:29 px: 289.2 px/cost: 0.9891
+MCD *check orderStatus*: 1-5 14:29 orderStatus {240105003=Filled}
+MCD 1-5 14:29 *3dP%: 17.0 *1dP%: 45.0
+MCD *3d*: *n:1954 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 14:29]
+MCD *1d*: *n:382 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 14:29]
+PG ****Periodic Run**** 1-5 14:29
+PG 1-5 14:29 last Live feed time: 1-5 14:29 px: 147.09 px/cost: 0.9934
+PG *check orderStatus*: 1-5 14:29 orderStatus {240105004=Filled}
+PG 1-5 14:29 *3dP%: 19.0 *1dP%: 25.0
+PG *3d*: *n:1971 *max:149.2 [1-4 11:15] *min:146.6 [1-5 13:19] *rng:1.8% *1Key:[1-3 4:16] *last:[1-5 14:29]
+PG *1d*: *n:308 *max:148.6 [1-5 9:30] *min:146.6 [1-5 13:19] *rng:1.4% *1Key:[1-5 8:29] *last:[1-5 14:29]
+SPY ****Periodic Run**** 1-5 14:29
+SPY 1-5 14:29 last Live feed time: 1-5 14:29 px: 468.23 px/cost: 0.9902
+SPY 1-5 14:29 *3dP%: 46.0 *1dP%: 62.0
+SPY *3d*: *n:2549 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 14:29]
+SPY *1d*: *n:630 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 14:29]
+UL ****Periodic Run**** 1-5 14:29
+UL 1-5 14:29 last Live feed time: 1-5 14:29 px: 48.79 
+UL 1-5 14:29 *3dP%: 38.0 *1dP%: 75.0
+UL *3d*: *n:2506 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 14:29]
+UL *1d*: *n:595 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 14:29]
+WMT ****Periodic Run**** 1-5 14:29
+WMT 1-5 14:29 last Live feed time: 1-5 14:29 px: 156.25 px/cost: 0.9872
+WMT 1-5 14:29 *3dP%: 14.0 *1dP%: 27.0
+WMT *3d*: *n:2381 *max:160.2 [1-3 9:30] *min:155.6 [1-5 13:17] *rng:2.9% *1Key:[1-3 4:38] *last:[1-5 14:29]
+WMT *1d*: *n:550 *max:157.9 [1-5 9:30] *min:155.6 [1-5 13:17] *rng:1.5% *1Key:[1-5 4:30] *last:[1-5 14:29]
+openOrder Error 1-5 14:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 14:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 15:29
+KO 1-5 15:29 last Live feed time: 1-5 15:29 px: 59.47 px/cost: 0.9979
+KO *check orderStatus*: 1-5 15:29 orderStatus {240105005=Filled}
+KO 1-5 15:29 *3dP%: 32.0 *1dP%: 44.0
+KO *3d*: *n:2534 *max:60.3 [1-4 11:27] *min:59.1 [1-5 13:19] *rng:1.9% *1Key:[1-3 4:04] *last:[1-5 15:29]
+KO *1d*: *n:639 *max:59.9 [1-5 11:05] *min:59.1 [1-5 13:19] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 15:29]
+MCD ****Periodic Run**** 1-5 15:29
+MCD 1-5 15:29 last Live feed time: 1-5 15:29 px: 288.82 px/cost: 0.9878
+MCD *check orderStatus*: 1-5 15:29 orderStatus {240105003=Filled}
+MCD 1-5 15:29 *3dP%: 13.0 *1dP%: 35.0
+MCD *3d*: *n:2014 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 15:29]
+MCD *1d*: *n:442 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 15:29]
+PG ****Periodic Run**** 1-5 15:29
+PG 1-5 15:29 last Live feed time: 1-5 15:29 px: 146.94 px/cost: 0.9924
+PG *check orderStatus*: 1-5 15:29 orderStatus {240105004=Filled}
+PG 1-5 15:29 *3dP%: 13.0 *1dP%: 18.0
+PG *3d*: *n:2031 *max:149.2 [1-4 11:15] *min:146.6 [1-5 13:19] *rng:1.8% *1Key:[1-3 4:16] *last:[1-5 15:29]
+PG *1d*: *n:368 *max:148.6 [1-5 9:30] *min:146.6 [1-5 13:19] *rng:1.4% *1Key:[1-5 8:29] *last:[1-5 15:29]
+SPY ****Periodic Run**** 1-5 15:29
+SPY 1-5 15:29 last Live feed time: 1-5 15:29 px: 466.87 px/cost: 0.9874
+SPY 1-5 15:29 *3dP%: 28.0 *1dP%: 38.0
+SPY *3d*: *n:2609 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 15:29]
+SPY *1d*: *n:690 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 15:29]
+UL ****Periodic Run**** 1-5 15:29
+UL 1-5 15:29 last Live feed time: 1-5 15:29 px: 48.74 
+UL 1-5 15:29 *3dP%: 34.0 *1dP%: 68.0
+UL *3d*: *n:2555 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 15:29]
+UL *1d*: *n:644 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 15:29]
+WMT ****Periodic Run**** 1-5 15:29
+WMT 1-5 15:29 last Live feed time: 1-5 15:29 px: 156.16 px/cost: 0.9867
+WMT 1-5 15:29 *3dP%: 12.0 *1dP%: 23.0
+WMT *3d*: *n:2441 *max:160.2 [1-3 9:30] *min:155.6 [1-5 13:17] *rng:2.9% *1Key:[1-3 4:38] *last:[1-5 15:29]
+WMT *1d*: *n:610 *max:157.9 [1-5 9:30] *min:155.6 [1-5 13:17] *rng:1.5% *1Key:[1-5 4:30] *last:[1-5 15:29]
+openOrder Error 1-5 15:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 15:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:14 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:18 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:24 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 16:29
+KO 1-5 16:29 last Live feed time: 1-5 16:25 px: 59.59 px/cost: 0.9999
+KO *check orderStatus*: 1-5 16:29 orderStatus {240105005=Filled}
+KO 1-5 16:29 *3dP%: 42.0 *1dP%: 58.0
+KO *3d*: *n:2568 *max:60.3 [1-4 11:27] *min:59.1 [1-5 13:19] *rng:1.9% *1Key:[1-3 4:04] *last:[1-5 16:25]
+KO *1d*: *n:673 *max:59.9 [1-5 11:05] *min:59.1 [1-5 13:19] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 16:25]
+MCD ****Periodic Run**** 1-5 16:29
+MCD 1-5 16:29 last Live feed time: 1-5 16:00 px: 288.99 px/cost: 0.9884
+MCD *check orderStatus*: 1-5 16:29 orderStatus {240105003=Filled}
+MCD 1-5 16:29 *3dP%: 15.0 *1dP%: 40.0
+MCD *3d*: *n:2045 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 16:00]
+MCD *1d*: *n:473 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 16:00]
+PG ****Periodic Run**** 1-5 16:29
+PG 1-5 16:29 last Live feed time: 1-5 16:05 px: 147.42 px/cost: 0.9956
+PG *check orderStatus*: 1-5 16:29 orderStatus {240105004=Filled}
+PG 1-5 16:29 *3dP%: 31.0 *1dP%: 42.0
+PG *3d*: *n:2064 *max:149.2 [1-4 11:15] *min:146.6 [1-5 13:19] *rng:1.8% *1Key:[1-3 4:16] *last:[1-5 16:05]
+PG *1d*: *n:401 *max:148.6 [1-5 9:30] *min:146.6 [1-5 13:19] *rng:1.4% *1Key:[1-5 8:29] *last:[1-5 16:05]
+SPY ****Periodic Run**** 1-5 16:29
+SPY 1-5 16:29 last Live feed time: 1-5 16:28 px: 468.04 px/cost: 0.9898
+SPY 1-5 16:29 *3dP%: 44.0 *1dP%: 58.0
+SPY *3d*: *n:2668 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 16:28]
+SPY *1d*: *n:749 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 16:28]
+UL ****Periodic Run**** 1-5 16:29
+UL 1-5 16:29 last Live feed time: 1-5 16:00 px: 48.76 
+UL 1-5 16:29 *3dP%: 36.0 *1dP%: 71.0
+UL *3d*: *n:2583 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 16:00]
+UL *1d*: *n:672 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 16:00]
+WMT ****Periodic Run**** 1-5 16:29
+WMT 1-5 16:29 last Live feed time: 1-5 16:23 px: 156.55 px/cost: 0.9891
+WMT 1-5 16:29 *3dP%: 20.0 *1dP%: 40.0
+WMT *3d*: *n:2477 *max:160.2 [1-3 9:30] *min:155.6 [1-5 13:17] *rng:2.9% *1Key:[1-3 4:38] *last:[1-5 16:23]
+WMT *1d*: *n:646 *max:157.9 [1-5 9:30] *min:155.6 [1-5 13:17] *rng:1.5% *1Key:[1-5 4:30] *last:[1-5 16:23]
+openOrder Error 1-5 16:30 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:36 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:42 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:49 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:55 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 16:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:10 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:11 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:12 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:13 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:15 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:16 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:17 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:19 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:20 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:21 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:22 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:23 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:25 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:26 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:27 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:28 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+KO ****Periodic Run**** 1-5 17:29
+KO 1-5 17:29 last Live feed time: 1-5 17:20 px: 59.65 px/cost: 1.0009
+KO *check orderStatus*: 1-5 17:29 orderStatus {240105005=Filled}
+KO 1-5 17:29 *3dP%: 47.0 *1dP%: 65.0
+KO *3d*: *n:2573 *max:60.3 [1-4 11:27] *min:59.1 [1-5 13:19] *rng:1.9% *1Key:[1-3 4:04] *last:[1-5 17:20]
+KO *1d*: *n:678 *max:59.9 [1-5 11:05] *min:59.1 [1-5 13:19] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 17:20]
+MCD ****Periodic Run**** 1-5 17:29
+MCD 1-5 17:29 last Live feed time: 1-5 16:52 px: 288.41 px/cost: 0.9864
+MCD *check orderStatus*: 1-5 17:29 orderStatus {240105003=Filled}
+MCD 1-5 17:29 *3dP%: 9.0 *1dP%: 25.0
+MCD *3d*: *n:2046 *max:297.9 [1-3 10:05] *min:287.4 [1-5 12:10] *rng:3.7% *1Key:[1-3 5:40] *last:[1-5 16:52]
+MCD *1d*: *n:474 *max:291.4 [1-5 9:43] *min:287.4 [1-5 12:10] *rng:1.4% *1Key:[1-5 7:24] *last:[1-5 16:52]
+PG ****Periodic Run**** 1-5 17:29
+PG 1-5 17:29 last Live feed time: 1-5 17:27 px: 147.5 px/cost: 0.9962
+PG *check orderStatus*: 1-5 17:29 orderStatus {240105004=Filled}
+PG 1-5 17:29 *3dP%: 34.0 *1dP%: 46.0
+PG *3d*: *n:2066 *max:149.2 [1-4 11:15] *min:146.6 [1-5 13:19] *rng:1.8% *1Key:[1-3 4:16] *last:[1-5 17:27]
+PG *1d*: *n:403 *max:148.6 [1-5 9:30] *min:146.6 [1-5 13:19] *rng:1.4% *1Key:[1-5 8:29] *last:[1-5 17:27]
+SPY ****Periodic Run**** 1-5 17:29
+SPY 1-5 17:29 last Live feed time: 1-5 17:25 px: 467.99 px/cost: 0.9897
+SPY 1-5 17:29 *3dP%: 43.0 *1dP%: 57.0
+SPY *3d*: *n:2701 *max:472.3 [1-3 8:02] *min:464.7 [1-5 8:33] *rng:1.6% *1Key:[1-3 4:00] *last:[1-5 17:25]
+SPY *1d*: *n:782 *max:470.4 [1-5 11:16] *min:464.7 [1-5 8:33] *rng:1.2% *1Key:[1-5 4:00] *last:[1-5 17:25]
+UL ****Periodic Run**** 1-5 17:29
+UL 1-5 17:29 last Live feed time: 1-5 16:00 px: 48.76 
+UL 1-5 17:29 *3dP%: 36.0 *1dP%: 71.0
+UL *3d*: *n:2583 *max:49.6 [1-3 4:38] *min:48.3 [1-5 8:32] *rng:2.8% *1Key:[1-3 4:00] *last:[1-5 16:00]
+UL *1d*: *n:672 *max:49.0 [1-5 10:43] *min:48.3 [1-5 8:32] *rng:1.4% *1Key:[1-5 4:00] *last:[1-5 16:00]
+WMT ****Periodic Run**** 1-5 17:29
+WMT 1-5 17:29 last Live feed time: 1-5 16:44 px: 156.51 px/cost: 0.9889
+WMT 1-5 17:29 *3dP%: 19.0 *1dP%: 39.0
+WMT *3d*: *n:2478 *max:160.2 [1-3 9:30] *min:155.6 [1-5 13:17] *rng:2.9% *1Key:[1-3 4:38] *last:[1-5 16:44]
+WMT *1d*: *n:647 *max:157.9 [1-5 9:30] *min:155.6 [1-5 13:17] *rng:1.5% *1Key:[1-5 4:30] *last:[1-5 16:44]
+openOrder Error 1-5 17:29 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:31 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:32 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:33 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:34 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:35 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:37 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:38 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:39 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:40 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:41 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:43 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:44 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:45 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:46 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:47 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:48 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:50 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:51 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:52 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:53 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:54 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:56 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:57 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:58 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 17:59 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:00 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:01 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:06 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:07 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:08 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-5 18:09 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+****Ending**** 1-5 18:10
