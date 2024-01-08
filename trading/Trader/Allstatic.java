@@ -77,6 +77,7 @@ public class Allstatic {
     volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
+    static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
     static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
