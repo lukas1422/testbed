@@ -747,7 +747,7 @@ public class TradingUtility {
     }
 
     public static Decimal getSizeFromPrice(double price) {
-        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 4));
+        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 6));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
