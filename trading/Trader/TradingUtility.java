@@ -730,7 +730,6 @@ public class TradingUtility {
     }
 
     public static double getRequiredRefillPoint(String symb) {
-//        outputToSymbol(symb, "averageRange:", averageDailyRange.getOrDefault(symb, 0.0));
         return Math.min(getDefaultRefill(symb)
                 , 1 - averageDailyRange.getOrDefault(symb, 0.0));
     }
@@ -747,7 +746,7 @@ public class TradingUtility {
     }
 
     public static Decimal getSizeFromPrice(double price) {
-        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 6));
+        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 4));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

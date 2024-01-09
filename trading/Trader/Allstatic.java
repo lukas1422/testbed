@@ -32,11 +32,10 @@ public class Allstatic {
     static final LocalDateTime PERCENTILE_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_LIMIT = 30000;
-    static final double DELTA_LIMIT_EACH_STOCK = 12000;
+    static final double DELTA_LIMIT_EACH_STOCK = 10000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
-    //    public static AtomicInteger GLOBAL_REQ_ID = new AtomicInteger(30000);
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalTime, SimpleBar>> priceMapBar = new ConcurrentHashMap<>();
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> priceMapBarDetail
             = new ConcurrentHashMap<>();

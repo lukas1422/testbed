@@ -10986,3 +10986,160 @@ WMT *2d*: *n:781 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[
 WMT *1d*: print stats size<5: 1
 openOrder Error 1-9 4:24 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
 ****Ending**** 1-9 4:29
+MasterTradeID is: 240109001
+*****START***** HK TIME: 21:45:05 EST: 8:45:05 MASTER ID: 240109001
+SPY *******************************************
+SPY ****************STARTS 1-9 8:45
+WMT *******************************************
+WMT ****************STARTS 1-9 8:45
+UL *******************************************
+UL ****************STARTS 1-9 8:45
+PG *******************************************
+PG ****************STARTS 1-9 8:45
+MCD *******************************************
+MCD ****************STARTS 1-9 8:45
+KO *******************************************
+KO ****************STARTS 1-9 8:45
+req live orders complete
+1-9 8:45 cancelling all orders on start up
+8:45:07 global cancel orders
+1-9 8:45 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+SPY updating position: 1-9 8:45 position: 0 cost: 0.0
+KO updating position: 1-9 8:45 position: 0 cost: 0.0
+MCD updating position: 1-9 8:45 position: 23 cost: 292.3732087
+WMT updating position: 1-9 8:45 position: 16 cost: 158.27009375
+PG updating position: 1-9 8:45 position: 18 cost: 148.0684611
+KO POS COST 0 0.0
+MCD POS COST 23 292.3732087
+PG POS COST 18 148.0684611
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 16 158.27009375
+hk1572 1-9 8:45 *tradeReport* time: 2024-01-08T21:19:24 SLD exec price: 0.171 shares: 200000 avgExecPrice: 0.171
+1-9 8:45 *TradeReportEnd*: all executions: {00022624.659c94de.01=[ExecutionAugmented{execution=orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171, symbol='hk1572'}]}
+hk1572 listOfExecutions [orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171]
+KO 1-9 8:45 *tradeReport* time: 2024-01-08T14:30:19 SLD exec price: 59.97 shares: 44 avgExecPrice: 59.97
+SPY 1-9 8:45 *tradeReport* time: 2024-01-08T15:59:19 SLD exec price: 474.67 shares: 15 avgExecPrice: 474.67
+KO 1-9 8:45 profit margin required: 1.0092
+MCD 1-9 8:45 profit margin required: 1.0089
+PG 1-9 8:45 profit margin required: 1.0097
+SPY 1-9 8:45 profit margin required: 1.0059
+UL 1-9 8:45 profit margin required: 1.0061
+WMT 1-9 8:45 profit margin required: 1.0088
+KO ****Periodic Run**** 1-9 8:45
+KO 1-9 8:45 last Live feed time: 1-9 8:45 px: 60.02 
+KO 1-9 8:45 *2dP%: 0.0 *1dP%: 0.0
+KO *2d*: *n:781 *max:60.2 [1-8 15:40] *min:59.1 [1-5 13:19] *rng:1.8% *1Key:[1-5 9:30] *last:[1-9 8:45]
+KO *1d*: print stats size<5: 1
+MCD ****Periodic Run**** 1-9 8:45
+MCD 1-9 8:45 no live feed
+MCD 1-9 8:45 *2dP%: 100.0 *1dP%: 0.0
+MCD *2d*: *n:780 *max:291.9 [1-8 15:59] *min:287.4 [1-5 12:10] *rng:1.6% *1Key:[1-5 9:30] *last:[1-8 15:59]
+MCD *1d*: print stats size<5: 0
+PG ****Periodic Run**** 1-9 8:45
+PG 1-9 8:45 last Live feed time: 1-9 8:45 px: 148.85 px/cost: 1.0053
+PG 1-9 8:45 *2dP%: 98.0 *1dP%: 0.0
+PG *2d*: *n:781 *max:148.9 [1-8 15:40] *min:146.6 [1-5 13:19] *rng:1.6% *1Key:[1-5 9:30] *last:[1-9 8:45]
+PG *1d*: print stats size<5: 1
+SPY ****Periodic Run**** 1-9 8:45
+SPY 1-9 8:45 last Live feed time: 1-9 8:45 px: 472.07 
+SPY 1-9 8:45 *2dP%: 68.0 *1dP%: 0.0
+SPY *2d*: *n:781 *max:474.6 [1-8 15:59] *min:466.6 [1-5 15:32] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 8:45]
+SPY *1d*: print stats size<5: 1
+UL ****Periodic Run**** 1-9 8:45
+UL 1-9 8:45 last Live feed time: 1-9 8:45 px: 49.02 
+UL 1-9 8:45 *2dP%: 69.0 *1dP%: 0.0
+UL *2d*: *n:781 *max:49.2 [1-8 15:56] *min:48.5 [1-5 9:40] *rng:1.4% *1Key:[1-5 9:30] *last:[1-9 8:45]
+UL *1d*: print stats size<5: 1
+WMT ****Periodic Run**** 1-9 8:45
+WMT 1-9 8:45 last Live feed time: 1-9 8:45 px: 157.55 px/cost: 0.9955
+WMT 1-9 8:45 *2dP%: 74.0 *1dP%: 0.0
+WMT *2d*: *n:781 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 8:45]
+WMT *1d*: print stats size<5: 1
+openOrder Error 1-9 8:51 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds
+openOrder Error 1-9 9:01 orderId: -1  errorCode: 502  msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+****Ending**** 1-9 9:01
+MasterTradeID is: 240109001
+*****START***** HK TIME: 22:02:07 EST: 9:02:07 MASTER ID: 240109001
+SPY *******************************************
+SPY ****************STARTS 1-9 9:02
+WMT *******************************************
+WMT ****************STARTS 1-9 9:02
+UL *******************************************
+UL ****************STARTS 1-9 9:02
+PG *******************************************
+PG ****************STARTS 1-9 9:02
+MCD *******************************************
+MCD ****************STARTS 1-9 9:02
+KO *******************************************
+KO ****************STARTS 1-9 9:02
+req live orders complete
+1-9 9:02 cancelling all orders on start up
+9:02:10 global cancel orders
+1-9 9:02 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+SPY updating position: 1-9 9:02 position: 0 cost: 0.0
+KO updating position: 1-9 9:02 position: 0 cost: 0.0
+MCD updating position: 1-9 9:02 position: 23 cost: 292.3732087
+WMT updating position: 1-9 9:02 position: 16 cost: 158.27009375
+PG updating position: 1-9 9:02 position: 18 cost: 148.0684611
+KO POS COST 0 0.0
+MCD POS COST 23 292.3732087
+PG POS COST 18 148.0684611
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 16 158.27009375
+hk1572 1-9 9:02 *tradeReport* time: 2024-01-08T21:19:24 SLD exec price: 0.171 shares: 200000 avgExecPrice: 0.171
+1-9 9:02 *TradeReportEnd*: all executions: {00022624.659c94de.01=[ExecutionAugmented{execution=orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171, symbol='hk1572'}]}
+hk1572 listOfExecutions [orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171]
+KO 1-9 9:02 *tradeReport* time: 2024-01-08T14:30:19 SLD exec price: 59.97 shares: 44 avgExecPrice: 59.97
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:ushmds
+SPY 1-9 9:02 *tradeReport* time: 2024-01-08T15:59:19 SLD exec price: 474.67 shares: 15 avgExecPrice: 474.67
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+KO 1-9 9:02 profit margin required: 1.0092
+MCD 1-9 9:02 profit margin required: 1.0089
+PG 1-9 9:02 profit margin required: 1.0097
+SPY 1-9 9:02 profit margin required: 1.0059
+UL 1-9 9:02 profit margin required: 1.0061
+WMT 1-9 9:02 profit margin required: 1.0088
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2119  msg: Market data farm is connecting:usfarm
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:usfarm
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2103  msg: Market data farm connection is broken:hfarm
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:hfarm
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2105  msg: HMDS data farm connection is broken:hkhmds
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:hkhmds
+KO ****Periodic Run**** 1-9 9:02
+KO 1-9 9:02 no live feed
+KO 1-9 9:02 *2dP%: 0.0 *1dP%: 0.0
+KO *2d*: *n:780 *max:60.2 [1-8 15:40] *min:59.1 [1-5 13:19] *rng:1.8% *1Key:[1-5 9:30] *last:[1-8 15:59]
+KO *1d*: print stats size<5: 0
+MCD ****Periodic Run**** 1-9 9:02
+MCD 1-9 9:02 no live feed
+MCD 1-9 9:02 *2dP%: 100.0 *1dP%: 0.0
+MCD *2d*: *n:780 *max:291.9 [1-8 15:59] *min:287.4 [1-5 12:10] *rng:1.6% *1Key:[1-5 9:30] *last:[1-8 15:59]
+MCD *1d*: print stats size<5: 0
+PG ****Periodic Run**** 1-9 9:02
+PG 1-9 9:02 no live feed
+PG 1-9 9:02 *2dP%: 91.0 *1dP%: 0.0
+PG *2d*: *n:780 *max:148.9 [1-8 15:40] *min:146.6 [1-5 13:19] *rng:1.6% *1Key:[1-5 9:30] *last:[1-8 15:59]
+PG *1d*: print stats size<5: 0
+SPY ****Periodic Run**** 1-9 9:02
+SPY 1-9 9:02 no live feed
+SPY 1-9 9:02 *2dP%: 99.0 *1dP%: 0.0
+SPY *2d*: *n:780 *max:474.6 [1-8 15:59] *min:466.6 [1-5 15:32] *rng:1.7% *1Key:[1-5 9:30] *last:[1-8 15:59]
+SPY *1d*: print stats size<5: 0
+UL ****Periodic Run**** 1-9 9:02
+UL 1-9 9:02 no live feed
+UL 1-9 9:02 *2dP%: 99.0 *1dP%: 0.0
+UL *2d*: *n:780 *max:49.2 [1-8 15:56] *min:48.5 [1-5 9:40] *rng:1.4% *1Key:[1-5 9:30] *last:[1-8 15:59]
+UL *1d*: print stats size<5: 0
+WMT ****Periodic Run**** 1-9 9:02
+WMT 1-9 9:02 no live feed
+WMT 1-9 9:02 *2dP%: 100.0 *1dP%: 0.0
+WMT *2d*: *n:780 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[1-5 9:30] *last:[1-8 15:59]
+WMT *1d*: print stats size<5: 0
+openOrder Error 1-9 9:02 orderId: -1  errorCode: 2104  msg: Market data farm connection is OK:usfarm
+openOrder Error 1-9 9:03 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-9 9:04 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-9 9:05 orderId: -1  errorCode: 2157  msg: Sec-def data farm connection is broken:secdefhk
