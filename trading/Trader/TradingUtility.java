@@ -646,7 +646,7 @@ public class TradingUtility {
     public static double getRequiredProfitMargin(String s) {
 //        outputToSymbol(s, "avgRange:", averageDailyRange.getOrDefault(s, 0.0));
         return Math.max(getMinProfitMargin(s),
-                1 + averageDailyRange.getOrDefault(s, 0.0) / 2);
+                1 + averageDailyRange.getOrDefault(s, 0.0) * 0.75);
     }
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
@@ -672,7 +672,7 @@ public class TradingUtility {
 
     public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
-            return "print stats:empty";
+            return str("print stats size<5:", m.size());
         }
 //        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
 //        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
@@ -690,17 +690,6 @@ public class TradingUtility {
                 .min(comparingDouble(e -> e.getValue().getLow()))
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
-
-//        pr("lowest 5", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow())).limit(5)
-//                .collect(Collectors.toMap(Map.Entry::getKey, e1 -> e1.getValue().getLow(), (u, v) -> {
-//                    throw new IllegalStateException();
-//                }, LinkedHashMap::new)));
-//        pr("lowest 5 skip 1", m.entrySet().stream().sorted(comparingDouble(e -> e.getValue().getLow()))
-//                .limit(5).skip(1).collect(Collectors.toMap(Map.Entry::getKey, e1 -> e1.getValue().getLow(), (u, v) -> {
-//                    throw new IllegalStateException();
-//                }, LinkedHashMap::new)));
-//        pr("highest 5", m.entrySet().stream().sorted(Collections.reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
-//                .limit(5).collect(Collectors.toList()));
 
         return str("*n:" + m.size(),
                 "*max:" + round1Digits(max) + " [" + maxTime.format(simpleDayTime) + "]",

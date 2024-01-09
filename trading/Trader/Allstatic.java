@@ -68,7 +68,7 @@ public class Allstatic {
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
             = new ConcurrentSkipListMap<>();
     static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> threeDayData
+    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> twoDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
@@ -76,8 +76,8 @@ public class Allstatic {
     volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
     volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
-    static Map<String, Double> threeDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
+    //    static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
     static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
@@ -116,11 +116,7 @@ public class Allstatic {
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-//        if (symbol.equalsIgnoreCase("MCD")) {
-//            pr("MCD", symbol, ld, open, high, low, close);
-//        }
-
-        threeDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);
     }
 }
