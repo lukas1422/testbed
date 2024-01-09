@@ -764,27 +764,7 @@ public class TradingUtility {
     }
 
     public static Decimal getSizeFromPrice(double price) {
-//        if (price < 100) {
-//            return Decimal.get(10);
-//        }
-//        return Decimal.get(5);
-        return getSizeFromPrice(price, 0);
-    }
-
-    public static Decimal getSizeFromPrice(double price, double position) {
-        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 3));
-//        Decimal basic = getSizeFromPriceBasic(price, position);
-//        return Decimal.max(a, basic);
-    }
-
-    public static Decimal getSizeFromPriceBasic(double price, double position) {
-        if (position > 0) {
-            return Decimal.get(10);
-        }
-        if (price < 100) {
-            return Decimal.get(20);
-        }
-        return Decimal.get(10);
+        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 4));
     }
 
     public static LocalTime executionToUSTime(String time) {

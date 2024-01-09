@@ -158,12 +158,12 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static boolean checkDeltaImpact(String symb, double price) {
         double position = symbolPosMap.get(symb).longValue();
-        double addition = getSizeFromPrice(price, position).longValue() * price;
+        double addition = getSizeFromPrice(price).longValue() * price;
 
         pr(symb, "check delta impact", "aggDelta+addition<Delta Limit:",
                 aggregateDelta + addition < DELTA_LIMIT,
                 "Current+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        getSizeFromPrice(price, position).longValue() * price < DELTA_LIMIT_EACH_STOCK);
+                        getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
         return aggregateDelta + addition < DELTA_LIMIT &&
                 (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
                         addition < DELTA_LIMIT_EACH_STOCK);
@@ -196,21 +196,19 @@ public class ProfitTargetTrader implements LiveHandler,
         double oneDayPerc = oneDayPctMap.get(symb);
         Decimal position = symbolPosMap.get(symb);
 
-        if (oneDayPerc < 10 && checkDeltaImpact(symb, price)) {
+        if (oneDayPerc < 10 && checkDeltaImpact(symb, price) && threeDayPerc < 40) {
             if (position.isZero()) {
-                if (threeDayPerc < 40) {
-                    outputToSymbol(symb, str("****FIRST****", t.format(f)));
-                    outputToSymbol(symb, "****first buying", "3dp:",
-                            threeDayPerc, "1dp:", oneDayPerc);
-                    inventoryAdder(ct, price, t, getSizeFromPrice(price));
-                }
+                outputToSymbol(symb, str("****FIRST****", t.format(f)));
+                outputToSymbol(symb, "****first buying", "3dp:",
+                        threeDayPerc, "1dp:", oneDayPerc);
+                inventoryAdder(ct, price, t, getSizeFromPrice(price));
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb) && threeDayPerc < 40) {
+                if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)) {
                     outputToSymbol(symb, "****REFILL****", t.format(f));
                     outputToSymbol(symb, "buyMore:", "3dp:", threeDayPerc, "1dp:", oneDayPerc,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
                             "px/cost:", round5Digits(priceDividedByCost(price, symb)), "refill Price:"
-                            , getRequiredRefillPoint(symb) * costMap.get(symb),
+                            , round2Digits(getRequiredRefillPoint(symb) * costMap.get(symb)),
                             "avgRng:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
