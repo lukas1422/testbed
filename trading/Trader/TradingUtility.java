@@ -654,12 +654,6 @@ public class TradingUtility {
 //            pr("calculate p%: map is empty");
             return 0;
         }
-//        sorted((Map.Entry.<String, Long>comparingByValue())
-//        double maxValue = m.entrySet().stream().sorted(Collections.reverseOrder(Comparator.comparingDouble(e -> e.getValue().getHigh())))
-//                .skip(1).limit(1).mapToDouble(b -> b.getValue().getHigh()).average().getAsDouble();
-
-//        double maxValue = m.entrySet().stream().mapToDouble(e -> e.getValue().getHigh()).max().getAsDouble();
-//        double minValue = m.entrySet().stream().mapToDouble(b -> b.getValue().getLow()).min().getAsDouble();
 
         double maxValue = m.entrySet().stream().sorted(reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
                 .limit(5).skip(1).mapToDouble(e -> e.getValue().getHigh()).average().getAsDouble();
@@ -756,8 +750,8 @@ public class TradingUtility {
         return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 4));
     }
 
-    public static LocalTime executionToUSTime(String time) {
+    public static LocalDateTime executionToUSTime(String time) {
         return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
-                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalTime();
+                withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
     }
 }

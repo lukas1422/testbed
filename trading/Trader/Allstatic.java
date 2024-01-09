@@ -56,7 +56,7 @@ public class Allstatic {
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
             openOrders = new ConcurrentSkipListMap<>();
     //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
-//    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
+    //    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
     //data
@@ -68,8 +68,8 @@ public class Allstatic {
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
             = new ConcurrentSkipListMap<>();
     static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>> twoDayData
-            = new ConcurrentSkipListMap<>(String::compareTo);
+    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
+            twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
@@ -77,13 +77,12 @@ public class Allstatic {
     volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbolDeltaMap = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
-    //    static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
-    static Map<String, Integer> symbolConIDMap = new ConcurrentHashMap<>();
+    static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
     static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
 
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
-//    static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
+    // static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
     // this gets YTD return
 

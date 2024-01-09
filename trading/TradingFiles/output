@@ -10836,3 +10836,152 @@ WMT 1-9 4:03 *3dP%: 97.0 *1dP%: 0.0
 WMT *3d*: *n:781 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 4:03]
 WMT *1d*: print stats size<5: 1
 ****Ending**** 1-9 4:07
+MasterTradeID is: 240109001
+*****START***** HK TIME: 17:16:17 EST: 4:16:17 MASTER ID: 240109001
+SPY *******************************************
+SPY ****************STARTS 1-9 4:16
+WMT *******************************************
+WMT ****************STARTS 1-9 4:16
+UL *******************************************
+UL ****************STARTS 1-9 4:16
+PG *******************************************
+PG ****************STARTS 1-9 4:16
+MCD *******************************************
+MCD ****************STARTS 1-9 4:16
+KO *******************************************
+KO ****************STARTS 1-9 4:16
+req live orders complete
+1-9 4:16 cancelling all orders on start up
+4:16:19 global cancel orders
+1-9 4:16 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+SPY updating position: 1-9 4:16 position: 0 cost: 0.0
+SPY updating position: 1-9 4:16 position: 0 cost: 0.0
+KO updating position: 1-9 4:16 position: 0 cost: 0.0
+MCD updating position: 1-9 4:16 position: 23 cost: 292.3732087
+WMT updating position: 1-9 4:16 position: 16 cost: 158.27009375
+PG updating position: 1-9 4:16 position: 18 cost: 148.0684611
+KO POS COST 0 0.0
+MCD POS COST 23 292.3732087
+PG POS COST 18 148.0684611
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 16 158.27009375
+KO updating position: 1-9 4:16 position: 0 cost: 0.0
+KO 1-9 4:16 *tradeReport* time: 14:30:19 SLD exec price: 59.97 shares: 44 avgExecPrice: 59.97
+SPY 1-9 4:16 *tradeReport* time: 15:59:19 SLD exec price: 474.67 shares: 15 avgExecPrice: 474.67
+hk1572 1-9 4:16 *tradeReport* time: 21:19:24 SLD exec price: 0.171 shares: 200000 avgExecPrice: 0.171
+1-9 4:16 *TradeReportEnd*: all executions: {00022624.659c94de.01=[ExecutionAugmented{execution=orderID: 0 time: 21:19:24 side: SLD shares: 200000 price: 0.171, symbol='hk1572'}], 00012dc6.659c0fc5.01=[ExecutionAugmented{execution=orderID: 240108003 time: 14:30:19 side: SLD shares: 44 price: 59.97, symbol='KO'}], 0001035c.659bfc72.01=[ExecutionAugmented{execution=orderID: 240108004 time: 15:59:19 side: SLD shares: 15 price: 474.67, symbol='SPY'}]}
+hk1572 listOfExecutions [orderID: 0 time: 21:19:24 side: SLD shares: 200000 price: 0.171]
+KO listOfExecutions [orderID: 240108003 time: 14:30:19 side: SLD shares: 44 price: 59.97]
+SPY listOfExecutions [orderID: 240108004 time: 15:59:19 side: SLD shares: 15 price: 474.67]
+openOrder Error 1-9 4:16 orderId: -1  errorCode: 2106  msg: HMDS data farm connection is OK:ushmds
+MCD 1-9 4:16 profit margin required: 1.0089
+UL 1-9 4:16 profit margin required: 1.0061
+PG 1-9 4:16 profit margin required: 1.0097
+WMT 1-9 4:16 profit margin required: 1.0088
+KO 1-9 4:16 profit margin required: 1.0092
+SPY 1-9 4:16 profit margin required: 1.0059
+KO ****Periodic Run**** 1-9 4:16
+KO 1-9 4:16 last Live feed time: 1-9 4:16 px: 60.04 
+KO 1-9 4:16 *2dP%: 88.0 *1dP%: 0.0
+KO *2d*: *n:781 *max:60.2 [1-8 15:40] *min:59.1 [1-5 13:19] *rng:1.8% *1Key:[1-5 9:30] *last:[1-9 4:16]
+KO *1d*: print stats size<5: 1
+MCD ****Periodic Run**** 1-9 4:16
+MCD 1-9 4:16 no live feed
+MCD 1-9 4:16 *2dP%: 100.0 *1dP%: 0.0
+MCD *2d*: *n:780 *max:291.9 [1-8 15:59] *min:287.4 [1-5 12:10] *rng:1.6% *1Key:[1-5 9:30] *last:[1-8 15:59]
+MCD *1d*: print stats size<5: 0
+PG ****Periodic Run**** 1-9 4:16
+PG 1-9 4:16 last Live feed time: 1-9 4:16 px: 148.85 px/cost: 1.0053
+PG 1-9 4:16 *2dP%: 98.0 *1dP%: 0.0
+PG *2d*: *n:781 *max:148.9 [1-8 15:40] *min:146.6 [1-5 13:19] *rng:1.6% *1Key:[1-5 9:30] *last:[1-9 4:16]
+PG *1d*: print stats size<5: 1
+SPY ****Periodic Run**** 1-9 4:16
+SPY 1-9 4:16 last Live feed time: 1-9 4:16 px: 473.02 
+SPY 1-9 4:16 *2dP%: 80.0 *1dP%: 0.0
+SPY *2d*: *n:781 *max:474.6 [1-8 15:59] *min:466.6 [1-5 15:32] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 4:16]
+SPY *1d*: print stats size<5: 1
+UL ****Periodic Run**** 1-9 4:16
+UL 1-9 4:16 last Live feed time: 1-9 4:16 px: 48.83 
+UL 1-9 4:16 *2dP%: 42.0 *1dP%: 0.0
+UL *2d*: *n:781 *max:49.2 [1-8 15:56] *min:48.5 [1-5 9:40] *rng:1.4% *1Key:[1-5 9:30] *last:[1-9 4:16]
+UL *1d*: print stats size<5: 1
+WMT ****Periodic Run**** 1-9 4:16
+WMT 1-9 4:16 last Live feed time: 1-9 4:16 px: 158.16 px/cost: 0.9993
+WMT 1-9 4:16 *2dP%: 97.0 *1dP%: 0.0
+WMT *2d*: *n:781 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 4:16]
+WMT *1d*: print stats size<5: 1
+****Ending**** 1-9 4:17
+MasterTradeID is: 240109001
+*****START***** HK TIME: 17:18:00 EST: 4:18:00 MASTER ID: 240109001
+SPY *******************************************
+SPY ****************STARTS 1-9 4:18
+WMT *******************************************
+WMT ****************STARTS 1-9 4:18
+UL *******************************************
+UL ****************STARTS 1-9 4:18
+PG *******************************************
+PG ****************STARTS 1-9 4:18
+MCD *******************************************
+MCD ****************STARTS 1-9 4:18
+KO *******************************************
+KO ****************STARTS 1-9 4:18
+req live orders complete
+1-9 4:18 cancelling all orders on start up
+4:18:02 global cancel orders
+SPY updating position: 1-9 4:18 position: 0 cost: 0.0
+KO updating position: 1-9 4:18 position: 0 cost: 0.0
+MCD updating position: 1-9 4:18 position: 23 cost: 292.3732087
+WMT updating position: 1-9 4:18 position: 16 cost: 158.27009375
+PG updating position: 1-9 4:18 position: 18 cost: 148.0684611
+KO POS COST 0 0.0
+MCD POS COST 23 292.3732087
+PG POS COST 18 148.0684611
+SPY POS COST 0 0.0
+UL POS COST 0 0.0
+WMT POS COST 16 158.27009375
+1-9 4:18 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, UL={}, PG={}, SPY={}, WMT={}, MCD={}}
+KO 1-9 4:18 *tradeReport* time: 2024-01-08T14:30:19 SLD exec price: 59.97 shares: 44 avgExecPrice: 59.97
+SPY 1-9 4:18 *tradeReport* time: 2024-01-08T15:59:19 SLD exec price: 474.67 shares: 15 avgExecPrice: 474.67
+hk1572 1-9 4:18 *tradeReport* time: 2024-01-08T21:19:24 SLD exec price: 0.171 shares: 200000 avgExecPrice: 0.171
+1-9 4:18 *TradeReportEnd*: all executions: {00022624.659c94de.01=[ExecutionAugmented{execution=orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171, symbol='hk1572'}], 00012dc6.659c0fc5.01=[ExecutionAugmented{execution=orderID: 240108003 time: 2024-01-08T14:30:19 side: SLD shares: 44 price: 59.97, symbol='KO'}], 0001035c.659bfc72.01=[ExecutionAugmented{execution=orderID: 240108004 time: 2024-01-08T15:59:19 side: SLD shares: 15 price: 474.67, symbol='SPY'}]}
+hk1572 listOfExecutions [orderID: 0 time: 2024-01-08T21:19:24 side: SLD shares: 200000 price: 0.171]
+KO listOfExecutions [orderID: 240108003 time: 2024-01-08T14:30:19 side: SLD shares: 44 price: 59.97]
+SPY listOfExecutions [orderID: 240108004 time: 2024-01-08T15:59:19 side: SLD shares: 15 price: 474.67]
+KO 1-9 4:18 profit margin required: 1.0092
+MCD 1-9 4:18 profit margin required: 1.0089
+PG 1-9 4:18 profit margin required: 1.0097
+SPY 1-9 4:18 profit margin required: 1.0059
+UL 1-9 4:18 profit margin required: 1.0061
+WMT 1-9 4:18 profit margin required: 1.0088
+KO ****Periodic Run**** 1-9 4:18
+KO 1-9 4:18 last Live feed time: 1-9 4:18 px: 60.04 
+KO 1-9 4:18 *2dP%: 0.0 *1dP%: 0.0
+KO *2d*: *n:781 *max:60.2 [1-8 15:40] *min:59.1 [1-5 13:19] *rng:1.8% *1Key:[1-5 9:30] *last:[1-9 4:18]
+KO *1d*: print stats size<5: 1
+MCD ****Periodic Run**** 1-9 4:18
+MCD 1-9 4:18 no live feed
+MCD 1-9 4:18 *2dP%: 100.0 *1dP%: 0.0
+MCD *2d*: *n:780 *max:291.9 [1-8 15:59] *min:287.4 [1-5 12:10] *rng:1.6% *1Key:[1-5 9:30] *last:[1-8 15:59]
+MCD *1d*: print stats size<5: 0
+PG ****Periodic Run**** 1-9 4:18
+PG 1-9 4:18 last Live feed time: 1-9 4:18 px: 148.85 px/cost: 1.0053
+PG 1-9 4:18 *2dP%: 98.0 *1dP%: 0.0
+PG *2d*: *n:781 *max:148.9 [1-8 15:40] *min:146.6 [1-5 13:19] *rng:1.6% *1Key:[1-5 9:30] *last:[1-9 4:18]
+PG *1d*: print stats size<5: 1
+SPY ****Periodic Run**** 1-9 4:18
+SPY 1-9 4:18 last Live feed time: 1-9 4:18 px: 473.0 
+SPY 1-9 4:18 *2dP%: 80.0 *1dP%: 0.0
+SPY *2d*: *n:781 *max:474.6 [1-8 15:59] *min:466.6 [1-5 15:32] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 4:18]
+SPY *1d*: print stats size<5: 1
+UL ****Periodic Run**** 1-9 4:18
+UL 1-9 4:18 last Live feed time: 1-9 4:18 px: 48.83 
+UL 1-9 4:18 *2dP%: 42.0 *1dP%: 0.0
+UL *2d*: *n:781 *max:49.2 [1-8 15:56] *min:48.5 [1-5 9:40] *rng:1.4% *1Key:[1-5 9:30] *last:[1-9 4:18]
+UL *1d*: print stats size<5: 1
+WMT ****Periodic Run**** 1-9 4:18
+WMT 1-9 4:18 last Live feed time: 1-9 4:18 px: 158.16 px/cost: 0.9993
+WMT 1-9 4:18 *2dP%: 97.0 *1dP%: 0.0
+WMT *2d*: *n:781 *max:158.2 [1-8 15:59] *min:155.6 [1-5 13:17] *rng:1.7% *1Key:[1-5 9:30] *last:[1-9 4:18]
+WMT *1d*: print stats size<5: 1
+openOrder Error 1-9 4:24 orderId: -1  errorCode: 2107  msg: HMDS data farm connection is inactive but should be available upon demand.ushmds

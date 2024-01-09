@@ -297,7 +297,7 @@ public class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(symb, "POS COST", symbolPosMap.get(symb).longValue(), costMap.getOrDefault(symb, 0.0));
 
             apiController.reqContractDetails(symbolContractMap.get(symb), list -> list.forEach(a ->
-                    symbolConIDMap.put(symb, a.contract().conid())));
+                    symbolContractIDMap.put(symb, a.contract().conid())));
 
             es.schedule(() -> {
                 pr("Position end: requesting live:", symb);
