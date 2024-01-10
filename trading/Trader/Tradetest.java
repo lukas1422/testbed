@@ -23,8 +23,7 @@ import static enums.AutoOrderType.INVENTORY_ADDER;
 import static utility.Utility.*;
 import static utility.Utility.pr;
 
-public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
-        ApiController.ITradeReportHandler {
+public class Tradetest implements LiveHandler {
     private static ApiController apiController;
     private static volatile TreeSet<String> targetStockList = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
@@ -49,8 +48,6 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
 
 
         try {
-//            pr(" using port 4001 GATEWAY");
-//            ap.connect("127.0.0.1", TWS_PORT, 5, "");
             ap.connect("127.0.0.1", PORT_TO_USE, 6, "");
             l.countDown();
             pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
@@ -58,38 +55,20 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
             pr(" illegal state exception caught ", ex);
         }
 
-
         try {
             l.await();
         } catch (InterruptedException e) {
             outputToGeneral("error in connection:", e);
         }
 
-//        targetStockList.forEach(symb -> {
-//            es.schedule(() -> {
-//                pr("Position end: requesting live:", symb);
-//                req1ContractLive(apiController, symbolContractMap.get(symb), this, false);
-//            }, 10L, TimeUnit.SECONDS);
-//        });
+
         es.schedule(() -> {
-            //apiController.reqLiveOrders(this);
-            apiController.reqExecutions(new ExecutionFilter(),this);
-        }, 10L, TimeUnit.SECONDS);
+            pr("Position end: requesting live:", "LTRPA");
+            req1ContractLive(apiController, generateUSStockContract("LTRPA")
+                    , this, false);
+        }, 2L, TimeUnit.SECONDS);
 
 
-    }
-
-    private static void registerContractAll(Contract... cts) {
-        Arrays.stream(cts).forEach(Tradetest::registerContract);
-    }
-
-    private static void registerContract(Contract ct) {
-        String symb = ibContractToSymbol(ct);
-        symbolContractMap.put(symb, ct);
-        targetStockList.add(symb);
-        orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
-        orderStatusMap.put(symb, new ConcurrentSkipListMap<>());
-        openOrders.put(symb, new ConcurrentHashMap<>());
     }
 
     //live data start
@@ -102,9 +81,11 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
                 pr("last::", symb, price, t.format(simpleHrMinSec));
                 break;
             case BID:
+                pr("bid::", symb, price);
                 bidMap.put(symb, price);
                 break;
             case ASK:
+                pr("ask::", symb, price);
                 askMap.put(symb, price);
                 break;
         }
@@ -123,47 +104,16 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
     public void handleString(TickType tt, String symbol, String str, LocalDateTime t) {
     }
 
-    private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
-        String symb = ibContractToSymbol(ct);
-        int id = 200;
-        pr("trade ID is ", id);
-        double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
-        Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
-        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        pr(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
-                "px:", bidPrice, "size:", sizeToBuy);
-    }
-
-
-    //Open Orders ***************************
-    @Override
-    public void openOrder(Contract contract, Order order, OrderState orderState) {
-        pr("openOrder call back ", ibContractToSymbol(contract), order, orderState);
-    }
-
-    @Override
-    public void openOrderEnd() {
-        pr("open order end");
-    }
-
-    @Override
-    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining,
-                            double avgFillPrice, int permId, int parentId, double lastFillPrice,
-                            int clientId, String whyHeld, double mktCapPrice) {
-        pr(usTime(), "openOrder orderStatus callback:", "orderId:", orderId, "OrderStatus:",
-                status, "filled:", filled, "remaining:", remaining, "fillPrice", avgFillPrice,
-                "lastFillPrice:", lastFillPrice, "clientID:", clientId);
-    }
-
-    @Override
-    public void handle(int orderId, int errorCode, String errorMsg) {
-        if (errorCode == 2157) {
-            pr("ignoring 2157", "orderID:", orderId, "msg:", errorMsg);
-            return;
-        }
-        outputToGeneral("openOrder ERROR:", usTime(), "orderId:",
-                orderId, " errorCode:", errorCode, " msg:", errorMsg);
-    }
+//    private static void testTrade(Contract ct, double price, LocalDateTime t, Decimal sizeToBuy) {
+//        String symb = ibContractToSymbol(ct);
+//        int id = 200;
+//        pr("trade ID is ", id);
+//        double bidPrice = r(Math.min(price, bidMap.getOrDefault(symb, price)));
+//        Order o = placeBidLimitTIF(id, bidPrice, sizeToBuy, DAY);
+//        placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
+//        pr(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
+//                "px:", bidPrice, "size:", sizeToBuy);
+//    }
 
     //open orders end **********************
     public static void main(String[] args) {
@@ -175,28 +125,4 @@ public class Tradetest implements LiveHandler, ApiController.ILiveOrderHandler,
 //        es.schedule(() -> apiController.client().reqIds(-1), 3L, TimeUnit.SECONDS);
     }
 
-    @Override
-    public void tradeReport(String tradeKey, Contract contract, Execution execution) {
-        pr("tradekey",tradeKey);
-
-        String symb = ibContractToSymbol(contract);
-
-        if (symb.startsWith("hk")) {
-            return;
-        }
-
-        pr(symb, usDateTime(), "tradeReport time:",
-                executionToUSTime(execution.time()), execution.side(), "exec price:",
-                execution.price(), "shares:", execution.shares(), "avgExecPrice:", execution.avgPrice());
-    }
-
-    @Override
-    public void tradeReportEnd() {
-        pr("trade report end");
-    }
-
-    @Override
-    public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-        pr("tradeKey, commission", tradeKey, commissionReport.commission());
-    }
 }
