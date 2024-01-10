@@ -961,3 +961,84 @@ POS COST 18 148.0684611
 1-10 8:02 *2dP%: 92.0 *1dP%: 82.0
 *2d*: *n:1180 *max:149.3 [1-9 9:51] *min:146.6 [1-5 13:19] *rng:1.9% *1Key:[1-5 9:30] *last:[1-9 17:18]
 *1d*: *n:400 *max:149.3 [1-9 9:51] *min:148.1 [1-9 9:28] *rng:0.8% *1Key:[1-9 9:02] *last:[1-9 17:18]
+*******************************************
+****************STARTS 1-10 8:46
+updating position: 1-10 8:46 position: 18 cost: 148.0684611
+POS COST 18 148.0684611
+1-10 8:47 profit margin required: 1.0095
+****Periodic Run**** 1-10 8:47
+1-10 8:47 no live feed
+1-10 8:47 *2dP%: 97.0 *1dP%: 0.0
+*2d*: *n:780 *max:149.3 [1-9 9:51] *min:147.7 [1-8 10:16] *rng:1.1% *1Key:[1-8 9:30] *last:[1-9 15:59]
+*1d*: print stats size<5: 0
+****CUT**** 1-10 9:33:06
+Sell 1dP%: 100.0 2dp: 100.0 priceOverCost: 1.0111 requiredMargin: 1.0095 avgRng: 0.0127
+orderID: 240110004 tradeID: 240110004 SELL sell px: 149.74 qty: 18 costBasis: 148.0684611 PG 1-10 9:33 INVENTORY_CUTTER Created required Margin: 1.0095366431925077 targetPrice: 149.48053718157442 askPrice 149.74
+2DStats: *n:786 *max:149.6 [1-10 9:31] *min:147.7 [1-8 10:16] *rng:1.3% *1Key:[1-8 9:30] *last:[1-10 9:33] 1DStats: *n:6 *max:149.5 [1-10 9:31] *min:149.3 [1-10 9:16] *rng:0.1% *1Key:[1-10 8:47] *last:[1-10 9:33]
+1-10 9:33 *openOrder* status: Submitted orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74
+1-10 9:33 *openOrder* all live orders {240110004=orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74}
+1-10 9:33 *OrderStatus*: Submitted orderId: 240110004 filled: 0 remaining: 18 fillPrice 0.0 lastFillPrice: 0.0
+9:33:10 order blocked: PG [orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74] orderStatus: {240110004=Submitted}
+updating position: 1-10 9:33 position: 0 cost: 0.0
+1-10 9:33 *tradeReport* time: 2024-01-10T09:33:13 SLD exec price: 149.74 shares: 18 avgExecPrice: 149.74
+1-10 9:33 *openOrder* status: Filled orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74
+1-10 9:33 *openOrder*:removing order. Status: Filled orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74
+1-10 9:33 *openOrder*:after removal.open orders: PG {}
+1-10 9:33 *OrderStatus*: Filled orderId: 240110004 filled: 18 remaining: 0 fillPrice 149.74 lastFillPrice: 149.74
+1-10 9:33 *openOrder* status: Filled orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74
+1-10 9:33 *openOrder*:removing order. Status: Filled orderID: 240110004 orderType: LMT action: SELL totalQuantity: 18 filledQty:  limitPrice: 149.74
+1-10 9:33 *openOrder*:after removal.open orders: PG {}
+1-10 9:33 *OrderStatus*: Filled orderId: 240110004 filled: 18 remaining: 0 fillPrice 149.74 lastFillPrice: 149.74
+1.*commission report* orderID: 240110004 commission: 0.356808 orderID: 240110004 realized pnl: 29.730892
+2.*commission report* orderID: 240110004 commission: 0.356808 realized pnl: 29.730892
+updating position: 1-10 9:33 position: 0 cost: 0.0
+updating position: 1-10 9:33 position: 0 cost: 0.0
+updating position: 1-10 9:35 position: 0 cost: 0.0
+****Periodic Run**** 1-10 9:47
+1-10 9:47 last Live feed time: 1-10 9:47 px: 149.84 
+*check orderStatus*: 1-10 9:47 orderStatus {240110004=Filled}
+1-10 9:47 *2dP%: 95.0 *1dP%: 85.0
+*2d*: *n:800 *max:149.9 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.5% *1Key:[1-8 9:30] *last:[1-10 9:47]
+*1d*: *n:20 *max:149.9 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.4% *1Key:[1-10 8:47] *last:[1-10 9:47]
+****Periodic Run**** 1-10 10:47
+1-10 10:47 last Live feed time: 1-10 10:47 px: 149.92 
+*check orderStatus*: 1-10 10:47 orderStatus {240110004=Filled}
+1-10 10:47 *2dP%: 97.0 *1dP%: 90.0
+*2d*: *n:860 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 10:47]
+*1d*: *n:80 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 10:47]
+****Periodic Run**** 1-10 11:47
+1-10 11:47 last Live feed time: 1-10 11:47 px: 149.61 
+*check orderStatus*: 1-10 11:47 orderStatus {240110004=Filled}
+1-10 11:47 *2dP%: 83.0 *1dP%: 47.0
+*2d*: *n:920 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 11:47]
+*1d*: *n:140 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 11:47]
+****Periodic Run**** 1-10 12:47
+1-10 12:47 last Live feed time: 1-10 12:47 px: 149.59 
+*check orderStatus*: 1-10 12:47 orderStatus {240110004=Filled}
+1-10 12:47 *2dP%: 82.0 *1dP%: 44.0
+*2d*: *n:979 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 12:47]
+*1d*: *n:199 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 12:47]
+****Periodic Run**** 1-10 13:47
+1-10 13:47 last Live feed time: 1-10 13:47 px: 149.6 
+*check orderStatus*: 1-10 13:47 orderStatus {240110004=Filled}
+1-10 13:47 *2dP%: 83.0 *1dP%: 46.0
+*2d*: *n:1039 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 13:47]
+*1d*: *n:259 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 13:47]
+****Periodic Run**** 1-10 14:47
+1-10 14:47 last Live feed time: 1-10 14:47 px: 149.92 
+*check orderStatus*: 1-10 14:47 orderStatus {240110004=Filled}
+1-10 14:47 *2dP%: 97.0 *1dP%: 89.0
+*2d*: *n:1099 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 14:47]
+*1d*: *n:319 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 14:47]
+****Periodic Run**** 1-10 15:47
+1-10 15:47 last Live feed time: 1-10 15:47 px: 149.67 
+*check orderStatus*: 1-10 15:47 orderStatus {240110004=Filled}
+1-10 15:47 *2dP%: 86.0 *1dP%: 55.0
+*2d*: *n:1159 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 15:47]
+*1d*: *n:379 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 15:47]
+****Periodic Run**** 1-10 16:47
+1-10 16:47 last Live feed time: 1-10 16:06 px: 149.94 
+*check orderStatus*: 1-10 16:47 orderStatus {240110004=Filled}
+1-10 16:47 *2dP%: 97.0 *1dP%: 92.0
+*2d*: *n:1174 *max:150.0 [1-10 9:41] *min:147.7 [1-8 10:16] *rng:1.6% *1Key:[1-8 9:30] *last:[1-10 16:06]
+*1d*: *n:394 *max:150.0 [1-10 9:41] *min:149.3 [1-10 9:16] *rng:0.5% *1Key:[1-10 8:47] *last:[1-10 16:06]
