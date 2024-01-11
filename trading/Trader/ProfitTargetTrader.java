@@ -531,11 +531,15 @@ public class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.containsKey(symb) && !orderSubmitted.get(symb).isEmpty()) {
             orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
-                    .forEach(e2 -> outputToSymbol(symb, "1.*commission report*",
-                            "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
-                            e2.getValue().getOrder().action() == SELL ?
-                                    str("orderID:", e2.getKey(), "realized pnl:",
-                                            commissionReport.realizedPNL()) : "NO PNL"));
+                    .forEach(e2 -> {
+                        String outp = str("1.*commission report*",
+                                "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
+                                e2.getValue().getOrder().action() == SELL ?
+                                        str("orderID:", e2.getKey(), "realized pnl:",
+                                                commissionReport.realizedPNL()) : "NO PNL");
+                        outputToSymbol(symb, outp);
+                        outputToFills(symb, outp);
+                    });
 
             orderSubmitted.get(symb).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {

@@ -61,14 +61,11 @@ public class Tradetest implements LiveHandler {
             outputToGeneral("error in connection:", e);
         }
 
-
         es.schedule(() -> {
             pr("Position end: requesting live:", "LTRPA");
             req1ContractLive(apiController, generateUSStockContract("LTRPA")
                     , this, false);
         }, 2L, TimeUnit.SECONDS);
-
-
     }
 
     //live data start
