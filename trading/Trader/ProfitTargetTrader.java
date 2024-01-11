@@ -207,9 +207,10 @@ public class ProfitTargetTrader implements LiveHandler,
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)) {
                     outputToSymbol(symb, "****REFILL****", t.format(f));
-                    outputToSymbol(symb, "buyMore:", "2dp:", twoDayPerc, "1dp:", oneDayPerc,
+                    outputToSymbol(symb, "buyMore: 2dp:", twoDayPerc, "1dp:", oneDayPerc,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
-                            "px/cost:", round5Digits(priceDividedByCost(price, symb)), "refill Price:"
+                            "px/cost:", round5Digits(priceDividedByCost(price, symb)),
+                            "refill Price:"
                             , round2Digits(getRequiredRefillPoint(symb) * costMap.get(symb)),
                             "avgRng:", averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
@@ -220,7 +221,7 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(f));
-                outputToSymbol(symb, "Sell 1dP%:", oneDayPerc, "2dp:", twoDayPerc,
+                outputToSymbol(symb, "Sell 1dP:", oneDayPerc, "2dp:", twoDayPerc,
                         "priceOverCost:", round5Digits(priceOverCost),
                         "requiredMargin:", round5Digits(getRequiredProfitMargin(symb)), "avgRng:",
                         round5Digits(averageDailyRange.getOrDefault(symb, 0.0)));
@@ -401,7 +402,6 @@ public class ProfitTargetTrader implements LiveHandler,
                 "1DStats:", genStatsString(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
     }
 
-
     //Open Orders ***************************
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
@@ -414,7 +414,8 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (orderState.status().isFinished()) {
-            outputToSymbol(symb, usDateTime(), "*openOrder*:removing order. Status:", orderState.status(), order);
+            outputToSymbol(symb, usDateTime(), "*openOrder*:removing order. Status:",
+                    orderState.status(), order);
             if (openOrders.get(symb).containsKey(order.orderId())) {
                 openOrders.get(symb).remove(order.orderId());
             }

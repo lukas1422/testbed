@@ -31,8 +31,8 @@ public class Allstatic {
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime PERCENTILE_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
-    static final double DELTA_LIMIT = 30000;
-    static final double DELTA_LIMIT_EACH_STOCK = 10000;
+    static final double DELTA_LIMIT = 40000;
+    static final double DELTA_LIMIT_EACH_STOCK = 13000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
@@ -43,8 +43,8 @@ public class Allstatic {
 
     public static volatile Map<Integer, Request> globalRequestMap = new ConcurrentHashMap<>();
     public volatile static Map<String, Decimal> currentPositionMap = new TreeMap<>(String::compareTo);
-    public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
-    public volatile static Map<String, ConcurrentSkipListMap<LocalTime, TradeBlock>> tradesMap = new ConcurrentHashMap<>();
+    //    public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
+//    public volatile static Map<String, ConcurrentSkipListMap<LocalTime, TradeBlock>> tradesMap = new ConcurrentHashMap<>();
     public static volatile NavigableMap<Integer, OrderAugmented> globalIdOrderMap = new ConcurrentSkipListMap<>();
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
