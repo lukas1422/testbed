@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
-import static Trader.Allstatic.DELTA_EACH_CAP;
+import static Trader.Allstatic.DELTA_EACH_LIMIT;
 import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
@@ -643,9 +643,7 @@ public class TradingUtility {
     }
 
     public static double getRequiredProfitMargin(String s) {
-//        outputToSymbol(s, "avgRange:", averageDailyRange.getOrDefault(s, 0.0));
-        return Math.max(getMinProfitMargin(s),
-                1 + averageDailyRange.getOrDefault(s, 0.0) * 0.75);
+        return Math.max(getMinProfitMargin(s), 1 + averageDailyRange.getOrDefault(s, 0.0) * 0.75);
     }
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
@@ -745,7 +743,7 @@ public class TradingUtility {
     }
 
     public static Decimal getSizeFromPrice(double price) {
-        return Decimal.get(Math.floor(DELTA_EACH_CAP / price / 4));
+        return Decimal.get(Math.floor(DELTA_EACH_LIMIT / price / 4));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

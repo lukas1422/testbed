@@ -85,7 +85,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::todaySoFar, () ->
                                 pr(symb, "3 Day Stats:", genStatsString(twoDayData.get(symb)),
-                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START))), 2, Types.BarSize._1_min));
+                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START_TIME))), 2, Types.BarSize._1_min));
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::ytdOpen, () -> computeHistoricalData(symb)
                         , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
@@ -162,14 +162,14 @@ public class ProfitTargetTrader implements LiveHandler,
         double position = symbolPosMap.get(symb).longValue();
         double addition = getSizeFromPrice(price).longValue() * price;
 
-        pr(symb, "check delta impact", "nowDelta+addition<Delta Limit:",
-                aggregateDelta + addition < DELTA_ALL_CAP,
-                "deltaStock+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_CAP);
+        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
+                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
+                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
-        return aggregateDelta + addition < DELTA_ALL_CAP &&
+        return aggregateDelta + addition < DELTA_TOTAL_LIMIT &&
                 (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        addition < DELTA_EACH_CAP);
+                        addition < DELTA_EACH_LIMIT);
     }
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
@@ -195,21 +195,20 @@ public class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        double twoDayPerc = twoDayPctMap.get(symb);
-        double oneDayPerc = oneDayPctMap.get(symb);
+        double twoDayP = twoDayPctMap.get(symb);
+        double oneDayP = oneDayPctMap.get(symb);
         Decimal position = symbolPosMap.get(symb);
 
-        if (oneDayPerc < 10 && checkDeltaImpact(symb, price) && twoDayPerc < 30) {
+        if (oneDayP < 10 && checkDeltaImpact(symb, price) && twoDayP < 30) {
             if (position.isZero()) {
-                outputToSymbol(symb, str("****FIRST****", t.format(f)));
-                outputToSymbol(symb, "****first buying", "2dp:",
-                        twoDayPerc, "1dp:", oneDayPerc);
+                outputToSymbol(symb, str("***FIRST BUY***", t.format(f)));
+                outputToSymbol(symb, "first buy", "2dp:", twoDayP, "1dp:", oneDayP);
                 inventoryAdder(ct, price, t, getSizeFromPrice(price));
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)) {
-                    outputToSymbol(symb, "****REFILL****", t.format(f),
+                    outputToSymbol(symb, "***REFILL***", t.format(f),
                             "deltaNow:", symbolDeltaMap.getOrDefault(symb, 0.0));
-                    outputToSymbol(symb, "buyMore: 2dp:", twoDayPerc, "1dp:", oneDayPerc,
+                    outputToSymbol(symb, "buyMore: 2dp:", twoDayP, "1dp:", oneDayP,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
                             "px/cost:", round5Digits(priceDividedByCost(price, symb)),
                             "refill Price:"
@@ -218,12 +217,12 @@ public class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             }
-        } else if (oneDayPerc > 80 && position.longValue() > 0) {
+        } else if (oneDayP > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
 //            pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(f));
-                outputToSymbol(symb, "Sell 1dP:", oneDayPerc, "2dp:", twoDayPerc,
+                outputToSymbol(symb, "Sell 1dP:", oneDayP, "2dp:", twoDayP,
                         "priceOverCost:", round5Digits(priceOverCost),
                         "requiredMargin:", round5Digits(getRequiredProfitMargin(symb)), "avgRng:",
                         round5Digits(averageDailyRange.getOrDefault(symb, 0.0)));
@@ -327,7 +326,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (twoDayData.containsKey(symb) && !twoDayData.get(symb).isEmpty()) {
                 double twoDayPercentile = calculatePercentileFromMap(twoDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(twoDayData.get(symb)
-                        .tailMap(TODAY_START));
+                        .tailMap(TODAY_START_TIME));
 
                 twoDayPctMap.put(symb, twoDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
@@ -357,7 +356,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
-                > DELTA_EACH_CAP) {
+                > DELTA_EACH_LIMIT) {
             outputToSymbol(symb, usDateTime(), "buying exceeds limit. Current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed add delta:", sizeToBuy.longValue() * price);
@@ -372,7 +371,7 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
         outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)),
-                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
+                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START_TIME)));
     }
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
@@ -388,15 +387,17 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(symb).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatusMap.get(symb).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(apiController, ct, o, new OrderHandler(symb, o.orderId()));
-        outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id,
-                o.action(), "sell px:", offerPrice, "qty:", o.totalQuantity().longValue(), "costBasis:", cost,
+        outputToSymbol(symb, "ordID:", o.orderId(), "tradID:", id,
+                o.action(), "Px:", offerPrice,
+                "qty:", o.totalQuantity().longValue(), "cost:", round2Digits(cost),
                 orderSubmitted.get(symb).get(o.orderId()),
-                "required Margin:", getRequiredProfitMargin(symb)
-                , "targetPrice:", cost * getRequiredProfitMargin(symb),
-                "askPrice", askMap.getOrDefault(symb, 0.0));
+                "reqMargin:", getRequiredProfitMargin(symb)
+                , "targetPx:", round2Digits(cost * getRequiredProfitMargin(symb)),
+                "askPx", askMap.getOrDefault(symb, 0.0));
 
-        outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)),
-                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
+        outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)));
+        outputToSymbol(symb, "1DStats:",
+                genStatsString(twoDayData.get(symb).tailMap(TODAY_START_TIME)));
     }
 
     //Open Orders ***************************
@@ -579,7 +580,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, usDateTime(), "*2dP%:", twoDayPctMap.getOrDefault(symb, 0.0),
                         "*1dP%:", oneDayPctMap.getOrDefault(symb, 0.0));
                 outputToSymbol(symb, "*2d*:", genStatsString(twoDayData.get(symb)));
-                outputToSymbol(symb, "*1d*:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
+                outputToSymbol(symb, "*1d*:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START_TIME)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("****Ending****", usDateTime())));

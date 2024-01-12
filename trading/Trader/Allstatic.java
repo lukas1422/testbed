@@ -28,10 +28,10 @@ public class Allstatic {
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     static final LocalDateTime TRADING_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
-    static final LocalDateTime TODAY_START =
+    static final LocalDateTime TODAY_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
-    static final double DELTA_ALL_CAP = 60000;
-    static final double DELTA_EACH_CAP = 20000;
+    static final double DELTA_TOTAL_LIMIT = 60000;
+    static final double DELTA_EACH_LIMIT = 20000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
