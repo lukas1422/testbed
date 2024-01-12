@@ -85,7 +85,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::todaySoFar, () ->
                                 pr(symb, "3 Day Stats:", genStatsString(twoDayData.get(symb)),
-                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME))), 2, Types.BarSize._1_min));
+                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START))), 2, Types.BarSize._1_min));
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::ytdOpen, () -> computeHistoricalData(symb)
                         , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
@@ -325,16 +325,11 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(symb -> {
             if (twoDayData.containsKey(symb) && !twoDayData.get(symb).isEmpty()) {
                 double twoDayPercentile = calculatePercentileFromMap(twoDayData.get(symb));
-                double oneDayPercentile = calculatePercentileFromMap(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME));
+                double oneDayPercentile = calculatePercentileFromMap(twoDayData.get(symb)
+                        .tailMap(TODAY_START));
 
                 twoDayPctMap.put(symb, twoDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
-//                pr("compute:", symb, usTime(), "*2dP%:", round(twoDayPercentile),
-//                        "*1dP%:", round(oneDayPercentile), "last:",
-//                        latestPriceMap.getOrDefault(symb, 0.0));
-//                pr(symb, "*stats 1d:",
-//                        genStatsString(threeDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
-//                pr(symb, "stats 2d:", genStatsString(threeDayData.get(symb)));
             }
         });
 
@@ -362,9 +357,9 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
                 > DELTA_LIMIT_EACH_STOCK) {
-            outputToSymbol(symb, usTime(), "buying exceeds limit", "current delta:",
+            outputToSymbol(symb, usDateTime(), "buying exceeds limit. Current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
-                    "proposed delta inc:", sizeToBuy.longValue() * price);
+                    "proposed add delta:", sizeToBuy.longValue() * price);
             return;
         }
         int id = tradeID.incrementAndGet();
@@ -376,7 +371,7 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(symb, "orderID:", o.orderId(), "tradeID:", id, "action:", o.action(),
                 "px:", bidPrice, "size:", sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
         outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)),
-                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
     }
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
@@ -400,7 +395,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 "askPrice", askMap.getOrDefault(symb, 0.0));
 
         outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)),
-                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+                "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
     }
 
     //Open Orders ***************************
@@ -583,7 +578,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, usDateTime(), "*2dP%:", twoDayPctMap.getOrDefault(symb, 0.0),
                         "*1dP%:", oneDayPctMap.getOrDefault(symb, 0.0));
                 outputToSymbol(symb, "*2d*:", genStatsString(twoDayData.get(symb)));
-                outputToSymbol(symb, "*1d*:", genStatsString(twoDayData.get(symb).tailMap(PERCENTILE_START_TIME)));
+                outputToSymbol(symb, "*1d*:", genStatsString(twoDayData.get(symb).tailMap(TODAY_START)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("****Ending****", usDateTime())));
