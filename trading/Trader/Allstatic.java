@@ -25,14 +25,14 @@ import static utility.Utility.*;
 
 //test
 public class Allstatic {
-    public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
+//    public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     static final LocalDateTime TRADING_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime PERCENTILE_START_TIME =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
-    static final double DELTA_LIMIT = 40000;
-    static final double DELTA_LIMIT_EACH_STOCK = 13000;
+    static final double DELTA_LIMIT = 50000;
+    static final double DELTA_LIMIT_EACH_STOCK = 17000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();

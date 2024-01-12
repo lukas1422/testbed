@@ -198,7 +198,7 @@ public class ProfitTargetTrader implements LiveHandler,
         double oneDayPerc = oneDayPctMap.get(symb);
         Decimal position = symbolPosMap.get(symb);
 
-        if (oneDayPerc < 10 && checkDeltaImpact(symb, price) && twoDayPerc < 40) {
+        if (oneDayPerc < 10 && checkDeltaImpact(symb, price) && twoDayPerc < 30) {
             if (position.isZero()) {
                 outputToSymbol(symb, str("****FIRST****", t.format(f)));
                 outputToSymbol(symb, "****first buying", "2dp:",
@@ -206,7 +206,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 inventoryAdder(ct, price, t, getSizeFromPrice(price));
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)) {
-                    outputToSymbol(symb, "****REFILL****", t.format(f));
+                    outputToSymbol(symb, "****REFILL****", t.format(f),
+                            "deltaNow:", symbolDeltaMap.getOrDefault(symb, 0.0));
                     outputToSymbol(symb, "buyMore: 2dp:", twoDayPerc, "1dp:", oneDayPerc,
                             "costBasis:", costMap.getOrDefault(symb, 0.0),
                             "px/cost:", round5Digits(priceDividedByCost(price, symb)),
@@ -218,7 +219,7 @@ public class ProfitTargetTrader implements LiveHandler,
             }
         } else if (oneDayPerc > 80 && position.longValue() > 0) {
             double priceOverCost = priceDividedByCost(price, symb);
-            pr("priceOverCost", symb, priceDividedByCost(price, symb));
+//            pr("priceOverCost", symb, priceDividedByCost(price, symb));
             if (priceOverCost > getRequiredProfitMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(f));
                 outputToSymbol(symb, "Sell 1dP:", oneDayPerc, "2dp:", twoDayPerc,

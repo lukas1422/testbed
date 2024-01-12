@@ -740,7 +740,7 @@ public class TradingUtility {
 
     public static void outputToSymbol(String symbol, Object... cs) {
         if (!symbol.isEmpty()) {
-            outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol + ".txt"));
+            outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol));
         }
         outputToGeneral(symbol, str(cs));
     }
