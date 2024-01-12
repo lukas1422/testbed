@@ -1176,3 +1176,95 @@ delta: 0.0
 1-12 9:05 *2dP%: 55.0 *1dP%: 0.0
 *2d*: *n:780 *max:49.1 [1-10 9:39] *min:48.4 [1-11 11:34] *rng:1.5% *1Key:[1-10 9:30] *last:[1-11 15:59]
 *1d*: print stats size<5: 0
+****CUT**** 1-12 9:30:00
+Sell 1dP: 100.0 2dp: 100.0 priceOverCost: 1.0142 requiredMargin: 1.006 avgRng: 0.008
+ordID: 240112003 tradID: 240112003 SELL Px: 49.39 qty: 118 cost: 48.67 UL 1-12 9:30 INVENTORY_CUTTER Created reqMargin: 1.0060021644866364 targetPx: 48.96 askPx 49.39
+2DStats: *n:788 *max:49.3 [1-12 9:29] *min:48.4 [1-11 11:34] *rng:1.9% *1Key:[1-10 9:30] *last:[1-12 9:30]
+1DStats: *n:8 *max:49.3 [1-12 9:29] *min:49.3 [1-12 9:05] *rng:0.1% *1Key:[1-12 9:05] *last:[1-12 9:30]
+9:30:01 order blocked: UL [] orderStatus: {240112003=Created}
+9:30:02 order blocked: UL [] orderStatus: {240112003=Created}
+1-12 9:30 *openOrder* status: Submitted orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39
+1-12 9:30 *openOrder* all live orders {240112003=orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39}
+1-12 9:30 *OrderStatus*: Submitted orderId: 240112003 filled: 0 remaining: 118 fillPrice 0.0 lastFillPrice: 0.0
+9:30:03 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:30:06 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:30:07 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:30:08 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:30:42 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:02 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:04 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:05 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:06 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:08 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+9:31:10 order blocked: UL [orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39] orderStatus: {240112003=Submitted}
+updating position: 1-12 9:31 position: 0 cost: 0.0
+1-12 9:31 *tradeReport* time: 2024-01-12T09:31:12 SLD exec price: 49.39 shares: 118 avgExecPrice: 49.39
+1-12 9:31 *openOrder* status: Filled orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39
+1-12 9:31 *openOrder*:removing order. Status: Filled orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39
+1-12 9:31 *openOrder*:after removal.open orders: UL {}
+1-12 9:31 *OrderStatus*: Filled orderId: 240112003 filled: 118 remaining: 0 fillPrice 49.39 lastFillPrice: 49.39
+1-12 9:31 *openOrder* status: Filled orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39
+1-12 9:31 *openOrder*:removing order. Status: Filled orderID: 240112003 orderType: LMT action: SELL totalQuantity: 118 filledQty:  limitPrice: 49.39
+1-12 9:31 *openOrder*:after removal.open orders: UL {}
+1-12 9:31 *OrderStatus*: Filled orderId: 240112003 filled: 118 remaining: 0 fillPrice 49.39 lastFillPrice: 49.39
+1.*commission report* orderID: 240112003 commission: 0.361516 orderID: 240112003 realized pnl: 84.475984
+2.*commission report* orderID: 240112003 commission: 0.361516 realized pnl: 84.475984
+updating position: 1-12 9:31 position: 0 cost: 0.0
+updating position: 1-12 9:31 position: 0 cost: 0.0
+updating position: 1-12 9:36 position: 0 cost: 0.0
+****Periodic Run**** 1-12 10:05
+1-12 10:05 last Live feed time: 1-12 10:05 px: 49.33 
+delta: 0.0
+*check orderStatus*: 1-12 10:05 orderStatus {240112003=Filled}
+1-12 10:05 *2dP%: 92.0 *1dP%: 44.0
+*2d*: *n:823 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 10:05]
+*1d*: *n:43 *max:49.4 [1-12 9:31] *min:49.3 [1-12 9:05] *rng:0.3% *1Key:[1-12 9:05] *last:[1-12 10:05]
+****Periodic Run**** 1-12 11:05
+1-12 11:05 last Live feed time: 1-12 11:05 px: 49.19 
+delta: 0.0
+*check orderStatus*: 1-12 11:05 orderStatus {240112003=Filled}
+1-12 11:05 *2dP%: 78.0 *1dP%: 6.0
+*2d*: *n:883 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 11:05]
+*1d*: *n:103 *max:49.4 [1-12 9:31] *min:49.2 [1-12 10:50] *rng:0.5% *1Key:[1-12 9:05] *last:[1-12 11:05]
+****Periodic Run**** 1-12 12:05
+1-12 12:05 last Live feed time: 1-12 12:05 px: 49.06 
+delta: 0.0
+*check orderStatus*: 1-12 12:05 orderStatus {240112003=Filled}
+1-12 12:05 *2dP%: 65.0 *1dP%: 0.0
+*2d*: *n:938 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 12:05]
+*1d*: *n:158 *max:49.4 [1-12 9:31] *min:49.1 [1-12 11:49] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 12:05]
+****Periodic Run**** 1-12 13:05
+1-12 13:05 last Live feed time: 1-12 13:05 px: 49.11 
+delta: 0.0
+*check orderStatus*: 1-12 13:05 orderStatus {240112003=Filled}
+1-12 13:05 *2dP%: 70.0 *1dP%: 14.0
+*2d*: *n:982 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 13:05]
+*1d*: *n:202 *max:49.4 [1-12 9:31] *min:49.1 [1-12 11:49] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 13:05]
+****Periodic Run**** 1-12 14:05
+1-12 14:05 last Live feed time: 1-12 14:05 px: 49.13 
+delta: 0.0
+*check orderStatus*: 1-12 14:05 orderStatus {240112003=Filled}
+1-12 14:05 *2dP%: 72.0 *1dP%: 20.0
+*2d*: *n:1024 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 14:05]
+*1d*: *n:244 *max:49.4 [1-12 9:31] *min:49.1 [1-12 11:49] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 14:05]
+****Periodic Run**** 1-12 15:05
+1-12 15:05 last Live feed time: 1-12 15:05 px: 49.11 
+delta: 0.0
+*check orderStatus*: 1-12 15:05 orderStatus {240112003=Filled}
+1-12 15:05 *2dP%: 70.0 *1dP%: 14.0
+*2d*: *n:1073 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 15:05]
+*1d*: *n:293 *max:49.4 [1-12 9:31] *min:49.1 [1-12 11:49] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 15:05]
+****Periodic Run**** 1-12 16:05
+1-12 16:05 last Live feed time: 1-12 16:00 px: 49.14 
+delta: 0.0
+*check orderStatus*: 1-12 16:05 orderStatus {240112003=Filled}
+1-12 16:05 *2dP%: 73.0 *1dP%: 23.0
+*2d*: *n:1119 *max:49.4 [1-12 9:31] *min:48.4 [1-11 11:34] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 16:00]
+*1d*: *n:339 *max:49.4 [1-12 9:31] *min:49.1 [1-12 11:49] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 16:00]
+****Periodic Run**** 1-12 17:05
+1-12 17:05 last Live feed time: 1-12 16:16 px: 48.17 
+delta: 0.0
+*check orderStatus*: 1-12 17:05 orderStatus {240112003=Filled}
+1-12 17:05 *2dP%: 0.0 *1dP%: 0.0
+*2d*: *n:1120 *max:49.4 [1-12 9:31] *min:48.4 [1-12 16:16] *rng:2.1% *1Key:[1-10 9:30] *last:[1-12 16:16]
+*1d*: *n:340 *max:49.4 [1-12 9:31] *min:49.1 [1-12 16:16] *rng:0.7% *1Key:[1-12 9:05] *last:[1-12 16:16]
