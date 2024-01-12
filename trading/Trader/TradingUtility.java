@@ -26,11 +26,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
-import static Trader.Allstatic.DELTA_LIMIT_EACH_STOCK;
+import static Trader.Allstatic.DELTA_EACH_CAP;
 import static Trader.Allstatic.outputFile;
 import static Trader.ProfitTargetTrader.averageDailyRange;
 import static api.TradingConstants.*;
-import static java.lang.Math.floor;
 import static java.lang.Math.round;
 import static java.util.Collections.reverseOrder;
 import static java.util.Comparator.comparingDouble;
@@ -746,7 +745,7 @@ public class TradingUtility {
     }
 
     public static Decimal getSizeFromPrice(double price) {
-        return Decimal.get(Math.floor(DELTA_LIMIT_EACH_STOCK / price / 4));
+        return Decimal.get(Math.floor(DELTA_EACH_CAP / price / 4));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

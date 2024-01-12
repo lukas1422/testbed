@@ -48,10 +48,10 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract ko = generateUSStockContract("KO");
 
     private ProfitTargetTrader() {
-        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usTime(),
+        outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usDateTime(),
                 "MASTER ID:", MASTER_TRADE_ID);
-        pr("market start time today ", TRADING_START_TIME);
-        pr("until market start time", Duration.between(TRADING_START_TIME,
+        pr("market start time today:", TRADING_START_TIME);
+        pr("until market start time:", Duration.between(TRADING_START_TIME,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
         registerContractAll(spy, wmt, ul, pg, mcd, ko);
     }
@@ -162,13 +162,14 @@ public class ProfitTargetTrader implements LiveHandler,
         double position = symbolPosMap.get(symb).longValue();
         double addition = getSizeFromPrice(price).longValue() * price;
 
-        pr(symb, "check delta impact", "aggDelta+addition<Delta Limit:",
-                aggregateDelta + addition < DELTA_LIMIT,
-                "Current+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        getSizeFromPrice(price).longValue() * price < DELTA_LIMIT_EACH_STOCK);
-        return aggregateDelta + addition < DELTA_LIMIT &&
+        pr(symb, "check delta impact", "nowDelta+addition<Delta Limit:",
+                aggregateDelta + addition < DELTA_ALL_CAP,
+                "deltaStock+Inc<Stock Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_CAP);
+
+        return aggregateDelta + addition < DELTA_ALL_CAP &&
                 (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        addition < DELTA_LIMIT_EACH_STOCK);
+                        addition < DELTA_EACH_CAP);
     }
 
     static void tryToTrade(Contract ct, double price, LocalDateTime t) {
@@ -356,7 +357,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String symb = ibContractToSymbol(ct);
 
         if (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) + sizeToBuy.longValue() * price
-                > DELTA_LIMIT_EACH_STOCK) {
+                > DELTA_EACH_CAP) {
             outputToSymbol(symb, usDateTime(), "buying exceeds limit. Current delta:",
                     symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE),
                     "proposed add delta:", sizeToBuy.longValue() * price);
