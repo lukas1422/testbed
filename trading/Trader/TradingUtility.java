@@ -28,7 +28,7 @@ import java.util.function.Predicate;
 
 import static Trader.Allstatic.DELTA_EACH_LIMIT;
 import static Trader.Allstatic.outputFile;
-import static Trader.ProfitTargetTrader.averageDailyRange;
+import static Trader.ProfitTargetTrader.avgDailyRng;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
 import static java.util.Collections.reverseOrder;
@@ -643,7 +643,7 @@ public class TradingUtility {
     }
 
     public static double getReqMargin(String s) {
-        return Math.max(getMinProfitMargin(s), 1 + averageDailyRange.getOrDefault(s, 0.0) * 0.75);
+        return Math.max(getMinProfitMargin(s), 1 + avgDailyRng.getOrDefault(s, 0.0) * 0.75);
     }
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
@@ -728,7 +728,7 @@ public class TradingUtility {
 
     public static double getRequiredRefillPoint(String symb) {
         return Math.min(getDefaultRefill(symb)
-                , 1 - averageDailyRange.getOrDefault(symb, 0.0));
+                , 1 - avgDailyRng.getOrDefault(symb, 0.0));
     }
 
     public static void outputToConnection(Object... cs) {
