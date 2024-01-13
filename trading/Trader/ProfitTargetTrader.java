@@ -46,6 +46,9 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract mcd = generateUSStockContract("MCD");
     Contract spy = generateUSStockContract("SPY");
     Contract ko = generateUSStockContract("KO");
+    Contract adbe = generateUSStockContract("ADBE");
+    Contract brk_b = generateUSStockContract("BRK B");
+    Contract pfe = generateUSStockContract("PFE");
 
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usDateTime(),
@@ -53,7 +56,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today:", TRADING_START_TIME);
         pr("until market start time:", Duration.between(TRADING_START_TIME,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
-        registerContractAll(spy, wmt, ul, pg, mcd, ko);
+        registerContractAll(spy, wmt, ul, pg, mcd, ko, adbe, brk_b, pfe);
     }
 
     private void connectAndReqPos() {
@@ -97,7 +100,6 @@ public class ProfitTargetTrader implements LiveHandler,
             apiController.reqExecutions(new ExecutionFilter(), this);
             outputToGeneral(usDateTime(), "cancelling all orders on start up");
             apiController.cancelAllOrders();
-
         }, 2, TimeUnit.SECONDS);
     }
 
