@@ -56,7 +56,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today:", TODAY930);
         pr("until market start time:", Duration.between(TODAY930,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
-        registerContractAll(spy, wmt, ul, pg, mcd, ko, adbe, brk_b, pfe);
+        registerContractAll(wmt, pg, ul, mcd, spy, ko, adbe, brk_b, pfe);
     }
 
     private void connectAndReqPos() {
