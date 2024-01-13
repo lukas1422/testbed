@@ -161,13 +161,12 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
-        double position = symbolPosMap.get(symb).longValue();
         double addition = getSizeFromPrice(price).longValue() * price;
 
-        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
-                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
-                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
+//        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
+//                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
+//                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+//                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
         return aggregateDelta + addition < DELTA_TOTAL_LIMIT &&
                 (symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
@@ -187,7 +186,7 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
-            pr("only USD stock allowed, symb:", ct.symbol());
+            outputToGeneral(usDateTime(), "only USD stock allowed, symb:", ct.symbol());
             return;
         }
 
@@ -203,19 +202,16 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (oneDayP < 10 && checkDeltaImpact(symb, price) && twoDayP < 30) {
             if (position.isZero()) {
-                outputToSymbol(symb, str("***FIRST BUY***", t.format(f)));
-                outputToSymbol(symb, "first buy", "2dp:", twoDayP, "1dp:", oneDayP);
+                outputToSymbol(symb, "***FIRST BUY***", t.format(f), "2dp:", twoDayP, "1dp:", oneDayP);
                 inventoryAdder(ct, price, t, getSizeFromPrice(price));
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (priceDividedByCost(price, symb) < getRequiredRefillPoint(symb)) {
                     outputToSymbol(symb, "***REFILL***", t.format(f),
-                            "deltaNow:", symbolDeltaMap.getOrDefault(symb, 0.0));
-                    outputToSymbol(symb, "buyMore: 2dp:", twoDayP, "1dp:", oneDayP,
-                            "costBasis:", costMap.getOrDefault(symb, 0.0),
-                            "px/cost:", round5Digits(priceDividedByCost(price, symb)),
-                            "refill Price:"
-                            , round2Digits(getRequiredRefillPoint(symb) * costMap.get(symb)),
-                            "avgRng:", averageDailyRange.getOrDefault(symb, 0.0));
+                            "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0), "2dp:" + twoDayP, "1dp:" + oneDayP,
+                            "costBasis:" + costMap.getOrDefault(symb, 0.0),
+                            "px/cost:" + round5Digits(priceDividedByCost(price, symb)),
+                            "refill Price:" + (round2Digits(getRequiredRefillPoint(symb) * costMap.get(symb))),
+                            "avgRng:" + averageDailyRange.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, getSizeFromPrice(price));
                 }
             }
