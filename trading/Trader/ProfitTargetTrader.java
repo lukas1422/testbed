@@ -53,8 +53,8 @@ public class ProfitTargetTrader implements LiveHandler,
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usDateTime(),
                 "MASTER ID:", MASTER_TRADE_ID);
-        pr("market start time today:", T930);
-        pr("until market start time:", Duration.between(T930,
+        pr("market start time today:", TODAY930);
+        pr("until market start time:", Duration.between(TODAY930,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
         registerContractAll(spy, wmt, ul, pg, mcd, ko, adbe, brk_b, pfe);
     }
@@ -88,7 +88,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::todaySoFar, () ->
                                 pr(symb, "3 Day Stats:", genStatsString(twoDayData.get(symb)),
-                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(T230))), 2, Types.BarSize._1_min));
+                                        "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY230))), 2, Types.BarSize._1_min));
                 CompletableFuture.runAsync(() -> reqHistDayData(apiController, Allstatic.ibStockReqId.addAndGet(5),
                         c, Allstatic::ytdOpen, () -> computeHistoricalData(symb)
                         , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
@@ -323,7 +323,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (twoDayData.containsKey(symb) && !twoDayData.get(symb).isEmpty()) {
                 double twoDayPercentile = calculatePercentileFromMap(twoDayData.get(symb));
                 double oneDayPercentile = calculatePercentileFromMap(twoDayData.get(symb)
-                        .tailMap(T230));
+                        .tailMap(TODAY230));
 
                 twoDayPctMap.put(symb, twoDayPercentile);
                 oneDayPctMap.put(symb, oneDayPercentile);
@@ -368,7 +368,7 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(symb, "orderID:" + o.orderId(), "tradeID:" + id, o.action(),
                 "px:" + bidPrice, "size:" + sizeToBuy, orderSubmitted.get(symb).get(o.orderId()));
         outputToSymbol(symb, "2DStats:" + genStatsString(twoDayData.get(symb)),
-                "1DStats:" + genStatsString(twoDayData.get(symb).tailMap(T230)));
+                "1DStats:" + genStatsString(twoDayData.get(symb).tailMap(TODAY230)));
     }
 
     private static void inventoryCutter(Contract ct, double price, LocalDateTime t) {
@@ -391,7 +391,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 "targetPx:" + round2(cost * getReqMargin(symb)),
                 "askPx:" + askMap.getOrDefault(symb, 0.0));
         outputToSymbol(symb, "2DStats:", genStatsString(twoDayData.get(symb)));
-        outputToSymbol(symb, "1DStats:", genStatsString(twoDayData.get(symb).tailMap(T230)));
+        outputToSymbol(symb, "1DStats:", genStatsString(twoDayData.get(symb).tailMap(TODAY230)));
     }
 
     //Open Orders ***************************
@@ -555,10 +555,9 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, "*Periodic Run*", usDateTime());
                 outputToSymbol(symb,
                         latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
-                                "last Live feed time:",
-                                latestPriceTimeMap.get(symb).format(MdHmm)
-                                , "px:", latestPriceMap.getOrDefault(symb, 0.0),
-                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:",
+                                "last Live feed time:", latestPriceTimeMap.get(symb).format(MdHmm)
+                                , "px:" + latestPriceMap.getOrDefault(symb, 0.0),
+                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:" +
                                         round5(latestPriceMap.getOrDefault(symb, 0.0)
                                                 / costMap.getOrDefault(symb, 0.0)))) :
                                 str(usDateTime(), "no live feed"));
@@ -571,10 +570,10 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "*check openOrders*:", usDateTime(),
                             "openOrders", openOrders.get(symb));
                 }
-                outputToSymbol(symb, usDateTime(), "*2dP%:", twoDayPctMap.getOrDefault(symb, 0.0),
-                        "*1dP%:", oneDayPctMap.getOrDefault(symb, 0.0));
-                outputToSymbol(symb, "*2d*:", genStatsString(twoDayData.get(symb)));
-                outputToSymbol(symb, "*1d*:", genStatsString(twoDayData.get(symb).tailMap(T230)));
+                outputToSymbol(symb, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(symb, 0.0),
+                        "1dP:" + oneDayPctMap.getOrDefault(symb, 0.0));
+                outputToSymbol(symb, "*2d*:" + genStatsString(twoDayData.get(symb)));
+                outputToSymbol(symb, "*1d*:" + genStatsString(twoDayData.get(symb).tailMap(TODAY230)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*Ending*", usDateTime())));

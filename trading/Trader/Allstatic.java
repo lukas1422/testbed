@@ -26,9 +26,9 @@ import static utility.Utility.*;
 public class Allstatic {
     //    public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
-    static final LocalDateTime T930 =
+    static final LocalDateTime TODAY930 =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
-    static final LocalDateTime T230 =
+    static final LocalDateTime TODAY230 =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 80000;
     static final double DELTA_EACH_LIMIT = 20000;
@@ -39,7 +39,6 @@ public class Allstatic {
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> priceMapBarDetail
             = new ConcurrentHashMap<>();
     public static volatile ConcurrentHashMap<String, ConcurrentSkipListMap<LocalTime, SimpleBar>> priceMapBarYtd = new ConcurrentHashMap<>();
-
     public static volatile Map<Integer, Request> globalRequestMap = new ConcurrentHashMap<>();
     public volatile static Map<String, Decimal> currentPositionMap = new TreeMap<>(String::compareTo);
     //    public volatile static Map<String, Integer> openPositionMap = new HashMap<>();
