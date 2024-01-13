@@ -492,9 +492,9 @@ public class ProfitTargetTrader implements LiveHandler,
         }
 
         outputToSymbol(symb, usDateTime(), "*tradeReport* time:",
-                executionToUSTime(execution.time()), execution.side(), "exec price:",
-                execution.price(), "shares:", execution.shares(),
-                "avgExecPrice:", execution.avgPrice());
+                executionToUSTime(execution.time()), execution.side(),
+                "exec price:" + execution.price(), "shares:" + execution.shares(),
+                "avgExecPrice:" + execution.avgPrice());
 
         if (!tradeKeyExecutionMap.containsKey(tradeKey)) {
             tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
@@ -508,7 +508,7 @@ public class ProfitTargetTrader implements LiveHandler,
         tradeKeyExecutionMap.values().stream().flatMap(Collection::stream)
                 .collect(groupingBy(ExecutionAugmented::getSymbol,
                         mapping(ExecutionAugmented::getExec, toList())))
-                .forEach((key, value) -> outputToSymbol(key, "listOfExecutions",
+                .forEach((key, value) -> outputToSymbol(key, "listOfExecs",
                         value.stream().sorted(Comparator.comparingDouble(Execution::orderId))
                                 .collect(Collectors.toList())));
     }
@@ -525,20 +525,21 @@ public class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(symb).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> {
-                        String outp = str("1.*commission report*",
-                                "orderID:", e2.getKey(), "commission:", commissionReport.commission(),
+                        String outp = str("1.*commission report* orderID:" + e2.getKey(),
+                                "commission:" + commissionReport.commission(),
                                 e2.getValue().getOrder().action() == SELL ?
                                         str("orderID:", e2.getKey(), "realized pnl:",
-                                                commissionReport.realizedPNL()) : "NO PNL");
+                                                commissionReport.realizedPNL()) : "");
                         outputToSymbol(symb, outp);
                         outputToFills(symb, outp);
                     });
 
             orderSubmitted.get(symb).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
-                    outputToSymbol(symb, "2.*commission report*", "orderID:", value1.getOrder().orderId(), "commission:",
-                            commissionReport.commission(), value1.getOrder().action() == SELL ?
-                                    str("realized pnl:", commissionReport.realizedPNL()) : "no pnl");
+                    outputToSymbol(symb, "2.*commission report* orderID:" + value1.getOrder().orderId(),
+                            "commission:", commissionReport.commission(),
+                            value1.getOrder().action() == SELL ?
+                                    str("realized pnl:", commissionReport.realizedPNL()) : "");
                 }
             });
         }
@@ -554,21 +555,19 @@ public class ProfitTargetTrader implements LiveHandler,
             targetStockList.forEach(symb -> {
                 outputToSymbol(symb, "*Periodic Run*", usDateTime());
                 outputToSymbol(symb,
-                        latestPriceTimeMap.containsKey(symb) ? str(usDateTime(),
-                                "last Live feed time:", latestPriceTimeMap.get(symb).format(MdHmm)
-                                , "px:" + latestPriceMap.getOrDefault(symb, 0.0),
-                                costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:" +
-                                        round5(latestPriceMap.getOrDefault(symb, 0.0)
-                                                / costMap.getOrDefault(symb, 0.0)))) :
-                                str(usDateTime(), "no live feed"));
+                        latestPriceTimeMap.containsKey(symb) ?
+                                str("last Live feed time:", latestPriceTimeMap.get(symb).format(MdHmm)
+                                        , "px:" + latestPriceMap.getOrDefault(symb, 0.0),
+                                        costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:" +
+                                                round5(latestPriceMap.getOrDefault(symb, 0.0)
+                                                        / costMap.getOrDefault(symb, 0.0)))) :
+                                str("no live feed"));
                 outputToSymbol(symb, "delta:", symbolDeltaMap.getOrDefault(symb, 0.0));
                 if (!orderStatusMap.get(symb).isEmpty()) {
-                    outputToSymbol(symb, "*check orderStatus*:", usDateTime(),
-                            "orderStatus", orderStatusMap.get(symb));
+                    outputToSymbol(symb, usDateTime(), "*check orderStatus", orderStatusMap.get(symb));
                 }
                 if (!openOrders.get(symb).isEmpty()) {
-                    outputToSymbol(symb, "*check openOrders*:", usDateTime(),
-                            "openOrders", openOrders.get(symb));
+                    outputToSymbol(symb, usDateTime(), "*check openOrders*:", openOrders.get(symb));
                 }
                 outputToSymbol(symb, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(symb, 0.0),
                         "1dP:" + oneDayPctMap.getOrDefault(symb, 0.0));
