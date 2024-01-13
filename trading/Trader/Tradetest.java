@@ -1,25 +1,19 @@
 package Trader;
 
-import api.OrderAugmented;
 import client.*;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 import utility.Utility;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.*;
 
 import static Trader.Allstatic.*;
-import static Trader.Allstatic.openOrders;
 import static Trader.TradingUtility.*;
 import static Trader.TradingUtility.getESTLocalDateTimeNow;
-import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
-import static client.Types.TimeInForce.DAY;
-import static enums.AutoOrderType.INVENTORY_ADDER;
 import static utility.Utility.*;
 import static utility.Utility.pr;
 
@@ -50,7 +44,7 @@ public class Tradetest implements LiveHandler {
         try {
             ap.connect("127.0.0.1", PORT_TO_USE, 6, "");
             l.countDown();
-            pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(f1));
+            pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(MdHmm));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }
@@ -75,7 +69,7 @@ public class Tradetest implements LiveHandler {
 
         switch (tt) {
             case LAST:
-                pr("last::", symb, price, t.format(simpleHrMinSec));
+                pr("last::", symb, price, t.format(Hmmss));
                 break;
             case BID:
                 pr("bid::", symb, price);

@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static Trader.BreachTrader.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
-import static api.TradingConstants.f2;
+import static api.TradingConstants.MdHmmsSSS;
 import static client.OrderStatus.Filled;
 import static client.OrderStatus.PendingCancel;
 import static client.Types.TimeInForce.DAY;
@@ -85,9 +85,9 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
             }
         } else if (aot == AutoOrderType.BREACH_ADDER) {
             if (livePos != 0.0) {
-                outputToSpecial(str(LocalDateTime.now().format(f2), symbol, currentID,
+                outputToSpecial(str(LocalDateTime.now().format(MdHmmsSSS), symbol, currentID,
                         devOrderMap.get(currentID), "breach adding, pos not 0"));
-                outputToSymbolFile(symbol, str(LocalDateTime.now().format(f2), currentID,
+                outputToSymbolFile(symbol, str(LocalDateTime.now().format(MdHmmsSSS), currentID,
                         devOrderMap.get(currentID), "breach adding, pos not 0:", livePos), breachMDevOutput);
             }
         }
@@ -101,7 +101,7 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
                         "TIF:", devOrderMap.get(currentID).getOrder().tif(), "attempts:", attempts.get());
                 outputToSymbolFile(devOrderMap.get(primaryID).getSymbol(), msg, breachMDevOutput);
 
-                outputDetailedGen(str(devOrderMap.get(currentID).getSymbol(), now.format(f2),
+                outputDetailedGen(str(devOrderMap.get(currentID).getSymbol(), now.format(MdHmmsSSS),
                         devOrderMap.get(currentID)), fillsOutput);
 
             } else if (attempts.get() > MAX_LIQ_ATTEMPTS && !pastOrderSet.contains(lastOrderID)) {

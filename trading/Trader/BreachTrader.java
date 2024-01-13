@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static api.ControllerCalls.placeOrModifyOrderCheck;
-import static api.TradingConstants.f;
+import static api.TradingConstants.MdHmmss;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
@@ -374,7 +374,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
             if (checkDeltaImpact(ct, o)) {
                 devOrderMap.put(id, new OrderAugmented(ct, t, o, CUSTOM_ADDER));
                 placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
-                outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
+                outputToSymbolFile(symbol, str("********", t.format(TradingConstants.MdHmm)), devOutput);
                 outputToSymbolFile(symbol, str(o.orderId(), id, "CUSTOM ADDER BUY:",
                         devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
             }
@@ -403,7 +403,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 if (checkDeltaImpact(ct, o)) {
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, BREACH_ADDER));
                     placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
-                    outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
+                    outputToSymbolFile(symbol, str("********", t.format(TradingConstants.MdHmm)), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "ADDER BUY:",
                                     devOrderMap.get(id), "yOpen:" + halfYearOpen, "prevClose", prevClose, "p/b/a", price,
                                     getBid(symbol), getAsk(symbol), "devFromMaxOpen", r10000(price / halfYearOpen - 1))
@@ -467,7 +467,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 if (checkDeltaImpact(ct, o)) {
                     devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_ADDER));
                     placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
-                    outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
+                    outputToSymbolFile(symbol, str("********", t.format(TradingConstants.MdHmm)), devOutput);
                     outputToSymbolFile(symbol, str(o.orderId(), id, "INDEX ETF BUY:",
                             devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
                 }
@@ -510,7 +510,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     if (checkDeltaImpact(ct, o)) {
                         devOrderMap.put(id, new OrderAugmented(ct, t, o, ETF_ADDER));
                         placeOrModifyOrderCheck(apDev, ct, o, new OrderHandler(id));
-                        outputToSymbolFile(symbol, str("********", t.format(TradingConstants.f1)), devOutput);
+                        outputToSymbolFile(symbol, str("********", t.format(TradingConstants.MdHmm)), devOutput);
                         outputToSymbolFile(symbol, str(o.orderId(), id, "ETF BUY:",
                                 devOrderMap.get(id), "p/b/a", price, getBid(symbol), getAsk(symbol)), devOutput);
                     }
@@ -791,7 +791,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                     .mapToDouble(e -> getDelta(e.getKey(), getLastPriceFromYtd(e.getKey()), e.getValue().longValue(),
                             fx.getOrDefault(FXCurrency.get(e.getKey().currency()), 1.0))).sum();
 
-            pr(LocalDateTime.now().format(f),
+            pr(LocalDateTime.now().format(MdHmmss),
                     "||net delta:" + Math.round(totalDelta / 1000d) + "k",
                     "||abs delta:" + Math.round(totalAbsDelta / 1000d) + "k",
                     "||long/short:", Math.round(longDelta / 1000d) + "k",
@@ -805,7 +805,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
                 if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
                         v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
                     outputToSymbolFile(v.getSymbol(), str("Shutdown status",
-                            LocalDateTime.now().format(TradingConstants.f1), v.getAugmentedOrderStatus(), v), devOutput);
+                            LocalDateTime.now().format(TradingConstants.MdHmm), v.getAugmentedOrderStatus(), v), devOutput);
                 }
             });
             apDev.cancelAllOrders();

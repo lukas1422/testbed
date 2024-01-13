@@ -69,7 +69,7 @@ public class Research {
             connectionStatus = true;
             l.countDown();
 //            pr(" Latch counted down 4001 " + LocalTime.now());
-            pr(" Latch counted down 4001 " + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(f1));
+            pr(" Latch counted down 4001 " + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(MdHmm));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }
@@ -78,7 +78,7 @@ public class Research {
             pr(" using port 7496");
             ap.connect("127.0.0.1", 7496, 6, "");
             l.countDown();
-            pr(" Latch counted down 7496" + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(f1));
+            pr(" Latch counted down 7496" + LocalDateTime.now(Clock.system(ZoneId.of("America/New_York"))).format(MdHmm));
         }
 
         try {
@@ -89,7 +89,7 @@ public class Research {
             e.printStackTrace();
         }
 
-        pr(" Time after latch released " + LocalTime.now().format(simpleHrMinSec));
+        pr(" Time after latch released " + LocalTime.now().format(Hmmss));
 //        Executors.newScheduledThreadPool(10).schedule(() -> reqHoldings(ap), 500, TimeUnit.MILLISECONDS);
         targetStockList.forEach(symb -> {
             pr("requesting hist data", symb);
@@ -111,7 +111,7 @@ public class Research {
     }
 
     static void compute() {
-        pr("computing", LocalTime.now().format(simpleHrMinSec));
+        pr("computing", LocalTime.now().format(Hmmss));
 
         targetStockList.forEach(s -> {
             double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();

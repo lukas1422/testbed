@@ -17,9 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import api.IBDataHandler;
 import client.*;
 
-import static Trader.Allstatic.outputFile;
 import static Trader.TradingUtility.*;
-import static api.TradingConstants.simpleHrMinSec;
 import static utility.Utility.*;
 
 public class ApiController implements EWrapper {

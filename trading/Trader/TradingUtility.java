@@ -615,26 +615,26 @@ public class TradingUtility {
     }
 
     public static String usTime() {
-        return getESTLocalTimeNow().format(simpleHrMinSec);
+        return getESTLocalTimeNow().format(Hmmss);
     }
 
     public static String hkTime() {
-        return LocalDateTime.now().format(simpleHrMinSec);
+        return LocalDateTime.now().format(Hmmss);
     }
 
     public static String usDateTime() {
-        return getESTLocalDateTimeNow().format(f1);
+        return getESTLocalDateTimeNow().format(MdHmm);
     }
 
-    static double round5Digits(double n) {
+    static double round5(double n) {
         return Math.round(n * 10000.0) / 10000.0;
     }
 
-    static double round2Digits(double n) {
+    static double round2(double n) {
         return Math.round(n * 100.0) / 100.0;
     }
 
-    static double round1Digits(double n) {
+    static double round1(double n) {
         return Math.round(n * 10.0) / 10.0;
     }
 
@@ -642,7 +642,7 @@ public class TradingUtility {
         return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
     }
 
-    public static double getRequiredProfitMargin(String s) {
+    public static double getReqMargin(String s) {
         return Math.max(getMinProfitMargin(s), 1 + averageDailyRange.getOrDefault(s, 0.0) * 0.75);
     }
 
@@ -683,11 +683,11 @@ public class TradingUtility {
         double range = max / min - 1;
 
         return str("*n:" + m.size(),
-                "*max:" + round1Digits(max) + " [" + maxTime.format(simpleDayTime) + "]",
-                "*min:" + round1Digits(min) + " [" + minTime.format(simpleDayTime) + "]",
+                "*max:" + round1(max) + " [" + maxTime.format(MdHmm) + "]",
+                "*min:" + round1(min) + " [" + minTime.format(MdHmm) + "]",
                 "*rng:" + (Math.round(range * 1000.0) / 10.0) + "%",
-                "*1Key:[" + m.firstKey().format(simpleDayTime) + "]",
-                "*last:[" + m.lastKey().format(simpleDayTime) + "]");
+                "*1Key:[" + m.firstKey().format(MdHmm) + "]",
+                "*last:[" + m.lastKey().format(MdHmm) + "]");
     }
 
     public static Contract getActiveA50Contract() {

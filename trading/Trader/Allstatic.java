@@ -26,9 +26,9 @@ import static utility.Utility.*;
 public class Allstatic {
     //    public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
-    static final LocalDateTime TRADING_START_TIME =
+    static final LocalDateTime T930 =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
-    static final LocalDateTime TODAY_START_TIME =
+    static final LocalDateTime T230 =
             LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 80000;
     static final double DELTA_EACH_LIMIT = 20000;

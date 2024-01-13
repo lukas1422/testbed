@@ -36,20 +36,14 @@ public final class TradingConstants {
     public static final int GLOBALWIDTH = 1900;
 
     public static final Predicate<? super Map.Entry<LocalTime, ?>> TRADING_HOURS = e -> ((e.getKey().isAfter(LocalTime.of(9, 29)) && e.getKey().isBefore(LocalTime.of(11, 31))) || Utility.PM_PRED.test(e));
-
     public static final Predicate<LocalDateTime> STOCK_COLLECTION_TIME = lt -> !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SATURDAY) && !lt.toLocalDate().getDayOfWeek().equals(DayOfWeek.SUNDAY) && ((lt.toLocalTime().isAfter(LocalTime.of(8, 59)) && lt.toLocalTime().isBefore(LocalTime.of(11, 35))) || (lt.toLocalTime().isAfter(LocalTime.of(12, 57))) && lt.toLocalTime().isBefore(LocalTime.of(15, 30)));
-
     public static final Predicate<LocalDateTime> FUT_COLLECTION_TIME = ldt -> ldt.toLocalTime().isBefore(LocalTime.of(5, 0)) || ldt.toLocalTime().isAfter(LocalTime.of(8, 59));
-    public static final DateTimeFormatter f1 = DateTimeFormatter.ofPattern("M-d H:mm");
-
-    public static DateTimeFormatter f = DateTimeFormatter.ofPattern("M-d H:mm:ss");
-
-    public static final DateTimeFormatter f2 = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
-
-    public static final DateTimeFormatter simpleHrMinSec = DateTimeFormatter.ofPattern("H:mm:ss");
-    public static final DateTimeFormatter simpleHourMinute = DateTimeFormatter.ofPattern("H:mm");
-    public static final DateTimeFormatter simpleDayTime = DateTimeFormatter.ofPattern("M-d H:mm");
-    public static final DateTimeFormatter simpleTime = DateTimeFormatter.ofPattern("H:mm");
+    public static final DateTimeFormatter MdHmm = DateTimeFormatter.ofPattern("M-d H:mm");
+    public static DateTimeFormatter MdHmmss = DateTimeFormatter.ofPattern("M-d H:mm:ss");
+    public static final DateTimeFormatter MdHmmsSSS = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
+    public static final DateTimeFormatter Hmmss = DateTimeFormatter.ofPattern("H:mm:ss");
+    //public static final DateTimeFormatter Hmm = DateTimeFormatter.ofPattern("H:mm");
+    //public static final DateTimeFormatter MdHmm = DateTimeFormatter.ofPattern("M-d H:mm");
 
 
 //    private static final Predicate<LocalDateTime> FUT_OPEN_PRED = (lt) ->

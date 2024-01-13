@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
 import static Trader.Allstatic.*;
-import static api.TradingConstants.f;
+import static api.TradingConstants.MdHmmss;
 import static Trader.TradingUtility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
@@ -77,7 +77,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToSymbol(symbol, "orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(f),
+        outputToSymbol(symbol, "orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(MdHmmss),
                 "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice);
     }
 
