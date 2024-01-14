@@ -721,13 +721,12 @@ public class TradingUtility {
         }));
     }
 
-    public static double getDefaultRefill(String symb) {
+    public static double getDefaultRefillPercent(String symb) {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double getRequiredRefillPoint(String symb) {
-        return Math.min(getDefaultRefill(symb)
-                , 1 - avgDailyRng.getOrDefault(symb, 0.0));
+    public static double getRefillPercentage(String symb) {
+        return Math.min(getDefaultRefillPercent(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
     }
 
     public static void outputToConnection(Object... cs) {
