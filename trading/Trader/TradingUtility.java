@@ -625,8 +625,12 @@ public class TradingUtility {
         return getESTLocalDateTimeNow().format(MdHmm);
     }
 
-    static double round5(double n) {
+    static double round4(double n) {
         return Math.round(n * 10000.0) / 10000.0;
+    }
+
+    static double round3(double n) {
+        return Math.round(n * 1000.0) / 1000.0;
     }
 
     static double round2(double n) {

@@ -106,10 +106,10 @@ public class ProfitTargetTrader implements LiveHandler,
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
-            pr("average range:", s, round5(rng));
+            pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
-            outputToSymbol(s, usDateTime(), "avgRange:" + round5(rng), "refillP%:" + getRefillPercent(s));
-            outputToSymbol(s, usDateTime(), "reqMargin:" + round5(getReqMargin(s)));
+            outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng), "refillP%:" + getRefillPercent(s));
+            outputToSymbol(s, usDateTime(), "reqMargin:" + round4(getReqMargin(s)));
 
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
@@ -222,7 +222,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
                             "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0), "2dp:" + twoDayP,
                             "1dp:" + oneDayP, "cost:" + costMap.getOrDefault(symb, 0.0),
-                            "px/cst:" + round5(pxOverCost(price, symb)),
+                            "px/cst:" + round4(pxOverCost(price, symb)),
                             "refill Px:" + (round2(getRefillPrice(symb, price, position.longValue(), costMap.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
@@ -233,9 +233,9 @@ public class ProfitTargetTrader implements LiveHandler,
             pr("px/Cost", symb, pxOverCost(price, symb));
             if (pOverCost > getReqMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(MdHmmss), "1dP:" + oneDayP, "2dp:" + twoDayP,
-                        "px/Cost:" + round5(pOverCost),
-                        "requiredMargin:" + round5(getReqMargin(symb)),
-                        "avgRng:" + round5(avgDailyRng.getOrDefault(symb, 0.0)));
+                        "px/Cost:" + round4(pOverCost),
+                        "requiredMargin:" + round4(getReqMargin(symb)),
+                        "avgRng:" + round4(avgDailyRng.getOrDefault(symb, 0.0)));
                 inventoryCutter(ct, price, t);
             }
         }
@@ -575,15 +575,20 @@ public class ProfitTargetTrader implements LiveHandler,
                                 str("last Live feed time:", latestPriceTimeMap.get(symb).format(MdHmm)
                                         , "px:" + latestPriceMap.getOrDefault(symb, 0.0),
                                         costMap.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:" +
-                                                round5(latestPriceMap.getOrDefault(symb, 0.0)
+                                                round4(latestPriceMap.getOrDefault(symb, 0.0)
                                                         / costMap.getOrDefault(symb, 0.0)))) :
                                 str("no live feed"));
                 outputToSymbol(symb, "delta:", symbolDeltaMap.getOrDefault(symb, 0.0));
-                outputToSymbol(symb, "refillPx:" +
-                                getRefillPrice(symb, latestPriceMap.getOrDefault(symb, 0.0),
-                                        symbolPosMap.getOrDefault(symb, Decimal.ZERO).longValue()
-                                        , costMap.getOrDefault(symb, 0.0)),
-                        "refillPerc:" + getRefillPercent(symb));
+                if (symbolDeltaMap.getOrDefault(symb, 0.0) > 0) {
+                    outputToSymbol(symb, "refillPx:" +
+                                    getRefillPrice(symb, latestPriceMap.get(symb),
+                                            symbolPosMap.get(symb).longValue()
+                                            , costMap.get(symb)),
+                            "refillP%:" + getRefillPercent(symb),
+                            "refillPx/cost:" + round3(getRefillPrice(symb, latestPriceMap.get(symb),
+                                    symbolPosMap.get(symb).longValue()
+                                    , costMap.get(symb)) / costMap.get(symb)));
+                }
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, usDateTime(), "*chek orderStatus", orderStatusMap.get(symb));
                 }
@@ -596,6 +601,10 @@ public class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(symb, "*1dStats:" + genStatsString(twoDayData.get(symb).tailMap(TODAY230)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*Ending*", usDateTime())));
+        Runtime.getRuntime().
+
+                addShutdownHook(new Thread(() ->
+
+                        outputToGeneral("*Ending*", usDateTime())));
     }
 }
