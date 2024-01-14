@@ -578,16 +578,17 @@ public class ProfitTargetTrader implements LiveHandler,
                                                 round4(latestPriceMap.getOrDefault(symb, 0.0)
                                                         / costMap.getOrDefault(symb, 0.0)))) :
                                 str("no live feed"));
-                outputToSymbol(symb, "delta:", symbolDeltaMap.getOrDefault(symb, 0.0));
-                if (symbolDeltaMap.getOrDefault(symb, 0.0) > 0) {
+                outputToSymbol(symb, "delta:" + symbolDeltaMap.getOrDefault(symb, 0.0));
+                if (symbolDeltaMap.getOrDefault(symb, 0.0) > 0.0) {
                     outputToSymbol(symb, "refillPx:" +
                                     getRefillPrice(symb, latestPriceMap.get(symb),
                                             symbolPosMap.get(symb).longValue()
                                             , costMap.get(symb)),
                             "refillP%:" + getRefillPercent(symb),
-                            "refillPx/cost:" + round3(getRefillPrice(symb, latestPriceMap.get(symb),
-                                    symbolPosMap.get(symb).longValue()
-                                    , costMap.get(symb)) / costMap.get(symb)));
+                            "refillPx/cost:" +
+                                    round3(getRefillPrice(symb, latestPriceMap.get(symb),
+                                            symbolPosMap.get(symb).longValue()
+                                            , costMap.get(symb)) / costMap.get(symb)));
                 }
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, usDateTime(), "*chek orderStatus", orderStatusMap.get(symb));
