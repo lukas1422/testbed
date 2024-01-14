@@ -47,8 +47,6 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract spy = generateUSStockContract("SPY");
     Contract ko = generateUSStockContract("KO");
     Contract adbe = generateUSStockContract("ADBE");
-    Contract brk_b = generateUSStockContract("BRK B");
-    Contract pfe = generateUSStockContract("PFE");
 
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HK TIME:", hkTime(), "EST:", usDateTime(),
@@ -56,7 +54,7 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("market start time today:", TODAY930);
         pr("until market start time:", Duration.between(TODAY930,
                 getESTLocalDateTimeNow()).toMinutes(), "minutes");
-        registerContractAll(wmt, pg, ul, mcd, spy, ko, adbe, brk_b, pfe);
+        registerContractAll(wmt, pg, ul, mcd, spy, ko, adbe);
     }
 
     private void connectAndReqPos() {
@@ -161,7 +159,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
-        double addition = getSizeFromPrice(price).longValue() * price;
+        double addition = getSizeFromSymbolPrice(symb, price).longValue() * price;
 
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
 //                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
@@ -203,7 +201,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayP < 10 && checkDeltaImpact(symb, price) && twoDayP < 30) {
             if (position.isZero()) {
                 outputToSymbol(symb, "*1st BUY*", t.format(MdHmmss), "2dp:" + twoDayP, "1dp:" + oneDayP);
-                inventoryAdder(ct, price, t, getSizeFromPrice(price));
+                inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
             } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
                 if (pxOverCost(price, symb) < getRequiredRefillPoint(symb)) {
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
@@ -212,7 +210,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "px/cost:" + round5(pxOverCost(price, symb)),
                             "refill Px:" + (round2(getRequiredRefillPoint(symb) * costMap.get(symb))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
-                    inventoryAdder(ct, price, t, getSizeFromPrice(price));
+                    inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
                 }
             }
         } else if (oneDayP > 80 && position.longValue() > 0) {

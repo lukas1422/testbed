@@ -26,8 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
-import static Trader.Allstatic.DELTA_EACH_LIMIT;
-import static Trader.Allstatic.outputFile;
+import static Trader.Allstatic.*;
 import static Trader.ProfitTargetTrader.avgDailyRng;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
@@ -742,8 +741,15 @@ public class TradingUtility {
         outputToGeneral(symbol, str(cs));
     }
 
-    public static Decimal getSizeFromPrice(double price) {
-        return Decimal.get(Math.floor(DELTA_EACH_LIMIT / price / 4));
+    static double getDelta(String symb) {
+        if (symb.equalsIgnoreCase("SPY")) {
+            return DELTA_TOTAL_LIMIT / 2;
+        }
+        return DELTA_EACH_LIMIT;
+    }
+
+    public static Decimal getSizeFromSymbolPrice(String symb, double price) {
+        return Decimal.get(Math.floor(getDelta(symb) / price / 4));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
