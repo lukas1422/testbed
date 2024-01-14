@@ -215,13 +215,14 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (oneDayP < 10 && checkDeltaImpact(symb, price) && twoDayP < 30) {
             if (position.isZero()) {
-                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "2dp:" + twoDayP, "1dp:" + oneDayP);
+                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "2dp:" + twoDayP,
+                        "1dp:" + oneDayP);
                 inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
             } else if (position.longValue() > 0 && costMap.getOrDefault(symb, 0.0) != 0.0) {
                 if (price < getRefillPrice(symb, price, position.longValue(), costMap.get(symb))) {
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
                             "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0), "2dp:" + twoDayP,
-                            "1dp:" + oneDayP, "cost:" + costMap.getOrDefault(symb, 0.0),
+                            "1dp:" + oneDayP, "cost:" + costMap.get(symb),
                             "px/cst:" + round4(pxOverCost(price, symb)),
                             "refill Px:" + (round2(getRefillPrice(symb, price, position.longValue(), costMap.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
