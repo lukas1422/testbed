@@ -108,7 +108,9 @@ public class ProfitTargetTrader implements LiveHandler,
                     .average().orElse(0.0);
             pr("average range:", s, round5(rng));
             avgDailyRng.put(s, rng);
-            outputToSymbol(s, usDateTime(), "reqMargin:", round5(getReqMargin(s)));
+            outputToSymbol(s, usDateTime(), "avgRange:" + round5(rng), "refillP%:" + getRefillPercent(s));
+            outputToSymbol(s, usDateTime(), "reqMargin:" + round5(getReqMargin(s)));
+
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
@@ -171,13 +173,16 @@ public class ProfitTargetTrader implements LiveHandler,
                         addition < DELTA_EACH_LIMIT);
     }
 
-    static double getRefillPrice(String symb, double price) {
-        double currentDelta = symbolDeltaMap.getOrDefault(symb, 0.0);
-        double costBasis = costMap.getOrDefault(symb, 0.0);
-        double position = symbolPosMap.getOrDefault(symb, Decimal.ZERO).longValue();
-        double refillPercent = getRefillPercentage(symb);
+    static double getRefillPrice(String symb, double price, long position, double costBasis) {
+        double currentDelta = price * position;
+        double refillPercent = getRefillPercent(symb);
         double addSize = getSizeFromSymbolPrice(symb, price).longValue();
-        return Math.min(price * 0.98,
+
+        if (price == 0.0 || position == 0.0 || costBasis == 0.0) {
+            return 0.0;
+        }
+
+        return Math.min(price,
                 (costBasis * refillPercent * (position + addSize) - currentDelta) / addSize);
     }
 
@@ -212,13 +217,13 @@ public class ProfitTargetTrader implements LiveHandler,
             if (position.isZero()) {
                 outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "2dp:" + twoDayP, "1dp:" + oneDayP);
                 inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
-            } else if (position.longValue() > 0 && costMap.containsKey(symb)) {
-                if (price < getRefillPrice(symb, price)) {
+            } else if (position.longValue() > 0 && costMap.getOrDefault(symb, 0.0) != 0.0) {
+                if (price < getRefillPrice(symb, price, position.longValue(), costMap.get(symb))) {
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
                             "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0), "2dp:" + twoDayP,
                             "1dp:" + oneDayP, "cost:" + costMap.getOrDefault(symb, 0.0),
                             "px/cst:" + round5(pxOverCost(price, symb)),
-                            "refill Px:" + (round2(getRefillPercentage(symb) * costMap.get(symb))),
+                            "refill Px:" + (round2(getRefillPrice(symb, price, position.longValue(), costMap.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, price, t, getSizeFromSymbolPrice(symb, price));
                 }
@@ -301,7 +306,10 @@ public class ProfitTargetTrader implements LiveHandler,
                 symbolPosMap.put(symb, Decimal.ZERO);
             }
 
-            outputToSymbol(symb, "POS COST", symbolPosMap.get(symb).longValue(), costMap.getOrDefault(symb, 0.0));
+            outputToSymbol(symb, "POS COST", symbolPosMap.get(symb).longValue(),
+                    costMap.getOrDefault(symb, 0.0),
+                    "DELTA:" + symbolPosMap.get(symb).longValue() * costMap.getOrDefault(symb, 0.0));
+
 
             apiController.reqContractDetails(symbolContractMap.get(symb), list -> list.forEach(a ->
                     symbolContractIDMap.put(symb, a.contract().conid())));
@@ -571,7 +579,11 @@ public class ProfitTargetTrader implements LiveHandler,
                                                         / costMap.getOrDefault(symb, 0.0)))) :
                                 str("no live feed"));
                 outputToSymbol(symb, "delta:", symbolDeltaMap.getOrDefault(symb, 0.0));
-                outputToSymbol(symb, "refillPx:" + getRefillPrice(symb, latestPriceMap.getOrDefault(symb, 0.0)));
+                outputToSymbol(symb, "refillPx:" +
+                                getRefillPrice(symb, latestPriceMap.getOrDefault(symb, 0.0),
+                                        symbolPosMap.getOrDefault(symb, Decimal.ZERO).longValue()
+                                        , costMap.getOrDefault(symb, 0.0)),
+                        "refillPerc:" + getRefillPercent(symb));
                 if (!orderStatusMap.get(symb).isEmpty()) {
                     outputToSymbol(symb, usDateTime(), "*chek orderStatus", orderStatusMap.get(symb));
                 }

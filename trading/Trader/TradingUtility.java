@@ -725,7 +725,7 @@ public class TradingUtility {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double getRefillPercentage(String symb) {
+    public static double getRefillPercent(String symb) {
         return Math.min(getDefaultRefillPercent(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
     }
 
