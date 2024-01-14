@@ -749,7 +749,7 @@ public class TradingUtility {
         return DELTA_EACH_LIMIT;
     }
 
-    public static Decimal getSizeFromSymbolPrice(String symb, double price) {
+    public static Decimal getAddSize(String symb, double price) {
         return Decimal.get(Math.floor(getDelta(symb) / price / 4));
     }
 
