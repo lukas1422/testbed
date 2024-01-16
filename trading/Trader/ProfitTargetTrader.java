@@ -106,7 +106,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     .average().orElse(0.0);
             pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
-            outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng), "refillP%:" + lowerCostTgt(s));
+            outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng), "refillP%:" + reduceCostTgt(s));
             outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s)));
 
 
@@ -159,7 +159,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
-        double addition = buySize(symb, price).longValue() * price;
+        double addition = getBuySize(symb, price).longValue() * price;
 
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
 //                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
@@ -176,10 +176,11 @@ public class ProfitTargetTrader implements LiveHandler,
             return 0.0;
         }
         double currentDelta = price * position;
-        double lowerCostTgt = lowerCostTgt(symb);
-        double buySize = buySize(symb, price).longValue();
-        pr("calc refillPx symb price pos buysize costbasis refillP", symb, price, position, buySize, costBasis
-                , lowerCostTgt);
+        double lowerCostTgt = reduceCostTgt(symb);
+        double buySize = getBuySize(symb, price).longValue();
+        pr("calc refillPx symb price pos buysize costbasis lowerCostTgt refillPx",
+                symb, price, position, buySize, costBasis, lowerCostTgt,
+                (costBasis * lowerCostTgt * (position + buySize) - currentDelta) / buySize);
 
         return Math.min(price,
                 (costBasis * lowerCostTgt * (position + buySize) - currentDelta) / buySize);
@@ -215,7 +216,7 @@ public class ProfitTargetTrader implements LiveHandler,
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(symb, px)) {
             if (pos.isZero()) {
                 outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
-                inventoryAdder(ct, px, t, buySize(symb, px));
+                inventoryAdder(ct, px, t, getBuySize(symb, px));
             } else if (pos.longValue() > 0 && avgCost.getOrDefault(symb, 0.0) != 0.0) {
                 if (px < refillPx(symb, px, pos.longValue(), avgCost.get(symb))) {
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
@@ -225,7 +226,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "px/cost:" + round4(pxOverCost(px, symb)),
                             "refillPx:" + (round2(refillPx(symb, px, pos.longValue(), avgCost.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
-                    inventoryAdder(ct, px, t, buySize(symb, px));
+                    inventoryAdder(ct, px, t, getBuySize(symb, px));
                 }
             }
         } else if (oneDayP > 80 && pos.longValue() > 0) {
@@ -331,8 +332,8 @@ public class ProfitTargetTrader implements LiveHandler,
                             "delta:" + round2(symbolPos.get(s).longValue() * lastPx.get(s)),
                             "cost:" + round4(avgCost.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / avgCost.get(s) - 1)) / 10.0 + "%",
-                            "buySize:" + buySize(s, lastPx.get(s)),
-                            "lowerCostTgt:" + round4(lowerCostTgt(s)),
+                            "buySize:" + getBuySize(s, lastPx.get(s)),
+                            "lowerCostTgt:" + round4(reduceCostTgt(s)),
                             "refillPx:" + round4(refillPx(s, lastPx.get(s)
                                     , symbolPos.get(s).longValue(), avgCost.get(s))),
                             "refillPx/Cost:" + round4(refillPx(s, lastPx.get(s)
@@ -593,7 +594,7 @@ public class ProfitTargetTrader implements LiveHandler,
                                     refillPx(symb, lastPx.get(symb),
                                             symbolPos.get(symb).longValue()
                                             , avgCost.get(symb)),
-                            "refillP%:" + round4(lowerCostTgt(symb)),
+                            "refillP%:" + round4(reduceCostTgt(symb)),
                             "refillPx/cost:" +
                                     round3(refillPx(symb, lastPx.get(symb),
                                             symbolPos.get(symb).longValue()

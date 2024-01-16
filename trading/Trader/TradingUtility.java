@@ -730,7 +730,7 @@ public class TradingUtility {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double lowerCostTgt(String symb) {
+    public static double reduceCostTgt(String symb) {
         return Math.min(defaultLowerTgt(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
     }
 
@@ -750,7 +750,7 @@ public class TradingUtility {
         return DELTA_EACH_LIMIT;
     }
 
-    public static Decimal buySize(String symb, double price) {
+    public static Decimal getBuySize(String symb, double price) {
         return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 
