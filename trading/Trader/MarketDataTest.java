@@ -40,7 +40,7 @@ public class MarketDataTest implements LiveHandler {
         try {
             ap.connect("127.0.0.1", PORT_TO_USE, 5, "");
             l.countDown();
-            pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(MdHmm));
+            pr(" Latch counted down 4001 " + getESTDateTimeNow().format(MdHmm));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }

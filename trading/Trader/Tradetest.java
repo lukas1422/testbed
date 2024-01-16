@@ -12,7 +12,7 @@ import java.util.concurrent.*;
 
 import static Trader.Allstatic.*;
 import static Trader.TradingUtility.*;
-import static Trader.TradingUtility.getESTLocalDateTimeNow;
+import static Trader.TradingUtility.getESTDateTimeNow;
 import static api.TradingConstants.*;
 import static utility.Utility.*;
 import static utility.Utility.pr;
@@ -44,7 +44,7 @@ public class Tradetest implements LiveHandler {
         try {
             ap.connect("127.0.0.1", PORT_TO_USE, 6, "");
             l.countDown();
-            pr(" Latch counted down 4001 " + getESTLocalDateTimeNow().format(MdHmm));
+            pr(" Latch counted down 4001 " + getESTDateTimeNow().format(MdHmm));
         } catch (IllegalStateException ex) {
             pr(" illegal state exception caught ", ex);
         }

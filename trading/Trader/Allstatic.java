@@ -27,9 +27,9 @@ public class Allstatic {
     //    public static final LocalDate MONDAY_OF_WEEK = getMondayOfWeek(LocalDateTime.now());
     public static final LocalDate LAST_YEAR_DAY = getYearBeginMinus1Day();
     static final LocalDateTime TODAY930 =
-            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(9, 30));
+            LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime TODAY230 =
-            LocalDateTime.of(getESTLocalDateTimeNow().toLocalDate(), ltof(2, 30));
+            LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 80000;
     static final double DELTA_EACH_LIMIT = 20000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
@@ -57,7 +57,7 @@ public class Allstatic {
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double aggregateDelta = 0.0;
     //data
-    static Map<String, Double> latestPriceMap = new ConcurrentHashMap<>();
+    static Map<String, Double> lastPx = new ConcurrentHashMap<>();
     static Map<String, LocalDateTime> latestPriceTimeMap = new ConcurrentHashMap<>();
 
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
@@ -84,7 +84,7 @@ public class Allstatic {
     // this gets YTD return
 
     static int getSessionMasterTradeID() {
-        LocalDateTime t = getESTLocalDateTimeNow();
+        LocalDateTime t = getESTDateTimeNow();
 //        return (t.getYear()-2000)* pow(10,10)+t.getMonthValue()*pow(10,8)+
 //        pr(t, "get new trade id", t.getHour() * pow(10, 4), t.getMinute() * 100, t.getSecond(), "ID:",
 //                (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond()));

@@ -605,7 +605,7 @@ public class TradingUtility {
     }
 
 
-    public static LocalDateTime getESTLocalDateTimeNow() {
+    public static LocalDateTime getESTDateTimeNow() {
         return ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
     }
 
@@ -622,7 +622,7 @@ public class TradingUtility {
     }
 
     public static String usDateTime() {
-        return getESTLocalDateTimeNow().format(MdHmm);
+        return getESTDateTimeNow().format(MdHmm);
     }
 
     static double round4(double n) {
@@ -641,13 +641,13 @@ public class TradingUtility {
         return Math.round(n * 10.0) / 10.0;
     }
 
-    public static double getMinProfitMargin(String s) {
+    public static double minProfitMargin(String s) {
 //        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
         return 1.005;
     }
 
-    public static double getReqMargin(String s) {
-        return Math.max(getMinProfitMargin(s), 1 + avgDailyRng.getOrDefault(s, 0.0) * 0.75);
+    public static double tgtProfitMargin(String s) {
+        return Math.max(minProfitMargin(s), 1 + avgDailyRng.getOrDefault(s, 0.0) * 0.75);
     }
 
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
@@ -726,12 +726,12 @@ public class TradingUtility {
         }));
     }
 
-    public static double getDefaultRefillPercent(String symb) {
+    public static double defaultLowerTgt(String symb) {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double getRefillPercent(String symb) {
-        return Math.min(getDefaultRefillPercent(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
+    public static double lowerCostTgt(String symb) {
+        return Math.min(defaultLowerTgt(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
     }
 
     public static void outputToConnection(Object... cs) {
@@ -750,7 +750,7 @@ public class TradingUtility {
         return DELTA_EACH_LIMIT;
     }
 
-    public static Decimal getAddSize(String symb, double price) {
+    public static Decimal buySize(String symb, double price) {
         return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 

@@ -77,7 +77,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void orderStatus(OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId,
                             int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
-        outputToSymbol(symbol, "orderhandler/orderStatus:", "orderId:", orderID, getESTLocalDateTimeNow().format(MdHmmss),
+        outputToSymbol(symbol, "orderhandler/orderStatus:", "orderId:", orderID, getESTDateTimeNow().format(MdHmmss),
                 "status:", status, "filled:", filled, "remaining:", remaining, "avgPx:", avgFillPrice);
     }
 

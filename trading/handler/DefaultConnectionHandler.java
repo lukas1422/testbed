@@ -12,7 +12,7 @@ public class DefaultConnectionHandler implements ApiController.IConnectionHandle
     @Override
     public void connected() {
         pr(usTime(), "connected");
-        if (getESTLocalDateTimeNow().getMinute() == 1 && getESTLocalDateTimeNow().getSecond() < 30) {
+        if (getESTDateTimeNow().getMinute() == 1 && getESTDateTimeNow().getSecond() < 30) {
             outputToConnection(usDateTime(), "Conn:connected");
         }
     }
