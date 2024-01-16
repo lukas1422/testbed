@@ -106,7 +106,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     .average().orElse(0.0);
             pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
-            outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng), "refillP%:" + reduceCostTgt(s));
+            outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng),
+                    "reduceCostTarget:" + reduceCostTgt(s));
             outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s)));
 
 

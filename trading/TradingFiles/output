@@ -4213,3 +4213,92 @@ openOrder Error 1-15 22:20 orderId:-1  errorCode:2107  msg:HMDS data farm connec
 openOrder Error 1-15 22:21 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
 openOrder Error 1-15 22:22 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
 openOrder Error 1-15 22:23 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-15 22:24
+MasterTradeID is: 240115001
+*****START***** HKT: 11:24:41 EST: 1-15 22:24 MASTERID: 240115001
+WMT *******************************************
+WMT *STARTS* 1-15 22:24
+PG *******************************************
+PG *STARTS* 1-15 22:24
+UL *******************************************
+UL *STARTS* 1-15 22:24
+MCD *******************************************
+MCD *STARTS* 1-15 22:24
+SPY *******************************************
+SPY *STARTS* 1-15 22:24
+KO *******************************************
+KO *STARTS* 1-15 22:24
+req live orders complete
+1-15 22:24 cancelling all orders on start up
+22:24:43 global cancel orders
+KO updating position: 1-15 22:24 position:54 cost:60.07458705
+WMT updating position: 1-15 22:24 position:20 cost:161.076515
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 0 0.0 DELTA:0.0
+PG POS COST 0 0.0 DELTA:0.0
+SPY POS COST 0 0.0 DELTA:0.0
+UL POS COST 0 0.0 DELTA:0.0
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-15 22:24 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-15 22:24 *TradeReportEnd*: all executions: {}
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2105  msg:HMDS data farm connection is broken:ushmds
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2108  msg:Market data farm connection is inactive but should be available upon demand.usfarm
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2108  msg:Market data farm connection is inactive but should be available upon demand.usfarm
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2119  msg:Market data farm is connecting:usfarm
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2119  msg:Market data farm is connecting:usfarm
+openOrder Error 1-15 22:24 orderId:-1  errorCode:2103  msg:Market data farm connection is broken:usfarm
+KO *Periodic Run* 1-15 22:25
+KO no live feed
+KO delta:0.0
+KO 1-15 22:25 2dP:0.0 1dP:0.0
+KO *2dStats:print stats size<5: 0
+KO *1dStats:print stats size<5: 0
+MCD *Periodic Run* 1-15 22:25
+MCD no live feed
+MCD delta:0.0
+MCD 1-15 22:25 2dP:0.0 1dP:0.0
+MCD *2dStats:print stats size<5: 0
+MCD *1dStats:print stats size<5: 0
+PG *Periodic Run* 1-15 22:25
+PG no live feed
+PG delta:0.0
+PG 1-15 22:25 2dP:0.0 1dP:0.0
+PG *2dStats:print stats size<5: 0
+PG *1dStats:print stats size<5: 0
+SPY *Periodic Run* 1-15 22:25
+SPY no live feed
+SPY delta:0.0
+SPY 1-15 22:25 2dP:0.0 1dP:0.0
+SPY *2dStats:print stats size<5: 0
+SPY *1dStats:print stats size<5: 0
+UL *Periodic Run* 1-15 22:25
+UL no live feed
+UL delta:0.0
+UL 1-15 22:25 2dP:0.0 1dP:0.0
+UL *2dStats:print stats size<5: 0
+UL *1dStats:print stats size<5: 0
+WMT *Periodic Run* 1-15 22:25
+WMT no live feed
+WMT delta:0.0
+WMT 1-15 22:25 2dP:0.0 1dP:0.0
+WMT *2dStats:print stats size<5: 0
+WMT *1dStats:print stats size<5: 0
+openOrder Error 1-15 22:25 orderId:-1  errorCode:2104  msg:Market data farm connection is OK:usfarm
+openOrder Error 1-15 22:25 orderId:-1  errorCode:2106  msg:HMDS data farm connection is OK:ushmds
+KO 1-15 22:25 avgRange:0.0113 refillP%:0.9887075186001206
+KO 1-15 22:25 tgtMargin:1.0085
+MCD 1-15 22:25 avgRange:0.0118 refillP%:0.988204588171495
+MCD 1-15 22:25 tgtMargin:1.0088
+PG 1-15 22:25 avgRange:0.0119 refillP%:0.9881336875117201
+PG 1-15 22:25 tgtMargin:1.0089
+WMT 1-15 22:25 avgRange:0.0117 refillP%:0.9882570603306614
+WMT 1-15 22:25 tgtMargin:1.0088
+SPY 1-15 22:25 avgRange:0.008 refillP%:0.9920095027216405
+SPY 1-15 22:25 tgtMargin:1.006
+UL 1-15 22:25 avgRange:0.0081 refillP%:0.99
+UL 1-15 22:25 tgtMargin:1.0061
+openOrder Error 1-15 22:25 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-15 22:27 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-15 22:28 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-15 22:29 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
+openOrder Error 1-15 22:30 orderId:-1  errorCode:2157  msg:Sec-def data farm connection is broken:secdefhk
