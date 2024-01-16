@@ -4602,3 +4602,149 @@ WMT refillPx:157.87210204234168 refillP%:0.9883 refillPx/cost:0.98
 WMT 1-16 8:38 2dP:66.0 1dP:0.0
 WMT *2dStats:*n:781 *max:161.8 [1-11 9:30] *min:160.2 [1-11 12:10] *rng:1.0% *1Key:[1-11 9:30] *last:[1-16 8:38]
 WMT *1dStats:print stats size<5: 1
+openOrder Error 1-16 8:45 orderId:-1  errorCode:2107  msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*Ending* 1-16 8:49
+MasterTradeID is: 240116001
+*****START***** HKT: 21:49:30 EST: 1-16 8:49 MASTERID: 240116001
+WMT *******************************************
+WMT *STARTS* 1-16 8:49
+PG *******************************************
+PG *STARTS* 1-16 8:49
+UL *******************************************
+UL *STARTS* 1-16 8:49
+MCD *******************************************
+MCD *STARTS* 1-16 8:49
+SPY *******************************************
+SPY *STARTS* 1-16 8:49
+KO *******************************************
+KO *STARTS* 1-16 8:49
+req live orders complete
+1-16 8:49 cancelling all orders on start up
+8:49:32 global cancel orders
+KO updating position: 1-16 8:49 position:54 cost:60.07458705
+WMT updating position: 1-16 8:49 position:20 cost:161.076515
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 0 0.0 DELTA:0.0
+PG POS COST 0 0.0 DELTA:0.0
+SPY POS COST 0 0.0 DELTA:0.0
+UL POS COST 0 0.0 DELTA:0.0
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-16 8:49 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-16 8:49 *TradeReportEnd*: all executions: {}
+openOrder Error 1-16 8:49 orderId:-1  errorCode:2106  msg:HMDS data farm connection is OK:ushmds
+PG 1-16 8:49 avgRange:0.0119 reduceCostTarget:0.9881336875117201
+PG 1-16 8:49 tgtMargin:1.0089
+KO 1-16 8:49 avgRange:0.0113 reduceCostTarget:0.9887075186001206
+KO 1-16 8:49 tgtMargin:1.0085
+MCD 1-16 8:49 avgRange:0.0118 reduceCostTarget:0.988204588171495
+MCD 1-16 8:49 tgtMargin:1.0088
+WMT 1-16 8:49 avgRange:0.0117 reduceCostTarget:0.9882570603306614
+WMT 1-16 8:49 tgtMargin:1.0088
+SPY 1-16 8:49 avgRange:0.008 reduceCostTarget:0.9920095027216405
+SPY 1-16 8:49 tgtMargin:1.006
+UL 1-16 8:49 avgRange:0.0081 reduceCostTarget:0.99
+UL 1-16 8:49 tgtMargin:1.0061
+KO *Periodic Run* 1-16 8:49
+KO last Live feed time: 1-16 8:49 px:60.33 px/cost:1.0043
+KO delta:3257.8199999999997 refillPx::58.7813 costTgt%:0.9887 refillPx/cost:0.978
+KO 1-16 8:49 2dP:0.0 1dP:0.0
+KO *2dStats:*n:781 *max:60.4 [1-12 15:55] *min:59.7 [1-11 12:08] *rng:1.2% *1Key:[1-11 9:30] *last:[1-16 8:49]
+KO *1dStats:print stats size<5: 1
+MCD *Periodic Run* 1-16 8:49
+MCD last Live feed time: 1-16 8:49 px:293.3 
+MCD 1-16 8:49 2dP:53.0 1dP:0.0
+MCD *2dStats:*n:781 *max:295.6 [1-12 9:30] *min:290.7 [1-11 11:39] *rng:1.7% *1Key:[1-11 9:30] *last:[1-16 8:49]
+MCD *1dStats:print stats size<5: 1
+PG *Periodic Run* 1-16 8:49
+PG last Live feed time: 1-16 8:49 px:150.3 
+PG 1-16 8:49 2dP:53.0 1dP:0.0
+PG *2dStats:*n:781 *max:151.2 [1-12 9:35] *min:149.3 [1-11 11:35] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 8:49]
+PG *1dStats:print stats size<5: 1
+SPY *Periodic Run* 1-16 8:49
+SPY last Live feed time: 1-16 8:49 px:475.01 
+SPY 1-16 8:49 2dP:42.0 1dP:0.0
+SPY *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 8:49]
+SPY *1dStats:print stats size<5: 1
+UL *Periodic Run* 1-16 8:49
+UL last Live feed time: 1-16 8:49 px:48.37 
+UL 1-16 8:49 2dP:0.0 1dP:0.0
+UL *2dStats:*n:781 *max:49.4 [1-12 9:48] *min:48.4 [1-16 8:49] *rng:2.1% *1Key:[1-11 9:30] *last:[1-16 8:49]
+UL *1dStats:print stats size<5: 1
+WMT *Periodic Run* 1-16 8:49
+WMT last Live feed time: 1-16 8:49 px:161.22 px/cost:1.0009
+WMT delta:3224.0 refillPx::157.8721 costTgt%:0.9883 refillPx/cost:0.98
+WMT 1-16 8:49 2dP:66.0 1dP:0.0
+WMT *2dStats:*n:781 *max:161.8 [1-11 9:30] *min:160.2 [1-11 12:10] *rng:1.0% *1Key:[1-11 9:30] *last:[1-16 8:49]
+WMT *1dStats:print stats size<5: 1
+*Ending* 1-16 8:50
+MasterTradeID is: 240116001
+*****START***** HKT: 21:50:52 EST: 1-16 8:50 MASTERID: 240116001
+WMT *******************************************
+WMT *STARTS* 1-16 8:50
+PG *******************************************
+PG *STARTS* 1-16 8:50
+UL *******************************************
+UL *STARTS* 1-16 8:50
+MCD *******************************************
+MCD *STARTS* 1-16 8:50
+SPY *******************************************
+SPY *STARTS* 1-16 8:50
+KO *******************************************
+KO *STARTS* 1-16 8:50
+req live orders complete
+1-16 8:50 cancelling all orders on start up
+8:50:54 global cancel orders
+KO updating position: 1-16 8:50 position:54 cost:60.07458705
+WMT updating position: 1-16 8:50 position:20 cost:161.076515
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 0 0.0 DELTA:0.0
+PG POS COST 0 0.0 DELTA:0.0
+SPY POS COST 0 0.0 DELTA:0.0
+UL POS COST 0 0.0 DELTA:0.0
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-16 8:50 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-16 8:50 *TradeReportEnd*: all executions: {}
+KO 1-16 8:50 avgRange:0.0113 reduceCostTarget:0.98871
+KO 1-16 8:50 tgtMargin:1.0085
+MCD 1-16 8:50 avgRange:0.0118 reduceCostTarget:0.9882
+MCD 1-16 8:50 tgtMargin:1.0088
+PG 1-16 8:50 avgRange:0.0119 reduceCostTarget:0.98813
+PG 1-16 8:50 tgtMargin:1.0089
+SPY 1-16 8:50 avgRange:0.008 reduceCostTarget:0.99201
+SPY 1-16 8:50 tgtMargin:1.006
+UL 1-16 8:50 avgRange:0.0081 reduceCostTarget:0.99
+UL 1-16 8:50 tgtMargin:1.0061
+WMT 1-16 8:50 avgRange:0.0117 reduceCostTarget:0.98826
+WMT 1-16 8:50 tgtMargin:1.0088
+KO *Periodic Run* 1-16 8:51
+KO last Live feed time: 1-16 8:51 px:60.33 px/cost:1.0043
+KO delta:3257.8199999999997 refillPx::58.7813 costTgt%:0.9887 refillPx/cost:0.978
+KO 1-16 8:51 2dP:0.0 1dP:0.0
+KO *2dStats:*n:781 *max:60.4 [1-12 15:55] *min:59.7 [1-11 12:08] *rng:1.2% *1Key:[1-11 9:30] *last:[1-16 8:51]
+KO *1dStats:print stats size<5: 1
+MCD *Periodic Run* 1-16 8:51
+MCD last Live feed time: 1-16 8:51 px:293.3 
+MCD 1-16 8:51 2dP:0.0 1dP:0.0
+MCD *2dStats:*n:781 *max:295.6 [1-12 9:30] *min:290.7 [1-11 11:39] *rng:1.7% *1Key:[1-11 9:30] *last:[1-16 8:51]
+MCD *1dStats:print stats size<5: 1
+PG *Periodic Run* 1-16 8:51
+PG last Live feed time: 1-16 8:51 px:150.3 
+PG 1-16 8:51 2dP:53.0 1dP:0.0
+PG *2dStats:*n:781 *max:151.2 [1-12 9:35] *min:149.3 [1-11 11:35] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 8:51]
+PG *1dStats:print stats size<5: 1
+SPY *Periodic Run* 1-16 8:51
+SPY last Live feed time: 1-16 8:51 px:474.97 
+SPY 1-16 8:51 2dP:42.0 1dP:0.0
+SPY *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 8:51]
+SPY *1dStats:print stats size<5: 1
+UL *Periodic Run* 1-16 8:51
+UL last Live feed time: 1-16 8:51 px:48.37 
+UL 1-16 8:51 2dP:0.0 1dP:0.0
+UL *2dStats:*n:781 *max:49.4 [1-12 9:48] *min:48.4 [1-16 8:51] *rng:2.1% *1Key:[1-11 9:30] *last:[1-16 8:51]
+UL *1dStats:print stats size<5: 1
+WMT *Periodic Run* 1-16 8:51
+WMT last Live feed time: 1-16 8:51 px:161.22 px/cost:1.0009
+WMT delta:3224.0 refillPx::157.8721 costTgt%:0.9883 refillPx/cost:0.98
+WMT 1-16 8:51 2dP:66.0 1dP:0.0
+WMT *2dStats:*n:781 *max:161.8 [1-11 9:30] *min:160.2 [1-11 12:10] *rng:1.0% *1Key:[1-11 9:30] *last:[1-16 8:51]
+WMT *1dStats:print stats size<5: 1

@@ -104,10 +104,10 @@ public class ProfitTargetTrader implements LiveHandler,
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
-            pr("average range:", s, round4(rng));
+//            pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
             outputToSymbol(s, usDateTime(), "avgRange:" + round4(rng),
-                    "reduceCostTarget:" + reduceCostTgt(s));
+                    "reduceCostTarget:" + round5(reduceCostTgt(s)));
             outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s)));
 
 
@@ -329,7 +329,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetStockList.forEach(s -> {
             if (symbolPos.containsKey(s)) {
                 if (lastPx.getOrDefault(s, 0.0) != 0.0 && avgCost.getOrDefault(s, 0.0) != 0.0) {
-                    pr(s, usTime(), "position:" + symbolPos.get(s),
+                    pr(s, usTime(), "pos:" + symbolPos.get(s),
                             "px:" + lastPx.get(s),
                             "delta:" + round2(symbolPos.get(s).longValue() * lastPx.get(s)),
                             "cost:" + round4(avgCost.get(s)),
@@ -590,13 +590,13 @@ public class ProfitTargetTrader implements LiveHandler,
                                                 round4(lastPx.getOrDefault(symb, 0.0)
                                                         / avgCost.getOrDefault(symb, 0.0)))) :
                                 str("no live feed"));
-                outputToSymbol(symb, "delta:" + symbDelta.getOrDefault(symb, 0.0));
+//                outputToSymbol(symb, "delta::" + symbDelta.getOrDefault(symb, 0.0));
                 if (symbDelta.getOrDefault(symb, 0.0) > 0.0) {
-                    outputToSymbol(symb, "refillPx:" +
-                                    refillPx(symb, lastPx.get(symb),
-                                            symbolPos.get(symb).longValue()
-                                            , avgCost.get(symb)),
-                            "refillP%:" + round4(reduceCostTgt(symb)),
+                    outputToSymbol(symb, "delta:" + symbDelta.getOrDefault(symb, 0.0),
+                            "refillPx::" + round4(refillPx(symb, lastPx.get(symb),
+                                    symbolPos.get(symb).longValue()
+                                    , avgCost.get(symb))),
+                            "costTgt%:" + round4(reduceCostTgt(symb)),
                             "refillPx/cost:" +
                                     round3(refillPx(symb, lastPx.get(symb),
                                             symbolPos.get(symb).longValue()
