@@ -745,13 +745,13 @@ public class TradingUtility {
         outputToGeneral(symbol, str(cs));
     }
 
-    static double getDelta(String symb) {
+    static double deltaLimitEach(String symb) {
 //        return symb.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_EACH_LIMIT;
         return DELTA_EACH_LIMIT;
     }
 
     public static Decimal getAddSize(String symb, double price) {
-        return Decimal.get(Math.floor(getDelta(symb) / price / 4.0));
+        return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
