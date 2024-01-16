@@ -49,7 +49,7 @@ public class Allstatic {
     public static File outputFile = new File("trading/TradingFiles/output");
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
-            orderStatusMap = new ConcurrentHashMap<>();
+            orderStatus = new ConcurrentHashMap<>();
     static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
             openOrders = new ConcurrentSkipListMap<>();
     //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
@@ -66,12 +66,12 @@ public class Allstatic {
             = new ConcurrentSkipListMap<>();
     static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
-            twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
+            twoDData = new ConcurrentSkipListMap<>(String::compareTo);
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> avgCostMap = new ConcurrentSkipListMap<>();
-    volatile static Map<String, Decimal> symbolPosMap = new ConcurrentSkipListMap<>(String::compareTo);
+    volatile static Map<String, Double> avgCost = new ConcurrentSkipListMap<>();
+    volatile static Map<String, Decimal> symbolPos = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
@@ -112,7 +112,7 @@ public class Allstatic {
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        twoDData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);
     }
 }
