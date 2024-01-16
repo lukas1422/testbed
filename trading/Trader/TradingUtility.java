@@ -642,7 +642,8 @@ public class TradingUtility {
     }
 
     public static double getMinProfitMargin(String s) {
-        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
+//        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
+        return 1.005;
     }
 
     public static double getReqMargin(String s) {
@@ -750,7 +751,7 @@ public class TradingUtility {
     }
 
     public static Decimal getAddSize(String symb, double price) {
-        return Decimal.get(Math.floor(getDelta(symb) / price / 4));
+        return Decimal.get(Math.floor(getDelta(symb) / price / 4.0));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

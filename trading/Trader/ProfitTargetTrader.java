@@ -177,7 +177,6 @@ public class ProfitTargetTrader implements LiveHandler,
         if (price == 0.0 || position == 0.0 || costBasis == 0.0) {
             return 0.0;
         }
-
         double currentDelta = price * position;
         double refillPercent = getRefillPercent(symb);
         double addSize = getAddSize(symb, price).longValue();
@@ -213,17 +212,17 @@ public class ProfitTargetTrader implements LiveHandler,
         double oneDayP = oneDayPctMap.get(symb);
         Decimal pos = symbolPosMap.get(symb);
 
-        if (oneDayP < 10 && checkDeltaImpact(symb, px) && twoDayP < 30) {
+        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(symb, px)) {
             if (pos.isZero()) {
-                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "2dp:" + twoDayP,
-                        "1dp:" + oneDayP);
+                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 inventoryAdder(ct, px, t, getAddSize(symb, px));
             } else if (pos.longValue() > 0 && avgCostMap.getOrDefault(symb, 0.0) != 0.0) {
                 if (px < getRefillPx(symb, px, pos.longValue(), avgCostMap.get(symb))) {
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
-                            "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0), "2dp:" + twoDayP,
-                            "1dp:" + oneDayP, "avgCost:" + avgCostMap.get(symb),
-                            "px/cst:" + round4(pxOverCost(px, symb)),
+                            "deltaNow:" + symbolDeltaMap.getOrDefault(symb, 0.0),
+                            "1dp:" + oneDayP, "2dp:" + twoDayP,
+                            "avgCost:" + avgCostMap.get(symb),
+                            "px/cost:" + round4(pxOverCost(px, symb)),
                             "refillPx:" + (round2(getRefillPx(symb, px, pos.longValue(), avgCostMap.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
                     inventoryAdder(ct, px, t, getAddSize(symb, px));
@@ -235,7 +234,7 @@ public class ProfitTargetTrader implements LiveHandler,
             if (pOverCost > getReqMargin(symb)) {
                 outputToSymbol(symb, "****CUT****", t.format(MdHmmss), "1dP:" + oneDayP, "2dp:" + twoDayP,
                         "px/Cost:" + round4(pOverCost),
-                        "requiredMargin:" + round4(getReqMargin(symb)),
+                        "reqMargin:" + round4(getReqMargin(symb)),
                         "avgRng:" + round4(avgDailyRng.getOrDefault(symb, 0.0)));
                 inventoryCutter(ct, px, t);
             }
