@@ -181,7 +181,7 @@ public class ProfitTargetTrader implements LiveHandler,
         double buySize = getBuySize(symb, price).longValue();
         pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
                 symb, price, pos, buySize, round4(costBasis), round4(lowerTgt),
-                round2(costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
+                round2((costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize));
 
         return Math.min(price,
                 (costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
@@ -592,7 +592,10 @@ public class ProfitTargetTrader implements LiveHandler,
                                 str("no live feed"));
 //                outputToSymbol(symb, "delta::" + symbDelta.getOrDefault(symb, 0.0));
                 if (symbDelta.getOrDefault(symb, 0.0) > 0.0) {
-                    outputToSymbol(symb, "delta:" + symbDelta.getOrDefault(symb, 0.0),
+                    outputToSymbol(symb, "px:" + lastPx.getOrDefault(symb, 0.0),
+                            "delta:" + symbDelta.getOrDefault(symb, 0.0),
+                            "pos:", symbolPos.getOrDefault(symb, Decimal.ZERO).longValue(),
+                            "buySize::" + getBuySize(symb, lastPx.get(symb)),
                             "refillPx::" + round4(refillPx(symb, lastPx.get(symb),
                                     symbolPos.get(symb).longValue()
                                     , avgCost.get(symb))),
@@ -600,7 +603,11 @@ public class ProfitTargetTrader implements LiveHandler,
                             "refillPx/cost:" +
                                     round3(refillPx(symb, lastPx.get(symb),
                                             symbolPos.get(symb).longValue()
-                                            , avgCost.get(symb)) / avgCost.get(symb)));
+                                            , avgCost.get(symb)) / avgCost.get(symb)),
+                            "refillPx/px:" +
+                                    round3(refillPx(symb, lastPx.get(symb),
+                                            symbolPos.get(symb).longValue()
+                                            , avgCost.get(symb)) / lastPx.get(symb)));
                 }
                 if (!orderStatus.get(symb).isEmpty()) {
                     outputToSymbol(symb, usDateTime(), "*chek orderStatus", orderStatus.get(symb));
