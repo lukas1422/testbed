@@ -172,19 +172,19 @@ public class ProfitTargetTrader implements LiveHandler,
                         addition < DELTA_EACH_LIMIT);
     }
 
-    static double refillPx(String symb, double price, long position, double costBasis) {
-        if (price == 0.0 || position == 0.0 || costBasis == 0.0) {
+    static double refillPx(String symb, double price, long pos, double costBasis) {
+        if (price == 0.0 || pos == 0.0 || costBasis == 0.0) {
             return 0.0;
         }
-        double currentDelta = price * position;
+        double currentDelta = price * pos;
         double lowerTgt = reduceCostTgt(symb);
         double buySize = getBuySize(symb, price).longValue();
-        pr("calc refillPx symb price pos buysize costbasis lowerTgt refillPx",
-                symb, price, position, buySize, round4(costBasis), round4(lowerTgt),
-                round2(costBasis * lowerTgt * (position + buySize) - currentDelta) / buySize);
+        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
+                symb, price, pos, buySize, round4(costBasis), round4(lowerTgt),
+                round2(costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
 
         return Math.min(price,
-                (costBasis * lowerTgt * (position + buySize) - currentDelta) / buySize);
+                (costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
     }
 
     static void tryToTrade(Contract ct, double px, LocalDateTime t) {
