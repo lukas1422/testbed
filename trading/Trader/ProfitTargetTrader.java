@@ -177,14 +177,14 @@ public class ProfitTargetTrader implements LiveHandler,
             return 0.0;
         }
         double currentDelta = price * position;
-        double lowerCostTgt = reduceCostTgt(symb);
+        double lowerTgt = reduceCostTgt(symb);
         double buySize = getBuySize(symb, price).longValue();
-        pr("calc refillPx symb price pos buysize costbasis lowerCostTgt refillPx",
-                symb, price, position, buySize, costBasis, lowerCostTgt,
-                (costBasis * lowerCostTgt * (position + buySize) - currentDelta) / buySize);
+        pr("calc refillPx symb price pos buysize costbasis lowerTgt refillPx",
+                symb, price, position, buySize, round4(costBasis), round4(lowerTgt),
+                round2(costBasis * lowerTgt * (position + buySize) - currentDelta) / buySize);
 
         return Math.min(price,
-                (costBasis * lowerCostTgt * (position + buySize) - currentDelta) / buySize);
+                (costBasis * lowerTgt * (position + buySize) - currentDelta) / buySize);
     }
 
     static void tryToTrade(Contract ct, double px, LocalDateTime t) {
@@ -216,7 +216,8 @@ public class ProfitTargetTrader implements LiveHandler,
 
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(symb, px)) {
             if (pos.isZero()) {
-                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
+                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss),
+                        "1dp:" + oneDayP, "2dp:" + twoDayP);
                 inventoryAdder(ct, px, t, getBuySize(symb, px));
             } else if (pos.longValue() > 0 && avgCost.getOrDefault(symb, 0.0) != 0.0) {
                 if (px < refillPx(symb, px, pos.longValue(), avgCost.get(symb))) {
