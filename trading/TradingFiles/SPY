@@ -311,3 +311,168 @@ last Live feed time: 1-16 9:03 px:474.47
 1-16 9:03 2dP:33.0 1dP:0.0
 *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 9:03]
 *1dStats:print stats size<5: 1
+*******************************************
+*STARTS* 1-16 9:22
+POS COST 0 0.0 DELTA:0.0
+1-16 9:23 avgRange:0.008 reduceCostTarget:0.99201
+1-16 9:23 tgtMargin:1.006
+*Periodic Run* 1-16 9:23
+last Live feed time: 1-16 9:23 px:474.69 
+1-16 9:23 2dP:37.0 1dP:0.0
+*2dStats:*n:781 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 9:23]
+*1dStats:print stats size<5: 1
+*1st Buy* 1-16 9:51:07 1dp:0.0 2dp:19.0
+ordID:240116004 tradID:240116004 BUY px:473.6 size:10 SPY 1-16 9:51 INVENTORY_ADDER Created
+2DStats:*n:809 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 9:51] 1DStats:*n:29 *max:475.4 [1-16 9:30] *min:473.8 [1-16 9:51] *rng:0.3% *1Key:[1-16 9:23] *last:[1-16 9:51]
+9:51:07 order blocked by:[] orderStatus:{240116004=Created}
+9:51:08 order blocked by:[] orderStatus:{240116004=Created}
+1-16 9:51 *openOrder* status:Submitted orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6
+1-16 9:51 *openOrder* all live orders {240116004=orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6}
+1-16 9:51 *OrderStatus*:Submitted orderId:240116004 filled:0 remaining:10 fillPx0.0 lastFillPx:0.0
+9:51:09 order blocked by:[orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6] orderStatus:{240116004=Submitted}
+updating position: 1-16 9:51 position:10 cost:473.6
+1-16 9:51 *tradeReport* time: 2024-01-16T09:51:12 BOT execPx:473.6 shares:10 avgPx:473.6
+1-16 9:51 *openOrder* status:Filled orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6
+1-16 9:51 *openOrder*:removing order. Status: Filled orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6
+1-16 9:51 *openOrder*:after removal.open orders: SPY {}
+1-16 9:51 *OrderStatus*:Filled orderId:240116004 filled:10 remaining:0 fillPx473.6 lastFillPx:473.6
+1-16 9:51 *openOrder* status:Filled orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6
+1-16 9:51 *openOrder*:removing order. Status: Filled orderID: 240116004 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.6
+1-16 9:51 *openOrder*:after removal.open orders: SPY {}
+1-16 9:51 *OrderStatus*:Filled orderId:240116004 filled:10 remaining:0 fillPx473.6 lastFillPx:473.6
+1.*commission report* orderID:240116004 commission:0.336257 
+2.*commission report* orderID:240116004 commission: 0.336257 
+updating position: 1-16 9:51 position:10 cost:473.63362570000004
+updating position: 1-16 9:56 position:10 cost:473.6336257
+updating position: 1-16 9:56 position:10 cost:473.6336257
+*Periodic Run* 1-16 10:23
+last Live feed time: 1-16 10:23 px:475.84 px/cost:1.0047
+px:475.84 delta:4758.0 pos: 10 buySize::10 refillPx::463.8581 costTgt%:0.992 refillPx/cost:0.979 refillPx/px:0.975
+1-16 10:23 *chek orderStatus {240116004=Filled}
+1-16 10:23 2dP:56.0 1dP:100.0
+*2dStats:*n:841 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 10:23]
+*1dStats:*n:61 *max:475.7 [1-16 10:22] *min:473.7 [1-16 9:51] *rng:0.4% *1Key:[1-16 9:23] *last:[1-16 10:23]
+****CUT**** 1-16 10:41:03 1dP:100.0 2dp:65.0 px/Cost:1.006 reqMargin:1.006 avgRng:0.008
+ordID:240116005 tradID:240116005 SELL Px:476.48 qty:10 cost:473.63 SPY 1-16 10:41 INVENTORY_CUTTER Created reqMargin:1.0059928729587697 targetPx:476.47 askPx:476.48
+2DStats:*n:859 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 10:41]
+1DStats:*n:79 *max:476.3 [1-16 10:41] *min:473.7 [1-16 9:51] *rng:0.6% *1Key:[1-16 9:23] *last:[1-16 10:41]
+10:41:04 order blocked by:[] orderStatus:{240116004=Filled, 240116005=Created}
+1-16 10:41 *openOrder* status:PreSubmitted orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48
+1-16 10:41 *openOrder* all live orders {240116005=orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48}
+1-16 10:41 *OrderStatus*:PreSubmitted orderId:240116005 filled:0 remaining:10 fillPx0.0 lastFillPx:0.0
+updating position: 1-16 10:41 position:0 cost:0.0
+1-16 10:41 *tradeReport* time: 2024-01-16T10:41:06 SLD execPx:476.505 shares:10 avgPx:476.505
+1-16 10:41 *openOrder* status:Filled orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48
+1-16 10:41 *openOrder*:removing order. Status: Filled orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48
+1-16 10:41 *openOrder*:after removal.open orders: SPY {}
+1-16 10:41 *OrderStatus*:Filled orderId:240116005 filled:10 remaining:0 fillPx476.505 lastFillPx:476.505
+1-16 10:41 *openOrder* status:Filled orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48
+1-16 10:41 *openOrder*:removing order. Status: Filled orderID: 240116005 orderType: LMT action: SELL totalQuantity: 10 filledQty:  limitPrice: 476.48
+1-16 10:41 *openOrder*:after removal.open orders: SPY {}
+1-16 10:41 *OrderStatus*:Filled orderId:240116005 filled:10 remaining:0 fillPx476.505 lastFillPx:476.505
+1.*commission report* orderID:240116005 commission:0.392038 orderID: 240116005 realized pnl: 28.321705
+2.*commission report* orderID:240116005 commission: 0.392038 realized pnl: 28.321705
+updating position: 1-16 10:41 position:0 cost:0.0
+updating position: 1-16 10:41 position:0 cost:0.0
+updating position: 1-16 10:45 position:0 cost:0.0
+*Periodic Run* 1-16 11:23
+last Live feed time: 1-16 11:23 px:476.32 
+1-16 11:23 *chek orderStatus {240116004=Filled, 240116005=Filled}
+1-16 11:23 2dP:64.0 1dP:92.0
+*2dStats:*n:901 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 11:23]
+*1dStats:*n:121 *max:476.6 [1-16 11:22] *min:473.7 [1-16 9:51] *rng:0.6% *1Key:[1-16 9:23] *last:[1-16 11:23]
+*Periodic Run* 1-16 12:23
+last Live feed time: 1-16 12:23 px:474.76 
+1-16 12:23 *chek orderStatus {240116004=Filled, 240116005=Filled}
+1-16 12:23 2dP:38.0 1dP:38.0
+*2dStats:*n:961 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 12:23]
+*1dStats:*n:181 *max:476.6 [1-16 11:22] *min:473.7 [1-16 9:51] *rng:0.6% *1Key:[1-16 9:23] *last:[1-16 12:23]
+*Periodic Run* 1-16 13:23
+last Live feed time: 1-16 13:23 px:474.41 
+1-16 13:23 *chek orderStatus {240116004=Filled, 240116005=Filled}
+1-16 13:23 2dP:32.0 1dP:26.0
+*2dStats:*n:1021 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 13:23]
+*1dStats:*n:241 *max:476.6 [1-16 11:22] *min:473.7 [1-16 9:51] *rng:0.6% *1Key:[1-16 9:23] *last:[1-16 13:23]
+*1st Buy* 1-16 14:11:44 1dp:1.0 2dp:19.0
+ordID:240116008 tradID:240116008 BUY px:473.61 size:10 SPY 1-16 14:11 INVENTORY_ADDER Created
+2DStats:*n:1069 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 14:11] 1DStats:*n:289 *max:476.6 [1-16 11:22] *min:473.6 [1-16 9:51] *rng:0.6% *1Key:[1-16 9:23] *last:[1-16 14:11]
+1-16 14:11 *openOrder* status:Submitted orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61
+1-16 14:11 *openOrder* all live orders {240116008=orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61}
+1-16 14:11 *OrderStatus*:Submitted orderId:240116008 filled:0 remaining:10 fillPx0.0 lastFillPx:0.0
+14:11:45 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:46 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:46 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:49 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:50 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:51 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:52 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:54 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:55 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:56 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:57 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:11:58 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:01 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:02 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:05 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:05 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:06 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:10 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:10 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:11 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:12 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:13 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:13 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:16 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:16 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:19 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:19 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+14:12:20 order blocked by:[orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61] orderStatus:{240116004=Filled, 240116005=Filled, 240116008=Submitted}
+updating position: 1-16 14:12 position:10 cost:473.61
+1-16 14:12 *tradeReport* time: 2024-01-16T14:12:24 BOT execPx:473.61 shares:10 avgPx:473.61
+1-16 14:12 *openOrder* status:Filled orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61
+1-16 14:12 *openOrder*:removing order. Status: Filled orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61
+1-16 14:12 *openOrder*:after removal.open orders: SPY {}
+1-16 14:12 *OrderStatus*:Filled orderId:240116008 filled:10 remaining:0 fillPx473.61 lastFillPx:473.61
+1-16 14:12 *openOrder* status:Filled orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61
+1-16 14:12 *openOrder*:removing order. Status: Filled orderID: 240116008 orderType: LMT action: BUY totalQuantity: 10 filledQty:  limitPrice: 473.61
+1-16 14:12 *openOrder*:after removal.open orders: SPY {}
+1-16 14:12 *OrderStatus*:Filled orderId:240116008 filled:10 remaining:0 fillPx473.61 lastFillPx:473.61
+1.*commission report* orderID:240116008 commission:0.337257 
+2.*commission report* orderID:240116008 commission: 0.337257 
+updating position: 1-16 14:12 position:10 cost:473.6437257
+updating position: 1-16 14:16 position:10 cost:473.64372575
+*Periodic Run* 1-16 14:23
+last Live feed time: 1-16 14:23 px:473.41 px/cost:0.9995
+px:473.41 delta:4734.0 pos: 10 buySize::10 refillPx::466.3082 costTgt%:0.992 refillPx/cost:0.985 refillPx/px:0.985
+1-16 14:23 *chek orderStatus {240116004=Filled, 240116005=Filled, 240116008=Filled}
+1-16 14:23 2dP:16.0 1dP:6.0
+*2dStats:*n:1081 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 14:23]
+*1dStats:*n:301 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:23] *last:[1-16 14:23]
+*Periodic Run* 1-16 15:23
+last Live feed time: 1-16 15:23 px:474.17 px/cost:1.0011
+px:474.17 delta:4742.0 pos: 10 buySize::10 refillPx::465.5482 costTgt%:0.992 refillPx/cost:0.983 refillPx/px:0.982
+1-16 15:23 *chek orderStatus {240116004=Filled, 240116005=Filled, 240116008=Filled}
+1-16 15:23 2dP:28.0 1dP:29.0
+*2dStats:*n:1141 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 15:23]
+*1dStats:*n:361 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:23] *last:[1-16 15:23]
+*Periodic Run* 1-16 16:23
+last Live feed time: 1-16 16:00 px:474.94 px/cost:1.0027
+px:474.94 delta:4749.0 pos: 10 buySize::10 refillPx::464.7782 costTgt%:0.992 refillPx/cost:0.981 refillPx/px:0.979
+1-16 16:23 *chek orderStatus {240116004=Filled, 240116005=Filled, 240116008=Filled}
+1-16 16:23 2dP:41.0 1dP:52.0
+*2dStats:*n:1178 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 16:00]
+*1dStats:*n:398 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:23] *last:[1-16 16:00]
+*Periodic Run* 1-16 17:23
+last Live feed time: 1-16 16:00 px:474.94 px/cost:1.0027
+px:474.94 delta:4749.0 pos: 10 buySize::10 refillPx::464.7782 costTgt%:0.992 refillPx/cost:0.981 refillPx/px:0.979
+1-16 17:23 *chek orderStatus {240116004=Filled, 240116005=Filled, 240116008=Filled}
+1-16 17:23 2dP:41.0 1dP:52.0
+*2dStats:*n:1178 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 16:00]
+*1dStats:*n:398 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:23] *last:[1-16 16:00]
+*Periodic Run* 1-16 18:23
+last Live feed time: 1-16 16:00 px:474.94 px/cost:1.0027
+px:474.94 delta:4749.0 pos: 10 buySize::10 refillPx::464.7782 costTgt%:0.992 refillPx/cost:0.981 refillPx/px:0.979
+1-16 18:23 *chek orderStatus {240116004=Filled, 240116005=Filled, 240116008=Filled}
+1-16 18:23 2dP:41.0 1dP:52.0
+*2dStats:*n:1178 *max:478.5 [1-12 9:47] *min:472.4 [1-11 11:46] *rng:1.3% *1Key:[1-11 9:30] *last:[1-16 16:00]
+*1dStats:*n:398 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:23] *last:[1-16 16:00]

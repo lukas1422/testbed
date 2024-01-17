@@ -179,9 +179,9 @@ public class ProfitTargetTrader implements LiveHandler,
         double currentDelta = price * pos;
         double lowerTgt = reduceCostTgt(symb);
         double buySize = getBuySize(symb, price).longValue();
-        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
-                symb, price, pos, buySize, round4(costBasis), round4(lowerTgt),
-                round2((costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize));
+//        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
+//                symb, price, pos, buySize, round4(costBasis), round4(lowerTgt),
+//                round2((costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize));
 
         return Math.min(price,
                 (costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
@@ -580,45 +580,45 @@ public class ProfitTargetTrader implements LiveHandler,
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
-            targetStockList.forEach(symb -> {
-                outputToSymbol(symb, "*Periodic Run*", usDateTime());
-                outputToSymbol(symb,
-                        latestPriceTimeMap.containsKey(symb) ?
-                                str("last Live feed time:", latestPriceTimeMap.get(symb).format(MdHmm)
-                                        , "px:" + lastPx.getOrDefault(symb, 0.0),
-                                        avgCost.getOrDefault(symb, 0.0) == 0.0 ? "" : str("px/cost:" +
-                                                round4(lastPx.getOrDefault(symb, 0.0)
-                                                        / avgCost.getOrDefault(symb, 0.0)))) :
+            targetStockList.forEach(s -> {
+                outputToSymbol(s, "*Periodic Run*", usDateTime());
+                outputToSymbol(s,
+                        latestPriceTimeMap.containsKey(s) ?
+                                str("last Live feed time:", latestPriceTimeMap.get(s).format(MdHmm)
+                                        , "px:" + lastPx.getOrDefault(s, 0.0),
+                                        avgCost.getOrDefault(s, 0.0) == 0.0 ? "" : str(
+                                                "cost:" + avgCost.get(s),
+                                                "px/cost:" + round4(lastPx.getOrDefault(s, 0.0)
+                                                        / avgCost.getOrDefault(s, 0.0)))) :
                                 str("no live feed"));
-//                outputToSymbol(symb, "delta::" + symbDelta.getOrDefault(symb, 0.0));
-                if (symbDelta.getOrDefault(symb, 0.0) > 0.0) {
-                    outputToSymbol(symb, "px:" + lastPx.getOrDefault(symb, 0.0),
-                            "delta:" + symbDelta.getOrDefault(symb, 0.0),
-                            "pos:", symbolPos.getOrDefault(symb, Decimal.ZERO).longValue(),
-                            "buySize::" + getBuySize(symb, lastPx.get(symb)),
-                            "refillPx::" + round4(refillPx(symb, lastPx.get(symb),
-                                    symbolPos.get(symb).longValue()
-                                    , avgCost.get(symb))),
-                            "costTgt%:" + round4(reduceCostTgt(symb)),
-                            "refillPx/cost:" +
-                                    round3(refillPx(symb, lastPx.get(symb),
-                                            symbolPos.get(symb).longValue()
-                                            , avgCost.get(symb)) / avgCost.get(symb)),
-                            "refillPx/px:" +
-                                    round3(refillPx(symb, lastPx.get(symb),
-                                            symbolPos.get(symb).longValue()
-                                            , avgCost.get(symb)) / lastPx.get(symb)));
+//                outputToSymbol(s, "delta::" + symbDelta.getOrDefault(s, 0.0));
+                if (symbDelta.getOrDefault(s, 0.0) > 0.0 && avgCost.getOrDefault(s, 0.0) != 0.0) {
+                    outputToSymbol(s, "px:" + lastPx.getOrDefault(s, 0.0),
+                            "delta:" + round(symbDelta.getOrDefault(s, 0.0)),
+                            "pos:", symbolPos.getOrDefault(s, Decimal.ZERO).longValue(),
+                            "cost:", avgCost.get(s),
+                            "buySize:" + getBuySize(s, lastPx.get(s)),
+                            "refillPx::" + round4(refillPx(s, lastPx.get(s),
+                                    symbolPos.get(s).longValue()
+                                    , avgCost.get(s))),
+                            "costTgt%:" + round4(reduceCostTgt(s)),
+                            "refillPx/cost:" + round3(refillPx(s, lastPx.get(s),
+                                    symbolPos.get(s).longValue()
+                                    , avgCost.get(s)) / avgCost.get(s)),
+                            "refillPx/px:" + round3(refillPx(s, lastPx.get(s),
+                                    symbolPos.get(s).longValue()
+                                    , avgCost.get(s)) / lastPx.get(s)));
                 }
-                if (!orderStatus.get(symb).isEmpty()) {
-                    outputToSymbol(symb, usDateTime(), "*chek orderStatus", orderStatus.get(symb));
+                if (!orderStatus.get(s).isEmpty()) {
+                    outputToSymbol(s, usDateTime(), "*chek orderStatus", orderStatus.get(s));
                 }
-                if (!openOrders.get(symb).isEmpty()) {
-                    outputToSymbol(symb, usDateTime(), "*chek openOrders*:", openOrders.get(symb));
+                if (!openOrders.get(s).isEmpty()) {
+                    outputToSymbol(s, usDateTime(), "*chek openOrders*:", openOrders.get(s));
                 }
-                outputToSymbol(symb, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(symb, 0.0),
-                        "1dP:" + oneDayPctMap.getOrDefault(symb, 0.0));
-                outputToSymbol(symb, "*2dStats:" + genStatsString(twoDData.get(symb)));
-                outputToSymbol(symb, "*1dStats:" + genStatsString(twoDData.get(symb).tailMap(TODAY230)));
+                outputToSymbol(s, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(s, 0.0),
+                        "1dP:" + oneDayPctMap.getOrDefault(s, 0.0));
+                outputToSymbol(s, "*2dStats:" + genStatsString(twoDData.get(s)));
+                outputToSymbol(s, "*1dStats:" + genStatsString(twoDData.get(s).tailMap(TODAY230)));
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().
