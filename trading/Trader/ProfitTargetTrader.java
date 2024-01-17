@@ -223,7 +223,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
                             "deltaNow:" + round(symbDelta.getOrDefault(symb, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
-                            "cost:" + round2(costPerShare.get(symb)),
+                            "cost:" + round1(costPerShare.get(symb)),
                             "px/cost:" + round4(pxOverCost(px, symb)),
                             "refillPx:" + (round2(refillPx(symb, px, pos.longValue(), costPerShare.get(symb)))),
                             "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
@@ -332,7 +332,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "px:" + lastPx.get(s),
                             "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%",
                             "delta:" + round(symbPos.get(s).longValue() * lastPx.get(s) / 1000.0) + "k",
-                            "cost:" + round(costPerShare.get(s)),
+                            "cost:" + round1(costPerShare.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / costPerShare.get(s) - 1)) / 10.0 + "%",
                             "lot:" + getBuyLot(s, lastPx.get(s)),
                             "costTgt:" + round3(reduceCostTgt(s)),
@@ -365,7 +365,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetList.forEach((s) -> symbDelta.put(s, (double) round(symbPos.getOrDefault(s, Decimal.ZERO)
                 .longValue() * lastPx.getOrDefault(s, 0.0))));
 
-        pr("total Delta", r(totalDelta), symbDelta);
+        pr("Delta", r(totalDelta), symbDelta);
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
             if (orderStatus.get(k).get(k1).isFinished()) {
@@ -598,10 +598,10 @@ public class ProfitTargetTrader implements LiveHandler,
                             "refillPx:" + round1(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue(), costPerShare.get(s))),
                             "costTgt%:" + round4(reduceCostTgt(s)),
-                            "refillPx/cost:" + round3(refillPx(s, lastPx.get(s),
+                            "refill/cost:" + round3(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue()
                                     , costPerShare.get(s)) / costPerShare.get(s)),
-                            "refillPx/px:" + round3(refillPx(s, lastPx.get(s),
+                            "refill/px:" + round3(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue()
                                     , costPerShare.get(s)) / lastPx.get(s)));
                 }
