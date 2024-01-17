@@ -585,7 +585,7 @@ public class ProfitTargetTrader implements LiveHandler,
                                 str("last Live feed time:", latestPriceTimeMap.get(s).format(MdHmm)
                                         , "px:" + lastPx.getOrDefault(s, 0.0),
                                         costPerShare.getOrDefault(s, 0.0) == 0.0 ? "" : str(
-                                                "cost:" + costPerShare.get(s),
+                                                "cost:" + round2(costPerShare.get(s)),
                                                 "px/cost:" + round4(lastPx.getOrDefault(s, 0.0)
                                                         / costPerShare.getOrDefault(s, 0.0)))) :
                                 str("no live feed"));
@@ -593,11 +593,11 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (symbDelta.getOrDefault(s, 0.0) > 0.0 && costPerShare.getOrDefault(s, 0.0) != 0.0) {
                     outputToSymbol(s, "px:" + lastPx.getOrDefault(s, 0.0),
                             "avgRange:" + round(10000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 100.0 + "%",
-                            "delta:" + round(symbDelta.getOrDefault(s, 0.0)),
+                            "delta:" + round1(symbDelta.getOrDefault(s, 0.0)),
                             "pos:" + symbPos.getOrDefault(s, Decimal.ZERO).longValue(),
                             "cost:" + round2(costPerShare.get(s)),
                             "buySize:" + getBuySize(s, lastPx.get(s)),
-                            "refillPx:" + round4(refillPx(s, lastPx.get(s),
+                            "refillPx:" + round2(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue(), costPerShare.get(s))),
                             "costTgt%:" + round5(reduceCostTgt(s)),
                             "refillPx/cost:" + round3(refillPx(s, lastPx.get(s),
