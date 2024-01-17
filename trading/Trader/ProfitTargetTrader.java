@@ -172,19 +172,19 @@ public class ProfitTargetTrader implements LiveHandler,
                         addition < DELTA_EACH_LIMIT);
     }
 
-    static double refillPx(String symb, double price, long pos, double costBasis) {
-        if (price == 0.0 || pos == 0.0 || costBasis == 0.0) {
+    static double refillPx(String symb, double price, long pos, double costPerShare) {
+        if (price == 0.0 || pos == 0.0 || costPerShare == 0.0) {
             return 0.0;
         }
-        double currentDelta = price * pos;
+        double currentCost = costPerShare * pos;
         double lowerTgt = reduceCostTgt(symb);
         double buySize = getBuySize(symb, price).longValue();
 //        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
-//                symb, price, pos, buySize, round4(costBasis), round4(lowerTgt),
-//                round2((costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize));
+//                symb, price, pos, buySize, round4(costPerShare), round4(lowerTgt),
+//                round2((costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize));
 
         return Math.min(price,
-                (costBasis * lowerTgt * (pos + buySize) - currentDelta) / buySize);
+                (costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize);
     }
 
     static void tryToTrade(Contract ct, double px, LocalDateTime t) {
@@ -599,8 +599,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "cost:", avgCost.get(s),
                             "buySize:" + getBuySize(s, lastPx.get(s)),
                             "refillPx::" + round4(refillPx(s, lastPx.get(s),
-                                    symbolPos.get(s).longValue()
-                                    , avgCost.get(s))),
+                                    symbolPos.get(s).longValue(), avgCost.get(s))),
                             "costTgt%:" + round4(reduceCostTgt(s)),
                             "refillPx/cost:" + round3(refillPx(s, lastPx.get(s),
                                     symbolPos.get(s).longValue()
