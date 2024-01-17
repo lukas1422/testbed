@@ -754,7 +754,7 @@ public class TradingUtility {
         return DELTA_LIMIT_EACH;
     }
 
-    public static Decimal getBuySize(String symb, double price) {
+    public static Decimal getBuyLot(String symb, double price) {
         return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 
