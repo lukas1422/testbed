@@ -331,6 +331,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (lastPx.getOrDefault(s, 0.0) != 0.0 && avgCost.getOrDefault(s, 0.0) != 0.0) {
                     pr(s, usTime(), "pos:" + symbolPos.get(s),
                             "px:" + lastPx.get(s),
+                            "range:" + round4(avgDailyRng.getOrDefault(s, 0.0)),
                             "delta:" + round(symbolPos.get(s).longValue() * lastPx.get(s)),
                             "cost:" + round2(avgCost.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / avgCost.get(s) - 1)) / 10.0 + "%",
