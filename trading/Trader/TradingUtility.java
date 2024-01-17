@@ -671,7 +671,7 @@ public class TradingUtility {
 
     public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
-            return str("print stats size<5:", m.size());
+            return str("size<5:", m.size());
         }
 //        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
 //        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
@@ -690,12 +690,12 @@ public class TradingUtility {
                 .map(Map.Entry::getKey).get();
         double range = max / min - 1;
 
-        return str("*n:" + m.size(),
-                "*max:" + round1(max) + " [" + maxTime.format(MdHmm) + "]",
-                "*min:" + round1(min) + " [" + minTime.format(MdHmm) + "]",
-                "*rng:" + (Math.round(range * 1000.0) / 10.0) + "%",
-                "*1Key:[" + m.firstKey().format(MdHmm) + "]",
-                "*last:[" + m.lastKey().format(MdHmm) + "]");
+        return str("n:" + m.size(),
+                "max:" + round1(max) + " [" + maxTime.format(MdHmm) + "]",
+                "min:" + round1(min) + " [" + minTime.format(MdHmm) + "]",
+                "rng:" + (Math.round(range * 1000.0) / 10.0) + "%",
+                "1Key:[" + m.firstKey().format(MdHmm) + "]",
+                "last:[" + m.lastKey().format(MdHmm) + "]");
     }
 
     public static Contract getActiveA50Contract() {
