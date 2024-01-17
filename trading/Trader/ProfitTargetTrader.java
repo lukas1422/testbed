@@ -106,7 +106,8 @@ public class ProfitTargetTrader implements LiveHandler,
                     .average().orElse(0.0);
 //            pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
-            outputToSymbol(s, usDateTime(), "rng:" + round(rng * 1000.0) / 10.0 + "%", "costTgt:" + round4(reduceCostTgt(s)));
+            outputToSymbol(s, usDateTime(), "rng:" + round(rng * 1000.0) / 10.0 + "%",
+                    "costTgt:" + round4(reduceCostTgt(s)));
             outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s)));
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
@@ -415,8 +416,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 "reqMargin:" + tgtProfitMargin(s),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
-        outputToSymbol(s, "2DStats:" + genStatsString(twoDayData.get(s)));
-        outputToSymbol(s, "1DStats:" + genStatsString(twoDayData.get(s).tailMap(TODAY230)));
+        outputToSymbol(s, "2D$:" + genStatsString(twoDayData.get(s)));
+        outputToSymbol(s, "1D$:" + genStatsString(twoDayData.get(s).tailMap(TODAY230)));
     }
 
     //Open Orders ***************************

@@ -671,7 +671,7 @@ public class TradingUtility {
 
     public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
-            return str("size<5:", m.size());
+            return str("n<5:", m.size());
         }
 //        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
 //        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
