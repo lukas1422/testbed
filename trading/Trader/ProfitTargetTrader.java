@@ -108,7 +108,8 @@ public class ProfitTargetTrader implements LiveHandler,
             avgDailyRng.put(s, rng);
             outputToSymbol(s, usDateTime(), "rng:" + round(rng * 1000.0) / 10.0 + "%",
                     "costTgt:" + round4(reduceCostTgt(s)));
-            outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s)));
+            outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s))
+                    , "tgtPrice:" + round2(costPerShare.getOrDefault(s, 0.0) * tgtProfitMargin(s)));
 
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
