@@ -180,8 +180,8 @@ public class ProfitTargetTrader implements LiveHandler,
         double lowerTgt = reduceCostTgt(symb);
         double buySize = getBuySize(symb, price).longValue();
 //        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
-//                symb, price, pos, buySize, round4(costPerShare), round4(lowerTgt),
-//                round2((costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize));
+//                symb, price, pos, buySize, costPerShare, lowerTgt,
+//                (costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize);
 
         return Math.min(price,
                 (costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize);
@@ -331,16 +331,16 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (lastPx.getOrDefault(s, 0.0) != 0.0 && avgCost.getOrDefault(s, 0.0) != 0.0) {
                     pr(s, usTime(), "pos:" + symbolPos.get(s),
                             "px:" + lastPx.get(s),
-                            "delta:" + round2(symbolPos.get(s).longValue() * lastPx.get(s)),
-                            "cost:" + round4(avgCost.get(s)),
+                            "delta:" + round(symbolPos.get(s).longValue() * lastPx.get(s)),
+                            "cost:" + round2(avgCost.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / avgCost.get(s) - 1)) / 10.0 + "%",
                             "buySize:" + getBuySize(s, lastPx.get(s)),
-                            "lowerCostTgt:" + round4(reduceCostTgt(s)),
-                            "refillPx:" + round4(refillPx(s, lastPx.get(s)
+                            "lowerCostTgt:" + round3(reduceCostTgt(s)),
+                            "refillPx:" + round2(refillPx(s, lastPx.get(s)
                                     , symbolPos.get(s).longValue(), avgCost.get(s))),
-                            "refillPx/Cost:" + round4(refillPx(s, lastPx.get(s)
+                            "refillPx/Cost:" + round3(refillPx(s, lastPx.get(s)
                                     , symbolPos.get(s).longValue(), avgCost.get(s)) / avgCost.get(s)),
-                            "refillPx/Px:" + round4(refillPx(s, lastPx.get(s)
+                            "refillPx/Px:" + round3(refillPx(s, lastPx.get(s)
                                     , symbolPos.get(s).longValue(), avgCost.get(s))
                                     / lastPx.get(s)),
                             "1dp:" + oneDayPctMap.getOrDefault(s, 0.0),
@@ -594,13 +594,14 @@ public class ProfitTargetTrader implements LiveHandler,
 //                outputToSymbol(s, "delta::" + symbDelta.getOrDefault(s, 0.0));
                 if (symbDelta.getOrDefault(s, 0.0) > 0.0 && avgCost.getOrDefault(s, 0.0) != 0.0) {
                     outputToSymbol(s, "px:" + lastPx.getOrDefault(s, 0.0),
+                            "avgRange:" + avgDailyRng.getOrDefault(s, 0.0),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0)),
                             "pos:", symbolPos.getOrDefault(s, Decimal.ZERO).longValue(),
                             "cost:", avgCost.get(s),
                             "buySize:" + getBuySize(s, lastPx.get(s)),
-                            "refillPx::" + round4(refillPx(s, lastPx.get(s),
+                            "refillPx:" + round4(refillPx(s, lastPx.get(s),
                                     symbolPos.get(s).longValue(), avgCost.get(s))),
-                            "costTgt%:" + round4(reduceCostTgt(s)),
+                            "costTgt%:" + round5(reduceCostTgt(s)),
                             "refillPx/cost:" + round3(refillPx(s, lastPx.get(s),
                                     symbolPos.get(s).longValue()
                                     , avgCost.get(s)) / avgCost.get(s)),

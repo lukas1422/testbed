@@ -5656,3 +5656,268 @@ WMT no live feed
 WMT 1-16 19:34 2dP:0.0 1dP:0.0
 WMT *2dStats:print stats size<5: 0
 WMT *1dStats:print stats size<5: 0
+*Ending* 1-16 19:34
+MasterTradeID is: 240116001
+*****START***** HKT: 8:35:19 EST: 1-16 19:35 MASTERID: 240116001
+WMT *******************************************
+WMT *STARTS* 1-16 19:35
+PG *******************************************
+PG *STARTS* 1-16 19:35
+UL *******************************************
+UL *STARTS* 1-16 19:35
+MCD *******************************************
+MCD *STARTS* 1-16 19:35
+SPY *******************************************
+SPY *STARTS* 1-16 19:35
+KO *******************************************
+KO *STARTS* 1-16 19:35
+req live orders complete
+1-16 19:35 cancelling all orders on start up
+19:35:21 global cancel orders
+SPY updating position: 1-16 19:35 position:10 cost:473.64372575
+KO updating position: 1-16 19:35 position:54 cost:60.07458705
+UL updating position: 1-16 19:35 position:103 cost:48.50250255
+MCD updating position: 1-16 19:35 position:17 cost:291.63870335
+WMT updating position: 1-16 19:35 position:20 cost:161.076515
+PG updating position: 1-16 19:35 position:33 cost:149.7105593
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 17 291.63870335 DELTA:4957.86
+PG POS COST 33 149.7105593 DELTA:4940.45
+SPY POS COST 10 473.64372575 DELTA:4736.44
+UL POS COST 103 48.50250255 DELTA:4995.76
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-16 19:35 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+PG 1-16 19:35 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:7 avgPx:149.7
+PG 1-16 19:35 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:26 avgPx:149.7
+MCD 1-16 19:35 *tradeReport* time: 2024-01-16T12:35:22 BOT execPx:291.62 shares:17 avgPx:291.62
+SPY 1-16 19:35 *tradeReport* time: 2024-01-16T14:12:24 BOT execPx:473.61 shares:10 avgPx:473.61
+1-16 19:35 *TradeReportEnd*: all executions: {0000e494.65a6d78f.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, symbol='PG'}], 00012dc9.65a6a715.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7, symbol='PG'}], 0001390e.65a6b1e7.01=[ExecutionAugmented{execution=orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62, symbol='MCD'}], 0001b950.65a6be0d.01=[ExecutionAugmented{execution=orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61, symbol='SPY'}]}
+PG listOfExecs [orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7]
+SPY listOfExecs [orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61]
+MCD listOfExecs [orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62]
+KO 1-16 19:35 avgRange:0.0112 reduceCostTarget:0.98877
+KO 1-16 19:35 tgtMargin:1.0084
+MCD 1-16 19:35 avgRange:0.0119 reduceCostTarget:0.9881
+MCD 1-16 19:35 tgtMargin:1.0089
+SPY 1-16 19:35 avgRange:0.008 reduceCostTarget:0.99203
+SPY 1-16 19:35 tgtMargin:1.006
+PG 1-16 19:35 avgRange:0.0121 reduceCostTarget:0.98792
+PG 1-16 19:35 tgtMargin:1.0091
+WMT 1-16 19:35 avgRange:0.0116 reduceCostTarget:0.98842
+WMT 1-16 19:35 tgtMargin:1.0087
+UL 1-16 19:35 avgRange:0.0082 reduceCostTarget:0.99
+UL 1-16 19:35 tgtMargin:1.0061
+KO *Periodic Run* 1-16 19:35
+KO last Live feed time: 1-16 19:35 px:59.99 cost:60.07458705 px/cost:0.9986
+KO px:59.99 delta:3239 pos: 54 cost: 60.07458705 buySize:83 refillPx::58.9607 costTgt%:0.9888 refillPx/cost:0.981 refillPx/px:0.983
+KO 1-16 19:35 2dP:0.0 1dP:0.0
+KO *2dStats:*n:781 *max:60.4 [1-12 15:55] *min:59.9 [1-16 14:19] *rng:1.0% *1Key:[1-12 9:30] *last:[1-16 19:35]
+KO *1dStats:*n:391 *max:60.4 [1-16 9:41] *min:59.9 [1-16 14:19] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:35]
+MCD *Periodic Run* 1-16 19:35
+MCD last Live feed time: 1-16 19:35 px:290.75 cost:291.63870335 px/cost:0.997
+MCD px:290.75 delta:4943 pos: 17 cost: 291.63870335 buySize:17 refillPx::284.6954 costTgt%:0.9881 refillPx/cost:0.976 refillPx/px:0.979
+MCD 1-16 19:35 2dP:13.0 1dP:18.0
+MCD *2dStats:*n:781 *max:295.6 [1-12 9:30] *min:290.0 [1-16 14:23] *rng:1.9% *1Key:[1-12 9:30] *last:[1-16 19:35]
+MCD *1dStats:*n:391 *max:294.1 [1-16 9:31] *min:290.0 [1-16 14:23] *rng:1.4% *1Key:[1-16 9:30] *last:[1-16 19:35]
+PG *Periodic Run* 1-16 19:35
+PG last Live feed time: 1-16 19:35 px:149.8 cost:149.7105593 px/cost:1.0006
+PG px:149.8 delta:4943 pos: 33 cost: 149.7105593 buySize:33 refillPx::146.094 costTgt%:0.9879 refillPx/cost:0.976 refillPx/px:0.975
+PG 1-16 19:35 2dP:35.0 1dP:35.0
+PG *2dStats:*n:781 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-12 9:30] *last:[1-16 19:35]
+PG *1dStats:*n:391 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-16 9:30] *last:[1-16 19:35]
+SPY *Periodic Run* 1-16 19:35
+SPY last Live feed time: 1-16 19:35 px:474.84 cost:473.64372575 px/cost:1.0025
+SPY px:474.84 delta:4748 pos: 10 cost: 473.64372575 buySize:10 refillPx::466.0915 costTgt%:0.992 refillPx/cost:0.984 refillPx/px:0.982
+SPY 1-16 19:35 2dP:31.0 1dP:49.0
+SPY *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:473.2 [1-16 14:19] *rng:1.1% *1Key:[1-12 9:30] *last:[1-16 19:35]
+SPY *1dStats:*n:391 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:35]
+UL *Periodic Run* 1-16 19:35
+UL last Live feed time: 1-16 19:35 px:48.19 cost:48.50250255 px/cost:0.9936
+UL px:48.19 delta:4964 pos: 103 cost: 48.50250255 buySize:103 refillPx::47.5325 costTgt%:0.99 refillPx/cost:0.98 refillPx/px:0.986
+UL 1-16 19:35 2dP:10.0 1dP:29.0
+UL *2dStats:*n:781 *max:49.4 [1-12 9:48] *min:48.1 [1-16 14:17] *rng:2.8% *1Key:[1-12 9:30] *last:[1-16 19:35]
+UL *1dStats:*n:391 *max:48.5 [1-16 9:30] *min:48.1 [1-16 14:17] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:35]
+WMT *Periodic Run* 1-16 19:35
+WMT last Live feed time: 1-16 19:35 px:161.76 cost:161.076515 px/cost:1.0042
+WMT px:161.76 delta:3235 pos: 20 cost: 161.076515 buySize:30 refillPx::157.9686 costTgt%:0.9884 refillPx/cost:0.981 refillPx/px:0.977
+WMT 1-16 19:35 2dP:70.0 1dP:47.0
+WMT *2dStats:*n:781 *max:162.3 [1-16 9:38] *min:160.4 [1-12 11:02] *rng:1.2% *1Key:[1-12 9:30] *last:[1-16 19:35]
+WMT *1dStats:*n:391 *max:162.3 [1-16 9:38] *min:161.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:35]
+openOrder Error 1-16 19:42 orderId:-1  errorCode:2107  msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*Ending* 1-16 19:44
+MasterTradeID is: 240116001
+*****START***** HKT: 8:44:16 EST: 1-16 19:44 MASTERID: 240116001
+WMT *******************************************
+WMT *STARTS* 1-16 19:44
+PG *******************************************
+PG *STARTS* 1-16 19:44
+UL *******************************************
+UL *STARTS* 1-16 19:44
+MCD *******************************************
+MCD *STARTS* 1-16 19:44
+SPY *******************************************
+SPY *STARTS* 1-16 19:44
+KO *******************************************
+KO *STARTS* 1-16 19:44
+req live orders complete
+1-16 19:44 cancelling all orders on start up
+19:44:18 global cancel orders
+SPY updating position: 1-16 19:44 position:10 cost:473.64372575
+KO updating position: 1-16 19:44 position:54 cost:60.07458705
+UL updating position: 1-16 19:44 position:103 cost:48.50250255
+MCD updating position: 1-16 19:44 position:17 cost:291.63870335
+WMT updating position: 1-16 19:44 position:20 cost:161.076515
+PG updating position: 1-16 19:44 position:33 cost:149.7105593
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 17 291.63870335 DELTA:4957.86
+PG POS COST 33 149.7105593 DELTA:4940.45
+SPY POS COST 10 473.64372575 DELTA:4736.44
+UL POS COST 103 48.50250255 DELTA:4995.76
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-16 19:44 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+PG 1-16 19:44 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:7 avgPx:149.7
+PG 1-16 19:44 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:26 avgPx:149.7
+MCD 1-16 19:44 *tradeReport* time: 2024-01-16T12:35:22 BOT execPx:291.62 shares:17 avgPx:291.62
+SPY 1-16 19:44 *tradeReport* time: 2024-01-16T14:12:24 BOT execPx:473.61 shares:10 avgPx:473.61
+1-16 19:44 *TradeReportEnd*: all executions: {0000e494.65a6d78f.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, symbol='PG'}], 00012dc9.65a6a715.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7, symbol='PG'}], 0001390e.65a6b1e7.01=[ExecutionAugmented{execution=orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62, symbol='MCD'}], 0001b950.65a6be0d.01=[ExecutionAugmented{execution=orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61, symbol='SPY'}]}
+PG listOfExecs [orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7]
+SPY listOfExecs [orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61]
+MCD listOfExecs [orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62]
+openOrder Error 1-16 19:44 orderId:-1  errorCode:2106  msg:HMDS data farm connection is OK:ushmds
+UL 1-16 19:44 avgRange:0.0082 reduceCostTarget:0.99
+UL 1-16 19:44 tgtMargin:1.0061
+PG 1-16 19:44 avgRange:0.0121 reduceCostTarget:0.98792
+PG 1-16 19:44 tgtMargin:1.0091
+WMT 1-16 19:44 avgRange:0.0116 reduceCostTarget:0.98842
+WMT 1-16 19:44 tgtMargin:1.0087
+KO 1-16 19:44 avgRange:0.0112 reduceCostTarget:0.98877
+KO 1-16 19:44 tgtMargin:1.0084
+SPY 1-16 19:44 avgRange:0.008 reduceCostTarget:0.99203
+SPY 1-16 19:44 tgtMargin:1.006
+MCD 1-16 19:44 avgRange:0.0119 reduceCostTarget:0.9881
+MCD 1-16 19:44 tgtMargin:1.0089
+KO *Periodic Run* 1-16 19:44
+KO last Live feed time: 1-16 19:44 px:59.99 cost:60.07458705 px/cost:0.9986
+KO px:59.99 delta:3239 pos: 54 cost: 60.07458705 buySize:83 refillPx:58.9607 costTgt%:0.98877 refillPx/cost:0.981 refillPx/px:0.983
+KO 1-16 19:44 2dP:0.0 1dP:0.0
+KO *2dStats:*n:781 *max:60.4 [1-12 15:55] *min:59.9 [1-16 14:19] *rng:1.0% *1Key:[1-12 9:30] *last:[1-16 19:44]
+KO *1dStats:*n:391 *max:60.4 [1-16 9:41] *min:59.9 [1-16 14:19] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:44]
+MCD *Periodic Run* 1-16 19:44
+MCD last Live feed time: 1-16 19:44 px:290.75 cost:291.63870335 px/cost:0.997
+MCD px:290.75 delta:4943 pos: 17 cost: 291.63870335 buySize:17 refillPx:284.6954 costTgt%:0.9881 refillPx/cost:0.976 refillPx/px:0.979
+MCD 1-16 19:44 2dP:13.0 1dP:18.0
+MCD *2dStats:*n:781 *max:295.6 [1-12 9:30] *min:290.0 [1-16 14:23] *rng:1.9% *1Key:[1-12 9:30] *last:[1-16 19:44]
+MCD *1dStats:*n:391 *max:294.1 [1-16 9:31] *min:290.0 [1-16 14:23] *rng:1.4% *1Key:[1-16 9:30] *last:[1-16 19:44]
+PG *Periodic Run* 1-16 19:44
+PG last Live feed time: 1-16 19:44 px:149.8 cost:149.7105593 px/cost:1.0006
+PG px:149.8 delta:4943 pos: 33 cost: 149.7105593 buySize:33 refillPx:146.094 costTgt%:0.98792 refillPx/cost:0.976 refillPx/px:0.975
+PG 1-16 19:44 2dP:35.0 1dP:35.0
+PG *2dStats:*n:781 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-12 9:30] *last:[1-16 19:44]
+PG *1dStats:*n:391 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-16 9:30] *last:[1-16 19:44]
+SPY *Periodic Run* 1-16 19:44
+SPY last Live feed time: 1-16 19:44 px:474.61 cost:473.64372575 px/cost:1.002
+SPY px:474.61 delta:4746 pos: 10 cost: 473.64372575 buySize:10 refillPx:466.0915 costTgt%:0.99203 refillPx/cost:0.984 refillPx/px:0.982
+SPY 1-16 19:44 2dP:26.0 1dP:42.0
+SPY *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:473.2 [1-16 14:19] *rng:1.1% *1Key:[1-12 9:30] *last:[1-16 19:44]
+SPY *1dStats:*n:391 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:44]
+UL *Periodic Run* 1-16 19:44
+UL last Live feed time: 1-16 19:44 px:48.19 cost:48.50250255 px/cost:0.9936
+UL px:48.19 delta:4964 pos: 103 cost: 48.50250255 buySize:103 refillPx:47.5325 costTgt%:0.99 refillPx/cost:0.98 refillPx/px:0.986
+UL 1-16 19:44 2dP:10.0 1dP:29.0
+UL *2dStats:*n:781 *max:49.4 [1-12 9:48] *min:48.1 [1-16 14:17] *rng:2.8% *1Key:[1-12 9:30] *last:[1-16 19:44]
+UL *1dStats:*n:391 *max:48.5 [1-16 9:30] *min:48.1 [1-16 14:17] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:44]
+WMT *Periodic Run* 1-16 19:44
+WMT last Live feed time: 1-16 19:44 px:161.76 cost:161.076515 px/cost:1.0042
+WMT px:161.76 delta:3235 pos: 20 cost: 161.076515 buySize:30 refillPx:157.9686 costTgt%:0.98842 refillPx/cost:0.981 refillPx/px:0.977
+WMT 1-16 19:44 2dP:70.0 1dP:47.0
+WMT *2dStats:*n:781 *max:162.3 [1-16 9:38] *min:160.4 [1-12 11:02] *rng:1.2% *1Key:[1-12 9:30] *last:[1-16 19:44]
+WMT *1dStats:*n:391 *max:162.3 [1-16 9:38] *min:161.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:44]
+openOrder Error 1-16 19:51 orderId:-1  errorCode:2107  msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*Ending* 1-16 19:53
+MasterTradeID is: 240116001
+*****START***** HKT: 8:53:28 EST: 1-16 19:53 MASTERID: 240116001
+WMT *******************************************
+WMT *STARTS* 1-16 19:53
+PG *******************************************
+PG *STARTS* 1-16 19:53
+UL *******************************************
+UL *STARTS* 1-16 19:53
+MCD *******************************************
+MCD *STARTS* 1-16 19:53
+SPY *******************************************
+SPY *STARTS* 1-16 19:53
+KO *******************************************
+KO *STARTS* 1-16 19:53
+req live orders complete
+1-16 19:53 cancelling all orders on start up
+19:53:30 global cancel orders
+SPY updating position: 1-16 19:53 position:10 cost:473.64372575
+KO updating position: 1-16 19:53 position:54 cost:60.07458705
+UL updating position: 1-16 19:53 position:103 cost:48.50250255
+MCD updating position: 1-16 19:53 position:17 cost:291.63870335
+WMT updating position: 1-16 19:53 position:20 cost:161.076515
+PG updating position: 1-16 19:53 position:33 cost:149.7105593
+KO POS COST 54 60.07458705 DELTA:3244.03
+MCD POS COST 17 291.63870335 DELTA:4957.86
+PG POS COST 33 149.7105593 DELTA:4940.45
+SPY POS COST 10 473.64372575 DELTA:4736.44
+UL POS COST 103 48.50250255 DELTA:4995.76
+WMT POS COST 20 161.076515 DELTA:3221.53
+1-16 19:53 *openOrderEnd*: print all openOrders {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+PG 1-16 19:53 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:7 avgPx:149.7
+PG 1-16 19:53 *tradeReport* time: 2024-01-16T12:03:30 BOT execPx:149.7 shares:26 avgPx:149.7
+MCD 1-16 19:53 *tradeReport* time: 2024-01-16T12:35:22 BOT execPx:291.62 shares:17 avgPx:291.62
+SPY 1-16 19:53 *tradeReport* time: 2024-01-16T14:12:24 BOT execPx:473.61 shares:10 avgPx:473.61
+1-16 19:53 *TradeReportEnd*: all executions: {0000e494.65a6d78f.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, symbol='PG'}], 00012dc9.65a6a715.01=[ExecutionAugmented{execution=orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7, symbol='PG'}], 0001390e.65a6b1e7.01=[ExecutionAugmented{execution=orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62, symbol='MCD'}], 0001b950.65a6be0d.01=[ExecutionAugmented{execution=orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61, symbol='SPY'}]}
+PG listOfExecs [orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 26 price: 149.7, orderID: 240116006 time: 2024-01-16T12:03:30 side: BOT shares: 7 price: 149.7]
+SPY listOfExecs [orderID: 240116008 time: 2024-01-16T14:12:24 side: BOT shares: 10 price: 473.61]
+MCD listOfExecs [orderID: 240116007 time: 2024-01-16T12:35:22 side: BOT shares: 17 price: 291.62]
+openOrder Error 1-16 19:53 orderId:-1  errorCode:2106  msg:HMDS data farm connection is OK:ushmds
+MCD 1-16 19:53 avgRange:0.0119 reduceCostTarget:0.9881
+MCD 1-16 19:53 tgtMargin:1.0089
+KO 1-16 19:53 avgRange:0.0112 reduceCostTarget:0.98877
+KO 1-16 19:53 tgtMargin:1.0084
+WMT 1-16 19:53 avgRange:0.0116 reduceCostTarget:0.98842
+WMT 1-16 19:53 tgtMargin:1.0087
+PG 1-16 19:53 avgRange:0.0121 reduceCostTarget:0.98792
+PG 1-16 19:53 tgtMargin:1.0091
+UL 1-16 19:53 avgRange:0.0082 reduceCostTarget:0.99
+UL 1-16 19:53 tgtMargin:1.0061
+SPY 1-16 19:53 avgRange:0.008 reduceCostTarget:0.99203
+SPY 1-16 19:53 tgtMargin:1.006
+KO *Periodic Run* 1-16 19:53
+KO last Live feed time: 1-16 19:53 px:59.9 cost:60.07458705 px/cost:0.9971
+KO px:59.9 avgRange:0.011233163344380851 delta:3235 pos: 54 cost: 60.07458705 buySize:83 refillPx:58.9607 costTgt%:0.98877 refillPx/cost:0.981 refillPx/px:0.984
+KO 1-16 19:53 2dP:0.0 1dP:0.0
+KO *2dStats:*n:781 *max:60.4 [1-12 15:55] *min:59.9 [1-16 14:19] *rng:1.0% *1Key:[1-12 9:30] *last:[1-16 19:53]
+KO *1dStats:*n:391 *max:60.4 [1-16 9:41] *min:59.9 [1-16 14:19] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:53]
+MCD *Periodic Run* 1-16 19:53
+MCD last Live feed time: 1-16 19:53 px:290.75 cost:291.63870335 px/cost:0.997
+MCD px:290.75 avgRange:0.011903920777777298 delta:4943 pos: 17 cost: 291.63870335 buySize:17 refillPx:284.6954 costTgt%:0.9881 refillPx/cost:0.976 refillPx/px:0.979
+MCD 1-16 19:53 2dP:13.0 1dP:18.0
+MCD *2dStats:*n:781 *max:295.6 [1-12 9:30] *min:290.0 [1-16 14:23] *rng:1.9% *1Key:[1-12 9:30] *last:[1-16 19:53]
+MCD *1dStats:*n:391 *max:294.1 [1-16 9:31] *min:290.0 [1-16 14:23] *rng:1.4% *1Key:[1-16 9:30] *last:[1-16 19:53]
+PG *Periodic Run* 1-16 19:53
+PG last Live feed time: 1-16 19:53 px:149.8 cost:149.7105593 px/cost:1.0006
+PG px:149.8 avgRange:0.01207859963894176 delta:4943 pos: 33 cost: 149.7105593 buySize:33 refillPx:146.094 costTgt%:0.98792 refillPx/cost:0.976 refillPx/px:0.975
+PG 1-16 19:53 2dP:35.0 1dP:35.0
+PG *2dStats:*n:781 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-12 9:30] *last:[1-16 19:53]
+PG *1dStats:*n:391 *max:151.5 [1-16 9:47] *min:148.9 [1-16 14:10] *rng:1.7% *1Key:[1-16 9:30] *last:[1-16 19:53]
+SPY *Periodic Run* 1-16 19:53
+SPY last Live feed time: 1-16 19:53 px:474.77 cost:473.64372575 px/cost:1.0024
+SPY px:474.77 avgRange:0.007972491212063025 delta:4748 pos: 10 cost: 473.64372575 buySize:10 refillPx:466.0915 costTgt%:0.99203 refillPx/cost:0.984 refillPx/px:0.982
+SPY 1-16 19:53 2dP:29.0 1dP:47.0
+SPY *2dStats:*n:781 *max:478.5 [1-12 9:47] *min:473.2 [1-16 14:19] *rng:1.1% *1Key:[1-12 9:30] *last:[1-16 19:53]
+SPY *1dStats:*n:391 *max:476.6 [1-16 11:22] *min:473.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:53]
+UL *Periodic Run* 1-16 19:53
+UL last Live feed time: 1-16 19:53 px:48.19 cost:48.50250255 px/cost:0.9936
+UL px:48.19 avgRange:0.00816006080569977 delta:4964 pos: 103 cost: 48.50250255 buySize:103 refillPx:47.5325 costTgt%:0.99 refillPx/cost:0.98 refillPx/px:0.986
+UL 1-16 19:53 2dP:10.0 1dP:29.0
+UL *2dStats:*n:781 *max:49.4 [1-12 9:48] *min:48.1 [1-16 14:17] *rng:2.8% *1Key:[1-12 9:30] *last:[1-16 19:53]
+UL *1dStats:*n:391 *max:48.5 [1-16 9:30] *min:48.1 [1-16 14:17] *rng:0.9% *1Key:[1-16 9:30] *last:[1-16 19:53]
+WMT *Periodic Run* 1-16 19:53
+WMT last Live feed time: 1-16 19:53 px:161.76 cost:161.076515 px/cost:1.0042
+WMT px:161.76 avgRange:0.011576783163475723 delta:3235 pos: 20 cost: 161.076515 buySize:30 refillPx:157.9686 costTgt%:0.98842 refillPx/cost:0.981 refillPx/px:0.977
+WMT 1-16 19:53 2dP:70.0 1dP:47.0
+WMT *2dStats:*n:781 *max:162.3 [1-16 9:38] *min:160.4 [1-12 11:02] *rng:1.2% *1Key:[1-12 9:30] *last:[1-16 19:53]
+WMT *1dStats:*n:391 *max:162.3 [1-16 9:38] *min:161.2 [1-16 14:19] *rng:0.7% *1Key:[1-16 9:30] *last:[1-16 19:53]
