@@ -31,7 +31,7 @@ public class Allstatic {
     static final LocalDateTime TODAY230 =
             LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 80000;
-    static final double DELTA_EACH_LIMIT = 20000;
+    static final double DELTA_LIMIT_EACH = 20000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();
@@ -55,7 +55,7 @@ public class Allstatic {
     //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
     //    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
-    static volatile double aggregateDelta = 0.0;
+    static volatile double totalDelta = 0.0;
     //data
     static Map<String, Double> lastPx = new ConcurrentHashMap<>();
     static Map<String, LocalDateTime> latestPriceTimeMap = new ConcurrentHashMap<>();
@@ -66,12 +66,12 @@ public class Allstatic {
             = new ConcurrentSkipListMap<>();
     static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
-            twoDData = new ConcurrentSkipListMap<>(String::compareTo);
+            twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> avgCost = new ConcurrentSkipListMap<>();
-    volatile static Map<String, Decimal> symbolPos = new ConcurrentSkipListMap<>(String::compareTo);
+    volatile static Map<String, Double> costPerShare = new ConcurrentSkipListMap<>();
+    volatile static Map<String, Decimal> symbPos = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
     static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
@@ -112,7 +112,7 @@ public class Allstatic {
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
-        twoDData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);
     }
 }

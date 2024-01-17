@@ -751,7 +751,7 @@ public class TradingUtility {
 
     static double deltaLimitEach(String symb) {
 //        return symb.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_EACH_LIMIT;
-        return DELTA_EACH_LIMIT;
+        return DELTA_LIMIT_EACH;
     }
 
     public static Decimal getBuySize(String symb, double price) {
