@@ -332,20 +332,20 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr(s, usTime(), "pos:" + symbPos.get(s),
                             "px:" + lastPx.get(s),
                             "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%",
-                            "delta:" + round(symbPos.get(s).longValue() * lastPx.get(s) / 1000.0) + "k",
-                            "cost:" + round1(costPerShare.get(s)),
+                            "delt:" + round(symbPos.get(s).longValue() * lastPx.get(s) / 1000.0) + "k",
+                            "cos:" + round1(costPerShare.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / costPerShare.get(s) - 1)) / 10.0 + "%",
                             "lot:" + getBuyLot(s, lastPx.get(s)),
                             "costTgt:" + round3(reduceCostTgt(s)),
-                            "refillPx:" + round2(refillPx(s, lastPx.get(s)
+                            "fillP:" + round2(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s))),
-                            "refillPx/Cost:" + round3(refillPx(s, lastPx.get(s)
+                            "fillP/Cos:" + round3(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s)) /
                                     costPerShare.get(s)),
-                            "refillPx/Px:" + round3(refillPx(s, lastPx.get(s)
+                            "refillP/Px:" + round3(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s)) / lastPx.get(s)),
-                            "1dp:" + oneDayPctMap.getOrDefault(s, 0.0),
-                            "2dp:" + twoDayPctMap.getOrDefault(s, 0.0));
+                            "1dp:" + round(oneDayPctMap.getOrDefault(s, 0.0)),
+                            "2dp:" + round(twoDayPctMap.getOrDefault(s, 0.0)));
                 }
             }
         });
