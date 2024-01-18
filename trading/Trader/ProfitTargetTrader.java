@@ -332,7 +332,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (lastPx.getOrDefault(s, 0.0) != 0.0 && costPerShare.getOrDefault(s, 0.0) != 0.0) {
                     pr(s, "pos:" + symbPos.get(s),
                             "p:" + lastPx.get(s),
-                            "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%",
+                            "1dp:" + round(oneDayPctMap.getOrDefault(s, 0.0)),
+                            "2dp:" + round(twoDayPctMap.getOrDefault(s, 0.0)),
                             "delt:" + round(symbPos.get(s).longValue() * lastPx.get(s) / 1000.0) + "k",
                             "cos:" + round1(costPerShare.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / costPerShare.get(s) - 1)) / 10.0 + "%",
@@ -345,8 +346,8 @@ public class ProfitTargetTrader implements LiveHandler,
                                     costPerShare.get(s)),
                             "fillP/Px:" + round2(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s)) / lastPx.get(s)),
-                            "1dp:" + round(oneDayPctMap.getOrDefault(s, 0.0)),
-                            "2dp:" + round(twoDayPctMap.getOrDefault(s, 0.0)));
+                            "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%"
+                    );
                 }
             }
         });
