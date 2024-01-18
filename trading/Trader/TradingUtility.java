@@ -614,7 +614,7 @@ public class TradingUtility {
     }
 
     public static String usTime() {
-        return getESTLocalTimeNow().format(Hmmss);
+        return getESTLocalTimeNow().format(Hmm);
     }
 
     public static String hkTime() {

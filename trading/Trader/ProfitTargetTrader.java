@@ -11,6 +11,7 @@ import java.time.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -107,7 +108,7 @@ public class ProfitTargetTrader implements LiveHandler,
 //            pr("average range:", s, round4(rng));
             avgDailyRng.put(s, rng);
             outputToSymbol(s, usDateTime(), "rng:" + round(rng * 1000.0) / 10.0 + "%",
-                    "costTgt:" + round4(reduceCostTgt(s)));
+                    "costTgt:" + round3(reduceCostTgt(s)));
             outputToSymbol(s, usDateTime(), "tgtMargin:" + round4(tgtProfitMargin(s))
                     , "tgtPrice:" + round2(costPerShare.getOrDefault(s, 0.0) * tgtProfitMargin(s)));
 
@@ -252,7 +253,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                pr(t.format(Hmmss), "last px::", symb, price);
+                pr(t.format(Hmmss), "last p:", symb, price);
                 lastPx.put(symb, price);
                 liveData.get(symb).put(t, price);
                 latestPriceTimeMap.put(symb, getESTDateTimeNow());
@@ -311,8 +312,8 @@ public class ProfitTargetTrader implements LiveHandler,
             }
 
             outputToSymbol(symb, "POS:" + symbPos.get(symb).longValue(),
-                    "COST:" + round2(costPerShare.getOrDefault(symb, 0.0)),
-                    "DELTA:" + round(symbPos.get(symb).longValue() *
+                    "COST:" + round1(costPerShare.getOrDefault(symb, 0.0)),
+                    "DELT:" + round(symbPos.get(symb).longValue() *
                             costPerShare.getOrDefault(symb, 0.0) / 1000.0) + "k");
 
             api.reqContractDetails(symbolContractMap.get(symb), list -> list.forEach(a ->
@@ -329,20 +330,20 @@ public class ProfitTargetTrader implements LiveHandler,
         targetList.forEach(s -> {
             if (symbPos.containsKey(s)) {
                 if (lastPx.getOrDefault(s, 0.0) != 0.0 && costPerShare.getOrDefault(s, 0.0) != 0.0) {
-                    pr(s, usTime(), "pos:" + symbPos.get(s),
-                            "px:" + lastPx.get(s),
+                    pr(s, "pos:" + symbPos.get(s),
+                            "p:" + lastPx.get(s),
                             "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%",
                             "delt:" + round(symbPos.get(s).longValue() * lastPx.get(s) / 1000.0) + "k",
                             "cos:" + round1(costPerShare.get(s)),
                             "rtn:" + round(1000.0 * (lastPx.get(s) / costPerShare.get(s) - 1)) / 10.0 + "%",
-                            "lot:" + getBuyLot(s, lastPx.get(s)),
-                            "costTgt:" + round3(reduceCostTgt(s)),
-                            "fillP:" + round2(refillPx(s, lastPx.get(s)
+                            "#:" + getBuyLot(s, lastPx.get(s)),
+                            "costTgt:" + round2(reduceCostTgt(s)),
+                            "fillP:" + round1(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s))),
-                            "fillP/Cos:" + round3(refillPx(s, lastPx.get(s)
+                            "fillP/Cos:" + round2(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s)) /
                                     costPerShare.get(s)),
-                            "refillP/Px:" + round3(refillPx(s, lastPx.get(s)
+                            "fillP/Px:" + round2(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), costPerShare.get(s)) / lastPx.get(s)),
                             "1dp:" + round(oneDayPctMap.getOrDefault(s, 0.0)),
                             "2dp:" + round(twoDayPctMap.getOrDefault(s, 0.0)));
@@ -366,7 +367,12 @@ public class ProfitTargetTrader implements LiveHandler,
         targetList.forEach((s) -> symbDelta.put(s, (double) round(symbPos.getOrDefault(s, Decimal.ZERO)
                 .longValue() * lastPx.getOrDefault(s, 0.0))));
 
-        pr("Delta", r(totalDelta), symbDelta);
+        pr("Delta", round(totalDelta / 1000.0) + "k",
+                symbDelta.entrySet().stream()
+                        .sorted((Map.Entry.<String, Double>comparingByValue().reversed()))
+                        .collect(Collectors.toMap(Map.Entry::getKey,
+                                e -> round(e.getValue() / 100.0) / 10.0 + "k",
+                                (a, b) -> a, LinkedHashMap::new)));
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
             if (orderStatus.get(k).get(k1).isFinished()) {
@@ -578,31 +584,31 @@ public class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targetList.forEach(s -> {
-                outputToSymbol(s, "*Periodic Run*", usDateTime());
+                outputToSymbol(s, "*Periodic Run*", usTime());
                 outputToSymbol(s,
                         latestPriceTimeMap.containsKey(s) ?
                                 str("last Live feed time:", latestPriceTimeMap.get(s).format(MdHmm)
-                                        , "px:" + lastPx.getOrDefault(s, 0.0),
+                                        , "p:" + lastPx.getOrDefault(s, 0.0),
                                         costPerShare.getOrDefault(s, 0.0) == 0.0 ? "" : str(
-                                                "cost:" + round2(costPerShare.get(s)),
-                                                "px/cost:" + round4(lastPx.getOrDefault(s, 0.0)
+                                                "cost:" + round1(costPerShare.get(s)),
+                                                "p/cost:" + round3(lastPx.getOrDefault(s, 0.0)
                                                         / costPerShare.getOrDefault(s, 0.0)))) :
                                 str("no live feed"));
 //                outputToSymbol(s, "delta::" + symbDelta.getOrDefault(s, 0.0));
                 if (symbDelta.getOrDefault(s, 0.0) > 0.0 && costPerShare.getOrDefault(s, 0.0) != 0.0) {
-                    outputToSymbol(s, "px:" + lastPx.getOrDefault(s, 0.0),
+                    outputToSymbol(s, "p:" + lastPx.getOrDefault(s, 0.0),
                             "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%",
                             "pos:" + symbPos.getOrDefault(s, Decimal.ZERO).longValue(),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "cost:" + round1(costPerShare.get(s)),
                             "lot:" + getBuyLot(s, lastPx.get(s)),
-                            "refillPx:" + round1(refillPx(s, lastPx.get(s),
+                            "fillP:" + round2(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue(), costPerShare.get(s))),
-                            "costTgt%:" + round4(reduceCostTgt(s)),
-                            "refill/cost:" + round3(refillPx(s, lastPx.get(s),
+                            "costTgt:" + round3(reduceCostTgt(s)),
+                            "fillP/cost:" + round3(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue()
                                     , costPerShare.get(s)) / costPerShare.get(s)),
-                            "refill/px:" + round3(refillPx(s, lastPx.get(s),
+                            "fillP/px:" + round3(refillPx(s, lastPx.get(s),
                                     symbPos.get(s).longValue()
                                     , costPerShare.get(s)) / lastPx.get(s)));
                 }

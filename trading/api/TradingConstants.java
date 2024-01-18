@@ -42,6 +42,7 @@ public final class TradingConstants {
     public static DateTimeFormatter MdHmmss = DateTimeFormatter.ofPattern("M-d H:mm:ss");
     public static final DateTimeFormatter MdHmmsSSS = DateTimeFormatter.ofPattern("M-d H:mm:s.SSS");
     public static final DateTimeFormatter Hmmss = DateTimeFormatter.ofPattern("H:mm:ss");
+    public static final DateTimeFormatter Hmm = DateTimeFormatter.ofPattern("H:mm");
     //public static final DateTimeFormatter Hmm = DateTimeFormatter.ofPattern("H:mm");
     //public static final DateTimeFormatter MdHmm = DateTimeFormatter.ofPattern("M-d H:mm");
 

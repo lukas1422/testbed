@@ -8521,3 +8521,878 @@ WMT 1d$:n:397 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 
 *openOrder* Error 1-17 19:40 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
 *openOrder* Error 1-17 19:42 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
 *Ending* 1-17 19:42
+MasterTradeID is: 240117001
+*****START***** HKT: 10:27:38 EST: 1-17 21:27 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:27
+PG *******************************************
+PG *STARTS* 1-17 21:27
+UL *******************************************
+UL *STARTS* 1-17 21:27
+MCD *******************************************
+MCD *STARTS* 1-17 21:27
+SPY *******************************************
+SPY *STARTS* 1-17 21:27
+KO *******************************************
+KO *STARTS* 1-17 21:27
+req live orders complete
+1-17 21:27 cancelling all orders on start up
+21:27:41 global cancel orders
+SPY updating position: 1-17 21:27 position:10 cost:473.64
+KO updating position: 1-17 21:27 position:54 cost:60.07
+UL updating position: 1-17 21:27 position:103 cost:48.5
+MCD updating position: 1-17 21:27 position:17 cost:291.64
+WMT updating position: 1-17 21:27 position:20 cost:161.08
+PG updating position: 1-17 21:27 position:33 cost:149.71
+KO POS:54 COST:60.07 DELTA:3k
+MCD POS:17 COST:291.64 DELTA:5k
+PG POS:33 COST:149.71 DELTA:5k
+SPY POS:10 COST:473.64 DELTA:5k
+UL POS:103 COST:48.5 DELTA:5k
+WMT POS:20 COST:161.08 DELTA:3k
+1-17 21:27 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:27 *TradeReportEnd*: all executions: {}
+*openOrder* Error 1-17 21:27 orderId:-1 errorCode:2105 msg:HMDS data farm connection is broken:ushmds
+*openOrder* Error 1-17 21:27 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:27 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:27 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 1-17 21:27 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+KO *Periodic Run* 1-17 21:27
+KO last Live feed time: 1-17 21:27 px:59.87 cost:60.07 px/cost:0.9966
+KO px:59.87 rng:0.0% pos:54 delta:3k cost:60.1 lot:83 refillPx:59.1 costTgt%:0.99 refill/cost:0.983 refill/px:0.987
+KO 1-17 21:27 2dP:0.0 1dP:0.0
+KO 2d$:n<5: 1
+KO 1d$:n<5: 1
+MCD *Periodic Run* 1-17 21:27
+MCD last Live feed time: 1-17 21:27 px:291.16 cost:291.64 px/cost:0.9984
+MCD px:291.16 rng:0.0% pos:17 delta:5k cost:291.6 lot:17 refillPx:285.8 costTgt%:0.99 refill/cost:0.98 refill/px:0.982
+MCD 1-17 21:27 2dP:0.0 1dP:0.0
+MCD 2d$:n<5: 1
+MCD 1d$:n<5: 1
+PG *Periodic Run* 1-17 21:27
+PG last Live feed time: 1-17 21:27 px:149.95 cost:149.71 px/cost:1.0016
+PG px:149.95 rng:0.0% pos:33 delta:5k cost:149.7 lot:33 refillPx:146.7 costTgt%:0.99 refill/cost:0.98 refill/px:0.978
+PG 1-17 21:27 2dP:0.0 1dP:0.0
+PG 2d$:n<5: 1
+PG 1d$:n<5: 1
+SPY *Periodic Run* 1-17 21:27
+SPY last Live feed time: 1-17 21:27 px:472.6 cost:473.64 px/cost:0.9978
+SPY px:472.6 rng:0.0% pos:10 delta:5k cost:473.6 lot:10 refillPx:468.9 costTgt%:0.995 refill/cost:0.99 refill/px:0.992
+SPY 1-17 21:27 2dP:0.0 1dP:0.0
+SPY 2d$:n<5: 1
+SPY 1d$:n<5: 1
+UL *Periodic Run* 1-17 21:27
+UL last Live feed time: 1-17 21:27 px:47.72 cost:48.5 px/cost:0.9839
+UL px:47.72 rng:0.0% pos:103 delta:5k cost:48.5 lot:104 refillPx:47.5 costTgt%:0.99 refill/cost:0.98 refill/px:0.996
+UL 1-17 21:27 2dP:0.0 1dP:0.0
+UL 2d$:n<5: 1
+UL 1d$:n<5: 1
+WMT *Periodic Run* 1-17 21:27
+WMT last Live feed time: 1-17 21:27 px:160.96 cost:161.08 px/cost:0.9993
+WMT px:160.96 rng:0.0% pos:20 delta:3k cost:161.1 lot:31 refillPx:158.4 costTgt%:0.99 refill/cost:0.984 refill/px:0.984
+WMT 1-17 21:27 2dP:0.0 1dP:0.0
+WMT 2d$:n<5: 1
+WMT 1d$:n<5: 1
+*openOrder* Error 1-17 21:28 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+KO 1-17 21:28 rng:1.1% costTgt:0.9889
+KO 1-17 21:28 tgtMargin:1.0083 tgtPrice:60.57
+PG 1-17 21:28 rng:1.2% costTgt:0.988
+PG 1-17 21:28 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 21:28 rng:0.8% costTgt:0.9921
+SPY 1-17 21:28 tgtMargin:1.0059 tgtPrice:476.45
+MCD 1-17 21:28 rng:1.2% costTgt:0.9882
+MCD 1-17 21:28 tgtMargin:1.0088 tgtPrice:294.21
+UL 1-17 21:28 rng:0.8% costTgt:0.99
+UL 1-17 21:28 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:28 rng:1.1% costTgt:0.9885
+WMT 1-17 21:28 tgtMargin:1.0086 tgtPrice:162.46
+*openOrder* Error 1-17 21:28 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 21:29
+MasterTradeID is: 240117001
+*****START***** HKT: 10:29:33 EST: 1-17 21:29 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:29
+PG *******************************************
+PG *STARTS* 1-17 21:29
+UL *******************************************
+UL *STARTS* 1-17 21:29
+MCD *******************************************
+MCD *STARTS* 1-17 21:29
+SPY *******************************************
+SPY *STARTS* 1-17 21:29
+KO *******************************************
+KO *STARTS* 1-17 21:29
+req live orders complete
+1-17 21:29 cancelling all orders on start up
+21:29:36 global cancel orders
+SPY updating position: 1-17 21:29 position:10 cost:473.64
+KO updating position: 1-17 21:29 position:54 cost:60.07
+UL updating position: 1-17 21:29 position:103 cost:48.5
+MCD updating position: 1-17 21:29 position:17 cost:291.64
+WMT updating position: 1-17 21:29 position:20 cost:161.08
+PG updating position: 1-17 21:29 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 21:29 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:29 *TradeReportEnd*: all executions: {}
+KO 1-17 21:29 rng:1.1% costTgt:0.9889
+KO 1-17 21:29 tgtMargin:1.0083 tgtPrice:60.57
+PG 1-17 21:29 rng:1.2% costTgt:0.988
+PG 1-17 21:29 tgtMargin:1.009 tgtPrice:151.06
+MCD 1-17 21:29 rng:1.2% costTgt:0.9882
+MCD 1-17 21:29 tgtMargin:1.0088 tgtPrice:294.21
+UL 1-17 21:29 rng:0.8% costTgt:0.99
+UL 1-17 21:29 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:29 rng:1.1% costTgt:0.9885
+WMT 1-17 21:29 tgtMargin:1.0086 tgtPrice:162.46
+SPY 1-17 21:29 rng:0.8% costTgt:0.9921
+SPY 1-17 21:29 tgtMargin:1.0059 tgtPrice:476.45
+*openOrder* Error 1-17 21:29 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:29 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:29 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:29 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+KO *Periodic Run* 1-17 21:29
+KO no live feed
+KO 1-17 21:29 2dP:0.0 1dP:0.0
+KO 2d$:n:780 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 15:59]
+KO 1d$:n:390 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+MCD *Periodic Run* 1-17 21:29
+MCD no live feed
+MCD 1-17 21:29 2dP:0.0 1dP:0.0
+MCD 2d$:n:780 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 15:59]
+MCD 1d$:n:390 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 15:59]
+PG *Periodic Run* 1-17 21:29
+PG no live feed
+PG 1-17 21:29 2dP:40.0 1dP:50.0
+PG 2d$:n:780 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 15:59]
+PG 1d$:n:390 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 15:59]
+SPY *Periodic Run* 1-17 21:29
+SPY no live feed
+SPY 1-17 21:29 2dP:34.0 1dP:82.0
+SPY 2d$:n:780 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 15:59]
+SPY 1d$:n:390 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+UL *Periodic Run* 1-17 21:29
+UL no live feed
+UL 1-17 21:29 2dP:21.0 1dP:76.0
+UL 2d$:n:780 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 15:59]
+UL 1d$:n:390 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+WMT *Periodic Run* 1-17 21:29
+WMT no live feed
+WMT 1-17 21:29 2dP:24.0 1dP:33.0
+WMT 2d$:n:780 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 15:59]
+WMT 1d$:n:390 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 15:59]
+*openOrder* Error 1-17 21:29 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+*openOrder* Error 1-17 21:30 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 21:30
+MasterTradeID is: 240117001
+*****START***** HKT: 10:31:04 EST: 1-17 21:31 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:31
+PG *******************************************
+PG *STARTS* 1-17 21:31
+UL *******************************************
+UL *STARTS* 1-17 21:31
+MCD *******************************************
+MCD *STARTS* 1-17 21:31
+SPY *******************************************
+SPY *STARTS* 1-17 21:31
+KO *******************************************
+KO *STARTS* 1-17 21:31
+req live orders complete
+1-17 21:31 cancelling all orders on start up
+21:31:06 global cancel orders
+SPY updating position: 1-17 21:31 position:10 cost:473.64
+KO updating position: 1-17 21:31 position:54 cost:60.07
+UL updating position: 1-17 21:31 position:103 cost:48.5
+MCD updating position: 1-17 21:31 position:17 cost:291.64
+WMT updating position: 1-17 21:31 position:20 cost:161.08
+PG updating position: 1-17 21:31 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 21:31 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:31 *TradeReportEnd*: all executions: {}
+MCD 1-17 21:31 rng:1.2% costTgt:0.9882
+MCD 1-17 21:31 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 21:31 rng:1.2% costTgt:0.988
+PG 1-17 21:31 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 21:31 rng:0.8% costTgt:0.9921
+SPY 1-17 21:31 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 21:31 rng:0.8% costTgt:0.99
+UL 1-17 21:31 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:31 rng:1.1% costTgt:0.9885
+WMT 1-17 21:31 tgtMargin:1.0086 tgtPrice:162.46
+KO 1-17 21:31 rng:1.1% costTgt:0.9889
+KO 1-17 21:31 tgtMargin:1.0083 tgtPrice:60.57
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+KO *Periodic Run* 1-17 21:31
+KO last Live feed time: 1-17 21:31 px:59.87 cost:60.07 px/cost:0.9966
+KO px:59.87 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 refillPx:59.0 costTgt%:0.9889 refill/cost:0.982 refill/px:0.985
+KO 1-17 21:31 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:31]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:31]
+MCD *Periodic Run* 1-17 21:31
+MCD last Live feed time: 1-17 21:31 px:291.16 cost:291.64 px/cost:0.9984
+MCD px:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 refillPx:284.8 costTgt%:0.9882 refill/cost:0.976 refill/px:0.978
+MCD 1-17 21:31 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:31]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:31]
+PG *Periodic Run* 1-17 21:31
+PG last Live feed time: 1-17 21:31 px:149.95 cost:149.71 px/cost:1.0016
+PG px:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 refillPx:146.1 costTgt%:0.988 refill/cost:0.976 refill/px:0.974
+PG 1-17 21:31 2dP:40.0 1dP:50.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 21:31]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 21:31]
+SPY *Periodic Run* 1-17 21:31
+SPY last Live feed time: 1-17 21:31 px:472.6 cost:473.64 px/cost:0.9978
+SPY px:472.6 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 refillPx:466.2 costTgt%:0.9921 refill/cost:0.984 refill/px:0.986
+SPY 1-17 21:31 2dP:39.0 1dP:93.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:31]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:31]
+UL *Periodic Run* 1-17 21:31
+UL last Live feed time: 1-17 21:31 px:47.72 cost:48.5 px/cost:0.9839
+UL px:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 refillPx:47.5 costTgt%:0.99 refill/cost:0.98 refill/px:0.996
+UL 1-17 21:31 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 21:31]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:31]
+WMT *Periodic Run* 1-17 21:31
+WMT last Live feed time: 1-17 21:31 px:160.96 cost:161.08 px/cost:0.9993
+WMT px:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 refillPx:158.0 costTgt%:0.9885 refill/cost:0.981 refill/px:0.982
+WMT 1-17 21:31 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:31]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:31]
+*openOrder* Error 1-17 21:31 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 21:32
+MasterTradeID is: 240117001
+*****START***** HKT: 10:33:00 EST: 1-17 21:33 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:33
+PG *******************************************
+PG *STARTS* 1-17 21:33
+UL *******************************************
+UL *STARTS* 1-17 21:33
+MCD *******************************************
+MCD *STARTS* 1-17 21:33
+SPY *******************************************
+SPY *STARTS* 1-17 21:33
+KO *******************************************
+KO *STARTS* 1-17 21:33
+req live orders complete
+1-17 21:33 cancelling all orders on start up
+21:33:02 global cancel orders
+SPY updating position: 1-17 21:33 position:10 cost:473.64
+KO updating position: 1-17 21:33 position:54 cost:60.07
+UL updating position: 1-17 21:33 position:103 cost:48.5
+MCD updating position: 1-17 21:33 position:17 cost:291.64
+WMT updating position: 1-17 21:33 position:20 cost:161.08
+PG updating position: 1-17 21:33 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 21:33 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:33 *TradeReportEnd*: all executions: {}
+MCD 1-17 21:33 rng:1.2% costTgt:0.9882
+MCD 1-17 21:33 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 21:33 rng:1.2% costTgt:0.988
+PG 1-17 21:33 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 21:33 rng:0.8% costTgt:0.9921
+SPY 1-17 21:33 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 21:33 rng:0.8% costTgt:0.99
+UL 1-17 21:33 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:33 rng:1.1% costTgt:0.9885
+WMT 1-17 21:33 tgtMargin:1.0086 tgtPrice:162.46
+KO 1-17 21:33 rng:1.1% costTgt:0.9889
+KO 1-17 21:33 tgtMargin:1.0083 tgtPrice:60.57
+*openOrder* Error 1-17 21:33 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:33 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 21:33 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 1-17 21:33 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+KO *Periodic Run*
+KO no live feed
+KO 1-17 21:33 2dP:0.0 1dP:0.0
+KO 2d$:n:780 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 15:59]
+KO 1d$:n:390 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+MCD *Periodic Run*
+MCD no live feed
+MCD 1-17 21:33 2dP:0.0 1dP:0.0
+MCD 2d$:n:780 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 15:59]
+MCD 1d$:n:390 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 15:59]
+PG *Periodic Run*
+PG no live feed
+PG 1-17 21:33 2dP:0.0 1dP:0.0
+PG 2d$:n:780 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 15:59]
+PG 1d$:n:390 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 15:59]
+SPY *Periodic Run*
+SPY no live feed
+SPY 1-17 21:33 2dP:34.0 1dP:82.0
+SPY 2d$:n:780 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 15:59]
+SPY 1d$:n:390 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+UL *Periodic Run*
+UL no live feed
+UL 1-17 21:33 2dP:21.0 1dP:76.0
+UL 2d$:n:780 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 15:59]
+UL 1d$:n:390 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 15:59]
+WMT *Periodic Run*
+WMT no live feed
+WMT 1-17 21:33 2dP:24.0 1dP:33.0
+WMT 2d$:n:780 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 15:59]
+WMT 1d$:n:390 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 15:59]
+*openOrder* Error 1-17 21:34 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:35 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 21:36
+MasterTradeID is: 240117001
+*****START***** HKT: 10:36:38 EST: 1-17 21:36 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:36
+PG *******************************************
+PG *STARTS* 1-17 21:36
+UL *******************************************
+UL *STARTS* 1-17 21:36
+MCD *******************************************
+MCD *STARTS* 1-17 21:36
+SPY *******************************************
+SPY *STARTS* 1-17 21:36
+KO *******************************************
+KO *STARTS* 1-17 21:36
+req live orders complete
+1-17 21:36 cancelling all orders on start up
+21:36 global cancel orders
+SPY updating position: 1-17 21:36 position:10 cost:473.64
+KO updating position: 1-17 21:36 position:54 cost:60.07
+UL updating position: 1-17 21:36 position:103 cost:48.5
+MCD updating position: 1-17 21:36 position:17 cost:291.64
+WMT updating position: 1-17 21:36 position:20 cost:161.08
+PG updating position: 1-17 21:36 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 21:36 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:36 *TradeReportEnd*: all executions: {}
+KO 1-17 21:36 rng:1.1% costTgt:0.989
+KO 1-17 21:36 tgtMargin:1.0083 tgtPrice:60.57
+PG 1-17 21:36 rng:1.2% costTgt:0.988
+PG 1-17 21:36 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 21:36 rng:0.8% costTgt:0.992
+SPY 1-17 21:36 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 21:36 rng:0.8% costTgt:0.99
+UL 1-17 21:36 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:36 rng:1.1% costTgt:0.989
+WMT 1-17 21:36 tgtMargin:1.0086 tgtPrice:162.46
+MCD 1-17 21:36 rng:1.2% costTgt:0.988
+MCD 1-17 21:36 tgtMargin:1.0088 tgtPrice:294.21
+KO *Periodic Run*
+KO last Live feed time: 1-17 21:36 px:59.87 cost:60.1 p/cost:0.997
+KO p:59.87 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 fillP:59.0 costTgt:0.989 fillP/cost:0.982 fillP/px:0.985
+KO 1-17 21:36 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:36]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:36]
+MCD *Periodic Run*
+MCD last Live feed time: 1-17 21:36 px:291.16 cost:291.6 p/cost:0.998
+MCD p:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.8 costTgt:0.988 fillP/cost:0.976 fillP/px:0.978
+MCD 1-17 21:36 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:36]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:36]
+PG *Periodic Run*
+PG last Live feed time: 1-17 21:36 px:149.95 cost:149.7 p/cost:1.002
+PG p:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 fillP:146.1 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+PG 1-17 21:36 2dP:40.0 1dP:50.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 21:36]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 21:36]
+SPY *Periodic Run*
+SPY last Live feed time: 1-17 21:36 px:472.48 cost:473.6 p/cost:0.998
+SPY p:472.48 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 fillP:466.2 costTgt:0.992 fillP/cost:0.984 fillP/px:0.987
+SPY 1-17 21:36 2dP:37.0 1dP:89.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:36]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:36]
+UL *Periodic Run*
+UL last Live feed time: 1-17 21:36 px:47.72 cost:48.5 p/cost:0.984
+UL p:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 fillP:47.5 costTgt:0.99 fillP/cost:0.98 fillP/px:0.996
+UL 1-17 21:36 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 21:36]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:36]
+WMT *Periodic Run*
+WMT last Live feed time: 1-17 21:36 px:160.96 cost:161.1 p/cost:0.999
+WMT p:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 fillP:158.0 costTgt:0.989 fillP/cost:0.981 fillP/px:0.982
+WMT 1-17 21:36 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:36]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:36]
+*openOrder* Error 1-17 21:37 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 21:38
+MasterTradeID is: 240117001
+*****START***** HKT: 10:39:05 EST: 1-17 21:39 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 21:39
+PG *******************************************
+PG *STARTS* 1-17 21:39
+UL *******************************************
+UL *STARTS* 1-17 21:39
+MCD *******************************************
+MCD *STARTS* 1-17 21:39
+SPY *******************************************
+SPY *STARTS* 1-17 21:39
+KO *******************************************
+KO *STARTS* 1-17 21:39
+req live orders complete
+1-17 21:39 cancelling all orders on start up
+21:39 global cancel orders
+SPY updating position: 1-17 21:39 position:10 cost:473.64
+KO updating position: 1-17 21:39 position:54 cost:60.07
+UL updating position: 1-17 21:39 position:103 cost:48.5
+MCD updating position: 1-17 21:39 position:17 cost:291.64
+WMT updating position: 1-17 21:39 position:20 cost:161.08
+PG updating position: 1-17 21:39 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 21:39 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 21:39 *TradeReportEnd*: all executions: {}
+MCD 1-17 21:39 rng:1.2% costTgt:0.988
+MCD 1-17 21:39 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 21:39 rng:1.2% costTgt:0.988
+PG 1-17 21:39 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 21:39 rng:0.8% costTgt:0.992
+SPY 1-17 21:39 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 21:39 rng:0.8% costTgt:0.99
+UL 1-17 21:39 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 21:39 rng:1.1% costTgt:0.989
+WMT 1-17 21:39 tgtMargin:1.0086 tgtPrice:162.46
+KO 1-17 21:39 rng:1.1% costTgt:0.989
+KO 1-17 21:39 tgtMargin:1.0083 tgtPrice:60.57
+KO *Periodic Run* 21:39
+KO last Live feed time: 1-17 21:39 p:59.87 cost:60.1 p/cost:0.997
+KO p:59.87 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 fillP:59.0 costTgt:0.989 fillP/cost:0.982 fillP/px:0.985
+KO 1-17 21:39 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:39]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:39]
+MCD *Periodic Run* 21:39
+MCD last Live feed time: 1-17 21:39 p:291.16 cost:291.6 p/cost:0.998
+MCD p:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.8 costTgt:0.988 fillP/cost:0.976 fillP/px:0.978
+MCD 1-17 21:39 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:39]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:39]
+PG *Periodic Run* 21:39
+PG last Live feed time: 1-17 21:39 p:149.95 cost:149.7 p/cost:1.002
+PG p:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 fillP:146.1 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+PG 1-17 21:39 2dP:40.0 1dP:50.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 21:39]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 21:39]
+SPY *Periodic Run* 21:39
+SPY last Live feed time: 1-17 21:39 p:472.48 cost:473.6 p/cost:0.998
+SPY p:472.48 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 fillP:466.2 costTgt:0.992 fillP/cost:0.984 fillP/px:0.987
+SPY 1-17 21:39 2dP:37.0 1dP:89.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 21:39]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:39]
+UL *Periodic Run* 21:39
+UL last Live feed time: 1-17 21:39 p:47.72 cost:48.5 p/cost:0.984
+UL p:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 fillP:47.5 costTgt:0.99 fillP/cost:0.98 fillP/px:0.996
+UL 1-17 21:39 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 21:39]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 21:39]
+WMT *Periodic Run* 21:39
+WMT last Live feed time: 1-17 21:39 p:160.96 cost:161.1 p/cost:0.999
+WMT p:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 fillP:158.0 costTgt:0.989 fillP/cost:0.981 fillP/px:0.982
+WMT 1-17 21:39 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 21:39]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 21:39]
+*openOrder* Error 1-17 21:40 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:41 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:42 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:43 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:44 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:46 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*openOrder* Error 1-17 21:46 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:47 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:48 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:49 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:50 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:51 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:52 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:53 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:54 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:56 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:57 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 21:58 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:00 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:01 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:02 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:03 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:04 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 22:05
+MasterTradeID is: 240117001
+*****START***** HKT: 11:06:05 EST: 1-17 22:06 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 22:06
+PG *******************************************
+PG *STARTS* 1-17 22:06
+UL *******************************************
+UL *STARTS* 1-17 22:06
+MCD *******************************************
+MCD *STARTS* 1-17 22:06
+SPY *******************************************
+SPY *STARTS* 1-17 22:06
+KO *******************************************
+KO *STARTS* 1-17 22:06
+req live orders complete
+1-17 22:06 cancelling all orders on start up
+22:06 global cancel orders
+SPY updating position: 1-17 22:06 position:10 cost:473.64
+KO updating position: 1-17 22:06 position:54 cost:60.07
+UL updating position: 1-17 22:06 position:103 cost:48.5
+MCD updating position: 1-17 22:06 position:17 cost:291.64
+WMT updating position: 1-17 22:06 position:20 cost:161.08
+PG updating position: 1-17 22:06 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 22:06 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 22:06 *TradeReportEnd*: all executions: {}
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2105 msg:HMDS data farm connection is broken:ushmds
+*Ending* 1-17 22:06
+MasterTradeID is: 240117001
+*****START***** HKT: 11:06:21 EST: 1-17 22:06 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 22:06
+PG *******************************************
+PG *STARTS* 1-17 22:06
+UL *******************************************
+UL *STARTS* 1-17 22:06
+MCD *******************************************
+MCD *STARTS* 1-17 22:06
+SPY *******************************************
+SPY *STARTS* 1-17 22:06
+KO *******************************************
+KO *STARTS* 1-17 22:06
+req live orders complete
+1-17 22:06 cancelling all orders on start up
+22:06 global cancel orders
+SPY updating position: 1-17 22:06 position:10 cost:473.64
+KO updating position: 1-17 22:06 position:54 cost:60.07
+UL updating position: 1-17 22:06 position:103 cost:48.5
+MCD updating position: 1-17 22:06 position:17 cost:291.64
+WMT updating position: 1-17 22:06 position:20 cost:161.08
+PG updating position: 1-17 22:06 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 22:06 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 22:06 *TradeReportEnd*: all executions: {}
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+KO *Periodic Run* 22:06
+KO no live feed
+KO 1-17 22:06 2dP:0.0 1dP:0.0
+KO 2d$:n<5: 0
+KO 1d$:n<5: 0
+MCD *Periodic Run* 22:06
+MCD no live feed
+MCD 1-17 22:06 2dP:0.0 1dP:0.0
+MCD 2d$:n<5: 0
+MCD 1d$:n<5: 0
+PG *Periodic Run* 22:06
+PG no live feed
+PG 1-17 22:06 2dP:0.0 1dP:0.0
+PG 2d$:n<5: 0
+PG 1d$:n<5: 0
+SPY *Periodic Run* 22:06
+SPY no live feed
+SPY 1-17 22:06 2dP:0.0 1dP:0.0
+SPY 2d$:n<5: 0
+SPY 1d$:n<5: 0
+UL *Periodic Run* 22:06
+UL no live feed
+UL 1-17 22:06 2dP:0.0 1dP:0.0
+UL 2d$:n<5: 0
+UL 1d$:n<5: 0
+WMT *Periodic Run* 22:06
+WMT no live feed
+WMT 1-17 22:06 2dP:0.0 1dP:0.0
+WMT 2d$:n<5: 0
+WMT 1d$:n<5: 0
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+*openOrder* Error 1-17 22:06 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+KO 1-17 22:06 rng:1.1% costTgt:0.989
+KO 1-17 22:06 tgtMargin:1.0083 tgtPrice:60.57
+UL 1-17 22:06 rng:0.8% costTgt:0.99
+UL 1-17 22:06 tgtMargin:1.0061 tgtPrice:48.8
+PG 1-17 22:06 rng:1.2% costTgt:0.988
+PG 1-17 22:06 tgtMargin:1.009 tgtPrice:151.06
+WMT 1-17 22:06 rng:1.1% costTgt:0.989
+WMT 1-17 22:06 tgtMargin:1.0086 tgtPrice:162.46
+MCD 1-17 22:06 rng:1.2% costTgt:0.988
+MCD 1-17 22:06 tgtMargin:1.0088 tgtPrice:294.21
+SPY 1-17 22:06 rng:0.8% costTgt:0.992
+SPY 1-17 22:06 tgtMargin:1.0059 tgtPrice:476.45
+*openOrder* Error 1-17 22:07 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 22:07
+MasterTradeID is: 240117001
+*****START***** HKT: 11:07:27 EST: 1-17 22:07 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 22:07
+PG *******************************************
+PG *STARTS* 1-17 22:07
+UL *******************************************
+UL *STARTS* 1-17 22:07
+MCD *******************************************
+MCD *STARTS* 1-17 22:07
+SPY *******************************************
+SPY *STARTS* 1-17 22:07
+KO *******************************************
+KO *STARTS* 1-17 22:07
+req live orders complete
+1-17 22:07 cancelling all orders on start up
+22:07 global cancel orders
+SPY updating position: 1-17 22:07 position:10 cost:473.64
+KO updating position: 1-17 22:07 position:54 cost:60.07
+UL updating position: 1-17 22:07 position:103 cost:48.5
+MCD updating position: 1-17 22:07 position:17 cost:291.64
+WMT updating position: 1-17 22:07 position:20 cost:161.08
+PG updating position: 1-17 22:07 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 22:07 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 22:07 *TradeReportEnd*: all executions: {}
+MCD 1-17 22:07 rng:1.2% costTgt:0.988
+MCD 1-17 22:07 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 22:07 rng:1.2% costTgt:0.988
+PG 1-17 22:07 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 22:07 rng:0.8% costTgt:0.992
+SPY 1-17 22:07 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 22:07 rng:0.8% costTgt:0.99
+UL 1-17 22:07 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 22:07 rng:1.1% costTgt:0.989
+WMT 1-17 22:07 tgtMargin:1.0086 tgtPrice:162.46
+KO 1-17 22:07 rng:1.1% costTgt:0.989
+KO 1-17 22:07 tgtMargin:1.0083 tgtPrice:60.57
+KO *Periodic Run* 22:07
+KO last Live feed time: 1-17 22:07 p:59.86 cost:60.1 p/cost:0.996
+KO p:59.86 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 fillP:58.98 costTgt:0.989 fillP/cost:0.982 fillP/px:0.985
+KO 1-17 22:07 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:07]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:07]
+MCD *Periodic Run* 22:07
+MCD last Live feed time: 1-17 22:07 p:291.16 cost:291.6 p/cost:0.998
+MCD p:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.78 costTgt:0.988 fillP/cost:0.976 fillP/px:0.978
+MCD 1-17 22:07 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:07]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:07]
+PG *Periodic Run* 22:07
+PG last Live feed time: 1-17 22:07 p:149.95 cost:149.7 p/cost:1.002
+PG p:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 fillP:146.11 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+PG 1-17 22:07 2dP:40.0 1dP:50.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 22:07]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 22:07]
+SPY *Periodic Run* 22:07
+SPY last Live feed time: 1-17 22:07 p:472.4 cost:473.6 p/cost:0.997
+SPY p:472.4 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 fillP:466.15 costTgt:0.992 fillP/cost:0.984 fillP/px:0.987
+SPY 1-17 22:07 2dP:36.0 1dP:86.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:07]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:07]
+UL *Periodic Run* 22:07
+UL last Live feed time: 1-17 22:07 p:47.72 cost:48.5 p/cost:0.984
+UL p:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 fillP:47.54 costTgt:0.99 fillP/cost:0.98 fillP/px:0.996
+UL 1-17 22:07 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 22:07]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:07]
+WMT *Periodic Run* 22:07
+WMT last Live feed time: 1-17 22:07 p:160.96 cost:161.1 p/cost:0.999
+WMT p:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 fillP:158.04 costTgt:0.989 fillP/cost:0.981 fillP/px:0.982
+WMT 1-17 22:07 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:07]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:07]
+*openOrder* Error 1-17 22:08 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 1-17 22:09 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*Ending* 1-17 22:10
+MasterTradeID is: 240117001
+*****START***** HKT: 11:11:02 EST: 1-17 22:11 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 22:11
+PG *******************************************
+PG *STARTS* 1-17 22:11
+UL *******************************************
+UL *STARTS* 1-17 22:11
+MCD *******************************************
+MCD *STARTS* 1-17 22:11
+SPY *******************************************
+SPY *STARTS* 1-17 22:11
+KO *******************************************
+KO *STARTS* 1-17 22:11
+req live orders complete
+1-17 22:11 cancelling all orders on start up
+22:11 global cancel orders
+SPY updating position: 1-17 22:11 position:10 cost:473.64
+KO updating position: 1-17 22:11 position:54 cost:60.07
+UL updating position: 1-17 22:11 position:103 cost:48.5
+MCD updating position: 1-17 22:11 position:17 cost:291.64
+WMT updating position: 1-17 22:11 position:20 cost:161.08
+PG updating position: 1-17 22:11 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 22:11 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 22:11 *TradeReportEnd*: all executions: {}
+MCD 1-17 22:11 rng:1.2% costTgt:0.988
+MCD 1-17 22:11 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 22:11 rng:1.2% costTgt:0.988
+PG 1-17 22:11 tgtMargin:1.009 tgtPrice:151.06
+SPY 1-17 22:11 rng:0.8% costTgt:0.992
+SPY 1-17 22:11 tgtMargin:1.0059 tgtPrice:476.45
+UL 1-17 22:11 rng:0.8% costTgt:0.99
+UL 1-17 22:11 tgtMargin:1.0061 tgtPrice:48.8
+WMT 1-17 22:11 rng:1.1% costTgt:0.989
+WMT 1-17 22:11 tgtMargin:1.0086 tgtPrice:162.46
+KO 1-17 22:11 rng:1.1% costTgt:0.989
+KO 1-17 22:11 tgtMargin:1.0083 tgtPrice:60.57
+KO *Periodic Run* 22:11
+KO last Live feed time: 1-17 22:11 p:59.86 cost:60.1 p/cost:0.996
+KO p:59.86 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 fillP:58.98 costTgt:0.989 fillP/cost:0.982 fillP/px:0.985
+KO 1-17 22:11 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:11]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:11]
+MCD *Periodic Run* 22:11
+MCD last Live feed time: 1-17 22:11 p:291.16 cost:291.6 p/cost:0.998
+MCD p:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.78 costTgt:0.988 fillP/cost:0.976 fillP/px:0.978
+MCD 1-17 22:11 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:11]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:11]
+PG *Periodic Run* 22:11
+PG last Live feed time: 1-17 22:11 p:149.95 cost:149.7 p/cost:1.002
+PG p:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 fillP:146.11 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+PG 1-17 22:11 2dP:40.0 1dP:50.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 22:11]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 22:11]
+SPY *Periodic Run* 22:11
+SPY last Live feed time: 1-17 22:11 p:472.4 cost:473.6 p/cost:0.997
+SPY p:472.4 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 fillP:466.15 costTgt:0.992 fillP/cost:0.984 fillP/px:0.987
+SPY 1-17 22:11 2dP:36.0 1dP:86.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:11]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:11]
+UL *Periodic Run* 22:11
+UL last Live feed time: 1-17 22:11 p:47.72 cost:48.5 p/cost:0.984
+UL p:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 fillP:47.54 costTgt:0.99 fillP/cost:0.98 fillP/px:0.996
+UL 1-17 22:11 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 22:11]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:11]
+WMT *Periodic Run* 22:11
+WMT last Live feed time: 1-17 22:11 p:160.96 cost:161.1 p/cost:0.999
+WMT p:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 fillP:158.04 costTgt:0.989 fillP/cost:0.981 fillP/px:0.982
+WMT 1-17 22:11 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:11]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:11]
+*Ending* 1-17 22:12
+MasterTradeID is: 240117001
+*****START***** HKT: 11:12:22 EST: 1-17 22:12 MASTERID: 240117001
+WMT *******************************************
+WMT *STARTS* 1-17 22:12
+PG *******************************************
+PG *STARTS* 1-17 22:12
+UL *******************************************
+UL *STARTS* 1-17 22:12
+MCD *******************************************
+MCD *STARTS* 1-17 22:12
+SPY *******************************************
+SPY *STARTS* 1-17 22:12
+KO *******************************************
+KO *STARTS* 1-17 22:12
+req live orders complete
+1-17 22:12 cancelling all orders on start up
+22:12 global cancel orders
+SPY updating position: 1-17 22:12 position:10 cost:473.64
+KO updating position: 1-17 22:12 position:54 cost:60.07
+UL updating position: 1-17 22:12 position:103 cost:48.5
+MCD updating position: 1-17 22:12 position:17 cost:291.64
+WMT updating position: 1-17 22:12 position:20 cost:161.08
+PG updating position: 1-17 22:12 position:33 cost:149.71
+KO POS:54 COST:60.1 DELT:3k
+MCD POS:17 COST:291.6 DELT:5k
+PG POS:33 COST:149.7 DELT:5k
+SPY POS:10 COST:473.6 DELT:5k
+UL POS:103 COST:48.5 DELT:5k
+WMT POS:20 COST:161.1 DELT:3k
+1-17 22:12 *openOrderEnd*:print all openOrdrs {KO={}, MCD={}, PG={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, PG={}, UL={}, SPY={}, WMT={}, MCD={}}
+1-17 22:12 *TradeReportEnd*: all executions: {}
+KO 1-17 22:12 rng:1.1% costTgt:0.989
+KO 1-17 22:12 tgtMargin:1.0083 tgtPrice:60.57
+MCD 1-17 22:12 rng:1.2% costTgt:0.988
+MCD 1-17 22:12 tgtMargin:1.0088 tgtPrice:294.21
+PG 1-17 22:12 rng:1.2% costTgt:0.988
+PG 1-17 22:12 tgtMargin:1.009 tgtPrice:151.06
+UL 1-17 22:12 rng:0.8% costTgt:0.99
+UL 1-17 22:12 tgtMargin:1.0061 tgtPrice:48.8
+SPY 1-17 22:12 rng:0.8% costTgt:0.992
+SPY 1-17 22:12 tgtMargin:1.0059 tgtPrice:476.45
+WMT 1-17 22:12 rng:1.1% costTgt:0.989
+WMT 1-17 22:12 tgtMargin:1.0086 tgtPrice:162.46
+*openOrder* Error 1-17 22:12 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 22:12 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 1-17 22:12 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 1-17 22:12 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+KO *Periodic Run* 22:12
+KO last Live feed time: 1-17 22:12 p:59.86 cost:60.1 p/cost:0.996
+KO p:59.86 rng:1.1% pos:54 delta:3k cost:60.1 lot:83 fillP:58.98 costTgt:0.989 fillP/cost:0.982 fillP/px:0.985
+KO 1-17 22:12 2dP:0.0 1dP:0.0
+KO 2d$:n:781 max:60.4 [1-16 9:41] min:59.8 [1-17 9:38] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:12]
+KO 1d$:n:391 max:60.2 [1-17 11:36] min:59.8 [1-17 9:38] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:12]
+MCD *Periodic Run* 22:12
+MCD last Live feed time: 1-17 22:12 p:291.16 cost:291.6 p/cost:0.998
+MCD p:291.16 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.78 costTgt:0.988 fillP/cost:0.976 fillP/px:0.978
+MCD 1-17 22:12 2dP:0.0 1dP:0.0
+MCD 2d$:n:781 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:12]
+MCD 1d$:n:391 max:292.3 [1-17 11:05] min:290.2 [1-17 10:17] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:12]
+PG *Periodic Run* 22:12
+PG last Live feed time: 1-17 22:12 p:149.95 cost:149.7 p/cost:1.002
+PG p:149.95 rng:1.2% pos:33 delta:5k cost:149.7 lot:33 fillP:146.11 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+PG 1-17 22:12 2dP:0.0 1dP:0.0
+PG 2d$:n:781 max:151.5 [1-16 9:47] min:148.9 [1-16 14:10] rng:1.7% 1Key:[1-16 9:30] last:[1-17 22:12]
+PG 1d$:n:391 max:150.6 [1-17 11:36] min:149.3 [1-17 9:30] rng:0.8% 1Key:[1-17 9:30] last:[1-17 22:12]
+SPY *Periodic Run* 22:12
+SPY last Live feed time: 1-17 22:12 p:472.4 cost:473.6 p/cost:0.997
+SPY p:472.4 rng:0.8% pos:10 delta:5k cost:473.6 lot:10 fillP:466.15 costTgt:0.992 fillP/cost:0.984 fillP/px:0.987
+SPY 1-17 22:12 2dP:36.0 1dP:86.0
+SPY 2d$:n:781 max:476.6 [1-16 11:22] min:470.0 [1-17 13:49] rng:1.4% 1Key:[1-16 9:30] last:[1-17 22:12]
+SPY 1d$:n:391 max:472.8 [1-17 11:35] min:470.0 [1-17 13:49] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:12]
+UL *Periodic Run* 22:12
+UL last Live feed time: 1-17 22:12 p:47.72 cost:48.5 p/cost:0.984
+UL p:47.72 rng:0.8% pos:103 delta:5k cost:48.5 lot:104 fillP:47.54 costTgt:0.99 fillP/cost:0.98 fillP/px:0.996
+UL 1-17 22:12 2dP:21.0 1dP:76.0
+UL 2d$:n:781 max:48.5 [1-16 9:30] min:47.5 [1-17 10:00] rng:2.1% 1Key:[1-16 9:30] last:[1-17 22:12]
+UL 1d$:n:391 max:47.8 [1-17 11:45] min:47.5 [1-17 10:00] rng:0.6% 1Key:[1-17 9:30] last:[1-17 22:12]
+WMT *Periodic Run* 22:12
+WMT last Live feed time: 1-17 22:12 p:160.96 cost:161.1 p/cost:0.999
+WMT p:160.96 rng:1.1% pos:20 delta:3k cost:161.1 lot:31 fillP:158.04 costTgt:0.989 fillP/cost:0.981 fillP/px:0.982
+WMT 1-17 22:12 2dP:17.0 1dP:24.0
+WMT 2d$:n:781 max:162.3 [1-16 9:38] min:160.7 [1-17 13:49] rng:1.0% 1Key:[1-16 9:30] last:[1-17 22:12]
+WMT 1d$:n:391 max:161.9 [1-17 10:00] min:160.7 [1-17 13:49] rng:0.7% 1Key:[1-17 9:30] last:[1-17 22:12]
