@@ -368,7 +368,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targetList.forEach((s) -> symbDelta.put(s, (double) round(symbPos.getOrDefault(s, Decimal.ZERO)
                 .longValue() * lastPx.getOrDefault(s, 0.0))));
 
-        pr("Delta", round(totalDelta / 1000.0) + "k",
+        pr(usTime(), "Delta", round(totalDelta / 1000.0) + "k",
                 symbDelta.entrySet().stream()
                         .sorted((Map.Entry.<String, Double>comparingByValue().reversed()))
                         .collect(Collectors.toMap(Map.Entry::getKey,
