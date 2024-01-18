@@ -928,3 +928,89 @@ no live feed
 1-18 8:35 2dP:30.0 1dP:0.0
 2d$:n:780 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-17 15:59]
 1d$:n<5: 0
+*Periodic Run* 9:35
+last Live feed time: 1-18 9:35 p:292.49 cost:291.6 p/cost:1.003
+p:292.49 rng:1.2% pos:17 delta:5k cost:291.6 lot:17 fillP:284.78 costTgt:0.988 fillP/cost:0.976 fillP/px:0.974
+1-18 9:35 2dP:60.0 1dP:100.0
+2d$:n:790 max:294.1 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-18 9:35]
+1d$:n:10 max:292.4 [1-18 9:35] min:291.6 [1-18 9:27] rng:0.3% 1Key:[1-18 8:35] last:[1-18 9:35]
+****CUT**** 1-18 10:29:50 1dP:100.0 2dp:100.0 px/Cost:1.0088 reqMargin:1.0088 rng:0.0118
+ordID:240118003 tradID:240118003 SELL Px:294.25 qty:17 cost:291.64 MCD 1-18 10:29 INVENTORY_CUTTER Created reqMargin:1.0088140500107083 tgtSellPx:294.21 askPx:294.25
+2D$:n:844 max:294.2 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-18 10:29]
+1D$:n:64 max:294.0 [1-18 10:29] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 10:29]
+1-18 10:29 *openOrder* status:Submitted orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25
+1-18 10:29 *openOrder* all live orders {240118003=orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25}
+1-18 10:29 *OrderStatus*:Submitted orderId:240118003 filled:0 remaining:17 fillPx0.0 lastFillPx:0.0
+10:29:58 order blocked by:[orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25] orderStatus:{240118003=Submitted}
+10:29:59 order blocked by:[orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25] orderStatus:{240118003=Submitted}
+10:30:01 order blocked by:[orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25] orderStatus:{240118003=Submitted}
+10:30:15 order blocked by:[orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25] orderStatus:{240118003=Submitted}
+10:30:21 order blocked by:[orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25] orderStatus:{240118003=Submitted}
+updating position: 1-18 10:30 position:0 cost:0.0
+1-18 10:30 *tradeReport* time: 2024-01-18T10:30:28 SLD execPx:294.25 shares:17 avgPx:294.25
+1-18 10:30 *openOrder* status:Filled orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25
+1-18 10:30 *openOrder*:removing order. Status: Filled orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25
+1-18 10:30 *openOrder*:aftr removal. openOrders: {}
+1-18 10:30 *OrderStatus*:Filled orderId:240118003 filled:17 remaining:0 fillPx294.25 lastFillPx:294.25
+1-18 10:30 *openOrder* status:Filled orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25
+1-18 10:30 *openOrder*:removing order. Status: Filled orderID: 240118003 orderType: LMT action: SELL totalQuantity: 17 filledQty:  limitPrice: 294.25
+1-18 10:30 *openOrder*:aftr removal. openOrders: {}
+1-18 10:30 *OrderStatus*:Filled orderId:240118003 filled:17 remaining:0 fillPx294.25 lastFillPx:294.25
+1.*commission report* orderID:240118003 commission:0.376097 orderID: 240118003 realized pnl: 44.015903
+2.*commission report* orderID:240118003 commission: 0.376097 realized pnl: 44.015903
+updating position: 1-18 10:30 position:0 cost:0.0
+updating position: 1-18 10:30 position:0 cost:0.0
+*Periodic Run* 10:35
+last Live feed time: 1-18 10:35 p:293.88 
+1-18 10:35 *chek orderStatus {240118003=Filled}
+1-18 10:35 2dP:92.0 1dP:89.0
+2d$:n:850 max:294.2 [1-16 9:31] min:290.0 [1-16 14:23] rng:1.4% 1Key:[1-16 9:30] last:[1-18 10:35]
+1d$:n:70 max:294.2 [1-18 10:30] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 10:35]
+updating position: 1-18 10:36 position:0 cost:0.0
+updating position: 1-18 10:36 position:0 cost:0.0
+*Periodic Run* 11:35
+last Live feed time: 1-18 11:35 p:293.38 
+1-18 11:35 *chek orderStatus {240118003=Filled}
+1-18 11:35 2dP:79.0 1dP:67.0
+2d$:n:910 max:294.3 [1-18 10:41] min:290.0 [1-16 14:23] rng:1.5% 1Key:[1-16 9:30] last:[1-18 11:35]
+1d$:n:130 max:294.3 [1-18 10:41] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 11:35]
+*Periodic Run* 12:35
+last Live feed time: 1-18 12:35 p:292.42 
+1-18 12:35 *chek orderStatus {240118003=Filled}
+1-18 12:35 2dP:56.0 1dP:32.0
+2d$:n:970 max:294.3 [1-18 10:41] min:290.0 [1-16 14:23] rng:1.5% 1Key:[1-16 9:30] last:[1-18 12:35]
+1d$:n:190 max:294.3 [1-18 10:41] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 12:35]
+*Periodic Run* 13:35
+last Live feed time: 1-18 13:35 p:293.2 
+1-18 13:35 *chek orderStatus {240118003=Filled}
+1-18 13:35 2dP:75.0 1dP:60.0
+2d$:n:1027 max:294.3 [1-18 10:41] min:290.0 [1-16 14:23] rng:1.5% 1Key:[1-16 9:30] last:[1-18 13:35]
+1d$:n:247 max:294.3 [1-18 10:41] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 13:35]
+*Periodic Run* 14:35
+last Live feed time: 1-18 14:35 p:294.13 
+1-18 14:35 *chek orderStatus {240118003=Filled}
+1-18 14:35 2dP:97.0 1dP:95.0
+2d$:n:1087 max:294.3 [1-18 10:41] min:290.0 [1-16 14:23] rng:1.5% 1Key:[1-16 9:30] last:[1-18 14:35]
+1d$:n:307 max:294.3 [1-18 10:41] min:291.6 [1-18 9:27] rng:0.9% 1Key:[1-18 8:35] last:[1-18 14:35]
+*******************************************
+*STARTS* 1-18 15:27
+updating position: 1-18 15:27 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+1-18 15:27 rng:1.2% costTgt:0.988
+1-18 15:27 tgtMargin:1.0088 tgtPrice:0.0
+*Periodic Run* 15:27
+last Live feed time: 1-18 15:27 p:294.42 
+1-18 15:27 2dP:0.0 1dP:0.0
+2d$:n<5: 1
+1d$:n<5: 1
+*******************************************
+*STARTS* 1-18 15:31
+updating position: 1-18 15:31 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+1-18 15:31 rng:1.2% costTgt:0.988
+1-18 15:31 tgtMargin:1.0088 tgtPrice:0.0
+*Periodic Run* 15:32
+no live feed
+1-18 15:32 2dP:0.0 1dP:0.0
+2d$:n:752 max:294.4 [1-18 15:30] min:290.2 [1-17 10:17] rng:1.5% 1Key:[1-17 9:30] last:[1-18 15:31]
+1d$:n:362 max:294.4 [1-18 15:30] min:291.7 [1-18 9:30] rng:0.9% 1Key:[1-18 9:30] last:[1-18 15:31]

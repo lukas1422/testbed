@@ -179,12 +179,12 @@ public class ProfitTargetTrader implements LiveHandler,
         }
         double currentCost = costPerShare * pos;
         double lowerTgt = reduceCostTgt(symb);
-        double buySize = getBuyLot(symb, price).longValue();
+        double buySize = getBuyLot(symb, costPerShare).longValue();
 //        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
 //                symb, price, pos, buySize, costPerShare, lowerTgt,
 //                (costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize);
 
-        return Math.min(price,
+        return Math.min(currentCost,
                 (costPerShare * lowerTgt * (pos + buySize) - currentCost) / buySize);
     }
 
