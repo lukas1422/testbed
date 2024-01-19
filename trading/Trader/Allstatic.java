@@ -6,10 +6,7 @@ import client.*;
 import historical.Request;
 
 import java.io.File;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -70,7 +67,7 @@ public class Allstatic {
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> costPerShare = new ConcurrentSkipListMap<>();
+    volatile static Map<String, Double> unitCost = new ConcurrentSkipListMap<>();
     volatile static Map<String, Decimal> symbPos = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
@@ -90,7 +87,9 @@ public class Allstatic {
 //                (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond()));
 //        return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
         pr("year is ", (t.getYear() - 2000) * pow(10, 7), "month:", t.getMonthValue() * pow(10, 5), "day:", t.getDayOfMonth() * pow(10, 3));
-        int id = (int) ((t.getYear() - 2000) * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
+        int id = (int) ((t.getYear() - 2000) * pow(10, 7) + t.getMonthValue() * pow(10, 5) +
+                t.getDayOfMonth() * pow(10, 3) +
+                Math.max(0, Duration.between(TODAY930, getESTDateTimeNow()).toMinutes()) + 1);
 //        int id = (int) (t.getYear() * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
         outputToGeneral("MasterTradeID is:", id);
         return id;

@@ -657,7 +657,7 @@ public class TradingUtility {
     public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
 //            pr("calculate p%: map is empty");
-            return 0;
+            return 100;
         }
 
         double maxValue = m.entrySet().stream().sorted(reverseOrder(comparingDouble(e -> e.getValue().getHigh())))
