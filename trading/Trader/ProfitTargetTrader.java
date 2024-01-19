@@ -173,7 +173,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static double refillPx(String symb, double px, long pos, double costPerShare) {
-        if (pos == 0.0 || costPerShare == 0.0) {
+        if (px == 0.0 || pos == 0.0 || costPerShare == 0.0) {
             return 0.0;
         }
         double currentCostBasis = costPerShare * pos;
@@ -183,62 +183,62 @@ public class ProfitTargetTrader implements LiveHandler,
 //                symb, price, pos, buySize, costPerShare, lowerTgt,
 //                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
 
-        return Math.min(costPerShare, (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
+        return Math.min(costPerShare,
+                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
     }
 
     static void tryToTrade(Contract ct, double px, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
             return;
         }
-
-        String symb = ibContractToSymbol(ct);
-        if (!noBlockingOrders(symb)) {
-            outputToSymbol(symb, t.format(Hmmss), "order blocked by:" +
-                    openOrders.get(symb).values(), "orderStatus:" + orderStatus.get(symb));
+        String s = ibContractToSymbol(ct);
+        if (!noBlockingOrders(s)) {
+            outputToSymbol(s, t.format(Hmmss), "order blocked by:" +
+                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
             return;
         }
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
-            outputToGeneral(usDateTime(), "only USD stock allowed, symb:", ct.symbol());
+            outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
             return;
         }
 
-        if (!twoDayPctMap.containsKey(symb) || !oneDayPctMap.containsKey(symb)) {
-            pr(symb, "no percentile info:", !twoDayPctMap.containsKey(symb) ? "2day" : "",
-                    !oneDayPctMap.containsKey(symb) ? "1day" : "");
+        if (!twoDayPctMap.containsKey(s) || !oneDayPctMap.containsKey(s)) {
+            pr(s, "no percentile info:", !twoDayPctMap.containsKey(s) ? "2day" : "",
+                    !oneDayPctMap.containsKey(s) ? "1day" : "");
             return;
         }
 
-        double twoDayP = twoDayPctMap.get(symb);
-        double oneDayP = oneDayPctMap.get(symb);
-        Decimal pos = symbPos.get(symb);
+        double twoDayP = twoDayPctMap.get(s);
+        double oneDayP = oneDayPctMap.get(s);
+        Decimal pos = symbPos.get(s);
 
-        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(symb, px)) {
+        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
             if (pos.isZero()) {
-                outputToSymbol(symb, "*1st Buy*", t.format(MdHmmss),
+                outputToSymbol(s, "*1st Buy*", t.format(MdHmmss),
                         "1dp:" + oneDayP, "2dp:" + twoDayP);
-                inventoryAdder(ct, px, t, getBuyLot(symb, px));
-            } else if (pos.longValue() > 0 && unitCost.getOrDefault(symb, 0.0) != 0.0) {
-                if (px < refillPx(symb, px, pos.longValue(), unitCost.get(symb))) {
-                    outputToSymbol(symb, "*REFILL*", t.format(MdHmmss),
-                            "delt:" + round(symbDelta.getOrDefault(symb, 0.0) / 1000.0) + "k",
+                inventoryAdder(ct, px, t, getBuyLot(s, px));
+            } else if (pos.longValue() > 0 && unitCost.getOrDefault(s, 0.0) != 0.0) {
+                if (px < refillPx(s, px, pos.longValue(), unitCost.get(s))) {
+                    outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
+                            "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
-                            "cost:" + round1(unitCost.get(symb)),
-                            "px/cost:" + round4(pxOverCost(px, symb)),
-                            "refillPx:" + (round2(refillPx(symb, px, pos.longValue(), unitCost.get(symb)))),
-                            "avgRng:" + avgDailyRng.getOrDefault(symb, 0.0));
-                    inventoryAdder(ct, px, t, getBuyLot(symb, px));
+                            "cost:" + round1(unitCost.get(s)),
+                            "px/cost:" + round4(pxOverCost(px, s)),
+                            "refillPx:" + (round2(refillPx(s, px, pos.longValue(), unitCost.get(s)))),
+                            "avgRng:" + avgDailyRng.getOrDefault(s, 0.0));
+                    inventoryAdder(ct, px, t, getBuyLot(s, px));
                 }
             }
         } else if (oneDayP > 80 && pos.longValue() > 0) {
-            double pOverCost = pxOverCost(px, symb);
-            pr("px/Cost", symb, pxOverCost(px, symb));
-            if (pOverCost > tgtProfitMargin(symb)) {
-                outputToSymbol(symb, "****CUT****", t.format(MdHmmss),
+            double pOverCost = pxOverCost(px, s);
+            pr("px/Cost", s, pxOverCost(px, s));
+            if (pOverCost > tgtProfitMargin(s)) {
+                outputToSymbol(s, "****CUT****", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP,
                         "px/Cost:" + round4(pOverCost),
-                        "reqMargin:" + round4(tgtProfitMargin(symb)),
-                        "rng:" + round4(avgDailyRng.getOrDefault(symb, 0.0)));
+                        "reqMargin:" + round4(tgtProfitMargin(s)),
+                        "rng:" + round4(avgDailyRng.getOrDefault(s, 0.0)));
                 inventoryCutter(ct, px, t);
             }
         }
