@@ -671,7 +671,7 @@ public class TradingUtility {
 
     public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
-            return str("n<5:", m.size());
+            return str("n<5");
         }
 //        double max = m.values().stream().mapToDouble(SimpleBar::getHigh).max().getAsDouble();
 //        double min = m.values().stream().mapToDouble(SimpleBar::getLow).min().getAsDouble();
@@ -705,19 +705,6 @@ public class TradingUtility {
         ct.secType(Types.SecType.FUT);
         pr("A50 front expiry ", getXINA50FrontExpiry());
         ct.lastTradeDateOrContractMonth(getXINA50FrontExpiry().format(futExpPattern));
-        ct.currency("USD");
-        return ct;
-    }
-
-    public static Contract getActiveBTCContract() {
-        Contract ct = new Contract();
-        ct.symbol("GXBT");
-        ct.exchange("CFECRYPTO");
-        ct.secType(Types.SecType.FUT);
-        pr("BTC expiry ", getActiveBTCExpiry());
-        pr("BTC expiry pattern ", getActiveBTCExpiry().format(futExpPattern2));
-        ct.lastTradeDateOrContractMonth(getActiveBTCExpiry().format(futExpPattern2));
-//        ct.lastTradeDateOrContractMonth("20190");
         ct.currency("USD");
         return ct;
     }

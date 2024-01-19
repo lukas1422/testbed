@@ -342,8 +342,7 @@ public class ProfitTargetTrader implements LiveHandler,
                                     unitCost.get(s)),
                             "fillP/Px:" + round2(refillPx(s, lastPx.get(s)
                                     , symbPos.get(s).longValue(), unitCost.get(s)) / lastPx.get(s)),
-                            "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%"
-                    );
+                            "rng:" + round(1000.0 * avgDailyRng.getOrDefault(s, 0.0)) / 10.0 + "%");
                 }
             }
         });
