@@ -740,7 +740,7 @@ public class TradingUtility {
         return s.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_LIMIT_EACH;
     }
 
-    public static Decimal getBuyLot(String symb, double price) {
+    public static Decimal getLot(String symb, double price) {
         return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 

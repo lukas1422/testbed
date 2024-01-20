@@ -71,10 +71,10 @@ public class MarketDataTest implements LiveHandler {
                 pr("last::", symb, price, t.format(Hmmss));
                 break;
             case BID:
-                bidMap.put(symb, price);
+                ProfitTargetTrader.bidMap.put(symb, price);
                 break;
             case ASK:
-                askMap.put(symb, price);
+                ProfitTargetTrader.askMap.put(symb, price);
                 break;
         }
     }

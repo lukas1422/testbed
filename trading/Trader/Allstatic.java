@@ -7,7 +7,6 @@ import historical.Request;
 
 import java.io.File;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -52,28 +51,12 @@ public class Allstatic {
     //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
     //    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
-    static volatile double totalDelta = 0.0;
-    //data
-    static Map<String, Double> px = new ConcurrentHashMap<>();
-    static Map<String, LocalDateTime> lastPxTimestamp = new ConcurrentHashMap<>();
 
-    static Map<String, Double> bidMap = new ConcurrentHashMap<>();
-    static Map<String, Double> askMap = new ConcurrentHashMap<>();
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
             = new ConcurrentSkipListMap<>();
     static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
-    //historical data
-    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
-            = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> cost = new ConcurrentSkipListMap<>();
-    volatile static Map<String, Decimal> symbPos = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
-    static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
-    static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
-    static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
-    static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
 
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
     // static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
@@ -94,17 +77,6 @@ public class Allstatic {
 //        int id = (int) (t.getYear() * pow(10, 7) + t.getMonthValue() * pow(10, 5) + t.getDayOfMonth() * pow(10, 3) + 1);
         outputToGeneral("MasterTradeID is:", id);
         return id;
-    }
-
-    static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-
-        if (!ytdDayData.containsKey(symbol)) {
-            ytdDayData.put(symbol, new ConcurrentSkipListMap<>());
-        }
-
-        LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
-        ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
     }
 
     static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
