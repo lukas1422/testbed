@@ -654,7 +654,7 @@ public class TradingUtility {
         return Math.max(minProfitMargin(s), 1 + rng.getOrDefault(s, 0.0) * 0.85);
     }
 
-    public static double computePercentile(NavigableMap<? extends Temporal, SimpleBar> m) {
+    public static double computePtile(NavigableMap<? extends Temporal, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
 //            pr("calculate p%: map is empty");
             return 100;
@@ -669,7 +669,7 @@ public class TradingUtility {
         return Math.max(0.0, Math.min(100, round((last - minValue) / (maxValue - minValue) * 100)));
     }
 
-    public static String genStatsString(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
+    public static String genStats(ConcurrentNavigableMap<LocalDateTime, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
             return str("n<5");
         }
