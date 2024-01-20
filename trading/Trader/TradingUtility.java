@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
 
 import static Trader.Allstatic.*;
-import static Trader.ProfitTargetTrader.avgDailyRng;
+import static Trader.ProfitTargetTrader.rng;
 import static api.TradingConstants.*;
 import static java.lang.Math.round;
 import static java.util.Collections.reverseOrder;
@@ -651,10 +651,10 @@ public class TradingUtility {
     }
 
     public static double tgtProfitMargin(String s) {
-        return Math.max(minProfitMargin(s), 1 + avgDailyRng.getOrDefault(s, 0.0) * 0.75);
+        return Math.max(minProfitMargin(s), 1 + rng.getOrDefault(s, 0.0) * 0.85);
     }
 
-    public static double calculatePercentileFromMap(NavigableMap<? extends Temporal, SimpleBar> m) {
+    public static double computePercentile(NavigableMap<? extends Temporal, SimpleBar> m) {
         if (m.isEmpty() || m.size() < 5) {
 //            pr("calculate p%: map is empty");
             return 100;
@@ -717,12 +717,12 @@ public class TradingUtility {
         }));
     }
 
-    public static double defaultLowerTgt(String symb) {
+    public static double defaultTgt(String symb) {
         return symb.equalsIgnoreCase("SPY") ? 0.995 : 0.99;
     }
 
-    public static double reduceCostTgt(String symb) {
-        return Math.min(defaultLowerTgt(symb), 1 - avgDailyRng.getOrDefault(symb, 0.0));
+    public static double costTgt(String symb) {
+        return Math.min(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0));
     }
 
     public static void outputToConnection(Object... cs) {
@@ -736,9 +736,8 @@ public class TradingUtility {
         outputToGeneral(symbol, str(cs));
     }
 
-    static double deltaLimitEach(String symb) {
-//        return symb.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_EACH_LIMIT;
-        return DELTA_LIMIT_EACH;
+    static double deltaLimitEach(String s) {
+        return s.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_LIMIT_EACH;
     }
 
     public static Decimal getBuyLot(String symb, double price) {

@@ -54,8 +54,8 @@ public class Allstatic {
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
     static volatile double totalDelta = 0.0;
     //data
-    static Map<String, Double> lastPx = new ConcurrentHashMap<>();
-    static Map<String, LocalDateTime> latestPriceTimeMap = new ConcurrentHashMap<>();
+    static Map<String, Double> px = new ConcurrentHashMap<>();
+    static Map<String, LocalDateTime> lastPxTimestamp = new ConcurrentHashMap<>();
 
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();
@@ -67,7 +67,7 @@ public class Allstatic {
     //historical data
     static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
-    volatile static Map<String, Double> unitCost = new ConcurrentSkipListMap<>();
+    volatile static Map<String, Double> cost = new ConcurrentSkipListMap<>();
     volatile static Map<String, Decimal> symbPos = new ConcurrentSkipListMap<>(String::compareTo);
     volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
     static Map<String, Double> twoDayPctMap = new ConcurrentHashMap<>();
