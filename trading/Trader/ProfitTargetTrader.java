@@ -362,7 +362,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(s, px.get(s)),
                             "costTgt:" + round2(costTgt(s)),
-                            "refil:" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
+                            "refil@" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "refil/Cos:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
                                     costMap.get(s)),
                             "refil/Px:" + round2(refillPx(s, px.get(s)
@@ -605,8 +605,9 @@ public class ProfitTargetTrader implements LiveHandler,
             targets.forEach(s -> {
                 outputToSymbol(s, "*Periodic Run*", usTime());
                 outputToSymbol(s, lastPxTimestamp.containsKey(s) ?
-                        str("last live feed time:", lastPxTimestamp.get(s).format(MdHmm)
-                                , "p:" + px.getOrDefault(s, 0.0),
+                        str("last live feed time:", lastPxTimestamp.get(s).format(MdHmm),
+                                "been:" + Duration.between(lastPxTimestamp.get(s), getESTDateTimeNow()).toMinutes()
+                                        + "mins.", "p:" + px.getOrDefault(s, 0.0),
                                 costMap.getOrDefault(s, 0.0) == 0.0 ? "" : str(
                                         "cost:" + round1(costMap.get(s)),
                                         "p/cost:" + round3(px.getOrDefault(s, 0.0)
