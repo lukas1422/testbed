@@ -494,7 +494,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         outputToSymbol(s, usDateTime(), "*OrderStatus*:" + status,
                 "orderId:" + orderId, "filled:" + filled, "remaining:" + remaining,
-                "fillPx" + avgFillPrice, "lastFillPx:" + lastFillPrice);
+                "fillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
 
         if (status == Filled) {
             outputToFills(s, usDateTime(), "*OrderStatus*: filled. ordID:" + orderId);
