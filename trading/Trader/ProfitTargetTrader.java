@@ -576,10 +576,10 @@ public class ProfitTargetTrader implements LiveHandler,
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> {
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
-                                "commission:" + commissionReport.commission(),
+                                "commission:" + round2(commissionReport.commission()),
                                 e2.getValue().getOrder().action() == SELL ?
                                         str("orderID:", e2.getKey(), "realized pnl:",
-                                                commissionReport.realizedPNL()) : "");
+                                                round2(commissionReport.realizedPNL())) : "");
                         outputToSymbol(s, outp);
                         outputToFills(s, outp);
                     });
@@ -587,9 +587,10 @@ public class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(s).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                     outputToSymbol(s, "2.*commission report* orderID:" + value1.getOrder().orderId(),
-                            "commission:", commissionReport.commission(),
+                            "commission:", round2(commissionReport.commission()),
                             value1.getOrder().action() == SELL ?
-                                    str("realized pnl:", commissionReport.realizedPNL()) : "");
+                                    str("realized pnl:", round2(commissionReport.realizedPNL()))
+                                    : "");
                 }
             });
         }
