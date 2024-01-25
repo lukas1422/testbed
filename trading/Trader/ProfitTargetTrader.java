@@ -368,8 +368,8 @@ public class ProfitTargetTrader implements LiveHandler,
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
-                            "tgtMargin:" + round4(tgtProfitMargin(s))
-                            , "tgtPx:" + round2(costMap.get(s) * tgtProfitMargin(s)));
+                            "tgtMargin:" + round4(tgtProfitMargin(s)),
+                            "tgtPx:" + round2(costMap.get(s) * tgtProfitMargin(s)));
                 }
             }
         });
@@ -389,10 +389,10 @@ public class ProfitTargetTrader implements LiveHandler,
         targets.forEach((s) -> symbDelta.put(s, (double) round(symbPos.getOrDefault(s, Decimal.ZERO)
                 .longValue() * px.getOrDefault(s, 0.0))));
 
-        pr(usTime(), "Delta", round(totalDelta / 1000.0) + "k",
+        pr(usTime(), "Del:" + round(totalDelta / 1000.0) + "k",
                 symbDelta.entrySet().stream().sorted((Map.Entry.<String, Double>comparingByValue().reversed()))
                         .collect(Collectors.toMap(Map.Entry::getKey,
-                                e -> round(e.getValue() / 100.0) / 10.0 + "k",
+                                e -> round(e.getValue() / 1000.0) + "k",
                                 (a, b) -> a, LinkedHashMap::new)));
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
