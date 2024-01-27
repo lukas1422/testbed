@@ -335,3 +335,11 @@ MCD 1-25 11:01 *OrderStatus*: filled. ordID:240125005
 MCD 1-25 11:01 *openOrder* filled orderID: 240125005 orderType: LMT action: BUY totalQuantity: 16 filledQty:  limitPrice: 298.11
 MCD 1-25 11:01 *OrderStatus*: filled. ordID:240125005
 MCD 1.*commission report* orderID:240125005 commission:0.334257 
+UL 1.*commission report* orderID:240126003 commission:0.35 orderID: 240126003 realized pnl: 0.43
+UL 1.*commission report* orderID:240126003 commission:0.0 orderID: 240126003 realized pnl: 0.78
+UL 1.*commission report* orderID:240126003 commission:0.38 orderID: 240126003 realized pnl: 78.43
+UL 1-26 9:30 *openOrder* filled orderID:240126003 LMT SELL Q:209 px:48.54 filledQ:
+UL 1-26 9:30 *OrderStatus*: filled. ordID:240126003
+UL 1-26 9:30 *openOrder* filled orderID:240126003 LMT SELL Q:209 px:48.54 filledQ:
+UL 1-26 9:30 *OrderStatus*: filled. ordID:240126003
+UL 1.*commission report* orderID:240126003 commission:0.33 orderID: 240126003 realized pnl: 84.0
