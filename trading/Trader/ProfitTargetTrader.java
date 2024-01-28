@@ -78,12 +78,12 @@ public class ProfitTargetTrader implements LiveHandler,
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
         pr("mkt start time today:", TODAY930);
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
+
         Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
                 .forEach(a -> {
                     pr(a[0]);
                     registerContract(generateUSStockContract(a[0]));
                 });
-
 //        registerContractAll(wmt, pg, ul, mcd, spy, ko, gld, slv, vaw, pho, vpu, awk);
     }
 
