@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import static utility.Utility.pr;
-import static utility.Utility.r;
 
 public class VarCorrUtility {
 

@@ -741,10 +741,6 @@ public class Utility {
         }
     }
 
-    public static double r(double d) {
-        return Math.round(100d * d) / 100d;
-    }
-
     public static double r10000(double d) {
         return Math.round(10000d * d) / 10000d;
     }

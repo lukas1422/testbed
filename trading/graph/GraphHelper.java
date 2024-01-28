@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.NavigableMap;
 
 import static java.lang.Math.*;
-import static utility.Utility.r;
+import static Trader.TradingUtility.r;
 import static utility.Utility.reduceMapToDouble;
 
 public class GraphHelper {

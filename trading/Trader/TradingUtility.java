@@ -641,6 +641,10 @@ public class TradingUtility {
         return Math.round(n * 100.0) / 100.0;
     }
 
+    public static double r(double d) {
+        return Math.round(100d * d) / 100d;
+    }
+
     static double round1(double n) {
         return Math.round(n * 10.0) / 10.0;
     }
@@ -748,4 +752,6 @@ public class TradingUtility {
         return ZonedDateTime.parse(time, DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss z")).
                 withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime();
     }
+
+
 }

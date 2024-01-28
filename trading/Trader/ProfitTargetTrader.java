@@ -371,7 +371,7 @@ public class ProfitTargetTrader implements LiveHandler,
                             "p:" + px.get(s),
                             "1dp:" + (oneDayPctMap.containsKey(s) ? round(oneDayPctMap.get(s)) : "n/a"),
                             "2dp:" + (twoDayPctMap.containsKey(s) ? round(twoDayPctMap.get(s)) : "n/a"),
-                            "del:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
+                            "delt:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
                             "cos:" + round1(costMap.get(s)),
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(s, px.get(s)),
@@ -403,7 +403,7 @@ public class ProfitTargetTrader implements LiveHandler,
         targets.forEach((s) -> symbDelta.put(s, (double) round(symbPos.getOrDefault(s, Decimal.ZERO)
                 .longValue() * px.getOrDefault(s, 0.0))));
 
-        pr(usTime(), "Del:" + round(totalDelta / 1000.0) + "k",
+        pr(usTime(), "Delt:" + round(totalDelta / 1000.0) + "k",
                 symbDelta.entrySet().stream().sorted((Map.Entry.<String, Double>comparingByValue().reversed()))
                         .collect(Collectors.toMap(Map.Entry::getKey,
                                 e -> round(e.getValue() / 1000.0) + "k",
@@ -451,8 +451,8 @@ public class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
-        outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "Px:" + offerPrice,
-                "qty:" + o.totalQuantity().longValue(), "cost:" + round2(cost),
+        outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "px:" + offerPrice,
+                "q:" + o.totalQuantity().longValue(), "cost:" + round2(cost),
                 orderSubmitted.get(s).get(o.orderId()),
                 "reqMargin:" + tgtProfitMargin(s),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
@@ -558,8 +558,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         outputToSymbol(s, usDateTime(), "*tradeReport* time:",
                 executionToUSTime(execution.time()), execution.side(),
-                "execPx:" + execution.price(), "shares:" + execution.shares(),
-                "avgPx:" + execution.avgPrice());
+                "execPx:" + execution.price(), "shares:" + execution.shares(), "avgPx:" + execution.avgPrice());
 
         if (!tradeKeyExecutionMap.containsKey(tradeKey)) {
             tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
@@ -634,7 +633,7 @@ public class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(s, "p:" + px.getOrDefault(s, 0.0),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
                             "pos:" + symbPos.getOrDefault(s, Decimal.ZERO).longValue(),
-                            "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
+                            "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "lot:" + getLot(s, px.get(s)),
                             "fillP:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
