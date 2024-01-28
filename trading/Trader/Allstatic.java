@@ -26,8 +26,8 @@ public class Allstatic {
             LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(9, 30));
     static final LocalDateTime TODAY230 =
             LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(2, 30));
-    static final double DELTA_TOTAL_LIMIT = 80000;
-    static final double DELTA_LIMIT_EACH = 20000;
+    static final double DELTA_TOTAL_LIMIT = 100000;
+    static final double DELTA_LIMIT_EACH = 30000;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();

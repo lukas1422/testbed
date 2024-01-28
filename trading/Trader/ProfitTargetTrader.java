@@ -64,12 +64,14 @@ public class ProfitTargetTrader implements LiveHandler,
     Contract mcd = generateUSStockContract("MCD");
     Contract spy = generateUSStockContract("SPY");
     Contract ko = generateUSStockContract("KO");
+    Contract gld = generateUSStockContract("GLD");
+    Contract slv = generateUSStockContract("SLV");
 
     private ProfitTargetTrader() {
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
         pr("mkt start time today:", TODAY930);
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
-        registerContractAll(wmt, pg, ul, mcd, spy, ko);
+        registerContractAll(wmt, pg, ul, mcd, spy, ko, gld,slv);
     }
 
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
@@ -250,14 +252,13 @@ public class ProfitTargetTrader implements LiveHandler,
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
                             "px/cost:" + round4(pxOverCost(px, s)),
-                            "refillPx:" + (round2(refillPx(s, px, pos.longValue(), costMap.get(s)))),
-                            "avgRng:" + rng.getOrDefault(s, 0.0));
+                            "refilPx:" + (round2(refillPx(s, px, pos.longValue(), costMap.get(s)))),
+                            "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
                     inventoryAdder(ct, px, t, getLot(s, px));
                 }
             }
-        } else if (oneDayP > 80 && pos.longValue() > 0) {
+        } else if (pos.longValue() > 0) {
             double pOverCost = pxOverCost(px, s);
-//            pr("px/Cost", s, pxOverCost(px, s));
             if (pOverCost > tgtProfitMargin(s)) {
                 outputToSymbol(s, "**CUT**", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP,
