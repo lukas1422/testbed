@@ -745,7 +745,7 @@ public class TradingUtility {
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / 4.0)));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

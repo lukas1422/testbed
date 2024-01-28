@@ -214,7 +214,7 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     static double refillPx(String symb, double px, long pos, double costPerShare) {
-        if (px == 0.0 || pos == 0.0 || costPerShare == 0.0) {
+        if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
             return 0.0;
         }
         double currentCostBasis = costPerShare * pos;
