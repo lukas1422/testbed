@@ -737,11 +737,11 @@ public class TradingUtility {
     }
 
     static double deltaLimitEach(String s) {
-        return s.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 2 : DELTA_LIMIT_EACH;
+        return s.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 4 : DELTA_LIMIT_EACH;
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 3.0));
+        return Decimal.get(Math.floor(deltaLimitEach(symb) / price / 4.0));
     }
 
     public static LocalDateTime executionToUSTime(String time) {

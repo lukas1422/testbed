@@ -7,6 +7,9 @@ import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -58,20 +61,30 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static Map<String, Double> rng = new HashMap<>();
 
-    Contract wmt = generateUSStockContract("WMT");
-    Contract pg = generateUSStockContract("PG");
-    Contract ul = generateUSStockContract("UL");
-    Contract mcd = generateUSStockContract("MCD");
-    Contract spy = generateUSStockContract("SPY");
-    Contract ko = generateUSStockContract("KO");
-    Contract gld = generateUSStockContract("GLD");
-    Contract slv = generateUSStockContract("SLV");
+//    Contract wmt = generateUSStockContract("WMT");
+//    Contract pg = generateUSStockContract("PG");
+//    Contract ul = generateUSStockContract("UL");
+//    Contract mcd = generateUSStockContract("MCD");
+//    Contract spy = generateUSStockContract("SPY");
+//    Contract ko = generateUSStockContract("KO");
+//    Contract gld = generateUSStockContract("GLD");
+//    Contract slv = generateUSStockContract("SLV");
+//    Contract vaw = generateUSStockContract("VAW");
+//    Contract pho = generateUSStockContract("PHO");
+//    Contract vpu = generateUSStockContract("VPU");
+//    Contract awk = generateUSStockContract("AWK");
 
-    private ProfitTargetTrader() {
+    private ProfitTargetTrader() throws IOException {
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
         pr("mkt start time today:", TODAY930);
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
-        registerContractAll(wmt, pg, ul, mcd, spy, ko, gld,slv);
+        Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
+                .forEach(a -> {
+                    pr(a[0]);
+                    registerContract(generateUSStockContract(a[0]));
+                });
+
+//        registerContractAll(wmt, pg, ul, mcd, spy, ko, gld, slv, vaw, pho, vpu, awk);
     }
 
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
@@ -601,7 +614,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     //Execution end*********************************
     //open orders end **********************
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
