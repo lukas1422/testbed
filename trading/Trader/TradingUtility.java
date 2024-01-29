@@ -25,6 +25,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.function.Predicate;
+import java.util.stream.DoubleStream;
 
 import static Trader.Allstatic.*;
 import static Trader.ProfitTargetTrader.rng;
@@ -721,20 +722,25 @@ public class TradingUtility {
         }));
     }
 
-    public static double defaultTgt2(double maxTgt, double partition) {
-        return Math.pow(maxTgt, 1 / (partition - 1));
-    }
-
     public static double defaultTgt(String symb) {
         return symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97;
     }
 
-    public static double costTgt(String symb) {
-        return Math.min(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0));
+    public static double defaultTgt2(double maxTgt, double partition) {
+        return Math.pow(maxTgt, 1 / (partition - 1));
     }
 
-    public static double costTgt2(String symb, double maxTgt, double partition) {
-        return Math.min(defaultTgt(symb), defaultTgt2(maxTgt, partition));
+    public static double costTgt(String symb) {
+        return mins(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0)
+                , defaultTgt2(MAX_DRAWDOWN_TGT, IDEAL_PARTITION));
+    }
+
+    //    public static double costTgt(String symb) {
+//        return Math.min(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0));
+//    }
+
+    public static double mins(double... ds) {
+        return DoubleStream.of(ds).min().getAsDouble();
     }
 
     public static void outputToConnection(Object... cs) {
@@ -753,7 +759,7 @@ public class TradingUtility {
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / DELTA_PARTITION)));
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / CURRENT_PARTITION)));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
