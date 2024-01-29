@@ -28,6 +28,8 @@ public class Allstatic {
             LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 100000;
     static final double DELTA_LIMIT_EACH = 20000;
+    static final double DELTA_PARTITION = 6.0;
+    static final double MAX_DRAWDOWN_TGT = 0.8;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> openMap = new ConcurrentHashMap<>();
     public static volatile Map<String, Double> closeMap = new ConcurrentHashMap<>();

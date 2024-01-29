@@ -77,7 +77,9 @@ public class ProfitTargetTrader implements LiveHandler,
     private ProfitTargetTrader() throws IOException {
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
         pr("mkt start time today:", TODAY930);
+        pr("costTgt", defaultTgt2(MAX_DRAWDOWN_TGT, 20.0));
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
+
 
         Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
                 .forEach(a -> {
