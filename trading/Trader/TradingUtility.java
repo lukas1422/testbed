@@ -722,13 +722,15 @@ public class TradingUtility {
         }));
     }
 
-    public static double defaultTgt(String symb) {
-        return symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97;
-    }
+//    public static double defaultTgt(String symb) {
+//        return symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97;
+//    }
+
 
     public static double costTgt(String symb) {
-        return mins(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0)
-                , Math.pow(MAX_DRAWDOWN_TGT, 1 / (IDEAL_PARTITION - 1)));
+        return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
+                1 - rng.getOrDefault(symb, 0.0),
+                Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
     }
 
     //    public static double costTgt(String symb) {
@@ -759,7 +761,7 @@ public class TradingUtility {
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / CURRENT_PARTITION)));
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / CURRENT_REFILL_N)));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
