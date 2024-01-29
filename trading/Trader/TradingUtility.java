@@ -726,18 +726,18 @@ public class TradingUtility {
         return symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97;
     }
 
-    public static double defaultTgt2(double maxTgt, double partition) {
-        return Math.pow(maxTgt, 1 / (partition - 1));
-    }
-
     public static double costTgt(String symb) {
         return mins(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0)
-                , defaultTgt2(MAX_DRAWDOWN_TGT, IDEAL_PARTITION));
+                , Math.pow(MAX_DRAWDOWN_TGT, 1 / (IDEAL_PARTITION - 1)));
     }
 
     //    public static double costTgt(String symb) {
-//        return Math.min(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0));
-//    }
+    //        return Math.min(defaultTgt(symb), 1 - rng.getOrDefault(symb, 0.0));
+    //    }
+    //    public static double defaultTgt2(double maxTgt, double partition) {
+    //        return Math.pow(maxTgt, 1 / (partition - 1));
+    //    }
+
 
     public static double mins(double... ds) {
         return DoubleStream.of(ds).min().getAsDouble();
