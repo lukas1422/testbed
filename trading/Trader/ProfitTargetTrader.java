@@ -80,7 +80,6 @@ public class ProfitTargetTrader implements LiveHandler,
         pr("costTgt", Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
 
-
         Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
                 .forEach(a -> {
                     pr(a[0]);

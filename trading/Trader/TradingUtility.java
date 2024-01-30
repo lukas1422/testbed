@@ -740,7 +740,6 @@ public class TradingUtility {
     //        return Math.pow(maxTgt, 1 / (partition - 1));
     //    }
 
-
     public static double mins(double... ds) {
         return DoubleStream.of(ds).min().getAsDouble();
     }
