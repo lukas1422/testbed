@@ -395,6 +395,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 double oneDayP = computePtile(twoDayData.get(s).tailMap(TODAY230));
                 twoDayPctMap.put(s, twoDayP);
                 oneDayPctMap.put(s, oneDayP);
+                pr(usTime(), s, "1DP:" + oneDayP, "2DP:" + twoDayP);
             }
         });
         totalDelta = targets.stream().mapToDouble(s ->
@@ -650,8 +651,8 @@ public class ProfitTargetTrader implements LiveHandler,
                 if (!openOrders.get(s).isEmpty()) {
                     outputToSymbol(s, usDateTime(), "*chek openOrders*:", openOrders.get(s));
                 }
-                outputToSymbol(s, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(s, 0.0),
-                        "1dP:" + oneDayPctMap.getOrDefault(s, 0.0));
+                outputToSymbol(s, usDateTime(), "2dP:" + twoDayPctMap.getOrDefault(s, 101.0),
+                        "1dP:" + oneDayPctMap.getOrDefault(s, 101.0));
                 outputToSymbol(s, "2d$:" + genStats(twoDayData.get(s)));
                 outputToSymbol(s, "1d$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
             });
