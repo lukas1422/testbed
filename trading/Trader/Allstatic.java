@@ -28,7 +28,7 @@ public class Allstatic {
             LocalDateTime.of(getESTDateTimeNow().toLocalDate(), ltof(2, 30));
     static final double DELTA_TOTAL_LIMIT = 100000;
     static final double DELTA_LIMIT_EACH = 20000;
-    static final double CURRENT_REFILL_N = 6.0; //refill times now due to limited delta
+    static final double CURRENT_REFILL_N = 4.0; //refill times now due to limited delta
     static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
     static final double MAX_DRAWDOWN_TARGET = 0.8;
     public static volatile Map<String, Double> priceMap = new ConcurrentHashMap<>();

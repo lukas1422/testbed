@@ -384,3 +384,38 @@ p:124.02 rng:1.8% pos:27 delt:3k cost:123.3 lot:26 fillP:115.77 costTgt:0.97 fil
 1-31 18:21 2dP:36.0 1dP:23.0
 2d$:n:1150 max:126.5 [1-31 10:41] min:122.6 [1-29 9:42] rng:3.2% 1Key:[1-29 9:30] last:[1-31 16:00]
 1d$:n:370 max:126.5 [1-31 10:41] min:123.3 [1-31 15:06] rng:2.6% 1Key:[1-31 9:30] last:[1-31 16:00]
+*Periodic Run* 19:21
+last live feed time: 1-31 16:00 been:201mins. p:124.02 cost:123.3 p/cost:1.006
+p:124.02 rng:1.8% pos:27 delt:3k cost:123.3 lot:26 fillP:115.77 costTgt:0.97 fillP/cost:0.939 fillP/px:0.933
+1-31 19:21 *chek orderStatus {240131005=Filled}
+1-31 19:21 2dP:36.0 1dP:23.0
+2d$:n:1150 max:126.5 [1-31 10:41] min:122.6 [1-29 9:42] rng:3.2% 1Key:[1-29 9:30] last:[1-31 16:00]
+1d$:n:370 max:126.5 [1-31 10:41] min:123.3 [1-31 15:06] rng:2.6% 1Key:[1-31 9:30] last:[1-31 16:00]
+*******************************************
+*STARTS* 2-1 5:43
+updating position: 2-1 5:43 position:27 cost:123.31
+POS:27 COST:123.3 DELT:3k
+2-1 5:44 *tradeReport* time: 2024-01-31T15:05:03 BOT execPx:123.3 shares:27 avgPx:123.3
+listOfExecs [orderID: 240131005 time: 2024-01-31T15:05:03 side: BOT shares: 27 price: 123.3]
+2-1 5:44 rng:1.9% costTgt:0.97
+2-1 5:44 tgtMargin:1.0158 tgtPrice:125.27
+*Periodic Run* 5:44
+no live feed
+2-1 5:44 2dP:101.0 1dP:101.0
+2d$:n:780 max:126.5 [1-31 10:41] min:123.3 [1-31 15:06] rng:2.6% 1Key:[1-30 9:30] last:[1-31 15:59]
+1d$:n<5
+*******************************************
+*STARTS* 2-1 6:13
+*******************************************
+*STARTS* 2-1 6:13
+updating position: 2-1 6:13 position:27 cost:123.31
+POS:27 COST:123.3 DELT:3k
+2-1 6:13 *tradeReport* time: 2024-01-31T15:05:03 BOT execPx:123.3 shares:27 avgPx:123.3
+listOfExecs [orderID: 240131005 time: 2024-01-31T15:05:03 side: BOT shares: 27 price: 123.3]
+*Periodic Run* 6:13
+no live feed
+2-1 6:13 2dP:22.0 1dP:100.0
+2d$:n:780 max:126.5 [1-31 10:41] min:123.3 [1-31 15:06] rng:2.6% 1Key:[1-30 9:30] last:[1-31 15:59]
+1d$:n<5
+2-1 6:13 rng:1.9% costTgt:0.97
+2-1 6:13 tgtMargin:1.0158 tgtPrice:125.27

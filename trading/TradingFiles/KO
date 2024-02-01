@@ -1926,3 +1926,39 @@ p:59.55 rng:1.1% pos:56 delt:3k cost:59.4 lot:55 fillP:55.84 costTgt:0.97 fillP/
 1-31 18:21 2dP:59.0 1dP:57.0
 2d$:n:1200 max:60.4 [1-31 9:44] min:58.3 [1-31 17:48] rng:3.6% 1Key:[1-29 9:30] last:[1-31 18:17]
 1d$:n:420 max:60.4 [1-31 9:44] min:58.4 [1-31 17:48] rng:3.5% 1Key:[1-31 7:21] last:[1-31 18:17]
+*Periodic Run* 19:21
+last live feed time: 1-31 19:13 been:8mins. p:59.5 cost:59.4 p/cost:1.001
+p:59.5 rng:1.1% pos:56 delt:3k cost:59.4 lot:56 fillP:55.87 costTgt:0.97 fillP/cost:0.94 fillP/px:0.939
+1-31 19:21 *chek orderStatus {240131007=Filled}
+1-31 19:21 2dP:56.0 1dP:55.0
+2d$:n:1202 max:60.4 [1-31 9:44] min:58.3 [1-31 17:48] rng:3.6% 1Key:[1-29 9:30] last:[1-31 19:13]
+1d$:n:422 max:60.4 [1-31 9:44] min:58.4 [1-31 17:48] rng:3.5% 1Key:[1-31 7:21] last:[1-31 19:13]
+*******************************************
+*STARTS* 2-1 5:43
+updating position: 2-1 5:43 position:56 cost:59.44
+POS:56 COST:59.4 DELT:3k
+2-1 5:44 *tradeReport* time: 2024-01-31T15:45 BOT execPx:59.43 shares:56 avgPx:59.43
+listOfExecs [orderID: 240131007 time: 2024-01-31T15:45 side: BOT shares: 56 price: 59.43]
+2-1 5:44 rng:1.1% costTgt:0.97
+2-1 5:44 tgtMargin:1.0093 tgtPrice:59.99
+*Periodic Run* 5:44
+last live feed time: 2-1 5:44 been:0mins. p:59.59 cost:59.4 p/cost:1.003
+p:59.59 rng:1.1% pos:56 delt:3k cost:59.4 lot:83 fillP:56.45 costTgt:0.97 fillP/cost:0.95 fillP/px:0.947
+2-1 5:44 2dP:23.0 1dP:100.0
+2d$:n:781 max:60.4 [1-31 9:44] min:59.3 [1-31 15:55] rng:1.8% 1Key:[1-30 9:30] last:[2-1 5:44]
+1d$:n<5
+*******************************************
+*STARTS* 2-1 6:13
+*******************************************
+*STARTS* 2-1 6:13
+updating position: 2-1 6:13 position:56 cost:59.44
+POS:56 COST:59.4 DELT:3k
+2-1 6:13 *tradeReport* time: 2024-01-31T15:45 BOT execPx:59.43 shares:56 avgPx:59.43
+listOfExecs [orderID: 240131007 time: 2024-01-31T15:45 side: BOT shares: 56 price: 59.43]
+*Periodic Run* 6:13
+no live feed
+2-1 6:13 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+2-1 6:13 rng:1.1% costTgt:0.97
+2-1 6:13 tgtMargin:1.0093 tgtPrice:59.99
