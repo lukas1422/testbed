@@ -33,6 +33,11 @@ import static utility.Utility.*;
 
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+    static final double DELTA_TOTAL_LIMIT = 100000;
+    static final double DELTA_LIMIT_EACH = 20000;
+    static final double CURRENT_REFILL_N = 4.0; //refill times now due to limited delta
+    static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
+    static final double MAX_DRAWDOWN_TARGET = 0.8;
     //data
     private volatile static Map<String, Double> px = new ConcurrentHashMap<>();
     private static Map<String, LocalDateTime> lastPxTimestamp = new ConcurrentHashMap<>();
@@ -57,7 +62,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = GATEWAY_PORT;
+    public static final int PORT_TO_USE = TWS_PORT;
 
     public static Map<String, Double> rng = new HashMap<>();
 

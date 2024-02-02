@@ -7793,3 +7793,147 @@ WMT 1d$:n<5
 *openOrder* Error 2-2 7:22 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
 *openOrder* Error 2-2 7:23 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
 *openOrder* Error 2-2 7:24 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:26 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:27 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:28 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:29 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:30 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:31 orderId:-1 errorCode:502 msg:Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+*Ending* 2-2 7:34
+MasterTradeID is: 240202001
+*****START***** HKT: 20:34:20 EST: 2-2 7:34 MASTERID: 240202001
+WMT *******************************************
+WMT *STARTS* 2-2 7:34
+PG *******************************************
+PG *STARTS* 2-2 7:34
+UL *******************************************
+UL *STARTS* 2-2 7:34
+MCD *******************************************
+MCD *STARTS* 2-2 7:34
+SPY *******************************************
+SPY *STARTS* 2-2 7:34
+KO *******************************************
+KO *STARTS* 2-2 7:34
+GLD *******************************************
+GLD *STARTS* 2-2 7:34
+SLV *******************************************
+SLV *STARTS* 2-2 7:34
+PHO *******************************************
+PHO *STARTS* 2-2 7:34
+AWK *******************************************
+AWK *STARTS* 2-2 7:34
+req live orders complete
+2-2 7:34 cancelling all orders on start up
+7:34 global cancel orders
+SPY updating position: 2-2 7:34 position:8 cost:487.97
+SLV updating position: 2-2 7:34 position:159 cost:20.92
+PHO updating position: 2-2 7:34 position:56 cost:59.46
+UL updating position: 2-2 7:34 position:102 cost:48.62
+MCD updating position: 2-2 7:34 position:16 cost:298.13
+AWK updating position: 2-2 7:34 position:27 cost:123.31
+AWK POS:27 COST:123.3 DELT:3k
+GLD POS:0 COST:0.0 DELT:0k
+KO POS:0 COST:0.0 DELT:0k
+MCD POS:16 COST:298.1 DELT:5k
+PG POS:0 COST:0.0 DELT:0k
+PHO POS:56 COST:59.5 DELT:3k
+SLV POS:159 COST:20.9 DELT:3k
+SPY POS:8 COST:488.0 DELT:4k
+UL POS:102 COST:48.6 DELT:5k
+WMT POS:0 COST:0.0 DELT:0k
+2-2 7:34 *openOrderEnd*:print all openOrdrs {AWK={}, GLD={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, AWK={}, PHO={}, PG={}, UL={}, SLV={}, SPY={}, GLD={}, WMT={}, MCD={}}
+PHO 2-2 7:34 *tradeReport* time: 2024-01-31T15:02:56 BOT execPx:59.46 shares:36 avgPx:59.46
+PHO 2-2 7:34 *tradeReport* time: 2024-01-31T15:03 BOT execPx:59.46 shares:20 avgPx:59.46
+AWK 2-2 7:34 *tradeReport* time: 2024-01-31T15:05:03 BOT execPx:123.3 shares:27 avgPx:123.3
+SLV 2-2 7:34 *tradeReport* time: 2024-01-31T15:06:04 BOT execPx:20.92 shares:159 avgPx:20.92
+KO 2-2 7:34 *tradeReport* time: 2024-01-31T15:45 BOT execPx:59.43 shares:56 avgPx:59.43
+UL 2-2 7:34 *tradeReport* time: 2024-02-01T09:32:32 BOT execPx:48.62 shares:102 avgPx:48.62
+KO 2-2 7:34 *tradeReport* time: 2024-02-01T10:26:56 SLD execPx:60.0 shares:56 avgPx:60.0
+2-2 7:34 *TradeReportEnd*: all executions: {0001390d.65baab62.01=[ExecutionAugmented{execution=orderID: 240131004 time: 2024-01-31T15:02:56 side: BOT shares: 36 price: 59.46, symbol='PHO'}], 0001390d.65baab6b.01=[ExecutionAugmented{execution=orderID: 240131004 time: 2024-01-31T15:03 side: BOT shares: 20 price: 59.46, symbol='PHO'}], 00012dbc.65ba701e.01=[ExecutionAugmented{execution=orderID: 240131005 time: 2024-01-31T15:05:03 side: BOT shares: 27 price: 123.3, symbol='AWK'}], 0001b950.65ba90e3.01=[ExecutionAugmented{execution=orderID: 240131006 time: 2024-01-31T15:06:04 side: BOT shares: 159 price: 20.92, symbol='SLV'}], 00012dc6.65ba85d0.01=[ExecutionAugmented{execution=orderID: 240131007 time: 2024-01-31T15:45 side: BOT shares: 56 price: 59.43, symbol='KO'}], 00013911.65bba962.01=[ExecutionAugmented{execution=orderID: 240201004 time: 2024-02-01T10:26:56 side: SLD shares: 56 price: 60.0, symbol='KO'}], 00012dce.65bb8d1a.01=[ExecutionAugmented{execution=orderID: 240201003 time: 2024-02-01T09:32:32 side: BOT shares: 102 price: 48.62, symbol='UL'}]}
+KO listOfExecs [orderID: 240131007 time: 2024-01-31T15:45 side: BOT shares: 56 price: 59.43, orderID: 240201004 time: 2024-02-01T10:26:56 side: SLD shares: 56 price: 60.0]
+AWK listOfExecs [orderID: 240131005 time: 2024-01-31T15:05:03 side: BOT shares: 27 price: 123.3]
+PHO listOfExecs [orderID: 240131004 time: 2024-01-31T15:02:56 side: BOT shares: 36 price: 59.46, orderID: 240131004 time: 2024-01-31T15:03 side: BOT shares: 20 price: 59.46]
+UL listOfExecs [orderID: 240201003 time: 2024-02-01T09:32:32 side: BOT shares: 102 price: 48.62]
+SLV listOfExecs [orderID: 240131006 time: 2024-01-31T15:06:04 side: BOT shares: 159 price: 20.92]
+GLD 2-2 7:34 rng:0.9% costTgt:0.97
+GLD 2-2 7:34 tgtMargin:1.0073 tgtPrice:0.0
+KO 2-2 7:34 rng:1.1% costTgt:0.97
+KO 2-2 7:34 tgtMargin:1.0097 tgtPrice:0.0
+AWK 2-2 7:34 rng:1.9% costTgt:0.97
+AWK 2-2 7:34 tgtMargin:1.0159 tgtPrice:125.27
+MCD 2-2 7:34 rng:1.3% costTgt:0.97
+MCD 2-2 7:34 tgtMargin:1.0109 tgtPrice:301.38
+PG 2-2 7:34 rng:1.3% costTgt:0.97
+PG 2-2 7:34 tgtMargin:1.0113 tgtPrice:0.0
+SLV 2-2 7:34 rng:1.6% costTgt:0.97
+SLV 2-2 7:34 tgtMargin:1.0135 tgtPrice:21.2
+SPY 2-2 7:34 rng:0.8% costTgt:0.988
+SPY 2-2 7:34 tgtMargin:1.0067 tgtPrice:491.22
+PHO 2-2 7:34 rng:1.1% costTgt:0.97
+PHO 2-2 7:34 tgtMargin:1.0095 tgtPrice:60.03
+UL 2-2 7:34 rng:0.9% costTgt:0.97
+UL 2-2 7:34 tgtMargin:1.0073 tgtPrice:48.98
+WMT 2-2 7:34 rng:1.2% costTgt:0.97
+WMT 2-2 7:34 tgtMargin:1.0104 tgtPrice:0.0
+AWK *Periodic Run* 7:34
+AWK no live feed
+AWK 2-2 7:34 2dP:101.0 1dP:101.0
+AWK 2d$:n:780 max:126.5 [1-31 10:41] min:123.0 [2-1 9:41] rng:2.8% 1Key:[1-31 9:30] last:[2-1 15:59]
+AWK 1d$:n<5
+GLD *Periodic Run* 7:34
+GLD last live feed time: 2-2 7:34 been:0mins. p:190.45 
+GLD 2-2 7:34 2dP:101.0 1dP:101.0
+GLD 2d$:n:781 max:191.3 [2-1 11:47] min:188.2 [1-31 15:34] rng:1.7% 1Key:[1-31 9:30] last:[2-2 7:34]
+GLD 1d$:n<5
+KO *Periodic Run* 7:34
+KO last live feed time: 2-2 7:34 been:0mins. p:60.91 
+KO 2-2 7:34 2dP:101.0 1dP:101.0
+KO 2d$:n:781 max:61.0 [2-1 15:59] min:59.3 [1-31 15:55] rng:2.7% 1Key:[1-31 9:30] last:[2-2 7:34]
+KO 1d$:n<5
+MCD *Periodic Run* 7:34
+MCD no live feed
+MCD 2-2 7:34 2dP:101.0 1dP:101.0
+MCD 2d$:n:780 max:297.5 [2-1 15:59] min:290.4 [2-1 9:33] rng:2.4% 1Key:[1-31 9:30] last:[2-1 15:59]
+MCD 1d$:n<5
+PG *Periodic Run* 7:34
+PG last live feed time: 2-2 7:34 been:0mins. p:159.28 
+PG 2-2 7:34 2dP:100.0 1dP:100.0
+PG 2d$:n:781 max:159.3 [2-1 12:06] min:156.7 [2-1 9:39] rng:1.7% 1Key:[1-31 9:30] last:[2-2 7:34]
+PG 1d$:n<5
+PHO *Periodic Run* 7:34
+PHO no live feed
+PHO 2-2 7:34 2dP:100.0 1dP:100.0
+PHO 2d$:n:780 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-1 15:59]
+PHO 1d$:n<5
+SLV *Periodic Run* 7:34
+SLV last live feed time: 2-2 7:34 been:0mins. p:21.25 cost:20.9 p/cost:1.016
+SLV p:21.25 rng:1.6% pos:159 delt:3k cost:20.9 lot:235 fillP:19.87 costTgt:0.97 fillP/cost:0.95 fillP/px:0.935
+SLV 2-2 7:34 2dP:81.0 1dP:100.0
+SLV 2d$:n:781 max:21.3 [1-31 9:46] min:20.8 [1-31 15:32] rng:2.4% 1Key:[1-31 9:30] last:[2-2 7:34]
+SLV 1d$:n<5
+SPY *Periodic Run* 7:34
+SPY last live feed time: 2-2 7:34 been:0mins. p:492.46 cost:488.0 p/cost:1.009
+SPY p:492.46 rng:0.8% pos:8 delt:4k cost:488.0 lot:12 fillP:478.48 costTgt:0.988 fillP/cost:0.981 fillP/px:0.972
+SPY 2-2 7:34 2dP:100.0 1dP:100.0
+SPY 2d$:n:781 max:489.1 [2-2 7:34] min:483.1 [1-31 15:59] rng:1.2% 1Key:[1-31 9:30] last:[2-2 7:34]
+SPY 1d$:n<5
+UL *Periodic Run* 7:34
+UL last live feed time: 2-2 7:34 been:0mins. p:49.45 cost:48.6 p/cost:1.017
+UL p:49.45 rng:0.9% pos:102 delt:5k cost:48.6 lot:101 fillP:45.69 costTgt:0.97 fillP/cost:0.94 fillP/px:0.924
+UL 2-2 7:34 2dP:99.0 1dP:100.0
+UL 2d$:n:781 max:49.5 [2-1 15:59] min:48.6 [2-1 9:37] rng:1.9% 1Key:[1-31 9:30] last:[2-2 7:34]
+UL 1d$:n<5
+WMT *Periodic Run* 7:34
+WMT last live feed time: 2-2 7:34 been:0mins. p:168.7 
+WMT 2-2 7:34 2dP:100.0 1dP:100.0
+WMT 2d$:n:781 max:168.3 [2-2 7:34] min:165.1 [1-31 15:32] rng:1.9% 1Key:[1-31 9:30] last:[2-2 7:34]
+WMT 1d$:n<5
+*openOrder* Error 2-2 7:34 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.cashfarm
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.cashfarm
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.eufarmnj
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.eufarmnj
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.jfarm
+*openOrder* Error 2-2 7:35 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.jfarm
+*openOrder* Error 2-2 7:36 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-2 7:37 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk

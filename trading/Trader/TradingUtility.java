@@ -730,7 +730,7 @@ public class TradingUtility {
     public static double costTgt(String symb) {
         return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
                 1 - rng.getOrDefault(symb, 0.0),
-                Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
+                Math.pow(ProfitTargetTrader.MAX_DRAWDOWN_TARGET, 1 / (ProfitTargetTrader.IDEAL_REFILL_N - 1)));
     }
 
     //    public static double costTgt(String symb) {
@@ -756,11 +756,11 @@ public class TradingUtility {
     }
 
     static double deltaLimitEach(String s) {
-        return s.equalsIgnoreCase("SPY") ? DELTA_TOTAL_LIMIT / 4 : DELTA_LIMIT_EACH;
+        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 : ProfitTargetTrader.DELTA_LIMIT_EACH;
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / CURRENT_REFILL_N)));
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / ProfitTargetTrader.CURRENT_REFILL_N)));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
