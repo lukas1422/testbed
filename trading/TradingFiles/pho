@@ -501,3 +501,126 @@ no live feed
 2-2 7:34 2dP:100.0 1dP:100.0
 2d$:n:780 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-1 15:59]
 1d$:n<5
+*Periodic Run* 8:34
+no live feed
+2-2 8:34 2dP:100.0 1dP:100.0
+2d$:n:780 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-1 15:59]
+1d$:n<5
+**CUT** 2-2 9:30:00 1dP:100.0 2dp:100.0 px/Cost:1.0102 reqMargin:1.0095 rng:0.0112
+ordID:240202003 tradID:240202003 SELL px:60.19 q:56 cost:59.46 PHO 2-2 9:30 INVENTORY_CUTTER Created reqMargin:1.0095158937595836 tgtSellPx:60.03 askPx:60.19
+2D$:n:781 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 9:30]
+1D$:n<5
+9:30:01 order blocked by:[] orderStatus:{240202003=Created}
+9:30:02 order blocked by:[] orderStatus:{240202003=Created}
+9:30:02 order blocked by:[] orderStatus:{240202003=Created}
+2-2 9:30 *openOrder* status:Submitted orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:
+2-2 9:30 *openOrder* all live orders {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 9:30 *OrderStatus*:Submitted orderId:240202003 filled:0 remaining:56 fillPx:0.0 lastFillPx:0.0
+9:30:06 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:31:08 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:33:58 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+*Periodic Run* 9:34
+last live feed time: 2-2 9:33 been:0mins. p:59.9 cost:59.5 p/cost:1.007
+p:59.9 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.943
+2-2 9:34 *chek orderStatus {240202003=Submitted}
+2-2 9:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 9:34 2dP:62.0 1dP:100.0
+2d$:n:783 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 9:33]
+1d$:n<5
+9:34:42 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:36:18 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:37:00 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:38:04 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:38:16 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:39:51 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:41:48 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:47:00 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:48:31 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:48:49 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:50:20 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:51:38 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+9:54:12 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:03:00 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:12:28 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:16:02 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:17:52 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:18:58 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+10:33:26 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+*Periodic Run* 10:34
+last live feed time: 2-2 10:33 been:1mins. p:59.71 cost:59.5 p/cost:1.004
+p:59.71 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.946
+2-2 10:34 *chek orderStatus {240202003=Submitted}
+2-2 10:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 10:34 2dP:43.0 1dP:25.0
+2d$:n:800 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:33]
+1d$:n:20 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:33]
+10:42:07 order blocked by:[orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:] orderStatus:{240202003=Submitted}
+*Periodic Run* 11:34
+last live feed time: 2-2 10:42 been:52mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 11:34 *chek orderStatus {240202003=Submitted}
+2-2 11:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 11:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 12:34
+last live feed time: 2-2 10:42 been:112mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 12:34 *chek orderStatus {240202003=Submitted}
+2-2 12:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 12:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 13:34
+last live feed time: 2-2 10:42 been:172mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 13:34 *chek orderStatus {240202003=Submitted}
+2-2 13:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 13:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 14:34
+last live feed time: 2-2 10:42 been:232mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 14:34 *chek orderStatus {240202003=Submitted}
+2-2 14:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 14:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 15:34
+last live feed time: 2-2 10:42 been:292mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 15:34 *chek orderStatus {240202003=Submitted}
+2-2 15:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 15:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 16:34
+last live feed time: 2-2 10:42 been:352mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 16:34 *chek orderStatus {240202003=Submitted}
+2-2 16:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 16:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*Periodic Run* 17:34
+last live feed time: 2-2 10:42 been:412mins. p:59.76 cost:59.5 p/cost:1.005
+p:59.76 rng:1.1% pos:56 delt:3k cost:59.5 lot:83 fillP:56.48 costTgt:0.97 fillP/cost:0.95 fillP/px:0.945
+2-2 17:34 *chek orderStatus {240202003=Submitted}
+2-2 17:34 *chek openOrders*: {240202003=orderID:240202003 LMT SELL Q:56 px:60.19 filledQ:}
+2-2 17:34 2dP:48.0 1dP:44.0
+2d$:n:801 max:60.3 [2-1 15:59] min:59.3 [1-31 15:51] rng:1.8% 1Key:[1-31 9:30] last:[2-2 10:42]
+1d$:n:21 max:59.9 [2-2 9:30] min:59.6 [2-2 9:41] rng:0.4% 1Key:[2-2 9:30] last:[2-2 10:42]
+*******************************************
+*STARTS* 2-2 18:26
+updating position: 2-2 18:26 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+2-2 18:26 *tradeReport* time: 2024-02-02T11:52:01 SLD execPx:60.19 shares:56 avgPx:60.19
+listOfExecs [orderID: 240202003 time: 2024-02-02T11:52:01 side: SLD shares: 56 price: 60.19]
+2-2 18:26 rng:1.1% costTgt:0.97
+2-2 18:26 tgtMargin:1.0096 tgtPrice:0.0
+*Periodic Run* 18:26
+last live feed time: 2-2 18:26 been:0mins. p:60.26 
+2-2 18:26 2dP:75.0 1dP:69.0
+2d$:n:781 max:60.6 [2-2 15:27] min:59.4 [2-1 11:13] rng:2.1% 1Key:[2-1 9:30] last:[2-2 18:26]
+1d$:n:391 max:60.6 [2-2 15:27] min:59.6 [2-2 9:41] rng:1.7% 1Key:[2-2 9:30] last:[2-2 18:26]
