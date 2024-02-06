@@ -11415,3 +11415,131 @@ WMT 2d$:n:781 max:170.6 [2-2 14:49] min:168.0 [2-2 10:17] rng:1.6% 1Key:[2-2 9:3
 WMT 1d$:n<5
 *openOrder* Error 2-6 4:55 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
 *Ending* 2-6 5:09
+MasterTradeID is: 240206001
+*****START***** HKT: 19:34:54 EST: 2-6 6:34 MASTERID: 240206001
+WMT *******************************************
+WMT *STARTS* 2-6 6:34
+PG *******************************************
+PG *STARTS* 2-6 6:34
+UL *******************************************
+UL *STARTS* 2-6 6:34
+MCD *******************************************
+MCD *STARTS* 2-6 6:34
+SPY *******************************************
+SPY *STARTS* 2-6 6:34
+KO *******************************************
+KO *STARTS* 2-6 6:34
+GLD *******************************************
+GLD *STARTS* 2-6 6:34
+SLV *******************************************
+SLV *STARTS* 2-6 6:34
+PHO *******************************************
+PHO *STARTS* 2-6 6:34
+AWK *******************************************
+AWK *STARTS* 2-6 6:34
+req live orders complete
+2-6 6:34 cancelling all orders on start up
+6:34 global cancel orders
+2-6 6:34 *openOrderEnd*:print all openOrdrs {AWK={}, GLD={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, AWK={}, PHO={}, PG={}, UL={}, SLV={}, SPY={}, GLD={}, WMT={}, MCD={}}
+MCD 2-6 6:34 *tradeReport* time: 2024-02-05T11:53:08 BOT execPx:283.65 shares:26 avgPx:283.65
+2-6 6:34 *TradeReportEnd*: all executions: {00012dc6.65c100d7.01=[ExecutionAugmented{execution=orderID: 240205004 time: 2024-02-05T11:53:08 side: BOT shares: 26 price: 283.65, symbol='MCD'}]}
+MCD listOfExecs [orderID: 240205004 time: 2024-02-05T11:53:08 side: BOT shares: 26 price: 283.65]
+SLV updating position: 2-6 6:34 position:159 cost:20.92
+PHO updating position: 2-6 6:34 position:125 cost:59.53
+MCD updating position: 2-6 6:34 position:42 cost:289.17
+AWK updating position: 2-6 6:34 position:27 cost:123.31
+GLD updating position: 2-6 6:34 position:26 cost:188.04
+AWK POS:27 COST:123.3 DELT:3k
+GLD POS:26 COST:188.0 DELT:5k
+KO POS:0 COST:0.0 DELT:0k
+MCD POS:42 COST:289.2 DELT:12k
+PG POS:0 COST:0.0 DELT:0k
+PHO POS:125 COST:59.5 DELT:7k
+SLV POS:159 COST:20.9 DELT:3k
+SPY POS:0 COST:0.0 DELT:0k
+UL POS:0 COST:0.0 DELT:0k
+WMT POS:0 COST:0.0 DELT:0k
+*openOrder* Error 2-6 6:34 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+PHO 2-6 6:35 rng:1.1% costTgt:0.97
+PHO 2-6 6:35 tgtMargin:1.0095 tgtPrice:60.1
+PHO ytdReturn:-2.2%
+AWK 2-6 6:35 rng:1.8% costTgt:0.97
+AWK 2-6 6:35 tgtMargin:1.0156 tgtPrice:125.24
+AWK ytdReturn:-7.93%
+SPY 2-6 6:35 rng:0.8% costTgt:0.988
+SPY 2-6 6:35 tgtMargin:1.0068 tgtPrice:0.0
+SPY ytdReturn:3.63%
+UL 2-6 6:35 rng:0.9% costTgt:0.97
+UL 2-6 6:35 tgtMargin:1.0072 tgtPrice:0.0
+UL ytdReturn:1.59%
+GLD 2-6 6:35 rng:0.8% costTgt:0.97
+GLD 2-6 6:35 tgtMargin:1.0071 tgtPrice:189.38
+GLD ytdReturn:-1.88%
+WMT 2-6 6:35 rng:1.3% costTgt:0.97
+WMT 2-6 6:35 tgtMargin:1.0106 tgtPrice:0.0
+WMT ytdReturn:6.98%
+MCD 2-6 6:35 rng:1.3% costTgt:0.97
+MCD 2-6 6:35 tgtMargin:1.0111 tgtPrice:292.39
+MCD ytdReturn:-3.55%
+PG 2-6 6:35 rng:1.3% costTgt:0.97
+PG 2-6 6:35 tgtMargin:1.0111 tgtPrice:0.0
+PG ytdReturn:8.65%
+KO 2-6 6:35 rng:1.1% costTgt:0.97
+KO 2-6 6:35 tgtMargin:1.0095 tgtPrice:0.0
+KO ytdReturn:1.88%
+SLV 2-6 6:35 rng:1.6% costTgt:0.97
+SLV 2-6 6:35 tgtMargin:1.0132 tgtPrice:21.2
+SLV ytdReturn:-6.01%
+AWK *Periodic Run* 6:35
+AWK no live feed
+AWK 2-6 6:35 2dP:101.0 1dP:101.0
+AWK 2d$:n:780 max:124.9 [2-2 15:09] min:121.2 [2-5 10:56] rng:3.1% 1Key:[2-2 9:30] last:[2-5 15:59]
+AWK 1d$:n<5
+GLD *Periodic Run* 6:35
+GLD last live feed time: 2-6 6:35 been:0mins. p:187.6 cost:188.0 p/cost:0.998
+GLD p:187.6 rng:0.8% pos:26 delt:5k cost:188.0 lot:39 fillP:178.64 costTgt:0.97 fillP/cost:0.95 fillP/px:0.952
+GLD 2-6 6:35 2dP:101.0 1dP:101.0
+GLD 2d$:n:781 max:188.9 [2-2 13:40] min:186.7 [2-5 10:53] rng:1.1% 1Key:[2-2 9:30] last:[2-6 6:35]
+GLD 1d$:n<5
+KO *Periodic Run* 6:35
+KO last live feed time: 2-6 6:35 been:0mins. p:60.0 
+KO 2-6 6:35 2dP:101.0 1dP:101.0
+KO 2d$:n:781 max:60.8 [2-2 9:30] min:59.9 [2-5 9:34] rng:1.6% 1Key:[2-2 9:30] last:[2-6 6:35]
+KO 1d$:n<5
+MCD *Periodic Run* 6:35
+MCD last live feed time: 2-6 6:35 been:0mins. p:284.05 cost:289.2 p/cost:0.982
+MCD p:284.05 rng:1.3% pos:42 delt:12k cost:289.2 lot:26 fillP:266.49 costTgt:0.97 fillP/cost:0.922 fillP/px:0.938
+MCD 2-6 6:35 2dP:101.0 1dP:101.0
+MCD 2d$:n:781 max:298.1 [2-2 15:29] min:283.4 [2-5 12:25] rng:5.2% 1Key:[2-2 9:30] last:[2-6 6:35]
+MCD 1d$:n<5
+PG *Periodic Run* 6:35
+PG last live feed time: 2-6 6:35 been:0mins. p:158.12 
+PG 2-6 6:35 2dP:101.0 1dP:101.0
+PG 2d$:n:781 max:159.4 [2-2 9:33] min:157.6 [2-2 10:04] rng:1.2% 1Key:[2-2 9:30] last:[2-6 6:35]
+PG 1d$:n<5
+PHO *Periodic Run* 6:35
+PHO no live feed
+PHO 2-6 6:35 2dP:101.0 1dP:101.0
+PHO 2d$:n:780 max:60.6 [2-2 15:27] min:59.3 [2-5 10:20] rng:2.1% 1Key:[2-2 9:30] last:[2-5 15:59]
+PHO 1d$:n<5
+SLV *Periodic Run* 6:35
+SLV last live feed time: 2-6 6:35 been:0mins. p:20.41 cost:20.9 p/cost:0.976
+SLV p:20.41 rng:1.6% pos:159 delt:3k cost:20.9 lot:367 fillP:20.02 costTgt:0.97 fillP/cost:0.957 fillP/px:0.981
+SLV 2-6 6:35 2dP:101.0 1dP:101.0
+SLV 2d$:n:781 max:20.8 [2-2 13:40] min:20.4 [2-5 11:48] rng:2.0% 1Key:[2-2 9:30] last:[2-6 6:35]
+SLV 1d$:n<5
+SPY *Periodic Run* 6:35
+SPY last live feed time: 2-6 6:35 been:0mins. p:492.55 
+SPY 2-6 6:35 2dP:48.0 1dP:100.0
+SPY 2d$:n:781 max:496.0 [2-2 15:11] min:489.5 [2-2 9:32] rng:1.3% 1Key:[2-2 9:30] last:[2-6 6:35]
+SPY 1d$:n<5
+UL *Periodic Run* 6:35
+UL last live feed time: 2-6 6:35 been:0mins. p:49.26 
+UL 2-6 6:35 2dP:90.0 1dP:100.0
+UL 2d$:n:781 max:49.3 [2-5 15:35] min:48.8 [2-2 11:17] rng:1.1% 1Key:[2-2 9:30] last:[2-6 6:35]
+UL 1d$:n<5
+WMT *Periodic Run* 6:35
+WMT last live feed time: 2-6 6:35 been:0mins. p:168.57 
+WMT 2-6 6:35 2dP:24.0 1dP:100.0
+WMT 2d$:n:781 max:170.6 [2-2 14:49] min:168.0 [2-2 10:17] rng:1.6% 1Key:[2-2 9:30] last:[2-6 6:35]
+WMT 1d$:n<5

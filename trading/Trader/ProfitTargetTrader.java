@@ -419,7 +419,7 @@ public class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(ct);
 
         if (ytdReturn.getOrDefault(s, -100.0) < -0.1) {
-            outputToSymbol(s, "inventoryAdder: ytdReturn < -10%:"
+            outputToSymbol(s, "inventoryAdder: ytdReturn < -10% cannot trade:"
                     , ytdReturn.getOrDefault(s, -100.0));
             return;
         }
