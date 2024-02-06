@@ -418,9 +418,13 @@ public class ProfitTargetTrader implements LiveHandler,
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
         String s = ibContractToSymbol(ct);
 
-        if (ytdReturn.getOrDefault(s, -0.2) < -0.1) {
+        if (ytdReturn.getOrDefault(s, -100.0) < -0.1) {
+            outputToSymbol(s, "inventoryAdder: ytdReturn < -10%:"
+                    , ytdReturn.getOrDefault(s, -100.0));
             return;
         }
+        outputToSymbol(s, "inventoryAdder: ytdReturn > -10%, can trade:"
+                , ytdReturn.getOrDefault(s, -100.0));
 
         if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
             outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" + symbDelta.getOrDefault(s, MAX_VALUE),
