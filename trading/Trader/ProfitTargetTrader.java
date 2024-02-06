@@ -52,6 +52,7 @@ public class ProfitTargetTrader implements LiveHandler,
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
+    private static ConcurrentSkipListMap<String, Double> ytdReturn = new ConcurrentSkipListMap<>();
     static volatile double totalDelta = 0.0;
     static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     static Map<String, Double> askMap = new ConcurrentHashMap<>();
@@ -148,9 +149,11 @@ public class ProfitTargetTrader implements LiveHandler,
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 lastYearCloseMap.put(s, lastYearClose);
+                ytdReturn.put(s, ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
+                outputToSymbol(s, "ytdReturn:" + round(ytdReturn.get(s) * 10000d) / 100d + "%");
                 pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getKey(),
                         ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose(),
-                        "YTD:", round2(ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1));
+                        "YTD:", round2(ytdReturn.get(s)));
             }
         } else {
             pr("no historical data to compute ", s);
@@ -254,7 +257,7 @@ public class ProfitTargetTrader implements LiveHandler,
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
                     outputToSymbol(s, "*REFIL*", t.format(MdHmmss),
-                            "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
+                            "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
                             "px/cost:" + round4(pxOverCost(px, s)),
@@ -414,6 +417,10 @@ public class ProfitTargetTrader implements LiveHandler,
 
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
         String s = ibContractToSymbol(ct);
+
+        if (ytdReturn.getOrDefault(s, -0.2) < -0.1) {
+            return;
+        }
 
         if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
             outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" + symbDelta.getOrDefault(s, MAX_VALUE),
