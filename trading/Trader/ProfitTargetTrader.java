@@ -67,19 +67,6 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static Map<String, Double> rng = new HashMap<>();
 
-//    Contract wmt = generateUSStockContract("WMT");
-//    Contract pg = generateUSStockContract("PG");
-//    Contract ul = generateUSStockContract("UL");
-//    Contract mcd = generateUSStockContract("MCD");
-//    Contract spy = generateUSStockContract("SPY");
-//    Contract ko = generateUSStockContract("KO");
-//    Contract gld = generateUSStockContract("GLD");
-//    Contract slv = generateUSStockContract("SLV");
-//    Contract vaw = generateUSStockContract("VAW");
-//    Contract pho = generateUSStockContract("PHO");
-//    Contract vpu = generateUSStockContract("VPU");
-//    Contract awk = generateUSStockContract("AWK");
-
     private ProfitTargetTrader() throws IOException {
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
         pr("mkt start time today:", TODAY930);
@@ -91,7 +78,6 @@ public class ProfitTargetTrader implements LiveHandler,
                     pr(a[0]);
                     registerContract(generateUSStockContract(a[0]));
                 });
-//        registerContractAll(wmt, pg, ul, mcd, spy, ko, gld, slv, vaw, pho, vpu, awk);
     }
 
     static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
@@ -379,12 +365,12 @@ public class ProfitTargetTrader implements LiveHandler,
                             "1dp:" + (oneDayPctMap.containsKey(s) ? round(oneDayPctMap.get(s)) : "n/a"),
                             "2dp:" + (twoDayPctMap.containsKey(s) ? round(twoDayPctMap.get(s)) : "n/a"),
                             "delt:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
-                            "cos:" + round1(costMap.get(s)),
+                            "cost:" + round1(costMap.get(s)),
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(s, px.get(s)),
                             "costTgt:" + round2(costTgt(s)),
                             "refil@" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
-                            "refil/Cos:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
+                            "refil/Cost:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
                                     costMap.get(s)),
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
@@ -442,8 +428,8 @@ public class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
         outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(),
                 "px:" + bidPx, "lot:" + lotSize, orderSubmitted.get(s).get(o.orderId()));
-        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)),
-                "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
 
     private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
