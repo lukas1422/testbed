@@ -269,7 +269,7 @@ public class ProfitTargetTrader implements LiveHandler,
         } else if (pos.longValue() > 0) {
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
-                outputToSymbol(s, "**CUT**", t.format(MdHmmss),
+                outputToSymbol(s, "****CUT))**", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP,
                         "px/Cost:" + round4(pOverCost),
                         "reqMargin:" + round4(tgtProfitMargin(s)),
@@ -457,9 +457,10 @@ public class ProfitTargetTrader implements LiveHandler,
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
         outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "px:" + offerPrice,
-                "q:" + o.totalQuantity().longValue(), "cost:" + round2(cost),
-                orderSubmitted.get(s).get(o.orderId()),
-                "reqMargin:" + tgtProfitMargin(s),
+                "q:" + o.totalQuantity().longValue(), "cost:" + round2(cost));
+
+        outputToSymbol(s, orderSubmitted.get(s).get(o.orderId()),
+                "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));

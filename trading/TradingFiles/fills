@@ -427,3 +427,19 @@ MCD 2-5 11:53 *OrderStatus*: filled. ordID:240205004
 MCD 2-5 11:53 *openOrder* filled orderID:240205004 LMT BUY Q:26 px:283.65 filledQ:
 MCD 2-5 11:53 *OrderStatus*: filled. ordID:240205004
 MCD 1.*commission report* orderID:240205004 commission:0.32 
+KO 2-6 9:30 *openOrder* filled orderID:240206003 LMT BUY Q:125 px:59.87 filledQ:
+KO 2-6 9:30 *OrderStatus*: filled. ordID:240206003
+KO 2-6 9:30 *openOrder* filled orderID:240206003 LMT BUY Q:125 px:59.87 filledQ:
+KO 2-6 9:30 *OrderStatus*: filled. ordID:240206003
+KO 1.*commission report* orderID:240206003 commission:0.46 
+WMT 2-6 10:14 *openOrder* filled orderID:240206004 LMT BUY Q:44 px:168.44 filledQ:
+WMT 2-6 10:14 *OrderStatus*: filled. ordID:240206004
+WMT 2-6 10:14 *openOrder* filled orderID:240206004 LMT BUY Q:44 px:168.44 filledQ:
+WMT 2-6 10:14 *OrderStatus*: filled. ordID:240206004
+WMT 1.*commission report* orderID:240206004 commission:0.31 
+PHO 1.*commission report* orderID:240206005 commission:0.29 orderID: 240206005 realized pnl: 27.54
+PHO 2-6 12:29 *openOrder* filled orderID:240206005 LMT SELL Q:125 px:60.1 filledQ:
+PHO 2-6 12:29 *OrderStatus*: filled. ordID:240206005
+PHO 2-6 12:29 *openOrder* filled orderID:240206005 LMT SELL Q:125 px:60.1 filledQ:
+PHO 2-6 12:29 *OrderStatus*: filled. ordID:240206005
+PHO 1.*commission report* orderID:240206005 commission:-0.01 orderID: 240206005 realized pnl: 43.17
