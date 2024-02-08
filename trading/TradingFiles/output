@@ -15956,3 +15956,165 @@ WMT 2-7 19:04 2dP:54.0 1dP:27.0
 WMT 2d$:n:783 max:170.6 [2-7 10:01] min:168.4 [2-6 10:19] rng:1.3% 1Key:[2-6 9:30] last:[2-7 19:04]
 WMT 1d$:n:393 max:170.6 [2-7 10:01] min:169.2 [2-7 15:57] rng:0.8% 1Key:[2-7 9:30] last:[2-7 19:04]
 *Ending* 2-7 19:18
+MasterTradeID is: 240208001
+*****START***** HKT: 19:50:57 EST: 2-8 6:50 MASTERID: 240208001
+WMT *******************************************
+WMT *STARTS* 2-8 6:50
+PG *******************************************
+PG *STARTS* 2-8 6:50
+UL *******************************************
+UL *STARTS* 2-8 6:50
+MCD *******************************************
+MCD *STARTS* 2-8 6:50
+SPY *******************************************
+SPY *STARTS* 2-8 6:50
+KO *******************************************
+KO *STARTS* 2-8 6:50
+GLD *******************************************
+GLD *STARTS* 2-8 6:50
+SLV *******************************************
+SLV *STARTS* 2-8 6:50
+PHO *******************************************
+PHO *STARTS* 2-8 6:50
+AWK *******************************************
+AWK *STARTS* 2-8 6:50
+req liveorders not connected
+2-8 6:51 cancelling all orders on start up
+not connected
+*Ending* 2-8 6:51
+MasterTradeID is: 240208001
+*****START***** HKT: 19:53:02 EST: 2-8 6:53 MASTERID: 240208001
+WMT *******************************************
+WMT *STARTS* 2-8 6:53
+PG *******************************************
+PG *STARTS* 2-8 6:53
+UL *******************************************
+UL *STARTS* 2-8 6:53
+MCD *******************************************
+MCD *STARTS* 2-8 6:53
+SPY *******************************************
+SPY *STARTS* 2-8 6:53
+KO *******************************************
+KO *STARTS* 2-8 6:53
+GLD *******************************************
+GLD *STARTS* 2-8 6:53
+SLV *******************************************
+SLV *STARTS* 2-8 6:53
+PHO *******************************************
+PHO *STARTS* 2-8 6:53
+AWK *******************************************
+AWK *STARTS* 2-8 6:53
+req live orders complete
+2-8 6:53 cancelling all orders on start up
+6:53 global cancel orders
+SLV updating position: 2-8 6:53 position:159 cost:20.92
+UL updating position: 2-8 6:53 position:152 cost:49.1
+KO updating position: 2-8 6:53 position:125 cost:59.78
+MCD updating position: 2-8 6:53 position:42 cost:289.17
+AWK updating position: 2-8 6:53 position:27 cost:123.31
+GLD updating position: 2-8 6:53 position:26 cost:188.04
+AWK POS:27 COST:123.3 DELT:3k
+GLD POS:26 COST:188.0 DELT:5k
+KO POS:125 COST:59.8 DELT:7k
+MCD POS:42 COST:289.2 DELT:12k
+PG POS:0 COST:0.0 DELT:0k
+PHO POS:0 COST:0.0 DELT:0k
+SLV POS:159 COST:20.9 DELT:3k
+SPY POS:0 COST:0.0 DELT:0k
+UL POS:152 COST:49.1 DELT:7k
+WMT POS:0 COST:0.0 DELT:0k
+2-8 6:53 *openOrderEnd*:print all openOrdrs {AWK={}, GLD={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, AWK={}, PHO={}, PG={}, UL={}, SLV={}, SPY={}, GLD={}, WMT={}, MCD={}}
+UL 2-8 6:53 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:100 avgPx:49.1
+UL 2-8 6:53 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:52 avgPx:49.1
+PHO 2-8 6:53 *tradeReport* time: 2024-02-06T12:29:23 SLD execPx:60.1 shares:49 avgPx:60.1
+PHO 2-8 6:53 *tradeReport* time: 2024-02-06T12:29:26 SLD execPx:60.1 shares:76 avgPx:60.1
+WMT 2-8 6:53 *tradeReport* time: 2024-02-07T09:31:55 SLD execPx:170.29 shares:44 avgPx:170.29
+2-8 6:53 *TradeReportEnd*: all executions: {00012dce.65c3b181.01=[ExecutionAugmented{execution=orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, symbol='UL'}], 00012dce.65c3b182.01=[ExecutionAugmented{execution=orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1, symbol='UL'}], 0001390d.65c2a037.01=[ExecutionAugmented{execution=orderID: 240206005 time: 2024-02-06T12:29:23 side: SLD shares: 49 price: 60.1, symbol='PHO'}], 0001390d.65c2a044.01=[ExecutionAugmented{execution=orderID: 240206005 time: 2024-02-06T12:29:26 side: SLD shares: 76 price: 60.1, symbol='PHO'}], 00012dce.65c37761.01=[ExecutionAugmented{execution=orderID: 240207003 time: 2024-02-07T09:31:55 side: SLD shares: 44 price: 170.29, symbol='WMT'}]}
+PHO listOfExecs [orderID: 240206005 time: 2024-02-06T12:29:23 side: SLD shares: 49 price: 60.1, orderID: 240206005 time: 2024-02-06T12:29:26 side: SLD shares: 76 price: 60.1]
+UL listOfExecs [orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1]
+WMT listOfExecs [orderID: 240207003 time: 2024-02-07T09:31:55 side: SLD shares: 44 price: 170.29]
+GLD 2-8 6:53 rng:0.8% costTgt:0.97
+GLD 2-8 6:53 tgtMargin:1.007 tgtPrice:189.37
+GLD ytdReturn:-1.4%
+KO 2-8 6:53 rng:1.1% costTgt:0.97
+KO 2-8 6:53 tgtMargin:1.0093 tgtPrice:60.34
+KO ytdReturn:1.8%
+AWK 2-8 6:53 rng:1.8% costTgt:0.97
+AWK 2-8 6:53 tgtMargin:1.0156 tgtPrice:125.23
+AWK ytdReturn:-7.07%
+MCD 2-8 6:53 rng:1.3% costTgt:0.97
+MCD 2-8 6:53 tgtMargin:1.0112 tgtPrice:292.43
+MCD ytdReturn:-3.1%
+UL 2-8 6:53 rng:0.9% costTgt:0.97
+UL 2-8 6:53 tgtMargin:1.0073 tgtPrice:49.46
+UL ytdReturn:0.87%
+SLV 2-8 6:53 rng:1.5% costTgt:0.97
+SLV 2-8 6:53 tgtMargin:1.013 tgtPrice:21.2
+SLV ytdReturn:-6.66%
+WMT 2-8 6:53 rng:1.2% costTgt:0.97
+WMT 2-8 6:53 tgtMargin:1.0105 tgtPrice:0.0
+WMT ytdReturn:7.44%
+PG 2-8 6:53 rng:1.3% costTgt:0.97
+PG 2-8 6:53 tgtMargin:1.0109 tgtPrice:0.0
+PG ytdReturn:9.27%
+PHO 2-8 6:53 rng:1.1% costTgt:0.97
+PHO 2-8 6:53 tgtMargin:1.0096 tgtPrice:0.0
+PHO ytdReturn:0.38%
+SPY 2-8 6:53 rng:0.8% costTgt:0.988
+SPY 2-8 6:53 tgtMargin:1.0067 tgtPrice:0.0
+SPY ytdReturn:4.79%
+AWK *Periodic Run* 6:53
+AWK no live feed
+AWK 2-8 6:53 2dP:101.0 1dP:101.0
+AWK 2d$:n:780 max:122.5 [2-7 9:31] min:120.3 [2-6 9:31] rng:1.8% 1Key:[2-6 9:30] last:[2-7 15:59]
+AWK 1d$:n<5
+GLD *Periodic Run* 6:53
+GLD last live feed time: 2-8 6:53 been:0mins. p:187.94 cost:188.0 p/cost:0.999
+GLD p:187.94 rng:0.8% pos:26 delt:5k cost:188.0 lot:39 fillP:178.64 costTgt:0.97 fillP/cost:0.95 fillP/px:0.951
+GLD 2-8 6:53 2dP:101.0 1dP:101.0
+GLD 2d$:n:781 max:189.3 [2-7 9:48] min:187.8 [2-6 9:36] rng:0.8% 1Key:[2-6 9:30] last:[2-8 6:53]
+GLD 1d$:n<5
+KO *Periodic Run* 6:53
+KO last live feed time: 2-8 6:53 been:0mins. p:60.03 cost:59.8 p/cost:1.004
+KO p:60.03 rng:1.1% pos:125 delt:8k cost:59.8 lot:124 fillP:56.18 costTgt:0.97 fillP/cost:0.94 fillP/px:0.936
+KO 2-8 6:53 2dP:67.0 1dP:100.0
+KO 2d$:n:781 max:60.2 [2-7 12:08] min:59.7 [2-6 10:29] rng:0.9% 1Key:[2-6 9:30] last:[2-8 6:53]
+KO 1d$:n<5
+MCD *Periodic Run* 6:53
+MCD last live feed time: 2-8 6:53 been:0mins. p:287.11 cost:289.2 p/cost:0.993
+MCD p:287.11 rng:1.3% pos:42 delt:12k cost:289.2 lot:26 fillP:266.49 costTgt:0.97 fillP/cost:0.922 fillP/px:0.928
+MCD 2-8 6:53 2dP:62.0 1dP:100.0
+MCD 2d$:n:781 max:290.4 [2-7 10:52] min:281.6 [2-6 9:30] rng:3.1% 1Key:[2-6 9:30] last:[2-8 6:53]
+MCD 1d$:n<5
+PG *Periodic Run* 6:53
+PG last live feed time: 2-8 6:53 been:0mins. p:158.92 
+PG 2-8 6:53 2dP:51.0 1dP:100.0
+PG 2d$:n:781 max:159.8 [2-7 12:06] min:158.0 [2-6 9:33] rng:1.2% 1Key:[2-6 9:30] last:[2-8 6:53]
+PG 1d$:n<5
+PHO *Periodic Run* 6:53
+PHO no live feed
+PHO 2-8 6:53 2dP:84.0 1dP:100.0
+PHO 2d$:n:780 max:61.4 [2-7 13:55] min:59.5 [2-6 9:32] rng:3.2% 1Key:[2-6 9:30] last:[2-7 15:59]
+PHO 1d$:n<5
+SLV *Periodic Run* 6:53
+SLV last live feed time: 2-8 6:53 been:0mins. p:20.48 cost:20.9 p/cost:0.979
+SLV p:20.48 rng:1.5% pos:159 delt:3k cost:20.9 lot:366 fillP:20.02 costTgt:0.97 fillP/cost:0.957 fillP/px:0.978
+SLV 2-8 6:53 2dP:61.0 1dP:100.0
+SLV 2d$:n:781 max:20.6 [2-6 10:50] min:20.3 [2-7 15:59] rng:1.2% 1Key:[2-6 9:30] last:[2-8 6:53]
+SLV 1d$:n<5
+SPY *Periodic Run* 6:53
+SPY last live feed time: 2-8 6:53 been:0mins. p:497.35 
+SPY 2-8 6:53 2dP:82.0 1dP:100.0
+SPY 2d$:n:781 max:498.5 [2-7 15:03] min:492.1 [2-6 10:25] rng:1.3% 1Key:[2-6 9:30] last:[2-8 6:53]
+SPY 1d$:n<5
+UL *Periodic Run* 6:53
+UL last live feed time: 2-8 6:53 been:0mins. p:50.5 cost:49.1 p/cost:1.028
+UL p:50.5 rng:0.9% pos:152 delt:8k cost:49.1 lot:148 fillP:46.12 costTgt:0.97 fillP/cost:0.939 fillP/px:0.913
+UL 2-8 6:53 2dP:100.0 1dP:100.0
+UL 2d$:n:781 max:49.9 [2-8 6:53] min:48.9 [2-7 15:58] rng:2.2% 1Key:[2-6 9:30] last:[2-8 6:53]
+UL 1d$:n<5
+WMT *Periodic Run* 6:53
+WMT last live feed time: 2-8 6:53 been:0mins. p:170.06 
+WMT 2-8 6:53 2dP:75.0 1dP:100.0
+WMT 2d$:n:781 max:170.6 [2-7 10:01] min:168.4 [2-6 10:19] rng:1.3% 1Key:[2-6 9:30] last:[2-8 6:53]
+WMT 1d$:n<5
