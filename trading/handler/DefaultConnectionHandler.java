@@ -11,10 +11,11 @@ import static utility.Utility.str;
 public class DefaultConnectionHandler implements ApiController.IConnectionHandler {
     @Override
     public void connected() {
-        pr(usTime(), "connected");
-        if (getESTDateTimeNow().getMinute() == 1 && getESTDateTimeNow().getSecond() < 30) {
-            outputToConnection(usDateTime(), "Conn:connected");
-        }
+//        pr(usTime(), "connected");
+        outputToConnection(usDateTime(), "****Conn:connected****");
+//        if (getESTDateTimeNow().getMinute() == 1 && getESTDateTimeNow().getSecond() < 30) {
+//            outputToConnection(usDateTime(), "Conn:connected");
+//        }
     }
 
     @Override

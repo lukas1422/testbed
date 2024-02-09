@@ -3766,3 +3766,159 @@ p:50.5 rng:0.9% pos:152 delt:8k cost:49.1 lot:148 fillP:46.12 costTgt:0.97 fillP
 2-8 6:53 2dP:100.0 1dP:100.0
 2d$:n:781 max:49.9 [2-8 6:53] min:48.9 [2-7 15:58] rng:2.2% 1Key:[2-6 9:30] last:[2-8 6:53]
 1d$:n<5
+*Periodic Run* 7:53
+last live feed time: 2-8 7:52 been:0mins. p:50.5 cost:49.1 p/cost:1.028
+p:50.5 rng:0.9% pos:152 delt:8k cost:49.1 lot:148 fillP:46.12 costTgt:0.97 fillP/cost:0.939 fillP/px:0.913
+2-8 7:53 2dP:93.0 1dP:0.0
+2d$:n:794 max:50.6 [2-8 7:12] min:48.9 [2-7 15:58] rng:3.6% 1Key:[2-6 9:30] last:[2-8 7:52]
+1d$:n:14 max:50.6 [2-8 7:12] min:50.5 [2-8 6:53] rng:0.2% 1Key:[2-8 6:53] last:[2-8 7:52]
+*Periodic Run* 8:53
+last live feed time: 2-8 8:50 been:2mins. p:50.66 cost:49.1 p/cost:1.032
+p:50.66 rng:0.9% pos:152 delt:8k cost:49.1 lot:148 fillP:46.12 costTgt:0.97 fillP/cost:0.939 fillP/px:0.91
+2-8 8:53 2dP:100.0 1dP:100.0
+2d$:n:798 max:50.6 [2-8 8:50] min:48.9 [2-7 15:58] rng:3.6% 1Key:[2-6 9:30] last:[2-8 8:50]
+1d$:n:18 max:50.6 [2-8 8:50] min:50.5 [2-8 8:00] rng:0.3% 1Key:[2-8 6:53] last:[2-8 8:50]
+****CUT))** 2-8 9:30:01 1dP:96.0 2dp:99.0 px/Cost:1.0386 reqMargin:1.0073 rng:0.0086
+ordID:240208003 tradID:240208003 SELL px:51.03 q:152 cost:49.1
+UL 2-8 9:30 INVENTORY_CUTTER Created reqMargin:1.00733 tgtSellPx:49.46 askPx:51.03
+2D$:n:812 max:51.0 [2-8 9:29] min:48.9 [2-7 15:58] rng:4.4% 1Key:[2-6 9:30] last:[2-8 9:30]
+1D$:n:32 max:51.0 [2-8 9:29] min:50.5 [2-8 8:00] rng:1.0% 1Key:[2-8 6:53] last:[2-8 9:30]
+9:30:02 order blocked by:[] orderStatus:{240208003=Created}
+2-8 9:30 *openOrder* status:Submitted orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:
+2-8 9:30 *openOrder* all live orders {240208003=orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:}
+2-8 9:30 *OrderStatus*:Submitted orderId:240208003 filled:0 remaining:152 fillPx:0.0 lastFillPx:0.0
+9:30:02 order blocked by:[orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:] orderStatus:{240208003=Submitted}
+updating position: 2-8 9:30 position:0 cost:0.0
+2-8 9:30 *tradeReport* time: 2024-02-08T09:30:02 SLD execPx:51.03 shares:152 avgPx:51.03
+2-8 9:30 *openOrder* status:Filled orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:
+2-8 9:30 *openOrder*:removing order. Status: Filled orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:
+2-8 9:30 *openOrder*:after removal. openOrders: {}
+2-8 9:30 *OrderStatus*:Filled orderId:240208003 filled:152 remaining:0 fillPx:51.03 lastFillPx:51.03
+2-8 9:30 *openOrder* status:Filled orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:
+2-8 9:30 *openOrder*:removing order. Status: Filled orderID:240208003 LMT SELL Q:152 px:51.03 filledQ:
+2-8 9:30 *openOrder*:after removal. openOrders: {}
+2-8 9:30 *OrderStatus*:Filled orderId:240208003 filled:152 remaining:0 fillPx:51.03 lastFillPx:51.03
+1.*commission report* orderID:240208003 commission:0.47 orderID: 240208003 realized pnl: 292.51
+2.*commission report* orderID:240208003 commission: 0.47 realized pnl: 292.51
+updating position: 2-8 9:30 position:0 cost:0.0
+updating position: 2-8 9:30 position:0 cost:0.0
+updating position: 2-8 9:34 position:0 cost:0.0
+updating position: 2-8 9:34 position:0 cost:0.0
+*Periodic Run* 9:53
+last live feed time: 2-8 9:53 been:0mins. p:50.92 
+2-8 9:53 *chek orderStatus {240208003=Filled}
+2-8 9:53 2dP:89.0 1dP:62.0
+2d$:n:835 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 9:53]
+1d$:n:55 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 9:53]
+*Periodic Run* 10:53
+last live feed time: 2-8 10:44 been:8mins. p:50.79 
+2-8 10:53 *chek orderStatus {240208003=Filled}
+2-8 10:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 11:53
+last live feed time: 2-8 10:44 been:68mins. p:50.79 
+2-8 11:53 *chek orderStatus {240208003=Filled}
+2-8 11:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 12:53
+last live feed time: 2-8 10:44 been:128mins. p:50.79 
+2-8 12:53 *chek orderStatus {240208003=Filled}
+2-8 12:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 13:53
+last live feed time: 2-8 10:44 been:188mins. p:50.79 
+2-8 13:53 *chek orderStatus {240208003=Filled}
+2-8 13:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 14:53
+last live feed time: 2-8 10:44 been:248mins. p:50.79 
+2-8 14:53 *chek orderStatus {240208003=Filled}
+2-8 14:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 15:53
+last live feed time: 2-8 10:44 been:308mins. p:50.79 
+2-8 15:53 *chek orderStatus {240208003=Filled}
+2-8 15:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*Periodic Run* 16:53
+last live feed time: 2-8 10:44 been:368mins. p:50.79 
+2-8 16:53 *chek orderStatus {240208003=Filled}
+2-8 16:53 2dP:83.0 1dP:43.0
+2d$:n:886 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-6 9:30] last:[2-8 10:44]
+1d$:n:106 max:51.2 [2-8 9:34] min:50.5 [2-8 8:00] rng:1.3% 1Key:[2-8 6:53] last:[2-8 10:44]
+*******************************************
+*STARTS* 2-8 17:20
+updating position: 2-8 17:20 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+2-8 17:20 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:100 avgPx:49.1
+2-8 17:20 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:52 avgPx:49.1
+2-8 17:20 *tradeReport* time: 2024-02-08T09:30:02 SLD execPx:51.03 shares:152 avgPx:51.03
+listOfExecs [orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1, orderID: 240208003 time: 2024-02-08T09:30:02 side: SLD shares: 152 price: 51.03]
+2-8 17:20 rng:0.9% costTgt:0.97
+2-8 17:20 tgtMargin:1.0075 tgtPrice:0.0
+ytdReturn:4.54%
+*Periodic Run* 17:21
+last live feed time: 2-8 17:21 been:0mins. p:50.68 
+2-8 17:21 2dP:78.0 1dP:30.0
+2d$:n:781 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-7 9:30] last:[2-8 17:21]
+1d$:n:391 max:51.2 [2-8 9:34] min:50.5 [2-8 14:24] rng:1.4% 1Key:[2-8 9:30] last:[2-8 17:21]
+updating position: 2-8 17:35 position:0 cost:0.0
+*Periodic Run* 18:21
+last live feed time: 2-8 17:35 been:45mins. p:50.68 
+2-8 18:21 2dP:78.0 1dP:30.0
+2d$:n:782 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-7 9:30] last:[2-8 17:35]
+1d$:n:392 max:51.2 [2-8 9:34] min:50.5 [2-8 14:24] rng:1.4% 1Key:[2-8 9:30] last:[2-8 17:35]
+*******************************************
+*STARTS* 2-8 18:57
+updating position: 2-8 18:57 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+2-8 18:57 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:100 avgPx:49.1
+2-8 18:57 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:52 avgPx:49.1
+2-8 18:57 *tradeReport* time: 2024-02-08T09:30:02 SLD execPx:51.03 shares:152 avgPx:51.03
+listOfExecs [orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1, orderID: 240208003 time: 2024-02-08T09:30:02 side: SLD shares: 152 price: 51.03]
+2-8 18:57 rng:0.9% costTgt:0.97
+2-8 18:57 tgtMargin:1.0075 tgtPrice:0.0
+ytdReturn:4.54%
+*Periodic Run* 18:57
+last live feed time: 2-8 18:57 been:0mins. p:50.68 
+2-8 18:57 2dP:78.0 1dP:30.0
+2d$:n:781 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-7 9:30] last:[2-8 18:57]
+1d$:n:391 max:51.2 [2-8 9:34] min:50.5 [2-8 14:24] rng:1.4% 1Key:[2-8 9:30] last:[2-8 18:57]
+*******************************************
+*STARTS* 2-9 4:12
+updating position: 2-9 4:12 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+2-9 4:12 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:100 avgPx:49.1
+2-9 4:12 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:52 avgPx:49.1
+2-9 4:12 *tradeReport* time: 2024-02-08T09:30:02 SLD execPx:51.03 shares:152 avgPx:51.03
+listOfExecs [orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1, orderID: 240208003 time: 2024-02-08T09:30:02 side: SLD shares: 152 price: 51.03]
+2-9 4:12 rng:0.9% costTgt:0.97
+2-9 4:12 tgtMargin:1.0075 tgtPrice:0.0
+ytdReturn:4.54%
+*Periodic Run* 4:12
+last live feed time: 2-9 4:12 been:0mins. p:50.63 
+2-9 4:12 2dP:76.0 1dP:100.0
+2d$:n:781 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-7 9:30] last:[2-9 4:12]
+1d$:n<5
+*******************************************
+*STARTS* 2-9 4:16
+updating position: 2-9 4:16 position:0 cost:0.0
+POS:0 COST:0.0 DELT:0k
+2-9 4:16 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:100 avgPx:49.1
+2-9 4:16 *tradeReport* time: 2024-02-07T13:50:29 BOT execPx:49.1 shares:52 avgPx:49.1
+2-9 4:16 *tradeReport* time: 2024-02-08T09:30:02 SLD execPx:51.03 shares:152 avgPx:51.03
+listOfExecs [orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 100 price: 49.1, orderID: 240207005 time: 2024-02-07T13:50:29 side: BOT shares: 52 price: 49.1, orderID: 240208003 time: 2024-02-08T09:30:02 side: SLD shares: 152 price: 51.03]
+2-9 4:16 rng:0.9% costTgt:0.97
+2-9 4:16 tgtMargin:1.0075 tgtPrice:0.0
+ytdReturn:4.54%
+*Periodic Run* 4:16
+last live feed time: 2-9 4:16 been:0mins. p:50.63 
+2-9 4:16 2dP:76.0 1dP:100.0
+2d$:n:781 max:51.2 [2-8 9:34] min:48.9 [2-7 15:58] rng:4.7% 1Key:[2-7 9:30] last:[2-9 4:16]
+1d$:n<5
