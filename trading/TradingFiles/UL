@@ -4025,3 +4025,120 @@ no live feed
 1d$:n<5
 *******************************************
 *STARTS* 2-12 6:44
+*******************************************
+*STARTS* 2-12 6:47
+POS:0 COST:0.0 DELT:0k
+2-12 6:47 rng:0.9% costTgt:0.97
+2-12 6:47 tgtMargin:1.0074 tgtPrice:0.0
+ytdReturn:4.39%
+*Periodic Run* 6:47
+last live feed time: 2-12 6:47 been:0mins. p:50.29 
+2-12 6:47 2dP:0.0 1dP:100.0
+2d$:n:781 max:51.2 [2-8 9:34] min:50.3 [2-12 6:47] rng:1.7% 1Key:[2-8 9:30] last:[2-12 6:47]
+1d$:n<5
+*Periodic Run* 7:47
+last live feed time: 2-12 7:37 been:9mins. p:50.37 
+2-12 7:47 2dP:6.0 1dP:72.0
+2d$:n:791 max:51.2 [2-8 9:34] min:50.3 [2-12 6:47] rng:1.7% 1Key:[2-8 9:30] last:[2-12 7:37]
+1d$:n:11 max:50.4 [2-12 7:11] min:50.3 [2-12 6:47] rng:0.1% 1Key:[2-12 6:47] last:[2-12 7:37]
+*******************************************
+*STARTS* 2-12 8:31
+POS:0 COST:0.0 DELT:0k
+2-12 8:31 rng:0.9% costTgt:0.97
+2-12 8:31 tgtMargin:1.0074 tgtPrice:0.0
+ytdReturn:4.39%
+*Periodic Run* 8:32
+last live feed time: 2-12 8:31 been:0mins. p:50.37 
+2-12 8:32 2dP:4.0 1dP:100.0
+2d$:n:781 max:51.2 [2-8 9:34] min:50.3 [2-9 10:20] rng:1.7% 1Key:[2-8 9:30] last:[2-12 8:31]
+1d$:n<5
+*******************************************
+*STARTS* 2-12 8:51
+POS:0 COST:0.0 DELT:0k
+2-12 8:51 rng:0.9% costTgt:0.97
+2-12 8:51 tgtMargin:1.0074 tgtPrice:0.0
+ytdReturn:4.39%
+*Periodic Run* 8:51
+last live feed time: 2-12 8:51 been:0mins. p:50.19 
+2-12 8:51 2dP:0.0 1dP:100.0
+2d$:n:781 max:51.2 [2-8 9:34] min:50.3 [2-12 8:51] rng:1.7% 1Key:[2-8 9:30] last:[2-12 8:51]
+1d$:n<5
+*1Buy* 2-12 9:30:03 1dp:0.0 2dp:5.0
+inventoryAdder: ytdReturn > -10%, can trade: 0.04393564356435653
+ordID:240212003 tradID:240212003 BUY px:50.28 lot:198 UL 2-12 9:30 INVENTORY_ADDER Created
+2D$:n:785 max:51.2 [2-8 9:34] min:50.3 [2-12 8:51] rng:1.9% 1Key:[2-8 9:30] last:[2-12 9:30]
+1D$:n:5 max:50.2 [2-12 9:30] min:50.3 [2-12 8:51] rng:0.0% 1Key:[2-12 8:51] last:[2-12 9:30]
+2-12 9:30 *openOrder* status:Submitted orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:
+2-12 9:30 *openOrder* all live orders {240212003=orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:}
+2-12 9:30 *OrderStatus*:Submitted orderId:240212003 filled:0 remaining:198 fillPx:0.0 lastFillPx:0.0
+updating position: 2-12 9:30 position:198 cost:50.28
+2-12 9:30 *tradeReport* time: 2024-02-12T09:30:04 BOT execPx:50.28 shares:198 avgPx:50.28
+2-12 9:30 *openOrder* status:Filled orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:
+2-12 9:30 *openOrder*:removing order. Status: Filled orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:
+2-12 9:30 *openOrder*:after removal. openOrders: {}
+2-12 9:30 *OrderStatus*:Filled orderId:240212003 filled:198 remaining:0 fillPx:50.28 lastFillPx:50.28
+2-12 9:30 *openOrder* status:Filled orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:
+2-12 9:30 *openOrder*:removing order. Status: Filled orderID:240212003 LMT BUY Q:198 px:50.28 filledQ:
+2-12 9:30 *openOrder*:after removal. openOrders: {}
+2-12 9:30 *OrderStatus*:Filled orderId:240212003 filled:198 remaining:0 fillPx:50.28 lastFillPx:50.28
+1.*commission report* orderID:240212003 commission:0.5 
+2.*commission report* orderID:240212003 commission: 0.5 
+updating position: 2-12 9:30 position:198 cost:50.28
+updating position: 2-12 9:34 position:198 cost:50.28
+updating position: 2-12 9:34 position:198 cost:50.28
+*Periodic Run* 9:51
+last live feed time: 2-12 9:51 been:0mins. p:50.39 cost:50.3 p/cost:1.002
+p:50.39 rng:0.9% pos:198 delt:10k cost:50.3 lot:198 fillP:47.27 costTgt:0.97 fillP/cost:0.94 fillP/px:0.938
+2-12 9:51 *chek orderStatus {240212003=Filled}
+2-12 9:51 2dP:19.0 1dP:100.0
+2d$:n:806 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 9:51]
+1d$:n:26 max:50.4 [2-12 9:48] min:50.2 [2-12 8:51] rng:0.4% 1Key:[2-12 8:51] last:[2-12 9:51]
+*Periodic Run* 10:51
+last live feed time: 2-12 10:51 been:0mins. p:50.44 cost:50.3 p/cost:1.003
+p:50.44 rng:0.9% pos:198 delt:10k cost:50.3 lot:198 fillP:47.27 costTgt:0.97 fillP/cost:0.94 fillP/px:0.937
+2-12 10:51 *chek orderStatus {240212003=Filled}
+2-12 10:51 2dP:24.0 1dP:96.0
+2d$:n:861 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 10:51]
+1d$:n:81 max:50.5 [2-12 10:46] min:50.2 [2-12 8:51] rng:0.5% 1Key:[2-12 8:51] last:[2-12 10:51]
+*Periodic Run* 11:51
+last live feed time: 2-12 11:49 been:2mins. p:50.42 cost:50.3 p/cost:1.003
+p:50.42 rng:0.9% pos:198 delt:10k cost:50.3 lot:198 fillP:47.27 costTgt:0.97 fillP/cost:0.94 fillP/px:0.937
+2-12 11:51 *chek orderStatus {240212003=Filled}
+2-12 11:51 2dP:22.0 1dP:84.0
+2d$:n:914 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 11:49]
+1d$:n:134 max:50.5 [2-12 10:58] min:50.2 [2-12 8:51] rng:0.5% 1Key:[2-12 8:51] last:[2-12 11:49]
+*Periodic Run* 12:51
+last live feed time: 2-12 12:50 been:1mins. p:50.51 cost:50.3 p/cost:1.005
+p:50.51 rng:0.9% pos:198 delt:10k cost:50.3 lot:197 fillP:47.26 costTgt:0.97 fillP/cost:0.94 fillP/px:0.936
+2-12 12:51 *chek orderStatus {240212003=Filled}
+2-12 12:51 2dP:31.0 1dP:100.0
+2d$:n:966 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 12:50]
+1d$:n:186 max:50.5 [2-12 12:50] min:50.2 [2-12 8:51] rng:0.6% 1Key:[2-12 8:51] last:[2-12 12:50]
+*Periodic Run* 13:51
+last live feed time: 2-12 13:51 been:0mins. p:50.51 cost:50.3 p/cost:1.005
+p:50.51 rng:0.9% pos:198 delt:10k cost:50.3 lot:197 fillP:47.26 costTgt:0.97 fillP/cost:0.94 fillP/px:0.936
+2-12 13:51 *chek orderStatus {240212003=Filled}
+2-12 13:51 2dP:31.0 1dP:86.0
+2d$:n:1013 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 13:51]
+1d$:n:233 max:50.6 [2-12 13:02] min:50.2 [2-12 8:51] rng:0.7% 1Key:[2-12 8:51] last:[2-12 13:51]
+*Periodic Run* 14:51
+last live feed time: 2-12 14:49 been:1mins. p:50.47 cost:50.3 p/cost:1.004
+p:50.47 rng:0.9% pos:198 delt:10k cost:50.3 lot:198 fillP:47.27 costTgt:0.97 fillP/cost:0.94 fillP/px:0.937
+2-12 14:51 *chek orderStatus {240212003=Filled}
+2-12 14:51 2dP:27.0 1dP:75.0
+2d$:n:1062 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 14:49]
+1d$:n:282 max:50.6 [2-12 13:02] min:50.2 [2-12 8:51] rng:0.7% 1Key:[2-12 8:51] last:[2-12 14:49]
+*Periodic Run* 15:51
+last live feed time: 2-12 15:51 been:0mins. p:50.6 cost:50.3 p/cost:1.006
+p:50.6 rng:0.9% pos:198 delt:10k cost:50.3 lot:197 fillP:47.26 costTgt:0.97 fillP/cost:0.94 fillP/px:0.934
+2-12 15:51 *chek orderStatus {240212003=Filled}
+2-12 15:51 2dP:41.0 1dP:100.0
+2d$:n:1116 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 15:51]
+1d$:n:336 max:50.6 [2-12 15:49] min:50.2 [2-12 8:51] rng:0.8% 1Key:[2-12 8:51] last:[2-12 15:51]
+*Periodic Run* 16:51
+last live feed time: 2-12 16:00 been:51mins. p:50.59 cost:50.3 p/cost:1.006
+p:50.59 rng:0.9% pos:198 delt:10k cost:50.3 lot:197 fillP:47.26 costTgt:0.97 fillP/cost:0.94 fillP/px:0.934
+2-12 16:51 *chek orderStatus {240212003=Filled}
+2-12 16:51 2dP:40.0 1dP:97.0
+2d$:n:1125 max:51.2 [2-8 9:34] min:50.2 [2-12 8:51] rng:2.0% 1Key:[2-8 9:30] last:[2-12 16:00]
+1d$:n:345 max:50.6 [2-12 15:53] min:50.2 [2-12 8:51] rng:0.8% 1Key:[2-12 8:51] last:[2-12 16:00]
