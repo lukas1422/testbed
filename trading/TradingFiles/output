@@ -25697,3 +25697,138 @@ WMT 2d$:n:1204 max:170.7 [2-13 9:30] min:167.6 [2-14 14:09] rng:1.9% 1Key:[2-13 
 WMT 1d$:n:424 max:169.7 [2-15 9:30] min:168.0 [2-15 10:30] rng:1.0% 1Key:[2-15 4:35] last:[2-15 21:27]
 *openOrder* Error 2-15 21:57 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
 *Ending* 2-15 21:58
+MasterTradeID is: 240216001
+*****START***** HKT: 18:45:21 EST: 2-16 5:45 MASTERID: 240216001
+WMT *******************************************
+WMT *STARTS* 2-16 5:45
+PG *******************************************
+PG *STARTS* 2-16 5:45
+UL *******************************************
+UL *STARTS* 2-16 5:45
+MCD *******************************************
+MCD *STARTS* 2-16 5:45
+SPY *******************************************
+SPY *STARTS* 2-16 5:45
+KO *******************************************
+KO *STARTS* 2-16 5:45
+GLD *******************************************
+GLD *STARTS* 2-16 5:45
+SLV *******************************************
+SLV *STARTS* 2-16 5:45
+PHO *******************************************
+PHO *STARTS* 2-16 5:45
+AWK *******************************************
+AWK *STARTS* 2-16 5:45
+req live orders complete
+2-16 5:45 cancelling all orders on start up
+5:45 global cancel orders
+SLV updating position: 2-16 5:45 position:159 cost:20.92
+MCD updating position: 2-16 5:45 position:42 cost:289.17
+WMT updating position: 2-16 5:45 position:44 cost:169.38
+AWK updating position: 2-16 5:45 position:27 cost:123.31
+KO updating position: 2-16 5:45 position:168 cost:59.26
+UL updating position: 2-16 5:45 position:198 cost:50.28
+PG updating position: 2-16 5:45 position:47 cost:158.09
+GLD updating position: 2-16 5:45 position:26 cost:188.04
+AWK POS:27 COST:123.3 DELT:3k
+GLD POS:26 COST:188.0 DELT:5k
+KO POS:168 COST:59.3 DELT:10k
+MCD POS:42 COST:289.2 DELT:12k
+PG POS:47 COST:158.1 DELT:7k
+PHO POS:0 COST:0.0 DELT:0k
+SLV POS:159 COST:20.9 DELT:3k
+SPY POS:0 COST:0.0 DELT:0k
+UL POS:198 COST:50.3 DELT:10k
+WMT POS:44 COST:169.4 DELT:7k
+2-16 5:45 *openOrderEnd*:print all openOrdrs {AWK={}, GLD={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}} orderStatusMap: {KO={}, AWK={}, PHO={}, PG={}, UL={}, SLV={}, SPY={}, GLD={}, WMT={}, MCD={}}
+PHO 2-16 5:45 *tradeReport* time: 2024-02-14T16:12:02 SLD execPx:62.33 shares:162 avgPx:62.33
+2-16 5:45 *TradeReportEnd*: all executions: {0001390d.65cd23db.01=[ExecutionAugmented{execution=orderID: 240214004 time: 2024-02-14T16:12:02 side: SLD shares: 162 price: 62.33, symbol='PHO'}]}
+PHO listOfExecs [orderID: 240214004 time: 2024-02-14T16:12:02 side: SLD shares: 162 price: 62.33]
+GLD 2-16 5:45 rng:0.8% costTgt:0.97
+GLD 2-16 5:45 tgtMargin:1.0066 tgtPrice:189.28
+GLD ytdReturn:-2.88%
+KO 2-16 5:45 rng:1.1% costTgt:0.97
+KO 2-16 5:45 tgtMargin:1.0094 tgtPrice:59.82
+KO ytdReturn:0.8%
+AWK 2-16 5:45 rng:1.8% costTgt:0.97
+AWK 2-16 5:45 tgtMargin:1.0156 tgtPrice:125.23
+AWK ytdReturn:-5.31%
+MCD 2-16 5:45 rng:1.3% costTgt:0.97
+MCD 2-16 5:45 tgtMargin:1.0112 tgtPrice:292.43
+MCD ytdReturn:-1.57%
+PG 2-16 5:45 rng:1.2% costTgt:0.97
+PG 2-16 5:45 tgtMargin:1.0106 tgtPrice:159.76
+PG ytdReturn:7.82%
+SPY 2-16 5:45 rng:0.8% costTgt:0.988
+SPY 2-16 5:45 tgtMargin:1.0065 tgtPrice:0.0
+SPY ytdReturn:5.62%
+UL 2-16 5:45 rng:0.9% costTgt:0.97
+UL 2-16 5:45 tgtMargin:1.0074 tgtPrice:50.66
+UL ytdReturn:3.32%
+WMT 2-16 5:45 rng:1.2% costTgt:0.97
+WMT 2-16 5:45 tgtMargin:1.0102 tgtPrice:171.1
+WMT ytdReturn:7.38%
+SLV 2-16 5:45 rng:1.5% costTgt:0.97
+SLV 2-16 5:45 tgtMargin:1.0128 tgtPrice:21.19
+SLV ytdReturn:-3.86%
+PHO 2-16 5:45 rng:1.1% costTgt:0.97
+PHO 2-16 5:45 tgtMargin:1.0094 tgtPrice:0.0
+PHO ytdReturn:3.76%
+AWK *Periodic Run* 5:45
+AWK no live feed
+AWK 2-16 5:45 2dP:101.0 1dP:101.0
+AWK 2d$:n:780 max:124.3 [2-15 15:59] min:119.3 [2-14 10:06] rng:4.1% 1Key:[2-14 9:30] last:[2-15 15:59]
+AWK 1d$:n<5
+GLD *Periodic Run* 5:45
+GLD last live feed time: 2-16 5:45 been:0mins. p:185.82 cost:188.0 p/cost:0.988
+GLD p:185.82 rng:0.8% pos:26 delt:5k cost:188.0 lot:67 fillP:180.21 costTgt:0.97 fillP/cost:0.958 fillP/px:0.97
+GLD 2-16 5:45 2dP:101.0 1dP:101.0
+GLD 2d$:n:781 max:186.0 [2-15 9:32] min:183.9 [2-14 10:11] rng:1.2% 1Key:[2-14 9:30] last:[2-16 5:45]
+GLD 1d$:n<5
+KO *Periodic Run* 5:45
+KO last live feed time: 2-16 5:45 been:0mins. p:59.4 cost:59.3 p/cost:1.002
+KO p:59.4 rng:1.1% pos:168 delt:10k cost:59.3 lot:210 fillP:56.06 costTgt:0.97 fillP/cost:0.946 fillP/px:0.944
+KO 2-16 5:45 2dP:67.0 1dP:100.0
+KO 2d$:n:781 max:59.6 [2-14 11:26] min:59.0 [2-14 9:37] rng:0.9% 1Key:[2-14 9:30] last:[2-16 5:45]
+KO 1d$:n<5
+MCD *Periodic Run* 5:45
+MCD no live feed
+MCD 2-16 5:45 2dP:98.0 1dP:100.0
+MCD 2d$:n:780 max:292.0 [2-15 15:59] min:286.6 [2-14 10:05] rng:1.9% 1Key:[2-14 9:30] last:[2-15 15:59]
+MCD 1d$:n<5
+PG *Periodic Run* 5:45
+PG no live feed
+PG 2-16 5:45 2dP:85.0 1dP:100.0
+PG 2d$:n:780 max:157.4 [2-15 14:23] min:154.9 [2-14 12:29] rng:1.6% 1Key:[2-14 9:30] last:[2-15 15:59]
+PG 1d$:n<5
+PHO *Periodic Run* 5:45
+PHO no live feed
+PHO 2-16 5:45 2dP:100.0 1dP:100.0
+PHO 2d$:n:780 max:63.1 [2-15 15:59] min:61.7 [2-14 12:06] rng:2.4% 1Key:[2-14 9:30] last:[2-15 15:59]
+PHO 1d$:n<5
+SLV *Periodic Run* 5:45
+SLV last live feed time: 2-16 5:45 been:0mins. p:21.05 cost:20.9 p/cost:1.006
+SLV p:21.05 rng:1.5% pos:159 delt:3k cost:20.9 lot:593 fillP:20.13 costTgt:0.97 fillP/cost:0.962 fillP/px:0.956
+SLV 2-16 5:45 2dP:97.0 1dP:100.0
+SLV 2d$:n:781 max:21.1 [2-15 10:28] min:20.2 [2-14 9:30] rng:4.2% 1Key:[2-14 9:30] last:[2-16 5:45]
+SLV 1d$:n<5
+SPY *Periodic Run* 5:45
+SPY last live feed time: 2-16 5:45 been:0mins. p:503.29 
+SPY 2-16 5:45 2dP:100.0 1dP:100.0
+SPY 2d$:n:781 max:502.2 [2-16 5:45] min:494.6 [2-14 12:06] rng:1.5% 1Key:[2-14 9:30] last:[2-16 5:45]
+SPY 1d$:n<5
+UL *Periodic Run* 5:45
+UL last live feed time: 2-16 5:45 been:0mins. p:50.48 cost:50.3 p/cost:1.004
+UL p:50.48 rng:0.9% pos:198 delt:10k cost:50.3 lot:247 fillP:47.56 costTgt:0.97 fillP/cost:0.946 fillP/px:0.942
+UL 2-16 5:45 2dP:100.0 1dP:100.0
+UL 2d$:n:781 max:50.3 [2-16 5:45] min:49.8 [2-14 12:28] rng:1.1% 1Key:[2-14 9:30] last:[2-16 5:45]
+UL 1d$:n<5
+WMT *Periodic Run* 5:45
+WMT no live feed
+WMT 2-16 5:45 2dP:84.0 1dP:100.0
+WMT 2d$:n:780 max:169.6 [2-15 9:30] min:167.6 [2-14 14:09] rng:1.2% 1Key:[2-14 9:30] last:[2-15 15:59]
+WMT 1d$:n<5
+*openOrder* Error 2-16 5:45 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-16 5:46 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-16 5:47 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
+*openOrder* Error 2-16 5:49 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefhk
