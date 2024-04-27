@@ -760,7 +760,8 @@ public class TradingUtility {
     }
 
     public static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) / price / ProfitTargetTrader.CURRENT_REFILL_N)));
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) /
+                price / ProfitTargetTrader.CURRENT_REFILL_N)));
     }
 
     public static LocalDateTime executionToUSTime(String time) {
