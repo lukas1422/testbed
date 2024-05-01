@@ -76,8 +76,10 @@ public class ProfitTargetTrader implements LiveHandler,
 
         Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
                 .forEach(a -> {
-                    pr(a[0]);
-                    registerContract(generateUSStockContract(a[0]));
+                    pr("whole line", a);
+                    pr("a[0]", a[0]);
+                    String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
+                    registerContract(generateUSStockContract(stockName));
                 });
     }
 
@@ -206,7 +208,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         return totalDelta + addition < DELTA_TOTAL_LIMIT &&
                 (symbDelta.getOrDefault(symb, MAX_VALUE) +
-                        addition <  DELTA_LIMIT_EACH);
+                        addition < DELTA_LIMIT_EACH);
     }
 
     static double refillPx(String symb, double px, long pos, double costPerShare) {
