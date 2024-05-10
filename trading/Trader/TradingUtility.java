@@ -756,7 +756,9 @@ public class TradingUtility {
     }
 
     static double deltaLimitEach(String s) {
-        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 : ProfitTargetTrader.DELTA_LIMIT_EACH;
+//        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 :
+//                ProfitTargetTrader.DELTA_LIMIT_EACH;
+        return ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4.0;
     }
 
     public static Decimal getLot(String symb, double price) {
