@@ -35,7 +35,7 @@ public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
 
     static final double DELTA_TOTAL_LIMIT = 268000;
-    static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 4.0;
+    static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
     static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
     static final double MAX_DRAWDOWN_TARGET = 0.8;
