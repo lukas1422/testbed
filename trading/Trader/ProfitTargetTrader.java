@@ -95,7 +95,8 @@ public class ProfitTargetTrader implements LiveHandler,
     }
 
     private void connectAndReqPos() {
-        api = new ApiController(new DefaultConnectionHandler(), new DefaultLogger(), new DefaultLogger());
+        api = new ApiController(new DefaultConnectionHandler(),
+                new DefaultLogger(), new DefaultLogger());
         CountDownLatch l = new CountDownLatch(1);
 
         try {

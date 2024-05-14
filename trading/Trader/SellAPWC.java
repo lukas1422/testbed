@@ -13,10 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import static Trader.Allstatic.*;
 import static Trader.TradingUtility.*;
@@ -25,6 +22,7 @@ import static api.TradingConstants.*;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.INVENTORY_CUTTER;
 import static java.lang.Double.MAX_VALUE;
+import static java.lang.Double.max;
 import static java.lang.Math.round;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import static utility.Utility.ibContractToSymbol;
@@ -42,6 +40,10 @@ public class SellAPWC implements LiveHandler,
     private static double apwcAvgCost = Double.MAX_VALUE;
     private static double apwcBid = 0.0;
     private static double apwcAsk = Double.MAX_VALUE;
+    private static Decimal apwcPosition = Decimal.ZERO;
+
+    private static volatile ConcurrentSkipListMap<Integer, OrderStatus> apwcOrderStatus =
+            new ConcurrentSkipListMap<>();
 
     //static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
@@ -78,7 +80,7 @@ public class SellAPWC implements LiveHandler,
     public void position(String account, Contract contract, Decimal pos, double avgCost) {
         pr("position", ibContractToSymbol(contract), pos, avgCost);
         apwcAvgCost = avgCost;
-
+        apwcPosition = pos;
     }
 
     @Override
@@ -159,23 +161,28 @@ public class SellAPWC implements LiveHandler,
             return;
         }
 
-
         if (px > apwcAvgCost) {
             outputToSymbol(s, "****CUT**", t.format(MdHmmss));
             inventoryCutter(ct, px, t);
         }
     }
 
+    static boolean noBlockingOrders(String s) {
+        if (!orderStatus.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderStatus.get(s));
+        }
+        return orderStatus.get(s).isEmpty() ||
+                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+    }
+
     private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
-        Decimal pos = symbPos.get(s);
+        //Decimal pos = symbPos.get(s);
 
         int id = tradID.incrementAndGet();
-        double cost = costMap.getOrDefault(s, MAX_VALUE);
-        double offerPrice = r(Math.max(askMap.getOrDefault(s, px),
-                costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
-
-        Order o = placeOfferLimitTIF(id, offerPrice, pos, DAY);
+        double cost = apwcAsk;
+        double offerPrice = r(Math.max(apwcAsk, px));
+        Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(10L), DAY);
         orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
@@ -185,7 +192,7 @@ public class SellAPWC implements LiveHandler,
         outputToSymbol(s, orderSubmitted.get(s).get(o.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
-                "askPx:" + askMap.getOrDefault(s, 0.0));
+                "askPx:" + apwcAsk);
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
