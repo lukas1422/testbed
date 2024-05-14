@@ -54,8 +54,8 @@ public class ProfitTargetTrader implements LiveHandler,
             = new ConcurrentSkipListMap<>(String::compareTo);
     private static ConcurrentSkipListMap<String, Double> ytdReturn = new ConcurrentSkipListMap<>();
     static volatile double totalDelta = 0.0;
-    static Map<String, Double> bidMap = new ConcurrentHashMap<>();
-    static Map<String, Double> askMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
+    private static Map<String, Double> askMap = new ConcurrentHashMap<>();
     private static ApiController api;
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
@@ -64,7 +64,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = TWS_PORT;
+    public static final int PORT_TO_USE = GATEWAY_PORT;
 
     public static Map<String, Double> rng = new HashMap<>();
 

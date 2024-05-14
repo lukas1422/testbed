@@ -73,11 +73,11 @@ public class Tradetest implements LiveHandler {
                 break;
             case BID:
                 pr("bid::", symb, price);
-                ProfitTargetTrader.bidMap.put(symb, price);
+//                ProfitTargetTrader.bidMap.put(symb, price);
                 break;
             case ASK:
                 pr("ask::", symb, price);
-                ProfitTargetTrader.askMap.put(symb, price);
+//                ProfitTargetTrader.askMap.put(symb, price);
                 break;
         }
     }
