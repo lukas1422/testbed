@@ -30,7 +30,8 @@ import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.pr;
 
 public class SellStock implements LiveHandler,
-        ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+        ApiController.IPositionHandler, ApiController.ITradeReportHandler,
+        ApiController.ILiveOrderHandler {
 
     private static final int GATEWAY_PORT = 4001;
     private static final int TWS_PORT = 7496;
@@ -59,7 +60,7 @@ public class SellStock implements LiveHandler,
     private volatile static Map<String, Decimal> symbPos =
             new ConcurrentSkipListMap<>(String::compareTo);
 
-    private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 100000);
+    private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 100000000);
 
     //static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
 
@@ -106,9 +107,7 @@ public class SellStock implements LiveHandler,
 
             pr("print all target stocks:", targets);
             api.reqPositions(this);
-//            api.reqPositions(this);
-//            api.reqLiveOrders(this);
-
+            api.reqLiveOrders(this);
 //            pr("req Executions");
 //            api.reqExecutions(new ExecutionFilter(), this);
             //outputToGeneral(usDateTime(), "cancelling all orders on start up");
@@ -150,9 +149,9 @@ public class SellStock implements LiveHandler,
     public void positionEnd() {
         pr(usDateTime(), "position end");
         targets.forEach(s -> {
-            if (!symbPos.containsKey(s)) {
-                symbPos.put(s, Decimal.ZERO);
-            }
+//            if (!symbPos.containsKey(s)) {
+//                symbPos.put(s, Decimal.ZERO);
+//            }
 
             outputToSymbol(s, "POS:" + symbPos.get(s).longValue(),
                     "COST:" + round1(costMap.getOrDefault(s, 0.0)),
@@ -178,7 +177,8 @@ public class SellStock implements LiveHandler,
 
         outputToSymbol(s, usDateTime(), "*tradeReport* time:",
                 executionToUSTime(execution.time()), execution.side(),
-                "execPx:" + execution.price(), "shares:" + execution.shares(), "avgPx:" + execution.avgPrice());
+                "execPx:" + execution.price(),
+                "shares:" + execution.shares(), "avgPx:" + execution.avgPrice());
 
         if (!tradeKeyExecutionMap.containsKey(tradeKey)) {
             tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
