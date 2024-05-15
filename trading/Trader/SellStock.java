@@ -21,6 +21,7 @@ import static Trader.Allstatic.*;
 import static Trader.TradingUtility.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
+import static client.OrderStatus.Filled;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.INVENTORY_CUTTER;
 import static java.lang.Math.round;
@@ -46,11 +47,6 @@ public class SellStock implements LiveHandler,
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
             openOrders = new ConcurrentSkipListMap<>();
 
-
-    //private static double apwcAvgCost = Double.MAX_VALUE;
-    //private static double apwcBid = 0.0;
-    //private static double apwcAsk = Double.MAX_VALUE;
-    //private static Decimal apwcPosition = Decimal.ZERO;
 
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
@@ -194,21 +190,93 @@ public class SellStock implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
 
+        String s = ibContractToSymbol(contract);
+
+        if (!targets.contains(s)) {
+            outputToSymbol(s, "not in sell stock trader");
+            return;
+        }
+
+        outputToSymbol(s, usDateTime(), "*openOrder* status:" + orderState.status(), order);
+        orderStatus.get(s).put(order.orderId(), orderState.status());
+
+        if (orderState.status() == Filled) {
+            outputToFills(s, usDateTime(), "*openOrder* filled", order);
+        }
+
+        if (orderState.status().isFinished()) {
+            outputToSymbol(s, usDateTime(), "*openOrder*:removing order. Status:",
+                    orderState.status(), order);
+            if (openOrders.get(s).containsKey(order.orderId())) {
+                openOrders.get(s).remove(order.orderId());
+            }
+            outputToSymbol(s, usDateTime(), "*openOrder*:after removal. openOrders:", openOrders.get(s));
+        } else { //order is not finished
+            openOrders.get(s).put(order.orderId(), order);
+        }
+        if (!openOrders.get(s).isEmpty()) {
+            outputToSymbol(s, usDateTime(), "*openOrder* all live orders", openOrders.get(s));
+        }
+
     }
 
     @Override
     public void openOrderEnd() {
-
+        outputToGeneral(usDateTime(), "*openOrderEnd*:print all openOrders Sell Stock", openOrders,
+                "orderStatusMap:", orderStatus);
     }
 
     @Override
-    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+    public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice,
+                            int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+
+        outputToGeneral(usDateTime(), "*OrderStatus*:" + status, "orderId:" + orderId,
+                "filled:" + filled.longValue(), "remaining:" + remaining,
+                "fillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
+
+        String s = findSymbolByID(orderId);
+        if (s.equalsIgnoreCase("")) {
+            outputToError("*orderStatus* orderID not found in sellstock:", orderId);
+            return;
+        }
+
+        outputToSymbol(s, usDateTime(), "*OrderStatus*:" + status,
+                "orderId:" + orderId, "filled:" + filled, "remaining:" + remaining,
+                "fillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
+
+        if (status == Filled) {
+            outputToFills(s, usDateTime(), "*OrderStatus*: filled. ordID:" + orderId);
+        }
+
+        //put status in orderstatusmap
+        orderStatus.get(s).put(orderId, status);
+
+        //removing finished orders
+        if (status.isFinished()) {
+            if (openOrders.get(s).containsKey(orderId)) {
+                outputToSymbol(s, usDateTime(), "*OrderStatus*:" + status,
+                        "deleting finished orders from openOrderMap", openOrders.get(s));
+                openOrders.get(s).remove(orderId);
+                outputToSymbol(s, "*OrderStatus* remaining openOrders:", openOrders.get(s));
+                outputToSymbol(s, "*OrderStatus* print ALL openOrders:", openOrders);
+            }
+        }
 
     }
 
     @Override
     public void handle(int orderId, int errorCode, String errorMsg) {
+        outputToError("*openOrder* Error", usDateTime(), "orderId:" +
+                orderId, "errorCode:" + errorCode, "msg:" + errorMsg);
+    }
 
+    private static String findSymbolByID(int id) {
+        for (String k : orderStatus.keySet()) {
+            if (orderStatus.get(k).containsKey(id)) {
+                return k;
+            }
+        }
+        return "";
     }
 
     @Override
@@ -220,11 +288,9 @@ public class SellStock implements LiveHandler,
                 tryToTrade(ct, price, t);
                 break;
             case BID:
-//                apwcBid = price;
                 bidMap.put(symb, price);
                 break;
             case ASK:
-//                apwcAsk = price;
                 askMap.put(symb, price);
                 break;
         }
@@ -263,7 +329,7 @@ public class SellStock implements LiveHandler,
         int id = tradID.incrementAndGet();
         double cost = costMap.get(s);
         double offerPrice = r(Math.max(askMap.get(s), px));
-        Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(10L), DAY);
+        Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(amountToSell.get(s)), DAY);
         orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
@@ -274,8 +340,6 @@ public class SellStock implements LiveHandler,
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.get(s));
-        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
-        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
 
 

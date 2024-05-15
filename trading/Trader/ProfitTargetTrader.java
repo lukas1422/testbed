@@ -31,14 +31,19 @@ import static java.time.temporal.ChronoUnit.MINUTES;
 import static java.util.stream.Collectors.*;
 import static utility.Utility.*;
 
-public class ProfitTargetTrader implements LiveHandler,
+class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
 
     private static final double DELTA_TOTAL_LIMIT = 268000;
     private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
     private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
-    static final double MAX_DRAWDOWN_TARGET = 0.8;
+    private static final double MAX_DRAWDOWN_TARGET = 0.8;
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
+            = new ConcurrentSkipListMap<>();
+    private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+    private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
+            twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
             orderStatus = new ConcurrentHashMap<>();
@@ -58,20 +63,20 @@ public class ProfitTargetTrader implements LiveHandler,
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
     private static ConcurrentSkipListMap<String, Double> ytdReturn = new ConcurrentSkipListMap<>();
-    static volatile double totalDelta = 0.0;
+    private static volatile double totalDelta = 0.0;
     private static Map<String, Double> bidMap = new ConcurrentHashMap<>();
     private static Map<String, Double> askMap = new ConcurrentHashMap<>();
     private static ApiController api;
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
-    static final int MASTERID = getSessionMasterTradeID();
+    private static final int MASTERID = getSessionMasterTradeID();
     private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
 
-    public static final int GATEWAY_PORT = 4001;
-    public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = GATEWAY_PORT;
+    private static final int GATEWAY_PORT = 4001;
+    private static final int TWS_PORT = 7496;
+    private static final int PORT_TO_USE = GATEWAY_PORT;
 
-    public static Map<String, Double> rng = new HashMap<>();
+    private static Map<String, Double> rng = new HashMap<>();
 
     private ProfitTargetTrader() throws IOException {
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
@@ -88,7 +93,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 });
     }
 
-    static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
+    private static void ytdOpen(Contract c, String date, double open, double high, double low, double close, long volume) {
         String symbol = ibContractToSymbol(c);
 
         if (!ytdDayData.containsKey(symbol)) {
@@ -99,13 +104,13 @@ public class ProfitTargetTrader implements LiveHandler,
         ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
     }
 
-    static double deltaLimitEach(String s) {
+    private static double deltaLimitEach(String s) {
 //        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 :
 //                ProfitTargetTrader.DELTA_LIMIT_EACH;
         return DELTA_TOTAL_LIMIT / 4.0;
     }
 
-    public static Decimal getLot(String symb, double price) {
+    private static Decimal getLot(String symb, double price) {
         return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) /
                 price / CURRENT_REFILL_N)));
     }
@@ -114,6 +119,15 @@ public class ProfitTargetTrader implements LiveHandler,
         return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
                 1 - rng.getOrDefault(symb, 0.0),
                 Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
+    }
+
+    static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+        String symbol = ibContractToSymbol(c);
+        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
+                TimeZone.getTimeZone("America/New_York").toZoneId());
+
+        twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+        liveData.get(symbol).put(ld, close);
     }
 
     private void connectAndReqPos() {
@@ -143,7 +157,7 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
                 pr("requesting hist day data", symb);
                 CompletableFuture.runAsync(() -> reqHistDayData(api, Allstatic.ibStockReqId.addAndGet(5),
-                        c, Allstatic::todaySoFar, () ->
+                        c, ProfitTargetTrader::todaySoFar, () ->
                                 pr(symb, "2D$:" + genStats(twoDayData.get(symb)),
                                         "1D$:" + genStats(twoDayData.get(symb).tailMap(TODAY230))),
                         2, Types.BarSize._1_min));
@@ -496,6 +510,12 @@ public class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String s = ibContractToSymbol(contract);
+
+        if (!targets.contains(s)) {
+            outputToSymbol(s, "not in profit target trader");
+            return;
+        }
+
         outputToSymbol(s, usDateTime(), "*openOrder* status:" + orderState.status(), order);
         orderStatus.get(s).put(order.orderId(), orderState.status());
 
@@ -520,7 +540,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral(usDateTime(), "*openOrderEnd*:print all openOrdrs", openOrders,
+        outputToGeneral(usDateTime(), "*openOrderEnd*:print all openOrdrs Profit Target", openOrders,
                 "orderStatusMap:", orderStatus);
     }
 
@@ -535,7 +555,7 @@ public class ProfitTargetTrader implements LiveHandler,
 
         String s = findSymbolByID(orderId);
         if (s.equalsIgnoreCase("")) {
-            outputToError("*orderStatus* orderID not found:", orderId);
+            outputToError("*orderStatus* orderID not found in ProfitTarget:", orderId);
             return;
         }
 

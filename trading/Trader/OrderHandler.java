@@ -16,10 +16,10 @@ import static Trader.TradingUtility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
 
-    public static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
+    private static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
     private final int orderID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
-    private InventoryStatus invStatus;
+    //private InventoryStatus invStatus;
     private String symbol;
 
     OrderHandler(int id) {
@@ -27,12 +27,12 @@ public class OrderHandler implements ApiController.IOrderHandler {
         tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
-    OrderHandler(String symb, int id, InventoryStatus s) {
-        symbol = symb;
-        orderID = id;
-        invStatus = s;
-        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
-    }
+//    OrderHandler(String symb, int id, InventoryStatus s) {
+//        symbol = symb;
+//        orderID = id;
+//        invStatus = s;
+//        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
+//    }
 
     OrderHandler(String symb, int id) {
         symbol = symb;
@@ -83,8 +83,11 @@ public class OrderHandler implements ApiController.IOrderHandler {
     @Override
     public void handle(int errorCode, String errorMsg) {
         try {
-            outputToSymbol(symbol, "ERROR in order handler:", orderID, "errorcode:", errorCode, "errormsg:", errorMsg
-                    , ProfitTargetTrader.returnOrderSubmitted(symbol).get(orderID));
+            outputToSymbol(symbol, "ERROR in order handler:", orderID,
+                    "errorcode:", errorCode, "errormsg:", errorMsg);
+//            outputToSymbol(symbol, "ERROR in order handler:", orderID,
+//                    "errorcode:", errorCode, "errormsg:", errorMsg
+//                    , returnOrderSubmitted(symbol).get(orderID));
         } catch (UnsupportedOperationException ex) {
             outputToSymbol(symbol, "tradeID not in orderSubmitted");
         }

@@ -45,12 +45,6 @@ public class Allstatic {
     //    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
 
-    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
-            = new ConcurrentSkipListMap<>();
-    static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-    static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
-            twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
-
     static ScheduledExecutorService es = Executors.newScheduledThreadPool(10);
     // static Map<String, LocalDateTime> lastOrderTime = new ConcurrentHashMap<>();
 
@@ -72,12 +66,4 @@ public class Allstatic {
         return id;
     }
 
-    static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
-        String symbol = ibContractToSymbol(c);
-        LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
-                TimeZone.getTimeZone("America/New_York").toZoneId());
-
-        twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
-        liveData.get(symbol).put(ld, close);
-    }
 }
