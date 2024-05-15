@@ -115,19 +115,24 @@ class ProfitTargetTrader implements LiveHandler,
                 price / CURRENT_REFILL_N)));
     }
 
-    public static double costTgt(String symb) {
+    private static double costTgt(String symb) {
         return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
                 1 - rng.getOrDefault(symb, 0.0),
                 Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
     }
 
-    static void todaySoFar(Contract c, String date, double open, double high, double low, double close, long volume) {
+    private static void todaySoFar(Contract c, String date, double open,
+                                   double high, double low, double close, long volume) {
         String symbol = ibContractToSymbol(c);
         LocalDateTime ld = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.parseLong(date) * 1000),
                 TimeZone.getTimeZone("America/New_York").toZoneId());
 
         twoDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
         liveData.get(symbol).put(ld, close);
+    }
+
+    private static double tgtProfitMargin(String s) {
+        return Math.max(minProfitMargin(s), 1 + rng.getOrDefault(s, 0.0) * 0.85);
     }
 
     private void connectAndReqPos() {
@@ -165,6 +170,7 @@ class ProfitTargetTrader implements LiveHandler,
                         c, ProfitTargetTrader::ytdOpen, () -> computeHistoricalData(symb)
                         , Math.min(364, getCalendarYtdDays() + 10), Types.BarSize._1_day));
             });
+            pr("print all target stocks:", targets);
             api.reqPositions(this);
             api.reqLiveOrders(this);
 
@@ -175,7 +181,7 @@ class ProfitTargetTrader implements LiveHandler,
         }, 2, TimeUnit.SECONDS);
     }
 
-    static void computeHistoricalData(String s) {
+    private static void computeHistoricalData(String s) {
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
@@ -220,7 +226,7 @@ class ProfitTargetTrader implements LiveHandler,
         }
     }
 
-    static boolean noBlockingOrders(String s) {
+    private static boolean noBlockingOrders(String s) {
         if (!orderStatus.get(s).isEmpty()) {
             pr(s, "no blocking orders check:", orderStatus.get(s));
         }
@@ -263,7 +269,7 @@ class ProfitTargetTrader implements LiveHandler,
                 (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
     }
 
-    static void tryToTrade(Contract ct, double px, LocalDateTime t) {
+    private static void tryToTrade(Contract ct, double px, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
             return;
         }

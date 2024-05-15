@@ -23,7 +23,7 @@ import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.OrderStatus.Filled;
 import static client.Types.TimeInForce.DAY;
-import static enums.AutoOrderType.INVENTORY_CUTTER;
+import static enums.AutoOrderType.SELL_STOCK;
 import static java.lang.Math.round;
 import static java.util.stream.Collectors.*;
 import static utility.Utility.ibContractToSymbol;
@@ -98,6 +98,7 @@ public class SellStock implements LiveHandler,
         } catch (InterruptedException e) {
             outputToError("error in connection:", e);
         }
+        pr("print all target stocks:", targets);
         pr("requesting position");
         api.reqPositions(this);
     }
@@ -285,7 +286,8 @@ public class SellStock implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                tryToTrade(ct, price, t);
+                pr(t.format(Hmmss), "last p:", symb, price);
+                tryToSell(ct, price, t);
                 break;
             case BID:
                 bidMap.put(symb, price);
@@ -297,7 +299,7 @@ public class SellStock implements LiveHandler,
 
     }
 
-    private static void tryToTrade(Contract ct, double px, LocalDateTime t) {
+    private static void tryToSell(Contract ct, double px, LocalDateTime t) {
         if (!TRADING_TIME_PRED.test(getESTLocalTimeNow())) {
             return;
         }
@@ -308,9 +310,9 @@ public class SellStock implements LiveHandler,
             return;
         }
 
-        if (px > costMap.get(s)) {
+        if (px > costMap.get(s) * 1.01) {
             outputToSymbol(s, "****CUT**", t.format(MdHmmss));
-            inventoryCutter(ct, px, t);
+            sellStockCutter(ct, px, t);
         }
     }
 
@@ -322,24 +324,20 @@ public class SellStock implements LiveHandler,
                 orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
-    private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
+    private static void sellStockCutter(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
-        //Decimal pos = symbPos.get(s);
 
         int id = tradID.incrementAndGet();
         double cost = costMap.get(s);
         double offerPrice = r(Math.max(askMap.get(s), px));
         Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(amountToSell.get(s)), DAY);
-        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
+        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, SELL_STOCK));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
         outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "px:" + offerPrice,
                 "q:" + o.totalQuantity().longValue(), "cost:" + round2(cost));
 
-        outputToSymbol(s, orderSubmitted.get(s).get(o.orderId()),
-                "reqMargin:" + round5(tgtProfitMargin(s)),
-                "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
-                "askPx:" + askMap.get(s));
+        outputToSymbol(s, orderSubmitted.get(s).get(o.orderId()), "askPx:" + askMap.get(s));
     }
 
 
@@ -359,9 +357,7 @@ public class SellStock implements LiveHandler,
     }
 
     public static void main(String[] args) throws IOException {
-
         SellStock test1 = new SellStock();
         test1.connectAndReqPos();
-
     }
 }

@@ -230,6 +230,7 @@ public enum AutoOrderType {
 
     INVENTORY_ADDER,
     INVENTORY_CUTTER,
+    SELL_STOCK,
     BREACH_ADDER,
     BREACH_CUTTER,
     FUT_TEMP_CUTTER,
