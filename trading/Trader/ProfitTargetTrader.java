@@ -86,7 +86,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         Files.lines(Paths.get(RELATIVEPATH + "interestListUS")).map(l -> l.split(" "))
                 .forEach(a -> {
-                    pr("whole line", a);
+                    //pr("whole line", a);
                     pr("a[0]", a[0]);
                     String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
                     registerContract(generateUSStockContract(stockName));
@@ -176,8 +176,8 @@ class ProfitTargetTrader implements LiveHandler,
 
             pr("req Executions");
             api.reqExecutions(new ExecutionFilter(), this);
-            outputToGeneral(usDateTime(), "cancelling all orders on start up");
-            api.cancelAllOrders();
+            //outputToGeneral(usDateTime(), "cancelling all orders on start up");
+            //api.cancelAllOrders();
         }, 2, TimeUnit.SECONDS);
     }
 

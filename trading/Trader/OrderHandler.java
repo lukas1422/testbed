@@ -16,7 +16,7 @@ import static Trader.TradingUtility.*;
 
 public class OrderHandler implements ApiController.IOrderHandler {
 
-    private static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
+//    private static Map<Integer, OrderStatus> tradeIDOrderStatusMap = new ConcurrentHashMap<>();
     private final int orderID;
     //    public static File breachMDevOutput = new File(TradingConstants.GLOBALPATH + "breachMDev.txt");
     //private InventoryStatus invStatus;
@@ -24,7 +24,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
 
     OrderHandler(int id) {
         orderID = id;
-        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
+//        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
 //    OrderHandler(String symb, int id, InventoryStatus s) {
@@ -37,7 +37,7 @@ public class OrderHandler implements ApiController.IOrderHandler {
     OrderHandler(String symb, int id) {
         symbol = symb;
         orderID = id;
-        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
+//        tradeIDOrderStatusMap.put(id, OrderStatus.ConstructedInHandler);
     }
 
     @Override

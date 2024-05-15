@@ -41,7 +41,8 @@ public class SellStock implements LiveHandler,
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
     private static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
-    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
+    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>>
+            orderSubmitted = new ConcurrentHashMap<>();
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
             orderStatus = new ConcurrentHashMap<>();
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
@@ -100,7 +101,21 @@ public class SellStock implements LiveHandler,
         }
         pr("print all target stocks:", targets);
         pr("requesting position");
-        api.reqPositions(this);
+
+        Executors.newScheduledThreadPool(10).schedule(() -> {
+
+            pr("print all target stocks:", targets);
+            api.reqPositions(this);
+//            api.reqPositions(this);
+//            api.reqLiveOrders(this);
+
+//            pr("req Executions");
+//            api.reqExecutions(new ExecutionFilter(), this);
+            //outputToGeneral(usDateTime(), "cancelling all orders on start up");
+            //api.cancelAllOrders();
+        }, 2, TimeUnit.SECONDS);
+
+
     }
 
 
@@ -169,7 +184,6 @@ public class SellStock implements LiveHandler,
             tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
         }
         tradeKeyExecutionMap.get(tradeKey).add(new ExecutionAugmented(s, execution));
-
     }
 
     @Override
@@ -185,7 +199,7 @@ public class SellStock implements LiveHandler,
 
     @Override
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
-
+        pr("commission report for sellstock", tradeKey, commissionReport.commission());
     }
 
     @Override
@@ -229,7 +243,8 @@ public class SellStock implements LiveHandler,
 
     @Override
     public void orderStatus(int orderId, OrderStatus status, Decimal filled, Decimal remaining, double avgFillPrice,
-                            int permId, int parentId, double lastFillPrice, int clientId, String whyHeld, double mktCapPrice) {
+                            int permId, int parentId, double lastFillPrice, int clientId,
+                            String whyHeld, double mktCapPrice) {
 
         outputToGeneral(usDateTime(), "*OrderStatus*:" + status, "orderId:" + orderId,
                 "filled:" + filled.longValue(), "remaining:" + remaining,
