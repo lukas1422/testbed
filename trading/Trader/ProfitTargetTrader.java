@@ -34,11 +34,16 @@ import static utility.Utility.*;
 public class ProfitTargetTrader implements LiveHandler,
         ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
 
-    static final double DELTA_TOTAL_LIMIT = 268000;
-    static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
-    static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
-    static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
+    private static final double DELTA_TOTAL_LIMIT = 268000;
+    private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
+    private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
+    private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
     static final double MAX_DRAWDOWN_TARGET = 0.8;
+    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
+    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
+            orderStatus = new ConcurrentHashMap<>();
+    private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
+            openOrders = new ConcurrentSkipListMap<>();
     //data
     private volatile static Map<String, Double> px = new ConcurrentHashMap<>();
     private static Map<String, LocalDateTime> lastPxTimestamp = new ConcurrentHashMap<>();
@@ -60,7 +65,7 @@ public class ProfitTargetTrader implements LiveHandler,
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     static final int MASTERID = getSessionMasterTradeID();
-    static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
+    private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
@@ -92,6 +97,23 @@ public class ProfitTargetTrader implements LiveHandler,
 
         LocalDate ld = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
         ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
+    }
+
+    static double deltaLimitEach(String s) {
+//        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 :
+//                ProfitTargetTrader.DELTA_LIMIT_EACH;
+        return DELTA_TOTAL_LIMIT / 4.0;
+    }
+
+    public static Decimal getLot(String symb, double price) {
+        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) /
+                price / CURRENT_REFILL_N)));
+    }
+
+    public static double costTgt(String symb) {
+        return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
+                1 - rng.getOrDefault(symb, 0.0),
+                Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
     }
 
     private void connectAndReqPos() {
@@ -618,10 +640,19 @@ public class ProfitTargetTrader implements LiveHandler,
                 }
             });
         }
+
     }
 
+    public static ConcurrentSkipListMap<Integer, OrderAugmented> returnOrderSubmitted(String s) {
+        if (orderSubmitted.containsKey(s)) {
+            return orderSubmitted.get(s);
+        }
+        throw new UnsupportedOperationException("order submitted does not contain");
+    }
+
+
     //Execution end*********************************
-    //open orders end **********************
+//open orders end **********************
     public static void main(String[] args) throws IOException {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();

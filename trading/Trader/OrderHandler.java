@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //import static Trader.BreachTrader.devOrderMap;
 //import static Trader.BreachTrader.f2;
-import static Trader.Allstatic.*;
 import static api.TradingConstants.MdHmmss;
 import static Trader.TradingUtility.*;
 
@@ -85,8 +84,8 @@ public class OrderHandler implements ApiController.IOrderHandler {
     public void handle(int errorCode, String errorMsg) {
         try {
             outputToSymbol(symbol, "ERROR in order handler:", orderID, "errorcode:", errorCode, "errormsg:", errorMsg
-                    , orderSubmitted.get(symbol).get(orderID));
-        } catch (NullPointerException ex) {
+                    , ProfitTargetTrader.returnOrderSubmitted(symbol).get(orderID));
+        } catch (UnsupportedOperationException ex) {
             outputToSymbol(symbol, "tradeID not in orderSubmitted");
         }
     }

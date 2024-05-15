@@ -41,11 +41,6 @@ public class Allstatic {
     public static volatile List<String> symbolNames = new ArrayList<>(1000);
     public static volatile LocalDate currentTradingDate = getTradeDate(LocalDateTime.now());
     public static File outputFile = new File("trading/TradingFiles/output");
-    protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
-    protected static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
-            orderStatus = new ConcurrentHashMap<>();
-    static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
-            openOrders = new ConcurrentSkipListMap<>();
     //    static volatile AtomicInteger tradeID = new AtomicInteger(1200);
     //    static volatile AtomicInteger tradeID = new AtomicInteger(getNewTradeID());
     static volatile AtomicInteger ibStockReqId = new AtomicInteger(60000);
