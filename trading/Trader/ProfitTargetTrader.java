@@ -254,7 +254,7 @@ class ProfitTargetTrader implements LiveHandler,
                         addition < DELTA_LIMIT_EACH);
     }
 
-    static double refillPx(String symb, double px, long pos, double costPerShare) {
+    private static double refillPx(String symb, double px, long pos, double costPerShare) {
         if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
             return 0.0;
         }
@@ -669,12 +669,12 @@ class ProfitTargetTrader implements LiveHandler,
 
     }
 
-    public static ConcurrentSkipListMap<Integer, OrderAugmented> returnOrderSubmitted(String s) {
-        if (orderSubmitted.containsKey(s)) {
-            return orderSubmitted.get(s);
-        }
-        throw new UnsupportedOperationException("order submitted does not contain");
-    }
+//    public static ConcurrentSkipListMap<Integer, OrderAugmented> returnOrderSubmitted(String s) {
+//        if (orderSubmitted.containsKey(s)) {
+//            return orderSubmitted.get(s);
+//        }
+//        throw new UnsupportedOperationException("order submitted does not contain");
+//    }
 
 
     //Execution end*********************************

@@ -135,9 +135,9 @@ public class SellStock implements LiveHandler,
     public void position(String account, Contract contract, Decimal position, double avgCost) {
         String s = ibContractToSymbol(contract);
 
-        pr("position", ibContractToSymbol(contract), position, avgCost);
 
         if (!contract.symbol().equals("USD") && targets.contains(s)) {
+            pr("position", ibContractToSymbol(contract), position, avgCost);
             symbPos.put(s, position);
             costMap.put(s, avgCost);
             outputToSymbol(s, "updating position:", usDateTime(),
@@ -331,7 +331,7 @@ public class SellStock implements LiveHandler,
         }
     }
 
-    static boolean noBlockingOrders(String s) {
+    private static boolean noBlockingOrders(String s) {
         if (!orderStatus.get(s).isEmpty()) {
             pr(s, "no blocking orders check:", orderStatus.get(s));
         }
