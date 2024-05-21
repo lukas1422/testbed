@@ -61,3 +61,36 @@ POS:9999 COST:1.5 DELT:15k
 *STARTS* 5-17 17:30
 updating position: 5-17 17:30 position:9999 cost:1.46
 POS:9999 COST:1.5 DELT:15k
+*******************************************
+*STARTS* 5-20 10:34
+updating position: 5-20 10:34 position:9999 cost:1.46
+POS:9999 COST:1.5 DELT:15k
+****CUT** 5-20 10:34:45
+*******************************************
+*STARTS* 5-20 10:35
+updating position: 5-20 10:35 position:9999 cost:1.46
+POS:9999 COST:1.5 DELT:15k
+****CUT** 5-20 10:35:32
+ordID:340520067 tradID:340520067 SELL px:1.48 q:1000 cost:1.46
+APWC 5-20 10:35 SELL_STOCK Created askPx:null
+5-20 10:35 *openOrder* status:PreSubmitted orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:
+5-20 10:35 *openOrder* all live orders {340520067=orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:}
+5-20 10:35 *OrderStatus*:PreSubmitted orderId:340520067 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 5-20 10:35 position:9997 cost:1.46
+5-20 10:35 *openOrder* status:PreSubmitted orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:
+5-20 10:35 *openOrder* all live orders {340520067=orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:}
+5-20 10:35 *OrderStatus*:PreSubmitted orderId:340520067 filled:2 remaining:998 fillPx:1.48 lastFillPx:1.48
+5-20 10:35 *openOrder* status:Submitted orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:
+5-20 10:35 *openOrder* all live orders {340520067=orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:}
+5-20 10:35 *OrderStatus*:Submitted orderId:340520067 filled:2 remaining:998 fillPx:1.48 lastFillPx:1.48
+5-20 10:35 *openOrder* status:Submitted orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:
+5-20 10:35 *openOrder* all live orders {340520067=orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:}
+5-20 10:35 *OrderStatus*:Submitted orderId:340520067 filled:2 remaining:998 fillPx:1.48 lastFillPx:1.48
+updating position: 5-20 10:35 position:9997 cost:1.46
+updating position: 5-20 10:35 position:9997 cost:1.46
+updating position: 5-20 10:41 position:9997 cost:1.46
+13:22:10 order blocked by:[orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:] orderStatus:{340520067=Submitted}
+15:34:38 order blocked by:[orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:] orderStatus:{340520067=Submitted}
+5-20 16:00 *openOrder* status:Submitted orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:
+5-20 16:00 *openOrder* all live orders {340520067=orderID:340520067 LMT SELL Q:1000 px:1.48 filledQ:}
+5-20 16:00 *OrderStatus*:Submitted orderId:340520067 filled:2 remaining:998 fillPx:1.48 lastFillPx:1.48

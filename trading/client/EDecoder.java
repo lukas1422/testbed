@@ -17,6 +17,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import static utility.Utility.pr;
+
 class EDecoder implements ObjectInput {
     // incoming msg id's
     private static final int END_CONN           = -1;
@@ -108,11 +110,12 @@ class EDecoder implements ObjectInput {
 
     private EClientMsgSink m_clientMsgSink;
     private EWrapper m_EWrapper;
-    private int m_serverVersion;
+    private int  m_serverVersion;
 	private IMessageReader m_messageReader;
 
 	public EDecoder(int serverVersion, EWrapper callback) {
-		this(serverVersion, callback, null);
+        this(serverVersion, callback, null);
+        pr("server version:", serverVersion);
 	}
 	
 	public EDecoder(int serverVersion, EWrapper callback, EClientMsgSink sink) {

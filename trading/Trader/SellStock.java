@@ -344,7 +344,7 @@ public class SellStock implements LiveHandler,
 
         int id = tradID.incrementAndGet();
         double cost = costMap.get(s);
-        double offerPrice = r(Math.max(askMap.get(s), px));
+        double offerPrice = r(Math.max(askMap.getOrDefault(s,px), px));
         Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(amountToSell.get(s)), DAY);
         orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, SELL_STOCK));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
