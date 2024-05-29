@@ -3,6 +3,7 @@ package Trader;
 import api.OrderAugmented;
 import auxiliary.SimpleBar;
 import client.*;
+import controller.AccountSummaryTag;
 import controller.ApiController;
 import handler.DefaultConnectionHandler;
 import handler.LiveHandler;
@@ -32,8 +33,10 @@ import static java.util.stream.Collectors.*;
 import static utility.Utility.*;
 
 class ProfitTargetTrader implements LiveHandler,
-        ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler {
+        ApiController.IPositionHandler, ApiController.ITradeReportHandler, ApiController.ILiveOrderHandler
+        , ApiController.IAccountSummaryHandler {
 
+    private static volatile double AVAILABLE_CASH = 0.0;
     private static final double DELTA_TOTAL_LIMIT = 268000;
     private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
@@ -74,7 +77,7 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static final int GATEWAY_PORT = 4001;
     private static final int TWS_PORT = 7496;
-    private static final int PORT_TO_USE = GATEWAY_PORT;
+    private static final int PORT_TO_USE = TWS_PORT;
 
     private static Map<String, Double> rng = new HashMap<>();
 
@@ -173,11 +176,14 @@ class ProfitTargetTrader implements LiveHandler,
             pr("print all target stocks:", targets);
             api.reqPositions(this);
             api.reqLiveOrders(this);
+            AccountSummaryTag[] tags =
+                    {AccountSummaryTag.AvailableFunds};
+            api.reqAccountSummary("All", tags, this);
 
             pr("req Executions");
             api.reqExecutions(new ExecutionFilter(), this);
-            //outputToGeneral(usDateTime(), "cancelling all orders on start up");
-            //api.cancelAllOrders();
+            outputToGeneral(usDateTime(), "cancelling all orders on start up");
+            api.cancelAllOrders();
         }, 2, TimeUnit.SECONDS);
     }
 
@@ -249,7 +255,7 @@ class ProfitTargetTrader implements LiveHandler,
 //                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
 //                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
-        return totalDelta + addition < DELTA_TOTAL_LIMIT &&
+        return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
                 (symbDelta.getOrDefault(symb, MAX_VALUE) +
                         addition < DELTA_LIMIT_EACH);
     }
@@ -472,7 +478,8 @@ class ProfitTargetTrader implements LiveHandler,
                 , ytdReturn.getOrDefault(s, -100.0));
 
         if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
-            outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" + symbDelta.getOrDefault(s, MAX_VALUE),
+            outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" +
+                            symbDelta.getOrDefault(s, MAX_VALUE),
                     "addDelta:" + lotSize.longValue() * px);
             return;
         }
@@ -722,5 +729,20 @@ class ProfitTargetTrader implements LiveHandler,
             });
         }, 20L, 3600L, TimeUnit.SECONDS);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> outputToGeneral("*Ending*", usDateTime())));
+    }
+
+    @Override
+    public void accountSummary(String account, AccountSummaryTag tag, String value, String currency) {
+        pr("account summary", account, tag, value, currency);
+        if (tag == AccountSummaryTag.AvailableFunds) {
+            pr("updating account summary");
+            AVAILABLE_CASH = Double.parseDouble(value);
+            outputToGeneral("available cash is ", AVAILABLE_CASH);
+        }
+    }
+
+    @Override
+    public void accountSummaryEnd() {
+        pr("summary end");
     }
 }
