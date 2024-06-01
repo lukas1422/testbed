@@ -112,6 +112,8 @@ public class SellStock implements LiveHandler,
 //            api.reqExecutions(new ExecutionFilter(), this);
             //outputToGeneral(usDateTime(), "cancelling all orders on start up");
             //api.cancelAllOrders();
+            outputToGeneral(usDateTime(), "cancelling all orders on start up");
+            api.cancelAllOrders();
         }, 2, TimeUnit.SECONDS);
 
 
