@@ -6318,3 +6318,136 @@ last live feed time: 6-6 18:23 been:0mins. p:1201.53
 6-6 18:23 2dP:53.0 1dP:24.0
 2d$:n:1490 max:1255.2 [6-6 9:36] min:1140.8 [6-4 11:37] rng:10.0% 1Key:[6-4 9:30] last:[6-6 18:23]
 1d$:n:710 max:1255.2 [6-6 9:36] min:1184.9 [6-6 13:00] rng:5.9% 1Key:[6-6 6:23] last:[6-6 18:23]
+*******************************************
+*STARTS* 6-7 7:18
+POS:0 COST:0.0 DELT:0k
+6-7 7:18 rng:3.5% costTgt:0.965
+6-7 7:18 tgtMargin:1.0297 tgtPrice:0.0
+ytdReturn:144.34%
+*Periodic Run* 7:19
+no live feed
+6-7 7:19 2dP:41.0 1dP:100.0
+2d$:n:780 max:1255.3 [6-6 9:36] min:1177.0 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-6 15:59]
+1d$:n<5
+*Periodic Run* 8:19
+last live feed time: 6-7 8:19 been:0mins. p:1206.0 
+6-7 8:19 2dP:37.0 1dP:22.0
+2d$:n:837 max:1255.3 [6-6 9:36] min:1177.0 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 8:19]
+1d$:n:57 max:1215.9 [6-7 8:09] min:1203.1 [6-7 7:28] rng:1.1% 1Key:[6-7 7:19] last:[6-7 8:19]
+*Periodic Run* 9:19
+last live feed time: 6-7 9:19 been:0mins. p:1192.1 
+6-7 9:19 2dP:20.0 1dP:33.0
+2d$:n:897 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 9:19]
+1d$:n:117 max:1215.9 [6-7 8:09] min:1180.5 [6-7 8:43] rng:3.0% 1Key:[6-7 7:19] last:[6-7 9:19]
+*1Buy* 6-7 9:34:56 1dp:5.0 2dp:7.0
+inventoryAdder: ytdReturn > -10%, can trade: 1.4434168012924071
+ordID:240607005 tradID:240607005 BUY px:1181.09 lot:18 NVDA 6-7 9:34 INVENTORY_ADDER Created
+2D$:n:912 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 9:34]
+1D$:n:132 max:1215.9 [6-7 8:09] min:1180.3 [6-7 8:43] rng:3.0% 1Key:[6-7 7:19] last:[6-7 9:34]
+9:34:57 order blocked by:[] orderStatus:{240607005=Created}
+9:34:57 order blocked by:[] orderStatus:{240607005=Created}
+6-7 9:34 *openOrder* status:PreSubmitted orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:
+6-7 9:34 *openOrder* all live orders {240607005=orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:}
+6-7 9:34 *OrderStatus*:PreSubmitted orderId:240607005 filled:0 remaining:18 fillPx:0.0 lastFillPx:0.0
+updating position: 6-7 9:34 position:18 cost:1180.57
+6-7 9:34 *tradeReport* time: 2024-06-07T09:34:57 BOT execPx:1180.57 shares:18 avgPx:1180.57
+6-7 9:34 *openOrder* status:Filled orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:
+6-7 9:34 *openOrder*:removing order. Status: Filled orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:
+6-7 9:34 *openOrder*:after removal. openOrders: {}
+6-7 9:34 *OrderStatus*:Filled orderId:240607005 filled:18 remaining:0 fillPx:1180.57 lastFillPx:1180.57
+6-7 9:34 *openOrder* status:Filled orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:
+6-7 9:34 *openOrder*:removing order. Status: Filled orderID:240607005 LMT BUY Q:18 px:1181.09 filledQ:
+6-7 9:34 *openOrder*:after removal. openOrders: {}
+6-7 9:34 *OrderStatus*:Filled orderId:240607005 filled:18 remaining:0 fillPx:1180.57 lastFillPx:1180.57
+1.*commission report* orderID:240607005 commission:0.35 
+2.*commission report* orderID:240607005 commission: 0.35 
+updating position: 6-7 9:34 position:18 cost:1180.59
+updating position: 6-7 9:36 position:18 cost:1180.59
+updating position: 6-7 9:36 position:18 cost:1180.59
+updating position: 6-7 10:15 position:18 cost:1180.59
+updating position: 6-7 10:15 position:18 cost:1180.59
+*Periodic Run* 10:19
+last live feed time: 6-7 10:19 been:0mins. p:1191.91 cost:1180.6 p/cost:1.01
+p:1191.91 rng:3.5% pos:18 delt:21k cost:1180.6 lot:18 fillP:1097.98 costTgt:0.965 fillP/cost:0.93 fillP/px:0.921
+6-7 10:19 *chek orderStatus {240607005=Filled}
+6-7 10:19 2dP:19.0 1dP:33.0
+2d$:n:957 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 10:19]
+1d$:n:177 max:1215.9 [6-7 8:09] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 10:19]
+updating position: 6-7 10:33 position:18 cost:1180.59
+*Periodic Run* 11:19
+last live feed time: 6-7 11:19 been:0mins. p:1188.61 cost:1180.6 p/cost:1.007
+p:1188.61 rng:3.5% pos:18 delt:21k cost:1180.6 lot:18 fillP:1097.98 costTgt:0.965 fillP/cost:0.93 fillP/px:0.924
+6-7 11:19 *chek orderStatus {240607005=Filled}
+6-7 11:19 2dP:15.0 1dP:24.0
+2d$:n:1017 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 11:19]
+1d$:n:237 max:1215.9 [6-7 8:09] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 11:19]
+*Periodic Run* 12:19
+last live feed time: 6-7 12:19 been:0mins. p:1203.3 cost:1180.6 p/cost:1.019
+p:1203.3 rng:3.5% pos:18 delt:22k cost:1180.6 lot:18 fillP:1097.98 costTgt:0.965 fillP/cost:0.93 fillP/px:0.912
+6-7 12:19 *chek orderStatus {240607005=Filled}
+6-7 12:19 2dP:34.0 1dP:65.0
+2d$:n:1077 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 12:19]
+1d$:n:297 max:1215.9 [6-7 8:09] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 12:19]
+****CUT** 6-7 13:06:09 1dP:99.0 2dp:49.0 px/Cost:1.0298 reqMargin:1.0297 rng:0.035
+ordID:240607010 tradID:240607010 SELL px:1215.89 q:18 cost:1180.59
+NVDA 6-7 13:06 INVENTORY_CUTTER Created reqMargin:1.02974 tgtSellPx:1215.7 askPx:1215.89
+2D$:n:1124 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 13:06]
+1D$:n:344 max:1215.9 [6-7 8:09] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 13:06]
+13:06:10 order blocked by:[] orderStatus:{240607005=Filled, 240607010=Created}
+13:06:10 order blocked by:[] orderStatus:{240607005=Filled, 240607010=Created}
+6-7 13:06 *openOrder* status:Submitted orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:
+6-7 13:06 *openOrder* all live orders {240607010=orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:}
+6-7 13:06 *OrderStatus*:Submitted orderId:240607010 filled:0 remaining:18 fillPx:0.0 lastFillPx:0.0
+13:06:10 order blocked by:[orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:] orderStatus:{240607005=Filled, 240607010=Submitted}
+13:06:11 order blocked by:[orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:] orderStatus:{240607005=Filled, 240607010=Submitted}
+updating position: 6-7 13:06 position:0 cost:0.0
+6-7 13:06 *tradeReport* time: 2024-06-07T13:06:11 SLD execPx:1215.89 shares:18 avgPx:1215.89
+6-7 13:06 *openOrder* status:Filled orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:
+6-7 13:06 *openOrder*:removing order. Status: Filled orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:
+6-7 13:06 *openOrder*:after removal. openOrders: {}
+6-7 13:06 *OrderStatus*:Filled orderId:240607010 filled:18 remaining:0 fillPx:1215.89 lastFillPx:1215.89
+6-7 13:06 *openOrder* status:Filled orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:
+6-7 13:06 *openOrder*:removing order. Status: Filled orderID:240607010 LMT SELL Q:18 px:1215.89 filledQ:
+6-7 13:06 *openOrder*:after removal. openOrders: {}
+6-7 13:06 *OrderStatus*:Filled orderId:240607010 filled:18 remaining:0 fillPx:1215.89 lastFillPx:1215.89
+1.*commission report* orderID:240607010 commission:0.93 orderID: 240607010 realized pnl: 634.48
+2.*commission report* orderID:240607010 commission: 0.93 realized pnl: 634.48
+updating position: 6-7 13:06 position:0 cost:0.0
+updating position: 6-7 13:06 position:0 cost:0.0
+updating position: 6-7 13:10 position:0 cost:0.0
+*Periodic Run* 13:19
+last live feed time: 6-7 13:19 been:0mins. p:1215.95 
+6-7 13:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 13:19 2dP:50.0 1dP:99.0
+2d$:n:1137 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 13:19]
+1d$:n:357 max:1216.4 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 13:19]
+*Periodic Run* 14:19
+last live feed time: 6-7 14:19 been:0mins. p:1198.28 
+6-7 14:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 14:19 2dP:27.0 1dP:50.0
+2d$:n:1197 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 14:19]
+1d$:n:417 max:1216.6 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 14:19]
+*Periodic Run* 15:19
+last live feed time: 6-7 15:19 been:0mins. p:1201.61 
+6-7 15:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 15:19 2dP:32.0 1dP:59.0
+2d$:n:1257 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 15:19]
+1d$:n:477 max:1216.6 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 15:19]
+*Periodic Run* 16:19
+last live feed time: 6-7 16:18 been:0mins. p:1210.05 
+6-7 16:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 16:19 2dP:42.0 1dP:82.0
+2d$:n:1316 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 16:18]
+1d$:n:536 max:1216.6 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 16:18]
+*Periodic Run* 17:19
+last live feed time: 6-7 17:18 been:0mins. p:1205.69 
+6-7 17:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 17:19 2dP:37.0 1dP:70.0
+2d$:n:1374 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 17:18]
+1d$:n:594 max:1216.6 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 17:18]
+*Periodic Run* 18:19
+last live feed time: 6-7 18:16 been:2mins. p:1205.5 
+6-7 18:19 *chek orderStatus {240607005=Filled, 240607010=Filled}
+6-7 18:19 2dP:37.0 1dP:70.0
+2d$:n:1423 max:1255.3 [6-6 9:36] min:1176.8 [6-5 9:32] rng:6.7% 1Key:[6-5 9:30] last:[6-7 18:16]
+1d$:n:643 max:1216.6 [6-7 13:14] min:1179.9 [6-7 8:43] rng:3.1% 1Key:[6-7 7:19] last:[6-7 18:16]
