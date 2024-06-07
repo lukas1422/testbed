@@ -293,3 +293,311 @@ updating position: 5-31 16:00 position:8072 cost:1.45
 5-31 16:00 *openOrder* all live orders {340531256=orderID:340531256 LMT SELL Q:1000 px:1.54 filledQ:}
 5-31 16:00 *OrderStatus*:Submitted orderId:340531256 filled:29 remaining:971 fillPx:1.54 lastFillPx:1.54
 updating position: 5-31 16:05 position:8072 cost:1.45
+*******************************************
+*STARTS* 6-4 9:00
+updating position: 6-4 9:00 position:8072 cost:1.44
+POS:8072 COST:1.4 DELT:12k
+****CUT** 6-4 9:30:58
+ordID:340604002 tradID:340604002 SELL px:1.55 q:1000 cost:1.44
+APWC 6-4 9:30 SELL_STOCK Created askPx:1.55
+6-4 9:31 *openOrder* status:Submitted orderID:340604002 LMT SELL Q:1000 px:1.55 filledQ:
+6-4 9:31 *openOrder* all live orders {340604002=orderID:340604002 LMT SELL Q:1000 px:1.55 filledQ:}
+6-4 9:31 *OrderStatus*:Submitted orderId:340604002 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+9:53:34 order blocked by:[orderID:340604002 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340604002=Submitted}
+*******************************************
+*STARTS* 6-5 9:43
+updating position: 6-5 9:43 position:8072 cost:1.44
+POS:8072 COST:1.4 DELT:12k
+****CUT** 6-5 9:43:55
+ordID:340605015 tradID:340605015 SELL px:1.55 q:1000 cost:1.44
+APWC 6-5 9:43 SELL_STOCK Created askPx:null
+6-5 9:43 *openOrder* status:Submitted orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:
+6-5 9:43 *openOrder* all live orders {340605015=orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:}
+6-5 9:43 *OrderStatus*:Submitted orderId:340605015 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+10:49:30 order blocked by:[orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340605015=Submitted}
+11:39:01 order blocked by:[orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340605015=Submitted}
+11:39:02 order blocked by:[orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340605015=Submitted}
+13:12:09 order blocked by:[orderID:340605015 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340605015=Submitted}
+*******************************************
+*STARTS* 6-6 9:31
+updating position: 6-6 9:31 position:8072 cost:1.44
+POS:8072 COST:1.4 DELT:12k
+****CUT** 6-6 9:52:22
+ordID:340606003 tradID:340606003 SELL px:1.55 q:1000 cost:1.44
+APWC 6-6 9:52 SELL_STOCK Created askPx:1.55
+6-6 9:52 *openOrder* status:Submitted orderID:340606003 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 9:52 *openOrder* all live orders {340606003=orderID:340606003 LMT SELL Q:1000 px:1.55 filledQ:}
+6-6 9:52 *OrderStatus*:Submitted orderId:340606003 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 12:10 position:7072 cost:1.44
+6-6 12:10 *OrderStatus*:Filled orderId:340606003 filled:1000 remaining:0 fillPx:1.55 lastFillPx:1.55
+6-6 12:10 *OrderStatus*:Filled deleting finished orders from openOrderMap {340606003=orderID:340606003 LMT SELL Q:1000 px:1.55 filledQ:}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {APWC={}}
+6-6 12:10 *OrderStatus*:Filled orderId:340606003 filled:1000 remaining:0 fillPx:1.55 lastFillPx:1.55
+updating position: 6-6 12:10 position:7072 cost:1.44
+updating position: 6-6 12:10 position:7072 cost:1.44
+****CUT** 6-6 12:10:00
+ordID:340606004 tradID:340606004 SELL px:1.55 q:1000 cost:1.44
+APWC 6-6 12:10 SELL_STOCK Created askPx:1.55
+6-6 12:10 *openOrder* status:PreSubmitted orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder* all live orders {340606004=orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:}
+6-6 12:10 *OrderStatus*:PreSubmitted orderId:340606004 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 12:10 position:6572 cost:1.44
+6-6 12:10 *openOrder* status:PreSubmitted orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder* all live orders {340606004=orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:}
+6-6 12:10 *OrderStatus*:PreSubmitted orderId:340606004 filled:500 remaining:500 fillPx:1.5724 lastFillPx:1.5724
+12:10:01 order blocked by:[orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:] orderStatus:{340606003=Filled, 340606004=PreSubmitted}
+updating position: 6-6 12:10 position:6272 cost:1.44
+6-6 12:10 *openOrder* status:PreSubmitted orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder* all live orders {340606004=orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:}
+6-6 12:10 *OrderStatus*:PreSubmitted orderId:340606004 filled:800 remaining:200 fillPx:1.571688 lastFillPx:1.5705
+updating position: 6-6 12:10 position:6172 cost:1.44
+6-6 12:10 *openOrder* status:PreSubmitted orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder* all live orders {340606004=orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:}
+6-6 12:10 *OrderStatus*:PreSubmitted orderId:340606004 filled:900 remaining:100 fillPx:1.5715 lastFillPx:1.57
+updating position: 6-6 12:10 position:6072 cost:1.44
+6-6 12:10 *openOrder* status:Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:removing order. Status: Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:after removal. openOrders: {}
+6-6 12:10 *OrderStatus*:Filled orderId:340606004 filled:1000 remaining:0 fillPx:1.57235 lastFillPx:1.58
+6-6 12:10 *openOrder* status:Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:removing order. Status: Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:after removal. openOrders: {}
+6-6 12:10 *OrderStatus*:Filled orderId:340606004 filled:1000 remaining:0 fillPx:1.57235 lastFillPx:1.58
+6-6 12:10 *openOrder* status:Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:removing order. Status: Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:after removal. openOrders: {}
+6-6 12:10 *OrderStatus*:Filled orderId:340606004 filled:1000 remaining:0 fillPx:1.57235 lastFillPx:1.58
+6-6 12:10 *openOrder* status:Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:removing order. Status: Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:after removal. openOrders: {}
+6-6 12:10 *OrderStatus*:Filled orderId:340606004 filled:1000 remaining:0 fillPx:1.57235 lastFillPx:1.58
+6-6 12:10 *openOrder* status:Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:removing order. Status: Filled orderID:340606004 LMT SELL Q:1000 px:1.55 filledQ:
+6-6 12:10 *openOrder*:after removal. openOrders: {}
+6-6 12:10 *OrderStatus*:Filled orderId:340606004 filled:1000 remaining:0 fillPx:1.57235 lastFillPx:1.58
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:10 position:6072 cost:1.44
+updating position: 6-6 12:15 position:6072 cost:1.44
+****CUT** 6-6 13:09:23
+ordID:340606005 tradID:340606005 SELL px:1.59 q:1000 cost:1.44
+APWC 6-6 13:09 SELL_STOCK Created askPx:1.59
+13:09:24 order blocked by:[] orderStatus:{340606003=Filled, 340606004=Filled, 340606005=Created}
+6-6 13:09 *openOrder* status:Submitted orderID:340606005 LMT SELL Q:1000 px:1.59 filledQ:
+6-6 13:09 *openOrder* all live orders {340606005=orderID:340606005 LMT SELL Q:1000 px:1.59 filledQ:}
+6-6 13:09 *OrderStatus*:Submitted orderId:340606005 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 6-6 15:00
+updating position: 6-6 15:01 position:6072 cost:1.44
+POS:6072 COST:1.4 DELT:9k
+6-6 15:01 *openOrder* status:Submitted orderID:340606005 LMT SELL Q:1000 px:1.59 filledQ:
+6-6 15:01 *openOrder* all live orders {340606005=orderID:340606005 LMT SELL Q:1000 px:1.59 filledQ:}
+6-6 15:01 *OrderStatus*:Submitted orderId:340606005 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+6-6 15:01 *OrderStatus*:Cancelled orderId:340606005 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+6-6 15:01 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {340606005=orderID:340606005 LMT SELL Q:1000 px:1.59 filledQ:}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {APWC={}}
+****CUT** 6-6 15:01:10
+ordID:340606332 tradID:340606332 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:01 SELL_STOCK Created askPx:null
+6-6 15:01 *openOrder* status:PreSubmitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:PreSubmitted orderId:340606332 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 15:01 position:5472 cost:1.44
+6-6 15:01 *openOrder* status:PreSubmitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:PreSubmitted orderId:340606332 filled:600 remaining:400 fillPx:1.5732 lastFillPx:1.5732
+updating position: 6-6 15:01 position:5372 cost:1.44
+6-6 15:01 *openOrder* status:PreSubmitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:PreSubmitted orderId:340606332 filled:700 remaining:300 fillPx:1.574171 lastFillPx:1.58
+updating position: 6-6 15:01 position:5272 cost:1.44
+6-6 15:01 *openOrder* status:PreSubmitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:PreSubmitted orderId:340606332 filled:800 remaining:200 fillPx:1.57365 lastFillPx:1.57
+6-6 15:01 *openOrder* status:Submitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:Submitted orderId:340606332 filled:800 remaining:200 fillPx:1.57365 lastFillPx:1.57
+6-6 15:01 *openOrder* status:Submitted orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder* all live orders {340606332=orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:01 *OrderStatus*:Submitted orderId:340606332 filled:800 remaining:200 fillPx:1.57365 lastFillPx:1.57
+updating position: 6-6 15:01 position:5072 cost:1.44
+6-6 15:01 *openOrder* status:Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:removing order. Status: Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:after removal. openOrders: {}
+6-6 15:01 *OrderStatus*:Filled orderId:340606332 filled:1000 remaining:0 fillPx:1.57292 lastFillPx:1.57
+6-6 15:01 *openOrder* status:Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:removing order. Status: Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:after removal. openOrders: {}
+6-6 15:01 *OrderStatus*:Filled orderId:340606332 filled:1000 remaining:0 fillPx:1.57292 lastFillPx:1.57
+updating position: 6-6 15:01 position:5072 cost:1.44
+6-6 15:01 *openOrder* status:Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:removing order. Status: Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:after removal. openOrders: {}
+6-6 15:01 *OrderStatus*:Filled orderId:340606332 filled:1000 remaining:0 fillPx:1.57292 lastFillPx:1.57
+6-6 15:01 *openOrder* status:Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:removing order. Status: Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:after removal. openOrders: {}
+6-6 15:01 *OrderStatus*:Filled orderId:340606332 filled:1000 remaining:0 fillPx:1.57292 lastFillPx:1.57
+6-6 15:01 *openOrder* status:Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:removing order. Status: Filled orderID:340606332 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:01 *openOrder*:after removal. openOrders: {}
+6-6 15:01 *OrderStatus*:Filled orderId:340606332 filled:1000 remaining:0 fillPx:1.57292 lastFillPx:1.57
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+updating position: 6-6 15:01 position:5072 cost:1.44
+****CUT** 6-6 15:01:11
+ordID:340606333 tradID:340606333 SELL px:1.59 q:1000 cost:1.44
+APWC 6-6 15:01 SELL_STOCK Created askPx:1.59
+6-6 15:01 *openOrder* status:Submitted orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:
+6-6 15:01 *openOrder* all live orders {340606333=orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:}
+6-6 15:01 *OrderStatus*:Submitted orderId:340606333 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+15:01:12 order blocked by:[orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:] orderStatus:{340606005=Cancelled, 340606332=Filled, 340606333=Submitted}
+*******************************************
+*STARTS* 6-6 15:04
+updating position: 6-6 15:04 position:5072 cost:1.44
+POS:5072 COST:1.4 DELT:7k
+6-6 15:04 *openOrder* status:Submitted orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:
+6-6 15:04 *openOrder* all live orders {340606333=orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:}
+6-6 15:04 *OrderStatus*:Submitted orderId:340606333 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+6-6 15:04 *OrderStatus*:Cancelled orderId:340606333 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+6-6 15:04 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {340606333=orderID:340606333 LMT SELL Q:1000 px:1.59 filledQ:}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {APWC={}}
+****CUT** 6-6 15:04:37
+ordID:340606336 tradID:340606336 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:04 SELL_STOCK Created askPx:null
+6-6 15:04 *openOrder* status:PreSubmitted orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:04 *openOrder* all live orders {340606336=orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:04 *OrderStatus*:PreSubmitted orderId:340606336 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 15:04 position:4072 cost:1.44
+6-6 15:04 *openOrder* status:Filled orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:04 *openOrder*:removing order. Status: Filled orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:04 *openOrder*:after removal. openOrders: {}
+6-6 15:04 *OrderStatus*:Filled orderId:340606336 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+6-6 15:04 *openOrder* status:Filled orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:04 *openOrder*:removing order. Status: Filled orderID:340606336 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:04 *openOrder*:after removal. openOrders: {}
+6-6 15:04 *OrderStatus*:Filled orderId:340606336 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:04 position:4072 cost:1.44
+updating position: 6-6 15:04 position:4072 cost:1.44
+*******************************************
+*STARTS* 6-6 15:05
+updating position: 6-6 15:05 position:4072 cost:1.44
+POS:4072 COST:1.4 DELT:6k
+****CUT** 6-6 15:05:30
+ordID:340606337 tradID:340606337 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:05 SELL_STOCK Created askPx:null
+6-6 15:05 *openOrder* status:Submitted orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder* all live orders {340606337=orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:05 *OrderStatus*:Submitted orderId:340606337 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 15:05 position:3613 cost:1.44
+6-6 15:05 *openOrder* status:Submitted orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder* all live orders {340606337=orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:05 *OrderStatus*:Submitted orderId:340606337 filled:459 remaining:541 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:05 position:3172 cost:1.44
+6-6 15:05 *openOrder* status:Submitted orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder* all live orders {340606337=orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:05 *OrderStatus*:Submitted orderId:340606337 filled:900 remaining:100 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:05 position:3072 cost:1.44
+6-6 15:05 *openOrder* status:Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:removing order. Status: Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:after removal. openOrders: {}
+6-6 15:05 *OrderStatus*:Filled orderId:340606337 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+6-6 15:05 *openOrder* status:Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:removing order. Status: Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:after removal. openOrders: {}
+6-6 15:05 *OrderStatus*:Filled orderId:340606337 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+6-6 15:05 *openOrder* status:Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:removing order. Status: Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:after removal. openOrders: {}
+6-6 15:05 *OrderStatus*:Filled orderId:340606337 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:05 position:3072 cost:1.44
+updating position: 6-6 15:05 position:3072 cost:1.44
+updating position: 6-6 15:05 position:3072 cost:1.44
+updating position: 6-6 15:05 position:3072 cost:1.44
+6-6 15:05 *openOrder* status:Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:removing order. Status: Filled orderID:340606337 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:05 *openOrder*:after removal. openOrders: {}
+6-6 15:05 *OrderStatus*:Filled orderId:340606337 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:05 position:3072 cost:1.44
+updating position: 6-6 15:05 position:3072 cost:1.44
+*******************************************
+*STARTS* 6-6 15:05
+updating position: 6-6 15:05 position:3072 cost:1.44
+POS:3072 COST:1.4 DELT:4k
+****CUT** 6-6 15:06:10
+ordID:340606337 tradID:340606337 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:06 SELL_STOCK Created askPx:null
+updating position: 6-6 15:06 position:3072 cost:1.44
+*******************************************
+*STARTS* 6-6 15:06
+updating position: 6-6 15:06 position:3072 cost:1.44
+POS:3072 COST:1.4 DELT:4k
+****CUT** 6-6 15:06:50
+ordID:340606338 tradID:340606338 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:06 SELL_STOCK Created askPx:null
+6-6 15:06 *openOrder* status:Submitted orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder* all live orders {340606338=orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:06 *OrderStatus*:Submitted orderId:340606338 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+updating position: 6-6 15:06 position:2631 cost:1.44
+6-6 15:06 *openOrder* status:Submitted orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder* all live orders {340606338=orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:06 *OrderStatus*:Submitted orderId:340606338 filled:441 remaining:559 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:06 position:2072 cost:1.44
+6-6 15:06 *openOrder* status:Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:removing order. Status: Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:after removal. openOrders: {}
+6-6 15:06 *OrderStatus*:Filled orderId:340606338 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+6-6 15:06 *openOrder* status:Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:removing order. Status: Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:after removal. openOrders: {}
+6-6 15:06 *OrderStatus*:Filled orderId:340606338 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:06 position:2072 cost:1.44
+updating position: 6-6 15:06 position:2072 cost:1.44
+6-6 15:06 *openOrder* status:Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:removing order. Status: Filled orderID:340606338 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:06 *openOrder*:after removal. openOrders: {}
+6-6 15:06 *OrderStatus*:Filled orderId:340606338 filled:1000 remaining:0 fillPx:1.57 lastFillPx:1.57
+updating position: 6-6 15:06 position:2072 cost:1.44
+updating position: 6-6 15:06 position:2072 cost:1.44
+*******************************************
+*STARTS* 6-6 15:07
+updating position: 6-6 15:07 position:2072 cost:1.44
+POS:2072 COST:1.4 DELT:3k
+****CUT** 6-6 15:07:52
+ordID:340606339 tradID:340606339 SELL px:1.57 q:1000 cost:1.44
+APWC 6-6 15:07 SELL_STOCK Created askPx:null
+6-6 15:07 *openOrder* status:Submitted orderID:340606339 LMT SELL Q:1000 px:1.57 filledQ:
+6-6 15:07 *openOrder* all live orders {340606339=orderID:340606339 LMT SELL Q:1000 px:1.57 filledQ:}
+6-6 15:07 *OrderStatus*:Submitted orderId:340606339 filled:0 remaining:1000 fillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 6-6 15:28
+updating position: 6-6 15:28 position:1192 currPos: 1192.0 cost:1.44
+POS:1192 COST:1.4 DELT:2k
+6-6 15:28 *openOrder* status:Submitted orderID:0 LMT SELL Q:1192 px:1.57 filledQ:
+6-6 15:28 *openOrder* all live orders {0=orderID:0 LMT SELL Q:1192 px:1.57 filledQ:}
+6-6 15:28 *OrderStatus*:Submitted orderId:0 filled:0 remaining:1192 fillPx:0.0 lastFillPx:0.0
+15:28:16 order blocked by:[orderID:0 LMT SELL Q:1192 px:1.57 filledQ:] orderStatus:{0=Submitted}
+*******************************************
+*STARTS* 6-6 15:29
+updating position: 6-6 15:29 position:1192 currPos: 1192.0 cost:1.44
+POS:1192 COST:1.4 DELT:2k
+*******************************************
+*STARTS* 6-6 15:31
+updating position: 6-6 15:31 position:1192 currPos: 1192.0 cost:1.44
+POS:1192 COST:1.4 DELT:2k
+*******************************************
+*STARTS* 6-6 15:33
+updating position: 6-6 15:33 position:1192 currPos: 1192.0 cost:1.44
+POS:1192 COST:1.4 DELT:2k

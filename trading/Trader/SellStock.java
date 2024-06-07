@@ -38,6 +38,7 @@ public class SellStock implements LiveHandler,
     private static final int PORT_TO_USE = GATEWAY_PORT;
     private static final int MASTERID = getSessionMasterTradeID();
     private static ApiController api;
+    private static volatile double CURRENT_POS = 0.0;
     //static Contract apwc = generateUSStockContract("apwc");
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
@@ -115,8 +116,6 @@ public class SellStock implements LiveHandler,
             outputToGeneral(usDateTime(), "cancelling all orders on start up");
             api.cancelAllOrders();
         }, 2, TimeUnit.SECONDS);
-
-
     }
 
 
@@ -141,9 +140,11 @@ public class SellStock implements LiveHandler,
         if (!contract.symbol().equals("USD") && targets.contains(s)) {
             pr("position", ibContractToSymbol(contract), position, avgCost);
             symbPos.put(s, position);
+            CURRENT_POS = position.longValue();
             costMap.put(s, avgCost);
             outputToSymbol(s, "updating position:", usDateTime(),
-                    "position:" + position, "cost:" + round2(avgCost));
+                    "position:" + position, "currPos:", CURRENT_POS,
+                    "cost:" + round2(avgCost));
         }
     }
 
@@ -308,9 +309,12 @@ public class SellStock implements LiveHandler,
                 break;
             case BID:
                 bidMap.put(symb, price);
+                pr(t.format(Hmmss), "bid p:", symb, price);
+
                 break;
             case ASK:
                 askMap.put(symb, price);
+                pr(t.format(Hmmss), "ask p:", symb, price);
                 break;
         }
 
@@ -346,8 +350,9 @@ public class SellStock implements LiveHandler,
 
         int id = tradID.incrementAndGet();
         double cost = costMap.get(s);
-        double offerPrice = r(Math.max(askMap.getOrDefault(s,px), px));
-        Order o = placeOfferLimitTIF(id, offerPrice, Decimal.get(amountToSell.get(s)), DAY);
+        double offerPrice = r(Math.max(askMap.getOrDefault(s, px), px));
+        Order o = placeOfferLimitTIF(id, offerPrice,
+                Decimal.get(Math.min(amountToSell.get(s), CURRENT_POS)), DAY);
         orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, SELL_STOCK));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
@@ -360,6 +365,7 @@ public class SellStock implements LiveHandler,
 
     @Override
     public void handleVol(TickType tt, String symbol, double vol, LocalDateTime t) {
+        pr("handle vol:", t.format(Hmmss), tt, symbol, vol);
 
     }
 
