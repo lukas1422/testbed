@@ -24,6 +24,7 @@ import static api.TradingConstants.*;
 import static client.OrderStatus.Filled;
 import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
+import static client.Types.TimeInForce.GTD;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
 import static java.lang.Double.MAX_VALUE;
@@ -37,7 +38,7 @@ class ProfitTargetTrader implements LiveHandler,
         , ApiController.IAccountSummaryHandler {
 
     private static volatile double AVAILABLE_CASH = 0.0;
-    private static final double DELTA_TOTAL_LIMIT = 268000;
+    private static final double DELTA_TOTAL_LIMIT = 286000;
     private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
     private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
@@ -233,6 +234,48 @@ class ProfitTargetTrader implements LiveHandler,
         }
     }
 
+    private static boolean noBlockingBuyOrders(String s) {
+        if (!orderStatus.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderStatus.get(s));
+        }
+
+        if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
+            return true;
+        }
+
+        if (openOrders.get(s).entrySet().stream().filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
+                .anyMatch(e -> e.getValue().action() == Types.Action.BUY)) {
+            return false;
+        }
+        return true;
+//        return orderStatus.get(s).entrySet().stream().
+//                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.BUY)
+//                .allMatch(e -> e.getValue().isFinished());
+//        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+    }
+
+    private static boolean noBlockingSellOrders(String s) {
+        if (!orderStatus.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderStatus.get(s));
+        }
+        if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
+            return true;
+        }
+
+        if (openOrders.get(s).entrySet().stream().filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
+                .anyMatch(e -> e.getValue().action() == SELL)) {
+            return false;
+        }
+        return true;
+
+
+//        return orderStatus.get(s).entrySet().stream().
+//                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.SELL)
+//                .allMatch(e -> e.getValue().isFinished());
+//        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+
+    }
+
     private static boolean noBlockingOrders(String s) {
         if (!orderStatus.get(s).isEmpty()) {
             pr(s, "no blocking orders check:", orderStatus.get(s));
@@ -281,11 +324,11 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
         String s = ibContractToSymbol(ct);
-        if (!noBlockingOrders(s)) {
-            outputToSymbol(s, t.format(Hmmss), "order blocked by:" +
-                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
-            return;
-        }
+//        if (!noBlockingOrders(s)) {
+//            outputToSymbol(s, t.format(Hmmss), "order blocked by:" +
+//                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+//            return;
+//        }
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -303,12 +346,18 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal pos = symbPos.get(s);
 
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
+            if (!noBlockingBuyOrders(s)) {
+                outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
+                        openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+                return;
+            }
+
             if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 inventoryAdder(ct, px, t, getLot(s, px));
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
-                    outputToSymbol(s, "*REFIL*", t.format(MdHmmss),
+                    outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
@@ -318,7 +367,14 @@ class ProfitTargetTrader implements LiveHandler,
                     inventoryAdder(ct, px, t, getLot(s, px));
                 }
             }
-        } else if (pos.longValue() > 0) {
+        }
+
+        if (pos.longValue() > 0) {
+            if (!noBlockingSellOrders(s)) {
+                outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
+                        openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+                return;
+            }
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 outputToSymbol(s, "****CUT**", t.format(MdHmmss),
@@ -486,12 +542,25 @@ class ProfitTargetTrader implements LiveHandler,
         }
         int id = tradID.incrementAndGet();
         double bidPx = r(Math.min(px, bidMap.getOrDefault(s, px)));
-        Order o = placeBidLimitTIF(id, bidPx, lotSize, DAY);
-        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_ADDER));
-        orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
-        placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
-        outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(),
-                "px:" + bidPx, "lot:" + lotSize, orderSubmitted.get(s).get(o.orderId()));
+        Order o1 = placeBidLimitTIF(id, bidPx, lotSize, DAY);
+        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER));
+        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
+        placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
+        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID:" + id, o1.action(),
+                "px:" + bidPx, "lot:" + lotSize, orderSubmitted.get(s).get(o1.orderId()));
+
+        //second order, reduce cost by 20 bps
+        int id2 = tradID.incrementAndGet();
+        double bidPx2 = r(Math.min(px, bidMap.getOrDefault(s, px) * 0.998));
+        Decimal size2 = Decimal.get(round(lotSize.longValue() / 5.0));
+        Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
+        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER));
+        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
+        placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
+        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID:" + id2, o2.action(),
+                "px:" + bidPx2, "lot:" + size2, orderSubmitted.get(s).get(o2.orderId()));
+
+
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
@@ -505,14 +574,14 @@ class ProfitTargetTrader implements LiveHandler,
         double offerPrice = r(Math.max(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
 
-        Order o = placeOfferLimitTIF(id, offerPrice, pos, DAY);
-        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER));
-        orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
-        placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
-        outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "px:" + offerPrice,
-                "q:" + o.totalQuantity().longValue(), "cost:" + round2(cost));
+        Order o1 = placeOfferLimitTIF(id, offerPrice, pos, DAY);
+        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER));
+        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
+        placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
+        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID:" + id, o1.action(), "px:" + offerPrice,
+                "q:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
 
-        outputToSymbol(s, orderSubmitted.get(s).get(o.orderId()),
+        outputToSymbol(s, orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
