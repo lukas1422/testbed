@@ -239,12 +239,14 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderStatus.get(s).isEmpty()) {
             return true;
         } else {
-            outputToSymbol(s, "no blocking buy orders check orderStatus:", orderStatus.get(s));
-            outputToSymbol(s, "no blocking buy orders check orderSubbmitted:", orderSubmitted.get(s));
+            outputToSymbol(s, "no blocking buy orders orderStatus nonempty:"
+                    , orderStatus.get(s));
+            outputToSymbol(s, "no blocking buy orders check orderSubbmitted:"
+                    , orderSubmitted.get(s));
         }
 
         if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
-            outputToSymbol(s, "all orders finished");
+            outputToSymbol(s, "all orders finished", orderStatus.get(s));
             return true;
         }
 
@@ -357,7 +359,7 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal pos = symbPos.get(s);
 
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
-            if (!noBlockingOrders(s)) {
+            if (!noBlockingBuyOrders(s)) {
                 outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
                         openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
                 return;
