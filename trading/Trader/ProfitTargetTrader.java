@@ -259,7 +259,6 @@ class ProfitTargetTrader implements LiveHandler,
                                 .toList());
                 return false;
             }
-
             return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive()).
                     noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == BUY);
         }
@@ -552,13 +551,18 @@ class ProfitTargetTrader implements LiveHandler,
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
         String s = ibContractToSymbol(ct);
 
-        if (ytdReturn.getOrDefault(s, -100.0) < -0.1) {
+        if (!ytdReturn.containsKey(s)) {
+            outputToSymbol(s, "ytdReturn not available, quitting inventoryadder");
+            return;
+        }
+
+        if (ytdReturn.get(s) < -0.1) {
             outputToSymbol(s, "inventoryAdder: ytdReturn < -10% cannot trade:"
-                    , ytdReturn.getOrDefault(s, -100.0));
+                    , ytdReturn.get(s));
             return;
         }
         outputToSymbol(s, "inventoryAdder: ytdReturn > -10%, can trade:"
-                , ytdReturn.getOrDefault(s, -100.0));
+                , ytdReturn.get(s));
 
         if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
             outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" +
@@ -567,16 +571,16 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        int id = tradID.incrementAndGet();
-        double bidPx = r(Math.min(px, bidMap.getOrDefault(s, px)));
+        int id1 = tradID.incrementAndGet();
+        double bidPx1 = r(Math.min(px, bidMap.getOrDefault(s, px)));
         Decimal size1 = Decimal.get(round(lotSize.longValue() * 4.0 / 5.0));
 
-        Order o1 = placeBidLimitTIF(id, bidPx, size1, DAY);
+        Order o1 = placeBidLimitTIF(id1, bidPx1, size1, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER));
         orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID:" + id, o1.action(),
-                "px:" + bidPx, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
+        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID:" + id1, o1.action(),
+                "px:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
         //second order, reduce cost by 20 bps
         int id2 = tradID.incrementAndGet();
