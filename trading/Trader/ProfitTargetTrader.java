@@ -22,6 +22,7 @@ import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
 import static client.OrderStatus.Filled;
+import static client.Types.Action.BUY;
 import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
 import static client.Types.TimeInForce.GTD;
@@ -237,48 +238,53 @@ class ProfitTargetTrader implements LiveHandler,
     private static boolean noBlockingBuyOrders(String s) {
         if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
             return true;
+        } else if (!orderStatus.get(s).isEmpty() && !openOrders.get(s).isEmpty()) {
+            pr(s, "no blocking buy orders check orderStatus:", orderStatus.get(s));
+            pr(s, "no blocking buy orders check openOrders:", openOrders.get(s));
+        } else {
+            outputToError("problem with noBlockingBuyOrders", s);
+            outputToError(s, "output error of noblocking buy: orderStatus:", orderStatus.get(s));
+            outputToError(s, "output error noblocking buy: openOrders:", openOrders.get(s));
         }
 
-        if (!orderStatus.get(s).isEmpty()) {
-            pr(s, "no blocking orders check orderStatus:", orderStatus.get(s));
+        if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
+            return true;
+        } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive()).
+                    noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == BUY);
         }
 
-        if (!openOrders.get(s).isEmpty()) {
-            pr(s, "no blocking orders check openOrders:", openOrders.get(s));
-        }
-
-
-        if (openOrders.get(s).entrySet().stream().filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
-                .anyMatch(e -> e.getValue().action() == Types.Action.BUY)) {
-            return false;
-        }
         return true;
-//        return orderStatus.get(s).entrySet().stream().
+
+        //        return orderStatus.get(s).entrySet().stream().
 //                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.BUY)
 //                .allMatch(e -> e.getValue().isFinished());
 //        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
     private static boolean noBlockingSellOrders(String s) {
-
         if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
             return true;
+        } else if (!orderStatus.get(s).isEmpty() && !openOrders.get(s).isEmpty()) {
+            pr(s, "no blocking sell orders check orderStatus:", orderStatus.get(s));
+            pr(s, "no blocking sell orders check openOrders:", openOrders.get(s));
+        } else {
+            outputToError("problem with noBlockingSellOrders", s);
+            outputToError(s, "output error of noblocking sell: orderStatus:", orderStatus.get(s));
+            outputToError(s, "output error noblocking sell: openOrders:", openOrders.get(s));
         }
 
-        if (!orderStatus.get(s).isEmpty()) {
-            pr(s, "no blocking orders check orderStatus", orderStatus.get(s));
-        }
-
-        if (!openOrders.get(s).isEmpty()) {
-            pr(s, "no blocking orders check openOrders", openOrders.get(s));
-        }
-
-
-        if (openOrders.get(s).entrySet().stream().filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
-                .anyMatch(e -> e.getValue().action() == SELL)) {
-            return false;
+        if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
+            return true;
+        } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                    .noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == SELL);
         }
         return true;
+
+//        return openOrders.get(s).entrySet().stream()
+//                .filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
+//                .noneMatch(e -> e.getValue().action() == SELL);
 
 //        return orderStatus.get(s).entrySet().stream().
 //                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.SELL)
@@ -286,13 +292,13 @@ class ProfitTargetTrader implements LiveHandler,
 //        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
-    private static boolean noBlockingOrders(String s) {
-        if (!orderStatus.get(s).isEmpty()) {
-            pr(s, "no blocking orders check:", orderStatus.get(s));
-        }
-        return orderStatus.get(s).isEmpty() ||
-                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
-    }
+//    private static boolean noBlockingOrders(String s) {
+//        if (!orderStatus.get(s).isEmpty()) {
+//            pr(s, "no blocking orders check:", orderStatus.get(s));
+//        }
+//        return orderStatus.get(s).isEmpty() ||
+//                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+//    }
 
     private static double pxOverCost(double price, String symb) {
         if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
