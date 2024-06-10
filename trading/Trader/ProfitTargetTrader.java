@@ -613,18 +613,17 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER));
         orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px1:" + offerPrice,
-                "q:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
+        outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px1:" + offerPrice,
+                "q1:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
 
         int id2 = tradID.incrementAndGet();
         Order o2 = placeOfferLimitTIF(id2, r(offerPrice * 1.002), sellQ2, DAY);
         orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
         orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(), "px2:"
-                        + offerPrice * 1.002,
-                "q:" + o2.totalQuantity().longValue(), "cost:" + round2(cost));
-
+        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
+                "px2:", offerPrice * 1.002,
+                "q1:" + o2.totalQuantity().longValue(), "cost:" + round2(cost));
 
         outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
