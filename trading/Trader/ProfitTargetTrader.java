@@ -579,7 +579,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER));
         orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID:" + id1, o1.action(),
+        outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID:" + id1, o1.action(),
                 "px:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
         //second order, reduce cost by 20 bps
@@ -613,7 +613,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER));
         orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px:" + offerPrice,
+        outputToSymbol(s, "ordID:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px1:" + offerPrice,
                 "q:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
 
         int id2 = tradID.incrementAndGet();
@@ -621,15 +621,18 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
         orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID1:" + id2, o2.action(), "px:"
+        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(), "px2:"
                         + offerPrice * 1.002,
                 "q:" + o2.totalQuantity().longValue(), "cost:" + round2(cost));
 
 
-        outputToSymbol(s, orderSubmitted.get(s).get(o1.orderId()),
+        outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
+        outputToSymbol(s, "sell part2:", orderSubmitted.get(s).get(o2.orderId()),
+                "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * 1.002));
+
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
