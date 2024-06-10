@@ -236,76 +236,64 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean noBlockingBuyOrders(String s) {
-        if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
+        if (orderStatus.get(s).isEmpty()) {
             return true;
-        } else if (!orderStatus.get(s).isEmpty() && !openOrders.get(s).isEmpty()) {
-            pr(s, "no blocking buy orders check orderStatus:", orderStatus.get(s));
-            pr(s, "no blocking buy orders check openOrders:", openOrders.get(s));
         } else {
-            outputToError("problem with noBlockingBuyOrders", s);
-            outputToError(s, "output error of noblocking buy: orderStatus:", orderStatus.get(s));
-            outputToError(s, "output error noblocking buy: openOrders:", openOrders.get(s));
+            outputToSymbol(s, "no blocking buy orders check orderStatus:", orderStatus.get(s));
+            outputToSymbol(s, "no blocking buy orders check orderSubbmitted:", orderSubmitted.get(s));
         }
 
         if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
+            outputToSymbol(s, "all orders finished");
             return true;
-        } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
-
-            if (orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                    .anyMatch(e -> !openOrders.get(s).containsKey(e.getKey()))) {
-                outputToSymbol(s, "noBlockingBuyOrders orderstatus not in open orders:",
-                        orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                                .filter(e -> !openOrders.get(s).containsKey(e.getKey()))
-                                .toList());
-                return false;
-            }
-            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive()).
-                    noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == BUY);
         }
-        return true;
+
+        if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+            outputToSymbol(s, "no active buy orders:", orderStatus.get(s));
+            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                    .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder().action()
+                            == BUY);
+        }
+        outputToSymbol(s, "falling thru:orderStatus", orderStatus.get(s));
+        outputToSymbol(s, "falling thru ordersubmitted:", orderSubmitted.get(s));
+        return false;
     }
 
     private static boolean noBlockingSellOrders(String s) {
-        if (orderStatus.get(s).isEmpty() && openOrders.get(s).isEmpty()) {
+        if (orderStatus.get(s).isEmpty()) {
+            outputToSymbol(s, "orderstatus empty");
             return true;
-        } else if (!orderStatus.get(s).isEmpty() && !openOrders.get(s).isEmpty()) {
-            pr(s, "no blocking sell orders check orderStatus:", orderStatus.get(s));
-            pr(s, "no blocking sell orders check openOrders:", openOrders.get(s));
         } else {
-            outputToError("problem with noBlockingSellOrders", s);
-            outputToError(s, "output error of noblocking sell: orderStatus:", orderStatus.get(s));
-            outputToError(s, "output error noblocking sell: openOrders:", openOrders.get(s));
+            pr(s, "no blocking sell orders check orderStatus:", orderStatus.get(s));
+            pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
         }
 
         if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
+            outputToSymbol(s, "allorderfinished:", orderStatus.get(s));
             return true;
-        } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
-            outputToSymbol(s, "active orders status:", orderStatus.get(s)
-                    , "open orders:", openOrders.get(s));
-
-            if (orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                    .anyMatch(e -> !openOrders.get(s).containsKey(e.getKey()))) {
-                outputToSymbol(s, "noBlockingSellOrders orderstatus order not in openorders ",
-                        orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                                .filter(e -> !openOrders.get(s).containsKey(e.getKey()))
-                                .toList());
-                return false;
-            }
+        }
+        if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+            outputToSymbol(s, "no active sell orders");
+            outputToSymbol(s, "active orders status:", orderStatus.get(s));
+            outputToSymbol(s, "submitted sell orders:", orderSubmitted.get(s));
 
             return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                    .noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == SELL);
+                    .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder()
+                            .action() == SELL);
         }
-        return true;
-
+        outputToSymbol(s, "sell falling thru:orderStatus", orderStatus.get(s));
+        outputToSymbol(s, "sell falling thru ordersubmitted:", orderSubmitted.get(s));
+        return false;
     }
 
-//    private static boolean noBlockingOrders(String s) {
-//        if (!orderStatus.get(s).isEmpty()) {
-//            pr(s, "no blocking orders check:", orderStatus.get(s));
-//        }
-//        return orderStatus.get(s).isEmpty() ||
-//                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
-//    }
+
+    private static boolean noBlockingOrders(String s) {
+        if (!orderStatus.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderStatus.get(s));
+        }
+        return orderStatus.get(s).isEmpty() ||
+                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+    }
 
     private static double pxOverCost(double price, String symb) {
         if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
@@ -369,7 +357,7 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal pos = symbPos.get(s);
 
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
-            if (!noBlockingBuyOrders(s)) {
+            if (!noBlockingOrders(s)) {
                 outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
                         openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
                 return;
@@ -393,13 +381,15 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         if (pos.longValue() > 0) {
-            if (!noBlockingSellOrders(s)) {
-                outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
-                        openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
-                return;
-            }
+
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
+                if (!noBlockingOrders(s)) {
+                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
+                            openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+                    return;
+                }
+
                 outputToSymbol(s, "****CUT**", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP,
                         "px/Cost:" + round4(pOverCost),
@@ -606,31 +596,31 @@ class ProfitTargetTrader implements LiveHandler,
         double offerPrice = r(Math.max(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
 
-        Decimal sellQ1 = Decimal.get(round(pos.longValue() * 4.0 / 5.0));
-        Decimal sellQ2 = Decimal.get(pos.longValue() - sellQ1.longValue());
+//        Decimal sellQ1 = Decimal.get(round(pos.longValue() * 4.0 / 5.0));
+//        Decimal sellQ2 = Decimal.get(pos.longValue() - sellQ1.longValue());
 
-        Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
+        Order o1 = placeOfferLimitTIF(id1, offerPrice, pos, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER));
         orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px1:" + offerPrice,
                 "q1:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
 
-        int id2 = tradID.incrementAndGet();
-        Order o2 = placeOfferLimitTIF(id2, r(offerPrice * 1.002), sellQ2, DAY);
-        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
-        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
-        placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
-                "px2:", offerPrice * 1.002,
-                "q1:" + o2.totalQuantity().longValue(), "cost:" + round2(cost));
+//        int id2 = tradID.incrementAndGet();
+//        Order o2 = placeOfferLimitTIF(id2, r(offerPrice * 1.002), sellQ2, DAY);
+//        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
+//        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
+//        placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
+//        outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
+//                "px2:", offerPrice * 1.002,
+//                "q1:" + o2.totalQuantity().longValue(), "cost:" + round2(cost));
 
-        outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
+        outputToSymbol(s, "sell:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
-        outputToSymbol(s, "sell part2:", orderSubmitted.get(s).get(o2.orderId()),
-                "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * 1.002));
+//        outputToSymbol(s, "sell part2:", orderSubmitted.get(s).get(o2.orderId()),
+//                "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * 1.002));
 
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
@@ -699,7 +689,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         //put status in orderstatusmap
         orderStatus.get(s).put(orderId, status);
-
+        orderSubmitted.get(s).get(orderId).setAugmentedOrderStatus(status);
         //removing finished orders
         if (status.isFinished()) {
             if (openOrders.get(s).containsKey(orderId)) {
