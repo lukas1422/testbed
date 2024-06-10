@@ -250,16 +250,20 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
             return true;
         } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+
+            if (orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                    .anyMatch(e -> !openOrders.get(s).containsKey(e.getKey()))) {
+                outputToSymbol(s, "noBlockingBuyOrders orderstatus not in open orders:",
+                        orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                                .filter(e -> !openOrders.get(s).containsKey(e.getKey()))
+                                .toList());
+                return false;
+            }
+
             return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive()).
                     noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == BUY);
         }
-
         return true;
-
-        //        return orderStatus.get(s).entrySet().stream().
-//                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.BUY)
-//                .allMatch(e -> e.getValue().isFinished());
-//        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
     private static boolean noBlockingSellOrders(String s) {
@@ -277,19 +281,23 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
             return true;
         } else if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
+            outputToSymbol(s, "active orders status:", orderStatus.get(s)
+                    , "open orders:", openOrders.get(s));
+
+            if (orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                    .anyMatch(e -> !openOrders.get(s).containsKey(e.getKey()))) {
+                outputToSymbol(s, "noBlockingSellOrders orderstatus order not in openorders ",
+                        orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+                                .filter(e -> !openOrders.get(s).containsKey(e.getKey()))
+                                .toList());
+                return false;
+            }
+
             return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
                     .noneMatch(e -> openOrders.get(s).get(e.getKey()).action() == SELL);
         }
         return true;
 
-//        return openOrders.get(s).entrySet().stream()
-//                .filter(e -> orderStatus.get(s).get(e.getValue().orderId()).isActive())
-//                .noneMatch(e -> e.getValue().action() == SELL);
-
-//        return orderStatus.get(s).entrySet().stream().
-//                filter(e -> openOrders.get(s).get(e.getKey()).action() == Types.Action.SELL)
-//                .allMatch(e -> e.getValue().isFinished());
-//        return orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
     }
 
 //    private static boolean noBlockingOrders(String s) {
