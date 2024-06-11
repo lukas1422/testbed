@@ -49,7 +49,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
-    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
+    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted
+            = new ConcurrentHashMap<>();
     //    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
 //            orderStatus = new ConcurrentHashMap<>();
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
@@ -214,9 +215,9 @@ class ProfitTargetTrader implements LiveHandler,
         }
     }
 
-    private static void registerContractAll(Contract... cts) {
-        Arrays.stream(cts).forEach(ProfitTargetTrader::registerContract);
-    }
+//    private static void registerContractAll(Contract... cts) {
+//        Arrays.stream(cts).forEach(ProfitTargetTrader::registerContract);
+//    }
 
     private static void registerContract(Contract ct) {
         String symb = ibContractToSymbol(ct);
@@ -238,18 +239,18 @@ class ProfitTargetTrader implements LiveHandler,
     private static boolean noBlockingBuyOrders(String s) {
         if (orderSubmitted.get(s).isEmpty()) {
             return true;
-        } else {
-            outputToSymbol(s, "no blocking buy orders orderStatus nonempty:"
-                    , orderSubmitted.get(s));
         }
+        outputToSymbol(s, "no blocking buy orders orderStatus nonempty:"
+                , orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
             outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
             return true;
         } else {
+            outputToSymbol(s, "some buy orders are not finished:", orderSubmitted.get(s));
             return orderSubmitted.get(s).entrySet().stream()
-                    .filter(e -> e.getValue().getOrderStatus().isActive())
+                    .filter(e -> !e.getValue().getOrderStatus().isFinished())
                     .noneMatch(e -> e.getValue().getOrder().action() == BUY);
         }
     }
@@ -258,17 +259,18 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.get(s).isEmpty()) {
             outputToSymbol(s, "orderstatus empty");
             return true;
-        } else {
-            pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
         }
+        pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
             outputToSymbol(s, "allorderfinished:", orderSubmitted.get(s));
             return true;
         } else {
+            outputToSymbol(s, "some sell orders are not finished:", orderSubmitted.get(s));
+
             return orderSubmitted.get(s).entrySet()
-                    .stream().filter(e -> e.getValue().getOrderStatus().isActive())
+                    .stream().filter(e -> !e.getValue().getOrderStatus().isFinished())
                     .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder()
                             .action() == SELL);
         }

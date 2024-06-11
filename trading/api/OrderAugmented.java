@@ -96,9 +96,9 @@ public class OrderAugmented {
         return primaryOrder.get();
     }
 
-    public void setMsg(String m) {
-        msg = m;
-    }
+//    public void setMsg(String m) {
+//        msg = m;
+//    }
 
     public OrderAugmented() {
         contract = new Contract();
@@ -123,7 +123,7 @@ public class OrderAugmented {
     }
 
     public String getSymbol() {
-        if (!Optional.ofNullable(contract.symbol()).orElse("").equals("")) {
+        if (!Optional.ofNullable(contract.symbol()).orElse("").isEmpty()) {
             return ibContractToSymbol(contract);
         }
         return "";
