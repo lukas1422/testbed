@@ -61,7 +61,7 @@ public class GuaranteeDevHandler implements ApiController.IOrderHandler {
             throw new IllegalStateException("dev id order map doesn't contain ID" + currentID);
         }
 
-        devOrderMap.get(currentID).setAugmentedOrderStatus(orderState.status());
+        devOrderMap.get(currentID).updateOrderStatus(orderState.status());
 
         double lastQ = devOrderMap.get(currentID).getOrder().totalQuantity().longValue();
         String symbol = devOrderMap.get(currentID).getSymbol();
