@@ -21,11 +21,11 @@ import java.util.stream.Collectors;
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
+import static client.OrderStatus.Created;
 import static client.OrderStatus.Filled;
 import static client.Types.Action.BUY;
 import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
-import static client.Types.TimeInForce.GTD;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
 import static java.lang.Double.MAX_VALUE;
@@ -50,8 +50,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted = new ConcurrentHashMap<>();
-    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
-            orderStatus = new ConcurrentHashMap<>();
+    //    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
+//            orderStatus = new ConcurrentHashMap<>();
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
             openOrders = new ConcurrentSkipListMap<>();
     //data
@@ -225,7 +225,7 @@ class ProfitTargetTrader implements LiveHandler,
         symbolContractMap.put(symb, ct);
         targets.add(symb);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
-        orderStatus.put(symb, new ConcurrentSkipListMap<>());
+//        orderStatus.put(symb, new ConcurrentSkipListMap<>());
         openOrders.put(symb, new ConcurrentHashMap<>());
         if (!liveData.containsKey(symb)) {
             liveData.put(symb, new ConcurrentSkipListMap<>());
@@ -236,65 +236,52 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean noBlockingBuyOrders(String s) {
-        if (orderStatus.get(s).isEmpty()) {
+        if (orderSubmitted.get(s).isEmpty()) {
             return true;
         } else {
             outputToSymbol(s, "no blocking buy orders orderStatus nonempty:"
-                    , orderStatus.get(s));
-            outputToSymbol(s, "no blocking buy orders check orderSubbmitted:"
                     , orderSubmitted.get(s));
         }
 
-        if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
-            outputToSymbol(s, "all orders finished", orderStatus.get(s));
+        if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
+                .allMatch(OrderStatus::isFinished)) {
+            outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
             return true;
+        } else {
+            return orderSubmitted.get(s).entrySet().stream()
+                    .filter(e -> e.getValue().getOrderStatus().isActive())
+                    .noneMatch(e -> e.getValue().getOrder().action() == BUY);
         }
-
-        if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
-            outputToSymbol(s, "no active buy orders:", orderStatus.get(s));
-            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
-                    .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder().action()
-                            == BUY);
-        }
-        outputToSymbol(s, "falling thru:orderStatus", orderStatus.get(s));
-        outputToSymbol(s, "falling thru ordersubmitted:", orderSubmitted.get(s));
-        return false;
     }
 
     private static boolean noBlockingSellOrders(String s) {
-        if (orderStatus.get(s).isEmpty()) {
+        if (orderSubmitted.get(s).isEmpty()) {
             outputToSymbol(s, "orderstatus empty");
             return true;
         } else {
-            pr(s, "no blocking sell orders check orderStatus:", orderStatus.get(s));
             pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
         }
 
-        if (orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished)) {
-            outputToSymbol(s, "allorderfinished:", orderStatus.get(s));
+        if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
+                .allMatch(OrderStatus::isFinished)) {
+            outputToSymbol(s, "allorderfinished:", orderSubmitted.get(s));
             return true;
-        }
-        if (orderStatus.get(s).values().stream().anyMatch(OrderStatus::isActive)) {
-            outputToSymbol(s, "no active sell orders");
-            outputToSymbol(s, "active orders status:", orderStatus.get(s));
-            outputToSymbol(s, "submitted sell orders:", orderSubmitted.get(s));
-
-            return orderStatus.get(s).entrySet().stream().filter(e -> e.getValue().isActive())
+        } else {
+            return orderSubmitted.get(s).entrySet()
+                    .stream().filter(e -> e.getValue().getOrderStatus().isActive())
                     .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder()
                             .action() == SELL);
         }
-        outputToSymbol(s, "sell falling thru:orderStatus", orderStatus.get(s));
-        outputToSymbol(s, "sell falling thru ordersubmitted:", orderSubmitted.get(s));
-        return false;
     }
 
 
     private static boolean noBlockingOrders(String s) {
-        if (!orderStatus.get(s).isEmpty()) {
-            pr(s, "no blocking orders check:", orderStatus.get(s));
+        if (!orderSubmitted.get(s).isEmpty()) {
+            pr(s, "no blocking orders check:", orderSubmitted.get(s));
         }
-        return orderStatus.get(s).isEmpty() ||
-                orderStatus.get(s).values().stream().allMatch(OrderStatus::isFinished);
+        return orderSubmitted.get(s).isEmpty() ||
+                orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
+                        .allMatch(OrderStatus::isFinished);
     }
 
     private static double pxOverCost(double price, String symb) {
@@ -361,7 +348,7 @@ class ProfitTargetTrader implements LiveHandler,
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
             if (!noBlockingBuyOrders(s)) {
                 outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
-                        openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+                        openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
                 return;
             }
 
@@ -388,7 +375,7 @@ class ProfitTargetTrader implements LiveHandler,
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingOrders(s)) {
                     outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
-                            openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
+                            openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
                     return;
                 }
 
@@ -532,7 +519,7 @@ class ProfitTargetTrader implements LiveHandler,
                                 (a, b) -> a, LinkedHashMap::new)));
 
         openOrders.forEach((k, v) -> v.forEach((k1, v1) -> {
-            if (orderStatus.get(k).get(k1).isFinished()) {
+            if (orderSubmitted.get(k).get(k1).getOrderStatus().isFinished()) {
                 outputToSymbol(k, "in compute: removing finished orders", "ordID:" +
                         k1, "order:" + v1);
                 v.remove(k1);
@@ -568,8 +555,8 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal size1 = Decimal.get(round(lotSize.longValue() * 4.0 / 5.0));
 
         Order o1 = placeBidLimitTIF(id1, bidPx1, size1, DAY);
-        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER));
-        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
+        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
+//        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID:" + id1, o1.action(),
                 "px:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
@@ -579,8 +566,8 @@ class ProfitTargetTrader implements LiveHandler,
         double bidPx2 = r(Math.min(px, bidMap.getOrDefault(s, px) * 0.998));
         Decimal size2 = Decimal.get(round(lotSize.longValue() / 5.0));
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
-        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER));
-        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
+        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
+//        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
         outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID:" + id2, o2.action(),
                 "px:" + bidPx2, "lot2:" + size2, orderSubmitted.get(s).get(o2.orderId()));
@@ -603,7 +590,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         Order o1 = placeOfferLimitTIF(id1, offerPrice, pos, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER));
-        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
+//        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID1:" + id1, o1.action(), "px1:" + offerPrice,
                 "q1:" + o1.totalQuantity().longValue(), "cost:" + round2(cost));
@@ -639,7 +626,8 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         outputToSymbol(s, usDateTime(), "*openOrder* status:" + orderState.status(), order);
-        orderStatus.get(s).put(order.orderId(), orderState.status());
+//        orderStatus.get(s).put(order.orderId(), orderState.status());
+        orderSubmitted.get(s).get(order.orderId()).updateOrderStatus(orderState.status());
 
         if (orderState.status() == Filled) {
             outputToFills(s, usDateTime(), "*openOrder* filled", order);
@@ -663,7 +651,7 @@ class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrderEnd() {
         outputToGeneral(usDateTime(), "*openOrderEnd*:print all openOrdrs Profit Target", openOrders,
-                "orderStatusMap:", orderStatus);
+                "orderSubmitted map:", orderSubmitted);
     }
 
     @Override
@@ -690,8 +678,8 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         //put status in orderstatusmap
-        orderStatus.get(s).put(orderId, status);
-        orderSubmitted.get(s).get(orderId).setAugmentedOrderStatus(status);
+//        orderStatus.get(s).put(orderId, status);
+        orderSubmitted.get(s).get(orderId).updateOrderStatus(status);
         //removing finished orders
         if (status.isFinished()) {
             if (openOrders.get(s).containsKey(orderId)) {
@@ -705,8 +693,8 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static String findSymbolByID(int id) {
-        for (String k : orderStatus.keySet()) {
-            if (orderStatus.get(k).containsKey(id)) {
+        for (String k : orderSubmitted.keySet()) {
+            if (orderSubmitted.get(k).containsKey(id)) {
                 return k;
             }
         }
@@ -825,8 +813,8 @@ class ProfitTargetTrader implements LiveHandler,
                             "fillP/px:" + round3(refillPx(s, px.get(s), symbPos.get(s).longValue()
                                     , costMap.get(s)) / px.get(s)));
                 }
-                if (!orderStatus.get(s).isEmpty()) {
-                    outputToSymbol(s, usDateTime(), "*chek orderStatus", orderStatus.get(s));
+                if (!orderSubmitted.get(s).isEmpty()) {
+                    outputToSymbol(s, usDateTime(), "*chek orderStatus", orderSubmitted.get(s));
                 }
                 if (!openOrders.get(s).isEmpty()) {
                     outputToSymbol(s, usDateTime(), "*chek openOrders*:", openOrders.get(s));

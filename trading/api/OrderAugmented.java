@@ -37,6 +37,16 @@ public class OrderAugmented {
         primaryOrder.set(true);
     }
 
+    public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt, OrderStatus os) {
+        contract = ct;
+        orderTime = t;
+        order = o;
+        msg = "";
+        orderType = tt;
+        augmentedOrderStatus = os;
+        primaryOrder.set(true);
+    }
+
     public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt) {
         contract = ct;
         orderTime = t;
@@ -45,6 +55,14 @@ public class OrderAugmented {
         orderType = tt;
         augmentedOrderStatus = OrderStatus.Created;
         primaryOrder.set(true);
+    }
+
+    public void updateOrderStatus(OrderStatus os) {
+        augmentedOrderStatus = os;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return augmentedOrderStatus;
     }
 
     public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt, boolean primary) {
@@ -114,17 +132,18 @@ public class OrderAugmented {
     public String getMsg() {
         return msg;
     }
+
     public AutoOrderType getOrderType() {
         return orderType;
     }
 
-    public void setAugmentedOrderStatus(OrderStatus s) {
-        augmentedOrderStatus = s;
-    }
+//    public void setAugmentedOrderStatus(OrderStatus s) {
+//        augmentedOrderStatus = s;
+//    }
 
-    public OrderStatus getAugmentedOrderStatus() {
-        return augmentedOrderStatus;
-    }
+//    public OrderStatus getOrderStatus() {
+//        return augmentedOrderStatus;
+//    }
 
     @Override
     public String toString() {

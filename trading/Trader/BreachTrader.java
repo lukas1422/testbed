@@ -570,7 +570,7 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
     private static void checkIfAdderPending(String symbol) {
         devOrderMap.entrySet().stream().filter(e -> e.getValue().getSymbol().equalsIgnoreCase(symbol))
                 .filter(e -> e.getValue().getOrderType() == BREACH_ADDER)
-                .filter(e -> e.getValue().getAugmentedOrderStatus() == OrderStatus.Submitted)
+                .filter(e -> e.getValue().getOrderStatus() == OrderStatus.Submitted)
                 .forEach(e -> {
                     outputToSymbolFile(symbol, str("Cancel submitted before cutting"
                             , e.getValue()), devOutput);
@@ -802,10 +802,10 @@ public class BreachTrader implements LiveHandler, ApiController.IPositionHandler
             pr("closing hook ");
             outputToFile(str("Ending Trader ", LocalDateTime.now()), startEndTime);
             devOrderMap.forEach((k, v) -> {
-                if (v.getAugmentedOrderStatus() != OrderStatus.Filled &&
-                        v.getAugmentedOrderStatus() != OrderStatus.PendingCancel) {
+                if (v.getOrderStatus() != OrderStatus.Filled &&
+                        v.getOrderStatus() != OrderStatus.PendingCancel) {
                     outputToSymbolFile(v.getSymbol(), str("Shutdown status",
-                            LocalDateTime.now().format(TradingConstants.MdHmm), v.getAugmentedOrderStatus(), v), devOutput);
+                            LocalDateTime.now().format(TradingConstants.MdHmm), v.getOrderStatus(), v), devOutput);
                 }
             });
             apDev.cancelAllOrders();
