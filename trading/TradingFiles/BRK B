@@ -6396,3 +6396,271 @@ last live feed time: 6-13 8:20 been:0mins. p:408.5
 6-13 8:20 2dP:101.0 1dP:101.0
 2d$:n:781 max:411.8 [6-12 10:39] min:406.2 [6-11 10:49] rng:1.4% 1Key:[6-11 9:30] last:[6-13 8:20]
 1d$:n<5
+*******************************************
+*STARTS* 6-13 8:26
+POS:0 COST:0.0 DELT:0k
+6-13 8:26 rng:1.2% costTgt:0.97
+6-13 8:26 tgtMargin:1.0102 tgtPrice:0.0
+ytdReturn:14.61%
+*Periodic Run* 8:26
+last live feed time: 6-13 8:26 been:0mins. p:408.5 
+6-13 8:26 2dP:42.0 1dP:100.0
+2d$:n:781 max:411.8 [6-12 10:39] min:406.2 [6-11 10:49] rng:1.4% 1Key:[6-11 9:30] last:[6-13 8:26]
+1d$:n<5
+*Periodic Run* 9:26
+last live feed time: 6-13 9:25 been:1mins. p:408.7 
+6-13 9:26 2dP:45.0 1dP:100.0
+2d$:n:784 max:411.8 [6-12 10:39] min:406.2 [6-11 10:49] rng:1.4% 1Key:[6-11 9:30] last:[6-13 9:25]
+1d$:n<5
+*1Buy* 6-13 9:39:36 1dp:0.0 2dp:0.0
+ordID1:240613003 tradID1:240613003 BUY px1:405.8 lot1:46 BRK B 6-13 9:39 INVENTORY_ADDER Created
+ordID2:240613004 tradID2:240613004 BUY px2:404.99 lot2:12 BRK B 6-13 9:39 INVENTORY_ADDER Created
+2D$:n:795 max:411.8 [6-12 10:39] min:406.1 [6-13 9:39] rng:1.4% 1Key:[6-11 9:30] last:[6-13 9:39]
+1D$:n:15 max:408.5 [6-13 8:35] min:406.4 [6-13 9:39] rng:0.5% 1Key:[6-13 8:26] last:[6-13 9:39]
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Created, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Created}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Created, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Created}
+9:39:37 buy order blocked by:[] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Created, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Created}
+6-13 9:39 *openOrder* status:Submitted orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
+6-13 9:39 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:39 *OrderStatus*:Submitted orderId:240613004 filled:0 remaining:12 fillPx:0.0 lastFillPx:0.0
+6-13 9:39 *openOrder* status:PreSubmitted orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:39 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, 240613003=orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:}
+6-13 9:39 *OrderStatus*:PreSubmitted orderId:240613003 filled:0 remaining:46 fillPx:0.0 lastFillPx:0.0
+6-13 9:39 *openOrder* status:Submitted orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:39 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, 240613003=orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:}
+6-13 9:39 *OrderStatus*:Submitted orderId:240613003 filled:0 remaining:46 fillPx:0.0 lastFillPx:0.0
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:41 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:44 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:45 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:46 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:53 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:53 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:39:59 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:40:03 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:08 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:09 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:14 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:15 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:16 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:17 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:18 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:22 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:23 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:26 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:31 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:32 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:33 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:35 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:35 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:41 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:43 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:43:50 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:20 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:20 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:28 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:37 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:45 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:46 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:44:52 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:00 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:01 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:05 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:05 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:07 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:10 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:11 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Submitted, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+updating pos: 6-13 9:45 pos:31 cost:405.8
+6-13 9:45 *tradeReport* time: 2024-06-13T09:45:13 BOT execPx:405.8 shares:31 avgPx:405.8
+6-13 9:45 *openOrder* status:Submitted orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:, 240613003=orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:}
+6-13 9:45 *OrderStatus*:Submitted orderId:240613003 filled:31 remaining:15 fillPx:405.8 lastFillPx:405.8
+updating pos: 6-13 9:45 pos:46 cost:405.8
+6-13 9:45 *tradeReport* time: 2024-06-13T09:45:13 BOT execPx:405.8 shares:15 avgPx:405.8
+6-13 9:45 *openOrder* status:Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:removing order. Status: Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:after removal. openOrders: {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *OrderStatus*:Filled orderId:240613003 filled:46 remaining:0 fillPx:405.8 lastFillPx:405.8
+6-13 9:45 *openOrder* status:Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:removing order. Status: Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:after removal. openOrders: {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *OrderStatus*:Filled orderId:240613003 filled:46 remaining:0 fillPx:405.8 lastFillPx:405.8
+1.*commission report* orderID:240613003 commission:0.32 
+2.*commission report* orderID:240613003 commission: 0.32 
+6-13 9:45 *openOrder* status:Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:removing order. Status: Filled orderID:240613003 LMT BUY Q:46 px:405.8 filledQ:
+6-13 9:45 *openOrder*:after removal. openOrders: {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *openOrder* all live orders {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 9:45 *OrderStatus*:Filled orderId:240613003 filled:46 remaining:0 fillPx:405.8 lastFillPx:405.8
+1.*commission report* orderID:240613003 commission:-0.01 
+2.*commission report* orderID:240613003 commission: -0.01 
+updating pos: 6-13 9:45 pos:46 cost:405.81
+updating pos: 6-13 9:45 pos:46 cost:405.81
+no blocking buy orders orderStatus nonempty: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+9:45:13 buy order blocked by:[orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:] orderStatus:{240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+updating pos: 6-13 9:50 pos:46 cost:405.81
+updating pos: 6-13 9:50 pos:46 cost:405.81
+*Periodic Run* 10:26
+last live feed time: 6-13 10:26 been:0mins. p:405.49 cost:405.8 p/cost:0.999
+p:405.49 rng:1.2% pos:46 delt:19k cost:405.8 lot:58 fillP:383.98 costTgt:0.97 fillP/cost:0.946 fillP/px:0.947
+6-13 10:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Submitted}
+6-13 10:26 *chek openOrders*: {240613004=orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:}
+6-13 10:26 2dP:3.0 1dP:7.0
+2d$:n:842 max:411.8 [6-12 10:39] min:405.3 [6-13 9:47] rng:1.6% 1Key:[6-11 9:30] last:[6-13 10:26]
+1d$:n:62 max:408.5 [6-13 8:35] min:405.3 [6-13 9:47] rng:0.8% 1Key:[6-13 8:26] last:[6-13 10:26]
+updating pos: 6-13 10:27 pos:58 cost:405.64
+6-13 10:27 *tradeReport* time: 2024-06-13T10:27:51 BOT execPx:404.99 shares:12 avgPx:404.99
+6-13 10:27 *openOrder* status:Filled orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
+6-13 10:27 *openOrder*:removing order. Status: Filled orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
+6-13 10:27 *openOrder*:after removal. openOrders: {}
+6-13 10:27 *OrderStatus*:Filled orderId:240613004 filled:12 remaining:0 fillPx:404.99 lastFillPx:404.99
+6-13 10:27 *openOrder* status:Filled orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
+6-13 10:27 *openOrder*:removing order. Status: Filled orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
+6-13 10:27 *openOrder*:after removal. openOrders: {}
+6-13 10:27 *OrderStatus*:Filled orderId:240613004 filled:12 remaining:0 fillPx:404.99 lastFillPx:404.99
+1.*commission report* orderID:240613004 commission:0.34 
+2.*commission report* orderID:240613004 commission: 0.34 
+updating pos: 6-13 10:27 pos:58 cost:405.64
+updating pos: 6-13 10:31 pos:58 cost:405.64
+*Periodic Run* 11:26
+last live feed time: 6-13 11:26 been:0mins. p:404.65 cost:405.6 p/cost:0.998
+p:404.65 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 11:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 11:26 2dP:10.0 1dP:17.0
+2d$:n:902 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 11:26]
+1d$:n:122 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 11:26]
+*Periodic Run* 12:26
+last live feed time: 6-13 12:14 been:11mins. p:404.7 cost:405.6 p/cost:0.998
+p:404.7 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 12:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 12:26 2dP:11.0 1dP:18.0
+2d$:n:950 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 12:14]
+1d$:n:170 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 12:14]
+*Periodic Run* 13:26
+last live feed time: 6-13 12:14 been:71mins. p:404.7 cost:405.6 p/cost:0.998
+p:404.7 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 13:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 13:26 2dP:11.0 1dP:18.0
+2d$:n:950 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 12:14]
+1d$:n:170 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 12:14]
+*Periodic Run* 14:26
+last live feed time: 6-13 12:14 been:131mins. p:404.7 cost:405.6 p/cost:0.998
+p:404.7 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 14:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 14:26 2dP:11.0 1dP:18.0
+2d$:n:950 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 12:14]
+1d$:n:170 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 12:14]
+*Periodic Run* 15:26
+last live feed time: 6-13 12:14 been:191mins. p:404.7 cost:405.6 p/cost:0.998
+p:404.7 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 15:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 15:26 2dP:11.0 1dP:18.0
+2d$:n:950 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 12:14]
+1d$:n:170 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 12:14]
+*Periodic Run* 16:26
+last live feed time: 6-13 12:14 been:251mins. p:404.7 cost:405.6 p/cost:0.998
+p:404.7 rng:1.2% pos:58 delt:23k cost:405.6 lot:58 fillP:381.3 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-13 16:26 *chek orderStatus {240613003=BRK B 6-13 9:39 INVENTORY_ADDER Filled, 240613004=BRK B 6-13 9:39 INVENTORY_ADDER Filled}
+6-13 16:26 2dP:11.0 1dP:18.0
+2d$:n:950 max:411.8 [6-12 10:39] min:403.9 [6-13 11:03] rng:2.0% 1Key:[6-11 9:30] last:[6-13 12:14]
+1d$:n:170 max:408.5 [6-13 8:35] min:403.9 [6-13 11:03] rng:1.1% 1Key:[6-13 8:26] last:[6-13 12:14]
+*******************************************
+*STARTS* 6-13 17:10
+updating pos: 6-13 17:10 pos:58 cost:405.64
+POS:58 COST:405.6 DELT:24k
+*Periodic Run* 17:10
+no live feed
+6-13 17:10 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*******************************************
+*STARTS* 6-13 17:19
+updating pos: 6-13 17:19 pos:58 cost:405.64
+POS:58 COST:405.6 DELT:24k
+*Periodic Run* 17:19
+no live feed
+6-13 17:19 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
