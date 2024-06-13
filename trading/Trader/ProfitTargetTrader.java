@@ -49,8 +49,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
-    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>> orderSubmitted
-            = new ConcurrentHashMap<>();
+    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>>
+            orderSubmitted = new ConcurrentHashMap<>();
     //    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
 //            orderStatus = new ConcurrentHashMap<>();
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
@@ -637,7 +637,8 @@ class ProfitTargetTrader implements LiveHandler,
             if (openOrders.get(s).containsKey(order.orderId())) {
                 openOrders.get(s).remove(order.orderId());
             }
-            outputToSymbol(s, usDateTime(), "*openOrder*:after removal. openOrders:", openOrders.get(s));
+            outputToSymbol(s, usDateTime(), "*openOrder*:after removal. openOrders:",
+                    openOrders.get(s));
         } else { //order is not finished
             openOrders.get(s).put(order.orderId(), order);
         }
@@ -648,7 +649,8 @@ class ProfitTargetTrader implements LiveHandler,
 
     @Override
     public void openOrderEnd() {
-        outputToGeneral(usDateTime(), "*openOrderEnd*:print all openOrdrs Profit Target", openOrders,
+        outputToGeneral(usDateTime(), "*openOrderEnd*:print all " +
+                        "openOrdrs Profit Target", openOrders,
                 "orderSubmitted map:", orderSubmitted);
     }
 
@@ -717,7 +719,8 @@ class ProfitTargetTrader implements LiveHandler,
 
         outputToSymbol(s, usDateTime(), "*tradeReport* time:",
                 executionToUSTime(execution.time()), execution.side(),
-                "execPx:" + execution.price(), "shares:" + execution.shares(), "avgPx:" + execution.avgPrice());
+                "execPx:" + execution.price(), "shares:" + execution.shares(),
+                "avgPx:" + execution.avgPrice());
 
         if (!tradeKeyExecutionMap.containsKey(tradeKey)) {
             tradeKeyExecutionMap.put(tradeKey, new LinkedList<>());
@@ -746,7 +749,8 @@ class ProfitTargetTrader implements LiveHandler,
         String s = tradeKeyExecutionMap.get(tradeKey).get(0).getSymbol();
 
         if (orderSubmitted.containsKey(s) && !orderSubmitted.get(s).isEmpty()) {
-            orderSubmitted.get(s).entrySet().stream().filter(e1 -> e1.getValue().getOrder().orderId()
+            orderSubmitted.get(s).entrySet().stream().filter(e1 -> e1.getValue()
+                            .getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> {
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),

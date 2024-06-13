@@ -20060,3 +20060,6 @@ WMT output error noblocking sell: openOrders: {}
 *openOrder* Error 6-11 17:00 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
 *openOrder* Error 6-11 17:00 orderId:-1 errorCode:2157 msg:Sec-def data farm connection is broken:secdefnj
 *openOrder* Error 6-11 17:00 orderId:-1 errorCode:502 msg:Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+*openOrder* Error 6-12 7:07 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+*openOrder* Error 6-12 7:14 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*openOrder* Error 6-12 9:37 orderId:240612010 errorCode:201 msg:Order rejected - reason:Available converted to base: 48275.65 USD Cash needed for this order and other pending orders: 52121.08 USD

@@ -12898,3 +12898,444 @@ last live feed time: 6-11 16:26 been:107mins. p:167.49
 6-11 18:14 2dP:50.0 1dP:100.0
 2d$:n:1175 max:168.9 [6-7 10:46] min:166.1 [6-11 9:57] rng:1.7% 1Key:[6-7 9:30] last:[6-11 16:26]
 1d$:n:395 max:167.4 [6-11 15:59] min:166.1 [6-11 9:57] rng:0.8% 1Key:[6-11 6:58] last:[6-11 16:26]
+*******************************************
+*STARTS* 6-12 7:07
+POS:0 COST:0.0 DELT:0k
+6-12 7:07 rng:1.2% costTgt:0.97
+6-12 7:07 tgtMargin:1.0102 tgtPrice:0.0
+ytdReturn:15.75%
+*Periodic Run* 7:08
+no live feed
+6-12 7:08 2dP:85.0 1dP:100.0
+2d$:n:780 max:167.7 [6-10 14:59] min:166.1 [6-11 9:57] rng:1.0% 1Key:[6-10 9:30] last:[6-11 15:59]
+1d$:n<5
+*Periodic Run* 8:08
+no live feed
+6-12 8:08 2dP:85.0 1dP:100.0
+2d$:n:780 max:167.7 [6-10 14:59] min:166.1 [6-11 9:57] rng:1.0% 1Key:[6-10 9:30] last:[6-11 15:59]
+1d$:n<5
+*Periodic Run* 9:08
+last live feed time: 6-12 8:54 been:13mins. p:167.67 
+6-12 9:08 2dP:94.0 1dP:0.0
+2d$:n:786 max:167.8 [6-12 8:34] min:166.1 [6-11 9:57] rng:1.0% 1Key:[6-10 9:30] last:[6-12 8:54]
+1d$:n:6 max:167.7 [6-12 8:34] min:167.7 [6-12 8:52] rng:0.0% 1Key:[6-12 8:11] last:[6-12 8:54]
+*1Buy* 6-12 9:34:46 1dp:0.0 2dp:19.0
+ordID1:240612007 tradID1:240612007 BUY px1:166.4 lot1:114 PG 6-12 9:34 INVENTORY_ADDER Created
+ordID2:240612008 tradID2:240612008 BUY px2:166.07 lot2:29 PG 6-12 9:34 INVENTORY_ADDER Created
+2D$:n:794 max:167.8 [6-12 8:34] min:166.1 [6-11 9:57] rng:1.1% 1Key:[6-10 9:30] last:[6-12 9:34]
+1D$:n:14 max:167.8 [6-12 8:34] min:166.8 [6-12 9:34] rng:0.6% 1Key:[6-12 8:11] last:[6-12 9:34]
+6-12 9:34 *openOrder* status:Submitted orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:
+6-12 9:34 *openOrder* all live orders {240612007=orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:}
+6-12 9:34 *OrderStatus*:Submitted orderId:240612007 filled:0 remaining:114 fillPx:0.0 lastFillPx:0.0
+6-12 9:34 *openOrder* status:Submitted orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:
+6-12 9:34 *openOrder* all live orders {240612007=orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:, 240612008=orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:}
+6-12 9:34 *OrderStatus*:Submitted orderId:240612008 filled:0 remaining:29 fillPx:0.0 lastFillPx:0.0
+updating pos: 6-12 9:47 pos:114 cost:166.4
+6-12 9:47 *tradeReport* time: 2024-06-12T09:47:18 BOT execPx:166.4 shares:114 avgPx:166.4
+6-12 9:47 *openOrder* status:Filled orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:
+6-12 9:47 *openOrder*:removing order. Status: Filled orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:
+6-12 9:47 *openOrder*:after removal. openOrders: {240612008=orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:}
+6-12 9:47 *openOrder* all live orders {240612008=orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:}
+6-12 9:47 *OrderStatus*:Filled orderId:240612007 filled:114 remaining:0 fillPx:166.4 lastFillPx:166.4
+6-12 9:47 *openOrder* status:Filled orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:
+6-12 9:47 *openOrder*:removing order. Status: Filled orderID:240612007 LMT BUY Q:114 px:166.4 filledQ:
+6-12 9:47 *openOrder*:after removal. openOrders: {240612008=orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:}
+6-12 9:47 *openOrder* all live orders {240612008=orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:}
+6-12 9:47 *OrderStatus*:Filled orderId:240612007 filled:114 remaining:0 fillPx:166.4 lastFillPx:166.4
+1.*commission report* orderID:240612007 commission:0.29 
+2.*commission report* orderID:240612007 commission: 0.29 
+updating pos: 6-12 9:47 pos:114 cost:166.4
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:27 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:42 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:46 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:50 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:51 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:55 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:56 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:47:57 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:48:20 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:48:22 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:48:23 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:48:26 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:07 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:08 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:16 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:19 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:27 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:29 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:31 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:32 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:33 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:36 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:36 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:46 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:47 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:52 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:52 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:55 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:57 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:49:58 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:00 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:06 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:07 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:17 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:27 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:28 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:30 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:32 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:33 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:36 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:38 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:45 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:47 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:48 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:58 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:50:58 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:00 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:01 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:06 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:06 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:07 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:08 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:10 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:11 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:15 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:28 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+updating pos: 6-12 9:51 pos:114 cost:166.4
+updating pos: 6-12 9:51 pos:114 cost:166.4
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:30 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:34 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:36 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:37 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:41 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:51 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:52 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:53 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:58 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:51:59 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:02 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:04 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:06 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:07 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:08 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:09 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:21 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:21 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:24 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:25 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:28 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:29 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:30 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:31 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:33 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:40 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:41 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:42 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:44 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:45 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:46 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:47 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:49 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:50 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:52:54 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:01 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:02 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:03 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:17 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:18 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:20 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:22 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:24 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:25 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:27 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:28 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:30 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+some buy orders are not finished: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+9:53:32 buy order blocked by:[orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:] orderStatus:{240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Submitted}
+updating pos: 6-12 9:53 pos:143 cost:166.34
+6-12 9:53 *tradeReport* time: 2024-06-12T09:53:32 BOT execPx:166.07 shares:29 avgPx:166.07
+6-12 9:53 *openOrder* status:Filled orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:
+6-12 9:53 *openOrder*:removing order. Status: Filled orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:
+6-12 9:53 *openOrder*:after removal. openOrders: {}
+6-12 9:53 *OrderStatus*:Filled orderId:240612008 filled:29 remaining:0 fillPx:166.07 lastFillPx:166.07
+6-12 9:53 *openOrder* status:Filled orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:
+6-12 9:53 *openOrder*:removing order. Status: Filled orderID:240612008 LMT BUY Q:29 px:166.07 filledQ:
+6-12 9:53 *openOrder*:after removal. openOrders: {}
+6-12 9:53 *OrderStatus*:Filled orderId:240612008 filled:29 remaining:0 fillPx:166.07 lastFillPx:166.07
+1.*commission report* orderID:240612008 commission:0.32 
+2.*commission report* orderID:240612008 commission: 0.32 
+updating pos: 6-12 9:53 pos:143 cost:166.34
+no blocking buy orders orderStatus nonempty: {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+all orders finished {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+updating pos: 6-12 9:58 pos:143 cost:166.34
+*Periodic Run* 10:08
+last live feed time: 6-12 10:08 been:0mins. p:165.94 cost:166.3 p/cost:0.998
+p:165.94 rng:1.2% pos:143 delt:24k cost:166.3 lot:143 fillP:156.36 costTgt:0.97 fillP/cost:0.94 fillP/px:0.942
+6-12 10:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 10:08 2dP:2.0 1dP:2.0
+2d$:n:828 max:167.8 [6-12 8:34] min:165.9 [6-12 10:06] rng:1.2% 1Key:[6-10 9:30] last:[6-12 10:08]
+1d$:n:48 max:167.8 [6-12 8:34] min:165.9 [6-12 10:06] rng:1.2% 1Key:[6-12 8:11] last:[6-12 10:08]
+*Periodic Run* 11:08
+last live feed time: 6-12 11:08 been:0mins. p:165.84 cost:166.3 p/cost:0.997
+p:165.84 rng:1.2% pos:143 delt:24k cost:166.3 lot:143 fillP:156.36 costTgt:0.97 fillP/cost:0.94 fillP/px:0.943
+6-12 11:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 11:08 2dP:6.0 1dP:6.0
+2d$:n:888 max:167.8 [6-12 8:34] min:165.7 [6-12 10:14] rng:1.3% 1Key:[6-10 9:30] last:[6-12 11:08]
+1d$:n:108 max:167.8 [6-12 8:34] min:165.7 [6-12 10:14] rng:1.3% 1Key:[6-12 8:11] last:[6-12 11:08]
+*Periodic Run* 12:08
+last live feed time: 6-12 12:07 been:0mins. p:165.76 cost:166.3 p/cost:0.997
+p:165.76 rng:1.2% pos:143 delt:24k cost:166.3 lot:143 fillP:156.36 costTgt:0.97 fillP/cost:0.94 fillP/px:0.943
+6-12 12:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 12:08 2dP:4.0 1dP:4.0
+2d$:n:947 max:167.8 [6-12 8:34] min:165.7 [6-12 11:12] rng:1.3% 1Key:[6-10 9:30] last:[6-12 12:07]
+1d$:n:167 max:167.8 [6-12 8:34] min:165.7 [6-12 11:12] rng:1.3% 1Key:[6-12 8:11] last:[6-12 12:07]
+*Periodic Run* 13:08
+last live feed time: 6-12 13:07 been:0mins. p:165.55 cost:166.3 p/cost:0.995
+p:165.55 rng:1.2% pos:143 delt:24k cost:166.3 lot:143 fillP:156.36 costTgt:0.97 fillP/cost:0.94 fillP/px:0.944
+6-12 13:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 13:08 2dP:0.0 1dP:0.0
+2d$:n:1007 max:167.8 [6-12 8:34] min:165.5 [6-12 12:43] rng:1.4% 1Key:[6-10 9:30] last:[6-12 13:07]
+1d$:n:227 max:167.8 [6-12 8:34] min:165.5 [6-12 12:43] rng:1.4% 1Key:[6-12 8:11] last:[6-12 13:07]
+*Periodic Run* 14:08
+last live feed time: 6-12 14:07 been:0mins. p:164.36 cost:166.3 p/cost:0.988
+p:164.36 rng:1.2% pos:143 delt:24k cost:166.3 lot:145 fillP:156.43 costTgt:0.97 fillP/cost:0.94 fillP/px:0.952
+6-12 14:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 14:08 2dP:2.0 1dP:2.0
+2d$:n:1067 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-10 9:30] last:[6-12 14:07]
+1d$:n:287 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-12 8:11] last:[6-12 14:07]
+*Periodic Run* 15:08
+last live feed time: 6-12 15:08 been:0mins. p:164.96 cost:166.3 p/cost:0.992
+p:164.96 rng:1.2% pos:143 delt:24k cost:166.3 lot:144 fillP:156.39 costTgt:0.97 fillP/cost:0.94 fillP/px:0.948
+6-12 15:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 15:08 2dP:19.0 1dP:19.0
+2d$:n:1128 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-10 9:30] last:[6-12 15:08]
+1d$:n:348 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-12 8:11] last:[6-12 15:08]
+*Periodic Run* 16:08
+last live feed time: 6-12 16:00 been:8mins. p:165.18 cost:166.3 p/cost:0.993
+p:165.18 rng:1.2% pos:143 delt:24k cost:166.3 lot:144 fillP:156.39 costTgt:0.97 fillP/cost:0.94 fillP/px:0.947
+6-12 16:08 *chek orderStatus {240612007=PG 6-12 9:34 INVENTORY_ADDER Filled, 240612008=PG 6-12 9:34 INVENTORY_ADDER Filled}
+6-12 16:08 2dP:25.0 1dP:25.0
+2d$:n:1180 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-10 9:30] last:[6-12 16:00]
+1d$:n:400 max:167.8 [6-12 8:34] min:164.3 [6-12 14:02] rng:2.2% 1Key:[6-12 8:11] last:[6-12 16:00]
