@@ -248,7 +248,12 @@ class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
             return true;
         } else {
-            outputToSymbol(s, "some buy orders are not finished:", orderSubmitted.get(s));
+            outputToSymbol(s, "some orders are active:", orderSubmitted.get(s));
+            outputToSymbol(s, "active orders grouped by buysell:",
+                    orderSubmitted.get(s).entrySet().stream()
+                            .collect(groupingBy(e -> e.getValue().getOrder().action()
+                                    , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
+
             return orderSubmitted.get(s).entrySet().stream()
                     .filter(e -> !e.getValue().getOrderStatus().isFinished())
                     .noneMatch(e -> e.getValue().getOrder().action() == BUY);
@@ -267,7 +272,12 @@ class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(s, "allorderfinished:", orderSubmitted.get(s));
             return true;
         } else {
-            outputToSymbol(s, "some sell orders are not finished:", orderSubmitted.get(s));
+            outputToSymbol(s, "some orders are active:", orderSubmitted.get(s));
+            outputToSymbol(s, "groupby buysell:",
+                    orderSubmitted.get(s).entrySet().stream()
+                            .collect(groupingBy(e -> e.getValue().getOrder().action()
+                                    , mapping(e -> e.getValue().getOrder().orderId()
+                                            , toList()))));
 
             return orderSubmitted.get(s).entrySet()
                     .stream().filter(e -> !e.getValue().getOrderStatus().isFinished())
@@ -277,14 +287,14 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    private static boolean noBlockingOrders(String s) {
-        if (!orderSubmitted.get(s).isEmpty()) {
-            pr(s, "no blocking orders check:", orderSubmitted.get(s));
-        }
-        return orderSubmitted.get(s).isEmpty() ||
-                orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
-                        .allMatch(OrderStatus::isFinished);
-    }
+//    private static boolean noBlockingOrders(String s) {
+//        if (!orderSubmitted.get(s).isEmpty()) {
+//            pr(s, "no blocking orders check:", orderSubmitted.get(s));
+//        }
+//        return orderSubmitted.get(s).isEmpty() ||
+//                orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
+//                        .allMatch(OrderStatus::isFinished);
+//    }
 
     private static double pxOverCost(double price, String symb) {
         if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
@@ -375,7 +385,7 @@ class ProfitTargetTrader implements LiveHandler,
 
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
-                if (!noBlockingOrders(s)) {
+                if (!noBlockingSellOrders(s)) {
                     outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
                             openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
                     return;
