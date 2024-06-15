@@ -486,14 +486,14 @@ class ProfitTargetTrader implements LiveHandler,
                 if (px.getOrDefault(s, 0.0) != 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                     pr(s, "pos:" + symbPos.get(s),
                             "p:" + px.get(s),
+                            "lastTime:" + (lastPxTimestamp.containsKey(s) ?
+                                    lastPxTimestamp.get(s).format(Hmm) : "n/a"),
                             "1dp:" + (oneDayPctMap.containsKey(s) ? round(oneDayPctMap.get(s)) : "n/a"),
                             "2dp:" + (twoDayPctMap.containsKey(s) ? round(twoDayPctMap.get(s)) : "n/a"),
                             "delt:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(s, px.get(s)),
-
-
                             "costTgt:" + round2(costTgt(s)),
                             "refil@" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "refil/Cost:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
