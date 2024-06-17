@@ -353,8 +353,8 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        double twoDayP = twoDayPctMap.get(s);
-        double oneDayP = oneDayPctMap.get(s);
+        double twoDayP = twoDayPctMap.getOrDefault(s, 100.0);
+        double oneDayP = oneDayPctMap.getOrDefault(s, 100.0);
         Decimal pos = symbPos.get(s);
 
         if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
@@ -597,7 +597,7 @@ class ProfitTargetTrader implements LiveHandler,
                 Decimal.get(round(pos.longValue() * 4.0 / 5.0)) : pos;
 
 
-        Order o1 = placeOfferLimitTIF(id1, offerPrice, pos, DAY);
+        Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
 //        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
@@ -815,7 +815,7 @@ class ProfitTargetTrader implements LiveHandler,
                                         "cost:" + round1(costMap.get(s)),
                                         "p/cost:" + round3(px.getOrDefault(s, 0.0)
                                                 / costMap.getOrDefault(s, 0.0)))) :
-                        str("no live feed"));
+                        str(getESTLocalTimeNow(), "no live feed"));
                 if (symbDelta.getOrDefault(s, 0.0) > 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                     outputToSymbol(s, "p:" + px.getOrDefault(s, 0.0),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
