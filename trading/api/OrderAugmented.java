@@ -27,13 +27,23 @@ public class OrderAugmented {
     private AtomicBoolean primaryOrder = new AtomicBoolean(false);
 
 
-    public OrderAugmented(Contract ct, LocalDateTime t, Order o, String m, AutoOrderType tt) {
+//    public OrderAugmented(Contract ct, LocalDateTime t, Order o, String m, AutoOrderType tt) {
+//        contract = ct;
+//        orderTime = t;
+//        order = o;
+//        msg = m;
+//        orderType = tt;
+//        augmentedOrderStatus = OrderStatus.Created;
+//        primaryOrder.set(true);
+//    }
+
+    public OrderAugmented(Contract ct, Order o, OrderStatus os) {
         contract = ct;
-        orderTime = t;
+        orderTime = LocalDateTime.now();
         order = o;
-        msg = m;
-        orderType = tt;
-        augmentedOrderStatus = OrderStatus.Created;
+        msg = "";
+        orderType = AutoOrderType.UNKNOWN;
+        augmentedOrderStatus = os;
         primaryOrder.set(true);
     }
 

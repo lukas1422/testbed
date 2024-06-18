@@ -650,8 +650,8 @@ public class TradingUtility {
     }
 
     public static double minProfitMargin(String s) {
-//        return s.equalsIgnoreCase("SPY") ? 1.002 : 1.005;
-        return 1.005;
+        return s.equalsIgnoreCase("SPY") ? 1.008 : 1.01;
+//        return 1.005
     }
 
     public static double computePtile(NavigableMap<? extends Temporal, SimpleBar> m) {

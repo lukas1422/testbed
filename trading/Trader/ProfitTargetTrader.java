@@ -641,7 +641,13 @@ class ProfitTargetTrader implements LiveHandler,
 //        orderStatus.get(s).put(order.orderId(), orderState.status());
         if (orderSubmitted.get(s).containsKey(order.orderId())) {
             orderSubmitted.get(s).get(order.orderId()).updateOrderStatus(orderState.status());
+        } else {
+            outputToSymbol(s, "openOrder does not contain order", ibContractToSymbol(contract), order);
+            outputToError(s, "open orders does not contain order", ibContractToSymbol(contract), order);
+            orderSubmitted.get(s).put(order.orderId(), new OrderAugmented(contract, order, orderState.status()));
         }
+
+
         if (orderState.status() == Filled) {
             outputToFills(s, usDateTime(), "*openOrder* filled", order);
         }
@@ -680,7 +686,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         String s = findSymbolByID(orderId);
         if (s.equalsIgnoreCase("")) {
-            outputToError("*orderStatus* orderID not found in ProfitTarget:", orderId);
+            outputToError(getESTLocalTimeNow(), "*orderStatus* orderID not found in ProfitTarget:", orderId);
             return;
         }
 
