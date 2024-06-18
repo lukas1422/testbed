@@ -322,8 +322,7 @@ class ProfitTargetTrader implements LiveHandler,
 //                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
         return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) +
-                        addition < DELTA_LIMIT_EACH);
+                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_LIMIT_EACH);
     }
 
     private static double refillPx(String symb, double px, long pos, double costPerShare) {
