@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 //import static Trader.BreachTrader.f2;
+import static Trader.TradingUtility.getESTDateTimeNow;
 import static api.TradingConstants.MdHmm;
 import static utility.Utility.ibContractToSymbol;
 import static utility.Utility.str;
@@ -39,7 +40,7 @@ public class OrderAugmented {
 
     public OrderAugmented(Contract ct, Order o, OrderStatus os) {
         contract = ct;
-        orderTime = LocalDateTime.now();
+        orderTime = getESTDateTimeNow();
         order = o;
         msg = "";
         orderType = AutoOrderType.UNKNOWN;

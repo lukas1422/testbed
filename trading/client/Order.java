@@ -1648,8 +1648,10 @@ public class Order {
     @Override
     public String toString() {
 
-        return str("orderID:" + m_orderId, m_orderType, m_action,
-                "Q:" + m_totalQuantity, "px:" + m_lmtPrice, "filledQ:" + m_filledQuantity);
+//        return str("orderID:" + m_orderId, m_orderType, m_action,
+//                "Q:" + m_totalQuantity, "px:" + m_lmtPrice, "filledQ:" + m_filledQuantity);
+
+        return str("orderID:" + m_orderId, m_orderType, m_action, "Q:" + m_totalQuantity, "px:" + m_lmtPrice);
     }
 
 }
