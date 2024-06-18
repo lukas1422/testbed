@@ -51,8 +51,9 @@ class ProfitTargetTrader implements LiveHandler,
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>>
             orderSubmitted = new ConcurrentHashMap<>();
+
     //    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
-//            orderStatus = new ConcurrentHashMap<>();
+    //            orderStatus = new ConcurrentHashMap<>();
     private static volatile NavigableMap<String, ConcurrentHashMap<Integer, Order>>
             openOrders = new ConcurrentSkipListMap<>();
     //data
@@ -85,8 +86,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Double> rng = new HashMap<>();
 
     private ProfitTargetTrader() throws IOException {
-        outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(), "MASTERID:", MASTERID);
-        pr("mkt start time today:", TODAY930);
+        outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(),
+                "MASTERID:", MASTERID, "\n", "mkt start time today:", TODAY930);
         pr("costTgt", Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
 
@@ -150,7 +151,7 @@ class ProfitTargetTrader implements LiveHandler,
         try {
             api.connect("127.0.0.1", PORT_TO_USE, 5, "");
             l.countDown();
-            pr("Latch counted down", PORT_TO_USE, getESTDateTimeNow().format(MdHmm));
+            pr("Latch counted down", PORT_TO_USE, getESTDateTimeNow().format(MdHmmss));
         } catch (IllegalStateException ex) {
             pr("illegal state exception caught ", ex);
         }
@@ -240,7 +241,7 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.get(s).isEmpty()) {
             return true;
         }
-        outputToSymbol(s, "no blocking buy orders orderStatus nonempty:"
+        outputToSymbol(s, "no blocking buy orders orderSubmitted nonempty:"
                 , orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
@@ -251,7 +252,8 @@ class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(s, "no blocking buy orders: All submitted orders", orderSubmitted.get(s));
             outputToSymbol(s, "no blocking buy orders: Active orders:",
                     orderSubmitted.get(s).entrySet().stream()
-                            .filter(e -> !e.getValue().getOrderStatus().isFinished()).collect(toList()));
+                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
+                            .collect(toList()));
             outputToSymbol(s, "active orders grouped by buysell:",
                     orderSubmitted.get(s).entrySet().stream()
                             .collect(groupingBy(e -> e.getValue().getOrder().action()
@@ -265,20 +267,21 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static boolean noBlockingSellOrders(String s) {
         if (orderSubmitted.get(s).isEmpty()) {
-            outputToSymbol(s, "orderstatus empty");
+            outputToSymbol(s, "orderSubmitted empty");
             return true;
         }
         pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
-            outputToSymbol(s, "allorderfinished:", orderSubmitted.get(s));
+            outputToSymbol(s, "all order finished:", orderSubmitted.get(s));
             return true;
         } else {
             outputToSymbol(s, "no blocking sell orders:", orderSubmitted.get(s));
-            outputToSymbol(s, "no blocking sell orders: Active orders:",
+            outputToSymbol(s, "no blocking sell orders: nonFinished orders:",
                     orderSubmitted.get(s).entrySet().stream()
-                            .filter(e -> !e.getValue().getOrderStatus().isFinished()).collect(toList()));
+                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
+                            .collect(toList()));
 
             outputToSymbol(s, "groupby buysell:",
                     orderSubmitted.get(s).entrySet().stream()
@@ -373,6 +376,7 @@ class ProfitTargetTrader implements LiveHandler,
 
             if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
+                outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder(ct, px, t, getLot(s, px));
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
@@ -392,7 +396,7 @@ class ProfitTargetTrader implements LiveHandler,
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
-                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by: openorders:" +
+                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by: openOrders:" +
                                     openOrders.get(s).values(), "\n"
                             , "orderSubmitted:" + orderSubmitted.get(s));
                     return;
