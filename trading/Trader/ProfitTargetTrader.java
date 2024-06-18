@@ -389,12 +389,12 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         if (pos.longValue() > 0) {
-
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
-                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by:" +
-                            openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
+                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by: openorders:" +
+                                    openOrders.get(s).values(), "\n"
+                            , "orderSubmitted:" + orderSubmitted.get(s));
                     return;
                 }
                 outputToSymbol(s, "****CUT**", t.format(MdHmmss),

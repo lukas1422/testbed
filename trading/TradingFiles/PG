@@ -13618,7 +13618,8 @@ sell part2: PG 6-17 9:51 INVENTORY_CUTTER Created tgtSellPx:167.5
 6-17 9:51 *OrderStatus*:Submitted orderId:240617021 filled:0 remaining:143 fillPx:0.0 lastFillPx:0.0
 some orders are active: {240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Created}
 groupby buysell: {SELL=[240617021, 240617022]}
-9:51:30 sell order blocked by:[orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:] orderStatus:{240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Created}
+9:51:30 sell order blocked by:[orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:]
+orderStatus:{240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Created}
 6-17 9:51 *openOrder* status:Inactive orderID:240617022 LMT SELL Q:29 px:167.61 filledQ:
 6-17 9:51 *openOrder*:removing order. Status: Inactive orderID:240617022 LMT SELL Q:29 px:167.61 filledQ:
 6-17 9:51 *openOrder*:after removal. openOrders: {240617021=orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:}
@@ -13713,9 +13714,11 @@ updating pos: 6-17 9:51 pos:100 cost:166.34
 updating pos: 6-17 9:51 pos:100 cost:166.34
 updating pos: 6-17 9:51 pos:100 cost:166.34
 updating pos: 6-17 9:51 pos:100 cost:166.34
-some orders are active: {240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
+some orders are active: {240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted,
+240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 groupby buysell: {SELL=[240617021, 240617022]}
-9:51:39 sell order blocked by:[orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:] orderStatus:{240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
+9:51:39 sell order blocked by:[orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:]
+ orderStatus:{240617021=PG 6-17 9:51 INVENTORY_CUTTER Submitted, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 updating pos: 6-17 9:51 pos:41 cost:166.34
 6-17 9:51 *tradeReport* time: 2024-06-17T09:51:39 SLD execPx:167.28 shares:59 avgPx:167.28
 6-17 9:51 *openOrder* status:Submitted orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:
@@ -13756,7 +13759,8 @@ updating pos: 6-17 9:51 pos:0 cost:0.0
 updating pos: 6-17 9:51 pos:0 cost:0.0
 updating pos: 6-17 9:51 pos:0 cost:0.0
 updating pos: 6-17 9:51 pos:0 cost:0.0
-no blocking buy orders orderStatus nonempty: {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
+no blocking buy orders orderStatus nonempty:
+{240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 all orders finished {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 *1Buy* 6-17 9:54:42 1dp:0.0 2dp:0.0
 ytdReturn not available, quitting inventoryadder
@@ -13776,7 +13780,8 @@ no blocking buy orders orderStatus nonempty: {240617021=PG 6-17 9:51 INVENTORY_C
 all orders finished {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 *1Buy* 6-17 9:55:04 1dp:0.0 2dp:0.0
 ytdReturn not available, quitting inventoryadder
-no blocking buy orders orderStatus nonempty: {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
+no blocking buy orders orderStatus nonempty:
+ {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 all orders finished {240617021=PG 6-17 9:51 INVENTORY_CUTTER Filled, 240617022=PG 6-17 9:51 INVENTORY_CUTTER Inactive}
 *1Buy* 6-17 9:55:05 1dp:0.0 2dp:0.0
 ytdReturn not available, quitting inventoryadder
