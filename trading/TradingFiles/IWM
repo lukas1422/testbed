@@ -16282,9 +16282,11 @@ updating pos: 6-17 14:01 pos:19 cost:197.6
 6-17 14:01 *openOrder* all live orders {240617069=orderID:240617069 LMT SELL Q:19 px:200.59 filledQ:}
 6-17 14:01 *OrderStatus*:Submitted orderId:240617069 filled:0 remaining:19 fillPx:0.0 lastFillPx:0.0
 updating pos: 6-17 14:01 pos:19 cost:197.6
-some orders are active: {240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled, 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
+some orders are active: {240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled,
+ 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
 groupby buysell: {SELL=[240617068, 240617069]}
-14:01:25 sell order blocked by:[orderID:240617069 LMT SELL Q:19 px:200.59 filledQ:] orderStatus:{240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled, 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
+14:01:25 sell order blocked by:[orderID:240617069 LMT SELL Q:19 px:200.59 filledQ:]
+orderStatus:{240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled, 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
 some orders are active: {240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled, 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
 groupby buysell: {SELL=[240617068, 240617069]}
 14:01:26 sell order blocked by:[orderID:240617069 LMT SELL Q:19 px:200.59 filledQ:] orderStatus:{240617068=IWM 6-17 14:01 INVENTORY_CUTTER Filled, 240617069=IWM 6-17 14:01 INVENTORY_CUTTER Submitted}
