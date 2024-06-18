@@ -1782,6 +1782,7 @@ BRK B 6-13 10:27 *OrderStatus*: filled. ordID:240613004
 BRK B 6-13 10:27 *openOrder* filled orderID:240613004 LMT BUY Q:12 px:404.99 filledQ:
 BRK B 6-13 10:27 *OrderStatus*: filled. ordID:240613004
 BRK B 1.*commission report* orderID:240613004 commission:0.34 
+
 PG 1.*commission report* orderID:240617021 commission:0.38 orderID: 240617021 realized pnl: 6.22
 PG 1.*commission report* orderID:240617021 commission:0.06 orderID: 240617021 realized pnl: 15.96
 PG 1.*commission report* orderID:240617021 commission:0.02 orderID: 240617021 realized pnl: 3.76
@@ -1800,6 +1801,7 @@ PG 1.*commission report* orderID:240617021 commission:0.03 orderID: 240617021 re
 PG 6-17 9:51 *openOrder* filled orderID:240617021 LMT SELL Q:143 px:167.28 filledQ:
 PG 6-17 9:51 *OrderStatus*: filled. ordID:240617021
 PG 1.*commission report* orderID:240617021 commission:0.27 orderID: 240617021 realized pnl: 34.61
+
 WMT 6-17 10:21 *openOrder* filled orderID:240617023 LMT SELL Q:67 px:66.85 filledQ:
 WMT 6-17 10:21 *OrderStatus*: filled. ordID:240617023
 WMT 6-17 10:21 *openOrder* filled orderID:240617023 LMT SELL Q:67 px:66.85 filledQ:

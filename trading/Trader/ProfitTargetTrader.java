@@ -397,7 +397,6 @@ class ProfitTargetTrader implements LiveHandler,
                             openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
                     return;
                 }
-
                 outputToSymbol(s, "****CUT**", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP,
                         "px/Cost:" + round4(pOverCost),
@@ -819,7 +818,7 @@ class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
-                outputToSymbol(s, "*Periodic Run*", usTime());
+                outputToSymbol(s, "*Periodic Run*", usDateTime());
                 outputToSymbol(s, lastPxTimestamp.containsKey(s) ?
                         str("last live feed time:", lastPxTimestamp.get(s).format(MdHmm),
                                 "been:" + Duration.between(lastPxTimestamp.get(s), getESTDateTimeNow()).toMinutes()
@@ -849,7 +848,7 @@ class ProfitTargetTrader implements LiveHandler,
                 if (!openOrders.get(s).isEmpty()) {
                     outputToSymbol(s, usDateTime(), "*chek openOrders*:", openOrders.get(s));
                 }
-                outputToSymbol(s, usDateTime(), px.getOrDefault(s,0.0),
+                outputToSymbol(s, usDateTime(), px.getOrDefault(s, 0.0),
                         "2dP:" + twoDayPctMap.getOrDefault(s, 101.0),
                         "1dP:" + oneDayPctMap.getOrDefault(s, 101.0));
                 outputToSymbol(s, "2d$:" + genStats(twoDayData.get(s)));
