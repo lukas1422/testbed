@@ -672,7 +672,10 @@ class ProfitTargetTrader implements LiveHandler,
             openOrders.get(s).put(order.orderId(), order);
         }
         if (!openOrders.get(s).isEmpty()) {
-            outputToSymbol(s, usDateTime(), "*openOrder* all live orders", openOrders.get(s));
+            outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
+                    openOrders.get(s)
+                            .entrySet().stream()
+                            .sorted(Map.Entry.comparingByKey()).toList());
         }
     }
 
