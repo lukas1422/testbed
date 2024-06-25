@@ -119,3 +119,526 @@ last live feed time: 6-24 16:50 been:43mins. p:27.0
 6-24 17:33 27.0 2dP:13.0 1dP:55.0
 2d$:n:1322 max:28.1 [6-20 14:22] min:26.8 [6-23 21:00] rng:4.8% 1Key:[6-20 9:30] last:[6-24 16:50]
 1d$:n:542 max:27.1 [6-24 4:01] min:26.8 [6-23 21:00] rng:1.1% 1Key:[6-23 20:00] last:[6-24 16:50]
+*******************************************
+*STARTS* 6-25 4:42
+POS:0 COST:0.0 DELT:0k
+6-25 4:42 rng:1.8% costTgt:0.97
+6-25 4:42 tgtMargin:1.0155 tgtPrice:0.0
+ytdReturn:23.97%
+*Periodic Run* 6-25 4:42
+last live feed time: 6-25 4:42 been:0mins. p:26.99 
+6-25 4:42 26.99 2dP:16.0 1dP:100.0
+2d$:n:781 max:27.5 [6-21 9:30] min:26.9 [6-24 12:00] rng:2.3% 1Key:[6-21 9:30] last:[6-25 4:42]
+1d$:n<5
+*Periodic Run* 6-25 5:42
+last live feed time: 6-25 5:26 been:15mins. p:27.03 
+6-25 5:42 27.03 2dP:22.0 1dP:100.0
+2d$:n:792 max:27.5 [6-21 9:30] min:26.9 [6-24 12:00] rng:2.3% 1Key:[6-21 9:30] last:[6-25 5:26]
+1d$:n:12 max:27.0 [6-25 5:18] min:27.0 [6-25 4:42] rng:0.1% 1Key:[6-25 4:42] last:[6-25 5:26]
+*Periodic Run* 6-25 6:42
+last live feed time: 6-25 6:41 been:1mins. p:27.02 
+6-25 6:42 27.02 2dP:21.0 1dP:50.0
+2d$:n:795 max:27.5 [6-21 9:30] min:26.9 [6-24 12:00] rng:2.3% 1Key:[6-21 9:30] last:[6-25 6:41]
+1d$:n:15 max:27.0 [6-25 5:18] min:27.0 [6-25 4:42] rng:0.1% 1Key:[6-25 4:42] last:[6-25 6:41]
+*Periodic Run* 6-25 7:42
+last live feed time: 6-25 7:42 been:0mins. p:26.86 
+6-25 7:42 26.86 2dP:0.0 1dP:0.0
+2d$:n:810 max:27.5 [6-21 9:30] min:26.9 [6-25 7:42] rng:2.3% 1Key:[6-21 9:30] last:[6-25 7:42]
+1d$:n:30 max:27.0 [6-25 6:50] min:26.9 [6-25 7:42] rng:0.4% 1Key:[6-25 4:42] last:[6-25 7:42]
+*Periodic Run* 6-25 8:42
+last live feed time: 6-25 8:42 been:0mins. p:27.04 
+6-25 8:42 27.04 2dP:25.0 1dP:98.0
+2d$:n:838 max:27.5 [6-21 9:30] min:26.9 [6-25 7:42] rng:2.3% 1Key:[6-21 9:30] last:[6-25 8:42]
+1d$:n:58 max:27.0 [6-25 6:50] min:26.9 [6-25 7:42] rng:0.6% 1Key:[6-25 4:42] last:[6-25 8:42]
+*1Buy* 6-25 9:30:02 1dp:0.0 2dp:0.0
+cash remaining: 58747.07
+ordID1:240625003 tradID1:240625003 BUY px1:26.76 lot1:712 SLV 6-25 9:30 INVENTORY_ADDER Created
+ordID2:240625004 tradID2:240625004 BUY px2:26.71 lot2:178 SLV 6-25 9:30 INVENTORY_ADDER Created
+2D$:n:861 max:27.5 [6-21 9:30] min:26.8 [6-25 9:29] rng:2.6% 1Key:[6-21 9:30] last:[6-25 9:30]
+1D$:n:81 max:27.0 [6-25 6:50] min:26.8 [6-25 9:29] rng:0.9% 1Key:[6-25 4:42] last:[6-25 9:30]
+6-25 9:30 *openOrder* status:Submitted orderID:240625004 LMT BUY Q:178 px:26.71
+6-25 9:30 *openOrder* all live orders [240625004=orderID:240625004 LMT BUY Q:178 px:26.71]
+6-25 9:30 *OrderStatus*:Submitted orderId:240625004 filled:0 remaining:178 fillPx:0.0 lastFillPx:0.0
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Created, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Created, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625003=SLV 6-25 9:30 INVENTORY_ADDER Created, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:04 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Created, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+6-25 9:30 *openOrder* status:Submitted orderID:240625003 LMT BUY Q:712 px:26.76
+6-25 9:30 *openOrder* all live orders [240625003=orderID:240625003 LMT BUY Q:712 px:26.76, 240625004=orderID:240625004 LMT BUY Q:178 px:26.71]
+6-25 9:30 *OrderStatus*:Submitted orderId:240625003 filled:0 remaining:712 fillPx:0.0 lastFillPx:0.0
+updating pos: 6-25 9:30 pos:712 cost:26.76
+6-25 9:30 *tradeReport* time: 2024-06-25T09:30:05 BOT execPx:26.76 shares:712 avgPx:26.76
+6-25 9:30 *openOrder* status:Filled orderID:240625003 LMT BUY Q:712 px:26.76
+6-25 9:30 *openOrder*:removing order.Status: Filled orderID:240625003 LMT BUY Q:712 px:26.76
+6-25 9:30 *openOrder*:after removal.OpenOrders: {240625004=orderID:240625004 LMT BUY Q:178 px:26.71}
+6-25 9:30 *openOrder* all live orders [240625004=orderID:240625004 LMT BUY Q:178 px:26.71]
+6-25 9:30 *OrderStatus*:Filled orderId:240625003 filled:712 remaining:0 fillPx:26.76 lastFillPx:26.76
+6-25 9:30 *openOrder* status:Filled orderID:240625003 LMT BUY Q:712 px:26.76
+6-25 9:30 *openOrder*:removing order.Status: Filled orderID:240625003 LMT BUY Q:712 px:26.76
+6-25 9:30 *openOrder*:after removal.OpenOrders: {240625004=orderID:240625004 LMT BUY Q:178 px:26.71}
+6-25 9:30 *openOrder* all live orders [240625004=orderID:240625004 LMT BUY Q:178 px:26.71]
+6-25 9:30 *OrderStatus*:Filled orderId:240625003 filled:712 remaining:0 fillPx:26.76 lastFillPx:26.76
+1.*commission report* orderID:240625003 commission:1.64 
+2.*commission report* orderID:240625003 commission: 1.64 
+updating pos: 6-25 9:30 pos:712 cost:26.76
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:05 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:11 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:12 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:18 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:19 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:20 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:21 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:24 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:28 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:29 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:29 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:30 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:33 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:37 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:41 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:43 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:45 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:48 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:50 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:30:51 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:01 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:06 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:06 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:07 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:09 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:17 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:20 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:31:38 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:01 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:04 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:06 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:10 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:10 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:13 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:13 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:17 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:34 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:36 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:40 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:40 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:41 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:48 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:48 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:50 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:51 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:52 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:32:59 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:02 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:02 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:03 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:05 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:13 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:14 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:20 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:31 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:41 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:42 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:43 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:53 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:55 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:56 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:58 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:33:59 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:03 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:05 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:14 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:19 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:21 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+updating pos: 6-25 9:34 pos:712 cost:26.76
+updating pos: 6-25 9:34 pos:712 cost:26.76
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:29 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:30 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:40 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:34:44 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:35:03 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:35:05 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240625003, 240625004]}
+9:35:08 buy order blocked by:[orderID:240625004 LMT BUY Q:178 px:26.71] orderStatus:{240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Submitted}
+updating pos: 6-25 9:35 pos:890 cost:26.75
+6-25 9:35 *tradeReport* time: 2024-06-25T09:35:09 BOT execPx:26.71 shares:178 avgPx:26.71
+6-25 9:35 *openOrder* status:Filled orderID:240625004 LMT BUY Q:178 px:26.71
+6-25 9:35 *openOrder*:removing order.Status: Filled orderID:240625004 LMT BUY Q:178 px:26.71
+6-25 9:35 *openOrder*:after removal.OpenOrders: {}
+6-25 9:35 *OrderStatus*:Filled orderId:240625004 filled:178 remaining:0 fillPx:26.71 lastFillPx:26.71
+6-25 9:35 *openOrder* status:Filled orderID:240625004 LMT BUY Q:178 px:26.71
+6-25 9:35 *openOrder*:removing order.Status: Filled orderID:240625004 LMT BUY Q:178 px:26.71
+6-25 9:35 *openOrder*:after removal.OpenOrders: {}
+6-25 9:35 *OrderStatus*:Filled orderId:240625004 filled:178 remaining:0 fillPx:26.71 lastFillPx:26.71
+1.*commission report* orderID:240625004 commission:0.37 
+2.*commission report* orderID:240625004 commission: 0.37 
+updating pos: 6-25 9:35 pos:890 cost:26.75
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+all orders finished {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+all orders finished {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+no blocking buy orders orderSubmitted nonempty: {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+all orders finished {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+updating pos: 6-25 9:41 pos:890 cost:26.75
+*Periodic Run* 6-25 9:42
+last live feed time: 6-25 9:42 been:0mins. p:26.65 cost:26.8 p/cost:0.996
+p:26.65 rng:1.8% pos:890 delt:24k cost:26.8 lot:894 fillP:25.15 costTgt:0.97 fillP/cost:0.94 fillP/px:0.944
+6-25 9:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 9:42 26.65 2dP:1.0 1dP:2.0
+2d$:n:873 max:27.5 [6-21 9:30] min:26.6 [6-25 9:39] rng:3.3% 1Key:[6-21 9:30] last:[6-25 9:42]
+1d$:n:93 max:27.0 [6-25 6:50] min:26.6 [6-25 9:39] rng:1.5% 1Key:[6-25 4:42] last:[6-25 9:42]
+*Periodic Run* 6-25 10:42
+last live feed time: 6-25 10:42 been:0mins. p:26.67 cost:26.8 p/cost:0.997
+p:26.67 rng:1.8% pos:890 delt:24k cost:26.8 lot:893 fillP:25.15 costTgt:0.97 fillP/cost:0.94 fillP/px:0.943
+6-25 10:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 10:42 26.67 2dP:7.0 1dP:14.0
+2d$:n:933 max:27.5 [6-21 9:30] min:26.6 [6-25 9:44] rng:3.4% 1Key:[6-21 9:30] last:[6-25 10:42]
+1d$:n:153 max:27.0 [6-25 6:50] min:26.6 [6-25 9:44] rng:1.6% 1Key:[6-25 4:42] last:[6-25 10:42]
+*Periodic Run* 6-25 11:42
+last live feed time: 6-25 11:42 been:0mins. p:26.43 cost:26.8 p/cost:0.988
+p:26.43 rng:1.8% pos:890 delt:24k cost:26.8 lot:901 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.952
+6-25 11:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 11:42 26.43 2dP:2.0 1dP:4.0
+2d$:n:993 max:27.5 [6-21 9:30] min:26.4 [6-25 11:32] rng:4.2% 1Key:[6-21 9:30] last:[6-25 11:42]
+1d$:n:213 max:27.0 [6-25 6:50] min:26.4 [6-25 11:32] rng:2.4% 1Key:[6-25 4:42] last:[6-25 11:42]
+*Periodic Run* 6-25 12:42
+last live feed time: 6-25 12:42 been:0mins. p:26.42 cost:26.8 p/cost:0.988
+p:26.42 rng:1.8% pos:890 delt:24k cost:26.8 lot:902 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.952
+6-25 12:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 12:42 26.42 2dP:4.0 1dP:7.0
+2d$:n:1052 max:27.5 [6-21 9:30] min:26.4 [6-25 12:32] rng:4.3% 1Key:[6-21 9:30] last:[6-25 12:42]
+1d$:n:272 max:27.0 [6-25 6:50] min:26.4 [6-25 12:32] rng:2.5% 1Key:[6-25 4:42] last:[6-25 12:42]
+*Periodic Run* 6-25 13:42
+last live feed time: 6-25 13:42 been:0mins. p:26.41 cost:26.8 p/cost:0.987
+p:26.41 rng:1.8% pos:890 delt:24k cost:26.8 lot:902 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.953
+6-25 13:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 13:42 26.41 2dP:6.0 1dP:10.0
+2d$:n:1107 max:27.5 [6-21 9:30] min:26.3 [6-25 12:55] rng:4.5% 1Key:[6-21 9:30] last:[6-25 13:42]
+1d$:n:327 max:27.0 [6-25 6:50] min:26.3 [6-25 12:55] rng:2.7% 1Key:[6-25 4:42] last:[6-25 13:42]
+*Periodic Run* 6-25 14:42
+last live feed time: 6-25 14:42 been:0mins. p:26.4 cost:26.8 p/cost:0.987
+p:26.4 rng:1.8% pos:890 delt:23k cost:26.8 lot:902 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.953
+6-25 14:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 14:42 26.4 2dP:5.0 1dP:9.0
+2d$:n:1166 max:27.5 [6-21 9:30] min:26.3 [6-25 12:55] rng:4.5% 1Key:[6-21 9:30] last:[6-25 14:42]
+1d$:n:386 max:27.0 [6-25 6:50] min:26.3 [6-25 12:55] rng:2.7% 1Key:[6-25 4:42] last:[6-25 14:42]
+*Periodic Run* 6-25 15:42
+last live feed time: 6-25 15:42 been:0mins. p:26.41 cost:26.8 p/cost:0.987
+p:26.41 rng:1.8% pos:890 delt:24k cost:26.8 lot:902 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.953
+6-25 15:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 15:42 26.41 2dP:6.0 1dP:10.0
+2d$:n:1222 max:27.5 [6-21 9:30] min:26.3 [6-25 12:55] rng:4.5% 1Key:[6-21 9:30] last:[6-25 15:42]
+1d$:n:442 max:27.0 [6-25 6:50] min:26.3 [6-25 12:55] rng:2.7% 1Key:[6-25 4:42] last:[6-25 15:42]
+*Periodic Run* 6-25 16:42
+last live feed time: 6-25 16:37 been:5mins. p:26.39 cost:26.8 p/cost:0.986
+p:26.39 rng:1.8% pos:890 delt:23k cost:26.8 lot:903 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.953
+6-25 16:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 16:42 26.39 2dP:4.0 1dP:7.0
+2d$:n:1250 max:27.5 [6-21 9:30] min:26.3 [6-25 12:55] rng:4.5% 1Key:[6-21 9:30] last:[6-25 16:37]
+1d$:n:470 max:27.0 [6-25 6:50] min:26.3 [6-25 12:55] rng:2.7% 1Key:[6-25 4:42] last:[6-25 16:37]
+*Periodic Run* 6-25 17:42
+last live feed time: 6-25 17:35 been:6mins. p:26.41 cost:26.8 p/cost:0.987
+p:26.41 rng:1.8% pos:890 delt:24k cost:26.8 lot:902 fillP:25.16 costTgt:0.97 fillP/cost:0.94 fillP/px:0.953
+6-25 17:42 *chek orderStatus {240625003=SLV 6-25 9:30 INVENTORY_ADDER Filled, 240625004=SLV 6-25 9:30 INVENTORY_ADDER Filled}
+6-25 17:42 26.41 2dP:6.0 1dP:10.0
+2d$:n:1260 max:27.5 [6-21 9:30] min:26.3 [6-25 12:55] rng:4.5% 1Key:[6-21 9:30] last:[6-25 17:35]
+1d$:n:480 max:27.0 [6-25 6:50] min:26.3 [6-25 12:55] rng:2.7% 1Key:[6-25 4:42] last:[6-25 17:35]
