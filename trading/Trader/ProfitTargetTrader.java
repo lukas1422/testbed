@@ -330,13 +330,11 @@ class ProfitTargetTrader implements LiveHandler,
 //    }
 
     private static double sellFactor(String symb, int i) {
-        return Math.pow(Math.max(1.002, 1 +
-                (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0), i);
+        return maxs(1.002, 1 + (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
     }
 
     private static double buyFactor(String symb, int i) {
-        return Math.pow(Math.min(0.998, 1 -
-                (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0), i);
+        return mins(0.998, 1 - (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
     }
 
     private static double refillPx(String symb, double px, long pos, double costPerShare) {
@@ -524,6 +522,8 @@ class ProfitTargetTrader implements LiveHandler,
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
+                            "b factor:", buyFactor(s, 1) + " " + buyFactor(s, 2) + " " + buyFactor(s, 3),
+                            "s factor:", sellFactor(s, 1) + " " + sellFactor(s, 2) + " " + sellFactor(s, 3),
                             "tgtMargin:" + round4(tgtProfitMargin(s)),
                             "tgtPx:" + round2(costMap.get(s) * tgtProfitMargin(s)));
                 }
