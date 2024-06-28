@@ -592,27 +592,24 @@ class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(s, "ordID1:" + o1.orderId(), "tradID1:" + id1, o1.action(),
                 "px1:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
-        //second order, reduce cost by 20 bps
+        //second order, reduce cost by a percentage of range
         int id2 = tradID.incrementAndGet();
         double bidPx2 = r(mins(px, bidMap.getOrDefault(s, px),
                 bidMap.getOrDefault(s, px) * buyFactor(s, 2)));
         Decimal size2 = Decimal.get(round(lotSize.longValue() / 5.0));
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
-        orderSubmitted.get(s).put(o2.orderId(),
-                new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
-//        orderStatus.get(s).put(o2.orderId(), OrderStatus.Created);
+        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
         outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
                 "px2:" + bidPx2, "lot2:" + size2, "buyfactor2:" + buyFactor(s, 2),
                 orderSubmitted.get(s).get(o2.orderId()));
 
+        //third order, lower buy price further
         int id3 = tradID.incrementAndGet();
-        double bidPx3 = r(mins(bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) *
-                buyFactor(s, 3)));
+        double bidPx3 = r(mins(bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) * buyFactor(s, 3)));
         Decimal size3 = Decimal.get(round(lotSize.longValue() / 5.0));
         Order o3 = placeBidLimitTIF(id3, bidPx3, size3, DAY);
-        orderSubmitted.get(s).put(o3.orderId(),
-                new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
+        orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
         outputToSymbol(s, "ordID3:" + o3.orderId(), "tradID3:" + id3, o3.action(),
                 "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + buyFactor(s, 3),
