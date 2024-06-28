@@ -733,6 +733,10 @@ public class TradingUtility {
         return DoubleStream.of(ds).min().getAsDouble();
     }
 
+    public static double maxs(double... ds) {
+        return DoubleStream.of(ds).max().getAsDouble();
+    }
+
     public static void outputToConnection(Object... cs) {
         outputDetailedGen(str(cs), connectionOutput);
     }
