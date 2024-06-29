@@ -312,3 +312,190 @@ last live feed time: 6-27 16:20 been:163mins. p:67.82
 6-27 19:04 67.82 2dP:61.0 1dP:17.0
 2d$:n:1183 max:68.6 [6-26 10:48] min:66.7 [6-25 9:54] rng:2.9% 1Key:[6-25 9:30] last:[6-27 16:20]
 1d$:n:403 max:68.5 [6-27 9:37] min:67.7 [6-27 15:35] rng:1.2% 1Key:[6-27 8:04] last:[6-27 16:20]
+*******************************************
+*STARTS* 6-28 9:24
+POS:0 COST:0.0 DELT:0k
+*Periodic Run* 6-28 9:24
+last live feed time: 6-28 9:24 been:0mins. p:67.92 
+6-28 9:24 67.92 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+6-28 9:24 rng:1.3% costTgt:0.97
+6-28 9:24 tgtMargin:1.0112 tgtPrice:0.0
+ytdReturn:30.06%
+*Periodic Run* 6-28 10:24
+last live feed time: 6-28 10:24 been:0mins. p:67.91 
+6-28 10:24 67.91 2dP:46.0 1dP:56.0
+2d$:n:839 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.8% 1Key:[6-26 9:30] last:[6-28 10:24]
+1d$:n:59 max:68.1 [6-28 10:18] min:67.7 [6-28 9:29] rng:0.5% 1Key:[6-28 9:24] last:[6-28 10:24]
+*1Buy* 6-28 11:05:03 1dp:0.0 2dp:19.0
+cash remaining: 59654.57
+ordID1:240628009 tradID1:240628009 BUY px1:67.58 lot1:211 WMT 6-28 11:05 INVENTORY_ADDER Created
+ordID2:240628010 tradID2:240628010 BUY px2:67.36 lot2:70 buyfactor2:0.9966989142009288 WMT 6-28 11:05 INVENTORY_ADDER Created
+ordID3:240628011 tradID3:240628011 BUY px3:67.13 lot3:70 buyfactor3:0.9933978284018576 WMT 6-28 11:05 INVENTORY_ADDER Created
+2D$:n:880 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.8% 1Key:[6-26 9:30] last:[6-28 11:05]
+1D$:n:100 max:68.1 [6-28 10:18] min:67.6 [6-28 11:04] rng:0.7% 1Key:[6-28 9:24] last:[6-28 11:05]
+6-28 11:05 *openOrder* status:Submitted orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628009 filled:0 remaining:211 fillPx:0.0 lastFillPx:0.0
+6-28 11:05 *openOrder* status:Submitted orderID:240628010 LMT BUY Q:70 px:67.36
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628010 filled:0 remaining:70 fillPx:0.0 lastFillPx:0.0
+6-28 11:05 *openOrder* status:Submitted orderID:240628011 LMT BUY Q:70 px:67.13
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628011 filled:0 remaining:70 fillPx:0.0 lastFillPx:0.0
+no blocking buy orders orderSubmitted nonempty: {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240628009, 240628010, 240628011]}
+11:05:06 buy order blocked by:[orderID:240628011 LMT BUY Q:70 px:67.13, orderID:240628010 LMT BUY Q:70 px:67.36, orderID:240628009 LMT BUY Q:211 px:67.58] orderStatus:{240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240628009, 240628010, 240628011]}
+11:05:15 buy order blocked by:[orderID:240628011 LMT BUY Q:70 px:67.13, orderID:240628010 LMT BUY Q:70 px:67.36, orderID:240628009 LMT BUY Q:211 px:67.58] orderStatus:{240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+updating pos: 6-28 11:05 pos:1 cost:67.58
+6-28 11:05 *tradeReport* time: 2024-06-28T11:05:18 BOT execPx:67.58 shares:1 avgPx:67.58
+6-28 11:05 *openOrder* status:Submitted orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628009 filled:1 remaining:210 fillPx:67.58 lastFillPx:67.58
+6-28 11:05 *openOrder* status:Submitted orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628009 filled:1 remaining:210 fillPx:67.58 lastFillPx:67.58
+1.*commission report* orderID:240628009 commission:0.35 
+2.*commission report* orderID:240628009 commission: 0.35 
+updating pos: 6-28 11:05 pos:1 cost:67.93
+no blocking buy orders orderSubmitted nonempty: {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {BUY=[240628009, 240628010, 240628011]}
+11:05:19 buy order blocked by:[orderID:240628011 LMT BUY Q:70 px:67.13, orderID:240628010 LMT BUY Q:70 px:67.36, orderID:240628009 LMT BUY Q:211 px:67.58] orderStatus:{240628009=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+updating pos: 6-28 11:05 pos:35 cost:67.59
+6-28 11:05 *tradeReport* time: 2024-06-28T11:05:21 BOT execPx:67.58 shares:34 avgPx:67.58
+6-28 11:05 *openOrder* status:Submitted orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder* all live orders [240628009=orderID:240628009 LMT BUY Q:211 px:67.58, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Submitted orderId:240628009 filled:35 remaining:176 fillPx:67.58 lastFillPx:67.58
+updating pos: 6-28 11:05 pos:211 cost:67.58
+6-28 11:05 *tradeReport* time: 2024-06-28T11:05:21 BOT execPx:67.58 shares:176 avgPx:67.58
+6-28 11:05 *openOrder* status:Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:removing order.Status: Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:after removal.OpenOrders: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36}
+6-28 11:05 *openOrder* all live orders [240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Filled orderId:240628009 filled:211 remaining:0 fillPx:67.58 lastFillPx:67.58
+6-28 11:05 *openOrder* status:Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:removing order.Status: Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:after removal.OpenOrders: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36}
+6-28 11:05 *openOrder* all live orders [240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Filled orderId:240628009 filled:211 remaining:0 fillPx:67.58 lastFillPx:67.58
+1.*commission report* orderID:240628009 commission:-0.06 
+2.*commission report* orderID:240628009 commission: -0.06 
+updating pos: 6-28 11:05 pos:211 cost:67.58
+6-28 11:05 *openOrder* status:Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:removing order.Status: Filled orderID:240628009 LMT BUY Q:211 px:67.58
+6-28 11:05 *openOrder*:after removal.OpenOrders: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36}
+6-28 11:05 *openOrder* all live orders [240628010=orderID:240628010 LMT BUY Q:70 px:67.36, 240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:05 *OrderStatus*:Filled orderId:240628009 filled:211 remaining:0 fillPx:67.58 lastFillPx:67.58
+1.*commission report* orderID:240628009 commission:0.05 
+2.*commission report* orderID:240628009 commission: 0.05 
+updating pos: 6-28 11:05 pos:211 cost:67.58
+updating pos: 6-28 11:09 pos:211 cost:67.58
+updating pos: 6-28 11:09 pos:211 cost:67.58
+*Periodic Run* 6-28 11:24
+last live feed time: 6-28 11:24 been:0mins. p:67.58 cost:67.6 p/cost:1.0
+p:67.58 rng:1.3% pos:211 delt:14k cost:67.6 lot:352 fillP:64.34 costTgt:0.97 fillP/cost:0.952 fillP/px:0.952
+6-28 11:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Submitted, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 11:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13, 240628010=orderID:240628010 LMT BUY Q:70 px:67.36}
+6-28 11:24 67.58 2dP:19.0 1dP:7.0
+2d$:n:899 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.8% 1Key:[6-26 9:30] last:[6-28 11:24]
+1d$:n:119 max:68.1 [6-28 10:18] min:67.5 [6-28 11:16] rng:0.8% 1Key:[6-28 9:24] last:[6-28 11:24]
+updating pos: 6-28 11:59 pos:281 cost:67.53
+6-28 11:59 *tradeReport* time: 2024-06-28T11:59:22 BOT execPx:67.36 shares:70 avgPx:67.36
+6-28 11:59 *openOrder* status:Filled orderID:240628010 LMT BUY Q:70 px:67.36
+6-28 11:59 *openOrder*:removing order.Status: Filled orderID:240628010 LMT BUY Q:70 px:67.36
+6-28 11:59 *openOrder*:after removal.OpenOrders: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 11:59 *openOrder* all live orders [240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:59 *OrderStatus*:Filled orderId:240628010 filled:70 remaining:0 fillPx:67.36 lastFillPx:67.36
+6-28 11:59 *openOrder* status:Filled orderID:240628010 LMT BUY Q:70 px:67.36
+6-28 11:59 *openOrder*:removing order.Status: Filled orderID:240628010 LMT BUY Q:70 px:67.36
+6-28 11:59 *openOrder*:after removal.OpenOrders: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 11:59 *openOrder* all live orders [240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 11:59 *OrderStatus*:Filled orderId:240628010 filled:70 remaining:0 fillPx:67.36 lastFillPx:67.36
+1.*commission report* orderID:240628010 commission:0.28 
+2.*commission report* orderID:240628010 commission: 0.28 
+updating pos: 6-28 11:59 pos:281 cost:67.53
+updating pos: 6-28 12:03 pos:281 cost:67.53
+*Periodic Run* 6-28 12:24
+last live feed time: 6-28 12:24 been:0mins. p:67.54 cost:67.5 p/cost:1.0
+p:67.54 rng:1.3% pos:281 delt:19k cost:67.5 lot:352 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.946
+6-28 12:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 12:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 12:24 67.54 2dP:19.0 1dP:30.0
+2d$:n:959 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 12:24]
+1d$:n:179 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 12:24]
+*Periodic Run* 6-28 13:24
+last live feed time: 6-28 13:24 been:0mins. p:67.56 cost:67.5 p/cost:1.0
+p:67.56 rng:1.3% pos:281 delt:19k cost:67.5 lot:352 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.946
+6-28 13:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 13:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 13:24 67.56 2dP:20.0 1dP:32.0
+2d$:n:1019 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 13:24]
+1d$:n:239 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 13:24]
+*Periodic Run* 6-28 14:24
+last live feed time: 6-28 14:24 been:0mins. p:67.4 cost:67.5 p/cost:0.998
+p:67.4 rng:1.3% pos:281 delt:19k cost:67.5 lot:353 fillP:63.89 costTgt:0.97 fillP/cost:0.946 fillP/px:0.948
+6-28 14:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 14:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 14:24 67.4 2dP:7.0 1dP:11.0
+2d$:n:1079 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 14:24]
+1d$:n:299 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 14:24]
+*Periodic Run* 6-28 15:24
+last live feed time: 6-28 15:24 been:0mins. p:67.56 cost:67.5 p/cost:1.0
+p:67.56 rng:1.3% pos:281 delt:19k cost:67.5 lot:352 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.946
+6-28 15:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 15:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 15:24 67.56 2dP:20.0 1dP:32.0
+2d$:n:1139 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 15:24]
+1d$:n:359 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 15:24]
+6-28 16:00 *openOrder* status:Submitted orderID:240628011 LMT BUY Q:70 px:67.13
+6-28 16:00 *openOrder* all live orders [240628011=orderID:240628011 LMT BUY Q:70 px:67.13]
+6-28 16:00 *OrderStatus*:Submitted orderId:240628011 filled:0 remaining:70 fillPx:0.0 lastFillPx:0.0
+*Periodic Run* 6-28 16:24
+last live feed time: 6-28 16:18 been:5mins. p:67.75 cost:67.5 p/cost:1.003
+p:67.75 rng:1.3% pos:281 delt:19k cost:67.5 lot:351 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.943
+6-28 16:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 16:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 16:24 67.75 2dP:35.0 1dP:58.0
+2d$:n:1179 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 16:18]
+1d$:n:399 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 16:18]
+*Periodic Run* 6-28 17:24
+last live feed time: 6-28 17:05 been:18mins. p:67.75 cost:67.5 p/cost:1.003
+p:67.75 rng:1.3% pos:281 delt:19k cost:67.5 lot:351 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.943
+6-28 17:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 17:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 17:24 67.75 2dP:35.0 1dP:58.0
+2d$:n:1183 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 17:05]
+1d$:n:403 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 17:05]
+*Periodic Run* 6-28 18:24
+last live feed time: 6-28 18:12 been:12mins. p:67.71 cost:67.5 p/cost:1.003
+p:67.71 rng:1.3% pos:281 delt:19k cost:67.5 lot:351 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.943
+6-28 18:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 18:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 18:24 67.71 2dP:32.0 1dP:53.0
+2d$:n:1186 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 18:12]
+1d$:n:406 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 18:12]
+*Periodic Run* 6-28 19:24
+last live feed time: 6-28 18:12 been:72mins. p:67.71 cost:67.5 p/cost:1.003
+p:67.71 rng:1.3% pos:281 delt:19k cost:67.5 lot:351 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.943
+6-28 19:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 19:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 19:24 67.71 2dP:32.0 1dP:53.0
+2d$:n:1186 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 18:12]
+1d$:n:406 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 18:12]
+*Periodic Run* 6-28 20:24
+last live feed time: 6-28 18:12 been:132mins. p:67.71 cost:67.5 p/cost:1.003
+p:67.71 rng:1.3% pos:281 delt:19k cost:67.5 lot:351 fillP:63.88 costTgt:0.97 fillP/cost:0.946 fillP/px:0.943
+6-28 20:24 *chek orderStatus {240628009=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628010=WMT 6-28 11:05 INVENTORY_ADDER Filled, 240628011=WMT 6-28 11:05 INVENTORY_ADDER Submitted}
+6-28 20:24 *chek openOrders*: {240628011=orderID:240628011 LMT BUY Q:70 px:67.13}
+6-28 20:24 67.71 2dP:32.0 1dP:53.0
+2d$:n:1186 max:68.6 [6-26 10:48] min:67.3 [6-26 9:31] rng:1.9% 1Key:[6-26 9:30] last:[6-28 18:12]
+1d$:n:406 max:68.1 [6-28 10:18] min:67.3 [6-28 12:08] rng:1.1% 1Key:[6-28 9:24] last:[6-28 18:12]

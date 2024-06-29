@@ -522,8 +522,11 @@ class ProfitTargetTrader implements LiveHandler,
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
-                            "b factor:", buyFactor(s, 1) + " " + buyFactor(s, 2) + " " + buyFactor(s, 3),
-                            "s factor:", sellFactor(s, 1) + " " + sellFactor(s, 2) + " " + sellFactor(s, 3),
+                            "b factor:", buyFactor(s, 1) + " "
+                                    + round4(buyFactor(s, 2)) + " " + round4(buyFactor(s, 3)),
+                            "s factor:", round4(sellFactor(s, 1))
+                                    + " " + round4(sellFactor(s, 2)) + " "
+                                    + round4(sellFactor(s, 3)),
                             "tgtMargin:" + round4(tgtProfitMargin(s)),
                             "tgtPx:" + round2(costMap.get(s) * tgtProfitMargin(s)));
                 }
@@ -609,7 +612,8 @@ class ProfitTargetTrader implements LiveHandler,
         double bidPx3 = r(mins(bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) * buyFactor(s, 3)));
         Decimal size3 = Decimal.get(round(lotSize.longValue() / 5.0));
         Order o3 = placeBidLimitTIF(id3, bidPx3, size3, DAY);
-        orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
+        orderSubmitted.get(s).put(o3.orderId(),
+                new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
         outputToSymbol(s, "ordID3:" + o3.orderId(), "tradID3:" + id3, o3.action(),
                 "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + buyFactor(s, 3),
@@ -650,7 +654,7 @@ class ProfitTargetTrader implements LiveHandler,
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
             outputToSymbol(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
                     "px2:", r(offerPrice * sellFactor(s, 2)), "q2:" + o2.totalQuantity().longValue(),
-                    "sellFactor2" + sellFactor(s, 2), "cost:" + round2(cost));
+                    "sellFactor2:" + sellFactor(s, 2), "cost:" + round2(cost));
             outputToSymbol(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()),
                     "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * sellFactor(s, 2)));
 
@@ -662,7 +666,7 @@ class ProfitTargetTrader implements LiveHandler,
             placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
             outputToSymbol(s, "ordID3:" + o3.orderId(), "tradID3:" + id3, o3.action(),
                     "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
-                    "sellFactor3" + sellFactor(s, 3), "cost:" + round2(cost));
+                    "sellFactor3:" + sellFactor(s, 3), "cost:" + round2(cost));
             outputToSymbol(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()),
                     "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * sellFactor(s, 3)));
         }
