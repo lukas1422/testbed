@@ -332,11 +332,12 @@ class ProfitTargetTrader implements LiveHandler,
 //    }
 
     private static double sellFactor(String symb, int i) {
-        return maxs(1 + 0.002 * (i - 1), 1 + (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
+        return maxs(1 + 0.003 * (i - 1), 1 + (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
     }
 
     private static double buyFactor(String symb, int i) {
-        return mins(0.998, 1 - (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
+        return mins(1 - 0.003 * (i - 1), 1 - (i - 1) * rng.getOrDefault(symb, 0.0) / 4.0);
+
     }
 
     private static double refillPx(String symb, double px, long pos, double costPerShare) {
