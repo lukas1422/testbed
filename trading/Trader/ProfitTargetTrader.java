@@ -39,7 +39,7 @@ class ProfitTargetTrader implements LiveHandler,
         , ApiController.IAccountSummaryHandler {
 
     private static volatile double AVAILABLE_CASH = 0.0;
-    private static final double DELTA_TOTAL_LIMIT = 286000;
+    private static final double DELTA_TOTAL_LIMIT = 360000;
     private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
     private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
@@ -193,6 +193,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static void computeHistoricalData(String s) {
+        pr("computing historical data for ", s);
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
@@ -226,6 +227,7 @@ class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(symb, "*STARTS*", usDateTime());
         symbolContractMap.put(symb, ct);
         targets.add(symb);
+        ytdReturn.put(symb, -1.0);
         orderSubmitted.put(symb, new ConcurrentSkipListMap<>());
 //        orderStatus.put(symb, new ConcurrentSkipListMap<>());
         openOrders.put(symb, new ConcurrentHashMap<>());
@@ -429,7 +431,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-                //pr(t.format(Hmmss), "last p:", symb, price);
+//                pr(t.format(Hmmss), "last p:", symb, price);
                 px.put(symb, price);
                 liveData.get(symb).put(t, price);
                 lastPxTimestamp.put(symb, getESTDateTimeNow());
