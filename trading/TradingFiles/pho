@@ -1314,3 +1314,1162 @@ p:64.71 rng:1.1% pos:855 delt:55k cost:65.5 lot:579 fillP:60.59 costTgt:0.97 fil
 7-10 17:07 64.71 2dP:100.0 1dP:100.0
 2d$:n:875 max:64.6 [7-10 15:59] min:63.8 [7-9 11:08] rng:1.3% 1Key:[7-8 9:30] last:[7-10 15:59]
 1d$:n:95 max:64.6 [7-10 15:59] min:64.1 [7-10 9:40] rng:0.9% 1Key:[7-10 9:30] last:[7-10 15:59]
+*******************************************
+*STARTS* 7-11 9:10
+updating pos: 7-11 9:10 pos:855 cost:65.46
+POS:855 COST:65.5 DELT:56k
+7-11 9:10 rng:1.1% costTgt:0.97
+7-11 9:10 tgtMargin:1.01 tgtPrice:66.11
+ytdReturn:6.55%
+*Periodic Run* 7-11 9:10
+09:10:54.141629 no live feed
+7-11 9:10 0.0 2dP:100.0 1dP:100.0
+2d$:n:780 max:64.7 [7-10 15:59] min:63.8 [7-9 11:08] rng:1.4% 1Key:[7-9 9:30] last:[7-10 15:59]
+1d$:n<5
+updating pos: 7-11 9:21 pos:855 cost:65.46
+orderSubmitted empty
+****CUT** 7-11 10:10:20 1dP:86.0 2dp:98.0 px/Cost:1.0115 reqMargin:1.01 rng:0.011
+ordID1:240711018 tradID1:240711018 SELL px1:66.26 q1:513 cost:65.46
+sell part1: PHO 7-11 10:10 INVENTORY_CUTTER Created reqMargin:1.01 tgtSellPx:66.11 askPx:66.26
+ordID2:240711019 tradID2:240711019 SELL px2: 66.46 q2:171 sellFactor2:1.003 cost:65.46
+sellPart2: PHO 7-11 10:10 INVENTORY_CUTTER Created tgtSellPx:66.31
+ordID3:240711020 tradID3:240711020 SELL px3: 66.66 q3:171 sellFactor3:1.006 cost:65.46
+sellPart3: PHO 7-11 10:10 INVENTORY_CUTTER Created tgtSellPx:66.51
+2D$:n:794 max:65.9 [7-11 10:10] min:63.8 [7-9 11:08] rng:3.3% 1Key:[7-9 9:30] last:[7-11 10:10]
+1D$:n:14 max:65.9 [7-11 10:10] min:65.6 [7-11 9:30] rng:0.4% 1Key:[7-11 9:30] last:[7-11 10:10]
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:0 remaining:513 fillPx:0.0 lastFillPx:0.0
+7-11 10:10 *openOrder* status:Submitted orderID:240711019 LMT SELL Q:171 px:66.46
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711019 filled:0 remaining:171 fillPx:0.0 lastFillPx:0.0
+7-11 10:10 *openOrder* status:Submitted orderID:240711020 LMT SELL Q:171 px:66.66
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711020 filled:0 remaining:171 fillPx:0.0 lastFillPx:0.0
+updating pos: 7-11 10:10 pos:829 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:43 SLD execPx:66.26 shares:26 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:26 remaining:487 fillPx:66.26 lastFillPx:66.26
+updating pos: 7-11 10:10 pos:801 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:43 SLD execPx:66.26 shares:28 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:54 remaining:459 fillPx:66.26 lastFillPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:54 remaining:459 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.35 orderID: 240711018 realized pnl: 20.52
+2.*commission report* orderID:240711018 commission: 0.35 realized pnl: 20.52
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:54 remaining:459 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.0 orderID: 240711018 realized pnl: 22.47
+2.*commission report* orderID:240711018 commission: 0.0 realized pnl: 22.47
+updating pos: 7-11 10:10 pos:801 cost:65.46
+updating pos: 7-11 10:10 pos:801 cost:65.46
+updating pos: 7-11 10:10 pos:801 cost:65.46
+updating pos: 7-11 10:10 pos:801 cost:65.46
+updating pos: 7-11 10:10 pos:682 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:43 SLD execPx:66.26 shares:119 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:173 remaining:340 fillPx:66.26 lastFillPx:66.26
+updating pos: 7-11 10:10 pos:655 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:43 SLD execPx:66.26 shares:27 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:200 remaining:313 fillPx:66.26 lastFillPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:200 remaining:313 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.27 orderID: 240711018 realized pnl: 95.26
+2.*commission report* orderID:240711018 commission: 0.27 realized pnl: 95.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:200 remaining:313 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.1 orderID: 240711018 realized pnl: 21.58
+2.*commission report* orderID:240711018 commission: 0.1 realized pnl: 21.58
+updating pos: 7-11 10:10 pos:655 cost:65.46
+updating pos: 7-11 10:10 pos:655 cost:65.46
+updating pos: 7-11 10:10 pos:655 cost:65.46
+updating pos: 7-11 10:10 pos:655 cost:65.46
+updating pos: 7-11 10:10 pos:628 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:45 SLD execPx:66.26 shares:27 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:227 remaining:286 fillPx:66.26 lastFillPx:66.26
+updating pos: 7-11 10:10 pos:600 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:45 SLD execPx:66.26 shares:28 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:255 remaining:258 fillPx:66.26 lastFillPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:255 remaining:258 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.1 orderID: 240711018 realized pnl: 21.58
+2.*commission report* orderID:240711018 commission: 0.1 realized pnl: 21.58
+updating pos: 7-11 10:10 pos:600 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711018=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:10:45 sell order blocked by: openOrders:[orderID:240711018 LMT SELL Q:513 px:66.26, orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+updating pos: 7-11 10:10 pos:600 cost:65.46
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:255 remaining:258 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.1 orderID: 240711018 realized pnl: 22.38
+2.*commission report* orderID:240711018 commission: 0.1 realized pnl: 22.38
+updating pos: 7-11 10:10 pos:600 cost:65.46
+updating pos: 7-11 10:10 pos:600 cost:65.46
+updating pos: 7-11 10:10 pos:481 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:45 SLD execPx:66.26 shares:119 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:374 remaining:139 fillPx:66.26 lastFillPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:374 remaining:139 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.43 orderID: 240711018 realized pnl: 95.1
+2.*commission report* orderID:240711018 commission: 0.43 realized pnl: 95.1
+updating pos: 7-11 10:10 pos:481 cost:65.46
+updating pos: 7-11 10:10 pos:481 cost:65.46
+updating pos: 7-11 10:10 pos:381 cost:65.46
+7-11 10:10 *tradeReport* time: 2024-07-11T10:10:51 SLD execPx:66.26 shares:100 avgPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:474 remaining:39 fillPx:66.26 lastFillPx:66.26
+7-11 10:10 *openOrder* status:Submitted orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:10 *openOrder* all live orders [240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:10 *OrderStatus*:Submitted orderId:240711018 filled:474 remaining:39 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.36 orderID: 240711018 realized pnl: 79.92
+2.*commission report* orderID:240711018 commission: 0.36 realized pnl: 79.92
+updating pos: 7-11 10:10 pos:381 cost:65.46
+updating pos: 7-11 10:10 pos:381 cost:65.46
+*Periodic Run* 7-11 10:10
+last live feed time: 7-11 10:10 been:0mins. p:66.26 cost:65.5 p/cost:1.012
+p:66.26 rng:1.1% pos:381 delt:25k cost:65.5 lot:565 fillP:62.17 costTgt:0.97 fillP/cost:0.95 fillP/px:0.938
+7-11 10:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 10:10 *chek openOrders*: {240711018=orderID:240711018 LMT SELL Q:513 px:66.26, 240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 10:10 66.26 2dP:100.0 1dP:100.0
+2d$:n:794 max:65.9 [7-11 10:10] min:63.8 [7-9 11:08] rng:3.3% 1Key:[7-9 9:30] last:[7-11 10:10]
+1d$:n:14 max:65.9 [7-11 10:10] min:65.6 [7-11 9:30] rng:0.4% 1Key:[7-11 9:30] last:[7-11 10:10]
+updating pos: 7-11 10:11 pos:342 cost:65.46
+7-11 10:11 *tradeReport* time: 2024-07-11T10:11 SLD execPx:66.26 shares:39 avgPx:66.26
+7-11 10:11 *openOrder* status:Filled orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:11 *openOrder*:removing order.Status: Filled orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:11 *openOrder*:after removal.OpenOrders: {240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 10:11 *openOrder* all live orders [240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:11 *OrderStatus*:Filled orderId:240711018 filled:513 remaining:0 fillPx:66.26 lastFillPx:66.26
+7-11 10:11 *openOrder* status:Filled orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:11 *openOrder*:removing order.Status: Filled orderID:240711018 LMT SELL Q:513 px:66.26
+7-11 10:11 *openOrder*:after removal.OpenOrders: {240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 10:11 *openOrder* all live orders [240711019=orderID:240711019 LMT SELL Q:171 px:66.46, 240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 10:11 *OrderStatus*:Filled orderId:240711018 filled:513 remaining:0 fillPx:66.26 lastFillPx:66.26
+1.*commission report* orderID:240711018 commission:0.14 orderID: 240711018 realized pnl: 31.17
+2.*commission report* orderID:240711018 commission: 0.14 realized pnl: 31.17
+updating pos: 7-11 10:11 pos:342 cost:65.46
+updating pos: 7-11 10:11 pos:342 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:11:35 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:11:54 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:13:11 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:13:51 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+updating pos: 7-11 10:15 pos:342 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:16:09 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:17:17 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:18:29 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:18:39 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:18:40 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:20:06 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:20:23 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:21:40 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:21:42 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:21:51 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:24:32 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:24:57 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:25:00 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:25:00 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:25:04 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:25:40 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:26:25 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:27:00 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:31:21 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:31:46 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:32:03 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:32:38 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:34:07 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:36:03 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:36:53 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:36:55 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:37:35 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:37:46 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:39:52 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:43:24 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:46:42 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:46:50 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:48:59 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:49:51 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:52:07 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:54:37 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:57:17 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:58:15 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+10:58:41 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:00:59 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:03:32 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:03:33 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:03:40 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:05:58 sell order blocked by: openOrders:[orderID:240711019 LMT SELL Q:171 px:66.46, orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Submitted, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+updating pos: 7-11 11:08 pos:171 cost:65.46
+7-11 11:08 *tradeReport* time: 2024-07-11T11:08:20 SLD execPx:66.46 shares:171 avgPx:66.46
+7-11 11:08 *openOrder* status:Filled orderID:240711019 LMT SELL Q:171 px:66.46
+7-11 11:08 *openOrder*:removing order.Status: Filled orderID:240711019 LMT SELL Q:171 px:66.46
+7-11 11:08 *openOrder*:after removal.OpenOrders: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 11:08 *openOrder* all live orders [240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 11:08 *OrderStatus*:Filled orderId:240711019 filled:171 remaining:0 fillPx:66.46 lastFillPx:66.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:08:21 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 11:08 *openOrder* status:Filled orderID:240711019 LMT SELL Q:171 px:66.46
+7-11 11:08 *openOrder*:removing order.Status: Filled orderID:240711019 LMT SELL Q:171 px:66.46
+7-11 11:08 *openOrder*:after removal.OpenOrders: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 11:08 *openOrder* all live orders [240711020=orderID:240711020 LMT SELL Q:171 px:66.66]
+7-11 11:08 *OrderStatus*:Filled orderId:240711019 filled:171 remaining:0 fillPx:66.46 lastFillPx:66.46
+1.*commission report* orderID:240711019 commission:0.62 orderID: 240711019 realized pnl: 170.86
+2.*commission report* orderID:240711019 commission: 0.62 realized pnl: 170.86
+updating pos: 7-11 11:08 pos:171 cost:65.46
+updating pos: 7-11 11:08 pos:171 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:08:48 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 11:10
+last live feed time: 7-11 11:08 been:2mins. p:66.5 cost:65.5 p/cost:1.016
+p:66.5 rng:1.1% pos:171 delt:11k cost:65.5 lot:563 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.946
+7-11 11:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 11:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 11:10 66.5 2dP:100.0 1dP:100.0
+2d$:n:823 max:66.4 [7-11 11:08] min:63.8 [7-9 11:08] rng:4.1% 1Key:[7-9 9:30] last:[7-11 11:08]
+1d$:n:43 max:66.4 [7-11 11:08] min:65.6 [7-11 9:30] rng:1.2% 1Key:[7-11 9:30] last:[7-11 11:08]
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:12:35 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:12:59 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+updating pos: 7-11 11:13 pos:171 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:19:45 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:22:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:22:24 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:22:24 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:24:31 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:24:51 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:26:12 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:27:04 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:27:09 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:29:16 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:32:00 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:33:59 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:34:00 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:41:10 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:42:30 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:43:27 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:44:53 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:46:03 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+updating pos: 7-11 11:46 pos:171 cost:65.46
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:48:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:48:09 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:48:37 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:49:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:50:25 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:51:58 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:52:48 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:53:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:54:34 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:55:08 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+11:57:55 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:00:45 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:03:37 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:05:00 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:08:43 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:09:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:10:12 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 12:10
+last live feed time: 7-11 12:10 been:0mins. p:66.35 cost:65.5 p/cost:1.014
+p:66.35 rng:1.1% pos:171 delt:11k cost:65.5 lot:565 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.948
+7-11 12:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 12:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 12:10 66.35 2dP:94.0 1dP:83.0
+2d$:n:853 max:66.5 [7-11 11:46] min:63.8 [7-9 11:08] rng:4.2% 1Key:[7-9 9:30] last:[7-11 12:10]
+1d$:n:73 max:66.5 [7-11 11:46] min:65.6 [7-11 9:30] rng:1.3% 1Key:[7-11 9:30] last:[7-11 12:10]
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:14:37 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:15:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:19:04 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:22:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:22:56 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:38:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:38:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:39:48 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:42:42 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:44:07 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:46:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:51:30 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:54:37 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:54:43 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+12:55:41 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:01:21 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:03:14 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:04:36 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:05:11 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:06:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 13:10
+last live feed time: 7-11 13:06 been:4mins. p:66.24 cost:65.5 p/cost:1.012
+p:66.24 rng:1.1% pos:171 delt:11k cost:65.5 lot:566 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.95
+7-11 13:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 13:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 13:10 66.24 2dP:90.0 1dP:70.0
+2d$:n:870 max:66.5 [7-11 11:46] min:63.8 [7-9 11:08] rng:4.2% 1Key:[7-9 9:30] last:[7-11 13:06]
+1d$:n:90 max:66.5 [7-11 11:46] min:65.6 [7-11 9:30] rng:1.3% 1Key:[7-11 9:30] last:[7-11 13:06]
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:11:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:30:15 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:33:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:34:56 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:35:29 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:36:42 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:37:39 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:43:07 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:57:46 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+13:58:40 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:07:57 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:09:18 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:09:53 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 14:10
+last live feed time: 7-11 14:09 been:1mins. p:66.39 cost:65.5 p/cost:1.014
+p:66.39 rng:1.1% pos:171 delt:11k cost:65.5 lot:564 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.947
+7-11 14:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 14:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 14:10 66.39 2dP:96.0 1dP:87.0
+2d$:n:882 max:66.5 [7-11 11:46] min:63.8 [7-9 11:08] rng:4.2% 1Key:[7-9 9:30] last:[7-11 14:09]
+1d$:n:102 max:66.5 [7-11 11:46] min:65.6 [7-11 9:30] rng:1.3% 1Key:[7-11 9:30] last:[7-11 14:09]
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:13:29 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:15:07 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:23:11 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:24:41 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:26:31 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:27:04 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:31:27 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:35:36 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:35:54 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:39:41 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:42:31 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:44:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:44:06 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:49:55 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:52:03 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:56:45 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:56:46 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+14:57:34 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:01:48 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:02:14 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:07:08 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:07:10 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:09:54 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 15:10
+last live feed time: 7-11 15:09 been:0mins. p:66.25 cost:65.5 p/cost:1.012
+p:66.25 rng:1.1% pos:171 delt:11k cost:65.5 lot:566 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.949
+7-11 15:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 15:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 15:10 66.25 2dP:91.0 1dP:71.0
+2d$:n:901 max:66.5 [7-11 11:46] min:63.8 [7-9 11:08] rng:4.2% 1Key:[7-9 9:30] last:[7-11 15:09]
+1d$:n:121 max:66.5 [7-11 11:46] min:65.6 [7-11 9:30] rng:1.3% 1Key:[7-11 9:30] last:[7-11 15:09]
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:12:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:16:22 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:17:38 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:21:08 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:21:08 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:24:21 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:26:45 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:27:09 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:29:05 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:29:36 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:32:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:32:27 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:34:14 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:34:46 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:35:50 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:38:29 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:39:47 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:40:31 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:41:11 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:42:03 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:42:41 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:43:35 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:47:20 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:50:37 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:51:07 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:52:13 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:52:13 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:52:17 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:52:52 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:53:16 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:53:52 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:54:07 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:54:09 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:54:34 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:55:43 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:56:01 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:56:23 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:57:00 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:57:56 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:58:29 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:58:57 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:59:48 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:59:50 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240711018, 240711019, 240711020]}
+15:59:57 sell order blocked by: openOrders:[orderID:240711020 LMT SELL Q:171 px:66.66] 
+ orderSubmitted:{240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+*Periodic Run* 7-11 16:10
+last live feed time: 7-11 16:00 been:10mins. p:66.24 cost:65.5 p/cost:1.012
+p:66.24 rng:1.1% pos:171 delt:11k cost:65.5 lot:566 fillP:62.9 costTgt:0.97 fillP/cost:0.961 fillP/px:0.95
+7-11 16:10 *chek orderStatus {240711018=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711019=PHO 7-11 10:10 INVENTORY_CUTTER Filled, 240711020=PHO 7-11 10:10 INVENTORY_CUTTER Submitted}
+7-11 16:10 *chek openOrders*: {240711020=orderID:240711020 LMT SELL Q:171 px:66.66}
+7-11 16:10 66.24 2dP:90.0 1dP:70.0
+2d$:n:930 max:66.5 [7-11 11:46] min:63.8 [7-9 11:08] rng:4.2% 1Key:[7-9 9:30] last:[7-11 16:00]
+1d$:n:150 max:66.5 [7-11 11:46] min:65.6 [7-11 9:30] rng:1.3% 1Key:[7-11 9:30] last:[7-11 16:00]
