@@ -742,8 +742,12 @@ public class TradingUtility {
     }
 
     public static void outputToOrders(String symbol, Object... cs) {
-        outputToFile(str(cs), ordersOutput);
-        outputToSymbol(symbol, cs);
+        if (!symbol.equalsIgnoreCase("")) {
+            outputToFile(str(symbol, cs), ordersOutput);
+            outputToSymbol(symbol, cs);
+        } else {
+            outputToSymbol(str(cs), ordersOutput);
+        }
     }
 
     public static void outputToSymbol(String symbol, Object... cs) {
