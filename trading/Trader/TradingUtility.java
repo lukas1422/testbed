@@ -743,10 +743,10 @@ public class TradingUtility {
 
     public static void outputToOrders(String symbol, Object... cs) {
         if (!symbol.equalsIgnoreCase("")) {
-            outputToFile(str(symbol, cs), ordersOutput);
+            outputToFile(symbol + " " + str(cs), ordersOutput);
             outputToSymbol(symbol, cs);
         } else {
-            outputToSymbol(str(cs), ordersOutput);
+            outputToFile(str(cs), ordersOutput);
         }
     }
 

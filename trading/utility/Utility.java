@@ -218,7 +218,8 @@ public class Utility {
 
     @SuppressWarnings("SpellCheckingInspection")
     private static String getStrGen(CharSequence delim, Object... cs) {
-        return Stream.of(cs).map(e -> e == null ? " NULL " : e.toString()).collect(Collectors.joining(delim));
+        return Stream.of(cs).map(e -> e == null ? " NULL "
+                : e.toString()).collect(Collectors.joining(delim));
     }
 
     public static String getStrCheckNull(Object... cs) {
