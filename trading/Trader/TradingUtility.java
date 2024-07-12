@@ -741,6 +741,11 @@ public class TradingUtility {
         outputDetailedGen(str(cs), connectionOutput);
     }
 
+    public static void outputToOrders(String symbol, Object... cs) {
+        outputToFile(str(cs), ordersOutput);
+        outputToSymbol(symbol, cs);
+    }
+
     public static void outputToSymbol(String symbol, Object... cs) {
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol));
