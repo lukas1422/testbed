@@ -419,8 +419,10 @@ class ProfitTargetTrader implements LiveHandler,
                             , "orderSubmitted:" + orderSubmitted.get(s));
                     return;
                 }
-                outputToSymbol(s, "****CUT**", t.format(MdHmmss),
-                        "px" + px, "1dP:" + oneDayP, "2dp:" + twoDayP,
+                outputToSymbol(s, "******************CUT**************************");
+                outputToSymbol(s, "****CUT****", t.format(MdHmmss),
+                        "1dP:" + oneDayP, "2dp:" + twoDayP, "px" + px,
+                        "cost:" + costMap.getOrDefault(s, 0.0),
                         "px/Cost:" + round4(pOverCost),
                         "reqMargin:" + round4(tgtProfitMargin(s)),
                         "rng:" + round4(rng.getOrDefault(s, 0.0)));
@@ -660,9 +662,9 @@ class ProfitTargetTrader implements LiveHandler,
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
             outputToOrders(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
                     "px2:", r(offerPrice * sellFactor(s, 2)), "q2:" + o2.totalQuantity().longValue(),
-                    "sellFactor2:" + sellFactor(s, 2), "cost:" + round2(cost));
+                    "sellFactor2:" + round4(sellFactor(s, 2)), "cost:" + round2(cost));
             outputToOrders(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()),
-                    "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * sellFactor(s, 2)));
+                    "tgtSellPx2:" + round2(offerPrice * sellFactor(s, 2)));
 
             Decimal sellQ3 = Decimal.get(pos.longValue() - sellQ1.longValue() - sellQ2.longValue());
 
@@ -672,9 +674,9 @@ class ProfitTargetTrader implements LiveHandler,
             placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
             outputToOrders(s, "ordID3:" + o3.orderId(), "tradID3:" + id3, o3.action(),
                     "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
-                    "sellFactor3:" + sellFactor(s, 3), "cost:" + round2(cost));
+                    "sellFactor3:" + round4(sellFactor(s, 3)), "cost:" + round2(cost));
             outputToOrders(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()),
-                    "tgtSellPx:" + round2(cost * tgtProfitMargin(s) * sellFactor(s, 3)));
+                    "tgtSellPx3:" + round2(offerPrice * sellFactor(s, 3)));
         }
 
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
