@@ -832,7 +832,7 @@ class ProfitTargetTrader implements LiveHandler,
                     .forEach(e2 -> {
                         if (!orderIDPnlMap.containsKey(e2.getKey())) {
                             orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
-                            outputToPnl(e2.getKey(), commissionReport.realizedPNL());
+                            outputToPnl("1:", e2.getKey(), "pnl:", commissionReport.realizedPNL());
                         }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
@@ -847,7 +847,7 @@ class ProfitTargetTrader implements LiveHandler,
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                     if (!orderIDPnlMap2.containsKey(value1.getOrder().orderId())) {
                         orderIDPnlMap2.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
-                        outputToPnl(value1.getOrder().orderId(), commissionReport.realizedPNL());
+                        outputToPnl("2:", value1.getOrder().orderId(), "pnl:", commissionReport.realizedPNL());
                     }
                     outputToSymbol(s, "2.*commission report* orderID:" + value1.getOrder().orderId(),
                             "commission:", round2(commissionReport.commission()),

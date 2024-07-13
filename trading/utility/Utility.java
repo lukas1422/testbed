@@ -213,7 +213,9 @@ public class Utility {
     }
 
     public static String str(Object... cs) {
-        return getStrGen(" ", cs);
+        return Stream.of(cs).map(e -> e == null ? " NULL "
+                : e.toString()).collect(Collectors.joining(" "));
+//        return getStrGen(" ", cs);
     }
 
     @SuppressWarnings("SpellCheckingInspection")
