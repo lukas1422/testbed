@@ -750,6 +750,10 @@ public class TradingUtility {
         }
     }
 
+    public static void outputToPnl(Object... cs) {
+        outputToFile(str(cs), pnlOutput);
+    }
+
     public static void outputToSymbol(String symbol, Object... cs) {
         if (!symbol.isEmpty()) {
             outputDetailedGen(str(cs), new File(RELATIVEPATH + symbol));

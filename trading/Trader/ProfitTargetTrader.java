@@ -66,6 +66,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Double> oneDayPctMap = new ConcurrentHashMap<>();
     private static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
     private static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
+    private static Map<Integer, Double> orderIDPnlMap = new ConcurrentHashMap<>();
+    private static Map<Integer, Double> orderIDPnlMap2 = new ConcurrentHashMap<>();
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
@@ -89,6 +91,7 @@ class ProfitTargetTrader implements LiveHandler,
         outputToGeneral("*****START***** HKT:", hkTime(), "EST:", usDateTime(),
                 "MASTERID:", MASTERID, "\n", "mkt start time today:", TODAY930);
         outputToOrders("", "*****START***** HKT:", hkTime(), "EST:", usDateTime());
+        outputToPnl("*****START***** HKT:", hkTime(), "EST:", usDateTime());
         pr("costTgt", Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
 
@@ -827,6 +830,10 @@ class ProfitTargetTrader implements LiveHandler,
                             .getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> {
+                        if (!orderIDPnlMap.containsKey(e2.getKey())) {
+                            orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
+                            outputToPnl(e2.getKey(), commissionReport.realizedPNL());
+                        }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
                                 e2.getValue().getOrder().action() == SELL ?
@@ -838,6 +845,10 @@ class ProfitTargetTrader implements LiveHandler,
 
             orderSubmitted.get(s).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
+                    if (!orderIDPnlMap2.containsKey(value1.getOrder().orderId())) {
+                        orderIDPnlMap2.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
+                        outputToPnl(value1.getOrder().orderId(), commissionReport.realizedPNL());
+                    }
                     outputToSymbol(s, "2.*commission report* orderID:" + value1.getOrder().orderId(),
                             "commission:", round2(commissionReport.commission()),
                             value1.getOrder().action() == SELL ?

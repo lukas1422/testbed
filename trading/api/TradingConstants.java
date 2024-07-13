@@ -25,6 +25,7 @@ public final class TradingConstants {
 
     public static File fillsOutput = new File(RELATIVEPATH + "fills");
     public static File ordersOutput = new File(RELATIVEPATH + "orders");
+    public static File pnlOutput = new File(RELATIVEPATH + "pnl");
     public static File connectionOutput = new File(RELATIVEPATH + "connection");
 //    public static File miscOutput = new File(RELATIVEPATH + "misc");
 
