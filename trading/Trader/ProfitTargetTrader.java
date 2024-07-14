@@ -348,11 +348,13 @@ class ProfitTargetTrader implements LiveHandler,
 //    }
 
     private static double sellFactor(String symb, int i) {
-        return maxs(1 + 0.003 * (i - 1), 1 + (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return maxs(1 + 0.003 * (i - 1) * (i - 1),
+                1 + (i - 1) * (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
     }
 
     private static double buyFactor(String symb, int i) {
-        return mins(1 - 0.003 * (i - 1), 1 - (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return mins(1 - 0.003 * (i - 1) * (i - 1),
+                1 - (i - 1) * (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
 
     }
 
@@ -618,7 +620,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
 //        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToOrders(s, "ordID1:" + o1.orderId(), "tradID1:" + id1, o1.action(),
+        outputToOrders(s, "order ID1:" + o1.orderId(), "trade ID1:" + id1, o1.action(),
                 "px1:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
         //second order, reduce cost by a percentage of range
@@ -629,7 +631,7 @@ class ProfitTargetTrader implements LiveHandler,
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
         orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-        outputToOrders(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
+        outputToOrders(s, "order ID2:" + o2.orderId(), "trade ID2:" + id2, o2.action(),
                 "px2:" + bidPx2, "lot2:" + size2, "buyfactor2:" + buyFactor(s, 2),
                 orderSubmitted.get(s).get(o2.orderId()));
 
@@ -641,7 +643,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o3.orderId(),
                 new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
-        outputToOrders(s, "ordID3:" + o3.orderId(), "tradID3:" + id3, o3.action(),
+        outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
                 "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + buyFactor(s, 3),
                 orderSubmitted.get(s).get(o3.orderId()));
 
@@ -695,7 +697,6 @@ class ProfitTargetTrader implements LiveHandler,
             outputToOrders(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()));
 
             Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
-
 
             if (sellQ3.longValue() > 0) {
                 int id3 = tradID.incrementAndGet();
