@@ -660,6 +660,7 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         Decimal tradablePos = baseDelta == 0.0 ? symbPos.get(s) : Decimal.get(floor(currentDelta - baseDelta) / px);
+        double tradableDelta = currentDelta - baseDelta;
         outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + tradablePos.longValue());
 
         int id1 = tradID.incrementAndGet();
@@ -667,7 +668,7 @@ class ProfitTargetTrader implements LiveHandler,
         double offerPrice = r(maxs(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
 
-        Decimal sellQ1 = tradablePos.longValue() > 20 ?
+        Decimal sellQ1 = tradableDelta > 3000.0 ?
                 Decimal.get(round(tradablePos.longValue() / 3.0)) : tradablePos;
 
         Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
@@ -680,28 +681,32 @@ class ProfitTargetTrader implements LiveHandler,
                 "targetPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
 
-        if (tradablePos.longValue() > 20) {
+//        if (tradablePos.longValue() > 20) {
+        if (tradableDelta > 3000.0) {
             Decimal sellQ2 = Decimal.get(round(tradablePos.longValue() / 3.0));
 
             int id2 = tradID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(offerPrice * sellFactor(s, 2)), sellQ2, DAY);
             orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-            outputToOrders(s, "ordID2:" + o2.orderId(), "tradID2:" + id2, o2.action(),
+            outputToOrders(s, "order ID2:" + o2.orderId(), "trade ID2:" + id2, o2.action(),
                     "px2:", r(offerPrice * sellFactor(s, 2)), "q2:" + o2.totalQuantity().longValue(),
                     "sellFactor2:" + round4(sellFactor(s, 2)));
             outputToOrders(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()));
 
             Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
 
-            int id3 = tradID.incrementAndGet();
-            Order o3 = placeOfferLimitTIF(id3, r(offerPrice * sellFactor(s, 3)), sellQ3, DAY);
-            orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_CUTTER));
-            placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
-            outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
-                    "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
-                    "sellFactor3:" + round4(sellFactor(s, 3)));
-            outputToOrders(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
+
+            if (sellQ3.longValue() > 0) {
+                int id3 = tradID.incrementAndGet();
+                Order o3 = placeOfferLimitTIF(id3, r(offerPrice * sellFactor(s, 3)), sellQ3, DAY);
+                orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_CUTTER));
+                placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
+                outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
+                        "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
+                        "sellFactor3:" + round4(sellFactor(s, 3)));
+                outputToOrders(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
+            }
         }
 
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
