@@ -29,6 +29,7 @@ import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
 import static java.lang.Double.MAX_VALUE;
+import static java.lang.Math.floor;
 import static java.lang.Math.round;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import static java.util.stream.Collectors.*;
@@ -80,6 +81,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     private static final int MASTERID = getSessionMasterTradeID();
     private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
+    private static Map<String, Double> baseDeltaMap = new HashMap<>();
 
     private static final int GATEWAY_PORT = 4001;
     private static final int TWS_PORT = 7496;
@@ -101,6 +103,15 @@ class ProfitTargetTrader implements LiveHandler,
                     pr("a[0]", a[0]);
                     String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
                     registerContract(generateUSStockContract(stockName));
+                });
+
+        Files.lines(Paths.get(RELATIVEPATH + "baseDelta")).map(l -> l.split(" "))
+                .forEach(a -> {
+                    //pr("whole line", a);
+                    pr("a[0]", a[0]);
+                    String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
+                    baseDeltaMap.put(stockName, Double.parseDouble(a[1]));
+                    pr(baseDeltaMap);
                 });
     }
 
@@ -369,6 +380,9 @@ class ProfitTargetTrader implements LiveHandler,
 //                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
 //            return;
 //        }
+        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
+        double currentDelta = symbDelta.getOrDefault(s, 0.0);
+        pr("stock basedelta currentdelta", s, baseDelta, currentDelta);
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -392,11 +406,12 @@ class ProfitTargetTrader implements LiveHandler,
                 return;
             }
 
-            if (pos.isZero()) {
-                outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
-                outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
-                inventoryAdder(ct, px, t, getLot(s, px));
-            } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
+//            if (pos.isZero()) {
+            outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
+            outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
+            inventoryAdder(ct, px, t, getLot(s, px));
+
+            if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
                     outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
@@ -410,13 +425,12 @@ class ProfitTargetTrader implements LiveHandler,
             }
         }
 
-        if (pos.longValue() > 0) {
+        if (pos.longValue() > 0 && currentDelta > baseDelta) {
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
                     outputToSymbol(s, t.format(Hmmss), "sell order blocked by: openOrders:" +
-                                    openOrders.get(s).values(), "\n"
-                            , "orderSubmitted:" + orderSubmitted.get(s));
+                            openOrders.get(s).values(), "\n", "orderSubmitted:" + orderSubmitted.get(s));
                     return;
                 }
                 outputToSymbol(s, "******************CUT**************************");
@@ -634,14 +648,25 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
-        Decimal pos = symbPos.get(s);
+//        Decimal pos = symbPos.get(s);
+        double currentDelta = symbDelta.getOrDefault(s, 0.0);
+        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
+        if (currentDelta == 0.0 || symbPos.getOrDefault(s, Decimal.ZERO).longValue() == 0.0) {
+            return;
+        }
+
+        if (currentDelta < baseDelta) {
+            return;
+        }
+
+        Decimal tradablePos = baseDelta == 0.0 ? symbPos.get(s) : Decimal.get(floor(currentDelta - baseDelta) / px);
 
         int id1 = tradID.incrementAndGet();
         double cost = costMap.getOrDefault(s, MAX_VALUE);
         double offerPrice = r(maxs(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
 
-        Decimal sellQ1 = pos.longValue() > 20 ? Decimal.get(round(pos.longValue() / 3.0)) : pos;
+        Decimal sellQ1 = tradablePos.longValue() > 20 ? Decimal.get(round(tradablePos.longValue() / 3.0)) : tradablePos;
 
         Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
@@ -653,8 +678,8 @@ class ProfitTargetTrader implements LiveHandler,
                 "tgtSellPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
 
-        if (pos.longValue() > 20) {
-            Decimal sellQ2 = Decimal.get(round(pos.longValue() / 3.0));
+        if (tradablePos.longValue() > 20) {
+            Decimal sellQ2 = Decimal.get(round(tradablePos.longValue() / 3.0));
 
             int id2 = tradID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(offerPrice * sellFactor(s, 2)), sellQ2, DAY);
@@ -666,7 +691,7 @@ class ProfitTargetTrader implements LiveHandler,
             outputToOrders(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()),
                     "tgtSellPx2:" + round2(offerPrice * sellFactor(s, 2)));
 
-            Decimal sellQ3 = Decimal.get(pos.longValue() - sellQ1.longValue() - sellQ2.longValue());
+            Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
 
             int id3 = tradID.incrementAndGet();
             Order o3 = placeOfferLimitTIF(id3, r(offerPrice * sellFactor(s, 3)), sellQ3, DAY);
