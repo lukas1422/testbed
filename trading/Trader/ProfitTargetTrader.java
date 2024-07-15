@@ -640,7 +640,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
         outputToOrders(s, "order ID2:" + o2.orderId(), "trade ID2:" + id2, o2.action(),
-                "px2:" + bidPx2, "lot2:" + size2, "buyfactor2:" + buyFactor(s, 2),
+                "px2:" + bidPx2, "lot2:" + size2, "buyfactor2:" + round4(buyFactor(s, 2)),
                 orderSubmitted.get(s).get(o2.orderId()));
 
         //third order, lower buy price further
@@ -652,7 +652,7 @@ class ProfitTargetTrader implements LiveHandler,
                 new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
         outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
-                "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + buyFactor(s, 3),
+                "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + round4(buyFactor(s, 3)),
                 orderSubmitted.get(s).get(o3.orderId()));
 
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));

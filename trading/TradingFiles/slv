@@ -23934,3 +23934,276 @@ p:28.15 rng:1.8% pos:12 delt:0k cost:27.9 lot:1332 fillP:27.05 costTgt:0.97 fill
 1d$:n:353 max:28.3 [7-12 12:29] min:28.0 [7-12 9:30] rng:1.2% 1Key:[7-12 9:30] last:[7-12 15:40]
 *******************************************
 *STARTS* 7-13 21:54
+*******************************************
+*STARTS* 7-15 8:08
+updating pos: 7-15 8:08 pos:12 cost:27.89
+POS:12 COST:27.9 DELT:0k
+7-15 8:08 rng:1.8% costTgt:0.97
+7-15 8:08 tgtMargin:1.0153 tgtPrice:28.32
+ytdReturn:29.11%
+*Periodic Run* 7-15 8:08
+last live feed time: 7-15 8:08 been:0mins. p:28.08 cost:27.9 p/cost:1.007
+p:28.08 rng:1.8% pos:12 delt:0k cost:27.9 lot:1335 fillP:27.05 costTgt:0.97 fillP/cost:0.97 fillP/px:0.963
+7-15 8:08 28.08 2dP:12.0 1dP:100.0
+2d$:n:781 max:28.9 [7-11 11:19] min:28.0 [7-12 9:30] rng:3.4% 1Key:[7-11 9:30] last:[7-15 8:08]
+1d$:n<5
+*Periodic Run* 7-15 9:08
+last live feed time: 7-15 8:42 been:26mins. p:27.99 cost:27.9 p/cost:1.004
+p:27.99 rng:1.8% pos:12 delt:0k cost:27.9 lot:1339 fillP:27.05 costTgt:0.97 fillP/cost:0.97 fillP/px:0.966
+7-15 9:08 27.99 2dP:4.0 1dP:21.0
+2d$:n:811 max:28.9 [7-11 11:19] min:28.0 [7-12 9:30] rng:3.4% 1Key:[7-11 9:30] last:[7-15 8:42]
+1d$:n:31 max:28.1 [7-15 8:13] min:28.0 [7-15 8:40] rng:0.5% 1Key:[7-15 8:08] last:[7-15 8:42]
+*Periodic Run* 7-15 10:08
+last live feed time: 7-15 8:42 been:86mins. p:27.99 cost:27.9 p/cost:1.004
+p:27.99 rng:1.8% pos:12 delt:0k cost:27.9 lot:1339 fillP:27.05 costTgt:0.97 fillP/cost:0.97 fillP/px:0.966
+7-15 10:08 27.99 2dP:4.0 1dP:21.0
+2d$:n:811 max:28.9 [7-11 11:19] min:28.0 [7-12 9:30] rng:3.4% 1Key:[7-11 9:30] last:[7-15 8:42]
+1d$:n:31 max:28.1 [7-15 8:13] min:28.0 [7-15 8:40] rng:0.5% 1Key:[7-15 8:08] last:[7-15 8:42]
+*******************************************
+*STARTS* 7-15 10:34
+updating pos: 7-15 10:34 pos:12 cost:27.89
+POS:12 COST:27.9 DELT:0k
+7-15 10:34 rng:1.8% costTgt:0.97
+7-15 10:34 tgtMargin:1.0153 tgtPrice:28.32
+ytdReturn:29.43%
+*Periodic Run* 7-15 10:34
+10:34:44.392346 no live feed
+7-15 10:34 0.0 2dP:70.0 1dP:95.0
+2d$:n:455 max:28.3 [7-12 12:29] min:27.9 [7-15 9:41] rng:1.4% 1Key:[7-12 9:30] last:[7-15 10:34]
+1d$:n:65 max:28.2 [7-15 10:31] min:27.9 [7-15 9:41] rng:1.0% 1Key:[7-15 9:30] last:[7-15 10:34]
+******************CUT**************************
+****CUT**** 7-15 10:58:01 1dP:100.0 2dp:100.0 px28.32 cost:27.8911 px/Cost:1.0154 reqMargin:1.0153 rng:0.018
+pos:12 tradable Pos:12
+order ID1:240715076 trade ID1:240715076 SELL px1:28.32 q1:12
+sell part1: SLV 7-15 10:58 INVENTORY_CUTTER Created reqMargin:1.01529 targetPx:28.32 askPx:28.32
+2D$:n:479 max:28.3 [7-15 10:58] min:27.9 [7-15 9:41] rng:1.4% 1Key:[7-12 9:30] last:[7-15 10:58]
+1D$:n:89 max:28.3 [7-15 10:58] min:27.9 [7-15 9:41] rng:1.3% 1Key:[7-15 9:30] last:[7-15 10:58]
+7-15 10:58 *openOrder* status:Submitted orderID:240715076 LMT SELL Q:12 px:28.32
+7-15 10:58 *openOrder* all live orders [240715076=orderID:240715076 LMT SELL Q:12 px:28.32]
+7-15 10:58 *OrderStatus*:Submitted orderId:240715076 filled:0 remaining:12 fillPx:0.0 lastFillPx:0.0
+no blocking sell orders: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Submitted}
+no blocking sell orders: nonFinished orders: [240715076=SLV 7-15 10:58 INVENTORY_CUTTER Submitted]
+groupby buysell: {SELL=[240715076]}
+10:58:09 sell order blocked by: openOrders:[orderID:240715076 LMT SELL Q:12 px:28.32] 
+ orderSubmitted:{240715076=SLV 7-15 10:58 INVENTORY_CUTTER Submitted}
+updating pos: 7-15 10:58 pos:0 cost:0.0
+7-15 10:58 *tradeReport* time: 2024-07-15T10:58:09 SLD execPx:28.32 shares:12 avgPx:28.32
+7-15 10:58 *openOrder* status:Filled orderID:240715076 LMT SELL Q:12 px:28.32
+7-15 10:58 *openOrder*:removing order.Status: Filled orderID:240715076 LMT SELL Q:12 px:28.32
+7-15 10:58 *openOrder*:after removal.OpenOrders: {}
+7-15 10:58 *OrderStatus*:Filled orderId:240715076 filled:12 remaining:0 fillPx:28.32 lastFillPx:28.32
+7-15 10:58 *openOrder* status:Filled orderID:240715076 LMT SELL Q:12 px:28.32
+7-15 10:58 *openOrder*:removing order.Status: Filled orderID:240715076 LMT SELL Q:12 px:28.32
+7-15 10:58 *openOrder*:after removal.OpenOrders: {}
+7-15 10:58 *OrderStatus*:Filled orderId:240715076 filled:12 remaining:0 fillPx:28.32 lastFillPx:28.32
+1.*commission report* orderID:240715076 commission:0.34 orderID: 240715076 realized pnl: 4.8
+2.*commission report* orderID:240715076 commission: 0.34 realized pnl: 4.8
+updating pos: 7-15 10:58 pos:0 cost:0.0
+updating pos: 7-15 10:58 pos:0 cost:0.0
+updating pos: 7-15 11:03 pos:0 cost:0.0
+*Periodic Run* 7-15 11:34
+last live feed time: 7-15 11:34 been:0mins. p:28.25 
+7-15 11:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled}
+7-15 11:34 28.25 2dP:70.0 1dP:70.0
+2d$:n:515 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 11:34]
+1d$:n:125 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 11:34]
+*Periodic Run* 7-15 12:34
+last live feed time: 7-15 12:33 been:0mins. p:28.26 
+7-15 12:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled}
+7-15 12:34 28.26 2dP:72.0 1dP:72.0
+2d$:n:573 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 12:33]
+1d$:n:183 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 12:33]
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled}
+all orders finished {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled}
+*1Buy* 7-15 13:34:35 1dp:9.0 2dp:9.0
+cash remaining: 274864.83
+order ID1:240715078 trade ID1:240715078 BUY px1:27.97 lot1:447 SLV 7-15 13:34 INVENTORY_ADDER Created
+order ID2:240715079 trade ID2:240715079 BUY px2:27.8 lot2:447 buyfactor2:0.994003058696523 SLV 7-15 13:34 INVENTORY_ADDER Created
+order ID3:240715080 trade ID3:240715080 BUY px3:27.3 lot3:447 buyfactor3:0.976012234786092 SLV 7-15 13:34 INVENTORY_ADDER Created
+2D$:n:634 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 13:34]
+1D$:n:244 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 13:34]
+7-15 13:34 *openOrder* status:PreSubmitted orderID:240715079 LMT BUY Q:447 px:27.8
+7-15 13:34 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8]
+7-15 13:34 *OrderStatus*:PreSubmitted orderId:240715079 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 13:34 *openOrder* status:PreSubmitted orderID:240715080 LMT BUY Q:447 px:27.3
+7-15 13:34 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:34 *OrderStatus*:PreSubmitted orderId:240715080 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 13:34 *openOrder* status:Submitted orderID:240715078 LMT BUY Q:447 px:27.97
+7-15 13:34 *openOrder* all live orders [240715078=orderID:240715078 LMT BUY Q:447 px:27.97, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:34 *OrderStatus*:Submitted orderId:240715078 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 13:34 *openOrder* status:Submitted orderID:240715079 LMT BUY Q:447 px:27.8
+7-15 13:34 *openOrder* all live orders [240715078=orderID:240715078 LMT BUY Q:447 px:27.97, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:34 *OrderStatus*:Submitted orderId:240715079 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 13:34 *openOrder* status:Submitted orderID:240715080 LMT BUY Q:447 px:27.3
+7-15 13:34 *openOrder* all live orders [240715078=orderID:240715078 LMT BUY Q:447 px:27.97, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:34 *OrderStatus*:Submitted orderId:240715080 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+*Periodic Run* 7-15 13:34
+last live feed time: 7-15 13:34 been:0mins. p:27.98 
+7-15 13:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 13:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715078=orderID:240715078 LMT BUY Q:447 px:27.97}
+7-15 13:34 27.98 2dP:11.0 1dP:11.0
+2d$:n:634 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 13:34]
+1d$:n:244 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 13:34]
+updating pos: 7-15 13:36 pos:447 cost:27.97
+7-15 13:36 *tradeReport* time: 2024-07-15T13:36:09 BOT execPx:27.97 shares:447 avgPx:27.97
+7-15 13:36 *openOrder* status:Filled orderID:240715078 LMT BUY Q:447 px:27.97
+7-15 13:36 *openOrder*:removing order.Status: Filled orderID:240715078 LMT BUY Q:447 px:27.97
+7-15 13:36 *openOrder*:after removal.OpenOrders: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 13:36 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:36 *OrderStatus*:Filled orderId:240715078 filled:447 remaining:0 fillPx:27.97 lastFillPx:27.97
+7-15 13:36 *openOrder* status:Filled orderID:240715078 LMT BUY Q:447 px:27.97
+7-15 13:36 *openOrder*:removing order.Status: Filled orderID:240715078 LMT BUY Q:447 px:27.97
+7-15 13:36 *openOrder*:after removal.OpenOrders: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 13:36 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 13:36 *OrderStatus*:Filled orderId:240715078 filled:447 remaining:0 fillPx:27.97 lastFillPx:27.97
+1.*commission report* orderID:240715078 commission:1.03 
+2.*commission report* orderID:240715078 commission: 1.03 
+updating pos: 7-15 13:36 pos:447 cost:27.97
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+13:38:00 buy order blocked by:[orderID:240715080 LMT BUY Q:447 px:27.3, orderID:240715079 LMT BUY Q:447 px:27.8] orderStatus:{240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+13:38:00 buy order blocked by:[orderID:240715080 LMT BUY Q:447 px:27.3, orderID:240715079 LMT BUY Q:447 px:27.8] orderStatus:{240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+13:38:03 buy order blocked by:[orderID:240715080 LMT BUY Q:447 px:27.3, orderID:240715079 LMT BUY Q:447 px:27.8] orderStatus:{240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+updating pos: 7-15 13:41 pos:447 cost:27.97
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+no blocking buy orders orderSubmitted nonempty: {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: All submitted orders {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+no blocking buy orders: Active orders: [240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted]
+active orders grouped by buysell: {SELL=[240715076], BUY=[240715078, 240715079, 240715080]}
+*Periodic Run* 7-15 14:34
+last live feed time: 7-15 14:34 been:0mins. p:28.03 cost:28.0 p/cost:1.002
+p:28.03 rng:1.8% pos:447 delt:13k cost:28.0 lot:1337 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.958
+7-15 14:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 14:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 14:34 28.03 2dP:22.0 1dP:22.0
+2d$:n:690 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 14:34]
+1d$:n:300 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 14:34]
+*Periodic Run* 7-15 15:34
+last live feed time: 7-15 15:34 been:0mins. p:28.0 cost:28.0 p/cost:1.001
+p:28.0 rng:1.8% pos:447 delt:13k cost:28.0 lot:1339 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.959
+7-15 15:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 15:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 15:34 28.0 2dP:16.0 1dP:15.0
+2d$:n:744 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 15:34]
+1d$:n:354 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 15:34]
+*Periodic Run* 7-15 16:34
+last live feed time: 7-15 16:34 been:0mins. p:28.0 cost:28.0 p/cost:1.001
+p:28.0 rng:1.8% pos:447 delt:13k cost:28.0 lot:1339 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.959
+7-15 16:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 16:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 16:34 28.0 2dP:16.0 1dP:15.0
+2d$:n:779 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 16:34]
+1d$:n:389 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 16:34]
+*Periodic Run* 7-15 17:34
+last live feed time: 7-15 17:26 been:8mins. p:28.01 cost:28.0 p/cost:1.001
+p:28.01 rng:1.8% pos:447 delt:13k cost:28.0 lot:1338 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.959
+7-15 17:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 17:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 17:34 28.01 2dP:18.0 1dP:17.0
+2d$:n:788 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 17:26]
+1d$:n:398 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 17:26]
+7-15 17:53 *openOrder* status:PreSubmitted orderID:240715080 LMT BUY Q:447 px:27.3
+7-15 17:53 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 17:53 *OrderStatus*:PreSubmitted orderId:240715080 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 17:53 *openOrder* status:PreSubmitted orderID:240715079 LMT BUY Q:447 px:27.8
+7-15 17:53 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 17:53 *OrderStatus*:PreSubmitted orderId:240715079 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 17:53 *openOrder* status:Submitted orderID:240715080 LMT BUY Q:447 px:27.3
+7-15 17:53 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 17:53 *OrderStatus*:Submitted orderId:240715080 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+7-15 17:53 *openOrder* status:Submitted orderID:240715079 LMT BUY Q:447 px:27.8
+7-15 17:53 *openOrder* all live orders [240715079=orderID:240715079 LMT BUY Q:447 px:27.8, 240715080=orderID:240715080 LMT BUY Q:447 px:27.3]
+7-15 17:53 *OrderStatus*:Submitted orderId:240715079 filled:0 remaining:447 fillPx:0.0 lastFillPx:0.0
+*Periodic Run* 7-15 18:34
+last live feed time: 7-15 18:33 been:1mins. p:27.98 cost:28.0 p/cost:1.0
+p:27.98 rng:1.8% pos:447 delt:13k cost:28.0 lot:1340 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.96
+7-15 18:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 18:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 18:34 27.98 2dP:11.0 1dP:11.0
+2d$:n:794 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 18:33]
+1d$:n:404 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 18:33]
+*Periodic Run* 7-15 19:34
+last live feed time: 7-15 18:57 been:36mins. p:27.95 cost:28.0 p/cost:0.999
+p:27.95 rng:1.8% pos:447 delt:12k cost:28.0 lot:1341 fillP:26.85 costTgt:0.97 fillP/cost:0.96 fillP/px:0.961
+7-15 19:34 *chek orderStatus {240715076=SLV 7-15 10:58 INVENTORY_CUTTER Filled, 240715078=SLV 7-15 13:34 INVENTORY_ADDER Filled, 240715079=SLV 7-15 13:34 INVENTORY_ADDER Submitted, 240715080=SLV 7-15 13:34 INVENTORY_ADDER Submitted}
+7-15 19:34 *chek openOrders*: {240715080=orderID:240715080 LMT BUY Q:447 px:27.3, 240715079=orderID:240715079 LMT BUY Q:447 px:27.8}
+7-15 19:34 27.95 2dP:5.0 1dP:4.0
+2d$:n:799 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.7% 1Key:[7-12 9:30] last:[7-15 18:57]
+1d$:n:409 max:28.4 [7-15 11:03] min:27.9 [7-15 9:41] rng:1.6% 1Key:[7-15 9:30] last:[7-15 18:57]
