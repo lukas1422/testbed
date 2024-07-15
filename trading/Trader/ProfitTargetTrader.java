@@ -284,10 +284,10 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static boolean noBlockingSellOrders(String s) {
         if (orderSubmitted.get(s).isEmpty()) {
-            outputToSymbol(s, "orderSubmitted empty");
+            //outputToSymbol(s, "orderSubmitted empty");
             return true;
         }
-        pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
+//        pr(s, "no blocking sell orders check orderSubmitted:", orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
@@ -324,14 +324,21 @@ class ProfitTargetTrader implements LiveHandler,
 //    }
 
     private static double pxOverCost(double price, String symb) {
-        if (costMap.containsKey(symb) && costMap.get(symb) != 0.0) {
+        if (costMap.getOrDefault(symb, 0.0) != 0.0) {
             return price / costMap.get(symb);
         }
         return 1;
     }
 
+    private static boolean checkIfDeltaBreached(String symb) {
+        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
+
+        return totalDelta < DELTA_TOTAL_LIMIT &&
+                (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_LIMIT_EACH + baseDelta);
+    }
+
     private static boolean checkDeltaImpact(String symb, double price) {
-        double addition = getLot(symb, price).longValue() * price;
+        double addition = getLot(symb, price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
         double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
 
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
@@ -347,16 +354,17 @@ class ProfitTargetTrader implements LiveHandler,
 //        return Math.min(0.998, 1 - rng.getOrDefault(symb, 0.0) / 4.0);
 //    }
 
-    private static double sellFactor(String symb, int i) {
-        return maxs(1 + 0.003 * (i - 1) * (i - 1),
-                1 + (i - 1) * (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
-    }
-
     private static double buyFactor(String symb, int i) {
-        return mins(1 - 0.003 * (i - 1) * (i - 1),
-                1 - (i - 1) * (i - 1) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return mins(1 - 0.003 * Math.pow(i - 1, 2),
+                1 - Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
 
     }
+
+    private static double sellFactor(String symb, int i) {
+        return maxs(1 + 0.003 * Math.pow(i - 1, 2),
+                1 + Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
+    }
+
 
     private static double refillPx(String symb, double px, long pos, double costPerShare) {
         if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
@@ -402,7 +410,8 @@ class ProfitTargetTrader implements LiveHandler,
         double oneDayP = oneDayPctMap.getOrDefault(s, 100.0);
         Decimal pos = symbPos.get(s);
 
-        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
+//        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
+        if (oneDayP < 10 && twoDayP < 20 && checkIfDeltaBreached(s)) {
             if (!noBlockingBuyOrders(s)) {
                 if (t.getSecond() < 5) { //reduce print clustering, only print a few times per minute
                     outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
@@ -596,7 +605,7 @@ class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(ct);
 
         if (!ytdReturn.containsKey(s)) {
-            outputToSymbol(s, "ytdReturn not available, quitting inventoryadder");
+            outputToSymbol(s, "ytdReturn not available, quitting inventory adder");
             return;
         }
 
@@ -607,8 +616,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
             outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" +
-                            symbDelta.getOrDefault(s, MAX_VALUE),
-                    "addDelta:" + lotSize.longValue() * px);
+                    symbDelta.getOrDefault(s, MAX_VALUE), "addDelta:" + lotSize.longValue() * px);
             return;
         }
 
