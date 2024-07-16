@@ -448,7 +448,7 @@ class ProfitTargetTrader implements LiveHandler,
                     return;
                 }
                 outputToSymbol(s, "******************CUT**************************");
-                outputToSymbol(s, "****CUT****", t.format(MdHmmss),
+                outputToSymbol(s, "CUT", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP, "px" + px,
                         "cost:" + costMap.getOrDefault(s, 0.0),
                         "px/Cost:" + round4(pOverCost),
@@ -669,7 +669,7 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        Decimal tradablePos = baseDelta == 0.0 ? symbPos.get(s) : Decimal.get(floor(currentDelta - baseDelta) / px);
+        Decimal tradablePos = baseDelta == 0.0 ? symbPos.get(s) : Decimal.get(floor((currentDelta - baseDelta) / px));
         double tradableDelta = currentDelta - baseDelta;
         outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + tradablePos.longValue());
 
@@ -693,7 +693,7 @@ class ProfitTargetTrader implements LiveHandler,
 
 //        if (tradablePos.longValue() > 20) {
         if (tradableDelta > 3000.0) {
-            Decimal sellQ2 = Decimal.get(round(tradablePos.longValue() / 3.0));
+            Decimal sellQ2 = Decimal.get(floor(tradablePos.longValue() / 3.0));
 
             int id2 = tradID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(offerPrice * sellFactor(s, 2)), sellQ2, DAY);
