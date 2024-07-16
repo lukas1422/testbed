@@ -669,7 +669,8 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        Decimal tradablePos = baseDelta == 0.0 ? symbPos.get(s) : Decimal.get(floor((currentDelta - baseDelta) / px));
+        Decimal tradablePos = baseDelta == 0.0 ?
+                symbPos.get(s) : Decimal.get(floor((currentDelta - baseDelta) / px));
         double tradableDelta = currentDelta - baseDelta;
         outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + tradablePos.longValue());
 
