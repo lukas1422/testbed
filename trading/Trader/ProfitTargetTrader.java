@@ -94,6 +94,7 @@ class ProfitTargetTrader implements LiveHandler,
                 "MASTERID:", MASTERID, "\n", "mkt start time today:", TODAY930);
         outputToOrders("", "*****START***** HKT:", hkTime(), "EST:", usDateTime());
         outputToPnl("*****START***** HKT:", hkTime(), "EST:", usDateTime());
+        outputToFills("*****START***** HKT:", hkTime(), "EST:", usDateTime());
         pr("costTgt", Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
         pr("until mkt start time:", Duration.between(TODAY930, getESTDateTimeNow()).toMinutes(), "mins");
 
@@ -355,13 +356,13 @@ class ProfitTargetTrader implements LiveHandler,
 //    }
 
     private static double buyFactor(String symb, int i) {
-        return mins(1 - 0.003 * Math.pow(i - 1, 2),
+        return mins(1 - 0.005 * Math.pow(i - 1, 2),
                 1 - Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
 
     }
 
     private static double sellFactor(String symb, int i) {
-        return maxs(1 + 0.003 * Math.pow(i - 1, 2),
+        return maxs(1 + 0.005 * Math.pow(i - 1, 2),
                 1 + Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
     }
 
