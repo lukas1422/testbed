@@ -15379,6 +15379,7 @@ no blocking sell orders: nonFinished orders: [240717020=WMT 7-17 10:21 INVENTORY
 groupby buysell: {SELL=[240717019, 240717020, 240717021]}
 12:22:40 sell order blocked by: openOrders:[orderID:240717021 LMT SELL Q:179 px:71.68, orderID:240717020 LMT SELL Q:178 px:70.76] 
  orderSubmitted:{240717019=WMT 7-17 10:21 INVENTORY_CUTTER Filled, 240717020=WMT 7-17 10:21 INVENTORY_CUTTER Submitted, 240717021=WMT 7-17 10:21 INVENTORY_CUTTER Submitted}
+
 updating pos: 7-17 12:23 pos:179 cost:69.67
 7-17 12:23 *OrderStatus*:Filled orderId:240717020 filled:178 remaining:0 fillPx:70.76 lastFillPx:70.76
 7-17 12:23 *OrderStatus*:Filled deleting finished orders from openOrderMap {240717021=orderID:240717021 LMT SELL Q:179 px:71.68, 240717020=orderID:240717020 LMT SELL Q:178 px:70.76}

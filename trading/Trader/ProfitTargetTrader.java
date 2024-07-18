@@ -265,23 +265,23 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.get(s).isEmpty()) {
             return true;
         }
-        outputToSymbol(s, "no blocking buy orders orderSubmitted nonempty:"
-                , orderSubmitted.get(s));
+//        outputToSymbol(s, "no blocking buy orders orderSubmitted nonempty:"
+//                , orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
-            outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
+//            outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
             return true;
         } else {
-            outputToSymbol(s, "no blocking buy orders: All submitted orders", orderSubmitted.get(s));
-            outputToSymbol(s, "no blocking buy orders: Active orders:",
-                    orderSubmitted.get(s).entrySet().stream()
-                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
-                            .collect(toList()));
-            outputToSymbol(s, "active orders grouped by buysell:",
-                    orderSubmitted.get(s).entrySet().stream()
-                            .collect(groupingBy(e -> e.getValue().getOrder().action()
-                                    , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
+//            outputToSymbol(s, "no blocking buy orders: All submitted orders", orderSubmitted.get(s));
+//            outputToSymbol(s, "no blocking buy orders: Active orders:",
+//                    orderSubmitted.get(s).entrySet().stream()
+//                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
+//                            .collect(toList()));
+//            outputToSymbol(s, "active orders grouped by buysell:",
+//                    orderSubmitted.get(s).entrySet().stream()
+//                            .collect(groupingBy(e -> e.getValue().getOrder().action()
+//                                    , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
 
             return orderSubmitted.get(s).entrySet().stream()
                     .filter(e -> !e.getValue().getOrderStatus().isFinished())
@@ -301,18 +301,18 @@ class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(s, "all order finished:", orderSubmitted.get(s));
             return true;
         } else {
-            if (getESTLocalTimeNow().getMinute() < 5) {
-                outputToSymbol(s, "no blocking sell orders:", orderSubmitted.get(s));
-                outputToSymbol(s, "no blocking sell orders: nonFinished orders:",
-                        orderSubmitted.get(s).entrySet().stream()
-                                .filter(e -> !e.getValue().getOrderStatus().isFinished())
-                                .collect(toList()));
-                outputToSymbol(s, "groupby buysell:",
-                        orderSubmitted.get(s).entrySet().stream()
-                                .collect(groupingBy(e -> e.getValue().getOrder().action()
-                                        , mapping(e -> e.getValue().getOrder().orderId()
-                                                , toList()))));
-            }
+//            if (getESTLocalTimeNow().getMinute() < 5) {
+//                outputToSymbol(s, "no blocking sell orders:", orderSubmitted.get(s));
+//                outputToSymbol(s, "no blocking sell orders: nonFinished orders:",
+//                        orderSubmitted.get(s).entrySet().stream()
+//                                .filter(e -> !e.getValue().getOrderStatus().isFinished())
+//                                .collect(toList()));
+//                outputToSymbol(s, "groupby buysell:",
+//                        orderSubmitted.get(s).entrySet().stream()
+//                                .collect(groupingBy(e -> e.getValue().getOrder().action()
+//                                        , mapping(e -> e.getValue().getOrder().orderId()
+//                                                , toList()))));
+//            }
             return orderSubmitted.get(s).entrySet()
                     .stream().filter(e -> !e.getValue().getOrderStatus().isFinished())
                     .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder()
@@ -420,10 +420,10 @@ class ProfitTargetTrader implements LiveHandler,
 //        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
         if (oneDayP < 10 && twoDayP < 20 && checkIfDeltaBreached(s)) {
             if (!noBlockingBuyOrders(s)) {
-                if (t.getMinute() < 5) { //reduce print clustering, only print a few times per minute
-                    outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
-                            openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
-                }
+//                if (t.getMinute() < 5) { //reduce print clustering, only print a few times per minute
+//                    outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
+//                            openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
+//                }
                 return;
             }
 
@@ -450,12 +450,12 @@ class ProfitTargetTrader implements LiveHandler,
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
-                    if (t.getMinute() < 5) {
-                        outputToSymbol(s, t.format(Hmmss),
-                                "sell order blocked by: openOrders:" +
-                                        openOrders.get(s).values(), "\n",
-                                "orderSubmitted:" + orderSubmitted.get(s));
-                    }
+//                    if (t.getMinute() < 5) {
+//                        outputToSymbol(s, t.format(Hmmss),
+//                                "sell order blocked by: openOrders:" +
+//                                        openOrders.get(s).values(), "\n",
+//                                "orderSubmitted:" + orderSubmitted.get(s));
+//                    }
                     return;
                 }
                 outputToSymbol(s, "******************CUT**************************");
@@ -559,18 +559,27 @@ class ProfitTargetTrader implements LiveHandler,
             String s = e.getKey();
             double cost = costMap.getOrDefault(s, 0.0);
             e.getValue().entrySet().forEach(o -> {
-                if (o.getValue().getOrder().action() == SELL) {
+                if (o.getValue().getOrderStatus() != Filled) {
                     pr(o.getKey(), s, o.getValue().getOrderStatus(),
-                            "SELL", o.getValue().getOrder().totalQuantity().longValue(),
-                            "@:", o.getValue().getOrder().lmtPrice()
-                            , "IBPnl:" + round2(o.getValue().getIBPnl()),
-                            "commission:" + o.getValue().getCommission()
-                            , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost)));
+                            o.getValue().getOrder().action(),
+                            o.getValue().getOrder().totalQuantity().longValue(),
+                            "lmt@:", o.getValue().getOrder().lmtPrice());
                 } else {
-                    pr(o.getKey(), s, o.getValue().getOrderStatus(),
-                            "BUY", o.getValue().getOrder().totalQuantity().longValue(),
-                            "@:", o.getValue().getOrder().lmtPrice(),
-                            "commission:" + o.getValue().getCommission());
+                    if (o.getValue().getOrder().action() == SELL) {
+                        pr(o.getKey(), s, o.getValue().getOrderStatus()
+                                , "SELL", o.getValue().getOrder().totalQuantity().longValue()
+                                , "lmt@:", o.getValue().getOrder().lmtPrice()
+                                , "Filled@", o.getValue().getAvgFillPrice()
+                                , "commission:" + o.getValue().getCommission()
+                                , "IBPnl:" + round2(o.getValue().getIBPnl())
+                                , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost)));
+                    } else {
+                        pr(o.getKey(), s, o.getValue().getOrderStatus(),
+                                "BUY", o.getValue().getOrder().totalQuantity().longValue(),
+                                "lmt@:", o.getValue().getOrder().lmtPrice(),
+                                "Filled@:", o.getValue().getAvgFillPrice(),
+                                "commission:" + o.getValue().getCommission());
+                    }
                 }
             });
         });
@@ -706,7 +715,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
 //        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToOrders(s, "order ID1:" + o1.orderId(), "trade ID1:" + id1, o1.action(),
+        outputToOrders(s, "orderID1:" + o1.orderId(), s, "tradeID1:" + id1, o1.action(),
                 "px1:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
         //second order, reduce cost by a percentage of range
@@ -764,7 +773,7 @@ class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToOrders(s, "order ID1:" + o1.orderId(), "trade ID1:" + id1, o1.action(),
                 "px1:" + offerPrice, "q1:" + o1.totalQuantity().longValue());
-        outputToOrders(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
+        outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "targetPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
@@ -780,7 +789,7 @@ class ProfitTargetTrader implements LiveHandler,
             outputToOrders(s, "order ID2:" + o2.orderId(), "trade ID2:" + id2, o2.action(),
                     "px2:", r(offerPrice * sellFactor(s, 2)), "q2:" + o2.totalQuantity().longValue(),
                     "sellFactor2:" + round4(sellFactor(s, 2)));
-            outputToOrders(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()));
+            outputToSymbol(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()));
 
             Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
 
@@ -792,7 +801,7 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
                         "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
                         "sellFactor3:" + round4(sellFactor(s, 3)));
-                outputToOrders(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
+                outputToSymbol(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
             }
         }
 
@@ -804,6 +813,8 @@ class ProfitTargetTrader implements LiveHandler,
     @Override
     public void openOrder(Contract contract, Order order, OrderState orderState) {
         String s = ibContractToSymbol(contract);
+//        outputToSymbol("openOrder callback:", s, order.action(), order.lmtPrice(), order.totalQuantity(),
+//                orderState.status());
 
         if (!targets.contains(s)) {
             outputToSymbol(s, "not in profit target trader");
@@ -814,11 +825,11 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.get(s).containsKey(order.orderId())) {
             orderSubmitted.get(s).get(order.orderId()).updateOrderStatus(orderState.status());
         } else {
-            outputToSymbol(s, "openOrder does not contain order", ibContractToSymbol(contract), order);
-            outputToError(s, "open orders does not contain order", ibContractToSymbol(contract), order);
-            orderSubmitted.get(s).put(order.orderId(), new OrderAugmented(contract, order, orderState.status()));
+            outputToSymbol(s, "openOrder does not contain order", s, order);
+            outputToError(s, "open orders does not contain order", s, order);
+            orderSubmitted.get(s).put(order.orderId(),
+                    new OrderAugmented(contract, order, orderState.status()));
         }
-
 
         if (orderState.status() == Filled) {
             outputToFills(s, usDateTime(), "*openOrder* filled", order);
@@ -941,6 +952,8 @@ class ProfitTargetTrader implements LiveHandler,
     public void commissionReport(String tradeKey, CommissionReport commissionReport) {
         if (!tradeKeyExecutionMap.containsKey(tradeKey)
                 || tradeKeyExecutionMap.get(tradeKey).isEmpty()) {
+            outputToError("commission report issue", "tradekey:" + tradeKey
+                    , "report:" + commissionReport);
             return;
         }
 
@@ -1005,8 +1018,8 @@ class ProfitTargetTrader implements LiveHandler,
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCheckOrders, 20L, 20L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 30L, TimeUnit.SECONDS);
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCheckOrders, 20L, 30L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
                 outputToSymbol(s, "*Periodic Run*", usDateTime());

@@ -125,6 +125,10 @@ public class OrderAugmented {
         }
     }
 
+    public double getAvgFillPrice() {
+        return avgFillPrice;
+    }
+
     public double getPnl(String symb, double currPrice) {
         double costPerUnit = 0.0;
         if (symb.startsWith("SGXA50")) {
