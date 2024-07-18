@@ -566,16 +566,16 @@ class ProfitTargetTrader implements LiveHandler,
                             "lmt@:", o.getValue().getOrder().lmtPrice());
                 } else {
                     if (o.getValue().getOrder().action() == SELL) {
-                        pr(o.getKey(), s, o.getValue().getOrderStatus()
-                                , "SELL", o.getValue().getOrder().totalQuantity().longValue()
+                        pr(o.getKey(), s, "FILLED", "SELL",
+                                o.getValue().getOrder().totalQuantity().longValue()
                                 , "lmt@:", o.getValue().getOrder().lmtPrice()
-                                , "Filled@", o.getValue().getAvgFillPrice()
+                                , "Filled@:", o.getValue().getAvgFillPrice()
                                 , "commission:" + o.getValue().getCommission()
                                 , "IBPnl:" + round2(o.getValue().getIBPnl())
                                 , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost)));
                     } else {
-                        pr(o.getKey(), s, o.getValue().getOrderStatus(),
-                                "BUY", o.getValue().getOrder().totalQuantity().longValue(),
+                        pr(o.getKey(), s, "FILLED", "BUY",
+                                o.getValue().getOrder().totalQuantity().longValue(),
                                 "lmt@:", o.getValue().getOrder().lmtPrice(),
                                 "Filled@:", o.getValue().getAvgFillPrice(),
                                 "commission:" + o.getValue().getCommission());
