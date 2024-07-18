@@ -48,7 +48,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
             = new ConcurrentSkipListMap<>();
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
-    private static volatile Map<String, Double> ytdCloseMap = new ConcurrentHashMap<>();
+    private static volatile Map<String, Double> yesterdayCloseMap = new ConcurrentHashMap<>();
 
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
@@ -224,10 +224,10 @@ class ProfitTargetTrader implements LiveHandler,
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 lastYearCloseMap.put(s, lastYearClose);
-                double ytdClose = ytdDayData.get(s).lowerEntry(getESTDateTimeNow().toLocalDate())
+                double yesterdayClose = ytdDayData.get(s).lowerEntry(getESTDateTimeNow().toLocalDate())
                         .getValue().getClose();
-                pr("stock ytdclose ", s, ytdClose);
-                ytdReturn.put(s, ytdClose);
+                pr("stock ytdclose ", s, yesterdayClose);
+                yesterdayCloseMap.put(s, yesterdayClose);
                 ytdReturn.put(s, ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
                 outputToSymbol(s, "ytdReturn:" + round(ytdReturn.get(s) * 10000d) / 100d + "%");
                 pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getKey(),
@@ -556,16 +556,29 @@ class ProfitTargetTrader implements LiveHandler,
                     long pos = symbPos.get(s).longValue();
                     double price = px.get(s);
                     double cost = costMap.get(s);
-                    double ytdClose = ytdCloseMap.get(s);
+                    double ytdClose = yesterdayCloseMap.get(s);
                     double unrealizedPnl = pos * (price - cost);
+                    double realizedPnl = computeRealizedPnl(s);
                     double mtmPnl = pos * (price - ytdClose);
                     pr(s, "pos:" + pos, "unrealized:" + unrealizedPnl,
-                            "mtmPnl:" + mtmPnl);
+                            "mtmPnl:" + mtmPnl, "realized:" + realizedPnl);
                 }
             }
 
 
         });
+    }
+
+    private static double computeRealizedPnl(String s) {
+        if (costMap.getOrDefault(s, 0.0) == 0.0) {
+            return 0.0;
+        }
+        double cost = costMap.get(s);
+        return orderSubmitted.get(s).values().stream()
+                .filter(orderAugmented -> orderAugmented.getOrderStatus() == Filled)
+                .mapToDouble(o -> o.getRealizedPnl(cost))
+                .peek(v -> pr("pnl is:", v))
+                .sum();
     }
 
     private static void periodicCompute() {
@@ -663,8 +676,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         //second order, reduce cost by a percentage of range
         int id2 = tradID.incrementAndGet();
-        double bidPx2 = r(mins(px, bidMap.getOrDefault(s, px),
-                bidMap.getOrDefault(s, px) * buyFactor(s, 2)));
+        double bidPx2 = r(mins(px, bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) * buyFactor(s, 2)));
         Decimal size2 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
         orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
@@ -820,9 +832,11 @@ class ProfitTargetTrader implements LiveHandler,
 
         outputToSymbol(s, usDateTime(), "*OrderStatus*:" + status,
                 "orderId:" + orderId, "filled:" + filled, "remaining:" + remaining,
-                "fillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
+                "avgFillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
 
         if (status == Filled) {
+            orderSubmitted.get(s).get(orderId).updateFilledPrice(avgFillPrice);
+            orderSubmitted.get(s).get(orderId).updateFilledQuantity(filled);
             outputToFills(s, usDateTime(), "*OrderStatus*: filled. ordID:" + orderId);
         }
 
@@ -914,6 +928,7 @@ class ProfitTargetTrader implements LiveHandler,
                                 e2.getValue().getOrder().action() == SELL ?
                                         str("orderID:", e2.getKey(), "realized pnl:",
                                                 round2(commissionReport.realizedPNL())) : "");
+                        e2.getValue().updateCommission(commissionReport.commission());
                         outputToSymbol(s, outp);
                         outputToFills(s, outp);
                     });
@@ -926,6 +941,7 @@ class ProfitTargetTrader implements LiveHandler,
                         outputToPnl("2:", value1.getOrder().orderId(), value1.getOrder()
                                 , "pnl:", commissionReport.realizedPNL());
                     }
+                    value1.updateCommission(commissionReport.commission());
                     outputToSymbol(s, "2.*commission report* orderID:" + value1.getOrder().orderId(),
                             "commission:", round2(commissionReport.commission()),
                             value1.getOrder().action() == SELL ?

@@ -1,10 +1,7 @@
 package api;
 
 import TradeType.FutureTrade;
-import client.Contract;
-import client.Order;
-import client.OrderStatus;
-import client.Types;
+import client.*;
 import enums.AutoOrderType;
 
 import java.time.LocalDateTime;
@@ -26,6 +23,9 @@ public class OrderAugmented {
     private final AutoOrderType orderType;
     private OrderStatus augmentedOrderStatus;
     private AtomicBoolean primaryOrder = new AtomicBoolean(false);
+    private double avgFillPrice;
+    private Decimal filledQty;
+    private double commission;
 
 
 //    public OrderAugmented(Contract ct, LocalDateTime t, Order o, String m, AutoOrderType tt) {
@@ -46,6 +46,21 @@ public class OrderAugmented {
         orderType = AutoOrderType.UNKNOWN;
         augmentedOrderStatus = os;
         primaryOrder.set(true);
+        avgFillPrice = 0.0;
+        filledQty = Decimal.ZERO;
+        commission = 0.0;
+    }
+
+    public void updateFilledPrice(double p) {
+        avgFillPrice = p;
+    }
+
+    public void updateFilledQuantity(Decimal q) {
+        filledQty = q;
+    }
+
+    public void updateCommission(double c) {
+        commission = c;
     }
 
     public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt, OrderStatus os) {
@@ -86,9 +101,9 @@ public class OrderAugmented {
         primaryOrder.set(primary);
     }
 
-    public double computeRealizedPnl(double exePrice, double cost, double commission) {
+    public double getRealizedPnl(double cost) {
         if (order.action() == Types.Action.SELL) {
-            return (exePrice - cost) * order.totalQuantity().longValue() - commission;
+            return (avgFillPrice - cost) * filledQty.longValue() - commission;
         } else {
             return 0.0;
         }
