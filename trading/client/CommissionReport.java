@@ -3,6 +3,8 @@
 
 package client;
 
+import static utility.Utility.str;
+
 public class CommissionReport {
 
     private String m_execId;
@@ -10,7 +12,7 @@ public class CommissionReport {
     private String m_currency;
     private double m_realizedPNL;
     private double m_yield;
-    private int    m_yieldRedemptionDate; // YYYYMMDD format
+    private int m_yieldRedemptionDate; // YYYYMMDD format
 
     public CommissionReport() {
         m_commission = 0;
@@ -27,7 +29,7 @@ public class CommissionReport {
         if (!(p_other instanceof CommissionReport)) {
             return false;
         }
-        CommissionReport l_theOther = (CommissionReport)p_other;
+        CommissionReport l_theOther = (CommissionReport) p_other;
         return m_execId.equals(l_theOther.m_execId);
     }
 
@@ -37,52 +39,59 @@ public class CommissionReport {
         return m_execId == null ? 0 : m_execId.hashCode();
     }
 
-	public String execId() {
-		return m_execId;
-	}
+    public String execId() {
+        return m_execId;
+    }
 
-	public void execId(String execId) {
-		this.m_execId = execId;
-	}
+    public void execId(String execId) {
+        this.m_execId = execId;
+    }
 
-	public double commission() {
-		return m_commission;
-	}
+    public double commission() {
+        return m_commission;
+    }
 
-	public void commission(double commission) {
-		this.m_commission = commission;
-	}
+    public void commission(double commission) {
+        this.m_commission = commission;
+    }
 
-	public String currency() {
-		return m_currency;
-	}
+    public String currency() {
+        return m_currency;
+    }
 
-	public void currency(String currency) {
-		this.m_currency = currency;
-	}
+    public void currency(String currency) {
+        this.m_currency = currency;
+    }
 
-	public double realizedPNL() {
-		return m_realizedPNL;
-	}
+    public double realizedPNL() {
+        return m_realizedPNL;
+    }
 
-	public void realizedPNL(double realizedPNL) {
-		this.m_realizedPNL = realizedPNL;
-	}
+    public void realizedPNL(double realizedPNL) {
+        this.m_realizedPNL = realizedPNL;
+    }
 
-	public double yield() {
-		return m_yield;
-	}
+    public double yield() {
+        return m_yield;
+    }
 
-	public void yield(double yield) {
-		this.m_yield = yield;
-	}
+    public void yield(double yield) {
+        this.m_yield = yield;
+    }
 
-	public int yieldRedemptionDate() {
-		return m_yieldRedemptionDate;
-	}
+    public int yieldRedemptionDate() {
+        return m_yieldRedemptionDate;
+    }
 
-	public void yieldRedemptionDate(int yieldRedemptionDate) {
-		this.m_yieldRedemptionDate = yieldRedemptionDate;
-	}
-    
+    public void yieldRedemptionDate(int yieldRedemptionDate) {
+        this.m_yieldRedemptionDate = yieldRedemptionDate;
+    }
+
+    @Override
+    public String toString() {
+        return str("ID:" + m_execId, "commission:" + m_commission, "curr:" + m_currency,
+                "pnl:" + m_realizedPNL, "yield:" + m_yield,
+                "yieldRedemption:" + m_yieldRedemptionDate);
+    }
+
 }
