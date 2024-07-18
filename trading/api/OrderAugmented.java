@@ -117,7 +117,7 @@ public class OrderAugmented {
         return commission;
     }
 
-    public double getRealizedPnl(double cost) {
+    public double computedRealizedPnl(double cost) {
         if (order.action() == Types.Action.SELL) {
             return (avgFillPrice - cost) * filledQty.longValue() - commission;
         } else {

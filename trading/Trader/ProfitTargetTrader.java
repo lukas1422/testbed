@@ -551,7 +551,11 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static void periodicCheckOrders() {
         pr("***********check orders***********");
-        orderSubmitted.entrySet().forEach(e -> {
+        if (orderSubmitted.isEmpty()) {
+            return;
+        }
+
+        orderSubmitted.entrySet().stream().forEach(e -> {
             String s = e.getKey();
             double cost = costMap.getOrDefault(s, 0.0);
             e.getValue().entrySet().forEach(o -> {
@@ -561,7 +565,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "@:", o.getValue().getOrder().lmtPrice()
                             , "IBPnl:" + round2(o.getValue().getIBPnl()),
                             "commission:" + o.getValue().getCommission()
-                            , "computePnl:" + round2(o.getValue().getRealizedPnl(cost)));
+                            , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost)));
                 } else {
                     pr(o.getKey(), s, o.getValue().getOrderStatus(),
                             "BUY", o.getValue().getOrder().totalQuantity().longValue(),
@@ -570,6 +574,7 @@ class ProfitTargetTrader implements LiveHandler,
                 }
             });
         });
+        pr("***********FINISH check orders***********");
     }
 
     private static void periodicPnl() {
@@ -605,7 +610,7 @@ class ProfitTargetTrader implements LiveHandler,
         double cost = costMap.get(s);
         return orderSubmitted.get(s).values().stream()
                 .filter(orderAugmented -> orderAugmented.getOrderStatus() == Filled)
-                .mapToDouble(o -> o.getRealizedPnl(cost))
+                .mapToDouble(o -> o.computedRealizedPnl(cost))
                 .peek(v -> pr("pnl is:", v))
                 .sum();
     }
