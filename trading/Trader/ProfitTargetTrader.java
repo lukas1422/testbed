@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -226,7 +227,7 @@ class ProfitTargetTrader implements LiveHandler,
                 lastYearCloseMap.put(s, lastYearClose);
                 double yesterdayClose = ytdDayData.get(s).lowerEntry(getESTDateTimeNow().toLocalDate())
                         .getValue().getClose();
-                pr("stock ytdclose ", s, yesterdayClose);
+                pr("stock yesterday close ", s, yesterdayClose);
                 yesterdayCloseMap.put(s, yesterdayClose);
                 ytdReturn.put(s, ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
                 outputToSymbol(s, "ytdReturn:" + round(ytdReturn.get(s) * 10000d) / 100d + "%");
@@ -400,7 +401,7 @@ class ProfitTargetTrader implements LiveHandler,
 //        }
         double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
         double currentDelta = symbDelta.getOrDefault(s, 0.0);
-        pr("stock basedelta currentdelta", s, baseDelta, currentDelta);
+//        pr("stock basedelta currentdelta", s, baseDelta, currentDelta);
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -583,7 +584,7 @@ class ProfitTargetTrader implements LiveHandler,
                 }
             });
         });
-        pr("***********FINISH check orders***********");
+//        pr("***********FINISH check orders***********");
     }
 
     private static void periodicPnl() {
@@ -605,6 +606,7 @@ class ProfitTargetTrader implements LiveHandler,
                 }
             }
         });
+//        pr("***********FINISH Periodic PnL****************");
     }
 
     private static double computeRealizedPnl(String s) {
@@ -620,7 +622,7 @@ class ProfitTargetTrader implements LiveHandler,
         return orderSubmitted.get(s).values().stream()
                 .filter(orderAugmented -> orderAugmented.getOrderStatus() == Filled)
                 .mapToDouble(o -> o.computedRealizedPnl(cost))
-                .peek(v -> pr("pnl is:", v))
+//                .peek(v -> pr("peeking pnl is:", v))
                 .sum();
     }
 
@@ -712,7 +714,8 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal size1 = Decimal.get(round(lotSize.longValue() / 3.0));
 
         Order o1 = placeBidLimitTIF(id1, bidPx1, size1, DAY);
-        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
+        orderSubmitted.get(s).put(o1.orderId(),
+                new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
 //        orderStatus.get(s).put(o1.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToOrders(s, "orderID1:" + o1.orderId(), s, "tradeID1:" + id1, o1.action(),
@@ -771,8 +774,7 @@ class ProfitTargetTrader implements LiveHandler,
         Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToOrders(s, "order ID1:" + o1.orderId(), "trade ID1:" + id1, o1.action(),
-                "px1:" + offerPrice, "q1:" + o1.totalQuantity().longValue());
+        outputToOrders(s, o1.orderId(), s, o1.action(), o1.totalQuantity().longValue(), "lmt@:" + offerPrice);
         outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "targetPx:" + round2(cost * tgtProfitMargin(s)),
@@ -786,9 +788,8 @@ class ProfitTargetTrader implements LiveHandler,
             Order o2 = placeOfferLimitTIF(id2, r(offerPrice * sellFactor(s, 2)), sellQ2, DAY);
             orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
-            outputToOrders(s, "order ID2:" + o2.orderId(), "trade ID2:" + id2, o2.action(),
-                    "px2:", r(offerPrice * sellFactor(s, 2)), "q2:" + o2.totalQuantity().longValue(),
-                    "sellFactor2:" + round4(sellFactor(s, 2)));
+            outputToOrders(s, o2.orderId(), s, o2.action(), o2.totalQuantity().longValue(),
+                    "@:", r(offerPrice * sellFactor(s, 2)));
             outputToSymbol(s, "sellPart2:", orderSubmitted.get(s).get(o2.orderId()));
 
             Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
@@ -798,9 +799,8 @@ class ProfitTargetTrader implements LiveHandler,
                 Order o3 = placeOfferLimitTIF(id3, r(offerPrice * sellFactor(s, 3)), sellQ3, DAY);
                 orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_CUTTER));
                 placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
-                outputToOrders(s, "order ID3:" + o3.orderId(), "trade ID3:" + id3, o3.action(),
-                        "px3:", r(offerPrice * sellFactor(s, 3)), "q3:" + o3.totalQuantity().longValue(),
-                        "sellFactor3:" + round4(sellFactor(s, 3)));
+                outputToOrders(s, o3.orderId(), s, o3.action(), o3.totalQuantity().longValue(),
+                        "@:", r(offerPrice * sellFactor(s, 3)));
                 outputToSymbol(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
             }
         }
@@ -1017,9 +1017,9 @@ class ProfitTargetTrader implements LiveHandler,
     public static void main(String[] args) throws IOException {
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCheckOrders, 20L, 20L, TimeUnit.SECONDS);
-        es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 30L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 20L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCheckOrders, 20L, 60L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 120L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
                 outputToSymbol(s, "*Periodic Run*", usDateTime());

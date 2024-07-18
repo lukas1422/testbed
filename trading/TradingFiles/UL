@@ -18649,3 +18649,415 @@ p:58.61 rng:0.9% pos:146 delt:9k cost:57.1 lot:639 fillP:55.04 costTgt:0.97 fill
 7-18 6:04 58.61 2dP:96.0 1dP:64.0
 2d$:n:801 max:58.7 [7-18 4:06] min:57.0 [7-16 9:39] rng:3.0% 1Key:[7-16 9:30] last:[7-18 5:50]
 1d$:n:21 max:58.7 [7-18 4:06] min:58.5 [7-18 5:01] rng:0.3% 1Key:[7-18 4:06] last:[7-18 5:50]
+*******************************************
+*STARTS* 7-18 9:07
+*******************************************
+*STARTS* 7-18 9:09
+updating pos: 7-18 9:09 pos:146 cost:57.14
+POS:146 COST:57.1 DELT:8k
+*Periodic Run* 7-18 9:09
+last live feed time: 7-18 9:09 been:0mins. p:58.65 cost:57.1 p/cost:1.026
+p:58.65 rng:0.0% pos:146 delt:9k cost:57.1 lot:639 fillP:55.04 costTgt:0.97 fillP/cost:0.963 fillP/px:0.938
+7-18 9:09 58.65 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+*******************************************
+*STARTS* 7-18 9:12
+updating pos: 7-18 9:12 pos:146 cost:57.14
+POS:146 COST:57.1 DELT:8k
+*Periodic Run* 7-18 9:12
+9:12:51 no live feed
+7-18 9:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*******************************************
+*STARTS* 7-18 9:14
+updating pos: 7-18 9:14 pos:146 cost:57.14
+POS:146 COST:57.1 DELT:8k
+*Periodic Run* 7-18 9:14
+last live feed time: 7-18 9:14 been:0mins. p:58.61 cost:57.1 p/cost:1.026
+p:58.61 rng:0.0% pos:146 delt:9k cost:57.1 lot:639 fillP:55.04 costTgt:0.97 fillP/cost:0.963 fillP/px:0.939
+7-18 9:14 58.61 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+******************CUT**************************
+CUT 7-18 9:30:00 1dP:100.0 2dp:100.0 px58.58 cost:57.14250275 px/Cost:1.0252 reqMargin:1.01 rng:0.0
+pos:146 tradable Pos:146
+order ID1:240718006 trade ID1:240718006 SELL px1:58.62 q1:49
+sell part1: UL 7-18 9:30 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.62
+order ID2:240718007 trade ID2:240718007 SELL px2: 58.91 q2:48 sellFactor2:1.005
+sellPart2: UL 7-18 9:30 INVENTORY_CUTTER Created
+order ID3:240718008 trade ID3:240718008 SELL px3: 59.79 q3:49 sellFactor3:1.02
+sellPart3: UL 7-18 9:30 INVENTORY_CUTTER Created
+2D$:n:8 max:58.6 [7-18 9:14] min:58.6 [7-18 9:25] rng:0.0% 1Key:[7-18 9:14] last:[7-18 9:30]
+1D$:n:8 max:58.6 [7-18 9:14] min:58.6 [7-18 9:25] rng:0.0% 1Key:[7-18 9:14] last:[7-18 9:30]
+7-18 9:30 *openOrder* status:PreSubmitted orderID:240718007 LMT SELL Q:48 px:58.91
+7-18 9:30 *openOrder* all live orders [240718007=orderID:240718007 LMT SELL Q:48 px:58.91]
+7-18 9:30 *OrderStatus*:PreSubmitted orderId:240718007 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:30 *openOrder* status:PreSubmitted orderID:240718008 LMT SELL Q:49 px:59.79
+7-18 9:30 *openOrder* all live orders [240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718008=orderID:240718008 LMT SELL Q:49 px:59.79]
+7-18 9:30 *OrderStatus*:PreSubmitted orderId:240718008 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:30 *openOrder* status:Submitted orderID:240718006 LMT SELL Q:49 px:58.62
+7-18 9:30 *openOrder* all live orders [240718006=orderID:240718006 LMT SELL Q:49 px:58.62, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718008=orderID:240718008 LMT SELL Q:49 px:59.79]
+7-18 9:30 *OrderStatus*:Submitted orderId:240718006 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:30 *openOrder* status:Submitted orderID:240718007 LMT SELL Q:48 px:58.91
+7-18 9:30 *openOrder* all live orders [240718006=orderID:240718006 LMT SELL Q:49 px:58.62, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718008=orderID:240718008 LMT SELL Q:49 px:59.79]
+7-18 9:30 *OrderStatus*:Submitted orderId:240718007 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:30 *openOrder* status:Submitted orderID:240718008 LMT SELL Q:49 px:59.79
+7-18 9:30 *openOrder* all live orders [240718006=orderID:240718006 LMT SELL Q:49 px:58.62, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718008=orderID:240718008 LMT SELL Q:49 px:59.79]
+7-18 9:30 *OrderStatus*:Submitted orderId:240718008 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 7-18 9:34
+updating pos: 7-18 9:34 pos:146 cost:57.14
+POS:146 COST:57.1 DELT:8k
+7-18 9:34 *openOrder* status:Submitted orderID:240718007 LMT SELL Q:48 px:58.91
+openOrder does not contain order UL orderID:240718007 LMT SELL Q:48 px:58.91
+7-18 9:34 *openOrder* all live orders [240718007=orderID:240718007 LMT SELL Q:48 px:58.91]
+7-18 9:34 *OrderStatus*:Submitted orderId:240718007 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *openOrder* status:Submitted orderID:240718006 LMT SELL Q:49 px:58.62
+openOrder does not contain order UL orderID:240718006 LMT SELL Q:49 px:58.62
+7-18 9:34 *openOrder* all live orders [240718006=orderID:240718006 LMT SELL Q:49 px:58.62, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91]
+7-18 9:34 *OrderStatus*:Submitted orderId:240718006 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *openOrder* status:Submitted orderID:240718008 LMT SELL Q:49 px:59.79
+openOrder does not contain order UL orderID:240718008 LMT SELL Q:49 px:59.79
+7-18 9:34 *openOrder* all live orders [240718006=orderID:240718006 LMT SELL Q:49 px:58.62, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718008=orderID:240718008 LMT SELL Q:49 px:59.79]
+7-18 9:34 *OrderStatus*:Submitted orderId:240718008 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *OrderStatus*:Cancelled orderId:240718007 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718008=orderID:240718008 LMT SELL Q:49 px:59.79, 240718007=orderID:240718007 LMT SELL Q:48 px:58.91, 240718006=orderID:240718006 LMT SELL Q:49 px:58.62}
+*OrderStatus* remaining openOrders: {240718008=orderID:240718008 LMT SELL Q:49 px:59.79, 240718006=orderID:240718006 LMT SELL Q:49 px:58.62}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={240718008=orderID:240718008 LMT SELL Q:49 px:59.79, 240718006=orderID:240718006 LMT SELL Q:49 px:58.62}, WMT={240718011=orderID:240718011 LMT SELL Q:60 px:72.06, 240718010=orderID:240718010 LMT SELL Q:59 px:71.0}}
+7-18 9:34 *OrderStatus*:Cancelled orderId:240718006 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718008=orderID:240718008 LMT SELL Q:49 px:59.79, 240718006=orderID:240718006 LMT SELL Q:49 px:58.62}
+*OrderStatus* remaining openOrders: {240718008=orderID:240718008 LMT SELL Q:49 px:59.79}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={240718008=orderID:240718008 LMT SELL Q:49 px:59.79}, WMT={}}
+7-18 9:34 *OrderStatus*:Cancelled orderId:240718008 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:34 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718008=orderID:240718008 LMT SELL Q:49 px:59.79}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}}
+*Periodic Run* 7-18 9:34
+last live feed time: 7-18 9:34 been:0mins. p:58.47 cost:57.1 p/cost:1.023
+p:58.47 rng:0.0% pos:146 delt:9k cost:57.1 lot:641 fillP:55.04 costTgt:0.97 fillP/cost:0.963 fillP/px:0.941
+7-18 9:34 *chek orderStatus {240718006=UL 7-18 9:34 UNKNOWN Cancelled, 240718007=UL 7-18 9:34 UNKNOWN Cancelled, 240718008=UL 7-18 9:34 UNKNOWN Cancelled}
+7-18 9:34 58.47 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+all order finished: {240718006=UL 7-18 9:34 UNKNOWN Cancelled, 240718007=UL 7-18 9:34 UNKNOWN Cancelled, 240718008=UL 7-18 9:34 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 7-18 9:34:25 1dP:100.0 2dp:100.0 px58.48 cost:57.14250275 px/Cost:1.0234 reqMargin:1.01 rng:0.0
+pos:146 tradable Pos:146
+order ID1:240718010 trade ID1:240718010 SELL px1:58.48 q1:49
+sell part1: UL 7-18 9:34 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.48
+order ID2:240718011 trade ID2:240718011 SELL px2: 58.77 q2:48 sellFactor2:1.005
+sellPart2: UL 7-18 9:34 INVENTORY_CUTTER Created
+order ID3:240718012 trade ID3:240718012 SELL px3: 59.65 q3:49 sellFactor3:1.02
+sellPart3: UL 7-18 9:34 INVENTORY_CUTTER Created
+2D$:n<5
+1D$:n<5
+*******************************************
+*STARTS* 7-18 9:38
+updating pos: 7-18 9:38 pos:146 cost:57.14
+POS:146 COST:57.1 DELT:8k
+7-18 9:38 rng:0.9% costTgt:0.97
+7-18 9:38 tgtMargin:1.01 tgtPrice:57.71
+ytdReturn:22.96%
+*Periodic Run* 7-18 9:38
+last live feed time: 7-18 9:38 been:0mins. p:58.58 cost:57.1 p/cost:1.025
+p:58.58 rng:0.9% pos:146 delt:9k cost:57.1 lot:640 fillP:55.04 costTgt:0.97 fillP/cost:0.963 fillP/px:0.94
+7-18 9:38 58.58 2dP:100.0 1dP:100.0
+2d$:n:399 max:58.5 [7-18 9:38] min:57.7 [7-17 9:30] rng:1.4% 1Key:[7-17 9:30] last:[7-18 9:38]
+1d$:n:9 max:58.5 [7-18 9:38] min:58.5 [7-18 9:35] rng:0.1% 1Key:[7-18 9:30] last:[7-18 9:38]
+******************CUT**************************
+CUT 7-18 9:39:03 1dP:100.0 2dp:100.0 px58.57 cost:57.14250275 px/Cost:1.025 reqMargin:1.01 rng:0.0086
+pos:146 tradable Pos:146
+order ID1:240718017 trade ID1:240718017 SELL px1:58.58 q1:49
+sell part1: UL 7-18 9:39 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.58
+order ID2:240718018 trade ID2:240718018 SELL px2: 58.87 q2:48 sellFactor2:1.005
+sellPart2: UL 7-18 9:39 INVENTORY_CUTTER Created
+order ID3:240718019 trade ID3:240718019 SELL px3: 59.75 q3:49 sellFactor3:1.02
+sellPart3: UL 7-18 9:39 INVENTORY_CUTTER Created
+2D$:n:400 max:58.5 [7-18 9:38] min:57.7 [7-17 9:30] rng:1.4% 1Key:[7-17 9:30] last:[7-18 9:39]
+1D$:n:10 max:58.5 [7-18 9:38] min:58.5 [7-18 9:35] rng:0.1% 1Key:[7-18 9:30] last:[7-18 9:39]
+7-18 9:39 *openOrder* status:Submitted orderID:240718017 LMT SELL Q:49 px:58.58
+7-18 9:39 *openOrder* all live orders [240718017=orderID:240718017 LMT SELL Q:49 px:58.58]
+7-18 9:39 *OrderStatus*:Submitted orderId:240718017 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:39 *openOrder* status:Submitted orderID:240718018 LMT SELL Q:48 px:58.87
+7-18 9:39 *openOrder* all live orders [240718017=orderID:240718017 LMT SELL Q:49 px:58.58, 240718018=orderID:240718018 LMT SELL Q:48 px:58.87]
+7-18 9:39 *OrderStatus*:Submitted orderId:240718018 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:39 *openOrder* status:Submitted orderID:240718019 LMT SELL Q:49 px:59.75
+7-18 9:39 *openOrder* all live orders [240718017=orderID:240718017 LMT SELL Q:49 px:58.58, 240718018=orderID:240718018 LMT SELL Q:48 px:58.87, 240718019=orderID:240718019 LMT SELL Q:49 px:59.75]
+7-18 9:39 *OrderStatus*:Submitted orderId:240718019 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+updating pos: 7-18 9:39 pos:97 cost:57.14
+7-18 9:39 *tradeReport* time: 2024-07-18T09:39:26 SLD execPx:58.58 shares:49 avgPx:58.58
+7-18 9:39 *openOrder* status:Filled orderID:240718017 LMT SELL Q:49 px:58.58
+7-18 9:39 *openOrder*:removing order.Status: Filled orderID:240718017 LMT SELL Q:49 px:58.58
+7-18 9:39 *openOrder*:after removal.OpenOrders: {240718019=orderID:240718019 LMT SELL Q:49 px:59.75, 240718018=orderID:240718018 LMT SELL Q:48 px:58.87}
+7-18 9:39 *openOrder* all live orders [240718018=orderID:240718018 LMT SELL Q:48 px:58.87, 240718019=orderID:240718019 LMT SELL Q:49 px:59.75]
+7-18 9:39 *OrderStatus*:Filled orderId:240718017 filled:49 remaining:0 avgFillPx:58.58 lastFillPx:58.58
+7-18 9:39 *openOrder* status:Filled orderID:240718017 LMT SELL Q:49 px:58.58
+7-18 9:39 *openOrder*:removing order.Status: Filled orderID:240718017 LMT SELL Q:49 px:58.58
+7-18 9:39 *openOrder*:after removal.OpenOrders: {240718019=orderID:240718019 LMT SELL Q:49 px:59.75, 240718018=orderID:240718018 LMT SELL Q:48 px:58.87}
+7-18 9:39 *openOrder* all live orders [240718018=orderID:240718018 LMT SELL Q:48 px:58.87, 240718019=orderID:240718019 LMT SELL Q:49 px:59.75]
+7-18 9:39 *OrderStatus*:Filled orderId:240718017 filled:49 remaining:0 avgFillPx:58.58 lastFillPx:58.58
+1.*commission report* orderID:240718017 commission:0.45 orderID: 240718017 realized pnl: 69.99
+2.*commission report* orderID:240718017 commission: 0.45 realized pnl: 69.99
+updating pos: 7-18 9:39 pos:97 cost:57.14
+updating pos: 7-18 9:39 pos:97 cost:57.14
+updating pos: 7-18 9:40 pos:97 cost:57.14
+*******************************************
+*STARTS* 7-18 9:53
+updating pos: 7-18 9:53 pos:97 cost:57.14
+POS:97 COST:57.1 DELT:6k
+7-18 9:53 *openOrder* status:Submitted orderID:240718019 LMT SELL Q:49 px:59.75
+openOrder does not contain order UL orderID:240718019 LMT SELL Q:49 px:59.75
+7-18 9:53 *openOrder* all live orders [240718019=orderID:240718019 LMT SELL Q:49 px:59.75]
+7-18 9:53 *OrderStatus*:Submitted orderId:240718019 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:53 *openOrder* status:Submitted orderID:240718018 LMT SELL Q:48 px:58.87
+openOrder does not contain order UL orderID:240718018 LMT SELL Q:48 px:58.87
+7-18 9:53 *openOrder* all live orders [240718018=orderID:240718018 LMT SELL Q:48 px:58.87, 240718019=orderID:240718019 LMT SELL Q:49 px:59.75]
+7-18 9:53 *OrderStatus*:Submitted orderId:240718018 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:53 *tradeReport* time: 2024-07-18T09:39:26 SLD execPx:58.58 shares:49 avgPx:58.58
+listOfExecs [orderID: 240718017 time: 2024-07-18T09:39:26 side: SLD shares: 49 price: 58.58]
+7-18 9:53 *OrderStatus*:Cancelled orderId:240718019 filled:0 remaining:49 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:53 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718019=orderID:240718019 LMT SELL Q:49 px:59.75, 240718018=orderID:240718018 LMT SELL Q:48 px:58.87}
+*OrderStatus* remaining openOrders: {240718018=orderID:240718018 LMT SELL Q:48 px:58.87}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={240718018=orderID:240718018 LMT SELL Q:48 px:58.87}, WMT={240718016=orderID:240718016 LMT SELL Q:27 px:72.33}}
+7-18 9:53 *OrderStatus*:Cancelled orderId:240718018 filled:0 remaining:48 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:53 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718018=orderID:240718018 LMT SELL Q:48 px:58.87}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={240718016=orderID:240718016 LMT SELL Q:27 px:72.33}}
+7-18 9:53 rng:0.9% costTgt:0.97
+7-18 9:53 tgtMargin:1.01 tgtPrice:57.71
+ytdReturn:22.82%
+*Periodic Run* 7-18 9:53
+last live feed time: 7-18 9:53 been:0mins. p:58.51 cost:57.1 p/cost:1.024
+p:58.51 rng:0.9% pos:97 delt:6k cost:57.1 lot:640 fillP:55.17 costTgt:0.97 fillP/cost:0.965 fillP/px:0.943
+7-18 9:53 *chek orderStatus {240718018=UL 7-18 9:53 UNKNOWN Cancelled, 240718019=UL 7-18 9:53 UNKNOWN Cancelled}
+7-18 9:53 58.51 2dP:89.0 1dP:31.0
+2d$:n:414 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 9:53]
+1d$:n:24 max:58.6 [7-18 9:46] min:58.5 [7-18 9:35] rng:0.2% 1Key:[7-18 9:30] last:[7-18 9:53]
+all order finished: {240718018=UL 7-18 9:53 UNKNOWN Cancelled, 240718019=UL 7-18 9:53 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 7-18 9:54:33 1dP:31.0 2dp:89.0 px58.52 cost:57.14250275 px/Cost:1.0241 reqMargin:1.01 rng:0.0086
+pos:97 tradable Pos:97
+order ID1:240718032 trade ID1:240718032 SELL px1:58.52 q1:32
+sell part1: UL 7-18 9:54 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.52
+order ID2:240718033 trade ID2:240718033 SELL px2: 58.81 q2:32 sellFactor2:1.005
+sellPart2: UL 7-18 9:54 INVENTORY_CUTTER Created
+order ID3:240718034 trade ID3:240718034 SELL px3: 59.69 q3:33 sellFactor3:1.02
+sellPart3: UL 7-18 9:54 INVENTORY_CUTTER Created
+2D$:n:415 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 9:54]
+1D$:n:25 max:58.6 [7-18 9:46] min:58.5 [7-18 9:35] rng:0.2% 1Key:[7-18 9:30] last:[7-18 9:54]
+7-18 9:54 *openOrder* status:Submitted orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:54 *openOrder* all live orders [240718032=orderID:240718032 LMT SELL Q:32 px:58.52]
+7-18 9:54 *OrderStatus*:Submitted orderId:240718032 filled:0 remaining:32 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:54 *openOrder* status:Submitted orderID:240718033 LMT SELL Q:32 px:58.81
+7-18 9:54 *openOrder* all live orders [240718032=orderID:240718032 LMT SELL Q:32 px:58.52, 240718033=orderID:240718033 LMT SELL Q:32 px:58.81]
+7-18 9:54 *OrderStatus*:Submitted orderId:240718033 filled:0 remaining:32 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:54 *openOrder* status:Submitted orderID:240718034 LMT SELL Q:33 px:59.69
+7-18 9:54 *openOrder* all live orders [240718032=orderID:240718032 LMT SELL Q:32 px:58.52, 240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 9:54 *OrderStatus*:Submitted orderId:240718034 filled:0 remaining:33 avgFillPx:0.0 lastFillPx:0.0
+7-18 9:56 *openOrder* status:Submitted orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:56 *openOrder* all live orders [240718032=orderID:240718032 LMT SELL Q:32 px:58.52, 240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 9:56 *OrderStatus*:Submitted orderId:240718032 filled:0 remaining:32 avgFillPx:0.0 lastFillPx:0.0
+updating pos: 7-18 9:56 pos:65 cost:57.14
+7-18 9:56 *tradeReport* time: 2024-07-18T09:56:39 SLD execPx:58.522 shares:32 avgPx:58.522
+7-18 9:56 *openOrder* status:Filled orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:56 *openOrder*:removing order.Status: Filled orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:56 *openOrder*:after removal.OpenOrders: {240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69}
+7-18 9:56 *openOrder* all live orders [240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 9:56 *OrderStatus*:Filled orderId:240718032 filled:32 remaining:0 avgFillPx:58.522 lastFillPx:58.522
+7-18 9:56 *openOrder* status:Filled orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:56 *openOrder*:removing order.Status: Filled orderID:240718032 LMT SELL Q:32 px:58.52
+7-18 9:56 *openOrder*:after removal.OpenOrders: {240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69}
+7-18 9:56 *openOrder* all live orders [240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 9:56 *OrderStatus*:Filled orderId:240718032 filled:32 remaining:0 avgFillPx:58.522 lastFillPx:58.522
+1.*commission report* orderID:240718032 commission:0.41 orderID: 240718032 realized pnl: 43.73
+2.*commission report* orderID:240718032 commission: 0.41 realized pnl: 43.73
+updating pos: 7-18 9:56 pos:65 cost:57.14
+updating pos: 7-18 9:56 pos:65 cost:57.14
+updating pos: 7-18 9:58 pos:65 cost:57.14
+*******************************************
+*STARTS* 7-18 10:06
+updating pos: 7-18 10:06 pos:65 cost:57.14
+POS:65 COST:57.1 DELT:4k
+7-18 10:06 *openOrder* status:Submitted orderID:240718034 LMT SELL Q:33 px:59.69
+openOrder does not contain order UL orderID:240718034 LMT SELL Q:33 px:59.69
+7-18 10:06 *openOrder* all live orders [240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 10:06 *OrderStatus*:Submitted orderId:240718034 filled:0 remaining:33 avgFillPx:0.0 lastFillPx:0.0
+7-18 10:06 *openOrder* status:Submitted orderID:240718033 LMT SELL Q:32 px:58.81
+openOrder does not contain order UL orderID:240718033 LMT SELL Q:32 px:58.81
+7-18 10:06 *openOrder* all live orders [240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69]
+7-18 10:06 *OrderStatus*:Submitted orderId:240718033 filled:0 remaining:32 avgFillPx:0.0 lastFillPx:0.0
+7-18 10:06 *tradeReport* time: 2024-07-18T09:39:26 SLD execPx:58.58 shares:49 avgPx:58.58
+7-18 10:06 *tradeReport* time: 2024-07-18T09:56:39 SLD execPx:58.522 shares:32 avgPx:58.522
+listOfExecs [orderID: 240718017 time: 2024-07-18T09:39:26 side: SLD shares: 49 price: 58.58, orderID: 240718032 time: 2024-07-18T09:56:39 side: SLD shares: 32 price: 58.522]
+7-18 10:06 *OrderStatus*:Cancelled orderId:240718034 filled:0 remaining:33 avgFillPx:0.0 lastFillPx:0.0
+7-18 10:06 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718033=orderID:240718033 LMT SELL Q:32 px:58.81, 240718034=orderID:240718034 LMT SELL Q:33 px:59.69}
+*OrderStatus* remaining openOrders: {240718033=orderID:240718033 LMT SELL Q:32 px:58.81}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={240718031=orderID:240718031 LMT SELL Q:11 px:173.13, 240718030=orderID:240718030 LMT SELL Q:10 px:170.59}, PHO={}, SLV={}, SPY={}, UL={240718033=orderID:240718033 LMT SELL Q:32 px:58.81}, WMT={240718028=orderID:240718028 LMT SELL Q:27 px:72.31}}
+7-18 10:06 *OrderStatus*:Cancelled orderId:240718033 filled:0 remaining:32 avgFillPx:0.0 lastFillPx:0.0
+7-18 10:06 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240718033=orderID:240718033 LMT SELL Q:32 px:58.81}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, IWM={}, KO={}, MCD={}, PG={240718031=orderID:240718031 LMT SELL Q:11 px:173.13}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}}
+*Periodic Run* 7-18 10:07
+10:07:14 no live feed
+7-18 10:07 *chek orderStatus {240718033=UL 7-18 10:06 UNKNOWN Cancelled, 240718034=UL 7-18 10:06 UNKNOWN Cancelled}
+7-18 10:07 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+all order finished: {240718033=UL 7-18 10:06 UNKNOWN Cancelled, 240718034=UL 7-18 10:06 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 7-18 10:07:24 1dP:100.0 2dp:100.0 px58.48 cost:57.14250275 px/Cost:1.0234 reqMargin:1.01 rng:0.0
+pos:65 tradable Pos:65
+-2147483647 UL SELL 22 lmt@:58.49
+sell part1: UL 7-18 10:07 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.49
+-2147483646 UL SELL 21 @: 58.78
+sellPart2: UL 7-18 10:07 INVENTORY_CUTTER Created
+-2147483645 UL SELL 22 @: 59.66
+sellPart3: UL 7-18 10:07 INVENTORY_CUTTER Created
+2D$:n<5
+1D$:n<5
+7-18 10:07 rng:0.9% costTgt:0.97
+7-18 10:07 tgtMargin:1.01 tgtPrice:57.71
+ytdReturn:22.82%
+*******************************************
+*STARTS* 7-18 10:10
+updating pos: 7-18 10:10 pos:65 cost:57.14
+POS:65 COST:57.1 DELT:4k
+7-18 10:10 *tradeReport* time: 2024-07-18T09:39:26 SLD execPx:58.58 shares:49 avgPx:58.58
+7-18 10:10 *tradeReport* time: 2024-07-18T09:56:39 SLD execPx:58.522 shares:32 avgPx:58.522
+listOfExecs [orderID: 240718017 time: 2024-07-18T09:39:26 side: SLD shares: 49 price: 58.58, orderID: 240718032 time: 2024-07-18T09:56:39 side: SLD shares: 32 price: 58.522]
+7-18 10:10 rng:0.9% costTgt:0.97
+7-18 10:10 tgtMargin:1.01 tgtPrice:57.71
+ytdReturn:22.65%
+*Periodic Run* 7-18 10:11
+last live feed time: 7-18 10:11 been:0mins. p:58.43 cost:57.1 p/cost:1.023
+p:58.43 rng:0.9% pos:65 delt:4k cost:57.1 lot:641 fillP:55.25 costTgt:0.97 fillP/cost:0.967 fillP/px:0.946
+7-18 10:11 58.43 2dP:80.0 1dP:0.0
+2d$:n:432 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 10:11]
+1d$:n:42 max:58.6 [7-18 9:46] min:58.4 [7-18 10:10] rng:0.3% 1Key:[7-18 9:30] last:[7-18 10:11]
+******************CUT**************************
+CUT 7-18 10:11:15 1dP:0.0 2dp:80.0 px58.42 cost:57.14250275 px/Cost:1.0224 reqMargin:1.01 rng:0.0086
+pos:65 tradable Pos:65
+-2147483641 UL SELL 22 lmt@:58.43
+sell part1: UL 7-18 10:11 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.43
+-2147483640 UL SELL 21 @: 58.72
+sellPart2: UL 7-18 10:11 INVENTORY_CUTTER Created
+-2147483639 UL SELL 22 @: 59.6
+sellPart3: UL 7-18 10:11 INVENTORY_CUTTER Created
+2D$:n:432 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 10:11]
+1D$:n:42 max:58.6 [7-18 9:46] min:58.4 [7-18 10:11] rng:0.3% 1Key:[7-18 9:30] last:[7-18 10:11]
+*******************************************
+*STARTS* 7-18 10:15
+updating pos: 7-18 10:15 pos:65 cost:57.14
+POS:65 COST:57.1 DELT:4k
+7-18 10:15 *tradeReport* time: 2024-07-18T09:39:26 SLD execPx:58.58 shares:49 avgPx:58.58
+7-18 10:15 *tradeReport* time: 2024-07-18T09:56:39 SLD execPx:58.522 shares:32 avgPx:58.522
+listOfExecs [orderID: 240718017 time: 2024-07-18T09:39:26 side: SLD shares: 49 price: 58.58, orderID: 240718032 time: 2024-07-18T09:56:39 side: SLD shares: 32 price: 58.522]
+7-18 10:15 rng:0.9% costTgt:0.97
+7-18 10:15 tgtMargin:1.01 tgtPrice:57.71
+ytdReturn:22.75%
+*Periodic Run* 7-18 10:16
+last live feed time: 7-18 10:16 been:0mins. p:58.49 cost:57.1 p/cost:1.024
+p:58.49 rng:0.9% pos:65 delt:4k cost:57.1 lot:641 fillP:55.25 costTgt:0.97 fillP/cost:0.967 fillP/px:0.945
+7-18 10:16 58.49 2dP:87.0 1dP:33.0
+2d$:n:437 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 10:16]
+1d$:n:47 max:58.6 [7-18 9:46] min:58.4 [7-18 10:11] rng:0.3% 1Key:[7-18 9:30] last:[7-18 10:16]
+******************CUT**************************
+CUT 7-18 10:16:42 1dP:33.0 2dp:87.0 px58.5 cost:57.14250275 px/Cost:1.0238 reqMargin:1.01 rng:0.0086
+pos:65 tradable Pos:65
+240718054 UL SELL 22 lmt@:58.5
+sell part1: UL 7-18 10:16 INVENTORY_CUTTER Created reqMargin:1.01 targetPx:57.71 askPx:58.5
+240718055 UL SELL 21 @: 58.79
+sellPart2: UL 7-18 10:16 INVENTORY_CUTTER Created
+240718056 UL SELL 22 @: 59.67
+sellPart3: UL 7-18 10:16 INVENTORY_CUTTER Created
+2D$:n:437 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 10:16]
+1D$:n:47 max:58.6 [7-18 9:46] min:58.4 [7-18 10:11] rng:0.3% 1Key:[7-18 9:30] last:[7-18 10:16]
+7-18 10:16 *openOrder* status:Submitted orderID:240718054 LMT SELL Q:22 px:58.5
+7-18 10:16 *openOrder* all live orders [240718054=orderID:240718054 LMT SELL Q:22 px:58.5]
+7-18 10:16 *OrderStatus*:Submitted orderId:240718054 filled:0 remaining:22 avgFillPx:0.0 lastFillPx:0.0
+updating pos: 7-18 10:16 pos:43 cost:57.14
+7-18 10:16 *tradeReport* time: 2024-07-18T10:16:43 SLD execPx:58.505 shares:22 avgPx:58.505
+7-18 10:16 *openOrder* status:Filled orderID:240718054 LMT SELL Q:22 px:58.5
+7-18 10:16 *openOrder*:removing order.Status: Filled orderID:240718054 LMT SELL Q:22 px:58.5
+7-18 10:16 *openOrder*:after removal.OpenOrders: {}
+7-18 10:16 *OrderStatus*:Filled orderId:240718054 filled:22 remaining:0 avgFillPx:58.505 lastFillPx:58.505
+7-18 10:16 *openOrder* status:Filled orderID:240718054 LMT SELL Q:22 px:58.5
+7-18 10:16 *openOrder*:removing order.Status: Filled orderID:240718054 LMT SELL Q:22 px:58.5
+7-18 10:16 *openOrder*:after removal.OpenOrders: {}
+7-18 10:16 *OrderStatus*:Filled orderId:240718054 filled:22 remaining:0 avgFillPx:58.505 lastFillPx:58.505
+1.*commission report* orderID:240718054 commission:0.39 orderID: 240718054 realized pnl: 29.58
+2.*commission report* orderID:240718054 commission: 0.39 realized pnl: 29.58
+updating pos: 7-18 10:16 pos:43 cost:57.14
+updating pos: 7-18 10:16 pos:43 cost:57.14
+7-18 10:16 *openOrder* status:Submitted orderID:240718055 LMT SELL Q:21 px:58.79
+7-18 10:16 *openOrder* all live orders [240718055=orderID:240718055 LMT SELL Q:21 px:58.79]
+7-18 10:16 *OrderStatus*:Submitted orderId:240718055 filled:0 remaining:21 avgFillPx:0.0 lastFillPx:0.0
+7-18 10:16 *openOrder* status:Submitted orderID:240718056 LMT SELL Q:22 px:59.67
+7-18 10:16 *openOrder* all live orders [240718055=orderID:240718055 LMT SELL Q:21 px:58.79, 240718056=orderID:240718056 LMT SELL Q:22 px:59.67]
+7-18 10:16 *OrderStatus*:Submitted orderId:240718056 filled:0 remaining:22 avgFillPx:0.0 lastFillPx:0.0
+updating pos: 7-18 10:21 pos:43 cost:57.14
+*Periodic Run* 7-18 11:16
+last live feed time: 7-18 11:15 been:0mins. p:58.46 cost:57.1 p/cost:1.023
+p:58.46 rng:0.9% pos:43 delt:3k cost:57.1 lot:641 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.946
+7-18 11:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 11:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 11:16 58.46 2dP:83.0 1dP:48.0
+2d$:n:492 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 11:15]
+1d$:n:102 max:58.6 [7-18 9:46] min:58.3 [7-18 10:51] rng:0.5% 1Key:[7-18 9:30] last:[7-18 11:15]
+updating pos: 7-18 11:20 pos:43 cost:57.14
+*Periodic Run* 7-18 12:16
+last live feed time: 7-18 12:15 been:0mins. p:58.33 cost:57.1 p/cost:1.021
+p:58.33 rng:0.9% pos:43 delt:3k cost:57.1 lot:642 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.948
+7-18 12:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 12:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 12:16 58.33 2dP:68.0 1dP:2.0
+2d$:n:541 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 12:15]
+1d$:n:151 max:58.6 [7-18 9:46] min:58.3 [7-18 10:51] rng:0.5% 1Key:[7-18 9:30] last:[7-18 12:15]
+*Periodic Run* 7-18 13:16
+last live feed time: 7-18 13:14 been:1mins. p:58.37 cost:57.1 p/cost:1.021
+p:58.37 rng:0.9% pos:43 delt:3k cost:57.1 lot:642 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.948
+7-18 13:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 13:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 13:16 58.37 2dP:73.0 1dP:22.0
+2d$:n:585 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 13:14]
+1d$:n:195 max:58.6 [7-18 9:46] min:58.3 [7-18 12:31] rng:0.5% 1Key:[7-18 9:30] last:[7-18 13:14]
+*Periodic Run* 7-18 14:16
+last live feed time: 7-18 14:15 been:0mins. p:58.22 cost:57.1 p/cost:1.019
+p:58.22 rng:0.9% pos:43 delt:3k cost:57.1 lot:644 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.95
+7-18 14:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 14:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 14:16 58.22 2dP:55.0 1dP:0.0
+2d$:n:624 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 14:15]
+1d$:n:234 max:58.6 [7-18 9:46] min:58.2 [7-18 14:11] rng:0.6% 1Key:[7-18 9:30] last:[7-18 14:15]
+*Periodic Run* 7-18 15:16
+last live feed time: 7-18 15:15 been:1mins. p:58.03 cost:57.1 p/cost:1.016
+p:58.03 rng:0.9% pos:43 delt:2k cost:57.1 lot:646 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.953
+7-18 15:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 15:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 15:16 58.03 2dP:33.0 1dP:2.0
+2d$:n:671 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 15:15]
+1d$:n:281 max:58.6 [7-18 9:46] min:58.0 [7-18 15:12] rng:1.0% 1Key:[7-18 9:30] last:[7-18 15:15]
+7-18 16:00 *openOrder* status:Submitted orderID:240718056 LMT SELL Q:22 px:59.67
+7-18 16:00 *openOrder* all live orders [240718055=orderID:240718055 LMT SELL Q:21 px:58.79, 240718056=orderID:240718056 LMT SELL Q:22 px:59.67]
+7-18 16:00 *OrderStatus*:Submitted orderId:240718056 filled:0 remaining:22 avgFillPx:0.0 lastFillPx:0.0
+7-18 16:00 *openOrder* status:Submitted orderID:240718055 LMT SELL Q:21 px:58.79
+7-18 16:00 *openOrder* all live orders [240718055=orderID:240718055 LMT SELL Q:21 px:58.79, 240718056=orderID:240718056 LMT SELL Q:22 px:59.67]
+7-18 16:00 *OrderStatus*:Submitted orderId:240718055 filled:0 remaining:21 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 7-18 16:16
+last live feed time: 7-18 15:59 been:16mins. p:58.04 cost:57.1 p/cost:1.016
+p:58.04 rng:0.9% pos:43 delt:2k cost:57.1 lot:646 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.953
+7-18 16:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 16:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 16:16 58.04 2dP:34.0 1dP:5.0
+2d$:n:704 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 15:59]
+1d$:n:314 max:58.6 [7-18 9:46] min:58.0 [7-18 15:24] rng:1.0% 1Key:[7-18 9:30] last:[7-18 15:59]
+*Periodic Run* 7-18 17:16
+last live feed time: 7-18 15:59 been:76mins. p:58.04 cost:57.1 p/cost:1.016
+p:58.04 rng:0.9% pos:43 delt:2k cost:57.1 lot:646 fillP:55.31 costTgt:0.97 fillP/cost:0.968 fillP/px:0.953
+7-18 17:16 *chek orderStatus {240718054=UL 7-18 10:16 INVENTORY_CUTTER Filled, 240718055=UL 7-18 10:16 INVENTORY_CUTTER Submitted, 240718056=UL 7-18 10:16 INVENTORY_CUTTER Submitted}
+7-18 17:16 *chek openOrders*: {240718056=orderID:240718056 LMT SELL Q:22 px:59.67, 240718055=orderID:240718055 LMT SELL Q:21 px:58.79}
+7-18 17:16 58.04 2dP:34.0 1dP:5.0
+2d$:n:704 max:58.6 [7-18 9:46] min:57.7 [7-17 9:30] rng:1.5% 1Key:[7-17 9:30] last:[7-18 15:59]
+1d$:n:314 max:58.6 [7-18 9:46] min:58.0 [7-18 15:24] rng:1.0% 1Key:[7-18 9:30] last:[7-18 15:59]

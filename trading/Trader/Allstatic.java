@@ -57,7 +57,8 @@ public class Allstatic {
 //                (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond()));
 //        return (int) (t.getHour() * pow(10, 4) + t.getMinute() * 100 + t.getSecond());
         pr("year is ", (t.getYear() - 2000) * pow(10, 7), "month:", t.getMonthValue() * pow(10, 5),
-                "day:", t.getDayOfMonth() * pow(10, 3));
+                "day:", t.getDayOfMonth() * pow(10, 3), "second to now:" +
+                        Math.max(0, Duration.between(TODAY930, getESTDateTimeNow()).toSeconds()) + 1);
         int id = (int) ((t.getYear() - 2000) * pow(10, 7) + t.getMonthValue() * pow(10, 5) +
                 t.getDayOfMonth() * pow(10, 3) +
                 Math.max(0, Duration.between(TODAY930, getESTDateTimeNow()).toMinutes()) + 1);
