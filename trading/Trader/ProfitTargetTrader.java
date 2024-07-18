@@ -980,7 +980,7 @@ class ProfitTargetTrader implements LiveHandler,
                             outputToPnl(s, "1:", e2.getKey(),
                                     e2.getValue().getOrder().totalQuantity().longValue(),
                                     e2.getValue().getOrder().lmtPrice()
-                                    , "pnl:", commissionReport.realizedPNL());
+                                    , "pnl:", commissionReport.realizedPNL(), getESTLocalTimeNow().format(Hmmss));
                         }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
