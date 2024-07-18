@@ -549,6 +549,28 @@ class ProfitTargetTrader implements LiveHandler,
         });
     }
 
+    private static void periodicCheckOrders() {
+        pr("***********check orders***********");
+        orderSubmitted.entrySet().forEach(e -> {
+            String s = e.getKey();
+            double cost = costMap.getOrDefault(s, 0.0);
+            e.getValue().entrySet().forEach(o -> {
+                if (o.getValue().getOrder().action() == SELL) {
+                    pr(o.getKey(), s, o.getValue().getOrderStatus(),
+                            "SELL", o.getValue().getOrder().totalQuantity().longValue(),
+                            "@:", o.getValue().getOrder().lmtPrice()
+                            , "IBPnl:" + o.getValue().getIBPnl(),
+                            "commission:" + o.getValue().getCommission()
+                            , "computePnl:" + o.getValue().getRealizedPnl(cost));
+                } else {
+                    pr(o.getKey(), s, o.getValue().getOrderStatus(),
+                            "BUY", o.getValue().getOrder().totalQuantity().longValue(),
+                            "@:", o.getValue().getOrder().lmtPrice());
+                }
+            });
+        });
+    }
+
     private static void periodicPnl() {
         pr("***********Periodic PnL****************");
         targets.forEach(s -> {
@@ -926,9 +948,11 @@ class ProfitTargetTrader implements LiveHandler,
                         if (!orderIDPnlMap.containsKey(e2.getKey()) &&
                                 e2.getValue().getOrder().action() == SELL) {
                             orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
-                            outputToPnl("1:", e2.getKey(), e2.getValue().getOrder()
+                            e2.getValue().updateIBPnl(commissionReport.realizedPNL());
+                            outputToPnl(s, "1:", e2.getKey(),
+                                    e2.getValue().getOrder().totalQuantity().longValue(),
+                                    e2.getValue().getOrder().lmtPrice()
                                     , "pnl:", commissionReport.realizedPNL());
-//                            e2.getValue().computeRealizedPnl(,costMap.get(s),commissionReport.commission());
                         }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
@@ -944,6 +968,7 @@ class ProfitTargetTrader implements LiveHandler,
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                     if (value1.getOrder().action() == SELL &&
                             !orderIDPnlMap.containsKey(value1.getOrder().orderId())) {
+                        value1.updateIBPnl(commissionReport.realizedPNL());
                         orderIDPnlMap.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
                         outputToPnl("2:", value1.getOrder().orderId(), value1.getOrder()
                                 , "pnl:", commissionReport.realizedPNL());
@@ -975,6 +1000,7 @@ class ProfitTargetTrader implements LiveHandler,
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 30L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicCheckOrders, 20L, 30L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
                 outputToSymbol(s, "*Periodic Run*", usDateTime());
@@ -986,7 +1012,8 @@ class ProfitTargetTrader implements LiveHandler,
                                         "cost:" + round1(costMap.get(s)),
                                         "p/cost:" + round3(px.getOrDefault(s, 0.0)
                                                 / costMap.getOrDefault(s, 0.0)))) :
-                        str(getESTLocalTimeNow(), "no live feed"));
+                        str(getESTLocalTimeNow().format(Hmmss)
+                                , "no live feed"));
                 if (symbDelta.getOrDefault(s, 0.0) > 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                     outputToSymbol(s, "p:" + px.getOrDefault(s, 0.0),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",

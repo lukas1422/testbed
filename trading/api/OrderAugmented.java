@@ -26,6 +26,8 @@ public class OrderAugmented {
     private double avgFillPrice;
     private Decimal filledQty;
     private double commission;
+    private double ibPnL;
+    private double computedPnl;
 
 
 //    public OrderAugmented(Contract ct, LocalDateTime t, Order o, String m, AutoOrderType tt) {
@@ -49,6 +51,8 @@ public class OrderAugmented {
         avgFillPrice = 0.0;
         filledQty = Decimal.ZERO;
         commission = 0.0;
+        ibPnL = 0.0;
+        computedPnl = 0.0;
     }
 
     public void updateFilledPrice(double p) {
@@ -57,6 +61,14 @@ public class OrderAugmented {
 
     public void updateFilledQuantity(Decimal q) {
         filledQty = q;
+    }
+
+    public void updateIBPnl(double p) {
+        ibPnL = p;
+    }
+
+    public double getIBPnl() {
+        return ibPnL;
     }
 
     public void updateCommission(double c) {
@@ -99,6 +111,10 @@ public class OrderAugmented {
         orderType = tt;
         augmentedOrderStatus = OrderStatus.Created;
         primaryOrder.set(primary);
+    }
+
+    public double getCommission() {
+        return commission;
     }
 
     public double getRealizedPnl(double cost) {
