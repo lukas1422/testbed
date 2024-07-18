@@ -877,9 +877,11 @@ class ProfitTargetTrader implements LiveHandler,
                             .getOrder().orderId()
                             == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
                     .forEach(e2 -> {
-                        if (!orderIDPnlMap.containsKey(e2.getKey())) {
+                        if (!orderIDPnlMap.containsKey(e2.getKey()) &&
+                                e2.getValue().getOrder().action() == SELL) {
                             orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
-                            outputToPnl("1:", e2.getKey(), "pnl:", commissionReport.realizedPNL());
+                            outputToPnl("1:", e2.getKey(), e2.getValue().getOrder()
+                                    , "pnl:", commissionReport.realizedPNL());
                         }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
@@ -892,9 +894,11 @@ class ProfitTargetTrader implements LiveHandler,
 
             orderSubmitted.get(s).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
-                    if (!orderIDPnlMap2.containsKey(value1.getOrder().orderId())) {
+                    if (value1.getOrder().action() == SELL &&
+                            !orderIDPnlMap2.containsKey(value1.getOrder().orderId())) {
                         orderIDPnlMap2.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
-                        outputToPnl("2:", value1.getOrder().orderId(), "pnl:", commissionReport.realizedPNL());
+                        outputToPnl("2:", value1.getOrder().orderId(), value1.getOrder()
+                                , "pnl:", commissionReport.realizedPNL());
                     }
                     outputToSymbol(s, "2.*commission report* orderID:" + value1.getOrder().orderId(),
                             "commission:", round2(commissionReport.commission()),
