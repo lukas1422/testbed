@@ -295,18 +295,18 @@ class ProfitTargetTrader implements LiveHandler,
             outputToSymbol(s, "all order finished:", orderSubmitted.get(s));
             return true;
         } else {
-            outputToSymbol(s, "no blocking sell orders:", orderSubmitted.get(s));
-            outputToSymbol(s, "no blocking sell orders: nonFinished orders:",
-                    orderSubmitted.get(s).entrySet().stream()
-                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
-                            .collect(toList()));
-
-            outputToSymbol(s, "groupby buysell:",
-                    orderSubmitted.get(s).entrySet().stream()
-                            .collect(groupingBy(e -> e.getValue().getOrder().action()
-                                    , mapping(e -> e.getValue().getOrder().orderId()
-                                            , toList()))));
-
+            if (getESTLocalTimeNow().getMinute() < 5) {
+                outputToSymbol(s, "no blocking sell orders:", orderSubmitted.get(s));
+                outputToSymbol(s, "no blocking sell orders: nonFinished orders:",
+                        orderSubmitted.get(s).entrySet().stream()
+                                .filter(e -> !e.getValue().getOrderStatus().isFinished())
+                                .collect(toList()));
+                outputToSymbol(s, "groupby buysell:",
+                        orderSubmitted.get(s).entrySet().stream()
+                                .collect(groupingBy(e -> e.getValue().getOrder().action()
+                                        , mapping(e -> e.getValue().getOrder().orderId()
+                                                , toList()))));
+            }
             return orderSubmitted.get(s).entrySet()
                     .stream().filter(e -> !e.getValue().getOrderStatus().isFinished())
                     .noneMatch(e -> orderSubmitted.get(s).get(e.getKey()).getOrder()
@@ -414,7 +414,7 @@ class ProfitTargetTrader implements LiveHandler,
 //        if (oneDayP < 10 && twoDayP < 20 && checkDeltaImpact(s, px)) {
         if (oneDayP < 10 && twoDayP < 20 && checkIfDeltaBreached(s)) {
             if (!noBlockingBuyOrders(s)) {
-                if (t.getSecond() < 5) { //reduce print clustering, only print a few times per minute
+                if (t.getMinute() < 5) { //reduce print clustering, only print a few times per minute
                     outputToSymbol(s, t.format(Hmmss), "buy order blocked by:" +
                             openOrders.get(s).values(), "orderStatus:" + orderSubmitted.get(s));
                 }
@@ -444,8 +444,12 @@ class ProfitTargetTrader implements LiveHandler,
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
-                    outputToSymbol(s, t.format(Hmmss), "sell order blocked by: openOrders:" +
-                            openOrders.get(s).values(), "\n", "orderSubmitted:" + orderSubmitted.get(s));
+                    if (t.getMinute() < 5) {
+                        outputToSymbol(s, t.format(Hmmss),
+                                "sell order blocked by: openOrders:" +
+                                        openOrders.get(s).values(), "\n",
+                                "orderSubmitted:" + orderSubmitted.get(s));
+                    }
                     return;
                 }
                 outputToSymbol(s, "******************CUT**************************");
