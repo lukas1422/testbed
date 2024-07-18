@@ -86,6 +86,14 @@ public class OrderAugmented {
         primaryOrder.set(primary);
     }
 
+    public double computeRealizedPnl(double exePrice, double cost, double commission) {
+        if (order.action() == Types.Action.SELL) {
+            return (exePrice - cost) * order.totalQuantity().longValue() - commission;
+        } else {
+            return 0.0;
+        }
+    }
+
     public double getPnl(String symb, double currPrice) {
         double costPerUnit = 0.0;
         if (symb.startsWith("SGXA50")) {

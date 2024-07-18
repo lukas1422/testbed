@@ -48,6 +48,8 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, Double>> liveData
             = new ConcurrentSkipListMap<>();
     private static volatile Map<String, Double> lastYearCloseMap = new ConcurrentHashMap<>();
+    private static volatile Map<String, Double> ytdCloseMap = new ConcurrentHashMap<>();
+
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDateTime, SimpleBar>>
             twoDayData = new ConcurrentSkipListMap<>(String::compareTo);
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>>
@@ -68,7 +70,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
     private static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
     private static Map<Integer, Double> orderIDPnlMap = new ConcurrentHashMap<>();
-    private static Map<Integer, Double> orderIDPnlMap2 = new ConcurrentHashMap<>();
+    //    private static Map<Integer, Double> orderIDPnlMap2 = new ConcurrentHashMap<>();
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
             = new ConcurrentSkipListMap<>(String::compareTo);
@@ -222,6 +224,10 @@ class ProfitTargetTrader implements LiveHandler,
             if (ytdDayData.get(s).firstKey().isBefore(getYearBeginMinus1Day())) {
                 double lastYearClose = ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getValue().getClose();
                 lastYearCloseMap.put(s, lastYearClose);
+                double ytdClose = ytdDayData.get(s).lowerEntry(getESTDateTimeNow().toLocalDate())
+                        .getValue().getClose();
+                pr("stock ytdclose ", s, ytdClose);
+                ytdReturn.put(s, ytdClose);
                 ytdReturn.put(s, ytdDayData.get(s).lastEntry().getValue().getClose() / lastYearClose - 1);
                 outputToSymbol(s, "ytdReturn:" + round(ytdReturn.get(s) * 10000d) / 100d + "%");
                 pr("last year close for", s, ytdDayData.get(s).floorEntry(getYearBeginMinus1Day()).getKey(),
@@ -540,6 +546,25 @@ class ProfitTargetTrader implements LiveHandler,
                 pr("Position end: requesting live:", s);
                 req1ContractLive(api, symbolContractMap.get(s), this, false);
             }, 10L, TimeUnit.SECONDS);
+        });
+    }
+
+    private static void periodicPnl() {
+        targets.forEach(s -> {
+            if (symbPos.containsKey(s)) {
+                if (px.getOrDefault(s, 0.0) != 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
+                    long pos = symbPos.get(s).longValue();
+                    double price = px.get(s);
+                    double cost = costMap.get(s);
+                    double ytdClose = ytdCloseMap.get(s);
+                    double unrealizedPnl = pos * (price - cost);
+                    double mtmPnl = pos * (price - ytdClose);
+                    pr(s, "pos:" + pos, "unrealized:" + unrealizedPnl,
+                            "mtmPnl:" + mtmPnl);
+                }
+            }
+
+
         });
     }
 
@@ -882,6 +907,7 @@ class ProfitTargetTrader implements LiveHandler,
                             orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
                             outputToPnl("1:", e2.getKey(), e2.getValue().getOrder()
                                     , "pnl:", commissionReport.realizedPNL());
+//                            e2.getValue().computeRealizedPnl(,costMap.get(s),commissionReport.commission());
                         }
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
@@ -895,8 +921,8 @@ class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(s).forEach((key1, value1) -> {
                 if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
                     if (value1.getOrder().action() == SELL &&
-                            !orderIDPnlMap2.containsKey(value1.getOrder().orderId())) {
-                        orderIDPnlMap2.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
+                            !orderIDPnlMap.containsKey(value1.getOrder().orderId())) {
+                        orderIDPnlMap.put(value1.getOrder().orderId(), commissionReport.realizedPNL());
                         outputToPnl("2:", value1.getOrder().orderId(), value1.getOrder()
                                 , "pnl:", commissionReport.realizedPNL());
                     }
@@ -925,6 +951,7 @@ class ProfitTargetTrader implements LiveHandler,
         ProfitTargetTrader test1 = new ProfitTargetTrader();
         test1.connectAndReqPos();
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicCompute, 20L, 10L, TimeUnit.SECONDS);
+        es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 30L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
                 outputToSymbol(s, "*Periodic Run*", usDateTime());
