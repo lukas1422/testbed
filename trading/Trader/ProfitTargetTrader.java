@@ -211,7 +211,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static void computeHistoricalData(String s) {
-        pr("computing historical data for ", s);
+        pr("computing historical data for", s);
         if (ytdDayData.containsKey(s) && !ytdDayData.get(s).isEmpty()) {
             double rng = ytdDayData.get(s).values().stream().mapToDouble(SimpleBar::getHLRange)
                     .average().orElse(0.0);
@@ -550,22 +550,23 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static void periodicPnl() {
+        pr("***********Periodic PnL****************");
         targets.forEach(s -> {
             if (symbPos.containsKey(s)) {
                 if (px.getOrDefault(s, 0.0) != 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                     long pos = symbPos.get(s).longValue();
                     double price = px.get(s);
                     double cost = costMap.get(s);
-                    double ytdClose = yesterdayCloseMap.get(s);
+                    double yesterdayClose = yesterdayCloseMap.get(s);
                     double unrealizedPnl = pos * (price - cost);
                     double realizedPnl = computeRealizedPnl(s);
-                    double mtmPnl = pos * (price - ytdClose);
-                    pr(s, "pos:" + pos, "unrealized:" + unrealizedPnl,
-                            "mtmPnl:" + mtmPnl, "realized:" + realizedPnl);
+                    double mtmPnl = pos * (price - yesterdayClose);
+                    pr(s, "pos:" + pos, "cost:" + round2(cost), "px:" + price
+                            , "yestClose:" + yesterdayClose
+                            , "unrealized:" + round2(unrealizedPnl),
+                            "mtmPnl:" + round2(mtmPnl), "realized:" + round2(realizedPnl));
                 }
             }
-
-
         });
     }
 
@@ -573,6 +574,11 @@ class ProfitTargetTrader implements LiveHandler,
         if (costMap.getOrDefault(s, 0.0) == 0.0) {
             return 0.0;
         }
+
+        if (orderSubmitted.get(s).isEmpty()) {
+            return 0.0;
+        }
+
         double cost = costMap.get(s);
         return orderSubmitted.get(s).values().stream()
                 .filter(orderAugmented -> orderAugmented.getOrderStatus() == Filled)
@@ -582,6 +588,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static void periodicCompute() {
+        pr("***********Periodic Compute****************");
         targets.forEach(s -> {
             if (symbPos.containsKey(s)) {
                 if (px.getOrDefault(s, 0.0) != 0.0 && costMap.getOrDefault(s, 0.0) != 0.0) {
@@ -619,7 +626,7 @@ class ProfitTargetTrader implements LiveHandler,
                 double oneDayP = computePtile(twoDayData.get(s).tailMap(TODAY230));
                 twoDayPctMap.put(s, twoDayP);
                 oneDayPctMap.put(s, oneDayP);
-                pr(usTime(), s, "1DP:" + oneDayP, "2DP:" + twoDayP);
+//                pr(usTime(), s, "1DP:" + oneDayP, "2DP:" + twoDayP);
             }
         });
         totalDelta = targets.stream().mapToDouble(s ->
