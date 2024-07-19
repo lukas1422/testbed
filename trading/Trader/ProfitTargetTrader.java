@@ -63,6 +63,7 @@ class ProfitTargetTrader implements LiveHandler,
     //data
     private volatile static Map<String, Double> px = new ConcurrentHashMap<>();
     private static Map<String, LocalDateTime> lastPxTimestamp = new ConcurrentHashMap<>();
+    private volatile static Map<String, Double> costMapAtStart = new ConcurrentSkipListMap<>();
     private volatile static Map<String, Double> costMap = new ConcurrentSkipListMap<>();
     private volatile static Map<String, Decimal> symbPos = new ConcurrentSkipListMap<>(String::compareTo);
     private volatile static Map<String, Double> symbDelta = new ConcurrentSkipListMap<>(String::compareTo);
@@ -88,6 +89,7 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static final int GATEWAY_PORT = 4001;
     private static final int TWS_PORT = 7496;
+    //    private static final int PORT_TO_USE = TWS_PORT;
     private static final int PORT_TO_USE = GATEWAY_PORT;
 
     private static Map<String, Double> rng = new HashMap<>();
@@ -399,7 +401,7 @@ class ProfitTargetTrader implements LiveHandler,
 //                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
 //            return;
 //        }
-        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
+//        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
         double currentDelta = symbDelta.getOrDefault(s, 0.0);
 //        pr("stock basedelta currentdelta", s, baseDelta, currentDelta);
 
@@ -428,11 +430,10 @@ class ProfitTargetTrader implements LiveHandler,
                 return;
             }
 
-            if (pos.isZero() || currentDelta < baseDelta) {
+            if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder(ct, px, t, getLot(s, px));
-
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
                     outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
@@ -447,7 +448,7 @@ class ProfitTargetTrader implements LiveHandler,
             }
         }
 
-        if (pos.longValue() > 0 && currentDelta > baseDelta) {
+        if (pos.longValue() > 0) {
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
@@ -521,9 +522,13 @@ class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(contract);
 
         if (!contract.symbol().equals("USD") && targets.contains(s)) {
+            if (costMapAtStart.getOrDefault(s, 0.0) == 0.0) {
+                costMapAtStart.put(s, avgCost);
+            }
             symbPos.put(s, position);
             costMap.put(s, avgCost);
-            outputToSymbol(s, "updating pos:", usDateTime(), "pos:" + position, "cost:" + round2(avgCost));
+            outputToSymbol(s, "updating pos:", usDateTime(),
+                    "pos:" + position, "cost:" + round2(avgCost));
         }
     }
 
@@ -559,6 +564,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.entrySet().stream().forEach(e -> {
             String s = e.getKey();
             double cost = costMap.getOrDefault(s, 0.0);
+            double cost2 = costMapAtStart.getOrDefault(s, 0.0);
             e.getValue().entrySet().forEach(o -> {
                 if (o.getValue().getOrderStatus() != Filled) {
                     pr(o.getKey(), s, o.getValue().getOrderStatus(),
@@ -573,7 +579,7 @@ class ProfitTargetTrader implements LiveHandler,
                                 , "Filled@:", o.getValue().getAvgFillPrice()
                                 , "commission:" + o.getValue().getCommission()
                                 , "IBPnl:" + round2(o.getValue().getIBPnl())
-                                , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost)));
+                                , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost2)));
                     } else {
                         pr(o.getKey(), s, "FILLED", "BUY",
                                 o.getValue().getOrder().totalQuantity().longValue(),
@@ -760,15 +766,15 @@ class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(ct);
 //        Decimal pos = symbPos.get(s);
         double currentDelta = symbDelta.getOrDefault(s, 0.0);
-        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
+//        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
 
-        if (currentDelta == 0.0 || currentDelta < baseDelta) {
+        if (currentDelta == 0.0) {
             return;
         }
 
-        Decimal tradablePos = baseDelta == 0.0 ?
-                symbPos.get(s) : Decimal.get(floor((currentDelta - baseDelta) / px));
-        double tradableDelta = currentDelta - baseDelta;
+        Decimal tradablePos = symbPos.get(s);
+        double tradableDelta = currentDelta;
+
         outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + tradablePos.longValue());
 
         int id1 = tradID.incrementAndGet();
