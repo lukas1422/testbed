@@ -85,7 +85,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     private static final int MASTERID = getSessionMasterTradeID();
     private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
-    private static Map<String, Double> baseDeltaMap = new HashMap<>();
+//    private static Map<String, Double> baseDeltaMap = new HashMap<>();
 
     private static final int GATEWAY_PORT = 4001;
     private static final int TWS_PORT = 7496;
@@ -111,14 +111,14 @@ class ProfitTargetTrader implements LiveHandler,
                     registerContract(generateUSStockContract(stockName));
                 });
 
-        Files.lines(Paths.get(RELATIVEPATH + "baseDelta")).map(l -> l.split(" "))
-                .forEach(a -> {
-                    //pr("whole line", a);
-                    pr("a[0]", a[0]);
-                    String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
-                    baseDeltaMap.put(stockName, Double.parseDouble(a[1]));
-                    pr(baseDeltaMap);
-                });
+//        Files.lines(Paths.get(RELATIVEPATH + "baseDelta")).map(l -> l.split(" "))
+//                .forEach(a -> {
+//                    //pr("whole line", a);
+//                    pr("a[0]", a[0]);
+//                    String stockName = a[0].equalsIgnoreCase("BRK") ? "BRK B" : a[0];
+//                    baseDeltaMap.put(stockName, Double.parseDouble(a[1]));
+//                    pr(baseDeltaMap);
+//                });
     }
 
     private static void ytdOpen(Contract c, String date, double open, double high,
@@ -341,15 +341,15 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static boolean checkIfDeltaBreached(String symb) {
-        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
+//        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
 
         return totalDelta < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_LIMIT_EACH + baseDelta);
+                (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_LIMIT_EACH);
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
         double addition = getLot(symb, price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
-        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
+//        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
 
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
 //                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
@@ -357,7 +357,7 @@ class ProfitTargetTrader implements LiveHandler,
 //                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
         return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_LIMIT_EACH + baseDelta);
+                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_LIMIT_EACH);
     }
 
 //    private static double buyLowerFactor(String symb) {
@@ -564,7 +564,7 @@ class ProfitTargetTrader implements LiveHandler,
         orderSubmitted.entrySet().stream().forEach(e -> {
             String s = e.getKey();
             double cost = costMap.getOrDefault(s, 0.0);
-            double cost2 = costMapAtStart.getOrDefault(s, 0.0);
+            double costInitial = costMapAtStart.getOrDefault(s, 0.0);
             e.getValue().entrySet().forEach(o -> {
                 if (o.getValue().getOrderStatus() != Filled) {
                     pr(o.getKey(), s, o.getValue().getOrderStatus(),
@@ -579,7 +579,7 @@ class ProfitTargetTrader implements LiveHandler,
                                 , "Filled@:", o.getValue().getAvgFillPrice()
                                 , "commission:" + o.getValue().getCommission()
                                 , "IBPnl:" + round2(o.getValue().getIBPnl())
-                                , "computePnl:" + round2(o.getValue().computedRealizedPnl(cost2)));
+                                , "computePnl:" + round2(o.getValue().computedRealizedPnl(costInitial)));
                     } else {
                         pr(o.getKey(), s, "FILLED", "BUY",
                                 o.getValue().getOrder().totalQuantity().longValue(),
