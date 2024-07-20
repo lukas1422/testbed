@@ -369,15 +369,18 @@ class ProfitTargetTrader implements LiveHandler,
 //        return Math.min(0.998, 1 - rng.getOrDefault(symb, 0.0) / 4.0);
 //    }
 
+    //0.005, 0.04, 13.5 handle crashes
     private static double buyFactor(String symb, int i) {
-        return mins(1 - 0.005 * Math.pow(i - 1, 2),
-                1 - Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return mins(1 - 0.005 * Math.pow(i - 1, 3),
+                1 - Math.pow(i - 1, 3) * rng.getOrDefault(symb, 0.0) / 3.0);
 
     }
 
+
+    //0.005, 0.04, 0.135 handle jumps and crashes
     private static double sellFactor(String symb, int i) {
-        return maxs(1 + 0.005 * Math.pow(i - 1, 2),
-                1 + Math.pow(i - 1, 2) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return maxs(1 + 0.005 * Math.pow(i - 1, 3),
+                1 + Math.pow(i - 1, 3) * rng.getOrDefault(symb, 0.0) / 3.0);
     }
 
 
