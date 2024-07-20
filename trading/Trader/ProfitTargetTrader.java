@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -29,8 +28,6 @@ import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 import static java.lang.Double.MAX_VALUE;
 import static java.lang.Math.floor;
 import static java.lang.Math.round;
@@ -44,7 +41,7 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static volatile double AVAILABLE_CASH = 0.0;
     private static final double DELTA_TOTAL_LIMIT = 450000;
-    private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
+    //    private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 3.0; //refill times now due to limited delta
     private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
     private static final double MAX_DRAWDOWN_TARGET = 0.8;
@@ -89,7 +86,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
     private static final int MASTERID = getSessionMasterTradeID();
-    private static volatile AtomicInteger tradID = new AtomicInteger(MASTERID + 1);
+    private static volatile AtomicInteger tradeID = new AtomicInteger(MASTERID + 1);
 //    private static Map<String, Double> baseDeltaMap = new HashMap<>();
 
     private static final int GATEWAY_PORT = 4001;
@@ -138,14 +135,14 @@ class ProfitTargetTrader implements LiveHandler,
         ytdDayData.get(symbol).put(ld, new SimpleBar(open, high, low, close));
     }
 
-    private static double deltaLimitEach(String s) {
-//        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 :
-//                ProfitTargetTrader.DELTA_LIMIT_EACH;
-        return DELTA_TOTAL_LIMIT / 4.0;
-    }
+//    private static double deltaLimitEach(String s) {
+////        return s.equalsIgnoreCase("SPY") ? ProfitTargetTrader.DELTA_TOTAL_LIMIT / 4 :
+////                ProfitTargetTrader.DELTA_LIMIT_EACH;
+//        return DELTA_TOTAL_LIMIT / 4.0;
+//    }
 
-    private static Decimal getLot(String symb, double price) {
-        return Decimal.get(Math.max(0, Math.floor(deltaLimitEach(symb) /
+    private static Decimal getLot(double price) {
+        return Decimal.get(Math.max(0, Math.floor(DELTA_TOTAL_LIMIT / 4.0 /
                 price / CURRENT_REFILL_N)));
     }
 
@@ -348,12 +345,11 @@ class ProfitTargetTrader implements LiveHandler,
     private static boolean checkIfDeltaBreached(String symb) {
 //        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
 
-        return totalDelta < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_LIMIT_EACH);
+        return totalDelta < DELTA_TOTAL_LIMIT && (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_TOTAL_LIMIT / 4.0);
     }
 
     private static boolean checkDeltaImpact(String symb, double price) {
-        double addition = getLot(symb, price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
+        double addition = getLot(price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
 //        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
 
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
@@ -362,14 +358,14 @@ class ProfitTargetTrader implements LiveHandler,
 //                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
 
         return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_LIMIT_EACH);
+                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_TOTAL_LIMIT / 4.0);
     }
 
 //    private static double buyLowerFactor(String symb) {
 //        return Math.min(0.998, 1 - rng.getOrDefault(symb, 0.0) / 4.0);
 //    }
 
-    //0.005, 0.04, 13.5 handle crashes
+    //i=2 -> 0.005, i=3 -> 0.04, 13.5 handle crashes
     private static double buyFactor(String symb, int i) {
         return mins(1 - 0.005 * Math.pow(i - 1, 3),
                 1 - Math.pow(i - 1, 3) * rng.getOrDefault(symb, 0.0) / 3.0);
@@ -377,7 +373,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    //0.005, 0.04, 0.135 handle jumps and crashes
+    //0.005, 0.04, 0.135 handle jumps
     private static double sellFactor(String symb, int i) {
         return maxs(1 + 0.005 * Math.pow(i - 1, 3),
                 1 + Math.pow(i - 1, 3) * rng.getOrDefault(symb, 0.0) / 3.0);
@@ -404,7 +400,7 @@ class ProfitTargetTrader implements LiveHandler,
         }
         double currentCostBasis = costPerShare * pos;
         double lowerTgt = costTgt(symb);
-        double buySize = getLot(symb, px).longValue();
+        double buySize = getLot(px).longValue();
 //        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
 //                symb, price, pos, buySize, costPerShare, lowerTgt,
 //                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
@@ -455,7 +451,7 @@ class ProfitTargetTrader implements LiveHandler,
             if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
-                inventoryAdder(ct, px, t, getLot(s, px));
+                inventoryAdder(ct, px, t, getLot(px));
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
                 if (px < costMap.get(s) * buyFactor(s, 4)) {
                     outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
@@ -465,7 +461,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "px/cost:" + round4(pxOverCost(px, s)),
                             "refilPx:" + (round2(refillPx(s, px, pos.longValue(), costMap.get(s)))),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
-                    inventoryAdder(ct, px, t, getLot(s, px));
+                    inventoryAdder(ct, px, t, getLot(px));
                 }
             }
         }
@@ -668,7 +664,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "delt:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
-                            "#:" + getLot(s, px.get(s)),
+                            "#:" + getLot(px.get(s)),
                             "costTgt:" + round2(costTgt(s)),
                             "refil@" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "refil/Cost:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
@@ -731,13 +727,13 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > deltaLimitEach(s)) {
+        if (symbDelta.getOrDefault(s, MAX_VALUE) + lotSize.longValue() * px > DELTA_TOTAL_LIMIT / 4.0) {
             outputToSymbol(s, usDateTime(), "buy exceeds lmt. deltaNow:" +
                     symbDelta.getOrDefault(s, MAX_VALUE), "addDelta:" + lotSize.longValue() * px);
             return;
         }
 
-        int id1 = tradID.incrementAndGet();
+        int id1 = tradeID.incrementAndGet();
         double bidPx1 = r(Math.min(px, bidMap.getOrDefault(s, px)));
         Decimal size1 = Decimal.get(round(lotSize.longValue() / 3.0));
 
@@ -752,7 +748,7 @@ class ProfitTargetTrader implements LiveHandler,
                 "px1:" + bidPx1, "lot1:" + size1, orderSubmitted.get(s).get(o1.orderId()));
 
         //second order, reduce cost by a percentage of range
-        int id2 = tradID.incrementAndGet();
+        int id2 = tradeID.incrementAndGet();
         double bidPx2 = r(mins(px, bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) * buyFactor(s, 2)));
         Decimal size2 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
@@ -765,7 +761,7 @@ class ProfitTargetTrader implements LiveHandler,
                 orderSubmitted.get(s).get(o2.orderId()));
 
         //third order, lower buy price further
-        int id3 = tradID.incrementAndGet();
+        int id3 = tradeID.incrementAndGet();
         double bidPx3 = r(mins(bidMap.getOrDefault(s, px), bidMap.getOrDefault(s, px) * buyFactor(s, 3)));
         Decimal size3 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o3 = placeBidLimitTIF(id3, bidPx3, size3, DAY);
@@ -799,7 +795,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + tradablePos.longValue());
 
-        int id1 = tradID.incrementAndGet();
+        int id1 = tradeID.incrementAndGet();
         double cost = costMap.getOrDefault(s, MAX_VALUE);
         double offerPrice = r(maxs(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
@@ -821,7 +817,7 @@ class ProfitTargetTrader implements LiveHandler,
         if (tradableDelta > 1000.0) {
             Decimal sellQ2 = Decimal.get(floor(tradablePos.longValue() / 3.0));
 
-            int id2 = tradID.incrementAndGet();
+            int id2 = tradeID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(offerPrice * sellFactor(s, 2)), sellQ2, DAY);
             orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
@@ -832,7 +828,7 @@ class ProfitTargetTrader implements LiveHandler,
             Decimal sellQ3 = Decimal.get(tradablePos.longValue() - sellQ1.longValue() - sellQ2.longValue());
 
             if (sellQ3.longValue() > 0) {
-                int id3 = tradID.incrementAndGet();
+                int id3 = tradeID.incrementAndGet();
                 Order o3 = placeOfferLimitTIF(id3, r(offerPrice * sellFactor(s, 3)), sellQ3, DAY);
                 orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_CUTTER));
                 placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
@@ -1087,7 +1083,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "pos:" + symbPos.getOrDefault(s, Decimal.ZERO).longValue(),
                             "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
-                            "lot:" + getLot(s, px.get(s)),
+                            "lot:" + getLot(px.get(s)),
                             "fillP:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "costTgt:" + round3(costTgt(s)),
                             "fillP/cost:" + round3(refillPx(s, px.get(s),
