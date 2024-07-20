@@ -18,7 +18,6 @@ public enum OrderStatus {
     ConstructedInHandler,
     Unknown;
 
-
     public static OrderStatus get(String apiString) {
         for (OrderStatus type : values()) {
             if (type.name().equalsIgnoreCase(apiString)) {
