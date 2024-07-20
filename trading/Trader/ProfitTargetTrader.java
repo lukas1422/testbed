@@ -29,6 +29,8 @@ import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import static java.lang.Double.MAX_VALUE;
 import static java.lang.Math.floor;
 import static java.lang.Math.round;
@@ -72,6 +74,9 @@ class ProfitTargetTrader implements LiveHandler,
     private static Map<String, Integer> symbolContractIDMap = new ConcurrentHashMap<>();
     private static Map<String, List<ExecutionAugmented>> tradeKeyExecutionMap = new ConcurrentHashMap<>();
     private static Map<Integer, Double> orderIDPnlMap = new ConcurrentHashMap<>();
+    //    private static Map<Integer, Boolean> orderFilledMap = new ConcurrentHashMap<>();
+    private static Set<Integer> filledOrdersSet = new HashSet();
+    private static Set<Integer> filledOrderStatusSet = new HashSet();
     //    private static Map<Integer, Double> orderIDPnlMap2 = new ConcurrentHashMap<>();
     //historical data
     private static volatile ConcurrentSkipListMap<String, ConcurrentSkipListMap<LocalDate, SimpleBar>> ytdDayData
@@ -796,7 +801,7 @@ class ProfitTargetTrader implements LiveHandler,
         double offerPrice = r(maxs(askMap.getOrDefault(s, px),
                 costMap.getOrDefault(s, MAX_VALUE) * tgtProfitMargin(s)));
 
-        Decimal sellQ1 = tradableDelta > 3000.0 ?
+        Decimal sellQ1 = tradableDelta > 1000.0 ?
                 Decimal.get(round(tradablePos.longValue() / 3.0)) : tradablePos;
 
         Order o1 = placeOfferLimitTIF(id1, offerPrice, sellQ1, DAY);
@@ -804,13 +809,13 @@ class ProfitTargetTrader implements LiveHandler,
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToOrders(s, o1.orderId(), s, o1.action(), o1.totalQuantity().longValue(),
                 "lmt@:" + offerPrice, t.toLocalTime().format(Hmm));
-        outputToSymbol(s, "sell part1:", orderSubmitted.get(s).get(o1.orderId()),
+        outputToSymbol(s, "sell1:", orderSubmitted.get(s).get(o1.orderId()),
                 "reqMargin:" + round5(tgtProfitMargin(s)),
                 "targetPx:" + round2(cost * tgtProfitMargin(s)),
                 "askPx:" + askMap.getOrDefault(s, 0.0));
 
 //        if (tradablePos.longValue() > 20) {
-        if (tradableDelta > 3000.0) {
+        if (tradableDelta > 1000.0) {
             Decimal sellQ2 = Decimal.get(floor(tradablePos.longValue() / 3.0));
 
             int id2 = tradID.incrementAndGet();
@@ -851,6 +856,7 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         outputToSymbol(s, usDateTime(), "*openOrder* status:" + orderState.status(), order);
+
         if (orderSubmitted.get(s).containsKey(order.orderId())) {
             orderSubmitted.get(s).get(order.orderId()).updateOrderStatus(orderState.status());
         } else {
@@ -861,7 +867,12 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         if (orderState.status() == Filled) {
-            outputToFills(s, usDateTime(), "*openOrder* filled", order);
+            if (!filledOrdersSet.contains(order.orderId())) {
+                outputToFills(s, usDateTime(), "*openOrder* filled", order);
+                filledOrdersSet.add(order.orderId());
+            } else {
+                outputToFills(s, usDateTime(), "*openOrder* filled", order.orderId(), "printed already");
+            }
         }
 
         if (orderState.status().isFinished()) {
@@ -912,7 +923,12 @@ class ProfitTargetTrader implements LiveHandler,
         if (status == Filled) {
             orderSubmitted.get(s).get(orderId).updateFilledPrice(avgFillPrice);
             orderSubmitted.get(s).get(orderId).updateFilledQuantity(filled);
-            outputToFills(s, usDateTime(), "*OrderStatus*: filled. ordID:" + orderId);
+            if (!filledOrderStatusSet.contains(orderId)) {
+                filledOrderStatusSet.add(orderId);
+                outputToFills(s, usDateTime(), "*OrderStatus*: filled:" + orderId);
+            } else {
+                outputToFills(s, usDateTime(), orderId, "printed already");
+            }
         }
 
         //put status in orderstatusmap
