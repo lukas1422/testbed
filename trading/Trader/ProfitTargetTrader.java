@@ -145,7 +145,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static double costTgt(String symb) {
-        return mins(symb.equalsIgnoreCase("SPY") ? 0.99 : 0.97,
+        return mins(symb.equalsIgnoreCase("SPY") ? 0.98 : 0.97,
                 1 - rng.getOrDefault(symb, 0.0),
                 Math.pow(MAX_DRAWDOWN_TARGET, 1 / (IDEAL_REFILL_N - 1)));
     }
@@ -380,6 +380,20 @@ class ProfitTargetTrader implements LiveHandler,
         if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
             return 0.0;
         }
+//        double currentCostBasis = costPerShare * pos;
+//        double lowerTgt = costTgt(symb);
+//        double buySize = getLot(symb, px).longValue();
+
+        return costPerShare * buyFactor(symb, 4);
+
+//        return Math.min(costPerShare,
+//                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
+    }
+
+    private static double refillPx2(String symb, double px, long pos, double costPerShare) {
+        if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
+            return 0.0;
+        }
         double currentCostBasis = costPerShare * pos;
         double lowerTgt = costTgt(symb);
         double buySize = getLot(symb, px).longValue();
@@ -435,7 +449,7 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder(ct, px, t, getLot(s, px));
             } else if (pos.longValue() > 0 && costMap.getOrDefault(s, 0.0) != 0.0) {
-                if (px < refillPx(s, px, pos.longValue(), costMap.get(s))) {
+                if (px < costMap.get(s) * buyFactor(s, 4)) {
                     outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
@@ -448,7 +462,7 @@ class ProfitTargetTrader implements LiveHandler,
             }
         }
 
-        if (pos.longValue() > 0) {
+        if (pos.longValue() > 0 && twoDayP > 50) {
             double pOverCost = pxOverCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
