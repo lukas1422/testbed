@@ -354,7 +354,6 @@ class ProfitTargetTrader implements LiveHandler,
     private static boolean checkDeltaImpact(String symb, double price) {
         double addition = getLot(price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
 //        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
-
 //        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
 //                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
 //                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
@@ -375,7 +374,6 @@ class ProfitTargetTrader implements LiveHandler,
         }
         return mins(1 - 0.005 * Math.pow(2, i),
                 1 - Math.pow(2, i) * rng.getOrDefault(symb, 0.0) / 3.0);
-
     }
 
 
@@ -390,19 +388,19 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
 
-    private static double refillPx(String symb, double px, long pos, double costPerShare) {
-        if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
-            return 0.0;
-        }
-//        double currentCostBasis = costPerShare * pos;
-//        double lowerTgt = costTgt(symb);
-//        double buySize = getLot(symb, px).longValue();
-
-        return costPerShare * buyFactor(symb, 4);
-
-//        return Math.min(costPerShare,
-//                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
-    }
+//    private static double refillPx(String symb, double px, long pos, double costPerShare) {
+//        if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
+//            return 0.0;
+//        }
+////        double currentCostBasis = costPerShare * pos;
+////        double lowerTgt = costTgt(symb);
+////        double buySize = getLot(symb, px).longValue();
+//
+//        return costPerShare * buyFactor(symb, 4);
+//
+////        return Math.min(costPerShare,
+////                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
+//    }
 
     private static double refillPx2(String symb, double px, long pos, double costPerShare) {
         if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
@@ -694,10 +692,10 @@ class ProfitTargetTrader implements LiveHandler,
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(px.get(s)),
                             "costTgt:" + round2(costTgt(s)),
-                            "refil@" + round1(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
-                            "refil/Cost:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
+                            "refil@" + round1(refillPx2(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
+                            "refil/Cost:" + round2(refillPx2(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s)) /
                                     costMap.get(s)),
-                            "refil/Px:" + round2(refillPx(s, px.get(s)
+                            "refil/Px:" + round2(refillPx2(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
                             "b factor:", buyFactor(s, 1) + " "
@@ -1190,11 +1188,11 @@ class ProfitTargetTrader implements LiveHandler,
                             "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "lot:" + getLot(px.get(s)),
-                            "fillP:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
+                            "fillP:" + round2(refillPx2(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "costTgt:" + round3(costTgt(s)),
-                            "fillP/cost:" + round3(refillPx(s, px.get(s),
+                            "fillP/cost:" + round3(refillPx2(s, px.get(s),
                                     symbPos.get(s).longValue(), costMap.get(s)) / costMap.get(s)),
-                            "fillP/px:" + round3(refillPx(s, px.get(s), symbPos.get(s).longValue()
+                            "fillP/px:" + round3(refillPx2(s, px.get(s), symbPos.get(s).longValue()
                                     , costMap.get(s)) / px.get(s)));
                 }
                 if (!orderSubmitted.get(s).isEmpty()) {
