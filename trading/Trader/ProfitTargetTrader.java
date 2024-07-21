@@ -939,7 +939,7 @@ class ProfitTargetTrader implements LiveHandler,
         //0,1,2,3
         for (int i = 0; i < partitions; i++) {
             if (remainingPos <= 0.0) {
-                outputToSymbol(s, "remaining position < 0, break");
+                outputToSymbol(s, getESTDateTimeNow(), "remaining position < 0, break");
                 break;
             }
 
@@ -978,9 +978,7 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
-//        Decimal pos = symbPos.get(s);
         double currentDelta = symbDelta.getOrDefault(s, 0.0);
-//        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
 
         if (currentDelta == 0.0 || costMap.getOrDefault(s, 0.0) == 0.0) {
             outputToSymbol(s, "error in inventory cutter", "currentdelta:" + currentDelta, "cost:" +
@@ -1000,7 +998,7 @@ class ProfitTargetTrader implements LiveHandler,
         double cost = costMap.getOrDefault(s, MAX_VALUE);
         double basePrice = maxs(askMap.getOrDefault(s, px), costMap.get(s) * tgtProfitMargin(s));
 
-        double offPrice0 = r(basePrice * sellFactor(s, 0));
+        double offPrice0 = r(basePrice);
         Decimal sellQ0 = tradableDelta > 1000.0 ?
                 Decimal.get(round(pos.longValue() / 4.0)) : pos;
         Order o0 = placeOfferLimitTIF(id1, offPrice0, sellQ0, DAY);
@@ -1014,23 +1012,22 @@ class ProfitTargetTrader implements LiveHandler,
                 "askPx:" + askMap.getOrDefault(s, 0.0));
 
 
-        double offPrice1 = r(basePrice * sellFactor(s, 1));
-        Decimal sellQ1 = tradableDelta > 1000.0 ?
-                Decimal.get(round(pos.longValue() / 3.0)) : pos;
-        Order o1 = placeOfferLimitTIF(id1, offPrice1, sellQ1, DAY);
-        orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
-        placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
-        outputToOrders(s, o1.orderId(), s, o1.action(), o1.totalQuantity().longValue(),
-                "lmt@:" + offPrice1, t.toLocalTime().format(Hmm));
-        outputToSymbol(s, "sell1:", orderSubmitted.get(s).get(o1.orderId()),
-                "reqMargin:" + round5(tgtProfitMargin(s)),
-                "targetPx:" + round2(cost * tgtProfitMargin(s)),
-                "askPx:" + askMap.getOrDefault(s, 0.0));
-
 //        if (tradablePos.longValue() > 20) {
         if (tradableDelta > 1000.0) {
-            Decimal sellQ2 = Decimal.get(floor(pos.longValue() / 3.0));
+            double offPrice1 = r(basePrice * sellFactor(s, 1));
+            Decimal sellQ1 = tradableDelta > 1000.0 ?
+                    Decimal.get(round(pos.longValue() / 4.0)) : pos;
+            Order o1 = placeOfferLimitTIF(id1, offPrice1, sellQ1, DAY);
+            orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
+            placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
+            outputToOrders(s, o1.orderId(), s, o1.action(), o1.totalQuantity().longValue(),
+                    "lmt@:" + offPrice1, t.toLocalTime().format(Hmm));
+            outputToSymbol(s, "sell1:", orderSubmitted.get(s).get(o1.orderId()),
+                    "reqMargin:" + round5(tgtProfitMargin(s)),
+                    "targetPx:" + round2(cost * tgtProfitMargin(s)),
+                    "askPx:" + askMap.getOrDefault(s, 0.0));
 
+            Decimal sellQ2 = Decimal.get(floor(pos.longValue() / 4.0));
             int id2 = tradeID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(basePrice * sellFactor(s, 2)), sellQ2, DAY);
             orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER));
@@ -1051,7 +1048,6 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(s, "sellPart3:", orderSubmitted.get(s).get(o3.orderId()));
             }
         }
-
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
