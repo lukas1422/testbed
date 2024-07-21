@@ -368,7 +368,7 @@ class ProfitTargetTrader implements LiveHandler,
 //        return Math.min(0.998, 1 - rng.getOrDefault(symb, 0.0) / 4.0);
 //    }
 
-    //i=2 -> 0.005, i=3 -> 0.04, 13.5 handle crashes
+    //convex function to handle crashes
     private static double buyFactor(String symb, int i) {
 
         if (i == 0) {
@@ -912,6 +912,70 @@ class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
 
+    private static void inventoryCutter2(Contract ct, double px, LocalDateTime t) {
+        String s = ibContractToSymbol(ct);
+        double currentDelta = symbDelta.getOrDefault(s, 0.0);
+
+        if (currentDelta == 0.0 || costMap.getOrDefault(s, 0.0) == 0.0) {
+            outputToSymbol(s, "error in inventory cutter", "currentdelta:" + currentDelta, "cost:" +
+                    costMap.getOrDefault(s, 0.0));
+
+            outputToError(s, "error in inventory cutter", "currentdelta:" + currentDelta, "cost:" +
+                    costMap.getOrDefault(s, 0.0));
+            return;
+        }
+
+        Decimal pos = symbPos.get(s);
+        double tradableDelta = currentDelta;
+
+        outputToSymbol(s, "pos:" + symbPos.get(s).longValue(), "tradable Pos:" + pos.longValue());
+
+        double cost = costMap.getOrDefault(s, MAX_VALUE);
+        double basePrice = maxs(askMap.getOrDefault(s, px), costMap.get(s) * tgtProfitMargin(s));
+
+        int partitions = 4;
+        long remainingPos = pos.longValue();
+
+        //0,1,2,3
+        for (int i = 0; i < partitions; i++) {
+            if (remainingPos <= 0.0) {
+                outputToSymbol(s, "remaining position < 0, break");
+                break;
+            }
+
+            int id = tradeID.incrementAndGet();
+            double offerPrice = r(basePrice * sellFactor(s, i));
+
+            Decimal sellQ;
+
+            if (tradableDelta < 1000.0) {
+                sellQ = Decimal.get(remainingPos);
+            } else {
+                if (i == partitions - 1) {
+                    sellQ = Decimal.get(remainingPos);
+                } else {
+                    sellQ = Decimal.get(round(pos.longValue() / partitions));
+                }
+            }
+
+            Order o = placeOfferLimitTIF(id, offerPrice, sellQ, DAY);
+            orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER, Created));
+            placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
+
+            outputToOrders(s, "#:" + i, o.orderId(), s, o.action(), o.totalQuantity().longValue(),
+                    "lmt@:" + offerPrice, t.toLocalTime().format(Hmm));
+            outputToSymbol(s, "#:" + i, "sell:", orderSubmitted.get(s).get(o.orderId()),
+                    "reqMargin:" + round5(tgtProfitMargin(s)),
+                    "targetPx:" + round2(cost * tgtProfitMargin(s)),
+                    "askPx:" + askMap.getOrDefault(s, 0.0));
+            remainingPos = remainingPos - sellQ.longValue();
+        }
+
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+    }
+
+
     private static void inventoryCutter(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
 //        Decimal pos = symbPos.get(s);
@@ -935,11 +999,24 @@ class ProfitTargetTrader implements LiveHandler,
         int id1 = tradeID.incrementAndGet();
         double cost = costMap.getOrDefault(s, MAX_VALUE);
         double basePrice = maxs(askMap.getOrDefault(s, px), costMap.get(s) * tgtProfitMargin(s));
-        double offPrice1 = r(basePrice * sellFactor(s, 1));
 
+        double offPrice0 = r(basePrice * sellFactor(s, 0));
+        Decimal sellQ0 = tradableDelta > 1000.0 ?
+                Decimal.get(round(pos.longValue() / 4.0)) : pos;
+        Order o0 = placeOfferLimitTIF(id1, offPrice0, sellQ0, DAY);
+        orderSubmitted.get(s).put(o0.orderId(), new OrderAugmented(ct, t, o0, INVENTORY_CUTTER, Created));
+        placeOrModifyOrderCheck(api, ct, o0, new OrderHandler(s, o0.orderId()));
+        outputToOrders(s, o0.orderId(), s, o0.action(), o0.totalQuantity().longValue(),
+                "lmt@:" + offPrice0, t.toLocalTime().format(Hmm));
+        outputToSymbol(s, "sell0:", orderSubmitted.get(s).get(o0.orderId()),
+                "reqMargin:" + round5(tgtProfitMargin(s)),
+                "targetPx:" + round2(cost * tgtProfitMargin(s)),
+                "askPx:" + askMap.getOrDefault(s, 0.0));
+
+
+        double offPrice1 = r(basePrice * sellFactor(s, 1));
         Decimal sellQ1 = tradableDelta > 1000.0 ?
                 Decimal.get(round(pos.longValue() / 3.0)) : pos;
-
         Order o1 = placeOfferLimitTIF(id1, offPrice1, sellQ1, DAY);
         orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
