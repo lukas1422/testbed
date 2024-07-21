@@ -29,6 +29,7 @@ import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.*;
 import static Trader.TradingUtility.*;
 import static java.lang.Double.MAX_VALUE;
+import static java.lang.Double.MIN_VALUE;
 import static java.lang.Math.floor;
 import static java.lang.Math.round;
 import static java.time.temporal.ChronoUnit.MINUTES;
@@ -463,19 +464,17 @@ class ProfitTargetTrader implements LiveHandler,
                 return;
             }
 
-            if (!ytdReturn.containsKey(s)) {
-                outputToSymbol(s, "ytdReturn not available, quitting inventory adder");
-                return;
-            }
-
-            if (ytdReturn.get(s) < -0.1) {
-                outputToSymbol(s, "Adder: ytd < -10% cannot trade:", ytdReturn.get(s));
+            if (!ytdReturn.containsKey(s) || ytdReturn.getOrDefault(s, MIN_VALUE) < -0.1) {
+                outputToSymbol(s, !ytdReturn.containsKey(s) ?
+                        "ytdReturn not available, quitting inventory adder" :
+                        str("Adder: ytd < -10% cannot trade:" +
+                                ytdReturn.getOrDefault(s, MIN_VALUE)));
                 return;
             }
 
             if (pos.isZero()) {
-                outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
                 outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+                outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder2(ct, px, t, getLot(px));
