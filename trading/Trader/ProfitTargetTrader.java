@@ -418,19 +418,12 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
         String s = ibContractToSymbol(ct);
-        if (costMap.getOrDefault(s, 0.0) == 0.0) {
-            outputToError(s, "no cost when trying to trade");
+        if (costMap.getOrDefault(s, 0.0) == 0.0 || bidMap.getOrDefault(s, 0.0) == 0.0
+                || askMap.getOrDefault(s, 0.0) == 0.0) {
+            outputToError(s, "no cost or no bid or no ask when trying to trade");
             return;
         }
         double cost = costMap.get(s);
-//        if (!noBlockingOrders(s)) {
-//            outputToSymbol(s, t.format(Hmmss), "order blocked by:" +
-//                    openOrders.get(s).values(), "orderStatus:" + orderStatus.get(s));
-//            return;
-//        }
-//        double baseDelta = baseDeltaMap.getOrDefault(s, 0.0);
-//        double currentDelta = symbDelta.getOrDefault(s, 0.0);
-//        pr("stock basedelta currentdelta", s, baseDelta, currentDelta);
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -504,7 +497,7 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(s, "******************CUT**************************");
                 outputToSymbol(s, "CUT", t.format(MdHmmss),
                         "1dP:" + oneDayP, "2dp:" + twoDayP, "px" + px,
-                        "cost:" + costMap.getOrDefault(s, 0.0),
+                        "cost:" + costMap.get(s),
                         "px/Cost:" + round4(pOverCost),
                         "reqMargin:" + round4(tgtProfitMargin(s)),
                         "rng:" + round4(rng.getOrDefault(s, 0.0)));
@@ -816,13 +809,13 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static void inventoryCutter2(Contract ct, double px, LocalDateTime t) {
         String s = ibContractToSymbol(ct);
-        double currentDelta = symbDelta.getOrDefault(s, 0.0);
+        double currDelta = symbDelta.getOrDefault(s, 0.0);
         Decimal pos = symbPos.get(s);
         double cost = costMap.get(s);
 
-        if (currentDelta == 0.0) {
-            outputToSymbol(s, "error in inventory cutter", "currentdelta:" + currentDelta);
-            outputToError(s, "error in inventory cutter", "currentdelta:" + currentDelta);
+        if (currDelta == 0.0) {
+            outputToSymbol(s, "error in inventory cutter", "currentdelta:" + currDelta);
+            outputToError(s, "error in inventory cutter", "currentdelta:" + currDelta);
             return;
         }
 
@@ -841,7 +834,7 @@ class ProfitTargetTrader implements LiveHandler,
             double offerPrice = r(basePrice * sellFactor(s, i));
             Decimal sellQ;
 
-            if (currentDelta < 2000.0 || i == partitions - 1) {
+            if (currDelta < 2000.0 || i == partitions - 1) {
                 sellQ = Decimal.get(remainingPos);
             } else {
                 sellQ = Decimal.get(floor(pos.longValue() / partitions));
@@ -854,8 +847,8 @@ class ProfitTargetTrader implements LiveHandler,
             outputToOrders(s, "#:" + i, o.orderId(), s, "SELL", o.totalQuantity().longValue(),
                     "lmt@:" + offerPrice, t.toLocalTime().format(Hmm));
             outputToSymbol(s, "#:" + i, "SELL:", orderSubmitted.get(s).get(o.orderId()),
-                    "reqProfit:" + round5(tgtProfitMargin(s)),
-                    "targetPx:" + round2(cost * tgtProfitMargin(s)),
+                    "margin:" + round5(tgtProfitMargin(s)),
+                    "cost*margin:" + round2(cost * tgtProfitMargin(s)),
                     "askPx:" + askMap.getOrDefault(s, 0.0));
             remainingPos = remainingPos - sellQ.longValue();
         }
@@ -875,7 +868,7 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        double basePrice = maxs(askMap.getOrDefault(s, px), costMap.get(s) * tgtProfitMargin(s));
+        double basePrice = maxs(askMap.get(s), costMap.get(s) * tgtProfitMargin(s));
 
         int id0 = tradeID.incrementAndGet();
         double offerPrice0 = r(basePrice);
