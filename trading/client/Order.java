@@ -1652,7 +1652,7 @@ public class Order {
 //                "Q:" + m_totalQuantity, "px:" + m_lmtPrice, "filledQ:" + m_filledQuantity);
 
         return str("orderID:" + m_orderId,
-                m_orderType, m_action, "Q:" + m_totalQuantity, "px:" + m_lmtPrice);
+                m_orderType, m_action, "Q:" + m_totalQuantity, "@:" + m_lmtPrice);
     }
 
 }

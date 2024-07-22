@@ -475,7 +475,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
                             "px/cost:" + round4(pxDivCost(px, s)),
-                            "refilPx:" + refillPx(s, px, posLong, cost),
+                            "refilPx:" + round2(refillPx(s, px, posLong, cost)),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
                     inventoryAdder(ct, px, t, getLot(px));
                 }
@@ -745,9 +745,11 @@ class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(s).put(o.orderId(),
                     new OrderAugmented(ct, t, o, INVENTORY_ADDER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
-            outputToOrders(s, "#:" + i, "orderId:", o.orderId(), s, "BUY", o.totalQuantity().longValue(),
-                    "lmt@:" + bidPrice, t.toLocalTime().format(Hmm));
-            outputToSymbol(s, "#:" + i, "orderID:" + o.orderId(), s, "tradeID:" + id, "BUY",
+            outputToOrders(s, t.toLocalTime().format(Hmm),
+                    "#:" + i, "orderId:", o.orderId(), s, "BUY", o.totalQuantity().longValue(),
+                    "lmt@:" + bidPrice);
+            outputToSymbol(s, t.toLocalTime().format(Hmm),
+                    "#:" + i, "orderID:" + o.orderId(), s, "tradeID:" + id, "BUY",
                     size, "@:" + bidPrice, "factor:" + buyFactor(s, i)
                     , orderSubmitted.get(s).get(o.orderId()));
         }
@@ -952,9 +954,10 @@ class ProfitTargetTrader implements LiveHandler,
             if (!filledOrdersSet.contains(order.orderId())) {
                 outputToFills(s, usDateTime(), "*openOrder* filled", order);
                 filledOrdersSet.add(order.orderId());
-            } else {
-                outputToFills(s, usDateTime(), "*openOrder* filled", order.orderId(), "printed already");
             }
+//            else {
+//                outputToFills(s, usDateTime(), "*openOrder* filled", order.orderId(), "printed already");
+//            }
         }
 
         if (orderState.status().isFinished()) {
@@ -1178,7 +1181,9 @@ class ProfitTargetTrader implements LiveHandler,
                     outputToSymbol(s, usDateTime(), "*chek orderStatus", orderSubmitted.get(s));
                 }
                 if (!openOrders.get(s).isEmpty()) {
-                    outputToSymbol(s, usDateTime(), "*chek openOrders*:", openOrders.get(s));
+                    outputToSymbol(s, usDateTime(), "*chek openOrders*:",
+                            openOrders.get(s).entrySet().stream()
+                                    .sorted(Map.Entry.comparingByKey()).toList());
                 }
                 outputToSymbol(s, usDateTime(), px.getOrDefault(s, 0.0),
                         "2dP:" + twoDayPctMap.getOrDefault(s, 101.0),
