@@ -350,17 +350,17 @@ class ProfitTargetTrader implements LiveHandler,
                 && (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_TOTAL_LIMIT / 6.0);
     }
 
-    private static boolean checkDeltaImpact(String symb, double price) {
-        double addition = getLot(price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
-//        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
-//        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
-//                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
-//                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
-//                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
-
-        return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
-                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_TOTAL_LIMIT / 4.0);
-    }
+//    private static boolean checkDeltaImpact(String symb, double price) {
+//        double addition = getLot(price).longValue() * price; //not accurate, because you could have space for 1/3 of order size
+////        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
+////        pr(symb, "check delta impact", "nowDelta+addition<TotalLimit:",
+////                aggregateDelta + addition < DELTA_TOTAL_LIMIT,
+////                "deltaStock+Inc<Limit:", symbolDeltaMap.getOrDefault(symb, Double.MAX_VALUE) +
+////                        getSizeFromPrice(price).longValue() * price < DELTA_EACH_LIMIT);
+//
+//        return addition < AVAILABLE_CASH && totalDelta + addition < DELTA_TOTAL_LIMIT &&
+//                (symbDelta.getOrDefault(symb, MAX_VALUE) + addition < DELTA_TOTAL_LIMIT / 4.0);
+//    }
 
 //    private static double buyLowerFactor(String symb) {
 //        return Math.min(0.998, 1 - rng.getOrDefault(symb, 0.0) / 4.0);
@@ -405,12 +405,9 @@ class ProfitTargetTrader implements LiveHandler,
         if (px <= 0.0 || pos <= 0.0 || costPerShare <= 0.0) {
             return 0.0;
         }
-//        double currentCostBasis = costPerShare * pos;
-        double lowerTgt = mins(0.97, 1 - rng.getOrDefault(symb, 0.0));
+
+        double lowerTgt = mins(0.98, 1 - rng.getOrDefault(symb, 0.0));
         double buySize = getLot(px).longValue();
-//        pr("calc refillPx: symb price pos buysize costbasis lowerTgt refillPx",
-//                symb, price, pos, buySize, costPerShare, lowerTgt,
-//                (costPerShare * lowerTgt * (pos + buySize) - currentCostBasis) / buySize);
 
         return Math.min(costPerShare * lowerTgt,
                 (costPerShare * lowerTgt * (pos + buySize) - costPerShare * pos) / buySize);
@@ -469,10 +466,9 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToError(s, t, "error with ytdReturn");
                 return;
             }
-
+            outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+            outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
             if (pos.isZero()) {
-                outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
-                outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder2(ct, px, t, getLot(px));
@@ -486,9 +482,6 @@ class ProfitTargetTrader implements LiveHandler,
                             "refilPx:" + refillPx(s, px, posLong, cost),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
                     inventoryAdder(ct, px, t, getLot(px));
-                    outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
-                    outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
-
                 }
             }
         }
