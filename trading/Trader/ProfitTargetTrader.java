@@ -88,7 +88,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static ApiController api;
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
-    private static final int MASTERID = getSessionMasterTradeID();
+    private static final int MASTERID = getSessionMasterTradeID() + 100;
     private static volatile AtomicInteger tradeID = new AtomicInteger(MASTERID + 1);
 //    private static Map<String, Double> baseDeltaMap = new HashMap<>();
 
@@ -164,7 +164,7 @@ class ProfitTargetTrader implements LiveHandler,
     }
 
     private static double tgtProfitMargin(String s) {
-        return Math.max(minProfitMargin(s), 1 + rng.getOrDefault(s, 0.0) * 0.85);
+        return Math.max(minProfitMargin(s), 1 + rng.getOrDefault(s, 0.0) * 0.8);
     }
 
     private void connectAndReqPos() {
@@ -418,12 +418,15 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
         String s = ibContractToSymbol(ct);
-        if (costMap.getOrDefault(s, 0.0) == 0.0 || bidMap.getOrDefault(s, 0.0) == 0.0
+        if (bidMap.getOrDefault(s, 0.0) == 0.0
                 || askMap.getOrDefault(s, 0.0) == 0.0) {
-            outputToError(s, "no cost or no bid or no ask when trying to trade");
+            outputToError(s, "no bid or no ask when trying to trade");
+            outputToError(s, "cost/bid/ask:", costMap.getOrDefault(s, 0.0), bidMap.getOrDefault(s, 0.0)
+                    , askMap.getOrDefault(s, 0.0));
             return;
         }
-        double cost = costMap.get(s);
+        double cost = costMap.getOrDefault(s, 0.0);
+
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -465,7 +468,7 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder2(ct, px, t, getLot(px));
-            } else if (pos.longValue() > 0) {
+            } else if (pos.longValue() > 0 && cost != 0.0) {
                 if (px < refillPx(s, px, posLong, cost)) {
                     outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
@@ -479,7 +482,7 @@ class ProfitTargetTrader implements LiveHandler,
             }
         }
 
-        if (pos.longValue() > 0 && twoDayP > 50) {
+        if (pos.longValue() > 0 && twoDayP > 50 && cost != 0.0) {
             double pOverCost = pxDivCost(px, s);
             if (pOverCost > tgtProfitMargin(s)) {
                 if (!noBlockingSellOrders(s)) {
@@ -502,7 +505,6 @@ class ProfitTargetTrader implements LiveHandler,
                         "reqMargin:" + round4(tgtProfitMargin(s)),
                         "rng:" + round4(rng.getOrDefault(s, 0.0)));
                 inventoryCutter(ct, px, t);
-
             }
         }
     }
@@ -874,7 +876,8 @@ class ProfitTargetTrader implements LiveHandler,
         double offerPrice0 = r(basePrice);
         Decimal sellQ0 = currentDelta > 2000.0 ? Decimal.get(round(pos.longValue() / 4.0)) : pos;
         Order o0 = placeOfferLimitTIF(id0, offerPrice0, sellQ0, DAY);
-        orderSubmitted.get(s).put(o0.orderId(), new OrderAugmented(ct, t, o0, INVENTORY_CUTTER, Created));
+        orderSubmitted.get(s).put(o0.orderId(), new OrderAugmented(ct, t, o0,
+                INVENTORY_CUTTER, Created));
         placeOrModifyOrderCheck(api, ct, o0, new OrderHandler(s, o0.orderId()));
         outputToOrders(s, o0.orderId(), s, "SELL", o0.totalQuantity().longValue(),
                 "lmt@:" + offerPrice0, timeStr);
