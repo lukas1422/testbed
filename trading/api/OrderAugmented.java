@@ -85,15 +85,15 @@ public class OrderAugmented {
         primaryOrder.set(true);
     }
 
-    public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt) {
-        contract = ct;
-        orderTime = t;
-        order = o;
-        msg = "";
-        orderType = tt;
-        augmentedOrderStatus = OrderStatus.Created;
-        primaryOrder.set(true);
-    }
+//    public OrderAugmented(Contract ct, LocalDateTime t, Order o, AutoOrderType tt) {
+//        contract = ct;
+//        orderTime = t;
+//        order = o;
+//        msg = "";
+//        orderType = tt;
+//        augmentedOrderStatus = OrderStatus.Created;
+//        primaryOrder.set(true);
+//    }
 
     public void updateOrderStatus(OrderStatus os) {
         augmentedOrderStatus = os;

@@ -21,6 +21,7 @@ import static Trader.Allstatic.*;
 import static Trader.TradingUtility.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
+import static client.OrderStatus.Created;
 import static client.OrderStatus.Filled;
 import static client.Types.TimeInForce.DAY;
 import static enums.AutoOrderType.SELL_STOCK;
@@ -353,7 +354,7 @@ public class SellStock implements LiveHandler,
         double offerPrice = r(Math.max(askMap.getOrDefault(s, px), px));
         Order o = placeOfferLimitTIF(id, offerPrice,
                 Decimal.get(Math.min(amountToSell.get(s), CURRENT_POS)), DAY);
-        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, SELL_STOCK));
+        orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, SELL_STOCK, Created));
         orderStatus.get(s).put(o.orderId(), OrderStatus.Created);
         placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
         outputToSymbol(s, "ordID:" + o.orderId(), "tradID:" + id, o.action(), "px:" + offerPrice,
