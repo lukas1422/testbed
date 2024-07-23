@@ -228,8 +228,8 @@ public enum AutoOrderType {
     CUSTOM_CUTTER,
     ETF_CUTTER,
 
-    INVENTORY_ADDER,
-    INVENTORY_CUTTER,
+    ADDER,
+    CUTTER,
     SELL_STOCK,
     BREACH_ADDER,
     BREACH_CUTTER,

@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -88,7 +89,7 @@ class ProfitTargetTrader implements LiveHandler,
     private static ApiController api;
     private static volatile TreeSet<String> targets = new TreeSet<>();
     private static Map<String, Contract> symbolContractMap = new HashMap<>();
-    private static final int MASTERID = getSessionMasterTradeID() + 100;
+    private static final int MASTERID = getSessionMasterTradeID();
     private static volatile AtomicInteger tradeID = new AtomicInteger(MASTERID + 1);
 //    private static Map<String, Double> baseDeltaMap = new HashMap<>();
 
@@ -743,7 +744,7 @@ class ProfitTargetTrader implements LiveHandler,
             Decimal size = Decimal.get(floor(lotSize.longValue() / 3.0));
             Order o = placeBidLimitTIF(id, bidPrice, size, DAY);
             orderSubmitted.get(s).put(o.orderId(),
-                    new OrderAugmented(ct, t, o, INVENTORY_ADDER, Created));
+                    new OrderAugmented(ct, t, o, ADDER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
             outputToOrders(s, t.toLocalTime().format(Hmm),
                     "#:" + i, "orderId:", o.orderId(), s, "BUY", o.totalQuantity().longValue(),
@@ -765,7 +766,7 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal size0 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o0 = placeBidLimitTIF(id0, bidPx0, size0, DAY);
         orderSubmitted.get(s).put(o0.orderId(),
-                new OrderAugmented(ct, t, o0, INVENTORY_ADDER, Created));
+                new OrderAugmented(ct, t, o0, ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o0, new OrderHandler(s, o0.orderId()));
         outputToOrders(s, o0.orderId(), s, o0.action(), o0.totalQuantity().longValue(),
                 "lmt@:" + bidPx0, timeStr);
@@ -777,7 +778,7 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal size1 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o1 = placeBidLimitTIF(id1, bidPx1, size1, DAY);
         orderSubmitted.get(s).put(o1.orderId(),
-                new OrderAugmented(ct, t, o1, INVENTORY_ADDER, Created));
+                new OrderAugmented(ct, t, o1, ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
         outputToOrders(s, o1.orderId(), s, o1.action(), o1.totalQuantity().longValue(),
                 "lmt@:" + bidPx1, timeStr);
@@ -788,7 +789,7 @@ class ProfitTargetTrader implements LiveHandler,
         double bidPx2 = r(basePrice * buyFactor(s, 2));
         Decimal size2 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o2 = placeBidLimitTIF(id2, bidPx2, size2, DAY);
-        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_ADDER, Created));
+        orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
         outputToOrders(s, o2.orderId(), s, "BUY", o2.totalQuantity().longValue(),
                 "lmt@:" + bidPx2, timeStr);
@@ -801,7 +802,7 @@ class ProfitTargetTrader implements LiveHandler,
         double bidPx3 = r(basePrice * buyFactor(s, 3));
         Decimal size3 = Decimal.get(round(lotSize.longValue() / 3.0));
         Order o3 = placeBidLimitTIF(id3, bidPx3, size3, DAY);
-        orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_ADDER, Created));
+        orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, ADDER, Created));
         placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
         outputToOrders(s, o3.orderId(), s, "BUY", o3.totalQuantity().longValue(),
                 "lmt@:" + bidPx3, timeStr);
@@ -844,7 +845,7 @@ class ProfitTargetTrader implements LiveHandler,
             }
 
             Order o = placeOfferLimitTIF(id, offerPrice, sellQ, DAY);
-            orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, INVENTORY_CUTTER, Created));
+            orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, CUTTER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
 
             outputToOrders(s, "#:" + i, o.orderId(), s, "SELL", o.totalQuantity().longValue(),
@@ -878,7 +879,7 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal sellQ0 = currentDelta > 2000.0 ? Decimal.get(round(pos.longValue() / 4.0)) : pos;
         Order o0 = placeOfferLimitTIF(id0, offerPrice0, sellQ0, DAY);
         orderSubmitted.get(s).put(o0.orderId(), new OrderAugmented(ct, t, o0,
-                INVENTORY_CUTTER, Created));
+                CUTTER, Created));
         placeOrModifyOrderCheck(api, ct, o0, new OrderHandler(s, o0.orderId()));
         outputToOrders(s, o0.orderId(), s, "SELL", o0.totalQuantity().longValue(),
                 "lmt@:" + offerPrice0, timeStr);
@@ -893,7 +894,7 @@ class ProfitTargetTrader implements LiveHandler,
             Decimal sellQ1 = currentDelta > 1000.0 ?
                     Decimal.get(floor(pos.longValue() / 4.0)) : pos;
             Order o1 = placeOfferLimitTIF(id1, offerPrice1, sellQ1, DAY);
-            orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, INVENTORY_CUTTER, Created));
+            orderSubmitted.get(s).put(o1.orderId(), new OrderAugmented(ct, t, o1, CUTTER, Created));
             placeOrModifyOrderCheck(api, ct, o1, new OrderHandler(s, o1.orderId()));
             outputToOrders(s, o1.orderId(), s, "SELL", o1.totalQuantity().longValue(),
                     "lmt@:" + offerPrice1, timeStr);
@@ -905,7 +906,7 @@ class ProfitTargetTrader implements LiveHandler,
             Decimal sellQ2 = Decimal.get(floor(pos.longValue() / 4.0));
             int id2 = tradeID.incrementAndGet();
             Order o2 = placeOfferLimitTIF(id2, r(basePrice * sellFactor(s, 2)), sellQ2, DAY);
-            orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, INVENTORY_CUTTER, Created));
+            orderSubmitted.get(s).put(o2.orderId(), new OrderAugmented(ct, t, o2, CUTTER, Created));
             placeOrModifyOrderCheck(api, ct, o2, new OrderHandler(s, o2.orderId()));
             outputToOrders(s, o2.orderId(), s, "SELL", o2.totalQuantity().longValue(),
                     "@:", r(basePrice * sellFactor(s, 2)));
@@ -917,7 +918,7 @@ class ProfitTargetTrader implements LiveHandler,
             if (sellQ3.longValue() > 0) {
                 int id3 = tradeID.incrementAndGet();
                 Order o3 = placeOfferLimitTIF(id3, r(basePrice * sellFactor(s, 3)), sellQ3, DAY);
-                orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, INVENTORY_CUTTER, Created));
+                orderSubmitted.get(s).put(o3.orderId(), new OrderAugmented(ct, t, o3, CUTTER, Created));
                 placeOrModifyOrderCheck(api, ct, o3, new OrderHandler(s, o3.orderId()));
                 outputToOrders(s, o3.orderId(), s, "SELL", o3.totalQuantity().longValue(),
                         "@:", r(basePrice * sellFactor(s, 3)), t.toLocalTime().format(Hmm));
@@ -972,15 +973,20 @@ class ProfitTargetTrader implements LiveHandler,
         if (!openOrders.get(s).isEmpty()) {
             outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
                     openOrders.get(s)
+                            .keySet().stream()
+                            .sorted(Comparator.naturalOrder()).toList());
+
+            outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
+                    openOrders.get(s)
                             .entrySet().stream()
-                            .sorted(Map.Entry.comparingByKey()).toList());
+                            .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
         }
     }
 
     @Override
     public void openOrderEnd() {
         outputToGeneral(usDateTime(), "*openOrderEnd*:print all " +
-                        "openOrdrs Profit Target", openOrders,
+                        "openOrders Profit Target", openOrders,
                 "orderSubmitted map:", orderSubmitted);
     }
 
@@ -1151,11 +1157,11 @@ class ProfitTargetTrader implements LiveHandler,
         es.scheduleAtFixedRate(ProfitTargetTrader::periodicPnl, 20L, 120L, TimeUnit.SECONDS);
         es.scheduleAtFixedRate(() -> {
             targets.forEach(s -> {
-                outputToSymbol(s, "*Periodic Run*", usDateTime());
-                outputToSymbol(s, lastPxTimestamp.containsKey(s) ?
+//                outputToSymbol(s, );
+                outputToSymbol(s, "*Periodic Run*", usDateTime(), lastPxTimestamp.containsKey(s) ?
                         str("last live feed time:", lastPxTimestamp.get(s).format(MdHmm),
                                 "been:" + Duration.between(lastPxTimestamp.get(s), getESTDateTimeNow()).toMinutes()
-                                        + "mins.", "p:" + px.getOrDefault(s, 0.0),
+                                        + "min", "p:" + px.getOrDefault(s, 0.0),
                                 costMap.getOrDefault(s, 0.0) == 0.0 ? "" : str(
                                         "cost:" + round1(costMap.get(s)),
                                         "p/cost:" + round3(px.getOrDefault(s, 0.0)
@@ -1169,7 +1175,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "delt:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "lot:" + getLot(px.get(s)),
-                            "fillP:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
+                            "refillP:" + round2(refillPx(s, px.get(s), symbPos.get(s).longValue(), costMap.get(s))),
                             "costTgt:" + round3(costTgt(s)),
                             "fillP/cost:" + round3(refillPx(s, px.get(s),
                                     symbPos.get(s).longValue(), costMap.get(s)) / costMap.get(s)),
@@ -1177,12 +1183,14 @@ class ProfitTargetTrader implements LiveHandler,
                                     , costMap.get(s)) / px.get(s)));
                 }
                 if (!orderSubmitted.get(s).isEmpty()) {
-                    outputToSymbol(s, usDateTime(), "*chek orderStatus", orderSubmitted.get(s));
+                    outputToSymbol(s, usDateTime(), "*chek orderStatus",
+                            orderSubmitted.get(s).entrySet().stream().collect(Collectors.toMap(Function.identity(),
+                                    e -> e.getValue().getOrderStatus())));
                 }
                 if (!openOrders.get(s).isEmpty()) {
                     outputToSymbol(s, usDateTime(), "*chek openOrders*:",
-                            openOrders.get(s).entrySet().stream()
-                                    .sorted(Map.Entry.comparingByKey()).toList());
+                            openOrders.get(s).keySet().stream()
+                                    .sorted(Comparator.naturalOrder()).toList());
                 }
                 outputToSymbol(s, usDateTime(), px.getOrDefault(s, 0.0),
                         "2dP:" + twoDayPctMap.getOrDefault(s, 101.0),
