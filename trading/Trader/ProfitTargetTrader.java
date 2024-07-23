@@ -691,9 +691,9 @@ class ProfitTargetTrader implements LiveHandler,
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
-                            "b factor:", buyFactor(s, 1) + " "
+                            "bFactor:", round4(buyFactor(s, 1)) + " "
                                     + round4(buyFactor(s, 2)) + " " + round4(buyFactor(s, 3)),
-                            "s factor:", round4(sellFactor(s, 1))
+                            "sFactor:", round4(sellFactor(s, 1))
                                     + " " + round4(sellFactor(s, 2)) + " "
                                     + round4(sellFactor(s, 3)),
                             "tgtMargin:" + round4(tgtProfitMargin(s)),
@@ -759,7 +759,6 @@ class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(ct);
         double basePrice = Math.min(px, bidMap.getOrDefault(s, px));
         String timeStr = t.toLocalTime().format(Hmm);
-
 
         int id0 = tradeID.incrementAndGet();
         double bidPx0 = r(basePrice);
