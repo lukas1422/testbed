@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static Trader.Allstatic.*;
@@ -1124,8 +1123,8 @@ class ProfitTargetTrader implements LiveHandler,
                         outputToFills(s, outp);
                     });
 
-            orderSubmitted.get(s).forEach((key1, value1) -> {
-                if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId()) {
+            orderSubmitted.get(s).forEach((_, value1) -> {
+                if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getFirst().getExec().orderId()) {
                     if (value1.getOrder().action() == SELL &&
                             !orderIDPnlMap.containsKey(value1.getOrder().orderId())) {
                         value1.updateIBPnl(commissionReport.realizedPNL());
