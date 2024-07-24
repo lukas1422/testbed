@@ -1651,6 +1651,6 @@ public class Order {
 //        return str("orderID:" + m_orderId, m_orderType, m_action,
 //                "Q:" + m_totalQuantity, "px:" + m_lmtPrice, "filledQ:" + m_filledQuantity);
 
-        return str(m_orderId, m_action + " " + m_totalQuantity + "@:" + m_lmtPrice);
+        return str(m_orderId, m_action + " " + m_totalQuantity + "@" + m_lmtPrice);
     }
 }

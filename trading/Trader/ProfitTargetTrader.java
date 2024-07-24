@@ -466,8 +466,6 @@ class ProfitTargetTrader implements LiveHandler,
 
                 return;
             }
-            outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
-            outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
             if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
@@ -482,6 +480,8 @@ class ProfitTargetTrader implements LiveHandler,
                             "refilPx:" + round2(refillPx(s, px, posLong, cost)),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
                     inventoryAdder(ct, px, t, getLot(px));
+                    outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+                    outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
                 }
             }
         }
@@ -616,8 +616,8 @@ class ProfitTargetTrader implements LiveHandler,
                     if (o.getValue().getOrder().action() == SELL) {
                         pr(o.getKey(), s, "FILLED", "SELL",
                                 o.getValue().getOrder().totalQuantity().longValue()
-                                , "@" + o.getValue().getOrder().lmtPrice()
-                                , "Filled@", o.getValue().getAvgFillPrice()
+                                , "lmt@" + o.getValue().getOrder().lmtPrice()
+                                , "Filled@" + o.getValue().getAvgFillPrice()
                                 , "commission:" + o.getValue().getCommission()
                                 , "IBPnl:" + round2(o.getValue().getIBPnl())
                                 , "computePnl:" + round2(o.getValue().computedRealizedPnl(costInitial)));
@@ -756,6 +756,9 @@ class ProfitTargetTrader implements LiveHandler,
                     size, "@" + bidPrice, "factor:" + buyFactor(s, i)
                     , orderSubmitted.get(s).get(o.orderId()));
         }
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+
     }
 
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
@@ -1020,7 +1023,7 @@ class ProfitTargetTrader implements LiveHandler,
                 filledOrderStatusSet.add(orderId);
                 outputToFills(s, usDateTime(), "*OrderStatus*: filled:" + orderId);
             } else {
-                outputToFills(s, usDateTime(), orderId, "printed already");
+//                outputToFills(s, usDateTime(), orderId, "printed already");
             }
         }
 

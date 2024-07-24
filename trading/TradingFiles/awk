@@ -696,3 +696,112 @@ p:140.49 rng:1.9% pos:89 delt:13k cost:140.6 fullLot:266 refillP:134.03 costTgt:
 7-23 17:32 140.49 2dP:9.0 1dP:10.0
 2d$:n:1060 max:142.2 [7-22 11:18] min:140.3 [7-23 15:55] rng:1.3% 1Key:[7-19 9:30] last:[7-23 15:59]
 1d$:n:280 max:141.8 [7-23 10:07] min:140.3 [7-23 15:55] rng:1.0% 1Key:[7-23 9:30] last:[7-23 15:59]
+*******************************************
+*STARTS* 7-24 8:14
+updating pos: AWK 7-24 8:14 pos:89 cost:140.6
+POS:89 COST:140.6 DELT:13k
+7-24 8:14 rng:1.9% costTgt:0.98
+7-24 8:14 tgtMargin:1.0153 tgtPrice:142.76
+ytdReturn:7.67%
+*Periodic Run* 7-24 8:15 8:15:04 no live feed
+7-24 8:15 0.0 2dP:101.0 1dP:101.0
+2d$:n:780 max:142.2 [7-22 11:18] min:140.3 [7-23 15:55] rng:1.3% 1Key:[7-22 9:30] last:[7-23 15:59]
+1d$:n<5
+*Periodic Run* 7-24 9:15 9:15:04 no live feed
+7-24 9:15 0.0 2dP:9.0 1dP:100.0
+2d$:n:780 max:142.2 [7-22 11:18] min:140.3 [7-23 15:55] rng:1.3% 1Key:[7-22 9:30] last:[7-23 15:59]
+1d$:n<5
+*Periodic Run* 7-24 10:15 last live feed time: 7-24 10:14 been:0min p:141.32 cost:140.6 p/cost:1.005
+p:141.32 rng:1.9% pos:89 delt:13k cost:140.6 fullLot:265 refillP:134.01 costTgt:0.98 refillP/cost:0.953 refillP/px:0.948
+7-24 10:15 141.32 2dP:54.0 1dP:45.0
+2d$:n:818 max:142.2 [7-22 11:18] min:140.3 [7-23 15:55] rng:1.3% 1Key:[7-22 9:30] last:[7-24 10:14]
+1d$:n:38 max:141.8 [7-24 9:44] min:140.9 [7-24 9:31] rng:0.7% 1Key:[7-24 9:29] last:[7-24 10:14]
+*Periodic Run* 7-24 11:15 last live feed time: 7-24 11:13 been:1min p:142.01 cost:140.6 p/cost:1.01
+p:142.01 rng:1.9% pos:89 delt:13k cost:140.6 fullLot:264 refillP:134.0 costTgt:0.98 refillP/cost:0.953 refillP/px:0.944
+7-24 11:15 142.01 2dP:91.0 1dP:100.0
+2d$:n:864 max:142.2 [7-22 11:18] min:140.3 [7-23 15:55] rng:1.3% 1Key:[7-22 9:30] last:[7-24 11:13]
+1d$:n:84 max:142.0 [7-24 11:13] min:140.9 [7-24 9:31] rng:0.8% 1Key:[7-24 9:29] last:[7-24 11:13]
+2D$:n:888 max:142.6 [7-24 11:46] min:140.3 [7-23 15:55] rng:1.6% 1Key:[7-22 9:30] last:[7-24 11:46]
+1D$:n:108 max:142.6 [7-24 11:46] min:140.9 [7-24 9:31] rng:1.2% 1Key:[7-24 9:29] last:[7-24 11:46]
+******************CUT**************************
+CUT 7-24 11:46:55 1dP:100.0 2dp:100.0 px142.8 cost:140.60293595 px/Cost:1.0156 reqMargin:1.0153 rng:0.0192
+#:0 240724006 AWK SELL 29 @142.8 11:46
+#:0 SELL: AWK 7-24 11:46 CUTTER Created target margin:1.01533 cost*target margin:142.76 askPx:142.8
+#:1 240724007 AWK SELL 29 @144.62 11:46
+#:1 SELL: AWK 7-24 11:46 CUTTER Created target margin:1.01533 cost*target margin:142.76 askPx:142.8
+#:2 240724008 AWK SELL 31 @146.45 11:46
+#:2 SELL: AWK 7-24 11:46 CUTTER Created target margin:1.01533 cost*target margin:142.76 askPx:142.8
+7-24 11:46 *openOrder* status:Submitted 240724006 SELL 29@:142.8
+7-24 11:46 *openOrder* all live orders [240724006]
+7-24 11:46 *openOrder* all live orders [240724006 SELL 29@:142.8]
+7-24 11:46 *OrderStatus*:Submitted orderId:240724006 filled:0 remaining:29 avgFillPx:0.0 lastFillPx:0.0
+7-24 11:46 *openOrder* status:Submitted 240724007 SELL 29@:144.62
+7-24 11:46 *openOrder* all live orders [240724006, 240724007]
+7-24 11:46 *openOrder* all live orders [240724006 SELL 29@:142.8, 240724007 SELL 29@:144.62]
+7-24 11:46 *OrderStatus*:Submitted orderId:240724007 filled:0 remaining:29 avgFillPx:0.0 lastFillPx:0.0
+7-24 11:46 *openOrder* status:Submitted 240724008 SELL 31@:146.45
+7-24 11:46 *openOrder* all live orders [240724006, 240724007, 240724008]
+7-24 11:46 *openOrder* all live orders [240724006 SELL 29@:142.8, 240724007 SELL 29@:144.62, 240724008 SELL 31@:146.45]
+7-24 11:46 *OrderStatus*:Submitted orderId:240724008 filled:0 remaining:31 avgFillPx:0.0 lastFillPx:0.0
+updating pos: AWK 7-24 11:47 pos:60 cost:140.6
+7-24 11:47 *tradeReport* time: 2024-07-24T11:47:02 SLD execPx:142.8 shares:29 avgPx:142.8
+7-24 11:47 *openOrder* status:Filled 240724006 SELL 29@:142.8
+7-24 11:47 *openOrder*:removing order.Status: Filled 240724006 SELL 29@:142.8
+7-24 11:47 *openOrder*:after removal.OpenOrders: [240724007, 240724008]
+7-24 11:47 *openOrder* all live orders [240724007, 240724008]
+7-24 11:47 *openOrder* all live orders [240724007 SELL 29@:144.62, 240724008 SELL 31@:146.45]
+7-24 11:47 *OrderStatus*:Filled orderId:240724006 filled:29 remaining:0 avgFillPx:142.8 lastFillPx:142.8
+7-24 11:47 *openOrder* status:Filled 240724006 SELL 29@:142.8
+7-24 11:47 *openOrder*:removing order.Status: Filled 240724006 SELL 29@:142.8
+7-24 11:47 *openOrder*:after removal.OpenOrders: [240724007, 240724008]
+7-24 11:47 *openOrder* all live orders [240724007, 240724008]
+7-24 11:47 *openOrder* all live orders [240724007 SELL 29@:144.62, 240724008 SELL 31@:146.45]
+7-24 11:47 *OrderStatus*:Filled orderId:240724006 filled:29 remaining:0 avgFillPx:142.8 lastFillPx:142.8
+1.*commission report* orderID:240724006 commission:0.44 orderID: 240724006 realized pnl: 63.27
+2.*commission report* orderID:240724006 commission: 0.44 realized pnl: 63.27
+updating pos: AWK 7-24 11:47 pos:60 cost:140.6
+updating pos: AWK 7-24 11:47 pos:60 cost:140.6
+updating pos: AWK 7-24 11:51 pos:60 cost:140.6
+*Periodic Run* 7-24 12:15 last live feed time: 7-24 12:14 been:0min p:143.26 cost:140.6 p/cost:1.019
+p:143.26 rng:1.9% pos:60 delt:9k cost:140.6 fullLot:261 refillP:135.21 costTgt:0.98 refillP/cost:0.962 refillP/px:0.944
+7-24 12:15 *chek orderStatus [240724006=Filled, 240724007=Submitted, 240724008=Submitted]
+7-24 12:15 *chek openOrders*: [240724007, 240724008]
+7-24 12:15 143.26 2dP:99.0 1dP:99.0
+2d$:n:912 max:143.3 [7-24 12:03] min:140.3 [7-23 15:55] rng:2.1% 1Key:[7-22 9:30] last:[7-24 12:14]
+1d$:n:132 max:143.3 [7-24 12:03] min:140.9 [7-24 9:31] rng:1.7% 1Key:[7-24 9:29] last:[7-24 12:14]
+*Periodic Run* 7-24 13:15 last live feed time: 7-24 13:14 been:0min p:143.3 cost:140.6 p/cost:1.019
+p:143.3 rng:1.9% pos:60 delt:9k cost:140.6 fullLot:261 refillP:135.21 costTgt:0.98 refillP/cost:0.962 refillP/px:0.944
+7-24 13:15 *chek orderStatus [240724006=Filled, 240724007=Submitted, 240724008=Submitted]
+7-24 13:15 *chek openOrders*: [240724007, 240724008]
+7-24 13:15 143.3 2dP:98.0 1dP:98.0
+2d$:n:953 max:143.4 [7-24 12:03] min:140.3 [7-23 15:55] rng:2.2% 1Key:[7-22 9:30] last:[7-24 13:14]
+1d$:n:173 max:143.4 [7-24 12:03] min:140.9 [7-24 9:31] rng:1.8% 1Key:[7-24 9:29] last:[7-24 13:14]
+*Periodic Run* 7-24 14:15 last live feed time: 7-24 14:14 been:0min p:142.65 cost:140.6 p/cost:1.015
+p:142.65 rng:1.9% pos:60 delt:9k cost:140.6 fullLot:262 refillP:135.21 costTgt:0.98 refillP/cost:0.962 refillP/px:0.948
+7-24 14:15 *chek orderStatus [240724006=Filled, 240724007=Submitted, 240724008=Submitted]
+7-24 14:15 *chek openOrders*: [240724007, 240724008]
+7-24 14:15 142.65 2dP:77.0 1dP:71.0
+2d$:n:996 max:143.4 [7-24 12:03] min:140.3 [7-23 15:55] rng:2.2% 1Key:[7-22 9:30] last:[7-24 14:14]
+1d$:n:216 max:143.4 [7-24 12:03] min:140.9 [7-24 9:31] rng:1.8% 1Key:[7-24 9:29] last:[7-24 14:14]
+*Periodic Run* 7-24 15:15 last live feed time: 7-24 15:15 been:0min p:142.05 cost:140.6 p/cost:1.01
+p:142.05 rng:1.9% pos:60 delt:9k cost:140.6 fullLot:263 refillP:135.22 costTgt:0.98 refillP/cost:0.962 refillP/px:0.952
+7-24 15:15 *chek orderStatus [240724006=Filled, 240724007=Submitted, 240724008=Submitted]
+7-24 15:15 *chek openOrders*: [240724007, 240724008]
+7-24 15:15 142.05 2dP:57.0 1dP:47.0
+2d$:n:1050 max:143.4 [7-24 12:03] min:140.3 [7-23 15:55] rng:2.2% 1Key:[7-22 9:30] last:[7-24 15:15]
+1d$:n:270 max:143.4 [7-24 12:03] min:140.9 [7-24 9:31] rng:1.8% 1Key:[7-24 9:29] last:[7-24 15:15]
+7-24 16:00 *openOrder* status:Submitted 240724007 SELL 29@:144.62
+7-24 16:00 *openOrder* all live orders [240724007, 240724008]
+7-24 16:00 *openOrder* all live orders [240724007 SELL 29@:144.62, 240724008 SELL 31@:146.45]
+7-24 16:00 *OrderStatus*:Submitted orderId:240724007 filled:0 remaining:29 avgFillPx:0.0 lastFillPx:0.0
+7-24 16:00 *openOrder* status:Submitted 240724008 SELL 31@:146.45
+7-24 16:00 *openOrder* all live orders [240724007, 240724008]
+7-24 16:00 *openOrder* all live orders [240724007 SELL 29@:144.62, 240724008 SELL 31@:146.45]
+7-24 16:00 *OrderStatus*:Submitted orderId:240724008 filled:0 remaining:31 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 7-24 16:15 last live feed time: 7-24 16:00 been:15min p:142.4 cost:140.6 p/cost:1.013
+p:142.4 rng:1.9% pos:60 delt:9k cost:140.6 fullLot:263 refillP:135.22 costTgt:0.98 refillP/cost:0.962 refillP/px:0.95
+7-24 16:15 *chek orderStatus [240724006=Filled, 240724007=Submitted, 240724008=Submitted]
+7-24 16:15 *chek openOrders*: [240724007, 240724008]
+7-24 16:15 142.4 2dP:68.0 1dP:61.0
+2d$:n:1091 max:143.4 [7-24 12:03] min:140.3 [7-23 15:55] rng:2.2% 1Key:[7-22 9:30] last:[7-24 16:00]
+1d$:n:311 max:143.4 [7-24 12:03] min:140.9 [7-24 9:31] rng:1.8% 1Key:[7-24 9:29] last:[7-24 16:00]
