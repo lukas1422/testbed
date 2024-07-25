@@ -1129,15 +1129,17 @@ class ProfitTargetTrader implements LiveHandler,
                         }
 
                         e.getValue().updateCommission(commissionReport.commission());
+
+                        double computedPnl = e.getValue()
+                                .computedRealizedPnl(costMapAtStart.getOrDefault(e.getValue().getSymbol(), 0.0));
+                        outputToSymbol(s, "computed Pnl:" + computedPnl);
+
                         String output = str("1.*commission report*:" + e.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
                                 e.getValue().getOrder().action() == SELL ?
                                         str("orderID:" + e.getKey(), "realized pnl:" +
                                                         round2(commissionReport.realizedPNL()),
-                                                "computed Pnl:") : "");
-                        double computedPnl = e.getValue()
-                                .computedRealizedPnl(costMapAtStart.getOrDefault(e.getValue().getSymbol(), 0.0));
-                        outputToSymbol(s, "computed Pnl:" + computedPnl);
+                                                "computed Pnl:" + computedPnl) : "");
                         outputToSymbol(s, output);
                         outputToFills(s, output);
                     });
