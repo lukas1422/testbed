@@ -463,7 +463,6 @@ class ProfitTargetTrader implements LiveHandler,
                                     ytdReturn.getOrDefault(s, MIN_VALUE)));
                     outputToError(s, t, "error with ytdReturn");
                 }
-
                 return;
             }
             if (pos.isZero()) {
@@ -479,9 +478,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "px/cost:" + round4(pxDivCost(px, s)),
                             "refilPx:" + round2(refillPx(s, px, posLong, cost)),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
-                    inventoryAdder(ct, px, t, getLot(px));
-                    outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
-                    outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+                    inventoryAdder2(ct, px, t, getLot(px));
                 }
             }
         }
@@ -498,8 +495,6 @@ class ProfitTargetTrader implements LiveHandler,
 //                    }
                     return;
                 }
-                outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
-                outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
 
                 outputToSymbol(s, "******************CUT**************************");
                 outputToSymbol(s, "CUT", t.format(MdHmmss),
@@ -814,6 +809,9 @@ class ProfitTargetTrader implements LiveHandler,
         outputToSymbol(s, "orderID3:" + o3.orderId(), "tradeID3:" + id3, o3.action(),
                 "px3:" + bidPx3, "lot3:" + size3, "buyfactor3:" + round4(buyFactor(s, 3)),
                 orderSubmitted.get(s).get(o3.orderId()));
+
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
     }
 
     private static void inventoryCutter2(Contract ct, double px, LocalDateTime t) {
@@ -861,6 +859,8 @@ class ProfitTargetTrader implements LiveHandler,
                     "askPx:" + askMap.getOrDefault(s, 0.0));
             remainingPos = remainingPos - sellQ.longValue();
         }
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
 
 
@@ -930,6 +930,8 @@ class ProfitTargetTrader implements LiveHandler,
                 outputToSymbol(s, "sell3:", orderSubmitted.get(s).get(o3.orderId()));
             }
         }
+        outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
+        outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
     }
 
     //Open Orders ***************************
@@ -957,7 +959,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         if (orderState.status() == Filled) {
             if (!filledOrdersSet.contains(order.orderId())) {
-                outputToFills(s, usDateTime(), "*openOrder* filled", order);
+                outputToFills(s, usDateTime(), "*openOrder* FILLED", order);
                 filledOrdersSet.add(order.orderId());
             }
 //            else {
@@ -1022,7 +1024,7 @@ class ProfitTargetTrader implements LiveHandler,
             if (!filledOrderStatusSet.contains(orderId)) {
                 filledOrderStatusSet.add(orderId);
                 outputToFills(s, usDateTime(), "*OrderStatus*: filled:" + orderId);
-            } else {
+//            } else {
 //                outputToFills(s, usDateTime(), orderId, "printed already");
             }
         }
@@ -1119,7 +1121,7 @@ class ProfitTargetTrader implements LiveHandler,
                         String outp = str("1.*commission report* orderID:" + e2.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
                                 e2.getValue().getOrder().action() == SELL ?
-                                        str("orderID:", e2.getKey(), "realized pnl:",
+                                        str("orderID:" + e2.getKey(), "realized pnl:" +
                                                 round2(commissionReport.realizedPNL())) : "");
                         e2.getValue().updateCommission(commissionReport.commission());
                         outputToSymbol(s, outp);
@@ -1127,7 +1129,8 @@ class ProfitTargetTrader implements LiveHandler,
                     });
 
             orderSubmitted.get(s).forEach((_, value1) -> {
-                if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getFirst().getExec().orderId()) {
+                if (value1.getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey)
+                        .getFirst().getExec().orderId()) {
                     if (value1.getOrder().action() == SELL &&
                             !orderIDPnlMap.containsKey(value1.getOrder().orderId())) {
                         value1.updateIBPnl(commissionReport.realizedPNL());
