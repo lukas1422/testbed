@@ -599,7 +599,7 @@ class ProfitTargetTrader implements LiveHandler,
 
         orderSubmitted.entrySet().stream().forEach(e -> {
             String s = e.getKey();
-            double cost = costMap.getOrDefault(s, 0.0);
+//            double cost = costMap.getOrDefault(s, 0.0);
             double costInitial = costMapAtStart.getOrDefault(s, 0.0);
             e.getValue().entrySet().forEach(o -> {
                 if (o.getValue().getOrderStatus() != Filled) {
@@ -609,7 +609,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "@" + o.getValue().getOrder().lmtPrice());
                 } else {
                     if (o.getValue().getOrder().action() == SELL) {
-                        pr(o.getKey(), s, "FILLED", "SELL",
+                        outputToGeneral(o.getKey(), s, "FILLED", "SELL",
                                 o.getValue().getOrder().totalQuantity().longValue()
                                 , "lmt@" + o.getValue().getOrder().lmtPrice()
                                 , "Filled@" + o.getValue().getAvgFillPrice()
@@ -617,7 +617,7 @@ class ProfitTargetTrader implements LiveHandler,
                                 , "IBPnl:" + round2(o.getValue().getIBPnl())
                                 , "computePnl:" + round2(o.getValue().computedRealizedPnl(costInitial)));
                     } else {
-                        pr(o.getKey(), s, "FILLED", "BUY",
+                        outputToGeneral(o.getKey(), s, "FILLED", "BUY",
                                 o.getValue().getOrder().totalQuantity().longValue(),
                                 "@" + o.getValue().getOrder().lmtPrice(),
                                 "Filled@", o.getValue().getAvgFillPrice(),
@@ -678,7 +678,7 @@ class ProfitTargetTrader implements LiveHandler,
                                     lastPxTimestamp.get(s).format(Hmm) : "n/a"),
                             "1dp:" + (oneDayPctMap.containsKey(s) ? round(oneDayPctMap.get(s)) : "n/a"),
                             "2dp:" + (twoDayPctMap.containsKey(s) ? round(twoDayPctMap.get(s)) : "n/a"),
-                            "delt:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
+                            "delta:" + round(symbPos.get(s).longValue() * px.get(s) / 1000.0) + "k",
                             "cost:" + round1(costMap.get(s)),
                             "rtn:" + round(1000.0 * (px.get(s) / costMap.get(s) - 1)) / 10.0 + "%",
                             "#:" + getLot(px.get(s)),
@@ -744,16 +744,15 @@ class ProfitTargetTrader implements LiveHandler,
                     new OrderAugmented(ct, t, o, ADDER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
             outputToOrders(s, t.toLocalTime().format(Hmm),
-                    "#:" + i, "orderId:", o.orderId(), s, "BUY", o.totalQuantity().longValue(),
+                    i + ":" + "orderId:" + o.orderId(), s, "BUY", o.totalQuantity().longValue(),
                     "@" + bidPrice);
             outputToSymbol(s, t.toLocalTime().format(Hmm),
-                    "#:" + i, "orderID:" + o.orderId(), s, "tradeID:" + id, "BUY",
+                    i + ":" + "orderID:" + o.orderId(), s, "tradeID:" + id, "BUY",
                     size, "@" + bidPrice, "factor:" + buyFactor(s, i)
                     , orderSubmitted.get(s).get(o.orderId()));
         }
         outputToSymbol(s, "1D$:" + genStats(twoDayData.get(s).tailMap(TODAY230)));
         outputToSymbol(s, "2D$:" + genStats(twoDayData.get(s)));
-
     }
 
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
@@ -851,9 +850,9 @@ class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, CUTTER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
 
-            outputToOrders(s, "#:" + i, o.orderId(), s, "SELL", o.totalQuantity().longValue(),
+            outputToOrders(s, i + ":" + o.orderId(), s, "SELL", o.totalQuantity().longValue(),
                     "@" + offerPrice, t.toLocalTime().format(Hmm));
-            outputToSymbol(s, "#:" + i, "SELL:", orderSubmitted.get(s).get(o.orderId()),
+            outputToSymbol(s, i + ":", "SELL:", orderSubmitted.get(s).get(o.orderId()),
                     "target margin:" + round5(tgtProfitMargin(s)),
                     "cost*target margin:" + round2(cost * tgtProfitMargin(s)),
                     "askPx:" + askMap.getOrDefault(s, 0.0));
@@ -959,7 +958,9 @@ class ProfitTargetTrader implements LiveHandler,
 
         if (orderState.status() == Filled) {
             if (!filledOrdersSet.contains(order.orderId())) {
+                outputToFills(s, "************************");
                 outputToFills(s, usDateTime(), "*openOrder* FILLED", order);
+                outputToFills(s, "************************");
                 filledOrdersSet.add(order.orderId());
             }
 //            else {
@@ -968,7 +969,8 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         if (orderState.status().isFinished()) {
-            outputToSymbol(s, usDateTime(), "*openOrder*:removing order.Status:", orderState.status(), order);
+            outputToSymbol(s, usDateTime(), "*openOrder*:removing order.Status:" +
+                    orderState.status(), order);
             if (openOrders.get(s).containsKey(order.orderId())) {
                 openOrders.get(s).remove(order.orderId());
             }
@@ -979,10 +981,10 @@ class ProfitTargetTrader implements LiveHandler,
             openOrders.get(s).put(order.orderId(), order);
         }
         if (!openOrders.get(s).isEmpty()) {
-            outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
-                    openOrders.get(s)
-                            .keySet().stream()
-                            .sorted(Comparator.naturalOrder()).toList());
+//            outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
+//                    openOrders.get(s)
+//                            .keySet().stream()
+//                            .sorted(Comparator.naturalOrder()).toList());
 
             outputToSymbol(s, usDateTime(), "*openOrder* all live orders",
                     openOrders.get(s)
@@ -1102,28 +1104,32 @@ class ProfitTargetTrader implements LiveHandler,
             return;
         }
 
-        String s = tradeKeyExecutionMap.get(tradeKey).get(0).getSymbol();
+        String s = tradeKeyExecutionMap.get(tradeKey).getFirst().getSymbol();
 
         if (orderSubmitted.containsKey(s) && !orderSubmitted.get(s).isEmpty()) {
-            orderSubmitted.get(s).entrySet().stream().filter(e1 -> e1.getValue()
-                            .getOrder().orderId()
-                            == tradeKeyExecutionMap.get(tradeKey).get(0).getExec().orderId())
-                    .forEach(e2 -> {
-                        if (!orderIDPnlMap.containsKey(e2.getKey()) &&
-                                e2.getValue().getOrder().action() == SELL) {
-                            orderIDPnlMap.put(e2.getKey(), commissionReport.realizedPNL());
-                            e2.getValue().updateIBPnl(commissionReport.realizedPNL());
-                            outputToPnl(s, "1:", e2.getKey(),
-                                    e2.getValue().getOrder().totalQuantity().longValue(),
-                                    e2.getValue().getOrder().lmtPrice()
+            orderSubmitted.get(s).entrySet().stream()
+                    .filter(e -> e.getValue()
+                            .getOrder().orderId() == tradeKeyExecutionMap.get(tradeKey).getFirst().getExec().orderId())
+                    .forEach(e -> {
+                        if (!orderIDPnlMap.containsKey(e.getKey()) && e.getValue().getOrder().action() == SELL) {
+                            orderIDPnlMap.put(e.getKey(), commissionReport.realizedPNL());
+                            e.getValue().updateIBPnl(commissionReport.realizedPNL());
+                            outputToPnl(s, "1:", e.getKey(),
+                                    e.getValue().getOrder().totalQuantity().longValue(),
+                                    e.getValue().getOrder().lmtPrice()
                                     , "pnl:", commissionReport.realizedPNL(), getESTLocalTimeNow().format(Hmmss));
                         }
-                        String outp = str("1.*commission report* orderID:" + e2.getKey(),
+
+                        e.getValue().updateCommission(commissionReport.commission());
+                        String outp = str("1.*commission report* orderID:" + e.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
-                                e2.getValue().getOrder().action() == SELL ?
-                                        str("orderID:" + e2.getKey(), "realized pnl:" +
-                                                round2(commissionReport.realizedPNL())) : "");
-                        e2.getValue().updateCommission(commissionReport.commission());
+                                e.getValue().getOrder().action() == SELL ?
+                                        str("orderID:" + e.getKey(), "realized pnl:" +
+                                                        round2(commissionReport.realizedPNL()),
+                                                "computed Pnl:") : "");
+                        double computedPnl = e.getValue()
+                                .computedRealizedPnl(costMapAtStart.getOrDefault(e.getValue().getSymbol(), 0.0));
+                        outputToSymbol(s, "computed Pnl:" + computedPnl);
                         outputToSymbol(s, outp);
                         outputToFills(s, outp);
                     });
