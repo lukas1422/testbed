@@ -407,8 +407,8 @@ class ProfitTargetTrader implements LiveHandler,
             return 0.0;
         }
 
-        double lowerTgt = mins(0.98, 1 - rng.getOrDefault(symb, 0.0));
-        double buySize = getLot(px).longValue() / 4.0; //10k
+        double lowerTgt = mins(0.99, 1 - rng.getOrDefault(symb, 0.0));
+        double buySize = getLot(px).longValue() / 2.0; //10k
 
         return Math.min(costPerShare * lowerTgt,
                 (costPerShare * lowerTgt * (pos + buySize) - costPerShare * pos) / buySize);
@@ -470,7 +470,6 @@ class ProfitTargetTrader implements LiveHandler,
                 return;
             }
 
-
             if (pos.isZero()) {
                 outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
@@ -482,7 +481,7 @@ class ProfitTargetTrader implements LiveHandler,
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
                             "px/cost:" + round4(pxDivCost(px, s)),
-                            "refilPx:" + round2(refillPx(s, px, posLong, cost)),
+                            "refillPx:" + round2(refillPx(s, px, posLong, cost)),
                             "avgRng:" + round4(rng.getOrDefault(s, 0.0)));
                     inventoryAdder2(ct, px, t, getLot(px));
                 }
