@@ -425,10 +425,10 @@ class ProfitTargetTrader implements LiveHandler,
             outputToError(s, t.toLocalTime(), "cost/bid/ask:",
                     costMap.getOrDefault(s, 0.0), bidMap.getOrDefault(s, 0.0)
                     , askMap.getOrDefault(s, 0.0));
-            return;
+            //can continue, trade at last
+//            return;
         }
         double cost = costMap.getOrDefault(s, 0.0);
-
 
         if (!ct.currency().equalsIgnoreCase("USD")) {
             outputToGeneral(usDateTime(), "only USD stock allowed, s:", ct.symbol());
@@ -748,9 +748,8 @@ class ProfitTargetTrader implements LiveHandler,
             orderSubmitted.get(s).put(o.orderId(),
                     new OrderAugmented(ct, t, o, ADDER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
-            outputToOrders(s, t.toLocalTime().format(Hmm),
-                    i + ":" + "orderId:" + o.orderId(), s, "BUY", o.totalQuantity().longValue(),
-                    "@" + bidPrice);
+            outputToOrders(s, i + ":" + o.orderId(), s, "BUY", o.totalQuantity().longValue(),
+                    "@" + bidPrice, t.toLocalTime().format(Hmm));
             outputToSymbol(s, t.toLocalTime().format(Hmm),
                     i + ":", s, "orderID:" + o.orderId(), "tradeID:" + id, "BUY",
                     size, "@" + bidPrice, "factor:" + buyFactor(s, i)
@@ -966,9 +965,9 @@ class ProfitTargetTrader implements LiveHandler,
 
         if (orderState.status() == Filled) {
             if (!filledOrdersSet.contains(order.orderId())) {
-                outputToFills(s, "************************");
+//                outputToFills(s, "************************");
                 outputToFills(s, usDateTime(), "*openOrder* FILLED", order);
-                outputToFills(s, "************************");
+//                outputToFills(s, "************************");
                 filledOrdersSet.add(order.orderId());
             }
 //            else {
@@ -1122,10 +1121,10 @@ class ProfitTargetTrader implements LiveHandler,
                         if (!orderIDPnlMap.containsKey(e.getKey()) && e.getValue().getOrder().action() == SELL) {
                             orderIDPnlMap.put(e.getKey(), commissionReport.realizedPNL());
                             e.getValue().updateIBPnl(commissionReport.realizedPNL());
-                            outputToPnl(s, "1:", e.getKey(),
-                                    e.getValue().getOrder().totalQuantity().longValue(),
-                                    e.getValue().getOrder().lmtPrice()
-                                    , "pnl:", commissionReport.realizedPNL(), getESTLocalTimeNow().format(Hmmss));
+                            outputToPnl(getESTLocalTimeNow().format(Hmm), s, e.getKey(),
+                                    "SELL", e.getValue().getOrder().totalQuantity().longValue(),
+                                    "@" + e.getValue().getOrder().lmtPrice()
+                                    , "pnl:" + round2(commissionReport.realizedPNL()));
                         }
 
                         e.getValue().updateCommission(commissionReport.commission());
@@ -1139,9 +1138,10 @@ class ProfitTargetTrader implements LiveHandler,
                                 e.getValue().getOrder().action() == SELL ?
                                         str("orderID:" + e.getKey(), "realized pnl:" +
                                                         round2(commissionReport.realizedPNL()),
-                                                "computed Pnl:" + computedPnl) : "");
+                                                "computed Pnl:" + round2(computedPnl)) : "");
                         outputToSymbol(s, output);
                         outputToFills(s, output);
+                        outputToFills(s, "*********************");
                     });
 
             orderSubmitted.get(s).forEach((_, value1) -> {
