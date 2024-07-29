@@ -1114,7 +1114,7 @@ class ProfitTargetTrader implements LiveHandler,
                         String output = str("1.*commission report*:" + e.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
                                 e.getValue().getOrder().action() == SELL ?
-                                        str("orderID:" + e.getKey(), "realized pnl:" +
+                                        str("realized pnl:" +
                                                         round2(commissionReport.realizedPNL()),
                                                 "computed Pnl:" + round2(computedPnl)) : "");
                         outputToSymbol(s, output);
