@@ -681,9 +681,9 @@ class ProfitTargetTrader implements LiveHandler,
                             "refil/Px:" + round2(refillPx(s, px.get(s)
                                     , symbPos.get(s).longValue(), costMap.get(s)) / px.get(s)),
                             "rng:" + round(1000.0 * rng.getOrDefault(s, 0.0)) / 10.0 + "%",
-                            "bFactor:", round4(buyFactor(s, 1)) + " "
+                            "bFactor:" + round4(buyFactor(s, 1)) + " "
                                     + round4(buyFactor(s, 2)) + " " + round4(buyFactor(s, 3)),
-                            "sFactor:", round4(sellFactor(s, 1))
+                            "sFactor:" + round4(sellFactor(s, 1))
                                     + " " + round4(sellFactor(s, 2)) + " "
                                     + round4(sellFactor(s, 3)),
                             "tgtMargin:" + round4(tgtProfitMargin(s)),
@@ -1109,8 +1109,9 @@ class ProfitTargetTrader implements LiveHandler,
 
                         double computedPnl = e.getValue()
                                 .computedRealizedPnl(costMapAtStart.getOrDefault(e.getValue().getSymbol(), 0.0));
-                        outputToSymbol(s, "computed Pnl:" + computedPnl);
-
+                        if (e.getValue().getOrder().action() == SELL) {
+                            outputToSymbol(s, "computed Pnl:" + computedPnl);
+                        }
                         String output = str("1.*commission report*:" + e.getKey(),
                                 "commission:" + round2(commissionReport.commission()),
                                 e.getValue().getOrder().action() == SELL ?
