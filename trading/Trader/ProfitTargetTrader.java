@@ -373,7 +373,7 @@ class ProfitTargetTrader implements LiveHandler,
             return 1;
         }
         return mins(1 - 0.006 * Math.pow(2, i),
-                1 - Math.pow(2, i) * rng.getOrDefault(symb, 0.0) / 2.0);
+                1 - Math.pow(2, i) * rng.getOrDefault(symb, 0.0) / 2.5);
     }
 
 
