@@ -369,9 +369,9 @@ class ProfitTargetTrader implements LiveHandler,
 
     //convex function to handle crashes
     private static double buyFactor(String symb, int i) {
-        if (i == 0) {
-            return 1;
-        }
+//        if (i == 0) {
+//            return 1;
+//        }
         return mins(1 - 0.005 * Math.pow(3, i),
                 1 - Math.pow(3, i) * rng.getOrDefault(symb, 0.0) / 2.5);
     }
@@ -379,12 +379,12 @@ class ProfitTargetTrader implements LiveHandler,
 
     //0.005, 0.02, 0.045 handle jumps
     private static double sellFactor(String symb, int i) {
-        if (i == 0) {
-            return 1;
-        }
+//        if (i == 0) {
+//            return 1;
+//        }
 
-        return maxs(1 + 0.005 * Math.pow(2, i),
-                1 + Math.pow(2, i) * rng.getOrDefault(symb, 0.0) / 3.0);
+        return maxs(1 + 0.005 * Math.pow(3, i),
+                1 + Math.pow(3, i) * rng.getOrDefault(symb, 0.0) / 3.0);
     }
 
 
@@ -405,7 +405,7 @@ class ProfitTargetTrader implements LiveHandler,
             return 0.0;
         }
 
-        double lowerTgt = mins(0.99, 1 - rng.getOrDefault(symb, 0.0));
+        double lowerTgt = mins(0.98, 1 - rng.getOrDefault(symb, 0.0));
         double buySize = getLot(px).longValue() / 2.0;
 
         return Math.min(costPerShare * lowerTgt,
