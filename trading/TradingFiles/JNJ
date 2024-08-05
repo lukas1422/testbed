@@ -645,3 +645,208 @@ p:163.8 rng:1.4% pos:8 delt:1k cost:158.5 fullLot:228 refillP:155.14 costTgt:0.9
 8-2 17:23 163.8 2dP:90.0 1dP:80.0
 2d$:n:1183 max:164.5 [8-2 9:36] min:157.8 [8-1 10:57] rng:4.3% 1Key:[7-31 9:30] last:[8-2 17:18]
 1d$:n:403 max:164.5 [8-2 9:36] min:161.1 [8-2 11:42] rng:2.1% 1Key:[8-2 9:23] last:[8-2 17:18]
+*******************************************
+*STARTS* 8-5 7:18
+updating pos: JNJ 8-5 7:18 pos:8 cost:158.53
+POS:8 COST:158.5 DELT:1k
+8-5 7:19 rng:1.4% costTgt:0.98
+8-5 7:19 tgtMargin:1.0109 tgtPrice:160.27
+ytdReturn:6.37%
+*Periodic Run* 8-5 7:19 last live feed time: 8-5 7:19 been:0min p:163.59 cost:158.5 p/cost:1.032
+p:163.59 rng:1.4% pos:8 delt:1k cost:158.5 fullLot:229 refillP:155.14 costTgt:0.98 refillP/cost:0.979 refillP/px:0.948
+8-5 7:19 163.59 2dP:101.0 1dP:101.0
+2d$:n:781 max:164.5 [8-2 9:36] min:157.8 [8-1 10:57] rng:4.3% 1Key:[8-1 9:30] last:[8-5 7:19]
+1d$:n<5
+*Periodic Run* 8-5 8:19 last live feed time: 8-5 8:18 been:0min p:163.39 cost:158.5 p/cost:1.031
+p:163.39 rng:1.4% pos:8 delt:1k cost:158.5 fullLot:229 refillP:155.14 costTgt:0.98 refillP/cost:0.979 refillP/px:0.95
+8-5 8:19 163.39 2dP:84.0 1dP:62.0
+2d$:n:793 max:164.5 [8-2 9:36] min:157.8 [8-1 10:57] rng:4.3% 1Key:[8-1 9:30] last:[8-5 8:18]
+1d$:n:13 max:163.8 [8-5 7:19] min:162.7 [8-5 8:15] rng:0.7% 1Key:[8-5 7:19] last:[8-5 8:18]
+*Periodic Run* 8-5 9:19 last live feed time: 8-5 9:14 been:4min p:162.06 cost:158.5 p/cost:1.022
+p:162.06 rng:1.4% pos:8 delt:1k cost:158.5 fullLot:231 refillP:155.14 costTgt:0.98 refillP/cost:0.979 refillP/px:0.957
+8-5 9:19 162.06 2dP:64.0 1dP:45.0
+2d$:n:823 max:164.5 [8-2 9:36] min:157.8 [8-1 10:57] rng:4.3% 1Key:[8-1 9:30] last:[8-5 9:14]
+1d$:n:43 max:163.8 [8-5 7:19] min:160.6 [8-5 8:54] rng:2.0% 1Key:[8-5 7:19] last:[8-5 9:14]
+******************CUT**************************
+CUT 8-5 9:30:00 1dP:95.0 2dp:89.0 px163.79 cost:158.5334875 px/Cost:1.0332 reqMargin:1.0109 rng:0.0137
+0:240805003 JNJ SELL 2 @164.99 9:30
+0: SELL JNJ 8-5 9:30 CUTTER Created target margin:1.01093 cost*target margin:160.27 askPx:164.17
+1:240805004 JNJ SELL 6 @166.63 9:30
+1: SELL JNJ 8-5 9:30 CUTTER Created target margin:1.01093 cost*target margin:160.27 askPx:164.17
+2024-08-05T09:30:00.977744 remaining position <= 0, break
+2D$:n:832 max:164.5 [8-2 9:36] min:157.8 [8-1 10:57] rng:4.3% 1Key:[8-1 9:30] last:[8-5 9:30]
+1D$:n:52 max:163.9 [8-5 7:19] min:160.6 [8-5 8:54] rng:2.1% 1Key:[8-5 7:19] last:[8-5 9:30]
+8-5 9:30 *openOrder* status:PreSubmitted 240805003 SELL 2@164.99
+8-5 9:30 *openOrder* all live orders [240805003 SELL 2@164.99]
+8-5 9:30 *OrderStatus*:PreSubmitted orderId:240805003 filled:0 remaining:2 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:30 *openOrder* status:Submitted 240805004 SELL 6@166.63
+8-5 9:30 *openOrder* all live orders [240805003 SELL 2@164.99, 240805004 SELL 6@166.63]
+8-5 9:30 *OrderStatus*:Submitted orderId:240805004 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:30 *openOrder* status:Submitted 240805003 SELL 2@164.99
+8-5 9:30 *openOrder* all live orders [240805003 SELL 2@164.99, 240805004 SELL 6@166.63]
+8-5 9:30 *OrderStatus*:Submitted orderId:240805003 filled:0 remaining:2 avgFillPx:0.0 lastFillPx:0.0
+updating pos: JNJ 8-5 9:30 pos:6 cost:158.53
+8-5 9:30 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+8-5 9:30 *openOrder* status:Filled 240805003 SELL 2@164.99
+8-5 9:30 *openOrder*:removing order.Status:Filled 240805003 SELL 2@164.99
+8-5 9:30 *openOrder*:after removal.OpenOrders: [240805004]
+8-5 9:30 *openOrder* all live orders [240805004 SELL 6@166.63]
+8-5 9:30 *OrderStatus*:Filled orderId:240805003 filled:2 remaining:0 avgFillPx:164.99 lastFillPx:164.99
+8-5 9:30 *openOrder* status:Filled 240805003 SELL 2@164.99
+8-5 9:30 *openOrder*:removing order.Status:Filled 240805003 SELL 2@164.99
+8-5 9:30 *openOrder*:after removal.OpenOrders: [240805004]
+8-5 9:30 *openOrder* all live orders [240805004 SELL 6@166.63]
+8-5 9:30 *OrderStatus*:Filled orderId:240805003 filled:2 remaining:0 avgFillPx:164.99 lastFillPx:164.99
+computed Pnl:12.556862000000004
+1.*commission report*:240805003 commission:0.36 realized pnl:12.56 computed Pnl:12.56
+2.*commission report* orderID:240805003 commission: 0.36 realized pnl: 12.56
+updating pos: JNJ 8-5 9:30 pos:6 cost:158.53
+updating pos: JNJ 8-5 9:30 pos:6 cost:158.53
+updating pos: JNJ 8-5 9:35 pos:6 cost:158.53
+updating pos: JNJ 8-5 9:35 pos:6 cost:158.53
+*******************************************
+*STARTS* 8-5 9:36
+updating pos: JNJ 8-5 9:36 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 9:36 *openOrder* status:Submitted 240805004 SELL 6@166.63
+openOrder does not contain order JNJ 240805004 SELL 6@166.63
+8-5 9:36 *openOrder* all live orders [240805004 SELL 6@166.63]
+8-5 9:36 *OrderStatus*:Submitted orderId:240805004 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+8-5 9:36 *OrderStatus*:Cancelled orderId:240805004 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240805004=240805004 SELL 6@166.63}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={240805006=240805006 SELL 6@153.37, 240805005=240805005 SELL 2@151.46}, BRK B={240805014=240805014 BUY 30@400.03, 240805015=240805015 BUY 30@387.84, 240805013=240805013 BUY 30@404.09}, GLD={}, HSBC={}, IWM={240805010=240805010 BUY 63@195.78, 240805011=240805011 BUY 63@193.35, 240805012=240805012 BUY 63@186.04}, JNJ={}, KO={}, MCD={}, PG={}, PHO={240805018=240805018 BUY 189@63.1, 240805016=240805016 BUY 189@65.74, 240805017=240805017 BUY 189@65.08}, SLV={}, SPY={}, UL={}, WMT={}}
+*******************************************
+*STARTS* 8-5 9:38
+updating pos: JNJ 8-5 9:38 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 9:38 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+8-5 9:38 rng:1.4% costTgt:0.98
+8-5 9:38 tgtMargin:1.0109 tgtPrice:160.27
+ytdReturn:6.04%
+*Periodic Run* 8-5 9:38 9:38:22 no live feed
+8-5 9:38 0.0 2dP:57.0 1dP:0.0
+2d$:n:399 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:38]
+1d$:n:9 max:165.6 [8-5 9:30] min:163.9 [8-5 9:37] rng:1.0% 1Key:[8-5 9:30] last:[8-5 9:38]
+******************CUT**************************
+CUT 8-5 9:38:24 1dP:0.0 2dp:57.0 px163.55 cost:158.5334875 px/Cost:1.0316 reqMargin:1.0109 rng:0.0137
+0:240805011 JNJ SELL 6 @164.37 9:38
+0: SELL JNJ 8-5 9:38 CUTTER Created target margin:1.01094 cost*target margin:160.27 askPx:0.0
+2024-08-05T09:38:24.835507 remaining position <= 0, break
+2D$:n:399 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:38]
+1D$:n:9 max:165.6 [8-5 9:30] min:163.9 [8-5 9:37] rng:1.0% 1Key:[8-5 9:30] last:[8-5 9:38]
+*******************************************
+*STARTS* 8-5 9:40
+updating pos: JNJ 8-5 9:40 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 9:40 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+8-5 9:40 rng:1.4% costTgt:0.98
+8-5 9:40 tgtMargin:1.0109 tgtPrice:160.27
+ytdReturn:5.8%
+*Periodic Run* 8-5 9:40 9:40:42 no live feed
+8-5 9:40 0.0 2dP:56.0 1dP:11.0
+2d$:n:401 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:40]
+1d$:n:11 max:165.6 [8-5 9:30] min:163.4 [8-5 9:39] rng:1.3% 1Key:[8-5 9:30] last:[8-5 9:40]
+******************CUT**************************
+CUT 8-5 9:40:44 1dP:11.0 2dp:56.0 px163.4 cost:158.5334875 px/Cost:1.0307 reqMargin:1.0109 rng:0.0137
+0:240805013 JNJ SELL 6 @164.22 9:40
+0: SELL JNJ 8-5 9:40 CUTTER Created target margin:1.01094 cost*target margin:160.27 askPx:0.0
+2024-08-05T09:40:44.721555 remaining position <= 0, break
+2D$:n:401 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:40]
+1D$:n:11 max:165.6 [8-5 9:30] min:163.4 [8-5 9:39] rng:1.3% 1Key:[8-5 9:30] last:[8-5 9:40]
+8-5 9:40 *openOrder* status:Submitted 240805013 SELL 6@164.22
+8-5 9:40 *openOrder* all live orders [240805013 SELL 6@164.22]
+8-5 9:40 *OrderStatus*:Submitted orderId:240805013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 8-5 9:44
+8-5 9:44 *openOrder* status:Submitted 240805013 SELL 6@164.22
+openOrder does not contain order JNJ 240805013 SELL 6@164.22
+8-5 9:44 *openOrder* all live orders [240805013 SELL 6@164.22]
+8-5 9:44 *OrderStatus*:Submitted orderId:240805013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:44 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+updating pos: JNJ 8-5 9:44 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 9:44 *OrderStatus*:Cancelled orderId:240805013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:44 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240805013=240805013 SELL 6@164.22}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, HSBC={}, IWM={}, JNJ={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}}
+8-5 9:44 rng:1.4% costTgt:0.98
+8-5 9:44 tgtMargin:1.0109 tgtPrice:160.27
+ytdReturn:5.92%
+all order finished: {240805013=JNJ 8-5 9:44 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 8-5 9:44:37 1dP:19.0 2dp:58.0 px163.73 cost:158.5334875 px/Cost:1.0328 reqMargin:1.0109 rng:0.0137
+*Periodic Run* 8-5 9:44 last live feed time: 8-5 9:44 been:0min p:163.73 cost:158.5 p/cost:1.033
+p:163.73 rng:1.4% pos:6 delt:1k cost:158.5 fullLot:229 refillP:155.2 costTgt:0.98 refillP/cost:0.979 refillP/px:0.948
+0:240805017 JNJ SELL 6 @164.62 9:44
+8-5 9:44 *chek orderStatus [240805013=Cancelled, 240805017=Created]
+8-5 9:44 163.73 2dP:58.0 1dP:19.0
+0: SELL JNJ 8-5 9:44 CUTTER Created target margin:1.01094 cost*target margin:160.27 askPx:163.8
+2024-08-05T09:44:37.848060 remaining position <= 0, break
+2d$:n:405 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:44]
+2D$:n:405 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:44]
+1d$:n:15 max:165.6 [8-5 9:30] min:163.3 [8-5 9:39] rng:1.4% 1Key:[8-5 9:30] last:[8-5 9:44]
+1D$:n:15 max:165.6 [8-5 9:30] min:163.3 [8-5 9:39] rng:1.4% 1Key:[8-5 9:30] last:[8-5 9:44]
+8-5 9:44 *openOrder* status:Submitted 240805017 SELL 6@164.62
+8-5 9:44 *openOrder* all live orders [240805017 SELL 6@164.62]
+8-5 9:44 *OrderStatus*:Submitted orderId:240805017 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 8-5 9:51
+8-5 9:51 *openOrder* status:Submitted 240805017 SELL 6@164.62
+openOrder does not contain order JNJ 240805017 SELL 6@164.62
+8-5 9:51 *openOrder* all live orders [240805017 SELL 6@164.62]
+8-5 9:51 *OrderStatus*:Submitted orderId:240805017 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:51 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+updating pos: JNJ 8-5 9:51 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 9:51 *OrderStatus*:Cancelled orderId:240805017 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:51 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240805017=240805017 SELL 6@164.62}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, HSBC={}, IWM={}, JNJ={}, KO={240805018=240805018 SELL 9@69.42, 240805019=240805019 SELL 9@70.11, 240805020=240805020 SELL 10@72.18}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}}
+8-5 9:51 rng:1.4% costTgt:0.98
+8-5 9:51 tgtMargin:1.0109 tgtPrice:160.27
+ytdReturn:6.42%
+*Periodic Run* 8-5 9:51 9:51:30 no live feed
+8-5 9:51 *chek orderStatus [240805017=Cancelled]
+8-5 9:51 0.0 2dP:70.0 1dP:42.0
+2d$:n:412 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:51]
+1d$:n:22 max:165.6 [8-5 9:30] min:163.2 [8-5 9:39] rng:1.4% 1Key:[8-5 9:30] last:[8-5 9:51]
+all order finished: {240805017=JNJ 8-5 9:51 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 8-5 9:51:33 1dP:42.0 2dp:70.0 px164.17 cost:158.5334875 px/Cost:1.0356 reqMargin:1.0109 rng:0.0137
+0:240805024 JNJ SELL 6 @164.99 9:51
+0: SELL JNJ 8-5 9:51 CUTTER Created target margin:1.01094 cost*target margin:160.27 askPx:0.0
+2024-08-05T09:51:33.090669 remaining position <= 0, break
+2D$:n:412 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 9:51]
+1D$:n:22 max:165.6 [8-5 9:30] min:163.2 [8-5 9:39] rng:1.4% 1Key:[8-5 9:30] last:[8-5 9:51]
+8-5 9:51 *openOrder* status:Submitted 240805024 SELL 6@164.99
+8-5 9:51 *openOrder* all live orders [240805024 SELL 6@164.99]
+8-5 9:51 *OrderStatus*:Submitted orderId:240805024 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 8-5 10:22
+8-5 10:22 *openOrder* status:Submitted 240805024 SELL 6@164.99
+openOrder does not contain order JNJ 240805024 SELL 6@164.99
+8-5 10:22 *openOrder* all live orders [240805024 SELL 6@164.99]
+8-5 10:22 *OrderStatus*:Submitted orderId:240805024 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 10:22 *tradeReport* time: 2024-08-05T09:30:08 SLD execPx:164.99 shares:2 avgPx:164.99
+listOfExecs [orderID: 240805003 time: 2024-08-05T09:30:08 side: SLD shares: 2 price: 164.99]
+updating pos: JNJ 8-5 10:22 pos:6 cost:158.53
+POS:6 COST:158.5 DELT:1k
+8-5 10:22 *OrderStatus*:Cancelled orderId:240805024 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-5 10:22 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240805024=240805024 SELL 6@164.99}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {AWK={}, BRK B={}, GLD={}, HSBC={}, IWM={}, JNJ={}, KO={}, MCD={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, WMT={}}
+8-5 10:22 rng:1.4% costTgt:0.98
+8-5 10:22 tgtMargin:1.011 tgtPrice:160.27
+ytdReturn:5.31%
+*Periodic Run* 8-5 10:22 10:22:56 no live feed
+8-5 10:22 *chek orderStatus [240805024=Cancelled]
+8-5 10:22 0.0 2dP:31.0 1dP:3.0
+2d$:n:443 max:165.6 [8-5 9:30] min:161.1 [8-2 11:42] rng:2.8% 1Key:[8-2 9:30] last:[8-5 10:22]
+1d$:n:53 max:165.6 [8-5 9:30] min:162.4 [8-5 10:22] rng:1.9% 1Key:[8-5 9:30] last:[8-5 10:22]

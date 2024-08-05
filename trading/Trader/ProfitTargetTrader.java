@@ -21,8 +21,7 @@ import java.util.stream.Collectors;
 import static Trader.Allstatic.*;
 import static api.ControllerCalls.placeOrModifyOrderCheck;
 import static api.TradingConstants.*;
-import static client.OrderStatus.Created;
-import static client.OrderStatus.Filled;
+import static client.OrderStatus.*;
 import static client.Types.Action.BUY;
 import static client.Types.Action.SELL;
 import static client.Types.TimeInForce.DAY;
@@ -57,6 +56,7 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderAugmented>>
             orderSubmitted = new ConcurrentHashMap<>();
+    private static volatile Map<Integer, Double> pendingAddingDeltaMap = new ConcurrentHashMap<>();
 
     //    private static volatile Map<String, ConcurrentSkipListMap<Integer, OrderStatus>>
     //            orderStatus = new ConcurrentHashMap<>();
@@ -272,23 +272,34 @@ class ProfitTargetTrader implements LiveHandler,
         if (orderSubmitted.get(s).isEmpty()) {
             return true;
         }
+
+        if (orderSubmitted.get(s).size() > 15) {
+            outputToSymbol(s, "order size 15, meaning something is wrong", orderSubmitted.get(s));
+            return false;
+        }
+
+        if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
+                .filter(e -> !e.isFinished()).count() > 6) {
+            outputToSymbol(s, "maximum unfinished orders exceeding 6", orderSubmitted.get(s));
+            return false;
+        }
 //        outputToSymbol(s, "no blocking buy orders orderSubmitted nonempty:"
 //                , orderSubmitted.get(s));
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .allMatch(OrderStatus::isFinished)) {
-//            outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
+            outputToSymbol(s, "all orders finished", orderSubmitted.get(s));
             return true;
         } else {
-//            outputToSymbol(s, "no blocking buy orders: All submitted orders", orderSubmitted.get(s));
-//            outputToSymbol(s, "no blocking buy orders: Active orders:",
-//                    orderSubmitted.get(s).entrySet().stream()
-//                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
-//                            .collect(toList()));
-//            outputToSymbol(s, "active orders grouped by buysell:",
-//                    orderSubmitted.get(s).entrySet().stream()
-//                            .collect(groupingBy(e -> e.getValue().getOrder().action()
-//                                    , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
+            outputToSymbol(s, "no blocking buy orders: All submitted orders", orderSubmitted.get(s));
+            outputToSymbol(s, "no blocking buy orders: Active orders:",
+                    orderSubmitted.get(s).entrySet().stream()
+                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
+                            .collect(toList()));
+            outputToSymbol(s, "active orders grouped by buysell:",
+                    orderSubmitted.get(s).entrySet().stream()
+                            .collect(groupingBy(e -> e.getValue().getOrder().action()
+                                    , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
 
             return orderSubmitted.get(s).entrySet().stream()
                     .filter(e -> !e.getValue().getOrderStatus().isFinished())
@@ -346,6 +357,13 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static boolean checkIfDeltaOK(String symb) {
 //        double baseDelta = baseDeltaMap.getOrDefault(symb, 0.0);
+
+//        if (orderSubmitted.entrySet().stream()
+//                .filter(e -> e.getValue().entrySet().stream().filter(e1 -> e1.getValue().getOrderStatus() == Submitted)
+//                        .map(e->e.get)) <
+//                AVAILABLE_CASH) {
+//            return false;
+//        }
 
         return totalDelta < DELTA_TOTAL_LIMIT
                 && (symbDelta.getOrDefault(symb, MAX_VALUE) < DELTA_TOTAL_LIMIT / 6.0);
@@ -444,8 +462,11 @@ class ProfitTargetTrader implements LiveHandler,
         Decimal pos = symbPos.get(s);
         long posLong = pos.longValue();
 
+        //if(order)
+
         if (oneDayP < 10 && twoDayP < 20 && checkIfDeltaOK(s)) {
             if (!noBlockingBuyOrders(s)) {
+                outputToSymbol(s, t, "no blocking orders ");
                 return;
             }
 
@@ -733,9 +754,19 @@ class ProfitTargetTrader implements LiveHandler,
             Decimal size = Decimal.get(floor(lotSize.longValue() / 3.0));
             Order o = placeBidLimitTIF(id, bidPrice, size, DAY);
             orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, ADDER, Created));
+            double delta = o.totalQuantity().longValue() * bidPrice;
+            if (pendingAddingDeltaMap.values().stream().mapToDouble(v -> v).sum() + delta > AVAILABLE_CASH) {
+                outputToSymbol(s, "not enough cash to trade. BALANCE:" + AVAILABLE_CASH, "pending already:" +
+                                pendingAddingDeltaMap.values().stream().mapToDouble(v -> v).sum(),
+                        "delta trying to add:" + round2(delta));
+                return;
+            }
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
+            pendingAddingDeltaMap.put(o.orderId(), delta);
             outputToOrders(s, i + ":" + o.orderId(), s, "BUY", o.totalQuantity().longValue(),
                     "@" + bidPrice, t.toLocalTime().format(Hmm), "bid is:" + bidMap.getOrDefault(s, 0.0));
+
+
             outputToSymbol(s, t.toLocalTime().format(Hmm),
                     i + ":", s, "orderID:" + o.orderId(), "tradeID:" + id, "BUY",
                     size, "@" + bidPrice, "factor:" + buyFactor(s, i)
@@ -948,6 +979,7 @@ class ProfitTargetTrader implements LiveHandler,
         }
 
         if (orderState.status() == Filled) {
+            pendingAddingDeltaMap.put(order.orderId(), 0.0);
             if (!filledOrdersSet.contains(order.orderId())) {
                 outputToFills(s, usDateTime(), "*openOrder* FILLED", order);
                 filledOrdersSet.add(order.orderId());
@@ -1001,6 +1033,7 @@ class ProfitTargetTrader implements LiveHandler,
                 "avgFillPx:" + avgFillPrice, "lastFillPx:" + lastFillPrice);
 
         if (status == Filled) {
+            pendingAddingDeltaMap.put(orderId, 0.0);
             orderSubmitted.get(s).get(orderId).updateFilledPrice(avgFillPrice);
             orderSubmitted.get(s).get(orderId).updateFilledQuantity(filled);
             if (!filledOrderStatusSet.contains(orderId)) {
@@ -1210,7 +1243,8 @@ class ProfitTargetTrader implements LiveHandler,
         if (tag == AccountSummaryTag.AvailableFunds) {
             pr("updating account summary");
             AVAILABLE_CASH = Double.parseDouble(value);
-            outputToGeneral("available cash is ", AVAILABLE_CASH);
+            outputToGeneral(getESTLocalTimeNow().format(Hmmss),
+                    "available cash is ", AVAILABLE_CASH);
         }
     }
 

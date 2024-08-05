@@ -388,3 +388,678 @@ p:41.3 rng:1.0% pos:582 delt:24k cost:42.6 fullLot:907 refillP:40.68 costTgt:0.9
 8-2 17:23 41.3 2dP:8.0 1dP:58.0
 2d$:n:1161 max:45.5 [7-31 11:34] min:40.9 [8-2 11:22] rng:11.1% 1Key:[7-31 9:30] last:[8-2 17:07]
 1d$:n:381 max:41.6 [8-2 9:23] min:40.9 [8-2 11:22] rng:1.6% 1Key:[8-2 9:23] last:[8-2 17:07]
+*******************************************
+*STARTS* 8-5 7:18
+updating pos: HSBC 8-5 7:18 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 7:19 rng:1.0% costTgt:0.98
+8-5 7:19 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:9.81%
+*Periodic Run* 8-5 7:19 last live feed time: 8-5 7:19 been:0min p:39.85 cost:42.6 p/cost:0.935
+p:39.85 rng:1.0% pos:582 delt:23k cost:42.6 fullLot:941 refillP:40.72 costTgt:0.98 refillP/cost:0.955 refillP/px:1.022
+8-5 7:19 39.85 2dP:101.0 1dP:101.0
+2d$:n:781 max:43.0 [8-1 9:30] min:40.9 [8-5 7:19] rng:5.1% 1Key:[8-1 9:30] last:[8-5 7:19]
+1d$:n<5
+*Periodic Run* 8-5 8:19 last live feed time: 8-5 8:19 been:0min p:39.73 cost:42.6 p/cost:0.932
+p:39.73 rng:1.0% pos:582 delt:23k cost:42.6 fullLot:943 refillP:40.72 costTgt:0.98 refillP/cost:0.955 refillP/px:1.025
+8-5 8:19 39.73 2dP:2.0 1dP:36.0
+2d$:n:804 max:43.0 [8-1 9:30] min:39.7 [8-5 8:17] rng:8.4% 1Key:[8-1 9:30] last:[8-5 8:19]
+1d$:n:24 max:39.8 [8-5 7:28] min:39.7 [8-5 8:17] rng:0.4% 1Key:[8-5 7:19] last:[8-5 8:19]
+*Periodic Run* 8-5 9:19 last live feed time: 8-5 9:19 been:0min p:39.72 cost:42.6 p/cost:0.932
+p:39.72 rng:1.0% pos:582 delt:23k cost:42.6 fullLot:944 refillP:40.72 costTgt:0.98 refillP/cost:0.955 refillP/px:1.025
+8-5 9:19 39.72 2dP:8.0 1dP:69.0
+2d$:n:833 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:19]
+1d$:n:53 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:19]
+*REFILL* 8-5 9:34:32 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9257 refillPx:40.73 avgRng:0.0101
+0:240805019 HSBC BUY 316 @39.26 9:34 bid is:39.46
+9:34 0: HSBC orderID:240805019 tradeID:240805019 BUY 316 @39.26 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805020 HSBC BUY 316 @38.87 9:34 bid is:39.46
+9:34 1: HSBC orderID:240805020 tradeID:240805020 BUY 316 @38.87 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805021 HSBC BUY 316 @37.68 9:34 bid is:39.46
+9:34 2: HSBC orderID:240805021 tradeID:240805021 BUY 316 @37.68 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805019 BUY 316@39.26
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805019 BUY 316@39.26
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805019 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805019 BUY 316@39.26
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805019 BUY 316@39.26
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805019 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805020 BUY 316@38.87
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805020 BUY 316@38.87
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805020 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805020 BUY 316@38.87
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805020 BUY 316@38.87
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805020 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805021 BUY 316@37.68
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805021 BUY 316@37.68
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805021 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805021 BUY 316@37.68
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805021 BUY 316@37.68
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805021 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:35 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805022 HSBC BUY 316 @39.25 9:34 bid is:39.45
+9:34 0: HSBC orderID:240805022 tradeID:240805022 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805023 HSBC BUY 316 @38.86 9:34 bid is:39.45
+9:34 1: HSBC orderID:240805023 tradeID:240805023 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805024 HSBC BUY 316 @37.67 9:34 bid is:39.45
+9:34 2: HSBC orderID:240805024 tradeID:240805024 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805022 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805022 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805022 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805022 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805022 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805022 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805023 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805023 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805023 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805023 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805023 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805023 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805024 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805024 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805024 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805024 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805024 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805024 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:38 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9257 refillPx:40.73 avgRng:0.0101
+0:240805025 HSBC BUY 316 @39.25 9:34 bid is:39.45
+9:34 0: HSBC orderID:240805025 tradeID:240805025 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805026 HSBC BUY 316 @38.86 9:34 bid is:39.45
+9:34 1: HSBC orderID:240805026 tradeID:240805026 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805027 HSBC BUY 316 @37.67 9:34 bid is:39.45
+9:34 2: HSBC orderID:240805027 tradeID:240805027 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805025 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805025 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805025 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805025 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805025 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805025 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805026 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805026 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805026 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805026 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805026 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805026 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805027 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805027 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805027 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805027 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805027 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805027 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:39 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805028 HSBC BUY 316 @39.25 9:34 bid is:39.45
+9:34 0: HSBC orderID:240805028 tradeID:240805028 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805029 HSBC BUY 316 @38.86 9:34 bid is:39.45
+9:34 1: HSBC orderID:240805029 tradeID:240805029 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805030 HSBC BUY 316 @37.67 9:34 bid is:39.45
+9:34 2: HSBC orderID:240805030 tradeID:240805030 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805028 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805028 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805028 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805028 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805028 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805028 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805029 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805029 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805029 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805029 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805029 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805029 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805030 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805030 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805030 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805030 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805030 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805030 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:46 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9257 refillPx:40.73 avgRng:0.0101
+0:240805031 HSBC BUY 316 @39.25 9:34 bid is:39.45
+9:34 0: HSBC orderID:240805031 tradeID:240805031 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805032 HSBC BUY 316 @38.86 9:34 bid is:39.45
+9:34 1: HSBC orderID:240805032 tradeID:240805032 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805033 HSBC BUY 316 @37.67 9:34 bid is:39.45
+9:34 2: HSBC orderID:240805033 tradeID:240805033 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805031 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805031 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805031 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805031 BUY 316@39.25
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805031 BUY 316@39.25
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805031 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805032 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805032 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805032 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805032 BUY 316@38.86
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805032 BUY 316@38.86
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805032 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805033 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805033 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805033 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805033 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805033 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805033 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:48 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805034 HSBC BUY 316 @39.24 9:34 bid is:39.44
+9:34 0: HSBC orderID:240805034 tradeID:240805034 BUY 316 @39.24 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805035 HSBC BUY 316 @38.85 9:34 bid is:39.44
+9:34 1: HSBC orderID:240805035 tradeID:240805035 BUY 316 @38.85 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805036 HSBC BUY 316 @37.67 9:34 bid is:39.44
+9:34 2: HSBC orderID:240805036 tradeID:240805036 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805034 BUY 316@39.24
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805034 BUY 316@39.24
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805034 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805034 BUY 316@39.24
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805034 BUY 316@39.24
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805034 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805035 BUY 316@38.85
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805035 BUY 316@38.85
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805035 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805035 BUY 316@38.85
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805035 BUY 316@38.85
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805035 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805036 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805036 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805036 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805036 BUY 316@37.67
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805036 BUY 316@37.67
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805036 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:34:58 delta:23k 1dp:3.0 2dp:0.0 cost:42.6 px/cost:0.9252 refillPx:40.73 avgRng:0.0101
+0:240805037 HSBC BUY 316 @39.24 9:34 bid is:39.44
+9:34 0: HSBC orderID:240805037 tradeID:240805037 BUY 316 @39.24 factor:0.995 HSBC 8-5 9:34 ADDER Created
+1:240805038 HSBC BUY 316 @38.85 9:34 bid is:39.44
+9:34 1: HSBC orderID:240805038 tradeID:240805038 BUY 316 @38.85 factor:0.985 HSBC 8-5 9:34 ADDER Created
+2:240805039 HSBC BUY 316 @37.67 9:34 bid is:39.44
+9:34 2: HSBC orderID:240805039 tradeID:240805039 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:34 ADDER Created
+1D$:n:64 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.0% 1Key:[8-5 7:19] last:[8-5 9:34]
+2D$:n:844 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.0% 1Key:[8-1 9:30] last:[8-5 9:34]
+8-5 9:34 *openOrder* status:Inactive 240805037 BUY 316@39.24
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805037 BUY 316@39.24
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805037 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805037 BUY 316@39.24
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805037 BUY 316@39.24
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805037 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805038 BUY 316@38.85
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805038 BUY 316@38.85
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805038 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:34 *openOrder* status:Inactive 240805038 BUY 316@38.85
+8-5 9:34 *openOrder*:removing order.Status:Inactive 240805038 BUY 316@38.85
+8-5 9:34 *openOrder*:after removal.OpenOrders: []
+8-5 9:34 *OrderStatus*:Inactive orderId:240805038 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805039 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805039 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805039 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805039 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805039 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805039 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:01 delta:23k 1dp:3.0 2dp:0.0 cost:42.6 px/cost:0.925 refillPx:40.73 avgRng:0.0101
+0:240805040 HSBC BUY 317 @39.22 9:35 bid is:39.42
+9:35 0: HSBC orderID:240805040 tradeID:240805040 BUY 317 @39.22 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805041 HSBC BUY 317 @38.83 9:35 bid is:39.42
+9:35 1: HSBC orderID:240805041 tradeID:240805041 BUY 317 @38.83 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805042 HSBC BUY 317 @37.65 9:35 bid is:39.42
+9:35 2: HSBC orderID:240805042 tradeID:240805042 BUY 317 @37.65 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805040 BUY 317@39.22
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805040 BUY 317@39.22
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805040 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805040 BUY 317@39.22
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805040 BUY 317@39.22
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805040 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805041 BUY 317@38.83
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805041 BUY 317@38.83
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805041 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805041 BUY 317@38.83
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805041 BUY 317@38.83
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805041 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805042 BUY 317@37.65
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805042 BUY 317@37.65
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805042 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805042 BUY 317@37.65
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805042 BUY 317@37.65
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805042 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:07 delta:23k 1dp:3.0 2dp:0.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805043 HSBC BUY 316 @39.24 9:35 bid is:39.44
+9:35 0: HSBC orderID:240805043 tradeID:240805043 BUY 316 @39.24 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805044 HSBC BUY 316 @38.85 9:35 bid is:39.44
+9:35 1: HSBC orderID:240805044 tradeID:240805044 BUY 316 @38.85 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805045 HSBC BUY 316 @37.67 9:35 bid is:39.44
+9:35 2: HSBC orderID:240805045 tradeID:240805045 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805043 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805043 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805043 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805043 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805043 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805043 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805044 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805044 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805044 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805044 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805044 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805044 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805045 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805045 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805045 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805045 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805045 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805045 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:16 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9252 refillPx:40.73 avgRng:0.0101
+0:240805046 HSBC BUY 316 @39.24 9:35 bid is:39.44
+9:35 0: HSBC orderID:240805046 tradeID:240805046 BUY 316 @39.24 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805047 HSBC BUY 316 @38.85 9:35 bid is:39.44
+9:35 1: HSBC orderID:240805047 tradeID:240805047 BUY 316 @38.85 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805048 HSBC BUY 316 @37.67 9:35 bid is:39.44
+9:35 2: HSBC orderID:240805048 tradeID:240805048 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805046 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805046 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805046 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805046 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805046 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805046 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805047 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805047 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805047 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805047 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805047 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805047 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805048 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805048 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805048 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805048 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805048 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805048 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:20 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9248 refillPx:40.73 avgRng:0.0101
+0:240805049 HSBC BUY 317 @39.22 9:35 bid is:39.42
+9:35 0: HSBC orderID:240805049 tradeID:240805049 BUY 317 @39.22 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805050 HSBC BUY 317 @38.83 9:35 bid is:39.42
+9:35 1: HSBC orderID:240805050 tradeID:240805050 BUY 317 @38.83 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805051 HSBC BUY 317 @37.65 9:35 bid is:39.42
+9:35 2: HSBC orderID:240805051 tradeID:240805051 BUY 317 @37.65 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805049 BUY 317@39.22
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805049 BUY 317@39.22
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805049 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805049 BUY 317@39.22
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805049 BUY 317@39.22
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805049 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805050 BUY 317@38.83
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805050 BUY 317@38.83
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805050 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805050 BUY 317@38.83
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805050 BUY 317@38.83
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805050 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805051 BUY 317@37.65
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805051 BUY 317@37.65
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805051 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805051 BUY 317@37.65
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805051 BUY 317@37.65
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805051 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:26 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9252 refillPx:40.73 avgRng:0.0101
+0:240805052 HSBC BUY 316 @39.23 9:35 bid is:39.43
+9:35 0: HSBC orderID:240805052 tradeID:240805052 BUY 316 @39.23 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805053 HSBC BUY 316 @38.84 9:35 bid is:39.43
+9:35 1: HSBC orderID:240805053 tradeID:240805053 BUY 316 @38.84 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805054 HSBC BUY 316 @37.66 9:35 bid is:39.43
+9:35 2: HSBC orderID:240805054 tradeID:240805054 BUY 316 @37.66 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805052 BUY 316@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805052 BUY 316@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805052 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805052 BUY 316@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805052 BUY 316@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805052 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805053 BUY 316@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805053 BUY 316@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805053 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805054 BUY 316@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805054 BUY 316@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805054 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805053 BUY 316@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805053 BUY 316@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805053 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805054 BUY 316@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805054 BUY 316@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805054 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:27 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805055 HSBC BUY 316 @39.24 9:35 bid is:39.44
+9:35 0: HSBC orderID:240805055 tradeID:240805055 BUY 316 @39.24 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805056 HSBC BUY 316 @38.85 9:35 bid is:39.44
+9:35 1: HSBC orderID:240805056 tradeID:240805056 BUY 316 @38.85 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805057 HSBC BUY 316 @37.67 9:35 bid is:39.44
+9:35 2: HSBC orderID:240805057 tradeID:240805057 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805055 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805055 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805055 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805055 BUY 316@39.24
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805055 BUY 316@39.24
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805055 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805056 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805056 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805056 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805057 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805057 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805057 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805056 BUY 316@38.85
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805056 BUY 316@38.85
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805056 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805057 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805057 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805057 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:29 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9257 refillPx:40.73 avgRng:0.0101
+0:240805058 HSBC BUY 316 @39.25 9:35 bid is:39.45
+9:35 0: HSBC orderID:240805058 tradeID:240805058 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805059 HSBC BUY 316 @38.86 9:35 bid is:39.45
+9:35 1: HSBC orderID:240805059 tradeID:240805059 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805060 HSBC BUY 316 @37.67 9:35 bid is:39.45
+9:35 2: HSBC orderID:240805060 tradeID:240805060 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805058 BUY 316@39.25
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805058 BUY 316@39.25
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805058 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805058 BUY 316@39.25
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805058 BUY 316@39.25
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805058 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805059 BUY 316@38.86
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805059 BUY 316@38.86
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805059 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805059 BUY 316@38.86
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805059 BUY 316@38.86
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805059 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805060 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805060 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805060 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:30 delta:23k 1dp:7.0 2dp:1.0 cost:42.6 px/cost:0.9255 refillPx:40.73 avgRng:0.0101
+0:240805061 HSBC BUY 316 @39.25 9:35 bid is:39.45
+9:35 0: HSBC orderID:240805061 tradeID:240805061 BUY 316 @39.25 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805062 HSBC BUY 316 @38.86 9:35 bid is:39.45
+9:35 1: HSBC orderID:240805062 tradeID:240805062 BUY 316 @38.86 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805063 HSBC BUY 316 @37.67 9:35 bid is:39.45
+9:35 2: HSBC orderID:240805063 tradeID:240805063 BUY 316 @37.67 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805060 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805060 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805060 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805061 BUY 316@39.25
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805061 BUY 316@39.25
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805061 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805061 BUY 316@39.25
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805061 BUY 316@39.25
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805061 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805062 BUY 316@38.86
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805062 BUY 316@38.86
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805062 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805063 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805063 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805063 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805062 BUY 316@38.86
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805062 BUY 316@38.86
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805062 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805063 BUY 316@37.67
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805063 BUY 316@37.67
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805063 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:43 delta:23k 1dp:5.0 2dp:1.0 cost:42.6 px/cost:0.925 refillPx:40.73 avgRng:0.0101
+0:240805064 HSBC BUY 317 @39.23 9:35 bid is:39.43
+9:35 0: HSBC orderID:240805064 tradeID:240805064 BUY 317 @39.23 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805065 HSBC BUY 317 @38.84 9:35 bid is:39.43
+9:35 1: HSBC orderID:240805065 tradeID:240805065 BUY 317 @38.84 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805066 HSBC BUY 317 @37.66 9:35 bid is:39.43
+9:35 2: HSBC orderID:240805066 tradeID:240805066 BUY 317 @37.66 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805064 BUY 317@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805064 BUY 317@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805064 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805064 BUY 317@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805064 BUY 317@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805064 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805065 BUY 317@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805065 BUY 317@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805065 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805065 BUY 317@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805065 BUY 317@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805065 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805066 BUY 317@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805066 BUY 317@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805066 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805066 BUY 317@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805066 BUY 317@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805066 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:35:48 delta:23k 1dp:5.0 2dp:1.0 cost:42.6 px/cost:0.9252 refillPx:40.73 avgRng:0.0101
+0:240805067 HSBC BUY 316 @39.23 9:35 bid is:39.43
+9:35 0: HSBC orderID:240805067 tradeID:240805067 BUY 316 @39.23 factor:0.995 HSBC 8-5 9:35 ADDER Created
+1:240805068 HSBC BUY 316 @38.84 9:35 bid is:39.43
+9:35 1: HSBC orderID:240805068 tradeID:240805068 BUY 316 @38.84 factor:0.985 HSBC 8-5 9:35 ADDER Created
+2:240805069 HSBC BUY 316 @37.66 9:35 bid is:39.43
+9:35 2: HSBC orderID:240805069 tradeID:240805069 BUY 316 @37.66 factor:0.955 HSBC 8-5 9:35 ADDER Created
+1D$:n:65 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:35]
+2D$:n:845 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:35]
+8-5 9:35 *openOrder* status:Inactive 240805067 BUY 316@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805067 BUY 316@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805067 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805067 BUY 316@39.23
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805067 BUY 316@39.23
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805067 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805068 BUY 316@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805068 BUY 316@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805068 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805068 BUY 316@38.84
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805068 BUY 316@38.84
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805068 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805069 BUY 316@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805069 BUY 316@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805069 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:35 *openOrder* status:Inactive 240805069 BUY 316@37.66
+8-5 9:35 *openOrder*:removing order.Status:Inactive 240805069 BUY 316@37.66
+8-5 9:35 *openOrder*:after removal.OpenOrders: []
+8-5 9:35 *OrderStatus*:Inactive orderId:240805069 filled:0 remaining:316 avgFillPx:0.0 lastFillPx:0.0
+*REFILL* 8-5 9:36:05 delta:23k 1dp:5.0 2dp:1.0 cost:42.6 px/cost:0.9248 refillPx:40.73 avgRng:0.0101
+0:240805070 HSBC BUY 317 @39.22 9:36 bid is:39.42
+9:36 0: HSBC orderID:240805070 tradeID:240805070 BUY 317 @39.22 factor:0.995 HSBC 8-5 9:36 ADDER Created
+1:240805071 HSBC BUY 317 @38.83 9:36 bid is:39.42
+9:36 1: HSBC orderID:240805071 tradeID:240805071 BUY 317 @38.83 factor:0.985 HSBC 8-5 9:36 ADDER Created
+2:240805072 HSBC BUY 317 @37.65 9:36 bid is:39.42
+9:36 2: HSBC orderID:240805072 tradeID:240805072 BUY 317 @37.65 factor:0.955 HSBC 8-5 9:36 ADDER Created
+1D$:n:66 max:39.8 [8-5 7:28] min:39.4 [8-5 9:01] rng:1.1% 1Key:[8-5 7:19] last:[8-5 9:36]
+2D$:n:846 max:43.0 [8-1 9:30] min:39.4 [8-5 9:01] rng:9.1% 1Key:[8-1 9:30] last:[8-5 9:36]
+8-5 9:36 *openOrder* status:Inactive 240805070 BUY 317@39.22
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805070 BUY 317@39.22
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805070 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *openOrder* status:Inactive 240805070 BUY 317@39.22
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805070 BUY 317@39.22
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805070 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *openOrder* status:Inactive 240805071 BUY 317@38.83
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805071 BUY 317@38.83
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805071 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *openOrder* status:Inactive 240805071 BUY 317@38.83
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805071 BUY 317@38.83
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805071 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *openOrder* status:Inactive 240805072 BUY 317@37.65
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805072 BUY 317@37.65
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805072 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+8-5 9:36 *openOrder* status:Inactive 240805072 BUY 317@37.65
+8-5 9:36 *openOrder*:removing order.Status:Inactive 240805072 BUY 317@37.65
+8-5 9:36 *openOrder*:after removal.OpenOrders: []
+8-5 9:36 *OrderStatus*:Inactive orderId:240805072 filled:0 remaining:317 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 8-5 9:36
+updating pos: HSBC 8-5 9:36 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+*******************************************
+*STARTS* 8-5 9:38
+updating pos: HSBC 8-5 9:38 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 9:38 rng:1.0% costTgt:0.98
+8-5 9:38 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:5.27%
+*Periodic Run* 8-5 9:38 9:38:22 no live feed
+8-5 9:38 0.0 2dP:6.0 1dP:98.0
+2d$:n:399 max:41.6 [8-2 9:30] min:39.5 [8-5 9:36] rng:5.4% 1Key:[8-2 9:30] last:[8-5 9:38]
+1d$:n:9 max:39.6 [8-5 9:30] min:39.5 [8-5 9:36] rng:0.3% 1Key:[8-5 9:30] last:[8-5 9:38]
+*******************************************
+*STARTS* 8-5 9:40
+updating pos: HSBC 8-5 9:40 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 9:40 rng:1.0% costTgt:0.98
+8-5 9:40 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:5.45%
+*Periodic Run* 8-5 9:40 9:40:42 no live feed
+8-5 9:40 0.0 2dP:9.0 1dP:100.0
+2d$:n:401 max:41.6 [8-2 9:30] min:39.5 [8-5 9:36] rng:5.4% 1Key:[8-2 9:30] last:[8-5 9:40]
+1d$:n:11 max:39.6 [8-5 9:30] min:39.5 [8-5 9:36] rng:0.4% 1Key:[8-5 9:30] last:[8-5 9:40]
+*******************************************
+*STARTS* 8-5 9:44
+updating pos: HSBC 8-5 9:44 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 9:44 rng:1.0% costTgt:0.98
+8-5 9:44 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:5.37%
+*Periodic Run* 8-5 9:44 9:44:37 no live feed
+8-5 9:44 0.0 2dP:8.0 1dP:84.0
+2d$:n:405 max:41.6 [8-2 9:30] min:39.5 [8-5 9:36] rng:5.4% 1Key:[8-2 9:30] last:[8-5 9:44]
+1d$:n:15 max:39.7 [8-5 9:43] min:39.5 [8-5 9:36] rng:0.5% 1Key:[8-5 9:30] last:[8-5 9:44]
+*******************************************
+*STARTS* 8-5 9:51
+updating pos: HSBC 8-5 9:51 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 9:51 rng:1.0% costTgt:0.98
+8-5 9:51 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:6.09%
+*Periodic Run* 8-5 9:51 9:51:30 no live feed
+8-5 9:51 0.0 2dP:21.0 1dP:100.0
+2d$:n:412 max:41.6 [8-2 9:30] min:39.5 [8-5 9:36] rng:5.4% 1Key:[8-2 9:30] last:[8-5 9:51]
+1d$:n:22 max:39.9 [8-5 9:49] min:39.5 [8-5 9:36] rng:1.1% 1Key:[8-5 9:30] last:[8-5 9:51]
+*******************************************
+*STARTS* 8-5 10:22
+updating pos: HSBC 8-5 10:22 pos:582 cost:42.63
+POS:582 COST:42.6 DELT:25k
+8-5 10:22 rng:1.0% costTgt:0.98
+8-5 10:22 tgtMargin:1.01 tgtPrice:43.05
+ytdReturn:7.21%
+*Periodic Run* 8-5 10:22 10:22:56 no live feed
+8-5 10:22 0.0 2dP:41.0 1dP:96.0
+2d$:n:443 max:41.6 [8-2 9:30] min:39.5 [8-5 9:36] rng:5.4% 1Key:[8-2 9:30] last:[8-5 10:22]
+1d$:n:53 max:40.4 [8-5 10:16] min:39.5 [8-5 9:36] rng:2.3% 1Key:[8-5 9:30] last:[8-5 10:22]
