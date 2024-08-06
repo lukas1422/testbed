@@ -270,17 +270,18 @@ class ProfitTargetTrader implements LiveHandler,
 
     private static boolean noBlockingBuyOrders(String s) {
         if (orderSubmitted.get(s).isEmpty()) {
+            outputToSymbol(s, getESTLocalTimeNow(), "no blocking orders,empty");
             return true;
         }
 
         if (orderSubmitted.get(s).size() > 15) {
-            outputToSymbol(s, "order size 15, meaning something is wrong", orderSubmitted.get(s));
+            outputToSymbol(s, getESTLocalTimeNow(), "order size 15, meaning something is wrong", orderSubmitted.get(s));
             return false;
         }
 
         if (orderSubmitted.get(s).values().stream().map(OrderAugmented::getOrderStatus)
                 .filter(e -> !e.isFinished()).count() > 6) {
-            outputToSymbol(s, "maximum unfinished orders exceeding 6", orderSubmitted.get(s));
+            outputToSymbol(s, getESTLocalTimeNow(), "maximum unfinished orders exceeding 6", orderSubmitted.get(s));
             return false;
         }
 //        outputToSymbol(s, "no blocking buy orders orderSubmitted nonempty:"
@@ -485,12 +486,12 @@ class ProfitTargetTrader implements LiveHandler,
             }
 
             if (pos.isZero()) {
-                outputToSymbol(s, "*1Buy*", t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
+                outputToSymbol(s, "*1Buy*@" + px, t.format(MdHmmss), "1dp:" + oneDayP, "2dp:" + twoDayP);
                 outputToSymbol(s, "cash remaining:", AVAILABLE_CASH);
                 inventoryAdder(ct, px, t, getLot(px));
             } else if (pos.longValue() > 0 && cost != 0.0) {
                 if (px < refillPx(s, px, posLong, cost)) {
-                    outputToSymbol(s, "*REFILL*", t.format(MdHmmss),
+                    outputToSymbol(s, "*REFILL*@" + px, t.format(MdHmmss),
                             "delta:" + round(symbDelta.getOrDefault(s, 0.0) / 1000.0) + "k",
                             "1dp:" + oneDayP, "2dp:" + twoDayP,
                             "cost:" + round1(costMap.get(s)),
@@ -757,15 +758,13 @@ class ProfitTargetTrader implements LiveHandler,
             double delta = o.totalQuantity().longValue() * bidPrice;
             if (pendingAddingDeltaMap.values().stream().mapToDouble(v -> v).sum() + delta > AVAILABLE_CASH) {
                 outputToSymbol(s, "not enough cash to trade. BALANCE:" + AVAILABLE_CASH, "pending already:" +
-                                pendingAddingDeltaMap.values().stream().mapToDouble(v -> v).sum(),
-                        "delta trying to add:" + round2(delta));
+                        pendingAddingDeltaMap, "delta trying to add:" + round2(delta));
                 return;
             }
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
             pendingAddingDeltaMap.put(o.orderId(), delta);
             outputToOrders(s, i + ":" + o.orderId(), s, "BUY", o.totalQuantity().longValue(),
                     "@" + bidPrice, t.toLocalTime().format(Hmm), "bid is:" + bidMap.getOrDefault(s, 0.0));
-
 
             outputToSymbol(s, t.toLocalTime().format(Hmm),
                     i + ":", s, "orderID:" + o.orderId(), "tradeID:" + id, "BUY",
