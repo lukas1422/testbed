@@ -299,6 +299,7 @@ class ProfitTargetTrader implements LiveHandler,
                             .collect(toList()));
             outputToSymbol(s, "active orders grouped by buysell:",
                     orderSubmitted.get(s).entrySet().stream()
+                            .filter(e -> !e.getValue().getOrderStatus().isFinished())
                             .collect(groupingBy(e -> e.getValue().getOrder().action()
                                     , mapping(e -> e.getValue().getOrder().orderId(), toList()))));
 
@@ -391,8 +392,8 @@ class ProfitTargetTrader implements LiveHandler,
 //        if (i == 0) {
 //            return 1;
 //        }
-        return mins(1 - 0.005 * Math.pow(3, i),
-                1 - Math.pow(3, i) * rng.getOrDefault(symb, 0.0) / 2.5);
+        return mins(1 - 0.005 * Math.pow(4, i),
+                1 - Math.pow(4, i) * rng.getOrDefault(symb, 0.0) / 2.5);
     }
 
 
@@ -749,7 +750,7 @@ class ProfitTargetTrader implements LiveHandler,
         String s = ibContractToSymbol(ct);
         double basePrice = Math.min(px, bidMap.getOrDefault(s, px));
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             int id = tradeID.incrementAndGet();
             double bidPrice = r(basePrice * buyFactor(s, i));
             Decimal size = Decimal.get(floor(lotSize.longValue() / 3.0));
@@ -758,7 +759,9 @@ class ProfitTargetTrader implements LiveHandler,
             double delta = o.totalQuantity().longValue() * bidPrice;
             if (pendingAddingDeltaMap.values().stream().mapToDouble(v -> v).sum() + delta > AVAILABLE_CASH) {
                 outputToSymbol(s, "not enough cash to trade. BALANCE:" + AVAILABLE_CASH, "pending already:" +
-                        pendingAddingDeltaMap, "delta trying to add:" + round2(delta));
+                                pendingAddingDeltaMap.entrySet().stream()
+                                        .sorted(Map.Entry.comparingByKey()).toList(),
+                        "delta trying to add:" + round2(delta));
                 return;
             }
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));

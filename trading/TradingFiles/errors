@@ -17312,3 +17312,94 @@ commission report issue tradekey:00013669.66ba514c.01 report:ID:00013669.66ba514
 *openOrder* Error 8-8 7:02 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
 *openOrder* Error 8-8 14:32 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
 *openOrder* Error 8-8 14:32 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2105 msg:HMDS data farm connection is broken:ushmds
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 8-9 9:07 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+*openOrder* Error 8-9 9:13 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.hkhmds
+*openOrder* Error 8-9 9:14 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+UL openorders does not contain order UL 240809003 BUY 205@60.35
+UL openorders does not contain order UL 240809005 BUY 205@57.92
+UL openorders does not contain order UL 240809004 BUY 205@59.74
+KO openorders does not contain order KO 240809007 SELL 13@69.78
+KO openorders does not contain order KO 240809006 SELL 6@69.09
+ABT openorders does not contain order ABT 240809009 BUY 114@106.69
+ABT openorders does not contain order ABT 240809008 BUY 114@108.19
+HON openorders does not contain order HON 240809011 BUY 62@197.07
+ABT openorders does not contain order ABT 240809010 BUY 114@102.19
+HON openorders does not contain order HON 240809013 BUY 62@187.25
+HON openorders does not contain order HON 240809012 BUY 62@194.62
+JNJ openorders does not contain order JNJ 240809018 SELL 6@161.1
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2105 msg:HMDS data farm connection is broken:ushmds
+*openOrder* Error 8-9 9:54 orderId:240809003 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809005 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809004 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809007 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809009 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809008 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809006 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809010 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809011 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809018 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809013 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:240809012 errorCode:202 msg:Order Canceled - reason:
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.usfarm
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2108 msg:Market data farm connection is inactive but should be available upon demand.usfarm
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2119 msg:Market data farm is connecting:usfarm
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+*openOrder* Error 8-9 9:54 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+ABT 09:54:19.562 no bid or no ask when trying to trade
+ABT 09:54:19.562 cost/bid/ask: 0.0 0.0 0.0
+AWK 09:54:19.566 no bid or no ask when trying to trade
+AWK 09:54:19.566 cost/bid/ask: 0.0 0.0 0.0
+BRK B 09:54:19.568 no bid or no ask when trying to trade
+BRK B 09:54:19.568 cost/bid/ask: 435.93150895 0.0 0.0
+GLD 09:54:19.572 no bid or no ask when trying to trade
+GLD 09:54:19.572 cost/bid/ask: 225.86853285 0.0 0.0
+HON 09:54:19.955 no bid or no ask when trying to trade
+HON 09:54:19.955 cost/bid/ask: 0.0 0.0 0.0
+IWM 09:54:19.964 no bid or no ask when trying to trade
+IWM 09:54:19.964 cost/bid/ask: 220.1581881 0.0 0.0
+JNJ 09:54:19.967 no bid or no ask when trying to trade
+JNJ 09:54:19.967 cost/bid/ask: 158.53348335 0.0 0.0
+KO 09:54:19.969 no bid or no ask when trying to trade
+KO 09:54:19.969 cost/bid/ask: 66.6825 0.0 0.0
+MCD 09:54:19.971 no bid or no ask when trying to trade
+MCD 09:54:19.971 cost/bid/ask: 276.42284635 0.0 0.0
+MMM 09:54:19.973 no bid or no ask when trying to trade
+MMM 09:54:19.973 cost/bid/ask: 0.0 0.0 0.0
+MRK 09:54:19.975 no bid or no ask when trying to trade
+MRK 09:54:19.975 cost/bid/ask: 0.0 0.0 0.0
+PG 09:54:19.979 no bid or no ask when trying to trade
+PG 09:54:19.979 cost/bid/ask: 0.0 0.0 0.0
+KMB 09:54:19.984 no bid or no ask when trying to trade
+KMB 09:54:19.984 cost/bid/ask: 0.0 0.0 0.0
+ADM 09:54:19.990 no bid or no ask when trying to trade
+ADM 09:54:19.990 cost/bid/ask: 0.0 0.0 0.0
+IP 09:54:19.993 no bid or no ask when trying to trade
+IP 09:54:19.993 cost/bid/ask: 0.0 0.0 0.0
+PHO 09:54:19.998 no bid or no ask when trying to trade
+PHO 09:54:19.998 cost/bid/ask: 68.26068395 0.0 0.0
+SLV 09:54:20.110 no bid or no ask when trying to trade
+SLV 09:54:20.110 cost/bid/ask: 26.6954817 0.0 0.0
+SPY 09:54:20.111 no bid or no ask when trying to trade
+SPY 09:54:20.111 cost/bid/ask: 556.99760785 0.0 0.0
+UNP 09:54:20.113 no bid or no ask when trying to trade
+UNP 09:54:20.113 cost/bid/ask: 0.0 0.0 0.0
+WMT 09:54:20.115 no bid or no ask when trying to trade
+WMT 09:54:20.115 cost/bid/ask: 69.7246176 0.0 0.0
+UL 09:54:20.254 no bid or no ask when trying to trade
+UL 09:54:20.254 cost/bid/ask: 0.0 0.0 0.0
+*openOrder* Error 8-9 10:01 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+ADM 2024-08-09T11:04:04.413 Adder: ytd < -10% cannot trade:-0.18084533717381057
+*openOrder* Error 8-9 14:18 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 8-9 14:18 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 8-9 14:19 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 8-9 14:19 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 8-9 14:27 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 8-9 14:27 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
