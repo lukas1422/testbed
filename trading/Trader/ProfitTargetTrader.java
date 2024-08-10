@@ -1171,7 +1171,6 @@ class ProfitTargetTrader implements LiveHandler,
                 }
             });
         }
-
     }
 
 //    public static ConcurrentSkipListMap<Integer, OrderAugmented> returnOrderSubmitted(String s) {
