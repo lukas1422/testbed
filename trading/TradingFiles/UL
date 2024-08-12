@@ -4696,3 +4696,428 @@ active orders grouped by buysell: {BUY=[240809003, 240809004, 240809005, 2408090
 8-9 17:54 60.44 2dP:17.0 1dP:38.0
 2d$:n:755 max:61.1 [8-8 15:11] min:60.3 [8-9 15:44] rng:1.3% 1Key:[8-8 9:30] last:[8-9 15:59]
 1d$:n:365 max:60.7 [8-9 9:30] min:60.3 [8-9 15:44] rng:0.6% 1Key:[8-9 9:30] last:[8-9 15:59]
+*******************************************
+*STARTS* 8-12 4:52
+POS:0 COST:0.0 DELT:0k
+*Periodic Run* 8-12 4:53 4:53:05 no live feed
+8-12 4:53 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+8-12 4:53 rng:0.9% costTgt:0.98
+8-12 4:53 tgtMargin:1.01 tgtPrice:0.0
+ytdReturn:24.67%
+*******************************************
+*STARTS* 8-12 4:58
+POS:0 COST:0.0 DELT:0k
+8-12 4:58 rng:0.9% costTgt:0.98
+8-12 4:58 tgtMargin:1.01 tgtPrice:0.0
+ytdReturn:27.85%
+*Periodic Run* 8-12 4:59 4:59:04 no live feed
+8-12 4:59 0.0 2dP:17.0 1dP:100.0
+2d$:n:780 max:61.1 [8-8 15:11] min:60.3 [8-9 15:44] rng:1.3% 1Key:[8-8 9:30] last:[8-9 15:59]
+1d$:n<5
+*******************************************
+*STARTS* 8-12 5:08
+POS:0 COST:0.0 DELT:0k
+8-12 5:08 rng:0.9% costTgt:0.98
+8-12 5:08 tgtMargin:1.01 tgtPrice:0.0
+ytdReturn:27.85%
+*Periodic Run* 8-12 5:08 last live feed time: 8-12 5:08 been:0min p:60.24 
+8-12 5:08 60.24 2dP:0.0 1dP:100.0
+2d$:n:781 max:61.1 [8-8 15:11] min:60.3 [8-12 5:08] rng:1.4% 1Key:[8-8 9:30] last:[8-12 5:08]
+1d$:n<5
+*Periodic Run* 8-12 6:08 last live feed time: 8-12 6:05 been:3min p:60.3 
+8-12 6:08 60.3 2dP:2.0 1dP:100.0
+2d$:n:783 max:61.1 [8-8 15:11] min:60.3 [8-12 5:08] rng:1.4% 1Key:[8-8 9:30] last:[8-12 6:05]
+1d$:n<5
+*Periodic Run* 8-12 7:08 last live feed time: 8-12 6:05 been:63min p:60.3 
+8-12 7:08 60.3 2dP:2.0 1dP:100.0
+2d$:n:783 max:61.1 [8-8 15:11] min:60.3 [8-12 5:08] rng:1.4% 1Key:[8-8 9:30] last:[8-12 6:05]
+1d$:n<5
+*Periodic Run* 8-12 8:08 last live feed time: 8-12 6:05 been:123min p:60.3 
+8-12 8:08 60.3 2dP:2.0 1dP:100.0
+2d$:n:783 max:61.1 [8-8 15:11] min:60.3 [8-12 5:08] rng:1.4% 1Key:[8-8 9:30] last:[8-12 6:05]
+1d$:n<5
+*Periodic Run* 8-12 9:08 last live feed time: 8-12 9:01 been:7min p:60.15 
+8-12 9:08 60.15 2dP:0.0 1dP:100.0
+2d$:n:784 max:61.1 [8-8 15:11] min:60.3 [8-12 9:01] rng:1.4% 1Key:[8-8 9:30] last:[8-12 9:01]
+1d$:n<5
+09:31:12.424805 no blocking orders,empty
+*1Buy*@60.2 8-12 9:31:12 1dp:0.0 2dp:0.0
+cash remaining: 112202.49
+0:240812007 UL BUY 207 @59.88 9:31 bid is:60.18
+9:31 0: UL orderID:240812007 tradeID:240812007 BUY 207 @59.88 factor:0.995 UL 8-12 9:31 ADDER Created
+1:240812008 UL BUY 207 @58.98 9:31 bid is:60.18
+9:31 1: UL orderID:240812008 tradeID:240812008 BUY 207 @58.98 factor:0.98 UL 8-12 9:31 ADDER Created
+1D$:n:6 max:60.2 [8-12 6:05] min:60.2 [8-12 9:01] rng:0.0% 1Key:[8-12 5:08] last:[8-12 9:31]
+2D$:n:786 max:61.1 [8-8 15:11] min:60.2 [8-12 9:01] rng:1.5% 1Key:[8-8 9:30] last:[8-12 9:31]
+8-12 9:31 *openOrder* status:Submitted 240812007 BUY 207@59.88
+8-12 9:31 *openOrder* all live orders [240812007 BUY 207@59.88]
+8-12 9:31 *OrderStatus*:Submitted orderId:240812007 filled:0 remaining:207 avgFillPx:0.0 lastFillPx:0.0
+8-12 9:31 *openOrder* status:Submitted 240812008 BUY 207@58.98
+8-12 9:31 *openOrder* all live orders [240812007 BUY 207@59.88, 240812008 BUY 207@58.98]
+8-12 9:31 *OrderStatus*:Submitted orderId:240812008 filled:0 remaining:207 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:31:15.601 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:31:16.213 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:31:21.743 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:31:26.351 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:31:26.967 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:33:32.824 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:33:41.222 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:33:51.051 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:34:05.180 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:34:05.793 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:34:16.751 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:34:22.281 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:35:03.037 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:35:34.069 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:36:07.553 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:36:10.010 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:36:17.491 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:36:27.318 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:36:29.629 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:37:32.246 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:37:36.848 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:37:45.455 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:37:49.137 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:37:50.882 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:38:27.463 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:38:36.450 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:38:46.078 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:38:51.300 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:39:03.303 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:39:07.740 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:39:12.242 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:40:36.056 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:40:51.111 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:40:56.030 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:41:01.759 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:41:19.682 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:41:23.365 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:41:30.739 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:42:05.239 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:42:39.180 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:42:53.613 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:43:00.374 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:43:05.594 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:43:27 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:43:54.850 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:44:01.813 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:44:05.199 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:44:20.348 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:45:11.554 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:00.919 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:04.291 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:04.906 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:11.048 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:11.662 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:18.830 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:28.968 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T09:46:32.347 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:05:21.717 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:05:55.776 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:06:11.896 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:06:18.663 no blocking orders 
+*Periodic Run* 8-12 10:08 last live feed time: 8-12 10:08 been:0min p:60.12 
+8-12 10:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 10:08 *chek openOrders*: [240812007, 240812008]
+8-12 10:08 60.12 2dP:2.0 1dP:14.0
+2d$:n:822 max:61.1 [8-8 15:11] min:60.1 [8-12 9:43] rng:1.7% 1Key:[8-8 9:30] last:[8-12 10:08]
+1d$:n:42 max:60.3 [8-12 6:05] min:60.1 [8-12 9:43] rng:0.3% 1Key:[8-12 5:08] last:[8-12 10:08]
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:14:44.507 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:14:49.429 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:14:51.163 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:14:51.169 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:14:58.741 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:15:17.379 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:15:17.993 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:15:38.885 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:16:09.199 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:16:10.116 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:16:10.733 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:16:17.699 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:18:25.392 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:23:00.969 no blocking orders 
+no blocking buy orders: All submitted orders {240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted}
+no blocking buy orders: Active orders: [240812007=UL 8-12 9:31 ADDER Submitted, 240812008=UL 8-12 9:31 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240812007, 240812008]}
+2024-08-12T10:23:06.089 no blocking orders 
+*Periodic Run* 8-12 11:08 last live feed time: 8-12 11:08 been:0min p:60.29 
+8-12 11:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 11:08 *chek openOrders*: [240812007, 240812008]
+8-12 11:08 60.29 2dP:21.0 1dP:72.0
+2d$:n:875 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 11:08]
+1d$:n:95 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 11:08]
+*Periodic Run* 8-12 12:08 last live feed time: 8-12 12:08 been:0min p:60.29 
+8-12 12:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 12:08 *chek openOrders*: [240812007, 240812008]
+8-12 12:08 60.29 2dP:21.0 1dP:68.0
+2d$:n:932 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 12:08]
+1d$:n:152 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 12:08]
+*Periodic Run* 8-12 13:08 last live feed time: 8-12 13:08 been:0min p:60.26 
+8-12 13:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 13:08 *chek openOrders*: [240812007, 240812008]
+8-12 13:08 60.26 2dP:18.0 1dP:58.0
+2d$:n:979 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 13:08]
+1d$:n:199 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 13:08]
+*Periodic Run* 8-12 14:08 last live feed time: 8-12 14:07 been:1min p:60.24 
+8-12 14:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 14:08 *chek openOrders*: [240812007, 240812008]
+8-12 14:08 60.24 2dP:16.0 1dP:52.0
+2d$:n:1030 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 14:07]
+1d$:n:250 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 14:07]
+*Periodic Run* 8-12 15:08 last live feed time: 8-12 15:06 been:2min p:60.35 
+8-12 15:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 15:08 *chek openOrders*: [240812007, 240812008]
+8-12 15:08 60.35 2dP:26.0 1dP:87.0
+2d$:n:1075 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 15:06]
+1d$:n:295 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 15:06]
+8-12 16:00 *openOrder* status:Submitted 240812007 BUY 207@59.88
+8-12 16:00 *openOrder* all live orders [240812007 BUY 207@59.88, 240812008 BUY 207@58.98]
+8-12 16:00 *OrderStatus*:Submitted orderId:240812007 filled:0 remaining:207 avgFillPx:0.0 lastFillPx:0.0
+8-12 16:00 *openOrder* status:Submitted 240812008 BUY 207@58.98
+8-12 16:00 *openOrder* all live orders [240812007 BUY 207@59.88, 240812008 BUY 207@58.98]
+8-12 16:00 *OrderStatus*:Submitted orderId:240812008 filled:0 remaining:207 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 8-12 16:08 last live feed time: 8-12 16:00 been:8min p:60.19 
+8-12 16:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 16:08 *chek openOrders*: [240812007, 240812008]
+8-12 16:08 60.19 2dP:11.0 1dP:36.0
+2d$:n:1123 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 16:00]
+1d$:n:343 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 16:00]
+*Periodic Run* 8-12 17:08 last live feed time: 8-12 16:00 been:68min p:60.19 
+8-12 17:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 17:08 *chek openOrders*: [240812007, 240812008]
+8-12 17:08 60.19 2dP:11.0 1dP:36.0
+2d$:n:1123 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 16:00]
+1d$:n:343 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 16:00]
+*Periodic Run* 8-12 18:08 last live feed time: 8-12 16:00 been:128min p:60.19 
+8-12 18:08 *chek orderStatus [240812007=Submitted, 240812008=Submitted]
+8-12 18:08 *chek openOrders*: [240812007, 240812008]
+8-12 18:08 60.19 2dP:11.0 1dP:36.0
+2d$:n:1123 max:61.1 [8-8 15:11] min:60.1 [8-12 10:15] rng:1.7% 1Key:[8-8 9:30] last:[8-12 16:00]
+1d$:n:343 max:60.4 [8-12 11:01] min:60.1 [8-12 10:15] rng:0.5% 1Key:[8-12 5:08] last:[8-12 16:00]

@@ -2886,3 +2886,24 @@ AWK 1.*commission report*:240808005 commission:0.37 realized pnl:30.69 computed 
 AWK *********************
 *****START***** HKT: 21:07:25 EST: 8-9 9:07
 *****START***** HKT: 21:53:59 EST: 8-9 9:53
+*****START***** HKT: 16:52:45 EST: 8-12 4:52
+*****START***** HKT: 16:58:44 EST: 8-12 4:58
+*****START***** HKT: 17:08:25 EST: 8-12 5:08
+PG 1.*commission report*:240812003 commission:0.35 
+PG *********************
+PG 1.*commission report*:240812003 commission:-0.02 
+PG *********************
+PG 8-12 9:36 *openOrder* FILLED 240812003 BUY 73@168.56
+PG 8-12 9:36 *OrderStatus*: filled:240812003
+PG 1.*commission report*:240812003 commission:-0.04 
+PG *********************
+PG 1.*commission report*:240812003 commission:-0.08 
+PG *********************
+ABT 8-12 9:47 *openOrder* FILLED 240812009 BUY 115@107.47
+ABT 8-12 9:47 *OrderStatus*: filled:240812009
+ABT 1.*commission report*:240812009 commission:0.29 
+ABT *********************
+HON 8-12 10:00 *openOrder* FILLED 240812011 BUY 63@196.68
+HON 8-12 10:00 *OrderStatus*: filled:240812011
+HON 1.*commission report*:240812011 commission:0.23 
+HON *********************
