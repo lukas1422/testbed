@@ -392,16 +392,17 @@ class ProfitTargetTrader implements LiveHandler,
 //        if (i == 0) {
 //            return 1;
 //        }
-        return mins(1 - 0.005 * Math.pow(4, i),
-                1 - Math.pow(4, i) * rng.getOrDefault(symb, 0.0) / 2.5);
+
+        return mins(1 - 0.005 * Math.pow(3, i),
+                1 - Math.pow(3, i) * rng.getOrDefault(symb, 0.0) / 2.5);
     }
 
 
     //0.005, 0.02, 0.045 handle jumps
     private static double sellFactor(String symb, int i) {
-//        if (i == 0) {
-//            return 1;
-//        }
+        if (i == 0) {
+            return 1.002;
+        }
 
         return maxs(1 + 0.005 * Math.pow(3, i),
                 1 + Math.pow(3, i) * rng.getOrDefault(symb, 0.0) / 3.0);
