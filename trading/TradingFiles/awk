@@ -4268,3 +4268,357 @@ active orders grouped by buysell: {BUY=[240815018, 240815019]}
 8-15 17:31 142.03 2dP:64.0 1dP:60.0
 2d$:n:1112 max:142.9 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-13 9:30] last:[8-15 16:00]
 1d$:n:332 max:142.9 [8-15 14:44] min:140.6 [8-15 10:13] rng:1.6% 1Key:[8-15 9:30] last:[8-15 16:00]
+*******************************************
+*STARTS* 8-16 7:52
+POS:0 COST:0.0 DELT:0k
+*Periodic Run* 8-16 7:53 7:53:11 no live feed
+8-16 7:53 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+8-16 7:53 rng:1.9% costTgt:0.98
+8-16 7:53 tgtMargin:1.0154 tgtPrice:0.0
+ytdReturn:9.43%
+*Periodic Run* 8-16 8:53 8:53:11 no live feed
+8-16 8:53 0.0 2dP:63.0 1dP:100.0
+2d$:n:780 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-15 15:59]
+1d$:n<5
+*Periodic Run* 8-16 9:53 last live feed time: 8-16 9:53 been:0min p:141.28 
+8-16 9:53 141.28 2dP:35.0 1dP:0.0
+2d$:n:795 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 9:53]
+1d$:n:15 max:142.3 [8-16 9:30] min:141.6 [8-16 9:53] rng:0.5% 1Key:[8-16 9:30] last:[8-16 9:53]
+*Periodic Run* 8-16 10:53 last live feed time: 8-16 10:49 been:3min p:141.71 
+8-16 10:53 141.71 2dP:52.0 1dP:37.0
+2d$:n:835 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 10:49]
+1d$:n:55 max:142.3 [8-16 9:30] min:141.4 [8-16 9:53] rng:0.7% 1Key:[8-16 9:30] last:[8-16 10:49]
+*Periodic Run* 8-16 11:53 last live feed time: 8-16 11:50 been:2min p:141.08 
+8-16 11:53 141.08 2dP:28.0 1dP:1.0
+2d$:n:877 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 11:50]
+1d$:n:97 max:142.3 [8-16 9:30] min:141.1 [8-16 11:49] rng:0.9% 1Key:[8-16 9:30] last:[8-16 11:50]
+12:14:02.661189 no blocking orders,empty
+*1Buy*@140.92 8-16 12:14:02 1dp:0.0 2dp:19.0
+cash remaining: 110794.51
+0:240816015 AWK BUY 88 @140.56 12:14 bid is:140.84
+12:14 0: AWK orderID:240816015 tradeID:240816015 BUY 88 @140.56 factor:0.998 AWK 8-16 12:14 ADDER Created
+1:240816016 AWK BUY 88 @138.68 12:14 bid is:140.84
+12:14 1: AWK orderID:240816016 tradeID:240816016 BUY 88 @138.68 factor:0.9846422150184767 AWK 8-16 12:14 ADDER Created
+1D$:n:115 max:142.3 [8-16 9:30] min:140.9 [8-16 12:13] rng:1.0% 1Key:[8-16 9:30] last:[8-16 12:14]
+2D$:n:895 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 12:14]
+8-16 12:14 *openOrder* status:PreSubmitted 240816016 BUY 88@138.68
+8-16 12:14 *openOrder* all live orders [240816016 BUY 88@138.68]
+8-16 12:14 *OrderStatus*:PreSubmitted orderId:240816016 filled:0 remaining:88 avgFillPx:0.0 lastFillPx:0.0
+8-16 12:14 *openOrder* status:Submitted 240816015 BUY 88@140.56
+8-16 12:14 *openOrder* all live orders [240816015 BUY 88@140.56, 240816016 BUY 88@138.68]
+8-16 12:14 *OrderStatus*:Submitted orderId:240816015 filled:0 remaining:88 avgFillPx:0.0 lastFillPx:0.0
+8-16 12:14 *openOrder* status:Submitted 240816016 BUY 88@138.68
+8-16 12:14 *openOrder* all live orders [240816015 BUY 88@140.56, 240816016 BUY 88@138.68]
+8-16 12:14 *OrderStatus*:Submitted orderId:240816016 filled:0 remaining:88 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:14:04.354 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:23:21.041 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:23:21.824 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:24:02.803 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:25:36.925 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:25:47.403 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:25:52.933 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:26:04.300 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:26:19.150 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:26:23.655 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:26:32.256 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:27:41.073 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:30:00.444 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:30:01.060 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:30:21.397 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:31:07.621 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:31:08.189 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:31:35.429 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:32:11.521 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:32:32.923 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:32:33.845 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:32:35.388 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:33:03.140 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:33:08.853 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:33:11.942 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:33:12.861 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:33:55.369 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:34:04.781 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:34:50.043 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:35:02.031 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:36:45.965 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:37:49.967 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:38:01.689 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:39:01.604 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:39:54.844 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:39:55.365 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:39:58.689 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:40:21.935 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:40:22.858 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:40:37.602 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:40:38.524 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:40:55.627 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:41:34.027 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:43:50.945 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:44:14.858 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:44:18.591 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:45:13.891 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:48:14.120 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:49:16.996 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:49:46.600 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:50:20.804 no blocking orders 
+*Periodic Run* 8-16 12:53 last live feed time: 8-16 12:50 been:2min p:140.71 
+8-16 12:53 *chek orderStatus [240816015=Submitted, 240816016=Submitted]
+8-16 12:53 *chek openOrders*: [240816015, 240816016]
+8-16 12:53 140.71 2dP:13.0 1dP:2.0
+2d$:n:924 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 12:50]
+1d$:n:144 max:142.3 [8-16 9:30] min:140.7 [8-16 12:39] rng:1.2% 1Key:[8-16 9:30] last:[8-16 12:50]
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:53:47.343 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:54:23.799 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:54:31.276 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:57:40.825 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:57:41.442 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:57:42.363 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:57:42.978 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:58:12.263 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:58:28.245 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T12:58:28.854 no blocking orders 
+*Periodic Run* 8-16 13:53 last live feed time: 8-16 13:53 been:0min p:140.98 
+8-16 13:53 *chek orderStatus [240816015=Submitted, 240816016=Submitted]
+8-16 13:53 *chek openOrders*: [240816015, 240816016]
+8-16 13:53 140.98 2dP:24.0 1dP:19.0
+2d$:n:954 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 13:53]
+1d$:n:174 max:142.3 [8-16 9:30] min:140.7 [8-16 12:39] rng:1.2% 1Key:[8-16 9:30] last:[8-16 13:53]
+*Periodic Run* 8-16 14:53 last live feed time: 8-16 14:53 been:0min p:141.36 
+8-16 14:53 *chek orderStatus [240816015=Submitted, 240816016=Submitted]
+8-16 14:53 *chek openOrders*: [240816015, 240816016]
+8-16 14:53 141.36 2dP:38.0 1dP:42.0
+2d$:n:992 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 14:53]
+1d$:n:212 max:142.3 [8-16 9:30] min:140.7 [8-16 12:39] rng:1.2% 1Key:[8-16 9:30] last:[8-16 14:53]
+*Periodic Run* 8-16 15:53 last live feed time: 8-16 15:53 been:0min p:140.97 
+8-16 15:53 *chek orderStatus [240816015=Submitted, 240816016=Submitted]
+8-16 15:53 *chek openOrders*: [240816015, 240816016]
+8-16 15:53 140.97 2dP:23.0 1dP:18.0
+2d$:n:1038 max:143.0 [8-15 14:44] min:140.4 [8-14 9:33] rng:1.8% 1Key:[8-14 9:30] last:[8-16 15:53]
+1d$:n:258 max:142.3 [8-16 9:30] min:140.7 [8-16 12:39] rng:1.2% 1Key:[8-16 9:30] last:[8-16 15:53]
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:58:52.259 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:58:53.444 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:58:54.305 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:58:55.227 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:58:58.564 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:59:00.669 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:59:01.196 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:59:06.184 no blocking orders 
+no blocking buy orders: All submitted orders {240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted}
+no blocking buy orders: Active orders: [240816015=AWK 8-16 12:14 ADDER Submitted, 240816016=AWK 8-16 12:14 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240816015, 240816016]}
+2024-08-16T15:59:08.641 no blocking orders 
+8-16 16:00 *openOrder* status:Submitted 240816015 BUY 88@140.56
+8-16 16:00 *openOrder* all live orders [240816015 BUY 88@140.56, 240816016 BUY 88@138.68]
+8-16 16:00 *OrderStatus*:Submitted orderId:240816015 filled:0 remaining:88 avgFillPx:0.0 lastFillPx:0.0
+8-16 16:00 *openOrder* status:Submitted 240816016 BUY 88@138.68
+8-16 16:00 *openOrder* all live orders [240816015 BUY 88@140.56, 240816016 BUY 88@138.68]
+8-16 16:00 *OrderStatus*:Submitted orderId:240816016 filled:0 remaining:88 avgFillPx:0.0 lastFillPx:0.0
