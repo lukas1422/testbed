@@ -4010,3 +4010,220 @@ p:278.38 rng:1.5% pos:177 delt:49k cost:276.4 fullLot:134 refillP:256.29 costTgt
 8-16 15:53 278.38 2dP:90.0 1dP:78.0
 2d$:n:1166 max:279.4 [8-16 14:08] min:268.7 [8-14 9:47] rng:4.0% 1Key:[8-14 9:30] last:[8-16 15:53]
 1d$:n:386 max:279.4 [8-16 14:08] min:274.6 [8-16 8:51] rng:1.7% 1Key:[8-16 8:00] last:[8-16 15:53]
+*******************************************
+*STARTS* 8-19 8:00
+updating pos: MCD 8-19 8:00 pos:177 cost:276.42
+POS:177 COST:276.4 DELT:49k
+*Periodic Run* 8-19 8:00 8:00:58 no live feed
+8-19 8:00 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+8-19 8:01 rng:1.5% costTgt:0.98
+8-19 8:01 tgtMargin:1.0119 tgtPrice:279.71
+ytdReturn:-6.08%
+*Periodic Run* 8-19 9:00 last live feed time: 8-19 8:52 been:8min p:280.5 cost:276.4 p/cost:1.015
+p:280.5 rng:1.5% pos:177 delt:50k cost:276.4 fullLot:133 refillP:256.18 costTgt:0.98 refillP/cost:0.927 refillP/px:0.913
+8-19 9:00 280.5 2dP:95.0 1dP:5.0
+2d$:n:793 max:280.9 [8-19 8:19] min:272.0 [8-15 9:33] rng:3.3% 1Key:[8-15 9:30] last:[8-19 8:52]
+1d$:n:13 max:280.9 [8-19 8:19] min:280.5 [8-19 8:01] rng:0.2% 1Key:[8-19 8:01] last:[8-19 8:52]
+******************CUT**************************
+CUT 8-19 9:30:04 1dP:100.0 2dp:100.0 px282.33 cost:276.42284635 px/Cost:1.0214 reqMargin:1.0119 rng:0.0149
+0:240819012 MCD SELL 59 @283.45 9:30
+0: SELL MCD 8-19 9:30 CUTTER Created target margin:1.0119 cost*target margin:279.71 askPx:282.88
+1:240819013 MCD SELL 59 @285.71 9:30
+1: SELL MCD 8-19 9:30 CUTTER Created target margin:1.0119 cost*target margin:279.71 askPx:282.88
+2:240819014 MCD SELL 59 @288.54 9:30
+2: SELL MCD 8-19 9:30 CUTTER Created target margin:1.0119 cost*target margin:279.71 askPx:282.88
+2D$:n:801 max:281.7 [8-19 9:29] min:272.0 [8-15 9:33] rng:3.6% 1Key:[8-15 9:30] last:[8-19 9:30]
+1D$:n:21 max:281.7 [8-19 9:29] min:280.4 [8-19 8:01] rng:0.5% 1Key:[8-19 8:01] last:[8-19 9:30]
+8-19 9:30 *openOrder* status:PreSubmitted 240819013 SELL 59@285.71
+8-19 9:30 *openOrder* all live orders [240819013 SELL 59@285.71]
+8-19 9:30 *OrderStatus*:PreSubmitted orderId:240819013 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 9:30 *openOrder* status:PreSubmitted 240819014 SELL 59@288.54
+8-19 9:30 *openOrder* all live orders [240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:PreSubmitted orderId:240819014 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 9:30 *openOrder* status:Submitted 240819012 SELL 59@283.45
+8-19 9:30 *openOrder* all live orders [240819012 SELL 59@283.45, 240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:Submitted orderId:240819012 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 9:30 *openOrder* status:Submitted 240819013 SELL 59@285.71
+8-19 9:30 *openOrder* all live orders [240819012 SELL 59@283.45, 240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:Submitted orderId:240819013 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 9:30 *openOrder* status:Submitted 240819014 SELL 59@288.54
+8-19 9:30 *openOrder* all live orders [240819012 SELL 59@283.45, 240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:Submitted orderId:240819014 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+updating pos: MCD 8-19 9:30 pos:118 cost:276.42
+8-19 9:30 *tradeReport* time: 2024-08-19T09:30:55 SLD execPx:283.45 shares:59 avgPx:283.45
+8-19 9:30 *openOrder* status:Filled 240819012 SELL 59@283.45
+8-19 9:30 *openOrder*:removing order.Status:Filled 240819012 SELL 59@283.45
+8-19 9:30 *openOrder*:after removal.OpenOrders: [240819013, 240819014]
+8-19 9:30 *openOrder* all live orders [240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:Filled orderId:240819012 filled:59 remaining:0 avgFillPx:283.45 lastFillPx:283.45
+8-19 9:30 *openOrder* status:Filled 240819012 SELL 59@283.45
+8-19 9:30 *openOrder*:removing order.Status:Filled 240819012 SELL 59@283.45
+8-19 9:30 *openOrder*:after removal.OpenOrders: [240819013, 240819014]
+8-19 9:30 *openOrder* all live orders [240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:30 *OrderStatus*:Filled orderId:240819012 filled:59 remaining:0 avgFillPx:283.45 lastFillPx:283.45
+computed Pnl:413.8891993500001
+1.*commission report*:240819012 commission:0.71 realized pnl:413.89 computed Pnl:413.89
+2.*commission report* orderID:240819012 commission: 0.71 realized pnl: 413.89
+updating pos: MCD 8-19 9:30 pos:118 cost:276.42
+updating pos: MCD 8-19 9:30 pos:118 cost:276.42
+updating pos: MCD 8-19 9:36 pos:108 cost:276.42
+8-19 9:36 *tradeReport* time: 2024-08-19T09:36:30 SLD execPx:285.71 shares:10 avgPx:285.71
+8-19 9:36 *openOrder* status:Submitted 240819013 SELL 59@285.71
+8-19 9:36 *openOrder* all live orders [240819013 SELL 59@285.71, 240819014 SELL 59@288.54]
+8-19 9:36 *OrderStatus*:Submitted orderId:240819013 filled:10 remaining:49 avgFillPx:285.71 lastFillPx:285.71
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+8-19 9:36 *tradeReport* time: 2024-08-19T09:36:30 SLD execPx:285.71 shares:49 avgPx:285.71
+8-19 9:36 *openOrder* status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:removing order.Status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:after removal.OpenOrders: [240819014]
+8-19 9:36 *openOrder* all live orders [240819014 SELL 59@288.54]
+8-19 9:36 *OrderStatus*:Filled orderId:240819013 filled:59 remaining:0 avgFillPx:285.71 lastFillPx:285.71
+8-19 9:36 *openOrder* status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:removing order.Status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:after removal.OpenOrders: [240819014]
+8-19 9:36 *openOrder* all live orders [240819014 SELL 59@288.54]
+8-19 9:36 *OrderStatus*:Filled orderId:240819013 filled:59 remaining:0 avgFillPx:285.71 lastFillPx:285.71
+computed Pnl:547.5297203499997
+1.*commission report*:240819013 commission:0.41 realized pnl:92.46 computed Pnl:547.53
+2.*commission report* orderID:240819013 commission: 0.41 realized pnl: 92.46
+8-19 9:36 *openOrder* status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:removing order.Status:Filled 240819013 SELL 59@285.71
+8-19 9:36 *openOrder*:after removal.OpenOrders: [240819014]
+8-19 9:36 *openOrder* all live orders [240819014 SELL 59@288.54]
+8-19 9:36 *OrderStatus*:Filled orderId:240819013 filled:59 remaining:0 avgFillPx:285.71 lastFillPx:285.71
+computed Pnl:547.6378373499997
+1.*commission report*:240819013 commission:0.3 realized pnl:454.77 computed Pnl:547.64
+2.*commission report* orderID:240819013 commission: 0.3 realized pnl: 454.77
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+updating pos: MCD 8-19 9:36 pos:59 cost:276.42
+*Periodic Run* 8-19 10:00 last live feed time: 8-19 9:48 been:12min p:285.05 cost:276.4 p/cost:1.031
+p:285.05 rng:1.5% pos:59 delt:17k cost:276.4 fullLot:131 refillP:265.91 costTgt:0.98 refillP/cost:0.962 refillP/px:0.933
+8-19 10:00 *chek orderStatus [240819012=Filled, 240819013=Filled, 240819014=Submitted]
+8-19 10:00 *chek openOrders*: [240819014]
+8-19 10:00 285.05 2dP:90.0 1dP:76.0
+2d$:n:819 max:286.5 [8-19 9:39] min:272.0 [8-15 9:33] rng:5.3% 1Key:[8-15 9:30] last:[8-19 9:48]
+1d$:n:39 max:286.5 [8-19 9:39] min:280.4 [8-19 8:01] rng:2.2% 1Key:[8-19 8:01] last:[8-19 9:48]
+*******************************************
+*STARTS* 8-19 10:33
+updating pos: MCD 8-19 10:33 pos:59 cost:276.42
+POS:59 COST:276.4 DELT:16k
+8-19 10:33 *openOrder* status:Submitted 240819014 SELL 59@288.54
+openOrder does not contain order MCD 240819014 SELL 59@288.54
+8-19 10:33 *openOrder* all live orders [240819014 SELL 59@288.54]
+8-19 10:33 *OrderStatus*:Submitted orderId:240819014 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 10:33 *tradeReport* time: 2024-08-19T09:30:55 SLD execPx:283.45 shares:59 avgPx:283.45
+8-19 10:33 *tradeReport* time: 2024-08-19T09:36:30 SLD execPx:285.71 shares:10 avgPx:285.71
+8-19 10:33 *tradeReport* time: 2024-08-19T09:36:30 SLD execPx:285.71 shares:49 avgPx:285.71
+listOfExecs [orderID: 240819012 time: 2024-08-19T09:30:55 side: SLD shares: 59 price: 283.45, orderID: 240819013 time: 2024-08-19T09:36:30 side: SLD shares: 10 price: 285.71, orderID: 240819013 time: 2024-08-19T09:36:30 side: SLD shares: 49 price: 285.71]
+8-19 10:33 *OrderStatus*:Cancelled orderId:240819014 filled:0 remaining:59 avgFillPx:0.0 lastFillPx:0.0
+8-19 10:33 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240819014=240819014 SELL 59@288.54}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {ABT={240819022=240819022 SELL 17@112.51, 240819023=240819023 SELL 18@113.78}, ADM={}, AWK={}, BRK B={}, CL={}, GLD={240819004=240819004 SELL 16@232.48}, HON={}, HSBC={240819007=240819007 SELL 194@43.54}, IP={}, IWM={}, JNJ={}, KMB={}, KO={}, MCD={}, MMM={}, MRK={240819019=240819019 SELL 36@115.21, 240819020=240819020 SELL 38@116.5}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, UNP={}, WMT={240819017=240819017 SELL 40@74.91}}
+*Periodic Run* 8-19 10:33 last live feed time: 8-19 10:33 been:0min p:285.7 cost:276.4 p/cost:1.034
+p:285.7 rng:0.0% pos:59 delt:17k cost:276.4 fullLot:131 refillP:265.91 costTgt:0.98 refillP/cost:0.962 refillP/px:0.931
+8-19 10:33 *chek orderStatus [240819014=Cancelled]
+8-19 10:33 285.7 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+8-19 10:33 rng:1.5% costTgt:0.98
+8-19 10:33 tgtMargin:1.0119 tgtPrice:279.72
+ytdReturn:-2.47%
+all order finished: {240819014=MCD 8-19 10:33 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 8-19 10:33:59 1dP:100.0 2dp:100.0 px285.72 cost:276.4228463 px/Cost:1.0336 reqMargin:1.0119 rng:0.0149
+0:240819081 MCD SELL 19 @286.32 10:33
+0: SELL MCD 8-19 10:33 CUTTER Created target margin:1.01192 cost*target margin:279.72 askPx:285.75
+1:240819082 MCD SELL 19 @288.61 10:33
+1: SELL MCD 8-19 10:33 CUTTER Created target margin:1.01192 cost*target margin:279.72 askPx:285.75
+2:240819083 MCD SELL 21 @291.47 10:33
+2: SELL MCD 8-19 10:33 CUTTER Created target margin:1.01192 cost*target margin:279.72 askPx:285.75
+2D$:n<5
+1D$:n<5
+8-19 10:34 *openOrder* status:Submitted 240819081 SELL 19@286.32
+8-19 10:34 *openOrder* all live orders [240819081 SELL 19@286.32]
+8-19 10:34 *OrderStatus*:Submitted orderId:240819081 filled:0 remaining:19 avgFillPx:0.0 lastFillPx:0.0
+8-19 10:34 *openOrder* status:Submitted 240819082 SELL 19@288.61
+8-19 10:34 *openOrder* all live orders [240819081 SELL 19@286.32, 240819082 SELL 19@288.61]
+8-19 10:34 *OrderStatus*:Submitted orderId:240819082 filled:0 remaining:19 avgFillPx:0.0 lastFillPx:0.0
+8-19 10:34 *openOrder* status:Submitted 240819083 SELL 21@291.47
+8-19 10:34 *openOrder* all live orders [240819081 SELL 19@286.32, 240819082 SELL 19@288.61, 240819083 SELL 21@291.47]
+8-19 10:34 *OrderStatus*:Submitted orderId:240819083 filled:0 remaining:21 avgFillPx:0.0 lastFillPx:0.0
+updating pos: MCD 8-19 10:41 pos:40 cost:276.42
+8-19 10:41 *tradeReport* time: 2024-08-19T10:41:18 SLD execPx:286.32 shares:19 avgPx:286.32
+8-19 10:41 *openOrder* status:Filled 240819081 SELL 19@286.32
+8-19 10:41 *openOrder*:removing order.Status:Filled 240819081 SELL 19@286.32
+8-19 10:41 *openOrder*:after removal.OpenOrders: [240819082, 240819083]
+8-19 10:41 *openOrder* all live orders [240819082 SELL 19@288.61, 240819083 SELL 21@291.47]
+8-19 10:41 *OrderStatus*:Filled orderId:240819081 filled:19 remaining:0 avgFillPx:286.32 lastFillPx:286.32
+8-19 10:41 *openOrder* status:Filled 240819081 SELL 19@286.32
+8-19 10:41 *openOrder*:removing order.Status:Filled 240819081 SELL 19@286.32
+8-19 10:41 *openOrder*:after removal.OpenOrders: [240819082, 240819083]
+8-19 10:41 *openOrder* all live orders [240819082 SELL 19@288.61, 240819083 SELL 21@291.47]
+8-19 10:41 *OrderStatus*:Filled orderId:240819081 filled:19 remaining:0 avgFillPx:286.32 lastFillPx:286.32
+computed Pnl:187.5602752999998
+1.*commission report*:240819081 commission:0.49 realized pnl:187.56 computed Pnl:187.56
+2.*commission report* orderID:240819081 commission: 0.49 realized pnl: 187.56
+updating pos: MCD 8-19 10:41 pos:40 cost:276.42
+updating pos: MCD 8-19 10:41 pos:40 cost:276.42
+updating pos: MCD 8-19 10:46 pos:40 cost:276.42
+*Periodic Run* 8-19 11:33 last live feed time: 8-19 11:33 been:0min p:285.86 cost:276.4 p/cost:1.034
+p:285.86 rng:1.5% pos:40 delt:11k cost:276.4 fullLot:131 refillP:267.52 costTgt:0.98 refillP/cost:0.968 refillP/px:0.936
+8-19 11:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 11:33 *chek openOrders*: [240819082, 240819083]
+8-19 11:33 285.86 2dP:91.0 1dP:68.0
+2d$:n:514 max:287.0 [8-19 11:18] min:274.8 [8-16 9:31] rng:4.5% 1Key:[8-16 9:30] last:[8-19 11:33]
+1d$:n:124 max:287.0 [8-19 11:18] min:283.4 [8-19 9:30] rng:1.3% 1Key:[8-19 9:30] last:[8-19 11:33]
+*Periodic Run* 8-19 12:33 last live feed time: 8-19 12:33 been:0min p:286.92 cost:276.4 p/cost:1.038
+p:286.92 rng:1.5% pos:40 delt:11k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.932
+8-19 12:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 12:33 *chek openOrders*: [240819082, 240819083]
+8-19 12:33 286.92 2dP:96.0 1dP:88.0
+2d$:n:574 max:287.4 [8-19 12:28] min:274.8 [8-16 9:31] rng:4.6% 1Key:[8-16 9:30] last:[8-19 12:33]
+1d$:n:184 max:287.4 [8-19 12:28] min:283.4 [8-19 9:30] rng:1.4% 1Key:[8-19 9:30] last:[8-19 12:33]
+*Periodic Run* 8-19 13:33 last live feed time: 8-19 13:33 been:0min p:287.24 cost:276.4 p/cost:1.039
+p:287.24 rng:1.5% pos:40 delt:11k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.931
+8-19 13:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 13:33 *chek openOrders*: [240819082, 240819083]
+8-19 13:33 287.24 2dP:97.0 1dP:90.0
+2d$:n:634 max:287.6 [8-19 13:14] min:274.8 [8-16 9:31] rng:4.7% 1Key:[8-16 9:30] last:[8-19 13:33]
+1d$:n:244 max:287.6 [8-19 13:14] min:283.4 [8-19 9:30] rng:1.5% 1Key:[8-19 9:30] last:[8-19 13:33]
+*Periodic Run* 8-19 14:33 last live feed time: 8-19 14:33 been:0min p:288.08 cost:276.4 p/cost:1.042
+p:288.08 rng:1.5% pos:40 delt:12k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.929
+8-19 14:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 14:33 *chek openOrders*: [240819082, 240819083]
+8-19 14:33 288.08 2dP:100.0 1dP:99.0
+2d$:n:694 max:288.1 [8-19 14:30] min:274.8 [8-16 9:31] rng:4.9% 1Key:[8-16 9:30] last:[8-19 14:33]
+1d$:n:304 max:288.1 [8-19 14:30] min:283.4 [8-19 9:30] rng:1.7% 1Key:[8-19 9:30] last:[8-19 14:33]
+*Periodic Run* 8-19 15:33 last live feed time: 8-19 15:33 been:0min p:287.51 cost:276.4 p/cost:1.04
+p:287.51 rng:1.5% pos:40 delt:12k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.93
+8-19 15:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 15:33 *chek openOrders*: [240819082, 240819083]
+8-19 15:33 287.51 2dP:94.0 1dP:84.0
+2d$:n:754 max:288.3 [8-19 14:46] min:274.8 [8-16 9:31] rng:4.9% 1Key:[8-16 9:30] last:[8-19 15:33]
+1d$:n:364 max:288.3 [8-19 14:46] min:283.4 [8-19 9:30] rng:1.7% 1Key:[8-19 9:30] last:[8-19 15:33]
+8-19 16:00 *openOrder* status:Submitted 240819082 SELL 19@288.61
+8-19 16:00 *openOrder* all live orders [240819082 SELL 19@288.61, 240819083 SELL 21@291.47]
+8-19 16:00 *OrderStatus*:Submitted orderId:240819082 filled:0 remaining:19 avgFillPx:0.0 lastFillPx:0.0
+8-19 16:00 *openOrder* status:Submitted 240819083 SELL 21@291.47
+8-19 16:00 *openOrder* all live orders [240819082 SELL 19@288.61, 240819083 SELL 21@291.47]
+8-19 16:00 *OrderStatus*:Submitted orderId:240819083 filled:0 remaining:21 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 8-19 16:33 last live feed time: 8-19 16:00 been:33min p:287.55 cost:276.4 p/cost:1.04
+p:287.55 rng:1.5% pos:40 delt:12k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.93
+8-19 16:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 16:33 *chek openOrders*: [240819082, 240819083]
+8-19 16:33 287.55 2dP:94.0 1dP:84.0
+2d$:n:781 max:288.3 [8-19 14:46] min:274.8 [8-16 9:31] rng:4.9% 1Key:[8-16 9:30] last:[8-19 16:00]
+1d$:n:391 max:288.3 [8-19 14:46] min:283.4 [8-19 9:30] rng:1.7% 1Key:[8-19 9:30] last:[8-19 16:00]
+*Periodic Run* 8-19 17:33 last live feed time: 8-19 17:04 been:28min p:287.55 cost:276.4 p/cost:1.04
+p:287.55 rng:1.5% pos:40 delt:12k cost:276.4 fullLot:130 refillP:267.49 costTgt:0.98 refillP/cost:0.968 refillP/px:0.93
+8-19 17:33 *chek orderStatus [240819014=Cancelled, 240819081=Filled, 240819082=Submitted, 240819083=Submitted]
+8-19 17:33 *chek openOrders*: [240819082, 240819083]
+8-19 17:33 287.55 2dP:94.0 1dP:84.0
+2d$:n:784 max:288.3 [8-19 14:46] min:274.8 [8-16 9:31] rng:4.9% 1Key:[8-16 9:30] last:[8-19 17:04]
+1d$:n:394 max:288.3 [8-19 14:46] min:283.4 [8-19 9:30] rng:1.7% 1Key:[8-19 9:30] last:[8-19 17:04]
