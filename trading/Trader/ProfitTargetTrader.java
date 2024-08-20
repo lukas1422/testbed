@@ -40,7 +40,7 @@ class ProfitTargetTrader implements LiveHandler,
         , ApiController.IAccountSummaryHandler {
 
     private static volatile double AVAILABLE_CASH = 0.0;
-    private static final double DELTA_TOTAL_LIMIT = 450000;
+    private static final double DELTA_TOTAL_LIMIT = 280000;
     //    private static final double DELTA_LIMIT_EACH = DELTA_TOTAL_LIMIT / 3.0;
     private static final double CURRENT_REFILL_N = 2.0; //refill times now due to limited delta
     private static final double IDEAL_REFILL_N = 20.0; //ideally how many times to refill
