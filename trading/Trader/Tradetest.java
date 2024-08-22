@@ -24,10 +24,10 @@ public class Tradetest implements LiveHandler {
 
     public static final int GATEWAY_PORT = 4001;
     public static final int TWS_PORT = 7496;
-    public static final int PORT_TO_USE = GATEWAY_PORT;
+    public static final int PORT_TO_USE = 4002;
 
     //    static Contract tencent = generateHKStockContract("700");
-    static Contract wmt = generateUSStockContract("WMT");
+    static Contract stockToTry = generateUSStockContract("WMT");
 
 //
 //    private Tradetest() {
@@ -56,9 +56,8 @@ public class Tradetest implements LiveHandler {
         }
 
         es.schedule(() -> {
-            pr("Position end: requesting live:", "LTRPA");
-            req1ContractLive(apiController, generateUSStockContract("LTRPA")
-                    , this, false);
+            pr("Position end: requesting live:", ibContractToSymbol(stockToTry));
+            req1ContractLive(apiController, stockToTry, this, false);
         }, 2L, TimeUnit.SECONDS);
     }
 
