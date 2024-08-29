@@ -10129,3 +10129,1360 @@ p:71.75 rng:1.2% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98
 8-28 16:13 71.75 2dP:98.0 1dP:92.0
 2d$:n:1182 max:71.8 [8-28 15:59] min:69.8 [8-26 9:31] rng:2.8% 1Key:[8-26 9:30] last:[8-28 16:00]
 1d$:n:402 max:71.8 [8-28 15:59] min:71.3 [8-28 14:49] rng:0.7% 1Key:[8-28 8:13] last:[8-28 16:00]
+*******************************************
+*STARTS* 8-29 7:46
+updating pos: KO 8-29 7:46 pos:18 cost:68.89
+POS:18 COST:68.9 DELT:1k
+8-29 7:47 *tradeReport* time: 2024-08-28T15:59:55 SLD execPx:71.81 shares:8 avgPx:71.81
+listOfExecs [orderID: 240828009 time: 2024-08-28T15:59:55 side: SLD shares: 8 price: 71.81]
+*Periodic Run* 8-29 7:47 7:47:16 no live feed
+8-29 7:47 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 8-29 8:47 last live feed time: 8-29 8:44 been:3min p:71.95 cost:68.9 p/cost:1.044
+p:71.95 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:324 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.936
+8-29 8:47 71.95 2dP:44.0 1dP:44.0
+2d$:n:7 max:72.0 [8-29 7:47] min:71.9 [8-29 8:00] rng:0.0% 1Key:[8-29 7:47] last:[8-29 8:44]
+1d$:n:7 max:72.0 [8-29 7:47] min:71.9 [8-29 8:00] rng:0.0% 1Key:[8-29 7:47] last:[8-29 8:44]
+******************CUT**************************
+CUT 8-29 9:30:06 1dP:74.0 2dp:74.0 px71.9 cost:68.8925 px/Cost:1.0437 reqMargin:1.01 rng:0.0
+0:240829013 KO SELL 6 @72.06 9:30
+0: SELL KO 8-29 9:30 CUTTER Created target margin:1.01 cost*target margin:69.58 askPx:71.92
+1:240829014 KO SELL 12 @72.64 9:30
+1: SELL KO 8-29 9:30 CUTTER Created target margin:1.01 cost*target margin:69.58 askPx:71.92
+2024-08-29T09:30:06.249347 remaining position <= 0, break
+2D$:n:28 max:72.0 [8-29 7:47] min:71.7 [8-29 9:23] rng:0.3% 1Key:[8-29 7:47] last:[8-29 9:30]
+1D$:n:28 max:72.0 [8-29 7:47] min:71.7 [8-29 9:23] rng:0.3% 1Key:[8-29 7:47] last:[8-29 9:30]
+8-29 9:30 *openOrder* status:Submitted 240829013 SELL 6@72.06
+8-29 9:30 *openOrder* all live orders [240829013 SELL 6@72.06]
+8-29 9:30 *OrderStatus*:Submitted orderId:240829013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+8-29 9:30 *openOrder* status:Submitted 240829014 SELL 12@72.64
+8-29 9:30 *openOrder* all live orders [240829013 SELL 6@72.06, 240829014 SELL 12@72.64]
+8-29 9:30 *OrderStatus*:Submitted orderId:240829014 filled:0 remaining:12 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+*Periodic Run* 8-29 9:47 last live feed time: 8-29 9:47 been:0min p:71.41 cost:68.9 p/cost:1.037
+p:71.41 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:326 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.943
+8-29 9:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 9:47 *chek openOrders*: [240829013, 240829014]
+8-29 9:47 71.41 2dP:5.0 1dP:5.0
+2d$:n:45 max:72.0 [8-29 7:47] min:71.4 [8-29 9:47] rng:0.8% 1Key:[8-29 7:47] last:[8-29 9:47]
+1d$:n:45 max:72.0 [8-29 7:47] min:71.4 [8-29 9:47] rng:0.8% 1Key:[8-29 7:47] last:[8-29 9:47]
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:00:00.722 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:00:07.891 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:00:09.734 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:01:03.672 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:01:07.795 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:02:03.809 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:02:03.814 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+2024-08-29T10:02:04.223 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+no blocking buy orders: All submitted orders {240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829013=KO 8-29 9:30 CUTTER Submitted, 240829014=KO 8-29 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829013, 240829014]}
+*Periodic Run* 8-29 10:47 last live feed time: 8-29 10:38 been:8min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 10:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 10:47 *chek openOrders*: [240829013, 240829014]
+8-29 10:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 11:47 last live feed time: 8-29 10:38 been:68min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 11:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 11:47 *chek openOrders*: [240829013, 240829014]
+8-29 11:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 12:47 last live feed time: 8-29 10:38 been:128min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 12:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 12:47 *chek openOrders*: [240829013, 240829014]
+8-29 12:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 13:47 last live feed time: 8-29 10:38 been:188min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 13:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 13:47 *chek openOrders*: [240829013, 240829014]
+8-29 13:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 14:47 last live feed time: 8-29 10:38 been:248min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 14:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 14:47 *chek openOrders*: [240829013, 240829014]
+8-29 14:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 15:47 last live feed time: 8-29 10:38 been:308min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 15:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 15:47 *chek openOrders*: [240829013, 240829014]
+8-29 15:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+*Periodic Run* 8-29 16:47 last live feed time: 8-29 10:38 been:368min p:71.72 cost:68.9 p/cost:1.041
+p:71.72 rng:0.0% pos:18 delt:1k cost:68.9 fullLot:325 refillP:67.36 costTgt:0.98 refillP/cost:0.978 refillP/px:0.939
+8-29 16:47 *chek orderStatus [240829013=Submitted, 240829014=Submitted]
+8-29 16:47 *chek openOrders*: [240829013, 240829014]
+8-29 16:47 71.72 2dP:65.0 1dP:65.0
+2d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]
+1d$:n:96 max:72.0 [8-29 7:47] min:71.3 [8-29 9:54] rng:1.0% 1Key:[8-29 7:47] last:[8-29 10:38]

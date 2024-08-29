@@ -6155,3 +6155,270 @@ p:141.77 rng:1.9% pos:37 delt:5k cost:140.3 fullLot:164 refillP:136.2 costTgt:0.
 8-28 16:13 141.77 2dP:58.0 1dP:55.0
 2d$:n:1094 max:143.2 [8-28 11:16] min:139.8 [8-27 12:27] rng:2.5% 1Key:[8-26 9:30] last:[8-28 16:00]
 1d$:n:314 max:143.2 [8-28 11:16] min:140.0 [8-28 9:34] rng:2.3% 1Key:[8-28 9:29] last:[8-28 16:00]
+*******************************************
+*STARTS* 8-29 7:46
+updating pos: AWK 8-29 7:46 pos:37 cost:140.27
+POS:37 COST:140.3 DELT:5k
+*Periodic Run* 8-29 7:47 7:47:16 no live feed
+8-29 7:47 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 8-29 8:47 8:47:16 no live feed
+8-29 8:47 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+******************CUT**************************
+CUT 8-29 9:32:57 1dP:100.0 2dp:100.0 px141.9 cost:140.2719135 px/Cost:1.0116 reqMargin:1.01 rng:0.0
+0:240829024 AWK SELL 12 @142.27 9:32
+0: SELL AWK 8-29 9:32 CUTTER Created target margin:1.01 cost*target margin:141.67 askPx:141.99
+1:240829025 AWK SELL 12 @143.41 9:32
+1: SELL AWK 8-29 9:32 CUTTER Created target margin:1.01 cost*target margin:141.67 askPx:141.99
+2:240829026 AWK SELL 13 @144.83 9:32
+2: SELL AWK 8-29 9:32 CUTTER Created target margin:1.01 cost*target margin:141.67 askPx:141.99
+2D$:n<5
+1D$:n<5
+8-29 9:32 *openOrder* status:Submitted 240829024 SELL 12@142.27
+8-29 9:32 *openOrder* all live orders [240829024 SELL 12@142.27]
+8-29 9:32 *OrderStatus*:Submitted orderId:240829024 filled:0 remaining:12 avgFillPx:0.0 lastFillPx:0.0
+8-29 9:32 *openOrder* status:PreSubmitted 240829026 SELL 13@144.83
+8-29 9:32 *openOrder* all live orders [240829024 SELL 12@142.27, 240829026 SELL 13@144.83]
+8-29 9:32 *OrderStatus*:PreSubmitted orderId:240829026 filled:0 remaining:13 avgFillPx:0.0 lastFillPx:0.0
+8-29 9:32 *openOrder* status:Submitted 240829025 SELL 12@143.41
+8-29 9:32 *openOrder* all live orders [240829024 SELL 12@142.27, 240829025 SELL 12@143.41, 240829026 SELL 13@144.83]
+8-29 9:32 *OrderStatus*:Submitted orderId:240829025 filled:0 remaining:12 avgFillPx:0.0 lastFillPx:0.0
+8-29 9:32 *openOrder* status:Submitted 240829026 SELL 13@144.83
+8-29 9:32 *openOrder* all live orders [240829024 SELL 12@142.27, 240829025 SELL 12@143.41, 240829026 SELL 13@144.83]
+8-29 9:32 *OrderStatus*:Submitted orderId:240829026 filled:0 remaining:13 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+*Periodic Run* 8-29 9:47 last live feed time: 8-29 9:47 been:0min p:140.99 cost:140.3 p/cost:1.005
+p:140.99 rng:0.0% pos:37 delt:5k cost:140.3 fullLot:165 refillP:136.21 costTgt:0.98 refillP/cost:0.971 refillP/px:0.966
+8-29 9:47 *chek orderStatus [240829024=Submitted, 240829025=Submitted, 240829026=Submitted]
+8-29 9:47 *chek openOrders*: [240829024, 240829025, 240829026]
+8-29 9:47 140.99 2dP:0.0 1dP:0.0
+2d$:n:16 max:141.8 [8-29 9:32] min:141.0 [8-29 9:47] rng:0.6% 1Key:[8-29 9:30] last:[8-29 9:47]
+1d$:n:16 max:141.8 [8-29 9:32] min:141.0 [8-29 9:47] rng:0.6% 1Key:[8-29 9:30] last:[8-29 9:47]
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+no blocking buy orders: All submitted orders {240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted}
+no blocking buy orders: Active orders: [240829024=AWK 8-29 9:32 CUTTER Submitted, 240829025=AWK 8-29 9:32 CUTTER Submitted, 240829026=AWK 8-29 9:32 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240829024, 240829025, 240829026]}
+updating pos: AWK 8-29 10:24 pos:25 cost:140.27
+8-29 10:24 *tradeReport* time: 2024-08-29T10:24:33 SLD execPx:142.27 shares:12 avgPx:142.27
+8-29 10:24 *openOrder* status:Filled 240829024 SELL 12@142.27
+8-29 10:24 *openOrder*:removing order.Status:Filled 240829024 SELL 12@142.27
+8-29 10:24 *openOrder*:after removal.OpenOrders: [240829025, 240829026]
+8-29 10:24 *openOrder* all live orders [240829025 SELL 12@143.41, 240829026 SELL 13@144.83]
+8-29 10:24 *OrderStatus*:Filled orderId:240829024 filled:12 remaining:0 avgFillPx:142.27 lastFillPx:142.27
+8-29 10:24 *openOrder* status:Filled 240829024 SELL 12@142.27
+8-29 10:24 *openOrder*:removing order.Status:Filled 240829024 SELL 12@142.27
+8-29 10:24 *openOrder*:after removal.OpenOrders: [240829025, 240829026]
+8-29 10:24 *openOrder* all live orders [240829025 SELL 12@143.41, 240829026 SELL 13@144.83]
+8-29 10:24 *OrderStatus*:Filled orderId:240829024 filled:12 remaining:0 avgFillPx:142.27 lastFillPx:142.27
+computed Pnl:23.589326999999994
+1.*commission report*:240829024 commission:0.39 realized pnl:23.59 computed Pnl:23.59
+2.*commission report* orderID:240829024 commission: 0.39 realized pnl: 23.59
+updating pos: AWK 8-29 10:24 pos:25 cost:140.27
+updating pos: AWK 8-29 10:24 pos:25 cost:140.27
+updating pos: AWK 8-29 10:28 pos:25 cost:140.27
+*Periodic Run* 8-29 10:47 last live feed time: 8-29 10:36 been:10min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 10:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 10:47 *chek openOrders*: [240829025, 240829026]
+8-29 10:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 11:47 last live feed time: 8-29 10:36 been:70min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 11:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 11:47 *chek openOrders*: [240829025, 240829026]
+8-29 11:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 12:47 last live feed time: 8-29 10:36 been:130min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 12:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 12:47 *chek openOrders*: [240829025, 240829026]
+8-29 12:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 13:47 last live feed time: 8-29 10:36 been:190min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 13:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 13:47 *chek openOrders*: [240829025, 240829026]
+8-29 13:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 14:47 last live feed time: 8-29 10:36 been:250min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 14:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 14:47 *chek openOrders*: [240829025, 240829026]
+8-29 14:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 15:47 last live feed time: 8-29 10:36 been:310min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 15:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 15:47 *chek openOrders*: [240829025, 240829026]
+8-29 15:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+*Periodic Run* 8-29 16:47 last live feed time: 8-29 10:36 been:370min p:142.32 cost:140.3 p/cost:1.015
+p:142.32 rng:0.0% pos:25 delt:4k cost:140.3 fullLot:163 refillP:136.61 costTgt:0.98 refillP/cost:0.974 refillP/px:0.96
+8-29 16:47 *chek orderStatus [240829024=Filled, 240829025=Submitted, 240829026=Submitted]
+8-29 16:47 *chek openOrders*: [240829025, 240829026]
+8-29 16:47 142.32 2dP:98.0 1dP:98.0
+2d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
+1d$:n:62 max:142.3 [8-29 10:30] min:140.8 [8-29 9:49] rng:1.1% 1Key:[8-29 9:30] last:[8-29 10:36]
