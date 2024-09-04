@@ -10732,3 +10732,759 @@ p:118.06 rng:1.7% pos:20 delt:2k cost:116.0 fullLot:197 refillP:113.25 costTgt:0
 8-30 16:00 *openOrder* status:Submitted 240830021 SELL 10@120.26
 8-30 16:00 *openOrder* all live orders [240830020 SELL 10@118.95, 240830021 SELL 10@120.26]
 8-30 16:00 *OrderStatus*:Submitted orderId:240830021 filled:0 remaining:10 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 9-3 9:12
+updating pos: MRK 9-3 9:12 pos:20 cost:116.04
+POS:20 COST:116.0 DELT:2k
+*Periodic Run* 9-3 9:13 9:13:10 no live feed
+9-3 9:13 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+9-3 9:14 rng:1.7% costTgt:0.98
+9-3 9:14 tgtMargin:1.0134 tgtPrice:117.59
+ytdReturn:9.99%
+******************CUT**************************
+CUT 9-3 9:30:02 1dP:100.0 2dp:94.0 px118.26 cost:116.043405 px/Cost:1.0191 reqMargin:1.0134 rng:0.0167
+0:240903012 MRK SELL 6 @118.54 9:30
+0: SELL MRK 9-3 9:30 CUTTER Created target margin:1.01337 cost*target margin:117.59 askPx:118.3
+1:240903013 MRK SELL 6 @119.62 9:30
+1: SELL MRK 9-3 9:30 CUTTER Created target margin:1.01337 cost*target margin:117.59 askPx:118.3
+2:240903014 MRK SELL 8 @120.94 9:30
+2: SELL MRK 9-3 9:30 CUTTER Created target margin:1.01337 cost*target margin:117.59 askPx:118.3
+2D$:n:785 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:30]
+1D$:n:5 max:118.4 [9-3 9:14] min:118.5 [9-3 9:29] rng:0.0% 1Key:[9-3 9:14] last:[9-3 9:30]
+9-3 9:30 *openOrder* status:PreSubmitted 240903013 SELL 6@119.62
+9-3 9:30 *openOrder* all live orders [240903013 SELL 6@119.62]
+9-3 9:30 *OrderStatus*:PreSubmitted orderId:240903013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-3 9:30 *openOrder* status:PreSubmitted 240903014 SELL 8@120.94
+9-3 9:30 *openOrder* all live orders [240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:30 *OrderStatus*:PreSubmitted orderId:240903014 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+9-3 9:30 *openOrder* status:Submitted 240903012 SELL 6@118.54
+9-3 9:30 *openOrder* all live orders [240903012 SELL 6@118.54, 240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:30 *OrderStatus*:Submitted orderId:240903012 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-3 9:30 *openOrder* status:Submitted 240903013 SELL 6@119.62
+9-3 9:30 *openOrder* all live orders [240903012 SELL 6@118.54, 240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:30 *OrderStatus*:Submitted orderId:240903013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-3 9:30 *openOrder* status:Submitted 240903014 SELL 8@120.94
+9-3 9:30 *openOrder* all live orders [240903012 SELL 6@118.54, 240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:30 *OrderStatus*:Submitted orderId:240903014 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+updating pos: MRK 9-3 9:31 pos:19 cost:116.04
+9-3 9:31 *tradeReport* time: 2024-09-03T09:31:28 SLD execPx:118.54 shares:1 avgPx:118.54
+9-3 9:31 *openOrder* status:Submitted 240903012 SELL 6@118.54
+9-3 9:31 *openOrder* all live orders [240903012 SELL 6@118.54, 240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:31 *OrderStatus*:Submitted orderId:240903012 filled:1 remaining:5 avgFillPx:118.54 lastFillPx:118.54
+9-3 9:31 *openOrder* status:Submitted 240903012 SELL 6@118.54
+9-3 9:31 *openOrder* all live orders [240903012 SELL 6@118.54, 240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 9:31 *OrderStatus*:Submitted orderId:240903012 filled:1 remaining:5 avgFillPx:118.54 lastFillPx:118.54
+*Periodic Run* 9-3 10:13 last live feed time: 9-3 9:31 been:41min p:118.32 cost:116.0 p/cost:1.02
+p:118.32 rng:1.7% pos:19 delt:2k cost:116.0 fullLot:197 refillP:113.27 costTgt:0.98 refillP/cost:0.976 refillP/px:0.957
+9-3 10:13 *chek orderStatus [240903012=Submitted, 240903013=Submitted, 240903014=Submitted]
+9-3 10:13 *chek openOrders*: [240903012, 240903013, 240903014]
+9-3 10:13 118.32 2dP:85.0 1dP:20.0
+2d$:n:786 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:31]
+1d$:n:6 max:118.4 [9-3 9:14] min:118.3 [9-3 9:29] rng:0.1% 1Key:[9-3 9:14] last:[9-3 9:31]
+*Periodic Run* 9-3 11:13 last live feed time: 9-3 9:31 been:101min p:118.32 cost:116.0 p/cost:1.02
+p:118.32 rng:1.7% pos:19 delt:2k cost:116.0 fullLot:197 refillP:113.27 costTgt:0.98 refillP/cost:0.976 refillP/px:0.957
+9-3 11:13 *chek orderStatus [240903012=Submitted, 240903013=Submitted, 240903014=Submitted]
+9-3 11:13 *chek openOrders*: [240903012, 240903013, 240903014]
+9-3 11:13 118.32 2dP:85.0 1dP:20.0
+2d$:n:786 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:31]
+1d$:n:6 max:118.4 [9-3 9:14] min:118.3 [9-3 9:29] rng:0.1% 1Key:[9-3 9:14] last:[9-3 9:31]
+*Periodic Run* 9-3 12:13 last live feed time: 9-3 9:31 been:161min p:118.32 cost:116.0 p/cost:1.02
+p:118.32 rng:1.7% pos:19 delt:2k cost:116.0 fullLot:197 refillP:113.27 costTgt:0.98 refillP/cost:0.976 refillP/px:0.957
+9-3 12:13 *chek orderStatus [240903012=Submitted, 240903013=Submitted, 240903014=Submitted]
+9-3 12:13 *chek openOrders*: [240903012, 240903013, 240903014]
+9-3 12:13 118.32 2dP:85.0 1dP:20.0
+2d$:n:786 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:31]
+1d$:n:6 max:118.4 [9-3 9:14] min:118.3 [9-3 9:29] rng:0.1% 1Key:[9-3 9:14] last:[9-3 9:31]
+*Periodic Run* 9-3 13:13 last live feed time: 9-3 9:31 been:221min p:118.32 cost:116.0 p/cost:1.02
+p:118.32 rng:1.7% pos:19 delt:2k cost:116.0 fullLot:197 refillP:113.27 costTgt:0.98 refillP/cost:0.976 refillP/px:0.957
+9-3 13:13 *chek orderStatus [240903012=Submitted, 240903013=Submitted, 240903014=Submitted]
+9-3 13:13 *chek openOrders*: [240903012, 240903013, 240903014]
+9-3 13:13 118.32 2dP:85.0 1dP:20.0
+2d$:n:786 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:31]
+1d$:n:6 max:118.4 [9-3 9:14] min:118.3 [9-3 9:29] rng:0.1% 1Key:[9-3 9:14] last:[9-3 9:31]
+*Periodic Run* 9-3 14:13 last live feed time: 9-3 9:31 been:281min p:118.32 cost:116.0 p/cost:1.02
+p:118.32 rng:1.7% pos:19 delt:2k cost:116.0 fullLot:197 refillP:113.27 costTgt:0.98 refillP/cost:0.976 refillP/px:0.957
+9-3 14:13 *chek orderStatus [240903012=Submitted, 240903013=Submitted, 240903014=Submitted]
+9-3 14:13 *chek openOrders*: [240903012, 240903013, 240903014]
+9-3 14:13 118.32 2dP:85.0 1dP:20.0
+2d$:n:786 max:118.6 [8-30 15:59] min:116.9 [8-29 9:50] rng:1.4% 1Key:[8-29 9:30] last:[9-3 9:31]
+1d$:n:6 max:118.4 [9-3 9:14] min:118.3 [9-3 9:29] rng:0.1% 1Key:[9-3 9:14] last:[9-3 9:31]
+*******************************************
+*STARTS* 9-3 15:12
+updating pos: MRK 9-3 15:12 pos:14 cost:116.04
+POS:14 COST:116.0 DELT:2k
+9-3 15:12 *openOrder* status:Submitted 240903014 SELL 8@120.94
+openOrder does not contain order MRK 240903014 SELL 8@120.94
+9-3 15:12 *openOrder* all live orders [240903014 SELL 8@120.94]
+9-3 15:12 *OrderStatus*:Submitted orderId:240903014 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+9-3 15:12 *openOrder* status:Submitted 240903013 SELL 6@119.62
+openOrder does not contain order MRK 240903013 SELL 6@119.62
+9-3 15:12 *openOrder* all live orders [240903013 SELL 6@119.62, 240903014 SELL 8@120.94]
+9-3 15:12 *OrderStatus*:Submitted orderId:240903013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-3 15:12 *OrderStatus*:Cancelled orderId:240903014 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+9-3 15:12 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240903014=240903014 SELL 8@120.94, 240903013=240903013 SELL 6@119.62}
+*OrderStatus* remaining openOrders: {240903013=240903013 SELL 6@119.62}
+*OrderStatus* print ALL openOrders: {ABT={}, ADM={}, AWK={}, BRK B={}, CL={}, GLD={}, HON={}, HSBC={}, IP={}, IWM={}, JNJ={}, KMB={}, KO={}, MCD={}, MMM={}, MRK={240903013=240903013 SELL 6@119.62}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, UNP={}, WMT={}}
+9-3 15:12 *OrderStatus*:Cancelled orderId:240903013 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-3 15:12 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240903013=240903013 SELL 6@119.62}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {ABT={}, ADM={}, AWK={}, BRK B={}, CL={}, GLD={}, HON={}, HSBC={}, IP={}, IWM={}, JNJ={}, KMB={}, KO={}, MCD={}, MMM={}, MRK={}, PG={}, PHO={}, SLV={}, SPY={}, UL={}, UNP={}, WMT={}}
+9-3 15:12 rng:1.7% costTgt:0.98
+9-3 15:12 tgtMargin:1.0134 tgtPrice:117.6
+ytdReturn:8.28%
+*Periodic Run* 9-3 15:13 last live feed time: 9-3 15:13 been:0min p:116.62 cost:116.0 p/cost:1.005
+p:116.62 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.972
+9-3 15:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 15:13 116.62 2dP:4.0 1dP:5.0
+2d$:n:734 max:118.6 [9-3 9:32] min:116.5 [9-3 15:03] rng:1.8% 1Key:[8-30 9:30] last:[9-3 15:13]
+1d$:n:344 max:118.3 [9-3 9:32] min:116.5 [9-3 15:03] rng:1.5% 1Key:[9-3 9:30] last:[9-3 15:13]
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+all orders finished {240903013=MRK 9-3 15:12 UNKNOWN Cancelled, 240903014=MRK 9-3 15:12 UNKNOWN Cancelled}
+*Periodic Run* 9-3 16:13 last live feed time: 9-3 16:05 been:7min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 16:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 16:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:783 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 16:05]
+1d$:n:393 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 16:05]
+*Periodic Run* 9-3 17:13 last live feed time: 9-3 16:36 been:36min p:116.6 cost:116.0 p/cost:1.005
+p:116.6 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 17:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 17:13 116.6 2dP:7.0 1dP:8.0
+2d$:n:786 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 16:36]
+1d$:n:396 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 16:36]
+*Periodic Run* 9-3 18:13 last live feed time: 9-3 18:06 been:6min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 18:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 18:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
+*Periodic Run* 9-3 19:13 last live feed time: 9-3 18:06 been:66min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 19:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 19:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
+*Periodic Run* 9-3 20:13 last live feed time: 9-3 18:06 been:126min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 20:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 20:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
+*Periodic Run* 9-3 21:13 last live feed time: 9-3 18:06 been:186min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 21:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 21:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
+*Periodic Run* 9-3 22:13 last live feed time: 9-3 18:06 been:246min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 22:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 22:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
+*Periodic Run* 9-3 23:13 last live feed time: 9-3 18:06 been:306min p:116.58 cost:116.0 p/cost:1.005
+p:116.58 rng:1.7% pos:14 delt:2k cost:116.0 fullLot:200 refillP:113.4 costTgt:0.98 refillP/cost:0.977 refillP/px:0.973
+9-3 23:13 *chek orderStatus [240903013=Cancelled, 240903014=Cancelled]
+9-3 23:13 116.58 2dP:6.0 1dP:7.0
+2d$:n:788 max:118.6 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.8% 1Key:[8-30 9:30] last:[9-3 18:06]
+1d$:n:398 max:118.3 [9-3 9:32] min:116.5 [9-3 15:47] rng:1.6% 1Key:[9-3 9:30] last:[9-3 18:06]
