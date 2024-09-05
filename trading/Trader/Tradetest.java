@@ -55,9 +55,9 @@ public class Tradetest implements LiveHandler {
             outputToGeneral("error in connection:", e);
         }
 
-        CompletableFuture.runAsync(() -> reqHistDayData(apiController, 100, stockToTry,
-                (c, date, open, high, low, close, volume) ->
-                        pr("close:" + close), () -> pr(""), 2, Types.BarSize._1_min));
+//        CompletableFuture.runAsync(() -> reqHistDayData(apiController, 100, stockToTry,
+//                (c, date, open, high, low, close, volume) ->
+//                        pr("close:" + close), () -> pr(""), 2, Types.BarSize._1_min));
 
         es.schedule(() -> {
             pr("Position end: requesting live:", ibContractToSymbol(stockToTry));
