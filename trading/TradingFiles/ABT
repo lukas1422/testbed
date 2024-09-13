@@ -19667,3 +19667,116 @@ p:116.83 rng:1.7% pos:11 delt:1k cost:113.4 fullLot:199 refillP:110.86 costTgt:0
 9-12 19:41 116.83 2dP:82.0 1dP:73.0
 2d$:n:1172 max:117.3 [9-12 15:45] min:114.8 [9-11 10:26] rng:2.2% 1Key:[9-10 9:30] last:[9-12 16:44]
 1d$:n:392 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:12] last:[9-12 16:44]
+*******************************************
+*STARTS* 9-13 9:09
+updating pos: ABT 9-13 9:09 pos:11 cost:113.38
+POS:11 COST:113.4 DELT:1k
+9-13 9:09 *tradeReport* time: 2024-09-12T14:17:49 SLD execPx:116.79 shares:5 avgPx:116.79
+listOfExecs [orderID: 240912014 time: 2024-09-12T14:17:49 side: SLD shares: 5 price: 116.79]
+*Periodic Run* 9-13 9:09 9:09:53 no live feed
+9-13 9:09 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+9-13 9:10 rng:1.7% costTgt:0.98
+9-13 9:10 tgtMargin:1.0135 tgtPrice:114.91
+ytdReturn:7.75%
+******************CUT**************************
+CUT 9-13 9:30:35 1dP:100.0 2dp:57.0 px116.02 cost:113.37903635 px/Cost:1.0233 reqMargin:1.0135 rng:0.0169
+0:240913022 ABT SELL 3 @116.62 9:30
+0: SELL ABT 9-13 9:30 CUTTER Created target margin:1.01348 cost*target margin:114.91 askPx:116.39
+1:240913023 ABT SELL 8 @117.7 9:30
+1: SELL ABT 9-13 9:30 CUTTER Created target margin:1.01348 cost*target margin:114.91 askPx:116.39
+2024-09-13T09:30:35.074704 remaining position <= 0, break
+2D$:n:784 max:117.3 [9-12 15:45] min:114.8 [9-11 10:26] rng:2.2% 1Key:[9-11 9:30] last:[9-13 9:30]
+1D$:n<5
+9-13 9:30 *openOrder* status:Submitted 240913022 SELL 3@116.62
+9-13 9:30 *openOrder* all live orders [240913022 SELL 3@116.62]
+9-13 9:30 *OrderStatus*:Submitted orderId:240913022 filled:0 remaining:3 avgFillPx:0.0 lastFillPx:0.0
+9-13 9:30 *openOrder* status:Submitted 240913023 SELL 8@117.7
+9-13 9:30 *openOrder* all live orders [240913022 SELL 3@116.62, 240913023 SELL 8@117.7]
+9-13 9:30 *OrderStatus*:Submitted orderId:240913023 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+*******************************************
+*STARTS* 9-13 9:56
+updating pos: ABT 9-13 9:56 pos:8 cost:113.38
+POS:8 COST:113.4 DELT:1k
+9-13 9:56 *openOrder* status:Submitted 240913023 SELL 8@117.7
+openOrder does not contain order ABT 240913023 SELL 8@117.7
+9-13 9:56 *openOrder* all live orders [240913023 SELL 8@117.7]
+9-13 9:56 *OrderStatus*:Submitted orderId:240913023 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+9-13 9:56 *tradeReport* time: 2024-09-12T14:17:49 SLD execPx:116.79 shares:5 avgPx:116.79
+9-13 9:56 *tradeReport* time: 2024-09-13T09:33 SLD execPx:116.62 shares:3 avgPx:116.62
+listOfExecs [orderID: 240912014 time: 2024-09-12T14:17:49 side: SLD shares: 5 price: 116.79, orderID: 240913022 time: 2024-09-13T09:33 side: SLD shares: 3 price: 116.62]
+9-13 9:56 *OrderStatus*:Cancelled orderId:240913023 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+9-13 9:56 *OrderStatus*:Cancelled deleting finished orders from openOrderMap {240913023=240913023 SELL 8@117.7}
+*OrderStatus* remaining openOrders: {}
+*OrderStatus* print ALL openOrders: {ABT={}, ADM={}, AWK={}, BRK B={}, CL={}, GLD={240913014=240913014 SELL 5@240.52, 240913015=240913015 SELL 5@242.9}, HON={}, HSBC={240913012=240913012 SELL 82@44.41, 240913011=240913011 SELL 80@43.98}, IP={}, IWM={}, JNJ={}, KMB={}, KO={}, MCD={240913007=240913007 SELL 11@295.36, 240913008=240913008 SELL 11@297.72, 240913009=240913009 SELL 13@300.67}, MMM={}, MRK={240913020=240913020 SELL 44@117.4, 240913021=240913021 SELL 46@118.71}, PG={}, PHO={240913004=240913004 SELL 46@68.51, 240913003=240913003 SELL 46@67.97}, SLV={}, SPY={}, UL={}, UNP={}, WMT={}}
+*Periodic Run* 9-13 9:56 9:56:40 no live feed
+9-13 9:56 *chek orderStatus [240913023=Cancelled]
+9-13 9:56 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+9-13 9:56 rng:1.7% costTgt:0.98
+9-13 9:56 tgtMargin:1.0134 tgtPrice:114.9
+ytdReturn:7.34%
+all order finished: {240913023=ABT 9-13 9:56 UNKNOWN Cancelled}
+******************CUT**************************
+CUT 9-13 9:57:12 1dP:100.0 2dp:100.0 px116.45 cost:113.37903635 px/Cost:1.0271 reqMargin:1.0134 rng:0.0168
+0:240913041 ABT SELL 8 @116.75 9:57
+0: SELL ABT 9-13 9:57 CUTTER Created target margin:1.01345 cost*target margin:114.9 askPx:116.52
+2024-09-13T09:57:12.952170 remaining position <= 0, break
+2D$:n:418 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 9:57]
+1D$:n:28 max:116.6 [9-13 9:47] min:116.1 [9-13 9:30] rng:0.4% 1Key:[9-13 9:30] last:[9-13 9:57]
+9-13 9:57 *openOrder* status:Submitted 240913041 SELL 8@116.75
+9-13 9:57 *openOrder* all live orders [240913041 SELL 8@116.75]
+9-13 9:57 *OrderStatus*:Submitted orderId:240913041 filled:0 remaining:8 avgFillPx:0.0 lastFillPx:0.0
+updating pos: ABT 9-13 10:00 pos:0 cost:0.0
+9-13 10:00 *tradeReport* time: 2024-09-13T10:00:35 SLD execPx:116.75 shares:8 avgPx:116.75
+9-13 10:00 *openOrder* status:Filled 240913041 SELL 8@116.75
+9-13 10:00 *openOrder*:removing order.Status:Filled 240913041 SELL 8@116.75
+9-13 10:00 *openOrder*:after removal.OpenOrders: []
+9-13 10:00 *OrderStatus*:Filled orderId:240913041 filled:8 remaining:0 avgFillPx:116.75 lastFillPx:116.75
+9-13 10:00 *openOrder* status:Filled 240913041 SELL 8@116.75
+9-13 10:00 *openOrder*:removing order.Status:Filled 240913041 SELL 8@116.75
+9-13 10:00 *openOrder*:after removal.OpenOrders: []
+9-13 10:00 *OrderStatus*:Filled orderId:240913041 filled:8 remaining:0 avgFillPx:116.75 lastFillPx:116.75
+computed Pnl:26.597743199999943
+1.*commission report*:240913041 commission:0.37 realized pnl:26.6 computed Pnl:26.6
+2.*commission report* orderID:240913041 commission: 0.37 realized pnl: 26.6
+updating pos: ABT 9-13 10:00 pos:0 cost:0.0
+updating pos: ABT 9-13 10:00 pos:0 cost:0.0
+updating pos: ABT 9-13 10:05 pos:0 cost:0.0
+*Periodic Run* 9-13 10:56 last live feed time: 9-13 10:56 been:0min p:116.31 
+9-13 10:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 10:56 116.31 2dP:42.0 1dP:48.0
+2d$:n:477 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 10:56]
+1d$:n:87 max:116.7 [9-13 10:00] min:116.0 [9-13 10:15] rng:0.6% 1Key:[9-13 9:30] last:[9-13 10:56]
+*Periodic Run* 9-13 11:56 last live feed time: 9-13 11:56 been:0min p:116.64 
+9-13 11:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 11:56 116.64 2dP:62.0 1dP:81.0
+2d$:n:537 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 11:56]
+1d$:n:147 max:116.8 [9-13 11:45] min:116.0 [9-13 10:15] rng:0.7% 1Key:[9-13 9:30] last:[9-13 11:56]
+*Periodic Run* 9-13 12:56 last live feed time: 9-13 12:56 been:0min p:116.83 
+9-13 12:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 12:56 116.83 2dP:73.0 1dP:85.0
+2d$:n:597 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 12:56]
+1d$:n:207 max:117.0 [9-13 12:12] min:116.0 [9-13 10:15] rng:0.8% 1Key:[9-13 9:30] last:[9-13 12:56]
+*Periodic Run* 9-13 13:56 last live feed time: 9-13 13:56 been:0min p:117.0 
+9-13 13:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 13:56 117.0 2dP:85.0 1dP:100.0
+2d$:n:655 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 13:56]
+1d$:n:265 max:117.0 [9-13 13:51] min:116.0 [9-13 10:15] rng:0.9% 1Key:[9-13 9:30] last:[9-13 13:56]
+*Periodic Run* 9-13 14:56 last live feed time: 9-13 14:56 been:0min p:116.64 
+9-13 14:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 14:56 116.64 2dP:60.0 1dP:61.0
+2d$:n:715 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 14:56]
+1d$:n:325 max:117.0 [9-13 13:51] min:116.0 [9-13 10:15] rng:0.9% 1Key:[9-13 9:30] last:[9-13 14:56]
+*Periodic Run* 9-13 15:56 last live feed time: 9-13 15:56 been:0min p:116.6 
+9-13 15:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 15:56 116.6 2dP:59.0 1dP:59.0
+2d$:n:775 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 15:56]
+1d$:n:385 max:117.0 [9-13 13:51] min:116.0 [9-13 10:15] rng:0.9% 1Key:[9-13 9:30] last:[9-13 15:56]
+*Periodic Run* 9-13 16:56 last live feed time: 9-13 16:00 been:56min p:116.4 
+9-13 16:56 *chek orderStatus [240913023=Cancelled, 240913041=Filled]
+9-13 16:56 116.4 2dP:47.0 1dP:39.0
+2d$:n:779 max:117.3 [9-12 15:45] min:115.6 [9-12 10:00] rng:1.4% 1Key:[9-12 9:30] last:[9-13 16:00]
+1d$:n:389 max:117.0 [9-13 13:51] min:116.0 [9-13 10:15] rng:0.9% 1Key:[9-13 9:30] last:[9-13 16:00]

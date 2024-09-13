@@ -531,7 +531,9 @@ class ProfitTargetTrader implements LiveHandler,
 
         switch (tt) {
             case LAST:
-//                pr(t.format(Hmmss), "last p:", symb, price);
+                if (symb.equalsIgnoreCase("SPY")) {
+                    pr(t.format(Hmmss), "spy last p:", symb, price);
+                }
                 px.put(symb, price);
                 liveData.get(symb).put(t, price);
                 lastPxTimestamp.put(symb, getESTDateTimeNow());
