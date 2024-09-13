@@ -18690,3 +18690,8 @@ commission report issue tradekey:00010161.66e151e5.01 report:ID:00010161.66e151e
 *openOrder* Error 9-11 14:19 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
 *openOrder* Error 9-11 14:19 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
 commission report issue tradekey:00012dce.66e1b83f.01 report:ID:00012dce.66e1b83f.01.01 commission:0.365709 curr:USD pnl:20.324442 yield:1.7976931348623157E308 yieldRedemption:0
+*openOrder* Error 9-12 6:47 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+commission report issue tradekey:00012dc0.66e2e6d8.01 report:ID:00012dc0.66e2e6d8.01.01 commission:0.470917 curr:USD pnl:88.022519 yield:1.7976931348623157E308 yieldRedemption:0
+*openOrder* Error 9-12 17:00 orderId:-1 errorCode:1100 msg:Connectivity between IB and Trader Workstation has been lost.
+*openOrder* Error 9-12 17:00 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 9-12 17:00 orderId:-1 errorCode:502 msg:Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002

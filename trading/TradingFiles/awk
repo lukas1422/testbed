@@ -8165,3 +8165,111 @@ active orders grouped by buysell: {BUY=[240911032, 240911033]}
 9-11 16:59 147.04 2dP:68.0 1dP:86.0
 2d$:n:1117 max:148.5 [9-10 15:22] min:143.8 [9-9 9:31] rng:3.3% 1Key:[9-9 9:30] last:[9-11 16:00]
 1d$:n:337 max:147.4 [9-11 8:59] min:144.8 [9-11 10:31] rng:1.8% 1Key:[9-11 8:59] last:[9-11 16:00]
+*******************************************
+*STARTS* 9-12 6:40
+POS:0 COST:0.0 DELT:0k
+9-12 6:40 rng:1.9% costTgt:0.98
+9-12 6:40 tgtMargin:1.015 tgtPrice:0.0
+ytdReturn:13.29%
+*Periodic Run* 9-12 6:41 6:41:06 no live feed
+9-12 6:41 0.0 2dP:101.0 1dP:101.0
+2d$:n:780 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-11 15:59]
+1d$:n<5
+*Periodic Run* 9-12 7:41 7:41:07 no live feed
+9-12 7:41 0.0 2dP:58.0 1dP:100.0
+2d$:n:780 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-11 15:59]
+1d$:n<5
+*Periodic Run* 9-12 8:41 8:41:07 no live feed
+9-12 8:41 0.0 2dP:58.0 1dP:100.0
+2d$:n:780 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-11 15:59]
+1d$:n<5
+*Periodic Run* 9-12 9:41 last live feed time: 9-12 9:40 been:0min p:147.05 
+9-12 9:41 147.05 2dP:60.0 1dP:45.0
+2d$:n:788 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 9:40]
+1d$:n:8 max:147.3 [9-12 9:37] min:146.9 [9-12 9:33] rng:0.3% 1Key:[9-12 9:30] last:[9-12 9:40]
+*Periodic Run* 9-12 10:41 last live feed time: 9-12 10:41 been:0min p:146.28 
+9-12 10:41 146.28 2dP:39.0 1dP:1.0
+2d$:n:831 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 10:41]
+1d$:n:51 max:147.3 [9-12 9:37] min:146.3 [9-12 10:40] rng:0.7% 1Key:[9-12 9:30] last:[9-12 10:41]
+11:32:57.241643 no blocking orders,empty
+*1Buy*@145.54 9-12 11:32:57 1dp:0.0 2dp:17.0
+cash remaining: 117052.01
+0:240912023 AWK BUY 53 @145.17 11:32 bid is:145.46
+11:32 0: AWK orderID:240912023 tradeID:240912023 BUY 53 @145.17 factor:0.998 AWK 9-12 11:32 ADDER Created
+1:240912024 AWK BUY 53 @143.27 11:32 bid is:145.46
+11:32 1: AWK orderID:240912024 tradeID:240912024 BUY 53 @143.27 factor:0.9849779435401999 AWK 9-12 11:32 ADDER Created
+1D$:n:89 max:147.3 [9-12 9:37] min:145.7 [9-12 11:32] rng:1.1% 1Key:[9-12 9:30] last:[9-12 11:32]
+2D$:n:869 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 11:32]
+9-12 11:32 *openOrder* status:Submitted 240912023 BUY 53@145.17
+9-12 11:32 *openOrder* all live orders [240912023 BUY 53@145.17]
+9-12 11:32 *OrderStatus*:Submitted orderId:240912023 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-12 11:32 *openOrder* status:PreSubmitted 240912024 BUY 53@143.27
+9-12 11:32 *openOrder* all live orders [240912023 BUY 53@145.17, 240912024 BUY 53@143.27]
+9-12 11:32 *OrderStatus*:PreSubmitted orderId:240912024 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-12 11:32 *openOrder* status:Submitted 240912024 BUY 53@143.27
+9-12 11:32 *openOrder* all live orders [240912023 BUY 53@145.17, 240912024 BUY 53@143.27]
+9-12 11:32 *OrderStatus*:Submitted orderId:240912024 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {240912023=AWK 9-12 11:32 ADDER Submitted, 240912024=AWK 9-12 11:32 ADDER Submitted}
+no blocking buy orders: Active orders: [240912023=AWK 9-12 11:32 ADDER Submitted, 240912024=AWK 9-12 11:32 ADDER Submitted]
+active orders grouped by buysell: {BUY=[240912023, 240912024]}
+2024-09-12T11:34:16.989 no blocking orders 
+*Periodic Run* 9-12 11:41 last live feed time: 9-12 11:40 been:1min p:145.67 
+9-12 11:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 11:41 *chek openOrders*: [240912023, 240912024]
+9-12 11:41 145.67 2dP:22.0 1dP:3.0
+2d$:n:875 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 11:40]
+1d$:n:95 max:147.3 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.1% 1Key:[9-12 9:30] last:[9-12 11:40]
+*Periodic Run* 9-12 12:41 last live feed time: 9-12 12:39 been:1min p:146.14 
+9-12 12:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 12:41 *chek openOrders*: [240912023, 240912024]
+9-12 12:41 146.14 2dP:35.0 1dP:33.0
+2d$:n:918 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 12:39]
+1d$:n:138 max:147.3 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.2% 1Key:[9-12 9:30] last:[9-12 12:39]
+*Periodic Run* 9-12 13:41 last live feed time: 9-12 13:40 been:0min p:146.79 
+9-12 13:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 13:41 *chek openOrders*: [240912023, 240912024]
+9-12 13:41 146.79 2dP:53.0 1dP:71.0
+2d$:n:956 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 13:40]
+1d$:n:176 max:147.3 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.2% 1Key:[9-12 9:30] last:[9-12 13:40]
+*Periodic Run* 9-12 14:41 last live feed time: 9-12 14:40 been:0min p:146.95 
+9-12 14:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 14:41 *chek openOrders*: [240912023, 240912024]
+9-12 14:41 146.95 2dP:57.0 1dP:81.0
+2d$:n:993 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 14:40]
+1d$:n:213 max:147.3 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.2% 1Key:[9-12 9:30] last:[9-12 14:40]
+*Periodic Run* 9-12 15:41 last live feed time: 9-12 15:40 been:0min p:147.3 
+9-12 15:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 15:41 *chek openOrders*: [240912023, 240912024]
+9-12 15:41 147.3 2dP:67.0 1dP:96.0
+2d$:n:1042 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 15:40]
+1d$:n:262 max:147.4 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.2% 1Key:[9-12 9:30] last:[9-12 15:40]
+9-12 16:00 *openOrder* status:Submitted 240912023 BUY 53@145.17
+9-12 16:00 *openOrder* all live orders [240912023 BUY 53@145.17, 240912024 BUY 53@143.27]
+9-12 16:00 *OrderStatus*:Submitted orderId:240912023 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-12 16:00 *openOrder* status:Submitted 240912024 BUY 53@143.27
+9-12 16:00 *openOrder* all live orders [240912023 BUY 53@145.17, 240912024 BUY 53@143.27]
+9-12 16:00 *OrderStatus*:Submitted orderId:240912024 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-12 16:41 last live feed time: 9-12 16:00 been:41min p:147.13 
+9-12 16:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 16:41 *chek openOrders*: [240912023, 240912024]
+9-12 16:41 147.13 2dP:62.0 1dP:82.0
+2d$:n:1062 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 16:00]
+1d$:n:282 max:147.5 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.3% 1Key:[9-12 9:30] last:[9-12 16:00]
+*Periodic Run* 9-12 17:41 last live feed time: 9-12 16:00 been:101min p:147.13 
+9-12 17:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 17:41 *chek openOrders*: [240912023, 240912024]
+9-12 17:41 147.13 2dP:62.0 1dP:82.0
+2d$:n:1062 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 16:00]
+1d$:n:282 max:147.5 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.3% 1Key:[9-12 9:30] last:[9-12 16:00]
+*Periodic Run* 9-12 18:41 last live feed time: 9-12 16:00 been:161min p:147.13 
+9-12 18:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 18:41 *chek openOrders*: [240912023, 240912024]
+9-12 18:41 147.13 2dP:62.0 1dP:82.0
+2d$:n:1062 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 16:00]
+1d$:n:282 max:147.5 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.3% 1Key:[9-12 9:30] last:[9-12 16:00]
+*Periodic Run* 9-12 19:41 last live feed time: 9-12 16:00 been:221min p:147.13 
+9-12 19:41 *chek orderStatus [240912023=Submitted, 240912024=Submitted]
+9-12 19:41 *chek openOrders*: [240912023, 240912024]
+9-12 19:41 147.13 2dP:62.0 1dP:82.0
+2d$:n:1062 max:148.5 [9-10 15:22] min:144.8 [9-11 10:31] rng:2.5% 1Key:[9-10 9:30] last:[9-12 16:00]
+1d$:n:282 max:147.5 [9-12 9:37] min:145.6 [9-12 11:32] rng:1.3% 1Key:[9-12 9:30] last:[9-12 16:00]
