@@ -22426,3 +22426,340 @@ p:166.94 rng:1.4% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0
 9-16 16:14 166.94 2dP:96.0 1dP:89.0
 2d$:n:781 max:167.1 [9-16 9:35] min:163.9 [9-13 9:38] rng:1.9% 1Key:[9-13 9:30] last:[9-16 16:14]
 1d$:n:391 max:167.1 [9-16 9:35] min:165.8 [9-16 10:41] rng:0.7% 1Key:[9-16 9:30] last:[9-16 16:14]
+*******************************************
+*STARTS* 9-17 7:11
+updating pos: JNJ 9-17 7:11 pos:31 cost:165.93
+POS:31 COST:165.9 DELT:5k
+*Periodic Run* 9-17 7:12 7:12:14 no live feed
+9-17 7:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 9-17 8:12 8:12:16 no live feed
+9-17 8:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 9-17 9:12 9:12:17 no live feed
+9-17 9:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 9-17 10:12 last live feed time: 9-17 10:12 been:0min p:167.34 cost:165.9 p/cost:1.009
+p:167.34 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.963
+9-17 10:12 167.34 2dP:98.0 1dP:98.0
+2d$:n:45 max:167.4 [9-17 10:11] min:166.4 [9-17 9:31] rng:0.6% 1Key:[9-17 9:20] last:[9-17 10:12]
+1d$:n:45 max:167.4 [9-17 10:11] min:166.4 [9-17 9:31] rng:0.6% 1Key:[9-17 9:20] last:[9-17 10:12]
+******************CUT**************************
+CUT 9-17 10:22:11 1dP:100.0 2dp:100.0 px167.59 cost:165.9266484 px/Cost:1.01 reqMargin:1.01 rng:0.0
+0:240917029 JNJ SELL 10 @167.93 10:22
+0: SELL JNJ 9-17 10:22 CUTTER Created target margin:1.01 cost*target margin:167.59 askPx:167.59
+1:240917030 JNJ SELL 10 @169.27 10:22
+1: SELL JNJ 9-17 10:22 CUTTER Created target margin:1.01 cost*target margin:167.59 askPx:167.59
+2:240917031 JNJ SELL 11 @170.94 10:22
+2: SELL JNJ 9-17 10:22 CUTTER Created target margin:1.01 cost*target margin:167.59 askPx:167.59
+2D$:n:55 max:167.5 [9-17 10:22] min:166.4 [9-17 9:31] rng:0.7% 1Key:[9-17 9:20] last:[9-17 10:22]
+1D$:n:55 max:167.5 [9-17 10:22] min:166.4 [9-17 9:31] rng:0.7% 1Key:[9-17 9:20] last:[9-17 10:22]
+9-17 10:22 *openOrder* status:Submitted 240917029 SELL 10@167.93
+9-17 10:22 *openOrder* all live orders [240917029 SELL 10@167.93]
+9-17 10:22 *OrderStatus*:Submitted orderId:240917029 filled:0 remaining:10 avgFillPx:0.0 lastFillPx:0.0
+9-17 10:22 *openOrder* status:Submitted 240917030 SELL 10@169.27
+9-17 10:22 *openOrder* all live orders [240917029 SELL 10@167.93, 240917030 SELL 10@169.27]
+9-17 10:22 *OrderStatus*:Submitted orderId:240917030 filled:0 remaining:10 avgFillPx:0.0 lastFillPx:0.0
+9-17 10:22 *openOrder* status:Submitted 240917031 SELL 11@170.94
+9-17 10:22 *openOrder* all live orders [240917029 SELL 10@167.93, 240917030 SELL 10@169.27, 240917031 SELL 11@170.94]
+9-17 10:22 *OrderStatus*:Submitted orderId:240917031 filled:0 remaining:11 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-17 11:12 last live feed time: 9-17 11:12 been:0min p:167.26 cost:165.9 p/cost:1.008
+p:167.26 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.963
+9-17 11:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 11:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 11:12 167.26 2dP:69.0 1dP:69.0
+2d$:n:105 max:167.7 [9-17 10:24] min:166.4 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 11:12]
+1d$:n:105 max:167.7 [9-17 10:24] min:166.4 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 11:12]
+*Periodic Run* 9-17 12:12 last live feed time: 9-17 12:12 been:0min p:167.1 cost:165.9 p/cost:1.007
+p:167.1 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.964
+9-17 12:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 12:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 12:12 167.1 2dP:56.0 1dP:56.0
+2d$:n:165 max:167.7 [9-17 10:24] min:166.4 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 12:12]
+1d$:n:165 max:167.7 [9-17 10:24] min:166.4 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 12:12]
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+2024-09-17T13:04:01.087 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+2024-09-17T13:04:06.207 Adder: ytd < -10% cannot trade:-1.0
+no blocking buy orders: All submitted orders {240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917029=JNJ 9-17 10:22 CUTTER Submitted, 240917030=JNJ 9-17 10:22 CUTTER Submitted, 240917031=JNJ 9-17 10:22 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917029, 240917030, 240917031]}
+2024-09-17T13:04:06.826 Adder: ytd < -10% cannot trade:-1.0
+*Periodic Run* 9-17 13:12 last live feed time: 9-17 13:12 been:0min p:166.54 cost:165.9 p/cost:1.004
+p:166.54 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:140 refillP:161.14 costTgt:0.98 refillP/cost:0.971 refillP/px:0.968
+9-17 13:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 13:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 13:12 166.54 2dP:19.0 1dP:19.0
+2d$:n:225 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 13:12]
+1d$:n:225 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 13:12]
+*Periodic Run* 9-17 14:12 last live feed time: 9-17 14:12 been:0min p:166.97 cost:165.9 p/cost:1.006
+p:166.97 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.965
+9-17 14:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 14:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 14:12 166.97 2dP:50.0 1dP:50.0
+2d$:n:284 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 14:12]
+1d$:n:284 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 14:12]
+*Periodic Run* 9-17 15:12 last live feed time: 9-17 15:11 been:0min p:166.65 cost:165.9 p/cost:1.004
+p:166.65 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:140 refillP:161.14 costTgt:0.98 refillP/cost:0.971 refillP/px:0.967
+9-17 15:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 15:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 15:12 166.65 2dP:27.0 1dP:27.0
+2d$:n:343 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 15:11]
+1d$:n:343 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 15:11]
+9-17 16:00 *openOrder* status:Submitted 240917029 SELL 10@167.93
+9-17 16:00 *openOrder* all live orders [240917029 SELL 10@167.93, 240917030 SELL 10@169.27, 240917031 SELL 11@170.94]
+9-17 16:00 *OrderStatus*:Submitted orderId:240917029 filled:0 remaining:10 avgFillPx:0.0 lastFillPx:0.0
+9-17 16:00 *openOrder* status:Submitted 240917030 SELL 10@169.27
+9-17 16:00 *openOrder* all live orders [240917029 SELL 10@167.93, 240917030 SELL 10@169.27, 240917031 SELL 11@170.94]
+9-17 16:00 *OrderStatus*:Submitted orderId:240917030 filled:0 remaining:10 avgFillPx:0.0 lastFillPx:0.0
+9-17 16:00 *openOrder* status:Submitted 240917031 SELL 11@170.94
+9-17 16:00 *openOrder* all live orders [240917029 SELL 10@167.93, 240917030 SELL 10@169.27, 240917031 SELL 11@170.94]
+9-17 16:00 *OrderStatus*:Submitted orderId:240917031 filled:0 remaining:11 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-17 16:12 last live feed time: 9-17 16:00 been:12min p:167.07 cost:165.9 p/cost:1.007
+p:167.07 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.964
+9-17 16:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 16:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 16:12 167.07 2dP:57.0 1dP:57.0
+2d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+1d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+*Periodic Run* 9-17 17:12 last live feed time: 9-17 16:00 been:72min p:167.07 cost:165.9 p/cost:1.007
+p:167.07 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.964
+9-17 17:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 17:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 17:12 167.07 2dP:57.0 1dP:57.0
+2d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+1d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+*Periodic Run* 9-17 18:12 last live feed time: 9-17 16:00 been:132min p:167.07 cost:165.9 p/cost:1.007
+p:167.07 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.964
+9-17 18:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 18:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 18:12 167.07 2dP:57.0 1dP:57.0
+2d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+1d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+*Periodic Run* 9-17 19:12 last live feed time: 9-17 16:00 been:192min p:167.07 cost:165.9 p/cost:1.007
+p:167.07 rng:0.0% pos:31 delt:5k cost:165.9 fullLot:139 refillP:161.13 costTgt:0.98 refillP/cost:0.971 refillP/px:0.964
+9-17 19:12 *chek orderStatus [240917029=Submitted, 240917030=Submitted, 240917031=Submitted]
+9-17 19:12 *chek openOrders*: [240917029, 240917030, 240917031]
+9-17 19:12 167.07 2dP:57.0 1dP:57.0
+2d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]
+1d$:n:392 max:167.7 [9-17 10:24] min:166.3 [9-17 9:31] rng:0.8% 1Key:[9-17 9:20] last:[9-17 16:00]

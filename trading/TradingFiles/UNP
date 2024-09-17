@@ -14972,3 +14972,544 @@ ytdReturn:4.44%
 9-16 16:14 0.0 2dP:81.0 1dP:71.0
 2d$:n:780 max:253.3 [9-16 9:41] min:248.6 [9-13 15:04] rng:1.9% 1Key:[9-13 9:30] last:[9-16 15:59]
 1d$:n:390 max:253.3 [9-16 9:41] min:250.2 [9-16 9:30] rng:1.2% 1Key:[9-16 9:30] last:[9-16 15:59]
+*******************************************
+*STARTS* 9-17 7:11
+updating pos: UNP 9-17 7:11 pos:15 cost:243.73
+POS:15 COST:243.7 DELT:4k
+*Periodic Run* 9-17 7:12 7:12:14 no live feed
+9-17 7:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 9-17 8:12 8:12:17 no live feed
+9-17 8:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+*Periodic Run* 9-17 9:12 9:12:17 no live feed
+9-17 9:12 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+******************CUT**************************
+CUT 9-17 9:31:17 1dP:100.0 2dp:100.0 px253.53 cost:243.73035335 px/Cost:1.0402 reqMargin:1.01 rng:0.0
+0:240917023 UNP SELL 5 @253.99 9:31
+0: SELL UNP 9-17 9:31 CUTTER Created target margin:1.01 cost*target margin:246.17 askPx:253.48
+1:240917024 UNP SELL 5 @256.01 9:31
+1: SELL UNP 9-17 9:31 CUTTER Created target margin:1.01 cost*target margin:246.17 askPx:253.48
+2:240917025 UNP SELL 5 @258.55 9:31
+2: SELL UNP 9-17 9:31 CUTTER Created target margin:1.01 cost*target margin:246.17 askPx:253.48
+2D$:n<5
+1D$:n<5
+9-17 9:31 *openOrder* status:Submitted 240917023 SELL 5@253.99
+9-17 9:31 *openOrder* all live orders [240917023 SELL 5@253.99]
+9-17 9:31 *OrderStatus*:Submitted orderId:240917023 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+9-17 9:31 *openOrder* status:PreSubmitted 240917024 SELL 5@256.01
+9-17 9:31 *openOrder* all live orders [240917023 SELL 5@253.99, 240917024 SELL 5@256.01]
+9-17 9:31 *OrderStatus*:PreSubmitted orderId:240917024 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+9-17 9:31 *openOrder* status:PreSubmitted 240917025 SELL 5@258.55
+9-17 9:31 *openOrder* all live orders [240917023 SELL 5@253.99, 240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 9:31 *OrderStatus*:PreSubmitted orderId:240917025 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+9-17 9:31 *openOrder* status:Submitted 240917024 SELL 5@256.01
+9-17 9:31 *openOrder* all live orders [240917023 SELL 5@253.99, 240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 9:31 *OrderStatus*:Submitted orderId:240917024 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+9-17 9:31 *openOrder* status:Submitted 240917025 SELL 5@258.55
+9-17 9:31 *openOrder* all live orders [240917023 SELL 5@253.99, 240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 9:31 *OrderStatus*:Submitted orderId:240917025 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+updating pos: UNP 9-17 9:33 pos:10 cost:243.73
+9-17 9:33 *tradeReport* time: 2024-09-17T09:33:35 SLD execPx:253.99 shares:5 avgPx:253.99
+9-17 9:33 *openOrder* status:Filled 240917023 SELL 5@253.99
+9-17 9:33 *openOrder*:removing order.Status:Filled 240917023 SELL 5@253.99
+9-17 9:33 *openOrder*:after removal.OpenOrders: [240917024, 240917025]
+9-17 9:33 *openOrder* all live orders [240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 9:33 *OrderStatus*:Filled orderId:240917023 filled:5 remaining:0 avgFillPx:253.99 lastFillPx:253.99
+9-17 9:33 *openOrder* status:Filled 240917023 SELL 5@253.99
+9-17 9:33 *openOrder*:removing order.Status:Filled 240917023 SELL 5@253.99
+9-17 9:33 *openOrder*:after removal.OpenOrders: [240917024, 240917025]
+9-17 9:33 *openOrder* all live orders [240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 9:33 *OrderStatus*:Filled orderId:240917023 filled:5 remaining:0 avgFillPx:253.99 lastFillPx:253.99
+computed Pnl:50.916581250000036
+1.*commission report*:240917023 commission:0.38 realized pnl:50.92 computed Pnl:50.92
+2.*commission report* orderID:240917023 commission: 0.38 realized pnl: 50.92
+updating pos: UNP 9-17 9:33 pos:10 cost:243.73
+updating pos: UNP 9-17 9:33 pos:10 cost:243.73
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+updating pos: UNP 9-17 9:37 pos:10 cost:243.73
+updating pos: UNP 9-17 9:37 pos:10 cost:243.73
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+*Periodic Run* 9-17 10:12 last live feed time: 9-17 10:12 been:0min p:254.0 cost:243.7 p/cost:1.042
+p:254.0 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.936
+9-17 10:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 10:12 *chek openOrders*: [240917024, 240917025]
+9-17 10:12 254.0 2dP:99.0 1dP:99.0
+2d$:n:42 max:254.0 [9-17 10:11] min:253.1 [9-17 9:30] rng:0.3% 1Key:[9-17 9:30] last:[9-17 10:12]
+1d$:n:42 max:254.0 [9-17 10:11] min:253.1 [9-17 9:30] rng:0.3% 1Key:[9-17 9:30] last:[9-17 10:12]
+*Periodic Run* 9-17 11:12 last live feed time: 9-17 11:12 been:0min p:254.67 cost:243.7 p/cost:1.045
+p:254.67 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.934
+9-17 11:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 11:12 *chek openOrders*: [240917024, 240917025]
+9-17 11:12 254.67 2dP:81.0 1dP:81.0
+2d$:n:100 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 11:12]
+1d$:n:100 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 11:12]
+*Periodic Run* 9-17 12:12 last live feed time: 9-17 12:10 been:1min p:254.4 cost:243.7 p/cost:1.044
+p:254.4 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.935
+9-17 12:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 12:12 *chek openOrders*: [240917024, 240917025]
+9-17 12:12 254.4 2dP:67.0 1dP:67.0
+2d$:n:154 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 12:10]
+1d$:n:154 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 12:10]
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+*Periodic Run* 9-17 13:12 last live feed time: 9-17 13:12 been:0min p:253.3 cost:243.7 p/cost:1.039
+p:253.3 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:92 refillP:237.8 costTgt:0.98 refillP/cost:0.976 refillP/px:0.939
+9-17 13:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 13:12 *chek openOrders*: [240917024, 240917025]
+9-17 13:12 253.3 2dP:9.0 1dP:9.0
+2d$:n:209 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 13:12]
+1d$:n:209 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 13:12]
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+*Periodic Run* 9-17 14:12 last live feed time: 9-17 14:11 been:1min p:254.37 cost:243.7 p/cost:1.044
+p:254.37 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.935
+9-17 14:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 14:12 *chek openOrders*: [240917024, 240917025]
+9-17 14:12 254.37 2dP:65.0 1dP:65.0
+2d$:n:259 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 14:11]
+1d$:n:259 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 14:11]
+*Periodic Run* 9-17 15:12 last live feed time: 9-17 15:11 been:0min p:253.8 cost:243.7 p/cost:1.041
+p:253.8 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.937
+9-17 15:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 15:12 *chek openOrders*: [240917024, 240917025]
+9-17 15:12 253.8 2dP:35.0 1dP:35.0
+2d$:n:317 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 15:11]
+1d$:n:317 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.7% 1Key:[9-17 9:30] last:[9-17 15:11]
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+no blocking buy orders: All submitted orders {240917023=UNP 9-17 9:31 CUTTER Filled, 240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted}
+no blocking buy orders: Active orders: [240917024=UNP 9-17 9:31 CUTTER Submitted, 240917025=UNP 9-17 9:31 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240917024, 240917025]}
+9-17 16:00 *openOrder* status:Submitted 240917024 SELL 5@256.01
+9-17 16:00 *openOrder* all live orders [240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 16:00 *OrderStatus*:Submitted orderId:240917024 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+9-17 16:00 *openOrder* status:Submitted 240917025 SELL 5@258.55
+9-17 16:00 *openOrder* all live orders [240917024 SELL 5@256.01, 240917025 SELL 5@258.55]
+9-17 16:00 *OrderStatus*:Submitted orderId:240917025 filled:0 remaining:5 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-17 16:12 last live feed time: 9-17 16:00 been:12min p:253.55 cost:243.7 p/cost:1.04
+p:253.55 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:92 refillP:237.8 costTgt:0.98 refillP/cost:0.976 refillP/px:0.938
+9-17 16:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 16:12 *chek openOrders*: [240917024, 240917025]
+9-17 16:12 253.55 2dP:25.0 1dP:25.0
+2d$:n:366 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 16:00]
+1d$:n:366 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 16:00]
+*Periodic Run* 9-17 17:12 last live feed time: 9-17 16:00 been:72min p:253.55 cost:243.7 p/cost:1.04
+p:253.55 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:92 refillP:237.8 costTgt:0.98 refillP/cost:0.976 refillP/px:0.938
+9-17 17:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 17:12 *chek openOrders*: [240917024, 240917025]
+9-17 17:12 253.55 2dP:25.0 1dP:25.0
+2d$:n:366 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 16:00]
+1d$:n:366 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 16:00]
+*Periodic Run* 9-17 18:12 last live feed time: 9-17 17:12 been:59min p:253.75 cost:243.7 p/cost:1.041
+p:253.75 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.937
+9-17 18:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 18:12 *chek openOrders*: [240917024, 240917025]
+9-17 18:12 253.75 2dP:35.0 1dP:35.0
+2d$:n:367 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 17:12]
+1d$:n:367 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 17:12]
+*Periodic Run* 9-17 19:12 last live feed time: 9-17 17:12 been:119min p:253.75 cost:243.7 p/cost:1.041
+p:253.75 rng:0.0% pos:10 delt:3k cost:243.7 fullLot:91 refillP:237.78 costTgt:0.98 refillP/cost:0.976 refillP/px:0.937
+9-17 19:12 *chek orderStatus [240917023=Filled, 240917024=Submitted, 240917025=Submitted]
+9-17 19:12 *chek openOrders*: [240917024, 240917025]
+9-17 19:12 253.75 2dP:35.0 1dP:35.0
+2d$:n:367 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 17:12]
+1d$:n:367 max:255.0 [9-17 10:24] min:253.1 [9-17 9:30] rng:0.8% 1Key:[9-17 9:30] last:[9-17 17:12]
