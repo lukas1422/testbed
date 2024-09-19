@@ -13280,3 +13280,69 @@ p:133.36 rng:0.0% pos:18 delt:2k cost:130.5 fullLot:174 refillP:127.35 costTgt:0
 9-18 17:59 133.36 2dP:64.0 1dP:64.0
 2d$:n:393 max:134.3 [9-18 14:39] min:131.8 [9-18 10:32] rng:1.9% 1Key:[9-18 8:59] last:[9-18 16:27]
 1d$:n:393 max:134.3 [9-18 14:39] min:131.8 [9-18 10:32] rng:1.9% 1Key:[9-18 8:59] last:[9-18 16:27]
+*******************************************
+*STARTS* 9-19 9:22
+updating pos: MMM 9-19 9:22 pos:18 cost:130.5
+POS:18 COST:130.5 DELT:2k
+9-19 9:22 *tradeReport* time: 2024-09-18T14:00:27 SLD execPx:133.6 shares:9 avgPx:133.6
+listOfExecs [orderID: 240918004 time: 2024-09-18T14:00:27 side: SLD shares: 9 price: 133.6]
+*Periodic Run* 9-19 9:22 last live feed time: 9-19 9:22 been:0min p:134.12 cost:130.5 p/cost:1.028
+p:134.12 rng:0.0% pos:18 delt:2k cost:130.5 fullLot:173 refillP:127.35 costTgt:0.98 refillP/cost:0.976 refillP/px:0.95
+9-19 9:22 134.12 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+9-19 9:22 rng:2.0% costTgt:0.98
+9-19 9:22 tgtMargin:1.0161 tgtPrice:132.6
+ytdReturn:50.16%
+******************CUT**************************
+CUT 9-19 9:30:02 1dP:100.0 2dp:100.0 px134.7 cost:130.5049389 px/Cost:1.0321 reqMargin:1.0161 rng:0.0201
+0:240919018 MMM SELL 6 @135.13 9:30
+0: SELL MMM 9-19 9:30 CUTTER Created target margin:1.01607 cost*target margin:132.6 askPx:134.86
+1:240919019 MMM SELL 6 @136.67 9:30
+1: SELL MMM 9-19 9:30 CUTTER Created target margin:1.01607 cost*target margin:132.6 askPx:134.86
+2:240919020 MMM SELL 6 @138.47 9:30
+2: SELL MMM 9-19 9:30 CUTTER Created target margin:1.01607 cost*target margin:132.6 askPx:134.86
+2D$:n:784 max:134.3 [9-19 9:30] min:131.8 [9-18 10:33] rng:1.9% 1Key:[9-17 9:30] last:[9-19 9:30]
+1D$:n<5
+9-19 9:30 *openOrder* status:PreSubmitted 240919019 SELL 6@136.67
+9-19 9:30 *openOrder* all live orders [240919019 SELL 6@136.67]
+9-19 9:30 *OrderStatus*:PreSubmitted orderId:240919019 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-19 9:30 *openOrder* status:PreSubmitted 240919020 SELL 6@138.47
+9-19 9:30 *openOrder* all live orders [240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:PreSubmitted orderId:240919020 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-19 9:30 *openOrder* status:Submitted 240919018 SELL 6@135.13
+9-19 9:30 *openOrder* all live orders [240919018 SELL 6@135.13, 240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:Submitted orderId:240919018 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-19 9:30 *openOrder* status:Submitted 240919019 SELL 6@136.67
+9-19 9:30 *openOrder* all live orders [240919018 SELL 6@135.13, 240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:Submitted orderId:240919019 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+9-19 9:30 *openOrder* status:Submitted 240919020 SELL 6@138.47
+9-19 9:30 *openOrder* all live orders [240919018 SELL 6@135.13, 240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:Submitted orderId:240919020 filled:0 remaining:6 avgFillPx:0.0 lastFillPx:0.0
+updating pos: MMM 9-19 9:30 pos:12 cost:130.5
+9-19 9:30 *tradeReport* time: 2024-09-19T09:30:13 SLD execPx:135.13 shares:6 avgPx:135.13
+9-19 9:30 *openOrder* status:Filled 240919018 SELL 6@135.13
+9-19 9:30 *openOrder*:removing order.Status:Filled 240919018 SELL 6@135.13
+9-19 9:30 *openOrder*:after removal.OpenOrders: [240919019, 240919020]
+9-19 9:30 *openOrder* all live orders [240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:Filled orderId:240919018 filled:6 remaining:0 avgFillPx:135.13 lastFillPx:135.13
+9-19 9:30 *openOrder* status:Filled 240919018 SELL 6@135.13
+9-19 9:30 *openOrder*:removing order.Status:Filled 240919018 SELL 6@135.13
+9-19 9:30 *openOrder*:after removal.OpenOrders: [240919019, 240919020]
+9-19 9:30 *openOrder* all live orders [240919019 SELL 6@136.67, 240919020 SELL 6@138.47]
+9-19 9:30 *OrderStatus*:Filled orderId:240919018 filled:6 remaining:0 avgFillPx:135.13 lastFillPx:135.13
+computed Pnl:27.382261599999893
+1.*commission report*:240919018 commission:0.37 realized pnl:27.38 computed Pnl:27.38
+2.*commission report* orderID:240919018 commission: 0.37 realized pnl: 27.38
+updating pos: MMM 9-19 9:30 pos:12 cost:130.5
+updating pos: MMM 9-19 9:30 pos:12 cost:130.5
+updating pos: MMM 9-19 9:34 pos:12 cost:130.5
+updating pos: MMM 9-19 9:34 pos:12 cost:130.5
+updating pos: MMM 9-19 9:40 pos:12 cost:130.5
+*Periodic Run* 9-19 10:22 last live feed time: 9-19 10:22 been:0min p:134.37 cost:130.5 p/cost:1.03
+p:134.37 rng:2.0% pos:12 delt:2k cost:130.5 fullLot:173 refillP:127.52 costTgt:0.98 refillP/cost:0.977 refillP/px:0.949
+9-19 10:22 *chek orderStatus [240919018=Filled, 240919019=Submitted, 240919020=Submitted]
+9-19 10:22 *chek openOrders*: [240919019, 240919020]
+9-19 10:22 134.37 2dP:75.0 1dP:17.0
+2d$:n:836 max:135.2 [9-19 9:30] min:131.8 [9-18 10:33] rng:2.6% 1Key:[9-17 9:30] last:[9-19 10:22]
+1d$:n:56 max:135.2 [9-19 9:30] min:134.2 [9-19 9:52] rng:0.8% 1Key:[9-19 9:22] last:[9-19 10:22]

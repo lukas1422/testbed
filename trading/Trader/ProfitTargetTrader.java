@@ -874,6 +874,10 @@ class ProfitTargetTrader implements LiveHandler,
                 sellQ = Decimal.get(floor(pos.longValue() / partitions));
             }
 
+            if (sellQ.longValue() <= 0) {
+                return;
+            }
+
             Order o = placeOfferLimitTIF(id, offerPrice, sellQ, DAY);
             orderSubmitted.get(s).put(o.orderId(), new OrderAugmented(ct, t, o, CUTTER, Created));
             placeOrModifyOrderCheck(api, ct, o, new OrderHandler(s, o.orderId()));
