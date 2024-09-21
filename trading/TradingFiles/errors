@@ -19352,3 +19352,60 @@ commission report issue tradekey:0001035c.66ec60c9.01 report:ID:0001035c.66ec60c
 *openOrder* Error 9-19 14:12 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
 commission report issue tradekey:00012dc0.66ec2cf3.01 report:ID:00012dc0.66ec2cf3.01.01 commission:0.357681 curr:USD pnl:38.481452 yield:1.7976931348623157E308 yieldRedemption:0
 *openOrder* Error 9-19 19:00 orderId:-1 errorCode:502 msg:Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002
+*openOrder* Error 9-20 9:31 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 9-20 9:31 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 9-20 9:31 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+AWK 09:31:36.919 no bid or no ask when trying to trade
+AWK 09:31:36.919 cost/bid/ask: 147.76578845 0.0 0.0
+BRK B 09:31:36.969 no bid or no ask when trying to trade
+BRK B 09:31:36.969 cost/bid/ask: 460.24481665 0.0 0.0
+CL 09:31:36.974 no bid or no ask when trying to trade
+CL 09:31:36.974 cost/bid/ask: 105.121513 0.0 0.0
+GLD 09:31:36.978 no bid or no ask when trying to trade
+GLD 09:31:36.978 cost/bid/ask: 0.0 0.0 0.0
+HON 09:31:36.999 no bid or no ask when trying to trade
+HON 09:31:36.999 cost/bid/ask: 204.48756755 0.0 0.0
+HSBC 09:31:37.004 no bid or no ask when trying to trade
+HSBC 09:31:37.004 cost/bid/ask: 42.3925531 0.0 0.0
+IP 09:31:37.020 no bid or no ask when trying to trade
+IP 09:31:37.020 cost/bid/ask: 0.0 0.0 0.0
+IWM 09:31:37.298 no bid or no ask when trying to trade
+IWM 09:31:37.298 cost/bid/ask: 217.88485535 0.0 0.0
+KO 09:31:38.725 no bid or no ask when trying to trade
+KO 09:31:38.725 cost/bid/ask: 71.7725374 0.0 0.0
+MCD 09:31:38.737 no bid or no ask when trying to trade
+MCD 09:31:38.737 cost/bid/ask: 285.89252725 0.0 0.0
+MRK 09:31:38.739 no bid or no ask when trying to trade
+MRK 09:31:38.739 cost/bid/ask: 113.50338 0.0 0.0
+PG 09:31:38.746 no bid or no ask when trying to trade
+PG 09:31:38.746 cost/bid/ask: 174.70701 0.0 0.0
+SLV 09:31:38.759 no bid or no ask when trying to trade
+SLV 09:31:38.759 cost/bid/ask: 0.0 0.0 0.0
+SPY 09:31:38.763 no bid or no ask when trying to trade
+SPY 09:31:38.763 cost/bid/ask: 554.7145143 0.0 0.0
+UNP 09:31:38.770 no bid or no ask when trying to trade
+UNP 09:31:38.770 cost/bid/ask: 243.73035715 0.0 0.0
+UL 09:31:38.781 no bid or no ask when trying to trade
+UL 09:31:38.781 cost/bid/ask: 64.7625546 0.0 0.0
+KMB 09:31:38.786 no bid or no ask when trying to trade
+KMB 09:31:38.786 cost/bid/ask: 143.48389345 0.0 0.0
+PHO 09:31:38.797 no bid or no ask when trying to trade
+PHO 09:31:38.797 cost/bid/ask: 66.56163845 0.0 0.0
+*openOrder* Error 9-20 9:33 orderId:-1 errorCode:2105 msg:HMDS data farm connection is broken:ushmds
+*openOrder* Error 9-20 9:33 orderId:60230 errorCode:165 msg:Historical Market Data Service query message:HMDS server disconnect occurred.  Attempting reconnection...
+*openOrder* Error 9-20 9:33 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+*openOrder* Error 9-20 9:37 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.apachmds
+*openOrder* Error 9-20 9:39 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*openOrder* Error 9-20 11:35 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:usfarm
+*openOrder* Error 9-20 11:35 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
+commission report issue tradekey:00012dc6.66ed7743.01 report:ID:00012dc6.66ed7743.01.01 commission:0.362108 curr:USD pnl:16.418159 yield:1.7976931348623157E308 yieldRedemption:0
+ADM 2024-09-20T14:04:00.673 Adder: ytd < -10% cannot trade:-0.12012290707639484
+ADM 2024-09-20T14:04:01.493 Adder: ytd < -10% cannot trade:-0.12012290707639484
+ADM 2024-09-20T14:04:04.054 Adder: ytd < -10% cannot trade:-0.12012290707639484
+*openOrder* Error 9-20 14:19 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 9-20 14:19 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 9-20 14:19 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 9-20 14:19 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 9-20 14:25 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 9-20 14:25 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+commission report issue tradekey:0001035c.66ed8e34.01 report:ID:0001035c.66ed8e34.01.01 commission:0.379526 curr:USD pnl:28.071445 yield:1.7976931348623157E308 yieldRedemption:0
