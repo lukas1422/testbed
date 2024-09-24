@@ -752,6 +752,9 @@ class ProfitTargetTrader implements LiveHandler,
     private static void inventoryAdder(Contract ct, double px, LocalDateTime t, Decimal lotSize) {
         String s = ibContractToSymbol(ct);
         double basePrice = Math.min(px, bidMap.getOrDefault(s, px));
+        if (s.equalsIgnoreCase("WMT")) {
+            return;
+        }
 
         for (int i = 0; i < 2; i++) {
             int id = tradeID.incrementAndGet();
