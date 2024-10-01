@@ -9656,3 +9656,688 @@ p:65.44 rng:0.9% pos:159 delt:10k cost:64.8 fullLot:356 refillP:62.31 costTgt:0.
 9-27 18:13 65.44 2dP:68.0 1dP:11.0
 2d$:n:1114 max:65.9 [9-27 10:37] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-25 9:30] last:[9-27 16:00]
 1d$:n:334 max:65.9 [9-27 10:37] min:65.4 [9-27 13:09] rng:0.7% 1Key:[9-27 9:13] last:[9-27 16:00]
+*******************************************
+*STARTS* 9-30 9:15
+updating pos: UL 9-30 9:15 pos:159 cost:64.63
+POS:159 COST:64.6 DELT:10k
+*Periodic Run* 9-30 9:16 last live feed time: 9-30 9:15 been:0min p:65.39 cost:64.6 p/cost:1.012
+p:65.39 rng:0.0% pos:159 delt:10k cost:64.6 fullLot:356 refillP:62.19 costTgt:0.98 refillP/cost:0.962 refillP/px:0.951
+9-30 9:16 65.39 2dP:100.0 1dP:100.0
+2d$:n<5
+1d$:n<5
+9-30 9:16 rng:0.9% costTgt:0.98
+9-30 9:16 tgtMargin:1.01 tgtPrice:65.28
+ytdReturn:38.43%
+******************CUT**************************
+CUT 9-30 9:30:01 1dP:100.0 2dp:66.0 px65.46 cost:64.63337235 px/Cost:1.0128 reqMargin:1.01 rng:0.0086
+0:240930003 UL SELL 53 @65.59 9:30
+0: SELL UL 9-30 9:30 CUTTER Created target margin:1.01 cost*target margin:65.28 askPx:65.46
+1:240930004 UL SELL 53 @66.11 9:30
+1: SELL UL 9-30 9:30 CUTTER Created target margin:1.01 cost*target margin:65.28 askPx:65.46
+2:240930005 UL SELL 53 @66.77 9:30
+2: SELL UL 9-30 9:30 CUTTER Created target margin:1.01 cost*target margin:65.28 askPx:65.46
+2D$:n:785 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 9:30]
+1D$:n:5 max:65.4 [9-30 9:30] min:65.4 [9-30 9:15] rng:0.0% 1Key:[9-30 9:15] last:[9-30 9:30]
+9-30 9:30 *openOrder* status:PreSubmitted 240930004 SELL 53@66.11
+9-30 9:30 *openOrder* all live orders [240930004 SELL 53@66.11]
+9-30 9:30 *OrderStatus*:PreSubmitted orderId:240930004 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 9:30 *openOrder* status:PreSubmitted 240930003 SELL 53@65.59
+9-30 9:30 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11]
+9-30 9:30 *OrderStatus*:PreSubmitted orderId:240930003 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 9:30 *openOrder* status:Submitted 240930005 SELL 53@66.77
+9-30 9:30 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 9:30 *OrderStatus*:Submitted orderId:240930005 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 9:30 *openOrder* status:Submitted 240930003 SELL 53@65.59
+9-30 9:30 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 9:30 *OrderStatus*:Submitted orderId:240930003 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 9:30 *openOrder* status:Submitted 240930004 SELL 53@66.11
+9-30 9:30 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 9:30 *OrderStatus*:Submitted orderId:240930004 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-30 10:16 last live feed time: 9-30 10:15 been:0min p:65.17 cost:64.6 p/cost:1.008
+p:65.17 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:358 refillP:62.19 costTgt:0.98 refillP/cost:0.962 refillP/px:0.954
+9-30 10:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 10:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 10:16 65.17 2dP:47.0 1dP:13.0
+2d$:n:825 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 10:15]
+1d$:n:45 max:65.4 [9-30 9:30] min:65.1 [9-30 10:12] rng:0.4% 1Key:[9-30 9:15] last:[9-30 10:15]
+*Periodic Run* 9-30 11:16 last live feed time: 9-30 11:14 been:1min p:65.06 cost:64.6 p/cost:1.007
+p:65.06 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:358 refillP:62.19 costTgt:0.98 refillP/cost:0.962 refillP/px:0.956
+9-30 11:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 11:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 11:16 65.06 2dP:39.0 1dP:2.0
+2d$:n:875 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 11:14]
+1d$:n:95 max:65.4 [9-30 9:30] min:65.1 [9-30 11:12] rng:0.6% 1Key:[9-30 9:15] last:[9-30 11:14]
+*Periodic Run* 9-30 12:16 last live feed time: 9-30 12:15 been:0min p:64.83 cost:64.6 p/cost:1.003
+p:64.83 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.959
+9-30 12:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 12:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 12:16 64.83 2dP:21.0 1dP:4.0
+2d$:n:930 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 12:15]
+1d$:n:150 max:65.4 [9-30 9:30] min:64.8 [9-30 11:56] rng:0.9% 1Key:[9-30 9:15] last:[9-30 12:15]
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+*Periodic Run* 9-30 13:16 last live feed time: 9-30 13:15 been:0min p:64.81 cost:64.6 p/cost:1.003
+p:64.81 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:360 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.96
+9-30 13:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 13:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 13:16 64.81 2dP:20.0 1dP:15.0
+2d$:n:975 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 13:15]
+1d$:n:195 max:65.4 [9-30 9:30] min:64.7 [9-30 12:34] rng:1.1% 1Key:[9-30 9:15] last:[9-30 13:15]
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+*Periodic Run* 9-30 14:16 last live feed time: 9-30 14:15 been:0min p:64.74 cost:64.6 p/cost:1.002
+p:64.74 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:360 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.961
+9-30 14:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 14:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 14:16 64.74 2dP:14.0 1dP:5.0
+2d$:n:1021 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 14:15]
+1d$:n:241 max:65.4 [9-30 9:30] min:64.7 [9-30 12:34] rng:1.1% 1Key:[9-30 9:15] last:[9-30 14:15]
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+no blocking buy orders: All submitted orders {240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted}
+no blocking buy orders: Active orders: [240930003=UL 9-30 9:30 CUTTER Submitted, 240930004=UL 9-30 9:30 CUTTER Submitted, 240930005=UL 9-30 9:30 CUTTER Submitted]
+active orders grouped by buysell: {SELL=[240930003, 240930004, 240930005]}
+*Periodic Run* 9-30 15:16 last live feed time: 9-30 15:15 been:0min p:64.74 cost:64.6 p/cost:1.002
+p:64.74 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:360 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.961
+9-30 15:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 15:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 15:16 64.74 2dP:14.0 1dP:14.0
+2d$:n:1067 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 15:15]
+1d$:n:287 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 15:15]
+9-30 16:00 *openOrder* status:Submitted 240930005 SELL 53@66.77
+9-30 16:00 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 16:00 *OrderStatus*:Submitted orderId:240930005 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 16:00 *openOrder* status:Submitted 240930003 SELL 53@65.59
+9-30 16:00 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 16:00 *OrderStatus*:Submitted orderId:240930003 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+9-30 16:00 *openOrder* status:Submitted 240930004 SELL 53@66.11
+9-30 16:00 *openOrder* all live orders [240930003 SELL 53@65.59, 240930004 SELL 53@66.11, 240930005 SELL 53@66.77]
+9-30 16:00 *OrderStatus*:Submitted orderId:240930004 filled:0 remaining:53 avgFillPx:0.0 lastFillPx:0.0
+*Periodic Run* 9-30 16:16 last live feed time: 9-30 16:08 been:7min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 16:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 16:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 16:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
+*Periodic Run* 9-30 17:16 last live feed time: 9-30 16:08 been:67min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 17:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 17:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 17:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
+*Periodic Run* 9-30 18:16 last live feed time: 9-30 16:08 been:127min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 18:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 18:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 18:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
+*Periodic Run* 9-30 19:16 last live feed time: 9-30 16:08 been:187min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 19:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 19:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 19:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
+*Periodic Run* 9-30 20:16 last live feed time: 9-30 16:08 been:247min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 20:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 20:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 20:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
+*Periodic Run* 9-30 21:16 last live feed time: 9-30 16:08 been:307min p:64.95 cost:64.6 p/cost:1.005
+p:64.95 rng:0.9% pos:159 delt:10k cost:64.6 fullLot:359 refillP:62.2 costTgt:0.98 refillP/cost:0.962 refillP/px:0.958
+9-30 21:16 *chek orderStatus [240930003=Submitted, 240930004=Submitted, 240930005=Submitted]
+9-30 21:16 *chek openOrders*: [240930003, 240930004, 240930005]
+9-30 21:16 64.95 2dP:30.0 1dP:41.0
+2d$:n:1108 max:65.9 [9-27 10:33] min:64.6 [9-26 9:39] rng:2.0% 1Key:[9-26 9:30] last:[9-30 16:08]
+1d$:n:328 max:65.4 [9-30 9:30] min:64.6 [9-30 14:24] rng:1.2% 1Key:[9-30 9:15] last:[9-30 16:08]
