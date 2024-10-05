@@ -19761,3 +19761,9 @@ ADM 2024-10-03T11:04:09.826 Adder: ytd < -10% cannot trade:-0.16446496053983606
 *openOrder* Error 10-3 13:21 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:usfarm
 *openOrder* Error 10-3 14:18 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
 *openOrder* Error 10-3 14:18 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 10-4 8:02 orderId:-1 errorCode:2106 msg:HMDS data farm connection is OK:ushmds
+*openOrder* Error 10-4 8:07 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.apachmds
+*openOrder* Error 10-4 8:09 orderId:-1 errorCode:2107 msg:HMDS data farm connection is inactive but should be available upon demand.ushmds
+*openOrder* Error 10-4 14:28 orderId:-1 errorCode:2103 msg:Market data farm connection is broken:hfarm
+*openOrder* Error 10-4 14:28 orderId:-1 errorCode:2104 msg:Market data farm connection is OK:hfarm
+*openOrder* Error 10-4 19:00 orderId:-1 errorCode:502 msg:Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket Clients" is enabled and connection port is the same as "Socket Port" on the TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations of version 954.1 or newer: TWS: 7497; IB Gateway: 4002

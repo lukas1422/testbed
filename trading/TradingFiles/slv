@@ -1,0 +1,223 @@
+*******************************************
+*STARTS* 10-4 8:02
+updating pos: SLV 10-4 8:02 pos:120 cost:28.84
+POS:120 COST:28.8 DELT:3k
+10-4 8:02 *tradeReport* time: 2024-10-03T13:10:18 SLD execPx:29.33 shares:2 avgPx:29.33
+10-4 8:02 *tradeReport* time: 2024-10-03T13:10:18 SLD execPx:29.33 shares:58 avgPx:29.33
+listOfExecs [orderID: 241003013 time: 2024-10-03T13:10:18 side: SLD shares: 2 price: 29.33, orderID: 241003013 time: 2024-10-03T13:10:18 side: SLD shares: 58 price: 29.33]
+10-4 8:02 rng:1.8% costTgt:0.98
+10-4 8:02 tgtMargin:1.0147 tgtPrice:29.27
+ytdReturn:34.21%
+*Periodic Run* 10-4 8:02 last live feed time: 10-4 8:02 been:0min p:29.32 cost:28.8 p/cost:1.016
+p:29.32 rng:1.8% pos:120 delt:4k cost:28.8 fullLot:795 refillP:28.09 costTgt:0.98 refillP/cost:0.974 refillP/px:0.958
+10-4 8:02 29.32 2dP:82.0 1dP:100.0
+2d$:n:781 max:29.5 [10-2 10:05] min:28.7 [10-2 11:15] rng:2.6% 1Key:[10-2 9:30] last:[10-4 8:02]
+1d$:n<5
+*Periodic Run* 10-4 9:02 last live feed time: 10-4 9:02 been:0min p:28.93 cost:28.8 p/cost:1.003
+p:28.93 rng:1.8% pos:120 delt:3k cost:28.8 fullLot:806 refillP:28.1 costTgt:0.98 refillP/cost:0.974 refillP/px:0.971
+10-4 9:02 28.93 2dP:30.0 1dP:28.0
+2d$:n:830 max:29.5 [10-2 10:05] min:28.7 [10-2 11:15] rng:2.6% 1Key:[10-2 9:30] last:[10-4 9:02]
+1d$:n:50 max:29.3 [10-4 8:02] min:28.8 [10-4 8:57] rng:1.8% 1Key:[10-4 8:02] last:[10-4 9:02]
+*Periodic Run* 10-4 10:02 last live feed time: 10-4 10:02 been:0min p:29.05 cost:28.8 p/cost:1.007
+p:29.05 rng:1.8% pos:120 delt:3k cost:28.8 fullLot:803 refillP:28.1 costTgt:0.98 refillP/cost:0.974 refillP/px:0.967
+10-4 10:02 29.05 2dP:46.0 1dP:52.0
+2d$:n:889 max:29.5 [10-2 10:05] min:28.7 [10-2 11:15] rng:2.6% 1Key:[10-2 9:30] last:[10-4 10:02]
+1d$:n:109 max:29.3 [10-4 8:02] min:28.8 [10-4 8:57] rng:1.8% 1Key:[10-4 8:02] last:[10-4 10:02]
+******************CUT**************************
+CUT 10-4 10:51:30 1dP:89.0 2dp:71.0 px29.27 cost:28.8447225 px/Cost:1.0147 reqMargin:1.0147 rng:0.0183
+0:241004015 SLV SELL 40 @29.34 10:51
+0: SELL SLV 10-4 10:51 CUTTER Created target margin:1.01468 cost*target margin:29.27 askPx:29.28
+1:241004016 SLV SELL 40 @29.64 10:51
+1: SELL SLV 10-4 10:51 CUTTER Created target margin:1.01468 cost*target margin:29.27 askPx:29.28
+2:241004017 SLV SELL 40 @30.0 10:51
+2: SELL SLV 10-4 10:51 CUTTER Created target margin:1.01468 cost*target margin:29.27 askPx:29.28
+2D$:n:938 max:29.5 [10-2 10:05] min:28.7 [10-2 11:15] rng:2.6% 1Key:[10-2 9:30] last:[10-4 10:51]
+1D$:n:158 max:29.3 [10-4 8:02] min:28.8 [10-4 8:57] rng:1.8% 1Key:[10-4 8:02] last:[10-4 10:51]
+10-4 10:51 *openOrder* status:Submitted 241004015 SELL 40@29.34
+10-4 10:51 *openOrder* all live orders [241004015 SELL 40@29.34]
+10-4 10:51 *OrderStatus*:Submitted orderId:241004015 filled:0 remaining:40 avgFillPx:0.0 lastFillPx:0.0
+10-4 10:51 *openOrder* status:Submitted 241004016 SELL 40@29.64
+10-4 10:51 *openOrder* all live orders [241004015 SELL 40@29.34, 241004016 SELL 40@29.64]
+10-4 10:51 *OrderStatus*:Submitted orderId:241004016 filled:0 remaining:40 avgFillPx:0.0 lastFillPx:0.0
+10-4 10:51 *openOrder* status:Submitted 241004017 SELL 40@30.0
+10-4 10:51 *openOrder* all live orders [241004015 SELL 40@29.34, 241004016 SELL 40@29.64, 241004017 SELL 40@30.0]
+10-4 10:51 *OrderStatus*:Submitted orderId:241004017 filled:0 remaining:40 avgFillPx:0.0 lastFillPx:0.0
+updating pos: SLV 10-4 10:52 pos:80 cost:28.84
+10-4 10:52 *tradeReport* time: 2024-10-04T10:52:15 SLD execPx:29.34 shares:40 avgPx:29.34
+10-4 10:52 *openOrder* status:Filled 241004015 SELL 40@29.34
+10-4 10:52 *openOrder*:removing order.Status:Filled 241004015 SELL 40@29.34
+10-4 10:52 *openOrder*:after removal.OpenOrders: [241004016, 241004017]
+10-4 10:52 *openOrder* all live orders [241004016 SELL 40@29.64, 241004017 SELL 40@30.0]
+10-4 10:52 *OrderStatus*:Filled orderId:241004015 filled:40 remaining:0 avgFillPx:29.34 lastFillPx:29.34
+10-4 10:52 *openOrder* status:Filled 241004015 SELL 40@29.34
+10-4 10:52 *openOrder*:removing order.Status:Filled 241004015 SELL 40@29.34
+10-4 10:52 *openOrder*:after removal.OpenOrders: [241004016, 241004017]
+10-4 10:52 *openOrder* all live orders [241004016 SELL 40@29.64, 241004017 SELL 40@30.0]
+10-4 10:52 *OrderStatus*:Filled orderId:241004015 filled:40 remaining:0 avgFillPx:29.34 lastFillPx:29.34
+computed Pnl:19.47469700000001
+1.*commission report*:241004015 commission:0.34 realized pnl:19.47 computed Pnl:19.47
+2.*commission report* orderID:241004015 commission: 0.34 realized pnl: 19.47
+updating pos: SLV 10-4 10:52 pos:80 cost:28.84
+updating pos: SLV 10-4 10:52 pos:80 cost:28.84
+updating pos: SLV 10-4 10:58 pos:80 cost:28.84
+*Periodic Run* 10-4 11:02 last live feed time: 10-4 11:02 been:0min p:29.6 cost:28.8 p/cost:1.026
+p:29.6 rng:1.8% pos:80 delt:2k cost:28.8 fullLot:788 refillP:28.15 costTgt:0.98 refillP/cost:0.976 refillP/px:0.951
+10-4 11:02 *chek orderStatus [241004015=Filled, 241004016=Submitted, 241004017=Submitted]
+10-4 11:02 *chek openOrders*: [241004016, 241004017]
+10-4 11:02 29.6 2dP:100.0 1dP:100.0
+2d$:n:949 max:29.6 [10-4 11:02] min:28.7 [10-2 11:15] rng:3.0% 1Key:[10-2 9:30] last:[10-4 11:02]
+1d$:n:169 max:29.6 [10-4 11:02] min:28.8 [10-4 8:57] rng:2.7% 1Key:[10-4 8:02] last:[10-4 11:02]
+updating pos: SLV 10-4 11:03 pos:51 cost:28.84
+10-4 11:03 *tradeReport* time: 2024-10-04T11:03:48 SLD execPx:29.64 shares:29 avgPx:29.64
+10-4 11:03 *openOrder* status:Submitted 241004016 SELL 40@29.64
+10-4 11:03 *openOrder* all live orders [241004016 SELL 40@29.64, 241004017 SELL 40@30.0]
+10-4 11:03 *OrderStatus*:Submitted orderId:241004016 filled:29 remaining:11 avgFillPx:29.64 lastFillPx:29.64
+updating pos: SLV 10-4 11:03 pos:40 cost:28.84
+10-4 11:03 *tradeReport* time: 2024-10-04T11:03:48 SLD execPx:29.64 shares:11 avgPx:29.64
+10-4 11:03 *openOrder* status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:removing order.Status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:after removal.OpenOrders: [241004017]
+10-4 11:03 *openOrder* all live orders [241004017 SELL 40@30.0]
+10-4 11:03 *OrderStatus*:Filled orderId:241004016 filled:40 remaining:0 avgFillPx:29.64 lastFillPx:29.64
+10-4 11:03 *openOrder* status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:removing order.Status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:after removal.OpenOrders: [241004017]
+10-4 11:03 *openOrder* all live orders [241004017 SELL 40@30.0]
+10-4 11:03 *OrderStatus*:Filled orderId:241004016 filled:40 remaining:0 avgFillPx:29.64 lastFillPx:29.64
+computed Pnl:31.47064500000004
+1.*commission report*:241004016 commission:0.34 realized pnl:22.72 computed Pnl:31.47
+2.*commission report* orderID:241004016 commission: 0.34 realized pnl: 22.72
+updating pos: SLV 10-4 11:03 pos:40 cost:28.84
+updating pos: SLV 10-4 11:03 pos:40 cost:28.84
+10-4 11:03 *openOrder* status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:removing order.Status:Filled 241004016 SELL 40@29.64
+10-4 11:03 *openOrder*:after removal.OpenOrders: [241004017]
+10-4 11:03 *openOrder* all live orders [241004017 SELL 40@30.0]
+10-4 11:03 *OrderStatus*:Filled orderId:241004016 filled:40 remaining:0 avgFillPx:29.64 lastFillPx:29.64
+computed Pnl:31.814818000000038
+1.*commission report*:241004016 commission:0.0 realized pnl:8.75 computed Pnl:31.81
+2.*commission report* orderID:241004016 commission: 0.0 realized pnl: 8.75
+updating pos: SLV 10-4 11:03 pos:40 cost:28.84
+updating pos: SLV 10-4 11:03 pos:40 cost:28.84
+updating pos: SLV 10-4 11:09 pos:40 cost:28.84
+updating pos: SLV 10-4 11:16 pos:0 cost:0.0
+10-4 11:16 *tradeReport* time: 2024-10-04T11:16:36 SLD execPx:30.0 shares:40 avgPx:30.0
+10-4 11:16 *openOrder* status:Filled 241004017 SELL 40@30.0
+10-4 11:16 *openOrder*:removing order.Status:Filled 241004017 SELL 40@30.0
+10-4 11:16 *openOrder*:after removal.OpenOrders: []
+10-4 11:16 *OrderStatus*:Filled orderId:241004017 filled:40 remaining:0 avgFillPx:30.0 lastFillPx:30.0
+10-4 11:16 *openOrder* status:Filled 241004017 SELL 40@30.0
+10-4 11:16 *openOrder*:removing order.Status:Filled 241004017 SELL 40@30.0
+10-4 11:16 *openOrder*:after removal.OpenOrders: []
+10-4 11:16 *OrderStatus*:Filled orderId:241004017 filled:40 remaining:0 avgFillPx:30.0 lastFillPx:30.0
+computed Pnl:45.87396300000002
+1.*commission report*:241004017 commission:0.34 realized pnl:45.87 computed Pnl:45.87
+2.*commission report* orderID:241004017 commission: 0.34 realized pnl: 45.87
+updating pos: SLV 10-4 11:16 pos:0 cost:0.0
+updating pos: SLV 10-4 11:16 pos:0 cost:0.0
+updating pos: SLV 10-4 11:18 pos:0 cost:0.0
+*Periodic Run* 10-4 12:02 last live feed time: 10-4 12:02 been:0min p:29.57 
+10-4 12:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 12:02 29.57 2dP:67.0 1dP:65.0
+2d$:n:1009 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 12:02]
+1d$:n:229 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 12:02]
+*Periodic Run* 10-4 13:02 last live feed time: 10-4 13:02 been:0min p:29.31 
+10-4 13:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 13:02 29.31 2dP:47.0 1dP:43.0
+2d$:n:1069 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 13:02]
+1d$:n:289 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 13:02]
+*Periodic Run* 10-4 14:02 last live feed time: 10-4 14:01 been:0min p:29.37 
+10-4 14:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 14:02 29.37 2dP:52.0 1dP:48.0
+2d$:n:1128 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 14:01]
+1d$:n:348 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 14:01]
+*Periodic Run* 10-4 15:02 last live feed time: 10-4 15:02 been:0min p:29.3 
+10-4 15:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 15:02 29.3 2dP:46.0 1dP:43.0
+2d$:n:1189 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 15:02]
+1d$:n:409 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 15:02]
+*Periodic Run* 10-4 16:02 last live feed time: 10-4 16:00 been:1min p:29.36 
+10-4 16:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 16:02 29.36 2dP:51.0 1dP:48.0
+2d$:n:1247 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 16:00]
+1d$:n:467 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 16:00]
+*Periodic Run* 10-4 17:02 last live feed time: 10-4 17:00 been:1min p:29.37 
+10-4 17:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 17:02 29.37 2dP:52.0 1dP:48.0
+2d$:n:1262 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 17:00]
+1d$:n:482 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 17:00]
+*Periodic Run* 10-4 18:02 last live feed time: 10-4 17:57 been:5min p:29.39 
+10-4 18:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 18:02 29.39 2dP:53.0 1dP:50.0
+2d$:n:1274 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 17:57]
+1d$:n:494 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 17:57]
+*Periodic Run* 10-4 19:02 last live feed time: 10-4 18:54 been:7min p:29.41 
+10-4 19:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 19:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-4 20:02 last live feed time: 10-4 18:54 been:67min p:29.41 
+10-4 20:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 20:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-4 21:02 last live feed time: 10-4 18:54 been:127min p:29.41 
+10-4 21:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 21:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-4 22:02 last live feed time: 10-4 18:54 been:187min p:29.41 
+10-4 22:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 22:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-4 23:02 last live feed time: 10-4 18:54 been:247min p:29.41 
+10-4 23:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-4 23:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 0:02 last live feed time: 10-4 18:54 been:307min p:29.41 
+10-5 0:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 0:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 1:02 last live feed time: 10-4 18:54 been:367min p:29.41 
+10-5 1:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 1:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 2:02 last live feed time: 10-4 18:54 been:427min p:29.41 
+10-5 2:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 2:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 3:02 last live feed time: 10-4 18:54 been:487min p:29.41 
+10-5 3:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 3:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 4:02 last live feed time: 10-4 18:54 been:547min p:29.41 
+10-5 4:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 4:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 5:02 last live feed time: 10-4 18:54 been:607min p:29.41 
+10-5 5:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 5:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 6:02 last live feed time: 10-4 18:54 been:667min p:29.41 
+10-5 6:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 6:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 7:02 last live feed time: 10-4 18:54 been:727min p:29.41 
+10-5 7:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 7:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*Periodic Run* 10-5 8:02 last live feed time: 10-4 18:54 been:787min p:29.41 
+10-5 8:02 *chek orderStatus [241004015=Filled, 241004016=Filled, 241004017=Filled]
+10-5 8:02 29.41 2dP:55.0 1dP:52.0
+2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
+1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
