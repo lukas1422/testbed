@@ -221,3 +221,202 @@ updating pos: SLV 10-4 11:18 pos:0 cost:0.0
 10-5 8:02 29.41 2dP:55.0 1dP:52.0
 2d$:n:1287 max:30.0 [10-4 11:17] min:28.7 [10-2 11:15] rng:4.5% 1Key:[10-2 9:30] last:[10-4 18:54]
 1d$:n:507 max:30.0 [10-4 11:17] min:28.8 [10-4 8:57] rng:4.2% 1Key:[10-4 8:02] last:[10-4 18:54]
+*******************************************
+*STARTS* 10-7 6:49
+POS:0 COST:0.0 DELT:0k
+*Periodic Run* 10-7 6:50 6:50:02 no live feed
+10-7 6:50 0.0 2dP:101.0 1dP:101.0
+2d$:n<5
+1d$:n<5
+10-7 6:50 rng:1.8% costTgt:0.98
+10-7 6:50 tgtMargin:1.0147 tgtPrice:0.0
+ytdReturn:34.8%
+*Periodic Run* 10-7 7:50 last live feed time: 10-7 7:49 been:0min p:29.17 
+10-7 7:50 29.17 2dP:30.0 1dP:80.0
+2d$:n:812 max:30.0 [10-4 11:17] min:28.8 [10-3 10:00] rng:4.1% 1Key:[10-3 9:30] last:[10-7 7:49]
+1d$:n:32 max:29.2 [10-7 7:41] min:29.1 [10-7 6:54] rng:0.4% 1Key:[10-7 6:50] last:[10-7 7:49]
+*Periodic Run* 10-7 8:50 last live feed time: 10-7 8:50 been:0min p:28.77 
+10-7 8:50 28.77 2dP:1.0 1dP:2.0
+2d$:n:858 max:30.0 [10-4 11:17] min:28.8 [10-7 8:44] rng:4.3% 1Key:[10-3 9:30] last:[10-7 8:50]
+1d$:n:78 max:29.2 [10-7 8:00] min:28.8 [10-7 8:44] rng:1.5% 1Key:[10-7 6:50] last:[10-7 8:50]
+*Periodic Run* 10-7 9:50 last live feed time: 10-7 9:50 been:0min p:28.95 
+10-7 9:50 28.95 2dP:21.0 1dP:53.0
+2d$:n:918 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 9:50]
+1d$:n:138 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 9:50]
+*Periodic Run* 10-7 10:50 last live feed time: 10-7 10:49 been:0min p:28.9 
+10-7 10:50 28.9 2dP:18.0 1dP:44.0
+2d$:n:977 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 10:49]
+1d$:n:197 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 10:49]
+11:00:02.817493 no blocking orders,empty
+*1Buy*@28.72 10-7 11:00:02 1dp:9.0 2dp:4.0
+cash remaining: 162787.69
+0:241007008 SLV BUY 270 @28.66 11:00 bid is:28.72
+11:00 0: SLV orderID:241007008 tradeID:241007008 BUY 270 @28.66 factor:0.998 SLV 10-7 11:00 ADDER Created
+1:241007009 SLV BUY 270 @28.3 11:00 bid is:28.72
+11:00 1: SLV orderID:241007009 tradeID:241007009 BUY 270 @28.3 factor:0.9853014758706871 SLV 10-7 11:00 ADDER Created
+1D$:n:208 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 11:00]
+2D$:n:988 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 11:00]
+10-7 11:00 *openOrder* status:Submitted 241007008 BUY 270@28.66
+10-7 11:00 *openOrder* all live orders [241007008 BUY 270@28.66]
+10-7 11:00 *OrderStatus*:Submitted orderId:241007008 filled:0 remaining:270 avgFillPx:0.0 lastFillPx:0.0
+10-7 11:00 *openOrder* status:Submitted 241007009 BUY 270@28.3
+10-7 11:00 *openOrder* all live orders [241007008 BUY 270@28.66, 241007009 BUY 270@28.3]
+10-7 11:00 *OrderStatus*:Submitted orderId:241007009 filled:0 remaining:270 avgFillPx:0.0 lastFillPx:0.0
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:00:07.983 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:00:08.322 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:00:13.142 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:00:19.761 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:28.886 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:32.504 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:32.880 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:41.586 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:49.167 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:13:54.997 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:14:08.003 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:14:14.965 no blocking orders 
+no blocking buy orders: All submitted orders {241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted}
+no blocking buy orders: Active orders: [241007008=SLV 10-7 11:00 ADDER Submitted, 241007009=SLV 10-7 11:00 ADDER Submitted]
+active orders grouped by buysell: {BUY=[241007008, 241007009]}
+2024-10-07T11:14:16.192 no blocking orders 
+*Periodic Run* 10-7 11:50 last live feed time: 10-7 11:49 been:0min p:28.93 
+10-7 11:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 11:50 *chek openOrders*: [241007008, 241007009]
+10-7 11:50 28.93 2dP:20.0 1dP:50.0
+2d$:n:1037 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 11:49]
+1d$:n:257 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 11:49]
+*Periodic Run* 10-7 12:50 last live feed time: 10-7 12:49 been:0min p:28.97 
+10-7 12:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 12:50 *chek openOrders*: [241007008, 241007009]
+10-7 12:50 28.97 2dP:23.0 1dP:57.0
+2d$:n:1096 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 12:49]
+1d$:n:316 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 12:49]
+*Periodic Run* 10-7 13:50 last live feed time: 10-7 13:49 been:0min p:28.99 
+10-7 13:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 13:50 *chek openOrders*: [241007008, 241007009]
+10-7 13:50 28.99 2dP:24.0 1dP:61.0
+2d$:n:1152 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 13:49]
+1d$:n:372 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 13:49]
+*Periodic Run* 10-7 14:50 last live feed time: 10-7 14:49 been:0min p:28.88 
+10-7 14:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 14:50 *chek openOrders*: [241007008, 241007009]
+10-7 14:50 28.88 2dP:16.0 1dP:40.0
+2d$:n:1210 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 14:49]
+1d$:n:430 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 14:49]
+*Periodic Run* 10-7 15:50 last live feed time: 10-7 15:49 been:0min p:28.91 
+10-7 15:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 15:50 *chek openOrders*: [241007008, 241007009]
+10-7 15:50 28.91 2dP:18.0 1dP:46.0
+2d$:n:1266 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 15:49]
+1d$:n:486 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 15:49]
+*Periodic Run* 10-7 16:50 last live feed time: 10-7 16:41 been:8min p:28.9 
+10-7 16:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 16:50 *chek openOrders*: [241007008, 241007009]
+10-7 16:50 28.9 2dP:18.0 1dP:44.0
+2d$:n:1291 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 16:41]
+1d$:n:511 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 16:41]
+*Periodic Run* 10-7 17:50 last live feed time: 10-7 17:35 been:14min p:28.93 
+10-7 17:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 17:50 *chek openOrders*: [241007008, 241007009]
+10-7 17:50 28.93 2dP:20.0 1dP:50.0
+2d$:n:1296 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 17:35]
+1d$:n:516 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 17:35]
+*Periodic Run* 10-7 18:50 last live feed time: 10-7 18:46 been:3min p:28.86 
+10-7 18:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 18:50 *chek openOrders*: [241007008, 241007009]
+10-7 18:50 28.86 2dP:15.0 1dP:37.0
+2d$:n:1313 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:46]
+1d$:n:533 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:46]
+*Periodic Run* 10-7 19:50 last live feed time: 10-7 18:56 been:53min p:28.85 
+10-7 19:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 19:50 *chek openOrders*: [241007008, 241007009]
+10-7 19:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-7 20:50 last live feed time: 10-7 18:56 been:113min p:28.85 
+10-7 20:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 20:50 *chek openOrders*: [241007008, 241007009]
+10-7 20:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-7 21:50 last live feed time: 10-7 18:56 been:173min p:28.85 
+10-7 21:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 21:50 *chek openOrders*: [241007008, 241007009]
+10-7 21:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-7 22:50 last live feed time: 10-7 18:56 been:233min p:28.85 
+10-7 22:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 22:50 *chek openOrders*: [241007008, 241007009]
+10-7 22:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-7 23:50 last live feed time: 10-7 18:56 been:293min p:28.85 
+10-7 23:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-7 23:50 *chek openOrders*: [241007008, 241007009]
+10-7 23:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-8 0:50 last live feed time: 10-7 18:56 been:353min p:28.85 
+10-8 0:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-8 0:50 *chek openOrders*: [241007008, 241007009]
+10-8 0:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-8 1:50 last live feed time: 10-7 18:56 been:413min p:28.85 
+10-8 1:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-8 1:50 *chek openOrders*: [241007008, 241007009]
+10-8 1:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*Periodic Run* 10-8 2:50 last live feed time: 10-7 18:56 been:473min p:28.85 
+10-8 2:50 *chek orderStatus [241007008=Submitted, 241007009=Submitted]
+10-8 2:50 *chek openOrders*: [241007008, 241007009]
+10-8 2:50 28.85 2dP:14.0 1dP:35.0
+2d$:n:1316 max:30.0 [10-4 11:17] min:28.7 [10-7 8:57] rng:4.7% 1Key:[10-3 9:30] last:[10-7 18:56]
+1d$:n:536 max:29.2 [10-7 8:00] min:28.7 [10-7 8:57] rng:1.9% 1Key:[10-7 6:50] last:[10-7 18:56]
+*******************************************
+*STARTS* 10-8 2:59
+POS:0 COST:0.0 DELT:0k
+10-8 2:59 rng:1.8% costTgt:0.98
+10-8 2:59 tgtMargin:1.0147 tgtPrice:0.0
+ytdReturn:32.83%
+*Periodic Run* 10-8 2:59 last live feed time: 10-8 2:59 been:0min p:28.42 
+10-8 2:59 28.42 2dP:0.0 1dP:100.0
+2d$:n:781 max:30.0 [10-4 11:17] min:28.7 [10-8 2:59] rng:4.5% 1Key:[10-4 9:30] last:[10-8 2:59]
+1d$:n<5
