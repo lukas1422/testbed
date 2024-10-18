@@ -519,7 +519,7 @@ class ProfitTargetTrader implements LiveHandler,
                         "px/Cost:" + round4(pOverCost),
                         "reqMargin:" + round4(tgtProfitMargin(s)),
                         "rng:" + round4(rng.getOrDefault(s, 0.0)));
-                inventoryCutter(ct, px, t);
+//                inventoryCutter(ct, px, t);
             }
         }
     }
